@@ -1,0 +1,6 @@
+Bei unseren Issues werden die Labels Anforderung, Web, Datenbank und Testing gebraucht.
+
+Das Label Anforderung beschreibt die Umsetzung bzw. Prgrammierung aller funktionalen Anforderungen aus dem Pflichtenheft.
+Das Label Web beschreibt die Tasks, die konkret mit der Codierung und dem Aufbau der Webseite, auf der unsere Applikation läuft, zu tun haben.
+Das Label Datenbank beschreibt den Aufbau und die Nutzung der Datenbank, auf der unsere Applikation aufbaut.
+Das Label Testing beschreibt das abschliessende Testen der Applikation, insbesondere der funktionalen Anforderungen.
