@@ -1,0 +1,46 @@
+.table_legend ul {
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 0;
+    display: inline-flex;
+}
+
+.table_legend ul li {
+    padding: 5px;
+}
+
+.table_legend h3, h4 {
+    margin-bottom: 0;
+}
+
+.table_lebensmittelkategorie {
+    margin-top: 5%;
+}
+
+.table_lebensmittelkategorie th, tr, td {
+    border: solid;
+    padding: 5px;
+    border-color: black;
+}
+
+.table_lebensmittelkategorie thead {
+    color: white;
+    background-color: #6FA8DC;
+}
+
+.table_lebensmittelkategorie thead tr th:first-child {
+    width: 200px;
+}
+
+.table_lebensmittelkategorie thead tr th:not(:first-child) {
+    width: 100px;
+}
+
+.table_lebensmittelkategorie tbody {
+    background-color: #9FC5F8;
+}
+
+.table_lebensmittelkategorie tbody tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
