@@ -75,12 +75,12 @@ public class Lebensmittel {
 		this.dauerernaehrung = dauerernaehrung;
 	}
 	
-	@Override
 	/**
 	 * gibt Datenfelder des Lebensmittels als String zurück
+	 * @override
 	 */
 	public String toString() {
-		return getLindex() + String.format(getLname(), " ", 
+		return getLindex() + String.format(" ", getLname(), " ", 
 				getKarenzphase(), " ", getDauerernaehrung());
 	}
 
