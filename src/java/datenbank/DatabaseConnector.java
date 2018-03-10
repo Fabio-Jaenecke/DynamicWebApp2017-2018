@@ -12,7 +12,6 @@ public class DatabaseConnector {
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	
 	public DatabaseConnector() {
-		
 		try {
 			conn = establishH2DBConnection();
 			setUpH2Database();
