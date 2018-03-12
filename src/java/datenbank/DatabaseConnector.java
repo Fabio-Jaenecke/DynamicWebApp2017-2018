@@ -7,10 +7,18 @@ import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * establish database connection and set up tables
+ * @author Raphael
+ *
+ */
 public class DatabaseConnector {
 	private static Connection conn = null;
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	
+	/**
+	 * constructor for class DatabaseConstructor
+	 */
 	public DatabaseConnector() {
 		try {
 			conn = establishH2DBConnection();
@@ -22,10 +30,14 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/**
+	 * try to establish database connection
+	 * @return database connection
+	 */
 	private static Connection establishH2DBConnection() {
-		String DB_Connection = "jdbc:h2:~/test";
+		String DB_Connection = "jdbc:h2:~/histarantia";
 		String DB_Driver = "org.h2.Driver";	
-		String DB_User = "sa";
+		String DB_User = "user";
 		String DB_Password = "";
 		
 		try {
@@ -45,6 +57,9 @@ public class DatabaseConnector {
 		return conn;
 	}
 
+	/*
+	 * set up different tables
+	 */
 	private void setUpH2Database() {
 		setUpTableLebensmitteldaten();
 		setUpTableZugriffsskala();
@@ -57,6 +72,9 @@ public class DatabaseConnector {
 		setUpTableNaehrzugehoerigkeit();
 	}
 	
+	/*
+	 * set up table lebensmitteldaten
+	 */
 	private void setUpTableLebensmitteldaten() {
 		try {
 			Statement statement;
@@ -71,6 +89,9 @@ public class DatabaseConnector {
 		
 	};
 	
+	/*
+	 * set up table zugriffsskala
+	 */
 	private void setUpTableZugriffsskala() {
 		try {
 			Statement statement = conn.createStatement();
@@ -83,6 +104,9 @@ public class DatabaseConnector {
 		}
 	};
 	
+	/*
+	 * set up table lebensmittelkategorie
+	 */
 	private void setUpTableLebensmittelkategorie() {
 		try {
 			Statement statement = conn.createStatement();
@@ -94,6 +118,9 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/*
+	 * set up table kategorieneinteilung
+	 */
 	private void setUpTableKategorieneinteilung() {
 		try {
 			Statement statement = conn.createStatement();
@@ -106,6 +133,9 @@ public class DatabaseConnector {
 		}
 	};
 	
+	/*
+	 * set up table naehrstoff
+	 */
 	private void setUpTableNaehrstoff() {
 		try {
 			Statement statement = conn.createStatement();
@@ -117,6 +147,9 @@ public class DatabaseConnector {
 		}
 	};
 	
+	/*
+	 * set up table favorit
+	 */
 	private void setUpTableFavorit() {
 		try {
 			Statement statement = conn.createStatement();
@@ -129,6 +162,9 @@ public class DatabaseConnector {
 		}
 	};		
 	
+	/*
+	 * set up table katzugehoerigkeit
+	 */
 	private void setUpTableKatzugehoerigkeit() {
 		try {
 			Statement statement = conn.createStatement();
@@ -142,6 +178,9 @@ public class DatabaseConnector {
 		}
 	};		
 	
+	/*
+	 * set up table enthaelt
+	 */
 	private void setUpTableEnhaelt() {
 		try {
 			Statement statement = conn.createStatement();
@@ -155,6 +194,9 @@ public class DatabaseConnector {
 		}
 	};		
 	
+	/*
+	 * set up table naehrzugheorigkeit
+	 */
 	private void setUpTableNaehrzugehoerigkeit() {
 		try {
 			Statement statement = conn.createStatement();
@@ -167,10 +209,16 @@ public class DatabaseConnector {
 		}
 	}
 	
+	/*
+	 * print error message for exception
+	 */
 	private void catchException(Exception e) {
 		LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 	}
 
+	/*
+	 * close connection after usage
+	 */
 	protected void finalize() throws SQLException {
     	if(null != conn) {
     		conn.close();    
