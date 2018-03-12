@@ -14,6 +14,14 @@ public class AufAbSortierung {
 		lebensmittel = new ArrayList<>();
 	}	
 	
+	public List<String> getLebensmittel() {
+		return lebensmittel;
+	}
+
+	public void setLebensmittel(List<String> lebensmittel) {
+		this.lebensmittel = lebensmittel;
+	}
+
 	/**
 	 * Befüllt eine ArrayList mit Lebensmittelnamen
 	 */
