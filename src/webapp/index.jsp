@@ -1,5 +1,5 @@
-<!doctype html> 
-<jsp:forward page="/index.jsp/" /> 
+<!doctype html>  
+<jsp:forward page="/home/" /> 
 <!--[if lt IE 7]>      
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
    <![endif]-->
@@ -40,7 +40,7 @@
                            <a href="#">Mahlzeitsassistent</a>
                            <a href="#">Beliebtheitsskala</a>
                            <a href="#">Rezepte</a>
-                           <a href="HTML/kontaktformular.jsp">Kontakt</a>
+                           <a href="HTML/Kontaktformular.jsp">Kontakt</a>
                            <a href="HTML/Suchfilter.jsp">Suche</a>
                         </div>
                      </nav>

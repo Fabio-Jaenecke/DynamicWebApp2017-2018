@@ -36,14 +36,14 @@
                 class="arrowdown">&#9662;</span></span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-                <a href="../index.html">Home</a>
-                <a class="active" href="lebensmittelkategorie.html">Lebensmittel</a>
-                <a href="faq.html">FAQ</a>
+                <a href="../index.jsp">Home</a>
+                <a class="active" href="lebensmittelkategorie.jsp">Lebensmittel</a>
+                <a href="faq.jsp">FAQ</a>
                 <a href="#">Mahlzeitsassistent</a>
                 <a href="#">Beliebtheitsskala</a>
                 <a href="#">Rezepte</a>
-                <a href="Kontaktformular.html">Kontakt</a>
-                <a href="Suchfilter.html">Suche</a>
+                <a href="Kontaktformular.jsp">Kontakt</a>
+                <a href="Suchfilter.jsp">Suche</a>
             </div>
         </nav>
         <a class="suchicon" href="Suchfilter.html">&#8981;</a>
