@@ -1,0 +1,576 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.menutext {
+    display: none;
+}
+
+.title {
+    display: inline;
+    padding-left: 40px;
+}
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Blue Theme
+   =================== */
+
+.header-container {
+    border-bottom: 20px solid #9FC5F8;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #6FA8DC;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #6FA8DC;
+}
+
+.title, .suchicon {
+    color: white;
+}
+
+.table_beliebte_lebensmittel {
+    transform: scale(0.9);
+    margin-left: -20px;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: grey;
+    background: none;
+
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav.active:hover {
+    text-decoration: underline;
+}
+
+h1.title {
+    margin: 20px auto 20px auto;
+    float: right;
+}
+
+nav {
+    float: left;
+    margin: 20px auto 20px auto;
+}
+
+a.suchicon {
+    margin: 20px auto 20px auto;
+    float: right;
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 0.6;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+    padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+    ALL: Impressum
+   ========================================================================== */
+
+/*
+CODE FÜR BUTTONS QUELLE: https://sharingbuttons.io/
+*/
+
+footer.wrapper ul li {
+    display: inline-block;
+}
+
+footer h4 {
+    margin-top: 0;
+}
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+    display: inline-block;
+}
+
+.resp-sharing-button__link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0.5em
+}
+
+.resp-sharing-button {
+    border-radius: 5px;
+    transition: 25ms ease-out;
+    padding: 0.5em 0.75em;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+}
+
+.resp-sharing-button__icon svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.4em;
+    vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+    margin: 0;
+    vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+    stroke: #fff;
+    fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+    fill: #fff;
+    stroke: none
+}
+
+.resp-sharing-button--email {
+    background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+    background-color: #5e5e5e
+}
+
+.resp-sharing-button--email {
+    background-color: #777777;
+    border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+    background-color: #5e5e5e;
+    border-color: #5e5e5e;
+}
+
+.wsmain {
+    margin: 2px 2px 2px 2px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 768px) {
+
+    /* ====================
+        WIDE: CSS3 Effects
+       ==================== */
+    .header-container,
+    .main aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+        -moz-box-shadow: 0 5px 10px #aaa;
+        box-shadow: 0 5px 10px #aaa;
+    }
+
+    .menutext {
+        display: inline;
+    }
+
+    .title {
+        margin-left: 90%;
+    }
+
+    /* ============
+        WIDE: Main
+       ============ */
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 32%;
+    }
+
+    .table_beliebte_lebensmittel {
+        transform: scale(0.6);
+        margin-left: -80px;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+    /* ===============
+        Maximal Width
+       =============== */
+    .wrapper {
+        width: 1140px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+
+    .title {
+        margin-left: 150%;
+    }
+
+    .table_beliebte_lebensmittel {
+        transform: scale(1);
+        margin-left: 0;
+    }
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+/*
+CODE FUER ANIMIERTE SIDE NAVIGATION, QUELLE: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
+ */
+
+nav span {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    top: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #6FA8DC;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    -webkit-box-shadow: -12px 0 80px 0px #111, inset -52px 0 0 -50px rgba(163, 163, 163, 1);
+    -moz-box-shadow: -12px 0 80px 0px #111, inset -52px 0 0 -50px rgba(163, 163, 163, 1);
+    box-shadow: -12px 0 80px 0px #111, inset -52px 0 0 -50px #6FA8DC;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a.active {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #111;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:first-child { /*für das Kreuz*/
+    color: #c1c1c1;
+    border: none;
+}
+
+.sidenav a:hover {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+}
+
+.sidenav a:first-child:hover { /*für das Kreuz*/
+    color: #fff;
+    border: none;
+    transition: none;
+    background-color: RGB(232, 17, 35);
+}
+
+.sidenav .closebtn {
+    transition: none;
+    position: absolute;
+    width: 50px;
+    padding: 0;
+    height: 30px;
+    top: 0px;
+    right: 0;
+    font-size: 10px;
+    margin: 0;
+    background-color: #777;
+    vertical-align: middle;
+    line-height: 25px;
+
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+
+}
+
+.table_beliebte_lebensmittel tbody {
+    color: black;
+    background-color: #9FC5F8;
+}
+
+.table_beliebte_lebensmittel thead {
+    color: white;
+}
+
+.table_beliebte_lebensmittel tbody tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+
+.table_beliebte_lebensmittel th, tr, td {
+    border: solid;
+    padding: 5px;
+    border-color: black;
+}
+
+.table_beliebte_lebensmittel thead tr th:first-child {
+    width: 100px;
+}
+
+.table_beliebte_lebensmittel thead tr th:not(:first-child) {
+    width: 150px;
+}
+
+article a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+.table_contact tr, .table_contact td {
+    border-style: hidden;
+}
+
