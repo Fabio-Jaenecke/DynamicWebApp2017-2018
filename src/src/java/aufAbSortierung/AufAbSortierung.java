@@ -25,7 +25,7 @@ public class AufAbSortierung {
 	/**
 	 * Befüllt eine ArrayList mit Lebensmittelnamen
 	 */
-	public void befülleSortierungMitLebensmitteln() {
+	public void befuelleSortierungMitLebensmitteln() {
 		lebensmittel.add("Birnen");
 		lebensmittel.add("Kirschen");
 		lebensmittel.add("Ananas");	
@@ -61,7 +61,7 @@ public class AufAbSortierung {
 	 */
 	public static void main(String[] args) {
 		AufAbSortierung sortierung = new AufAbSortierung();
-		sortierung.befülleSortierungMitLebensmitteln();
+		sortierung.befuelleSortierungMitLebensmitteln();
 		//Sollte Lebensmittel unsortiert ausgeben:
 		System.out.println("Unsortiert:");
 		sortierung.erhalteLebensmittelNamen();

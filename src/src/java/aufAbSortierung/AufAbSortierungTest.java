@@ -22,7 +22,7 @@ class AufAbSortierungTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		sort = new AufAbSortierung();
-		sort.befülleSortierungMitLebensmitteln();
+		sort.befuelleSortierungMitLebensmitteln();
 	}
 
 	/**
