@@ -20,9 +20,9 @@ public class Lebensmittel {
 	private String dauerernaehrung;
 	
 	/**
-	 * Standardkonstruktor fÃ¼r ein Lebensmittel
-	 * @param index der Index des Lebensmittels
-	 * @param name der Name des Lebensmittels
+	 * Standardkonstruktor für ein Lebensmittel
+	 * @param index der Index des Lebensmittel
+	 * @param name der Name des Lebensmittel
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
