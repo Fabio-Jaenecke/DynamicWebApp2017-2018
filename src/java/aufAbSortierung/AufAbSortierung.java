@@ -8,7 +8,7 @@ public class AufAbSortierung {
 	private List<String> lebensmittel;
 
 	/**
-	 * Erstellt ein Objekt mit einer Lebensmittelliste
+	 * Erstellt ein Objekt mit eissner Lebensmittelliste
 	 */
 	public AufAbSortierung() {
 		lebensmittel = new ArrayList<>();
