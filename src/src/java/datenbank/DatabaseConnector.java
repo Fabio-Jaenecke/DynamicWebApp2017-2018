@@ -25,7 +25,7 @@ public class DatabaseConnector {
 			setUpH2Database();
 		}
 		catch(Exception e){
-			LOGGER.log(Level.SEVERE, " You cannot use the database. Either there's already a connection"
+			LOGGER.log(Level.SEVERE, " You cannot use the database. Either there's already a connection "
 					+ "or the configuration settings are false", e);
 		}
 	}
@@ -35,10 +35,9 @@ public class DatabaseConnector {
 	 * @return database connection
 	 */
 	private static Connection establishH2DBConnection() {
-		String DB_Connection = "jdbc:h2:~/test";
-		//String DB_Connection = "jdbc:mysql://localhost:3306/";
+		String DB_Connection = "jdbc:h2:~/histarantia";
 		String DB_Driver = "org.h2.Driver";	
-		String DB_User = "sa";
+		String DB_User = "user";
 		String DB_Password = "";
 		
 		try {
@@ -161,7 +160,7 @@ public class DatabaseConnector {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table favorit if exists");
 			statement.execute("CREATE TABLE favorit(zindex int(3), lindex int(3), primary key(zindex, lindex),"
-					+ "foreign key(zindex) references zugriffsskala, foreign key(lindex) references lebensmitteldaten));");
+					+ "foreign key(zindex) references zugriffsskala, foreign key(lindex) references lebensmitteldaten);");
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -210,7 +209,7 @@ public class DatabaseConnector {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table naehrzugehoerigkeit if exists");
-			statement.execute("CREATE TABLE naehrzugehoerigkeit(nindex int(3), lindex(3), primary key(nindex, lindex)," 
+			statement.execute("CREATE TABLE naehrzugehoerigkeit(nindex int(3), lindex int(3), primary key(nindex, lindex)," 
 					+ " foreign key(nindex) references naehrstoff, foreign key(lindex) references lebensmitteldaten);");
 			statement.close();
 			conn.commit();
