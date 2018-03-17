@@ -1,5 +1,5 @@
 package Lebensmittelsuche;
 
-public class Lebensmittelname {
+public class Lebensmittelsuche {
 
 }
