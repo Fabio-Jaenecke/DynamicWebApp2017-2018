@@ -1,28 +1,24 @@
 package Lebensmittelsuche; 
 
 import java.util.*;
-import Lebensmittel.Lebensmittel; 
+import datenbank.Lebensmittel;
+import lebensmittel.Lebensmittelliste;
 
-public class Lebensmittelsuche extends Lebensmittel {
+public class Lebensmittelsuche {
 	
-	private String lebensmittelname; 
-	private String lebensmittelkategorie; 
-	private String karenzphase; 
-	private String dauerernährung; 
+	private ArrayList<Lebensmittel> lebensmittel = new ArrayList<>();
+	private Lebensmittelliste lebensmittelliste = new Lebensmittelliste();
 	
-	public Lebensmittelsuche(String lebensmittelname)
-	{
-		super();
-	}
-	
-	public void sucheLebensmittel(String lebensmittelname)
+	public void sucheLebensmittel(String name)
 	{
 		int index = 0; 
 		boolean gefunden = false; 
 		while(index < lebensmittel.size() && !gefunden) {
-			String lebensmittelname = lebensmittel.get(index); 
-			System.out.println( + ": " + lebensmittelname);
+			String name = name.get(index); 
+			System.out.println("Kategorie: " + name);
+			System.out.println("Karenzphase: " + karenzphase); 
+			System.out.println("Dauerernaehrung: " + dauerernaehrung);
 			index++; 
 	}
-
+		
 }

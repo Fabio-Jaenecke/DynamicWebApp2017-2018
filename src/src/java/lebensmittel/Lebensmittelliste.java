@@ -1,4 +1,4 @@
-package Lebensmittel;
+package lebensmittel;
 
 import java.util.*; 
 
@@ -8,7 +8,7 @@ import java.util.*;
  * @author mjtre
  * @version 17.03.2018 
  */
-public class Lebensmittel
+public class Lebensmittelliste
 {
 	// Eine ArrayList, in der die Namen von Lebensmitteln gespeichert
 	// werden können.  
@@ -17,7 +17,7 @@ public class Lebensmittel
 	/**
 	 * Erzeuge eine Lebensmittelsammlung. 
 	 */
-	public Lebensmittel()
+	public Lebensmittelliste()
 	{
 		lebensmittel = new ArrayList<>(); 
 	}
