@@ -18,6 +18,7 @@ public class Lebensmitteldaten {
 	private String name;
 	private String karenzphase;
 	private String dauerernaehrung;
+	private String kategorie;
 	
 	/**
 	 * Standardkonstruktor für ein Lebensmittel
@@ -31,6 +32,7 @@ public class Lebensmitteldaten {
 		this.name = name;
 		this.karenzphase = karenzphase;
 		this.dauerernaehrung = dauerernaehrung;
+		this.kategorie = kategorie; 
 	}
 	
 	/**
@@ -43,6 +45,7 @@ public class Lebensmitteldaten {
         this.name = rs.getString("lname");        
         this.karenzphase = rs.getString("karenzphase");
         this.dauerernaehrung = rs.getString("dauerernaehrung");
+        this.kategorie = rs.getString("kategorie"); 
     }
 
 	public int getLindex() {
@@ -77,13 +80,21 @@ public class Lebensmitteldaten {
 		this.dauerernaehrung = dauerernaehrung;
 	}
 	
+	public String getKategorie() {
+		return kategorie;
+	}
+
+	public void setKategorie(String kategorie) {
+		this.kategorie = kategorie;
+	}
+
 	/**
 	 * gibt Datenfelder des Lebensmittels als String zurück
 	 * @override
 	 */
 	public String toString() {
 		return getLindex() + String.format(" ", getLname(), " ", 
-				getKarenzphase(), " ", getDauerernaehrung());
+				getKarenzphase(), " ", getDauerernaehrung(), " ", getKategorie());
 	}
 
 }
