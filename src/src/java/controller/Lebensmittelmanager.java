@@ -65,6 +65,11 @@ public class Lebensmittelmanager
 		}
 	}
 	
+	/**
+	 * Gib die Kategorie anhand des Lebensmittelnamens. 
+	 * @param name der Name des zu suchenden Lebensmittels.
+	 * @return kategorie
+	 */
 	public String getKategorie(String name) {
 		String kategorie = null;
 		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
@@ -76,6 +81,11 @@ public class Lebensmittelmanager
 		return kategorie;
 	}
 	
+	/**
+	 * Gib die Karenzphase anhand des Lebensmittelnamens.
+	 * @param name der Name des zu suchenden Lebensmittels.
+	 * @return karenzphase
+	 */
 	public String getKarenzphase(String name) {
 		String karenzphase = null;
 		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
@@ -87,6 +97,11 @@ public class Lebensmittelmanager
 		return karenzphase;
 	}
 	
+	/** 
+	 * Gib die Dauerernährung anhand des Lebensmittelnamens.
+	 * @param name der Name des zu suchenden Lebensmittels. 
+	 * @return dauerernaehrung
+	 */
 	public String getDauerernaehrung(String name) {
 		String dauerernaehrung = null;
 		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
@@ -96,5 +111,20 @@ public class Lebensmittelmanager
 			}
 		}
 		return dauerernaehrung;
+	}
+	
+	/**
+	 * Gib alle Lebensmittelinformationen. 
+	 * @param name der Name des zu suchenden Lebensmittels.
+	 * @return lebensmittel 
+	 * @return null falls Lebensmittel nicht gefunden
+	 */
+	public Lebensmitteldaten getLebensmittelInfoByName(String name) {
+		for(Lebensmitteldaten lebensmittel: lebensmittel) {
+			if(lebensmittel.getLname().equals(name)) {
+				return lebensmittel;
+			}
+		}
+		return null;
 	}
 }
