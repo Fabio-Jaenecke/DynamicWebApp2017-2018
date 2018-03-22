@@ -1,10 +1,10 @@
-package Lebensmittelsuche;
+package Suche;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import lebensmittel.Lebensmittelliste;
+import controller.Lebensmittelmanager;
 
 public class LebensmittelsucheTest {
 
@@ -14,9 +14,7 @@ public class LebensmittelsucheTest {
 	}
 
 	public void testSucheLebensmittel_ApfelGefunden() {
-		Lebensmittelliste myList = new Lebensmittelliste();
-		
-		myList.
+		Lebensmittelmanager myList = new Lebensmittelmanager();
 	}
 	
 }

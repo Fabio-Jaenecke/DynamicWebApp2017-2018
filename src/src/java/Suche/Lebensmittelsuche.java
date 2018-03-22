@@ -1,19 +1,20 @@
-package Lebensmittelsuche; 
+package Suche; 
 
 import java.util.*;
-import datenbank.Lebensmittel;
-import lebensmittel.Lebensmittelliste;
+
+import controller.Lebensmittelmanager;
+import datenbank.Lebensmitteldaten;
 
 public class Lebensmittelsuche {
 	
-	private ArrayList<Lebensmittel> lebensmittel = new ArrayList<>();
-	private Lebensmittelliste lebensmittelliste = new Lebensmittelliste();
+	private ArrayList<Lebensmitteldaten> lebensmittel = new ArrayList<>();
+	private Lebensmittelmanager lebensmittelliste = new Lebensmittelmanager();
 	
 	public void sucheLebensmittel(String name)
 	{
 		int index = 0; 
 		boolean gefunden = false; 
-		while(index < lebensmittel.size() && !gefunden) {
+		while(index < lebensmitteldaten.size() && !gefunden) {
 			String name = lebensmittelliste.get(index); 
 			System.out.println("Kategorie: " + name);
 			System.out.println("Karenzphase: " + karenzphase); 

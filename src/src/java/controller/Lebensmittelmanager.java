@@ -1,6 +1,8 @@
-package lebensmittel;
+package controller;
 
-import java.util.*; 
+import java.util.*;
+
+import datenbank.Lebensmitteldaten; 
 
 /**
  * Eine Klasse zur Verwaltung von Lebensmitteln.
@@ -8,16 +10,16 @@ import java.util.*;
  * @author mjtre
  * @version 17.03.2018 
  */
-public class Lebensmittelliste
+public class Lebensmittelmanager
 {
 	// Eine ArrayList, in der die Namen von Lebensmitteln gespeichert
 	// werden können.  
-	private ArrayList<lebensmittel> lebensmittel; 
+	private ArrayList<Lebensmitteldaten> lebensmittel; 
 	
 	/**
 	 * Erzeuge eine Lebensmittelsammlung. 
 	 */
-	public Lebensmittelliste()
+	public Lebensmittelmanager()
 	{
 		lebensmittel = new ArrayList<>(); 
 	}
@@ -26,7 +28,7 @@ public class Lebensmittelliste
 	 * Füge der Sammlung ein Lebensmittel hinzu.
 	 * @param lebensmittelname das hinzugefügte Lebensmittel.
 	 */
-	public void lebensmittelHinzufuegen(String lebensmittelname)
+	public void lebensmittelHinzufuegen(Lebensmitteldaten lebensmittelname)
 	{
 		lebensmittel.add(lebensmittelname);
 	}
@@ -47,7 +49,7 @@ public class Lebensmittelliste
 	public void lebensmittelAusgeben(int index)
 	{
 		if(index >= 0 && index < lebensmittel.size()) {
-			String lebensmittelname = lebensmittel.get(index); 
+			String lebensmittelname = lebensmittel.get(index).getLname(); 
 			System.out.println(lebensmittelname);
 		}
 	}

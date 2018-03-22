@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * @author Raphael Caradonna
  *
  */
-public class Lebensmittel {
+public class Lebensmitteldaten {
 	
 	/**
 	 * Attribute aus der Entität Lebensmitteldaten
@@ -26,7 +26,7 @@ public class Lebensmittel {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public Lebensmittel(int index, String name, String karenzphase, String dauerernaehrung) {
+	public Lebensmitteldaten(int index, String name, String karenzphase, String dauerernaehrung) {
 		this.index = index;
 		this.name = name;
 		this.karenzphase = karenzphase;
@@ -38,7 +38,7 @@ public class Lebensmittel {
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
-	public Lebensmittel(ResultSet rs) throws SQLException {
+	public Lebensmitteldaten(ResultSet rs) throws SQLException {
     	this.index = rs.getInt("lindex"); 
         this.name = rs.getString("lname");        
         this.karenzphase = rs.getString("karenzphase");
