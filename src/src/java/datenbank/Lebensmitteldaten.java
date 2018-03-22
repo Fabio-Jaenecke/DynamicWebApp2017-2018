@@ -27,7 +27,7 @@ public class Lebensmitteldaten {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public Lebensmitteldaten(int index, String name, String karenzphase, String dauerernaehrung) {
+	public Lebensmitteldaten(int index, String name, String karenzphase, String dauerernaehrung, String kategorie) {
 		this.index = index;
 		this.name = name;
 		this.karenzphase = karenzphase;
