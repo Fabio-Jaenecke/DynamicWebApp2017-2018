@@ -1,30 +1,26 @@
-/**
- * 
- */
 package aufAbSortierung;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-/**
- * tests class AufAbSortierung
- * @author Raphael
- *
- */
-class AufAbSortierungTest {
+public class AufAbSortierungTest {
 
 	private AufAbSortierung sort;
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeEach
-	void setUp() throws Exception {
-		sort = new AufAbSortierung();
-		sort.befuelleSortierungMitLebensmitteln();
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 	}
 
+	@Before
+	public void setUp() throws Exception {
+		sort = new AufAbSortierung();
+		sort.befuelleSortierungMitLebensmitteln();
+		
+	}
+	
 	/**
 	 * Test method for sortiereAufsteigend()
 	 */

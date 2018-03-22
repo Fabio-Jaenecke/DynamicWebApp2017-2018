@@ -1,4 +1,4 @@
-package com.histarantia.controller;
+package com.histarantia;
 
 import java.io.IOException;
 
