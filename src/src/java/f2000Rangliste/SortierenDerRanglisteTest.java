@@ -3,24 +3,27 @@
  */
 package f2000Rangliste;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import f2000Rangliste.SortierenDerRangliste;
 
 /**
  * tests class AufAbSortierung
  * @author Raphael
  *
  */
-class SortierenDerRanglisteTest {
+public class SortierenDerRanglisteTest {
 
 	private SortierenDerRangliste sort;
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@BeforeEach
-	void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		sort = new SortierenDerRangliste();
 		sort.befuelleSortierungMitLebensmitteln();
 	}
