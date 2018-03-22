@@ -1,4 +1,7 @@
-package aufAbSortierung;
+/**
+ * 
+ */
+package f2000Rangliste;
 
 import static org.junit.Assert.*;
 
@@ -6,21 +9,25 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AufAbSortierungTest {
+import f2000Rangliste.SortierenDerRangliste;
 
-	private AufAbSortierung sort;
-	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
+/**
+ * tests class AufAbSortierung
+ * @author Raphael
+ *
+ */
+public class SortierenDerRanglisteTest {
 
+	private SortierenDerRangliste sort;
+	/**
+	 * @throws java.lang.Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
-		sort = new AufAbSortierung();
+		sort = new SortierenDerRangliste();
 		sort.befuelleSortierungMitLebensmitteln();
-		
 	}
-	
+
 	/**
 	 * Test method for sortiereAufsteigend()
 	 */
