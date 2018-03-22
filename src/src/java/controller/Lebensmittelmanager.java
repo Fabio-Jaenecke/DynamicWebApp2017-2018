@@ -64,4 +64,37 @@ public class Lebensmittelmanager
 			lebensmittel.remove(index); 
 		}
 	}
+	
+	public String getKategorie(String name) {
+		String kategorie = null;
+		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
+			if(lebensmittelIterator.getLname().equals(name)) {
+				kategorie = lebensmittelIterator.getKategorie();
+				break;
+			}
+		}
+		return kategorie;
+	}
+	
+	public String getKarenzphase(String name) {
+		String karenzphase = null;
+		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
+			if(lebensmittelIterator.getLname().equals(name)) {
+				karenzphase = lebensmittelIterator.getKarenzphase();
+				break;
+			}
+		}
+		return karenzphase;
+	}
+	
+	public String getDauerernaehrung(String name) {
+		String dauerernaehrung = null;
+		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
+			if(lebensmittelIterator.getLname().equals(name)) {
+				dauerernaehrung = lebensmittelIterator.getDauerernaehrung();
+				break;
+			}
+		}
+		return dauerernaehrung;
+	}
 }
