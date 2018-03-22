@@ -9,6 +9,12 @@ import org.junit.Test;
 import controller.Lebensmittelmanager;
 import datenbank.Lebensmitteldaten;
 
+/**
+ * Testklasse für die Klasse Lebensmittelsuche.
+ *
+ * @author mjtre
+ * @version 22.03.2018 
+ */
 public class LebensmittelsucheTest {
 	static Lebensmittelmanager lebensmittelListe;
 	

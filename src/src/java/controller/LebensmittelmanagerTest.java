@@ -6,6 +6,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * Testklasse für die Klasse Lebensmittelmanager.
+ *
+ * @author mjtre
+ * @version 22.03.2018 
+ */
 public class LebensmittelmanagerTest {
 
 	@BeforeClass
