@@ -14,11 +14,11 @@ public class Lebensmittelsuche {
 		int index = 0; 
 		boolean gefunden = false; 
 		while(index < lebensmittel.size() && !gefunden) {
-			String name = name.get(index); 
+			String name = lebensmittelliste.get(index); 
 			System.out.println("Kategorie: " + name);
 			System.out.println("Karenzphase: " + karenzphase); 
 			System.out.println("Dauerernaehrung: " + dauerernaehrung);
 			index++; 
 	}
-		
+
 }

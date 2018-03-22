@@ -9,6 +9,7 @@ import java.sql.SQLException;
  * @author Raphael Caradonna
  *
  */
+
 public class Lebensmittel {
 	
 	/**

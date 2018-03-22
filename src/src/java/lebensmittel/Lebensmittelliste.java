@@ -12,7 +12,7 @@ public class Lebensmittelliste
 {
 	// Eine ArrayList, in der die Namen von Lebensmitteln gespeichert
 	// werden können.  
-	private ArrayList<String> lebensmittel; 
+	private ArrayList<lebensmittel> lebensmittel; 
 	
 	/**
 	 * Erzeuge eine Lebensmittelsammlung. 
