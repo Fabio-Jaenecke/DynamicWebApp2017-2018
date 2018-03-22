@@ -1,7 +1,7 @@
 /**
  * 
  */
-package aufAbSortierung;
+package f2000Rangliste;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,15 +13,15 @@ import org.junit.jupiter.api.Test;
  * @author Raphael
  *
  */
-class AufAbSortierungTest {
+class SortierenDerRanglisteTest {
 
-	private AufAbSortierung sort;
+	private SortierenDerRangliste sort;
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		sort = new AufAbSortierung();
+		sort = new SortierenDerRangliste();
 		sort.befuelleSortierungMitLebensmitteln();
 	}
 

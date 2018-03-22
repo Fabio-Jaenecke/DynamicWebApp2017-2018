@@ -1,16 +1,25 @@
-package aufAbSortierung;
+package f2000Rangliste;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class AufAbSortierung {
+/**
+ * Diese Klasse implementiert die Funktion F2100 - Sortieren der Rangliste in Lebensmittelkategorie.
+ * Die Vertraeglichkeit ist in drei Kategorien unterteilt. Gut, mittelmaessig und schlecht vertraeglich, 
+ * welche auf- und absteigend sortiert werden koennen. Die Sortierung kann entweder für die Karenzphase 
+ * oder für die Dauerernaehrung gemacht werden. 
+ *
+ * @author fabio jaenecke
+ *
+ */
+public class SortierenDerRangliste {
 	private List<String> lebensmittel;
 
 	/**
 	 * Erstellt ein Objekt mit einer Lebensmittelliste -
 	 */
-	public AufAbSortierung() {
+	public SortierenDerRangliste() {
 		lebensmittel = new ArrayList<>();
 	}	
 	
@@ -55,12 +64,12 @@ public class AufAbSortierung {
 	}
 	
 	/**
-	 * Testet die Anwendung
+	 * Testet die Anwendung. Dieser Teil des Codes sollte noch entfernt werden.
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		AufAbSortierung sortierung = new AufAbSortierung();
+		SortierenDerRangliste sortierung = new SortierenDerRangliste();
 		sortierung.befuelleSortierungMitLebensmitteln();
 		//Sollte Lebensmittel unsortiert ausgeben:
 		System.out.println("Unsortiert:");
