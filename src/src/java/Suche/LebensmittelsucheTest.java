@@ -2,19 +2,33 @@ package Suche;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import controller.Lebensmittelmanager;
+import datenbank.Lebensmitteldaten;
 
 public class LebensmittelsucheTest {
+	static Lebensmittelmanager lebensmittelListe;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		lebensmittelListe = new Lebensmittelmanager();
+	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testAddLebensmittelApfel() {
+		Lebensmitteldaten apfel = new Lebensmitteldaten(1,"Apfel", "verschieden","vertraeglich","Obst"); 
+		assertEquals(1, lebensmittelListe.gibAbzahlLebensmittel());
 	}
 
-	public void testSucheLebensmittel_ApfelGefunden() {
-		Lebensmittelmanager myList = new Lebensmittelmanager();
+	@Test
+	public void testSucheLebensmittelApfelGefunden() {
+		Lebensmitteldaten lebensmittel = lebensmittelListe.getLebensmittelInfoByName("Apfel");
+		assertEquals("Apfel", lebensmittel.getLname());
+		assertEquals("verschieden", lebensmittel.getKarenzphase());
+		assertEquals("vertraeglich", lebensmittel.getDauerernaehrung()); 
+		assertEquals("Obst", lebensmittel.getKategorie()); 
 	}
-	
 }
