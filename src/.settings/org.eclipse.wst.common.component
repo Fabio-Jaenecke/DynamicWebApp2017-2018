@@ -2,6 +2,7 @@
     <wb-module deploy-name="PSIT2">
         <wb-resource deploy-path="/WEB-INF/lib" source-path="/lib"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java"/>
+        <wb-resource deploy-path="/" source-path="/src/webapp"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/webapp"/>
         <property name="context-root" value="PSIT2"/>
         <property name="java-output-path" value="/PSIT2/build/classes"/>

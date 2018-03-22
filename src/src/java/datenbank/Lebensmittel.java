@@ -4,26 +4,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Stellt die Java-Klasse zur Entitaet Lebensmitteldaten
- * in der Datenbank dar.
+ * stellt die Java-Klasse zur Entität Lebensmitteldaten
+ * in der Datenbank da
  * @author Raphael Caradonna
  *
  */
-
 public class Lebensmittel {
 	
 	/**
-	 * Attribute aus der Entitaet Lebensmitteldaten
+	 * Attribute aus der Entität Lebensmitteldaten
 	 */
 	private int index;
 	private String name;
 	private String karenzphase;
 	private String dauerernaehrung;
-		
+	
 	/**
-	 * Standardkonstruktor f�r ein Lebensmittel
-	 * @param index der Index des Lebensmittel
-	 * @param name der Name des Lebensmittel
+	 * Standardkonstruktor für ein Lebensmittel
+	 * @param index der Index des Lebensmittels
+	 * @param name der Name des Lebensmittels
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
@@ -35,7 +34,7 @@ public class Lebensmittel {
 	}
 	
 	/**
-	 * Konstruktor fuer ein Tupel aus der Datenbank
+	 * Konstruktor für ein Tupel aus der Datenbank
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
@@ -45,10 +44,6 @@ public class Lebensmittel {
         this.karenzphase = rs.getString("karenzphase");
         this.dauerernaehrung = rs.getString("dauerernaehrung");
     }
-
-	public Lebensmittel() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public int getLindex() {
 		return index;
@@ -83,7 +78,7 @@ public class Lebensmittel {
 	}
 	
 	/**
-	 * gibt Datenfelder des Lebensmittels als String zurueck
+	 * gibt Datenfelder des Lebensmittels als String zurück
 	 * @override
 	 */
 	public String toString() {

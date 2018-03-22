@@ -8,14 +8,22 @@ public class AufAbSortierung {
 	private List<String> lebensmittel;
 
 	/**
-	 * Erstellt ein Objekt mit einer Lebensmittelliste
+	 * Erstellt ein Objekt mit einer Lebensmittelliste -
 	 */
 	public AufAbSortierung() {
 		lebensmittel = new ArrayList<>();
 	}	
 	
+	public List<String> getLebensmittel() {
+		return lebensmittel;
+	}
+
+	public void setLebensmittel(List<String> lebensmittel) {
+		this.lebensmittel = lebensmittel;
+	}
+
 	/**
-	 * Befuellt eine ArrayList mit Lebensmittelnamen
+	 * Befüllt eine ArrayList mit Lebensmittelnamen
 	 */
 	public void befuelleSortierungMitLebensmitteln() {
 		lebensmittel.add("Birnen");
