@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * stellt die Java-Klasse zur Entität Lebensmitteldaten
+ * stellt die Java-Klasse zur Entitaet Lebensmitteldaten
  * in der Datenbank da
  * @author Raphael Caradonna
  *
