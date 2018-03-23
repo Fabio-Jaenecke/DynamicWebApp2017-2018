@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * TODO refactor class
  * establish database connection and set up tables
  * @author Raphael
  *
