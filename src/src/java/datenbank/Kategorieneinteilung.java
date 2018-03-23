@@ -1,5 +1,8 @@
 package datenbank;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * stellt die Java-Klasse zur Entitaet Kategorieneinteilung
  * in der Datenbank da
@@ -19,6 +22,14 @@ public class Kategorieneinteilung {
 		this.kindex2 = kindex2;
 		this.kindex3 = kindex3;
 	}
+	
+	// TODO add exception
+	public Kategorieneinteilung(ResultSet rs) throws SQLException {
+    	this.keindex = rs.getInt("keindex"); 
+    	this.kindex1 = rs.getInt("kindex1"); 
+    	this.kindex2 = rs.getInt("kindex2"); 
+    	this.kindex3 = rs.getInt("kindex3"); 
+    }
 	public int getKeindex() {
 		return keindex;
 	}

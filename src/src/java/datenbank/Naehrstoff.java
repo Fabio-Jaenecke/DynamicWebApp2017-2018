@@ -1,5 +1,8 @@
 package datenbank;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * stellt die Java-Klasse zur Entitaet Nahrstoff
  * in der Datenbank da
@@ -15,6 +18,12 @@ public class Naehrstoff {
 		this.nindex = nindex;
 		this.nname = nname;
 	}
+	
+	// TODO add throw exceptione
+	public Naehrstoff(ResultSet rs) throws SQLException {
+    	this.nindex = rs.getInt("nindex"); 
+        this.nname = rs.getString("nname");        
+    }
 	public int getNindex() {
 		return nindex;
 	}

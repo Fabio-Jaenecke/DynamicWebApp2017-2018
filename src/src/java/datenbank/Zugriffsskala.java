@@ -1,5 +1,8 @@
 package datenbank;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * stellt die Java-Klasse zur Entitaet Zugriffsskala
  * in der Datenbank da
@@ -16,6 +19,13 @@ public class Zugriffsskala {
 		this.zindex = zindex;
 		this.platzierung = platzierung;
 		this.azugriffe = azugriffe;
+	}
+	
+	// TODO add exception
+	public Zugriffsskala(ResultSet rs) throws SQLException {
+	   	this.zindex = rs.getInt("zindex"); 
+	   	this.platzierung = rs.getInt("platzierung"); 
+	   	this.azugriffe = rs.getInt("azugriffe"); 
 	}
 	
 	public int getZindex() {
