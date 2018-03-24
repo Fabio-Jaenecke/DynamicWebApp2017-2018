@@ -2,7 +2,7 @@ package controller;
 
 import java.util.*;
 
-import datenbank.Lebensmitteldaten; 
+import datenbank.container.Lebensmitteldaten; 
 
 /**
  * Eine Klasse zur Verwaltung von Lebensmitteln.

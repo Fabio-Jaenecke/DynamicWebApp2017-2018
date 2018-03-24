@@ -1,6 +1,6 @@
 package Suche;
 
-import datenbank.Lebensmitteldaten;
+import datenbank.container.Lebensmitteldaten;
 
 /**
  * Interface für die verschiedenen Suchmoeglichkeiten.

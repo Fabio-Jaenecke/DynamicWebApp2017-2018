@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import controller.Lebensmittelmanager;
-import datenbank.Lebensmitteldaten;
+import datenbank.container.Lebensmitteldaten;
 
 /**
  * Testklasse für die Klasse Lebensmittelsuche.

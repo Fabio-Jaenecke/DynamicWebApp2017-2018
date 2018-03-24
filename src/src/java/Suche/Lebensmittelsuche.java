@@ -1,7 +1,7 @@
 package Suche; 
 
 import controller.Lebensmittelmanager;
-import datenbank.Lebensmitteldaten;
+import datenbank.container.Lebensmitteldaten;
 
 /**
  * Klasse für die spezifische Suche nach einem Lebensmittel. 

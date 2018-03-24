@@ -51,11 +51,6 @@ public class DatabaseConnectorStub {
 		return result;
 	}
 	
-	public Connection getConn() {
-		return conn;
-	}
-
-
 	public String getDB_Connection() {
 		return "jdbc:h2:~/histarantia";
 	}
