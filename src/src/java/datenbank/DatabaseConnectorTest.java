@@ -1,91 +1,98 @@
 package datenbank;
 
 import static org.junit.Assert.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 /*
- * unit test for testing connection and usage of database
- * in DatabaseConnector.java
- * TODO write tests
+ * unit test for testing connection details to database
+ * and for receiving result sets of tables
+ * the class under test is represented by a stub
  */
 public class DatabaseConnectorTest {
 
 	//TODO add stub for database connector
-	private DatabaseConnector conn;
+	private DatabaseConnectorStub conn;
 	
-	//TODO throw exception
+	/**
+	 * setup for unit test of database connector class
+	 * we don't use a logger since it's only a unit test
+	 */
 	@BeforeEach
-	void setUp() throws Exception {
-		conn = new DatabaseConnector();
+	void setUp() {
+		try {
+			conn = new DatabaseConnectorStub();
+		}
+		catch(Exception e){
+			System.out.println("Exception occured while setting up unit test");
+		}
 	}
 	
-	//TODO write test
 	@Test
 	public void testConnection() {
+		assertTrue(conn.establishH2DBConnection());
 		assertNotNull(conn);
 	}
 
+	@Test
+	public void url() {
+		assertEquals(conn.getDB_Connection(), "jdbc:h2:~/histarantia");
+	}
+	
 	//TODO write test
 	//TODO get count of tables in database
 	@Test
-	public void testCreationOfTables() {
-		fail("Not yet implemented");
+	public void driver() {
+		assertEquals(conn.getDB_Driver(), "org.h2.Driver");
+	}
+	
+	@Test
+	public void userAndPassword() {
+		assertEquals(conn.getDB_User(), "user");
+		assertEquals(conn.getDB_Password(), "");
 	}
 	
 	//TODO write test
 	@Test
 	public void testTableLebensmittedatenl() {
-		fail("Not yet implemented");
+		String sql = "select * from lebensmitteldaten";
+		ResultSet res = conn.getResultSet(sql);
+		assertNotNull(res);
 	}
 	
 	//TODO write test
 	@Test
 	public void testTableZugriffsskala() {
-		fail("Not yet implemented");
+		String sql = "select * from zugriffsskala";
+		ResultSet res = conn.getResultSet(sql);
+		assertNotNull(res);
 	}
 	
 	//TODO write test
 	@Test
 	public void testTableLebensmittelkategorie() {
-		fail("Not yet implemented");
+		String sql = "select * from lebensmittelkategorie";
+		ResultSet res = conn.getResultSet(sql);
+		assertNotNull(res);
 	}
 	
 	//TODO write test
 	@Test
 	public void testTableKategorieneinteilung(){
-		fail("Not yet implemented");
+		String sql = "select * from kategorieneinteilung";
+		ResultSet res = conn.getResultSet(sql);
+		assertNotNull(res);
 	}
 	
 	//TODO write test
 	@Test
 	public void testTableNaehrstoff() {
-		fail("Not yet implemented");
+		String sql = "select * from naehrstoff";
+		ResultSet res = conn.getResultSet(sql);
+		assertNotNull(res);
 	}
-	
-	//TODO write test
-	@Test
-	public void testTableFavorit() {
-		fail("Not yet implemented");
-	}
-	
-	//TODO write test
-	@Test
-	public void testTableKatzugehoerigkeit() {
-		fail("Not yet implemented");
-	}
-	
-	//TODO write test
-	@Test
-	public void testTableEnhaelt() {
-		fail("Not yet implemented");
-	}
-	
-	//TODO write test
-	@Test
-	public void testTableNaehrzugehoerigkeit() {
-		fail("Not yet implemented");
-	}
-
 }
