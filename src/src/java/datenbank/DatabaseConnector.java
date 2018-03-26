@@ -81,8 +81,37 @@ public class DatabaseConnector implements DatabaseCreation{
 			Statement statement;
 			statement = conn.createStatement();
 			statement.execute("drop table lebensmitteldaten if exists");
-			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(3) primary key, lname varchar(100),"
+			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(4) primary key, lname varchar(100),"
 				+ " karenzphase varchar(100), dauerernaehrung varchar(100));");
+			
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (1001, 'Schwein', 'mittel', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (1002, 'Rind', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (1003, 'Haehnchen', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (1004, 'Kalb', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (1005, 'Salami', 'schlecht', 'schlecht'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (1006, 'Bratwurst', 'schlecht', 'schlecht'");
+			
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (2001, 'Apfel', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (2002, 'Birne', 'schlecht', 'mittel'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (2003, 'Mango', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (2004, 'Banane', 'schlecht', 'schlecht'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (2005, 'Pfirsich', 'gut', 'gut'");
+			
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (3001, 'Gurke', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (3002, 'Brokoli', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (3003, 'Spinat', 'schlecht', 'schlecht'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (3004, 'Zwiebel', 'mittel', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (3005, 'Paprika', 'schlecht', 'mittel'");
+			
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (4001, 'Erbse', 'schlecht', 'schlecht'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (4002, 'Sojabohnen', 'schlecht', 'schlecht'");
+			
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (5001, 'Reis', 'gut', 'gut'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (5001, 'Meis', 'gut', 'gut'");
+			
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (6001, 'Erdnuesse', 'schlecht', 'schlecht'");
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (6002, 'Samen', 'gut', 'gut'");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -100,6 +129,9 @@ public class DatabaseConnector implements DatabaseCreation{
 			statement.execute("drop table zugriffsskala if exists");
 			statement.execute("CREATE TABLE zugriffsskala(zindex int(3) primary key, platzierung int(3),"
 					+ " aZugriffe int(3));");
+			
+			statement.executeUpdate("INSERT INTO TABLE zugiffsskala " + "VALUES (, 'Fleisch')");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -114,8 +146,20 @@ public class DatabaseConnector implements DatabaseCreation{
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table lebensmittelkategorie if exists");
-			statement.execute("CREATE TABLE lebensmittelkategorie(kindex int(3) primary key, kname varchar(100));");
+			statement.execute("CREATE TABLE lebensmittelkategorie(kindex int(4) primary key, kname varchar(100));");
+		
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (1000, 'Fleisch')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (2000, 'Obst')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (3000, 'Gemuese')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (4000, 'Huelsenfruechte')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (5000, 'Getreide')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (6000, 'Nuesse und Samen')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (7000, 'Fisch')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (8000, 'Milch und Milchprodukte')");
+			statement.executeUpdate("INSERT INTO TABLE lebensmittelkategorie " + "VALUES (9000, 'Sonstiges')");
+			
 			statement.close();
+			
 			conn.commit();
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
