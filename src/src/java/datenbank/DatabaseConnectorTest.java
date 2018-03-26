@@ -5,8 +5,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 /*
  * unit test for testing connection details to database
@@ -22,7 +22,7 @@ public class DatabaseConnectorTest {
 	 * setup for unit test of database connector class
 	 * we don't use a logger since it's only a unit test
 	 */
-	@BeforeEach
+	@Before
 	void setUp() {
 		try {
 			conn = new DatabaseConnectorStub();
