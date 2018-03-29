@@ -1,15 +1,15 @@
-package datenbank;
+package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * stellt die Java-Klasse zur Entität Lebensmitteldaten
+ * stellt die Java-Klasse zur Entitaet Lebensmitteldaten
  * in der Datenbank da
  * @author Raphael Caradonna
  *
  */
-public class Lebensmittel {
+public class Lebensmitteldaten {
 	
 	/**
 	 * Attribute aus der Entität Lebensmitteldaten
@@ -18,6 +18,7 @@ public class Lebensmittel {
 	private String name;
 	private String karenzphase;
 	private String dauerernaehrung;
+	private String kategorie;
 	
 	/**
 	 * Standardkonstruktor für ein Lebensmittel
@@ -26,11 +27,12 @@ public class Lebensmittel {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public Lebensmittel(int index, String name, String karenzphase, String dauerernaehrung) {
+	public Lebensmitteldaten(int index, String name, String karenzphase, String dauerernaehrung, String kategorie) {
 		this.index = index;
 		this.name = name;
 		this.karenzphase = karenzphase;
 		this.dauerernaehrung = dauerernaehrung;
+		this.kategorie = kategorie; 
 	}
 	
 	/**
@@ -38,11 +40,12 @@ public class Lebensmittel {
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
-	public Lebensmittel(ResultSet rs) throws SQLException {
+	public Lebensmitteldaten(ResultSet rs) throws SQLException {
     	this.index = rs.getInt("lindex"); 
         this.name = rs.getString("lname");        
         this.karenzphase = rs.getString("karenzphase");
         this.dauerernaehrung = rs.getString("dauerernaehrung");
+        this.kategorie = rs.getString("kategorie"); 
     }
 
 	public int getLindex() {
@@ -77,13 +80,21 @@ public class Lebensmittel {
 		this.dauerernaehrung = dauerernaehrung;
 	}
 	
+	public String getKategorie() {
+		return kategorie;
+	}
+
+	public void setKategorie(String kategorie) {
+		this.kategorie = kategorie;
+	}
+
 	/**
 	 * gibt Datenfelder des Lebensmittels als String zurück
 	 * @override
 	 */
 	public String toString() {
 		return getLindex() + String.format(" ", getLname(), " ", 
-				getKarenzphase(), " ", getDauerernaehrung());
+				getKarenzphase(), " ", getDauerernaehrung(), " ", getKategorie());
 	}
 
 }

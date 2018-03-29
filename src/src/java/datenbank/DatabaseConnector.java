@@ -8,11 +8,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * TODO refactor class
  * establish database connection and set up tables
  * @author Raphael
  *
  */
-public class DatabaseConnector {
+public class DatabaseConnector implements DatabaseCreation{
 	private static Connection conn = null;
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	
@@ -34,7 +35,7 @@ public class DatabaseConnector {
 	 * try to establish database connection
 	 * @return database connection
 	 */
-	private static Connection establishH2DBConnection() {
+	public Connection establishH2DBConnection() {
 		String DB_Connection = "jdbc:h2:~/histarantia";
 		String DB_Driver = "org.h2.Driver";	
 		String DB_User = "user";
@@ -60,7 +61,7 @@ public class DatabaseConnector {
 	/*
 	 * set up different tables
 	 */
-	private void setUpH2Database() {
+	public void setUpH2Database() {
 		setUpTableLebensmitteldaten();
 		setUpTableZugriffsskala();
 		setUpTableLebensmittelkategorie();
@@ -75,13 +76,42 @@ public class DatabaseConnector {
 	/*
 	 * set up table lebensmitteldaten
 	 */
-	private void setUpTableLebensmitteldaten() {
+	public void setUpTableLebensmitteldaten() {
 		try {
 			Statement statement;
 			statement = conn.createStatement();
 			statement.execute("drop table lebensmitteldaten if exists");
-			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(3) primary key, lname varchar(100),"
+			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(4) primary key, lname varchar(100),"
 				+ " karenzphase varchar(100), dauerernaehrung varchar(100));");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1001, 'Schwein', 'mittel', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1002, 'Rind', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1003, 'Haehnchen', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1004, 'Kalb', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1005, 'Salami', 'schlecht', 'schlecht')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1006, 'Bratwurst', 'schlecht', 'schlecht')");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (2001, 'Apfel', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (2002, 'Birne', 'schlecht', 'mittel')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (2003, 'Mango', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (2004, 'Banane', 'schlecht', 'schlecht')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (2005, 'Pfirsich', 'gut', 'gut')");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (3001, 'Gurke', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (3002, 'Brokoli', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (3003, 'Spinat', 'schlecht', 'schlecht')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (3004, 'Zwiebel', 'mittel', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (3005, 'Paprika', 'schlecht', 'mittel')");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (4001, 'Erbse', 'schlecht', 'schlecht')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (4002, 'Sojabohnen', 'schlecht', 'schlecht')");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (5001, 'Reis', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (5002, 'Meis', 'gut', 'gut')");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (6001, 'Erdnuesse', 'schlecht', 'schlecht')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (6002, 'Samen', 'gut', 'gut')");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -93,12 +123,15 @@ public class DatabaseConnector {
 	/*
 	 * set up table zugriffsskala
 	 */
-	private void setUpTableZugriffsskala() {
+	public void setUpTableZugriffsskala() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table zugriffsskala if exists");
 			statement.execute("CREATE TABLE zugriffsskala(zindex int(3) primary key, platzierung int(3),"
 					+ " aZugriffe int(3));");
+			
+			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (1, 11, 111)");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -109,12 +142,24 @@ public class DatabaseConnector {
 	/*
 	 * set up table lebensmittelkategorie
 	 */
-	private void setUpTableLebensmittelkategorie() {
+	public void setUpTableLebensmittelkategorie() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table lebensmittelkategorie if exists");
-			statement.execute("CREATE TABLE lebensmittelkategorie(kindex int(3) primary key, kname varchar(100));");
+			statement.execute("CREATE TABLE lebensmittelkategorie(kindex int(4) primary key, kname varchar(100));");
+		
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (1000, 'Fleisch')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (2000, 'Obst')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (3000, 'Gemuese')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (4000, 'Huelsenfruechte')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (5000, 'Getreide')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (6000, 'Nuesse und Samen')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (7000, 'Fisch')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (8000, 'Milch und Milchprodukte')");
+			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (9000, 'Sonstiges')");
+			
 			statement.close();
+			
 			conn.commit();
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
@@ -124,7 +169,7 @@ public class DatabaseConnector {
 	/*
 	 * set up table kategorieneinteilung
 	 */
-	private void setUpTableKategorieneinteilung() {
+	public void setUpTableKategorieneinteilung() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table kategorieneinteilung if exists");
@@ -140,7 +185,7 @@ public class DatabaseConnector {
 	/*
 	 * set up table naehrstoff
 	 */
-	private void setUpTableNaehrstoff() {
+	public void setUpTableNaehrstoff() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table naehrstoff if exists");
@@ -155,7 +200,7 @@ public class DatabaseConnector {
 	/*
 	 * set up table favorit
 	 */
-	private void setUpTableFavorit() {
+	public void setUpTableFavorit() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table favorit if exists");
@@ -171,7 +216,7 @@ public class DatabaseConnector {
 	/*
 	 * set up table katzugehoerigkeit
 	 */
-	private void setUpTableKatzugehoerigkeit() {
+	public void setUpTableKatzugehoerigkeit() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table katzugehoerigkeit if exists");
@@ -188,7 +233,7 @@ public class DatabaseConnector {
 	/*
 	 * set up table enthaelt
 	 */
-	private void setUpTableEnhaelt() {
+	public void setUpTableEnhaelt() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table enthaelt if exists");
@@ -205,7 +250,7 @@ public class DatabaseConnector {
 	/*
 	 * set up table naehrzugheorigkeit
 	 */
-	private void setUpTableNaehrzugehoerigkeit() {
+	public void setUpTableNaehrzugehoerigkeit() {
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table naehrzugehoerigkeit if exists");

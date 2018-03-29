@@ -39,7 +39,6 @@
                            <a href="#">Mahlzeitsassistent</a>
                            <a href="#">Beliebtheitsskala</a>
                            <a href="#">Rezepte</a>
-                           <a href="HTML/Kontaktformular.jsp">Kontakt</a>
                            <a href="HTML/Suchfilter.jsp">Suche</a>
                         </div>
                      </nav>
