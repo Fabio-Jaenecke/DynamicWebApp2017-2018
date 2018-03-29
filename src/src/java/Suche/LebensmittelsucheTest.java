@@ -16,22 +16,23 @@ import datenbank.container.Lebensmitteldaten;
  * @version 22.03.2018 
  */
 public class LebensmittelsucheTest {
-	static Lebensmittelmanager lebensmittelListe;
+	static Lebensmittelmanager lebensmittelliste;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		lebensmittelListe = new Lebensmittelmanager();
+		lebensmittelliste = new Lebensmittelmanager();
 	}
-
+	
 	@Test
 	public void testAddLebensmittelApfel() {
 		Lebensmitteldaten apfel = new Lebensmitteldaten(1,"Apfel", "verschieden","vertraeglich","Obst"); 
-		assertEquals(1, lebensmittelListe.gibAbzahlLebensmittel());
+		lebensmittelliste.lebensmittelHinzufuegen(apfel);
+		assertEquals(1, lebensmittelliste.gibAbzahlLebensmittel());
 	}
 
 	@Test
 	public void testSucheLebensmittelApfelGefunden() {
-		Lebensmitteldaten lebensmittel = lebensmittelListe.getLebensmittelInfoByName("Apfel");
+		Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Apfel");
 		assertEquals("Apfel", lebensmittel.getLname());
 		assertEquals("verschieden", lebensmittel.getKarenzphase());
 		assertEquals("vertraeglich", lebensmittel.getDauerernaehrung()); 
