@@ -1,3 +1,5 @@
+<%-- TODO: JAVA-CODE richtig implementieren, bzw. DAO implementieren (Dann könnte die JSP Logik von hier übernommen werden --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -34,9 +36,9 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Früchte&nbsp;<span
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">FrÃ¼chte&nbsp;<span
                 class="arrowdown">&#9662;</span></span>
-                <div id="mySidenav" class="sidenav side-nav">
+            <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
                 <a href="${pageContext.request.contextPath}/home/">Home</a>
        			<a class="active" href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a>
@@ -54,165 +56,135 @@
     <div class="main wrapper clearfix">
         <article>
             <header>
-                <h2>Definition von Frucht</h2>
-                <p>Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe, die aus einer BlÃ¼te
-                    hervorgehen, und die die Pflanzensamen bis zu deren Reife umschlieÃen. FrÃ¼chte bilden prinzipiell
-                    nur die Pflanzen, die einen geschlossenen Fruchtknoten besitzen (Bedecktsamer = Angiospermen) -
-                    Wikipedia</p>
-                <a href="https://de.wikipedia.org/wiki/Frucht">Mehr</a>
             </header>
             <section>
-                <table class="table_lebensmittelkategorie">
-                    <thead>
-                        <tr>
-                            <th>Nahrungsmittel</th>
-                            <th>KP</th>
-                            <th>DE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Blaubeeren</td>
-                        <td>gut</td>
-                        <td>gut</td>
+          		<form>
+            		<div>
+            			<input type="search" id="mySearch" name="q">
+            			<button>Suche</button>
+            		</div>
+           		</form>
+           		<%@ page import="java.sql.ResultSet"%>
+           		<%@ page import ="datenbank.container.*" %>
+           		<%@ page import ="Suche.*" %>
+                <table class="table_lebensmittelname">
+               		<tr>
+                    <th>Kategorie</th>
+                    <th>Karenzphase</th>
+                    <th>Dauerernaehrung</th>
                     </tr>
-                    <tr>
-                        <td>Wassermelonen</td>
-                        <td>gut</td>
-                        <td>gut</td>
+ 					<tr>
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche kategorie;
+	                    	kategorie.getLebensmittelInfoByName("kategorie");
+	                        System.out.println(kategorie); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche kategorie;
+	                    kategorie.getLebensmittelInfoByName("kategorie");
+	                    %>
+	                    </td>
+                        
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche karenzphase;
+	                    	karenzphase.getLebensmittelInfoByName("Karenzphase");
+	                        System.out.println(karenzphase); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche karenzphase;
+	                    karenzphase.getLebensmittelInfoByName("Karenzphase");
+	                    %>
+	                    </td>
+	                        
+	                    <% 
+	                    while(rs.next()){
+	                    	Lebensmittelsuche dauerernaehrung;
+	                    	dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
+	                        System.out.println(dauerernaehrung); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche dauerernaehrung;
+	                    dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
+	                    %>
+	                    </td>
                     </tr>
-                    <tr>
-                        <td>Zuckermelone</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Apfel</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Pfirsich</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Stachelbeeren</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Avocados</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Bananen</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Erdbeeren</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    </tbody>
                 </table>
             </section>
-            <section class="table_legend"> <!--IDEE: Legende nur anzeigen bei mobiler Ansicht-->
-                <h3 class="title_legende">Legende:</h3>
-                <ul class="legende">
-                    <li>KP = Karenzphase</li>
-                    <li>DE = DauerernÃ¤hrung</li>
-                </ul>
+            <section>
+          		<form>
+            		<div>
+            			<input> type="search" id="mySearch" name="q">
+            			<button>Suche</button>
+            		</div>
+           		</form>
+           		<select> name="select">
+           			<option value="fleisch">Fleisch</option>
+           			<option value="obst">Obst</option>
+           			<option value="gemuese">Gemuese</option>
+           			<option value="huelsenfruechte">Huelsenfruechte</option>
+           			<option value="nuesseundsamen">Nuesse und Samen</option>
+           			<option value="fisch">Fisch</option>
+           			<option value="milchundmilchprodukte">Milch und Milchprodukte</option>
+           			<option value="sonstiges">Sonstiges</option>
+           		</select>
+                <table class="table_lebensmittelkategorie">
+               		<tr>
+                    <th>Kategorie</th>
+                    <th>Karenzphase</th>
+                    <th>Dauerernaehrung</th>
+                    </tr>
+                    <tr>
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche kategorie2;
+	                    	kategorie2.getLebensmittelInfoByName("kategorie");
+	                        System.out.println(kategorie2); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche kategorie2;
+	                    kategorie2.getLebensmittelInfoByName("kategorie");
+	                    %>
+	                    </td>
+                        
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche karenzphase2;
+	                    	karenzphase2.getLebensmittelInfoByName("Karenzphase");
+	                        System.out.println(karenzphase2); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche karenzphase2;
+	                    karenzphase2.getLebensmittelInfoByName("Karenzphase");
+	                    %>
+	                    </td>
+	                        
+	                    <% 
+	                    while(rs.next()){
+	                    	Lebensmittelsuche dauerernaehrung2;
+	                    	dauerernaehrung2.getLebensmittelInfoByName("Dauerernaehrung");
+	                        System.out.println(dauerernaehrung2); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche dauerernaehrung2;
+	                    dauerernaehrung2.getLebensmittelInfoByName("Dauerernaehrung");
+	                    %>
+	                    </td>
+                    </tr>
+                </table>
             </section>
-        </article>
-        <aside>
-            <h3>Beliebte Lebensmittel (Kategorie Ã¼bergreifend)</h3>
-            <table class="table_beliebte_lebensmittel">
-                <thead>
-                <tr>
-                    <th rowspan="2">Platz</th>
-                    <th rowspan="2">Lebensmittel</th>
-                    <th colspan="2">VertrÃ¤glichkeit</th>
-                    <th rowspan="2">Zugriffe</th>
-                </tr>
-                <tr>
-                    <th>KP</th>
-                    <th>DE</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Kartoffeln</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>100'000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Brokkoli</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>80'000</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Rindfleisch</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>70'000</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Mango</td>
-                    <td>mittel</td>
-                    <td>gut</td>
-                    <td>60'000</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Kokosmilch</td>
-                    <td>mittel</td>
-                    <td>mittel</td>
-                    <td>50'000</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Bananen</td>
-                    <td>schlecht</td>
-                    <td>mittel</td>
-                    <td>40'000</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Sojaprodukte</td>
-                    <td>schlecht</td>
-                    <td>mittel</td>
-                    <td>30'000</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Bier</td>
-                    <td>schlecht</td>
-                    <td>schlecht</td>
-                    <td>20'000</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Eiweiss</td>
-                    <td>schlecht</td>
-                    <td>schlecht</td>
-                    <td>10'000</td>
-                </tr>
-                </tbody>
-            </table>
-        </aside>
     </div>
     <!-- #main -->
 </div>
 <!-- #main-container -->
+<div class="footer-container">
 <!-- 
  <footer class="wrapper">
         <h4>Quelle:</h4>
