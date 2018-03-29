@@ -2,7 +2,6 @@ package Suche;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -24,18 +23,27 @@ public class LebensmittelsucheTest {
 	}
 	
 	@Test
-	public void testAddLebensmittelApfel() {
-		Lebensmitteldaten apfel = new Lebensmitteldaten(1,"Apfel", "verschieden","vertraeglich","Obst"); 
+	public void testLebensmittelApfelHinzugefuegt() {
+		Lebensmitteldaten apfel = new Lebensmitteldaten(1,"Apfel", "mittel","gut","Obst"); 
 		lebensmittelliste.lebensmittelHinzufuegen(apfel);
 		assertEquals(1, lebensmittelliste.gibAbzahlLebensmittel());
 	}
 
 	@Test
-	public void testSucheLebensmittelApfelGefunden() {
+	public void testSucheLebensmittelNameApfelGefunden() {
 		Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Apfel");
 		assertEquals("Apfel", lebensmittel.getLname());
-		assertEquals("verschieden", lebensmittel.getKarenzphase());
-		assertEquals("vertraeglich", lebensmittel.getDauerernaehrung()); 
 		assertEquals("Obst", lebensmittel.getKategorie()); 
+		assertEquals("mittel", lebensmittel.getKarenzphase());
+		assertEquals("gut", lebensmittel.getDauerernaehrung()); 
+	}
+	
+	@Test
+	public void testSucheLebensmittelKategorieApfelGefunden() {
+		Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("Obst", "Apfel");
+		assertEquals("Obst", lebensmittel.getKategorie());
+		assertEquals("Apfel", lebensmittel.getLname());
+		assertEquals("mittel", lebensmittel.getKarenzphase());
+		assertEquals("gut", lebensmittel.getDauerernaehrung()); 
 	}
 }
