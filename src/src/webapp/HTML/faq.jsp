@@ -35,12 +35,12 @@
                         <div id="mySidenav" class="sidenav side-nav">
                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
                            <a href="../index.jsp">Home</a>
-                           <a href="lebensmittelkategorie.jsp">Lebensmittel</a>
-                           <a class="active" href="faq.jsp">FAQ</a>
-                           <a href="#">Mahlzeitsassistent</a>
-                           <a href="#">Beliebtheitsskala</a>
-                           <a href="#">Rezepte</a>
-                           <a href="Suchfilter.jsp">Suche</a>
+        		           <a href="lebensmittelkategorie.jsp">Lebensmittel</a>
+                		   <a href="Mahlzeitsassistent.jsp">Mahlzeitsassistent</a>            
+                	   	   <a href="Rezepte.jsp">Rezepte</a>
+                		   <a href="Zugriffsskala.jsp">Zugriffsskala</a>
+                		   <a href="Suchfilter.jsp">Suche</a>
+                		   <a class ="active" href="faq.jsp">FAQ</a>
                         </div>
                      </nav>
                      <a class="suchicon" href="Suchfilter.html">&#8981;</a>
