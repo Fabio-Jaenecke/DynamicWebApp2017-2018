@@ -32,18 +32,17 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">FrÃ¼chte&nbsp;<span
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Früchte&nbsp;<span
                 class="arrowdown">&#9662;</span></span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
                 <a href="../index.jsp">Home</a>
                 <a class="active" href="lebensmittelkategorie.jsp">Lebensmittel</a>
-                <a href="faq.jsp">FAQ</a>
-                <a href="#">Mahlzeitsassistent</a>
-                <a href="#">Beliebtheitsskala</a>
-                <a href="#">Rezepte</a>
-                <a href="Kontaktformular.jsp">Kontakt</a>
+                <a href="Mahlzeitsassistent.jsp">Mahlzeitsassistent</a>
+                <a href="Rezepte.jsp">Rezepte</a>
+                <a href="Zugriffsskala.jsp">Zugriffsskala</a>
                 <a href="Suchfilter.jsp">Suche</a>
+                <a href="faq.jsp">FAQ</a>
             </div>
         </nav>
         <a class="suchicon" href="Suchfilter.html">&#8981;</a>

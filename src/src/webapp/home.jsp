@@ -35,11 +35,11 @@
                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
                            <a class="active" href="index.jsp">Home</a> 
                            <a href="HTML/lebensmittelkategorie.jsp">Lebensmittel</a>
-                           <a href="HTML/faq.jsp">FAQ</a>
-                           <a href="#">Mahlzeitsassistent</a>
-                           <a href="#">Beliebtheitsskala</a>
-                           <a href="#">Rezepte</a>
+                           <a href="HTML/Mahlzeitsassistent.jsp">Mahlzeitsassistent</a>
+                           <a href="HTML/Rezepte.jsp">Rezepte</a>
+                           <a href="HTML/Zugriffsskala.jsp">Zugriffsskala</a>
                            <a href="HTML/Suchfilter.jsp">Suche</a>
+                           <a href="HTML/faq.jsp">FAQ</a>
                         </div>
                      </nav>
                      <a class="suchicon" href="HTML/Suchfilter.html">&#8981;</a>
