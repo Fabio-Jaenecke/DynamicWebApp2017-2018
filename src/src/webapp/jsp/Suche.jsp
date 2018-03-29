@@ -1,3 +1,5 @@
+<%-- TODO: JAVA-CODE richtig implementieren, bzw. DAO implementieren (Dann könnte die JSP Logik von hier übernommen werden --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -58,43 +60,59 @@
             <section>
           		<form>
             		<div>
-            			<input> type="search" id="mySearch" name="q">
+            			<input type="search" id="mySearch" name="q">
             			<button>Suche</button>
             		</div>
            		</form>
+           		<%@ page import="java.sql.ResultSet"%>
+           		<%@ page import ="datenbank.container.*" %>
+           		<%@ page import ="Suche.*" %>
                 <table class="table_lebensmittelname">
                		<tr>
                     <th>Kategorie</th>
                     <th>Karenzphase</th>
                     <th>Dauerernaehrung</th>
                     </tr>
+ 					<tr>
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche kategorie;
+	                    	kategorie.getLebensmittelInfoByName("kategorie");
+	                        System.out.println(kategorie); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche kategorie;
+	                    kategorie.getLebensmittelInfoByName("kategorie");
+	                    %>
+	                    </td>
                         
-                    <while(rs.next()){
-                   	Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("kategorie");
-                    System.out.println(kategorie); 
-                    }>
-                        
-                    <tr>
-                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Kategorie")><td>
-                    </td>
-                        
-                    <while(rs.next()){
-                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("karenzphase");
-                    System.out.println(karenzphase); 
-                    }>
-                        
-                    <tr>
-                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Karenzphase")><td>
-                    </td>
-                        
-                    <while(rs.next()){
-                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("dauerernaherung");
-                    System.out.println(dauerernaehrung); 
-                    }>
-                        
-                    <tr>
-                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Dauerernaehrung")><td>
-                    </td>
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche karenzphase;
+	                    	karenzphase.getLebensmittelInfoByName("Karenzphase");
+	                        System.out.println(karenzphase); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche karenzphase;
+	                    karenzphase.getLebensmittelInfoByName("Karenzphase");
+	                    %>
+	                    </td>
+	                        
+	                    <% 
+	                    while(rs.next()){
+	                    	Lebensmittelsuche dauerernaehrung;
+	                    	dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
+	                        System.out.println(dauerernaehrung); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche dauerernaehrung;
+	                    dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
+	                    %>
+	                    </td>
+                    </tr>
                 </table>
             </section>
             <section>
@@ -120,33 +138,46 @@
                     <th>Karenzphase</th>
                     <th>Dauerernaehrung</th>
                     </tr>
-                        
-                    <while(rs.next()){
-                   	Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("kategorie");
-                    System.out.println(kategorie); 
-                    }>
-                        
                     <tr>
-                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("Kategorie")><td>
-                    </td>
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche kategorie2;
+	                    	kategorie2.getLebensmittelInfoByName("kategorie");
+	                        System.out.println(kategorie2); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche kategorie2;
+	                    kategorie2.getLebensmittelInfoByName("kategorie");
+	                    %>
+	                    </td>
                         
-                    <while(rs.next()){
-                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("karenzphase");
-                    System.out.println(karenzphase); 
-                    }>
-                        
-                    <tr>
-                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("Karenzphase")><td>
-                    </td>
-                        
-                    <while(rs.next()){
-                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("dauerernaherung");
-                    System.out.println(dauerernaehrung); 
-                    }>
-                        
-                    <tr>
-                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("Dauerernaehrung")><td>
-                    </td>
+	                    <%
+	                    while(rs.next()){
+	                    	Lebensmittelsuche karenzphase2;
+	                    	karenzphase2.getLebensmittelInfoByName("Karenzphase");
+	                        System.out.println(karenzphase2); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche karenzphase2;
+	                    karenzphase2.getLebensmittelInfoByName("Karenzphase");
+	                    %>
+	                    </td>
+	                        
+	                    <% 
+	                    while(rs.next()){
+	                    	Lebensmittelsuche dauerernaehrung2;
+	                    	dauerernaehrung2.getLebensmittelInfoByName("Dauerernaehrung");
+	                        System.out.println(dauerernaehrung2); 
+	                        }%>
+	                    <td>
+	                    <%
+	                    Lebensmittelsuche dauerernaehrung2;
+	                    dauerernaehrung2.getLebensmittelInfoByName("Dauerernaehrung");
+	                    %>
+	                    </td>
+                    </tr>
                 </table>
             </section>
     </div>
