@@ -69,30 +69,30 @@
                     </tr>
                         
                     <while(rs.next()){
-                   	String Kategorie = rs.getString("kategorie");
+                   	Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("kategorie");
                     System.out.println(kategorie); 
                     }>
                         
                     <tr>
-                    <td><String Kategorie = rs.getString("Kategorie")><td>
+                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Kategorie")><td>
                     </td>
                         
                     <while(rs.next()){
-                    String Karenzphase = rs.getString("karenzphase");
+                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("karenzphase");
                     System.out.println(karenzphase); 
                     }>
                         
                     <tr>
-                    <td><String Karenzphase = rs.getString("Karenzphase")><td>
+                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Karenzphase")><td>
                     </td>
                         
                     <while(rs.next()){
-                    String Dauerernaehrung = rs.getString("dauerernaherung");
+                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("dauerernaherung");
                     System.out.println(dauerernaehrung); 
                     }>
                         
                     <tr>
-                    <td><String Dauerernaehrung = rs.getString("Dauerernaehrung")><td>
+                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByName("Dauerernaehrung")><td>
                     </td>
                 </table>
             </section>
@@ -121,30 +121,30 @@
                     </tr>
                         
                     <while(rs.next()){
-                   	String Kategorie = rs.getString("kategorie");
+                   	Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("kategorie");
                     System.out.println(kategorie); 
                     }>
                         
                     <tr>
-                    <td><String Kategorie = rs.getString("Kategorie")><td>
+                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("Kategorie")><td>
                     </td>
                         
                     <while(rs.next()){
-                    String Karenzphase = rs.getString("karenzphase");
+                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("karenzphase");
                     System.out.println(karenzphase); 
                     }>
                         
                     <tr>
-                    <td><String Karenzphase = rs.getString("Karenzphase")><td>
+                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("Karenzphase")><td>
                     </td>
                         
                     <while(rs.next()){
-                    String Dauerernaehrung = rs.getString("dauerernaherung");
+                    Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("dauerernaherung");
                     System.out.println(dauerernaehrung); 
                     }>
                         
                     <tr>
-                    <td><String Dauerernaehrung = rs.getString("Dauerernaehrung")><td>
+                    <td><Lebensmitteldaten lebensmittel = lebensmittelliste.getLebensmittelInfoByKategorie("Dauerernaehrung")><td>
                     </td>
                 </table>
             </section>
