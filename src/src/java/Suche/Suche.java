@@ -12,7 +12,7 @@ public interface Suche {
 	
 	public Lebensmitteldaten getLebensmittelInfoByName(String lebensmittelName);
 	public Lebensmitteldaten getLebensmittelInfoByKategorie(String kategorieName, String lebensmittelName); 
-	public Lebensmitteldaten getLebensmittelInfoByAllgemeineSuche(String suchwort); 
+	public Lebensmitteldaten getLebensmittelInfoBySuchfilter(String suchwort); 
 }
 
-//TODO: Neue Java-Klassen fuer Kategoriensuche (jaenefab) & AllgemeineSuche 
+//TODO: Java-Klasse fuer Suchfilter erstellen. (caradrap)
