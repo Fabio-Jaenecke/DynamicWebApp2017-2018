@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
 <![endif]-->
@@ -32,16 +34,16 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Zugriffsskala&nbsp;</span>
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Mahlzeitsassistent&nbsp;</span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-                <a href="../index.jsp">Home</a>
-                <a href="lebensmittelkategorie.jsp">Lebensmittel</a>
-                <a href="Mahlzeitsassistent.jsp">Mahlzeitsassistent</a>            
-                <a href="Rezepte.jsp">Rezepte</a>
-                <a class ="active" href="Zugriffsskala.jsp">Zugriffsskala</a>
-                <a href="Suchfilter.jsp">Suche</a>
-                <a href="faq.jsp">FAQ</a>
+                <a href="${pageContext.request.contextPath}/index.jsp">Home</a>
+                <a href="${pageContext.request.contextPath}/jsp/lebensmittelkategorie.jsp">Lebensmittel</a>
+                <a class="active" href="${pageContext.request.contextPath}/jsp/Mahlzeitsassistent.jsp">Mahlzeitsassistent</a>
+                <a href="${pageContext.request.contextPath}/jsp/Rezepte.jsp">Rezepte</a>
+                <a href="${pageContext.request.contextPath}/jsp/Zugriffsskala.jsp">Zugriffsskala</a>
+                <a href="${pageContext.request.contextPath}/jsp/Suchfilter.jsp">Suche</a>
+                <a href="${pageContext.request.contextPath}/jsp/faq.jsp">FAQ</a>
             </div>
         </nav>
         <a class="suchicon" href="Suchfilter.html">&#8981;</a>
@@ -51,8 +53,8 @@
     <div class="main wrapper clearfix">
         <article>
             <header>
-                <h2>Zugriffsskala</h2>
-                <p>Diese Skala zeigt die Lebensmittel f�r welchen die Benutzer am meisten Interesse gezeigt haben.</p>
+                <h2>Mahzeitsassistent</h2>
+                <p>Hier könne Sie bald Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>
                 
             </header>
 
@@ -62,16 +64,16 @@
     <!-- #main -->
 </div>
 <!-- #main-container -->
-<div class="footer-container">
-    <footer class="wrapper">
+<!-- 
+ <footer class="wrapper">
         <h4>Quelle:</h4>
         <a href="https://www.nahrungsmittel-intoleranz.com">https://www.nahrungsmittel-intoleranz.com</a>
         <h3>Impressum</h3>
-        <p> © 2017 PSIT1/2, WEB1, ZHAW<br>
-            Powered by: André Livramento (livraand), Raphael Caradonna (caradrap) , Marko Despotovic (despomar), Fabio
+        <p> Â© 2017 PSIT1/2, WEB1, ZHAW<br>
+            Powered by: Michèle Trebo (trebomic), Raphael Caradonna (caradrap) , Marko Despotovic (despomar), Fabio
             Jaenecke (jaenefab)
         </p>
-        <!-- Sharingbutton E-Mail -->
+        <!-- Sharingbutton E-Mail
         <table class="table_contact">
             <thead>
             <tr>
@@ -88,7 +90,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/>
                                 </svg>
-                                livraand
+                                trebomic
                             </div>
                         </div>
                     </a>
@@ -138,7 +140,7 @@
             </tbody>
         </table>
     </footer>
-</div>
+</div> -->   
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="../js/main.js"></script>

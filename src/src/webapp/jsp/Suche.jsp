@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
 <![endif]-->
@@ -32,18 +34,17 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Früchte&nbsp;<span
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">FrÃ¼chte&nbsp;<span
                 class="arrowdown">&#9662;</span></span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-                <a href="../index.jsp">Suche</a>
-                <a class="active" href="suche.jsp">Lebensmittel</a>
-                <a href="faq.jsp">FAQ</a>
-                <a href="#">Mahlzeitsassistent</a>
-                <a href="#">Beliebtheitsskala</a>
-                <a href="#">Rezepte</a>
-                <a href="Kontaktformular.jsp">Kontakt</a>
-                <a href="Suchfilter.jsp">Suche</a>
+                <a href="${pageContext.request.contextPath}/index.jsp">Home</a>
+                <a href="${pageContext.request.contextPath}/jsp/lebensmittelkategorie.jsp">Lebensmittel</a>
+                <a href="${pageContext.request.contextPath}/jsp/Mahlzeitsassistent.jsp">Mahlzeitsassistent</a>
+                <a href="${pageContext.request.contextPath}/jsp/Rezepte.jsp">Rezepte</a>
+                <a href="${pageContext.request.contextPath}/jsp/Zugriffsskala.jsp">Zugriffsskala</a>
+                <a class="active" href="${pageContext.request.contextPath}/jsp/Suchfilter.jsp">Suche</a>
+                <a href="${pageContext.request.contextPath}/jsp/faq.jsp">FAQ</a>
             </div>
         </nav>
         <a class="suchicon" href="Suchfilter.html">&#8981;</a>
@@ -153,15 +154,16 @@
 </div>
 <!-- #main-container -->
 <div class="footer-container">
-    <footer class="wrapper">
+<!-- 
+ <footer class="wrapper">
         <h4>Quelle:</h4>
         <a href="https://www.nahrungsmittel-intoleranz.com">https://www.nahrungsmittel-intoleranz.com</a>
         <h3>Impressum</h3>
-        <p> © 2017 PSIT1/2, WEB1, ZHAW<br>
-            Powered by: Mich�le Trebo (trebomic), Raphael Caradonna (caradrap) , Marko Despotovic (despomar), Fabio
+        <p> Â© 2017 PSIT1/2, WEB1, ZHAW<br>
+            Powered by: Michèle Trebo (trebomic), Raphael Caradonna (caradrap) , Marko Despotovic (despomar), Fabio
             Jaenecke (jaenefab)
         </p>
-        <!-- Sharingbutton E-Mail -->
+        <!-- Sharingbutton E-Mail
         <table class="table_contact">
             <thead>
             <tr>
@@ -228,7 +230,7 @@
             </tbody>
         </table>
     </footer>
-</div>
+</div> -->   
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="../js/main.js"></script>

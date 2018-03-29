@@ -1,4 +1,4 @@
-package f2000Rangliste;
+package rangliste;
 
 import java.util.List;
 import java.util.ArrayList;
