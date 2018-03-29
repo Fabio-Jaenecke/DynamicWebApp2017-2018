@@ -15,8 +15,6 @@ public interface DatabaseCreation {
 	
 	void setUpTableLebensmittelkategorie();
 	
-	void setUpTableKategorieneinteilung();
-	
 	void setUpTableNaehrstoff();
 	
 	void setUpTableFavorit();
