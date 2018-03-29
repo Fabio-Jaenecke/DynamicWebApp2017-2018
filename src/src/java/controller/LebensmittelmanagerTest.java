@@ -43,16 +43,19 @@ public class LebensmittelmanagerTest {
 	
 	@Test 
 	public void testGetKategorieApfel() {
+		String lebensmittel = lebensmittelliste.getKategorie("Apfel");
 		assertEquals("Obst", lebensmittelliste.getKategorie("Apfel"));
 	}
 	
 	@Test 
 	public void testGetKarenzphaseApfel() {
+		String lebensmittel = lebensmittelliste.getKarenzphase("Apfel");
 		assertEquals("verschieden", lebensmittelliste.getKarenzphase("Apfel"));
 	}
 	
 	@Test
 	public void testGetDauerernaehrungApfel() {
+		String lebensmittel = lebensmittelliste.getDauerernaehrung("Apfel");
 		assertEquals("vertraeglich", lebensmittelliste.getDauerernaehrung("Apfel"));
 	}
 

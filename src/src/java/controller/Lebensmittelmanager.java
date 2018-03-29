@@ -26,11 +26,7 @@ public class Lebensmittelmanager
 	
 	/**
 	 * Fuege der Sammlung ein Lebensmittel hinzu.
-<<<<<<< HEAD
 	 * @param lebensmittelname das hinzugefuegte Lebensmittel.
-=======
-	 * @param lebensmittelname das hinzugef�gte Lebensmittel.
->>>>>>> refs/remotes/origin/master
 	 */
 	public void lebensmittelHinzufuegen(Lebensmitteldaten lebensmittelname)
 	{
