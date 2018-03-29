@@ -1,7 +1,7 @@
 /**
  * 
  */
-package f2000Rangliste;
+package rangliste;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import f2000Rangliste.SortierenDerRangliste;
+import rangliste.SortierenDerRangliste;
 
 /**
  * tests class AufAbSortierung
