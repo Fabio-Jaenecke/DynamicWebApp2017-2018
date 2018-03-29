@@ -4,7 +4,7 @@ import controller.Lebensmittelmanager;
 import datenbank.container.Lebensmitteldaten;
 
 /**
- * Klasse für die spezifische Suche nach einem Lebensmittel. 
+ * Klasse fuer die spezifische Suche nach einem Lebensmittel. 
  *
  * @author mjtre
  * @version 22.03.2018 
@@ -20,6 +20,15 @@ public abstract class Lebensmittelsuche implements Suche {
 	public Lebensmitteldaten getLebensmittelInfoByName(String lebensmittelName) {
 		return lebensmittelmanager.getLebensmittelInfoByName(lebensmittelName);
 	}
+	
+	/**
+	 * Rufe die Methode getLebensmittelInfoByKategorie auf. 
+	 * @param lebensmittelName das gesuchte Lebensmittel 
+	 */
+	public Lebensmitteldaten getLebensmittelInfoByKategorie(String kategorieName, String lebensmittelName) {
+		return lebensmittelmanager.getLebensmittelInfoByKategorie(kategorieName, lebensmittelName);
+	}
+
 }
 
 	
