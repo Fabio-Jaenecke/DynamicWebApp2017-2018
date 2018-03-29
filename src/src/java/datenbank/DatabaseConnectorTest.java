@@ -58,7 +58,7 @@ public class DatabaseConnectorTest {
 	
 	//TODO write test
 	@Test
-	public void testTableLebensmittedatenl() {
+	public void testTableLebensmittedaten() {
 		String sql = "select * from lebensmitteldaten";
 		ResultSet res = conn.getResultSet(sql);
 		assertNotNull(res);
@@ -80,13 +80,6 @@ public class DatabaseConnectorTest {
 		assertNotNull(res);
 	}
 	
-	//TODO write test
-	@Test
-	public void testTableKategorieneinteilung(){
-		String sql = "select * from kategorieneinteilung";
-		ResultSet res = conn.getResultSet(sql);
-		assertNotNull(res);
-	}
 	
 	//TODO write test
 	@Test

@@ -65,7 +65,6 @@ public class DatabaseConnector implements DatabaseCreation{
 		setUpTableLebensmitteldaten();
 		setUpTableZugriffsskala();
 		setUpTableLebensmittelkategorie();
-		setUpTableKategorieneinteilung();
 		setUpTableNaehrstoff();
 		setUpTableFavorit();
 		setUpTableKatzugehoerigkeit();
@@ -112,6 +111,23 @@ public class DatabaseConnector implements DatabaseCreation{
 			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (6001, 'Erdnuesse', 'schlecht', 'schlecht')");
 			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (6002, 'Samen', 'gut', 'gut')");
 			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (7001, 'Thun-frisch', 'schlecht', 'mittel')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (7002, 'Thun-conserve', 'schlecht', 'schlecht')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (7003, 'Fischstaebchen', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (7004, 'Seeteufel', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (7005, 'Dorade', 'gut', 'gut')");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (8001, 'Hutenkaese', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (8002, 'Joghurt', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (8003, 'Hartkaese', 'schlecht', 'schlecht')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (8004, 'Milch', 'mittel', 'gut')");
+			
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (9001, 'Kaffee', 'mittel', 'mittel')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (9002, 'Ei', 'mittel', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (9003, 'Teig', 'gut', 'gut')");
+			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (9004, 'Alkohol', 'schlecht', 'schlecht')");
+			
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -130,7 +146,11 @@ public class DatabaseConnector implements DatabaseCreation{
 			statement.execute("CREATE TABLE zugriffsskala(zindex int(3) primary key, platzierung int(3),"
 					+ " aZugriffe int(3));");
 			
-			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (1, 11, 111)");
+			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (100, 11, 111)");
+			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (200, 12, 211)");
+			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (300, 13, 121)");
+			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (400, 14, 112)");
+			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (500, 15, 113)");
 			
 			statement.close();
 			conn.commit();
@@ -166,21 +186,6 @@ public class DatabaseConnector implements DatabaseCreation{
 		}
 	}
 	
-	/*
-	 * set up table kategorieneinteilung
-	 */
-	public void setUpTableKategorieneinteilung() {
-		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table kategorieneinteilung if exists");
-			statement.execute("CREATE TABLE kategorieneinteilung(keindex int(3) primary key, kindex1 int(3),"
-					+ " kindex2 int(3), kindex3 int(3));");
-			statement.close();
-			conn.commit();
-		} catch (SQLException e) {
-			catchException(e);
-		}
-	};
 	
 	/*
 	 * set up table naehrstoff
@@ -189,7 +194,12 @@ public class DatabaseConnector implements DatabaseCreation{
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table naehrstoff if exists");
-			statement.execute("CREATE TABLE naehrstoff(nindex int(3) primary key, nname varchar(100));");
+			statement.execute("CREATE TABLE naehrstoff(nname varchar(100) primary key);");
+			
+			statement.executeUpdate("INSERT INTO naehrstoff " + "VALUES ('Staerkebeilage')");
+			statement.executeUpdate("INSERT INTO naehrstoff " + "VALUES ('Proteine')");
+			statement.executeUpdate("INSERT INTO naehrstoff " + "VALUES ('Vitamine')");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -204,8 +214,14 @@ public class DatabaseConnector implements DatabaseCreation{
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table favorit if exists");
-			statement.execute("CREATE TABLE favorit(zindex int(3), lindex int(3), primary key(zindex, lindex),"
+			statement.execute("CREATE TABLE favorit(zindex int(3), lindex int(4), primary key(zindex, lindex),"
 					+ "foreign key(zindex) references zugriffsskala, foreign key(lindex) references lebensmitteldaten);");
+			
+			statement.executeUpdate("INSERT INTO favorit " + "VALUES (100, 1001)");
+			statement.executeUpdate("INSERT INTO favorit " + "VALUES (200, 2001)");
+			statement.executeUpdate("INSERT INTO favorit " + "VALUES (300, 3001)");
+			statement.executeUpdate("INSERT INTO favorit " + "VALUES (400, 4001)");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -220,9 +236,46 @@ public class DatabaseConnector implements DatabaseCreation{
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table katzugehoerigkeit if exists");
-			statement.execute("CREATE TABLE katzugehoerigkeit(lindex int(3), kindex int(3),"
-					+ " primary key(kindex, lindex),foreign key(kindex) references lebensmittelkategorie"
+			statement.execute("CREATE TABLE katzugehoerigkeit(lindex int(4), kindex int(4),"
+					+ " primary key(lindex, kindex),foreign key(kindex) references lebensmittelkategorie"
 					+ ", foreign key(lindex) references lebensmitteldaten);");
+			
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1001, 1000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1002, 1000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1003, 1000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1004, 1000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1005, 1000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1006, 1000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (2001, 2000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (2002, 2000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (2003, 2000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (2004, 2000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (2005, 2000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (3001, 3000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (3002, 3000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (3003, 3000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (3004, 3000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (3005, 3000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (4001, 4000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (4002, 4000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (5001, 5000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (5002, 5000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (6001, 6000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (6002, 6000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (7001, 7000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (7002, 7000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (7003, 7000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (7004, 7000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (7005, 7000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (8001, 8000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (8002, 8000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (8003, 8000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (8004, 8000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (9001, 9000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (9002, 9000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (9003, 9000)");
+			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (9004, 9000)");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -237,9 +290,19 @@ public class DatabaseConnector implements DatabaseCreation{
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table enthaelt if exists");
-			statement.execute("CREATE TABLE enthaelt(kindex int(3), keindex int(3), primary key(kindex, keindex),"
+			statement.execute("CREATE TABLE enthaelt(kindex int(4), nname varchar(100), primary key(kindex, nname),"
 					+ " foreign key(kindex) references lebensmittelkategorie, "
-					+ "foreign key(keindex) references kategorieneinteilung);");
+					+ "foreign key(nname) references naehrstoff);");
+			
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (1000, 'Proteine')");
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (2000, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (3000, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (5000, 'Staerkebeilage')");
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (6000, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (7000, 'Proteine')");
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (8000, 'Proteine')");
+			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (9000, 'Staerkebeilage')");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
@@ -254,8 +317,28 @@ public class DatabaseConnector implements DatabaseCreation{
 		try {
 			Statement statement = conn.createStatement();
 			statement.execute("drop table naehrzugehoerigkeit if exists");
-			statement.execute("CREATE TABLE naehrzugehoerigkeit(nindex int(3), lindex int(3), primary key(nindex, lindex)," 
-					+ " foreign key(nindex) references naehrstoff, foreign key(lindex) references lebensmitteldaten);");
+			statement.execute("CREATE TABLE naehrzugehoerigkeit(lindex int(4), nname varchar(100), primary key(lindex, nname)," 
+					+ " foreign key(lindex) references lebensmitteldaten, foreign key(nname) references naehrstoff);");
+			
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (1001, 'Proteine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (1002, 'Proteine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (1003, 'Proteine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (1004, 'Proteine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (2001, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (2002, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (2003, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (2004, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (3001, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (3002, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (3003, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (3004, 'Vitamine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (5001, 'Staerkebeilage')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (5002, 'Staerkebeilage')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (7001, 'Proteine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (7002, 'Proteine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (7003, 'Proteine')");
+			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (9003, 'Staerkebeilage')");
+			
 			statement.close();
 			conn.commit();
 		} catch (SQLException e) {
