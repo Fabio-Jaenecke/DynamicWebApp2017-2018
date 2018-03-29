@@ -25,8 +25,8 @@ public class Lebensmittelmanager
 	}
 	
 	/**
-	 * Füge der Sammlung ein Lebensmittel hinzu.
-	 * @param lebensmittelname das hinzugefügte Lebensmittel.
+	 * Fuege der Sammlung ein Lebensmittel hinzu.
+	 * @param lebensmittelname das hinzugefuegte Lebensmittel.
 	 */
 	public void lebensmittelHinzufuegen(Lebensmitteldaten lebensmittelname)
 	{
