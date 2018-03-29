@@ -13,7 +13,7 @@ import datenbank.container.Lebensmitteldaten;
 public class Lebensmittelmanager
 {
 	// Eine ArrayList, in der die Namen von Lebensmitteln gespeichert
-	// werden können.  
+	// werden koennen.  
 	private ArrayList<Lebensmitteldaten> lebensmittel; 
 	
 	/**
@@ -25,8 +25,12 @@ public class Lebensmittelmanager
 	}
 	
 	/**
-	 * Füge der Sammlung ein Lebensmittel hinzu.
-	 * @param lebensmittelname das hinzugefügte Lebensmittel.
+	 * Fuege der Sammlung ein Lebensmittel hinzu.
+<<<<<<< HEAD
+	 * @param lebensmittelname das hinzugefuegte Lebensmittel.
+=======
+	 * @param lebensmittelname das hinzugefï¿½gte Lebensmittel.
+>>>>>>> refs/remotes/origin/master
 	 */
 	public void lebensmittelHinzufuegen(Lebensmitteldaten lebensmittelname)
 	{
@@ -98,7 +102,7 @@ public class Lebensmittelmanager
 	}
 	
 	/** 
-	 * Gib die Dauerernährung anhand des Lebensmittelnamens.
+	 * Gib die Dauerernaehrung anhand des Lebensmittelnamens.
 	 * @param name der Name des zu suchenden Lebensmittels. 
 	 * @return dauerernaehrung
 	 */
@@ -123,6 +127,24 @@ public class Lebensmittelmanager
 		for(Lebensmitteldaten lebensmittel: lebensmittel) {
 			if(lebensmittel.getLname().equals(name)) {
 				return lebensmittel;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * Gib alle Lebensmittelinformationen pro Kategorie. 
+	 * @param kategorie die Kategorie des zu suchenden Lebensmittels.
+	 * @param name der Name des zu suchenden Lebensmittels.
+	 * @return lebensmittel 
+	 * @return null falls Lebensmittel nicht gefunden
+	 */
+	public Lebensmitteldaten getLebensmittelInfoByKategorie(String name, String kategorie) {
+		for(Lebensmitteldaten lebensmittel : lebensmittel) {
+			if(lebensmittel.getKategorie().equals(kategorie)) {
+				if(lebensmittel.getLname().equals(name)) {
+					return lebensmittel;
+				}
 			}
 		}
 		return null;
