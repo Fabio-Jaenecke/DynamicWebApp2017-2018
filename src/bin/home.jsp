@@ -35,13 +35,13 @@
                         <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">&nbsp;&nbsp;&nbsp;&nbsp;Home</span>
                         <div id="mySidenav" class="sidenav side-nav">
                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-                            <a class="active" href="${pageContext.request.contextPath}/index.jsp">Home</a>
-                			<a href="${pageContext.request.contextPath}/jsp/lebensmittelkategorie.jsp">Lebensmittel</a>
-                			<a href="${pageContext.request.contextPath}/jsp/Mahlzeitsassistent.jsp">Mahlzeitsassistent</a>
-                			<a href="${pageContext.request.contextPath}/jsp/Rezepte.jsp">Rezepte</a>
-                			<a href="${pageContext.request.contextPath}/jsp/Zugriffsskala.jsp">Zugriffsskala</a>
-                			<a href="${pageContext.request.contextPath}/jsp/Suchfilter.jsp">Suche</a>
-                			<a href="${pageContext.request.contextPath}/jsp/faq.jsp">FAQ</a>
+                            <a class="active" href="${pageContext.request.contextPath}/home/">Home</a>
+                			<a href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a>
+                			<a href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a>
+                			<a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
+                			<a href="${pageContext.request.contextPath}/beliebtheitsskala/">Zugriffsskala</a>
+                			<a href="${pageContext.request.contextPath}/suchfilter/">Suche</a>
+                			<a href="${pageContext.request.contextPath}/faq/">FAQ</a>
                         </div>
                      </nav>
                      <a class="suchicon" href="HTML/Suchfilter.html">&#8981;</a>
