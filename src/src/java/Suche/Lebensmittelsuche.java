@@ -23,6 +23,7 @@ public abstract class Lebensmittelsuche implements Suche {
 	
 	/**
 	 * Rufe die Methode getLebensmittelInfoByKategorie auf. 
+	 * @param kategorieName die gesuchte Kategorie
 	 * @param lebensmittelName das gesuchte Lebensmittel 
 	 */
 	public Lebensmitteldaten getLebensmittelInfoByKategorie(String kategorieName, String lebensmittelName) {
@@ -30,5 +31,3 @@ public abstract class Lebensmittelsuche implements Suche {
 	}
 
 }
-
-	
