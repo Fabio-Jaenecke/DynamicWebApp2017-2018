@@ -36,8 +36,8 @@
                 class="arrowdown">&#9662;</span></span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-                <a href="../index.jsp">Home</a>
-                <a class="active" href="lebensmittelkategorie.jsp">Lebensmittel</a>
+                <a href="../index.jsp">Suche</a>
+                <a class="active" href="suche.jsp">Lebensmittel</a>
                 <a href="faq.jsp">FAQ</a>
                 <a href="#">Mahlzeitsassistent</a>
                 <a href="#">Beliebtheitsskala</a>
@@ -53,161 +53,101 @@
     <div class="main wrapper clearfix">
         <article>
             <header>
-                <h2>Definition von Frucht</h2>
-                <p>Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe, die aus einer Blüte
-                    hervorgehen, und die die Pflanzensamen bis zu deren Reife umschließen. Früchte bilden prinzipiell
-                    nur die Pflanzen, die einen geschlossenen Fruchtknoten besitzen (Bedecktsamer = Angiospermen) -
-                    Wikipedia</p>
-                <a href="https://de.wikipedia.org/wiki/Frucht">Mehr</a>
             </header>
             <section>
-                <table class="table_lebensmittelkategorie">
-                    <thead>
-                        <tr>
-                            <th>Nahrungsmittel</th>
-                            <th>KP</th>
-                            <th>DE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Blaubeeren</td>
-                        <td>gut</td>
-                        <td>gut</td>
+          		<form>
+            		<div>
+            			<input> type="search" id="mySearch" name="q">
+            			<button>Suche</button>
+            		</div>
+           		</form>
+                <table class="table_lebensmittelname">
+               		<tr>
+                    <th>Kategorie</th>
+                    <th>Karenzphase</th>
+                    <th>Dauerernaehrung</th>
                     </tr>
+                        
+                    <while(rs.next()){
+                   	String Kategorie = rs.getString("kategorie");
+                    System.out.println(kategorie); 
+                    }>
+                        
                     <tr>
-                        <td>Wassermelonen</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
+                    <td><String Kategorie = rs.getString("Kategorie")><td>
+                    </td>
+                        
+                    <while(rs.next()){
+                    String Karenzphase = rs.getString("karenzphase");
+                    System.out.println(karenzphase); 
+                    }>
+                        
                     <tr>
-                        <td>Zuckermelone</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
+                    <td><String Karenzphase = rs.getString("Karenzphase")><td>
+                    </td>
+                        
+                    <while(rs.next()){
+                    String Dauerernaehrung = rs.getString("dauerernaherung");
+                    System.out.println(dauerernaehrung); 
+                    }>
+                        
                     <tr>
-                        <td>Apfel</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Pfirsich</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Stachelbeeren</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Avocados</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Bananen</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Erdbeeren</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    </tbody>
+                    <td><String Dauerernaehrung = rs.getString("Dauerernaehrung")><td>
+                    </td>
                 </table>
             </section>
-            <section class="table_legend"> <!--IDEE: Legende nur anzeigen bei mobiler Ansicht-->
-                <h3 class="title_legende">Legende:</h3>
-                <ul class="legende">
-                    <li>KP = Karenzphase</li>
-                    <li>DE = Dauerernährung</li>
-                </ul>
+            <section>
+          		<form>
+            		<div>
+            			<input> type="search" id="mySearch" name="q">
+            			<button>Suche</button>
+            		</div>
+           		</form>
+           		<select> name="select">
+           			<option value="fleisch">Fleisch</option>
+           			<option value="obst">Obst</option>
+           			<option value="gemuese">Gemuese</option>
+           			<option value="huelsenfruechte">Huelsenfruechte</option>
+           			<option value="nuesseundsamen">Nuesse und Samen</option>
+           			<option value="fisch">Fisch</option>
+           			<option value="milchundmilchprodukte">Milch und Milchprodukte</option>
+           			<option value="sonstiges">Sonstiges</option>
+           		</select>
+                <table class="table_lebensmittelkategorie">
+               		<tr>
+                    <th>Kategorie</th>
+                    <th>Karenzphase</th>
+                    <th>Dauerernaehrung</th>
+                    </tr>
+                        
+                    <while(rs.next()){
+                   	String Kategorie = rs.getString("kategorie");
+                    System.out.println(kategorie); 
+                    }>
+                        
+                    <tr>
+                    <td><String Kategorie = rs.getString("Kategorie")><td>
+                    </td>
+                        
+                    <while(rs.next()){
+                    String Karenzphase = rs.getString("karenzphase");
+                    System.out.println(karenzphase); 
+                    }>
+                        
+                    <tr>
+                    <td><String Karenzphase = rs.getString("Karenzphase")><td>
+                    </td>
+                        
+                    <while(rs.next()){
+                    String Dauerernaehrung = rs.getString("dauerernaherung");
+                    System.out.println(dauerernaehrung); 
+                    }>
+                        
+                    <tr>
+                    <td><String Dauerernaehrung = rs.getString("Dauerernaehrung")><td>
+                    </td>
+                </table>
             </section>
-        </article>
-        <aside>
-            <h3>Beliebte Lebensmittel (Kategorie übergreifend)</h3>
-            <table class="table_beliebte_lebensmittel">
-                <thead>
-                <tr>
-                    <th rowspan="2">Platz</th>
-                    <th rowspan="2">Lebensmittel</th>
-                    <th colspan="2">Verträglichkeit</th>
-                    <th rowspan="2">Zugriffe</th>
-                </tr>
-                <tr>
-                    <th>KP</th>
-                    <th>DE</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Kartoffeln</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>100'000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Brokkoli</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>80'000</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Rindfleisch</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>70'000</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Mango</td>
-                    <td>mittel</td>
-                    <td>gut</td>
-                    <td>60'000</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Kokosmilch</td>
-                    <td>mittel</td>
-                    <td>mittel</td>
-                    <td>50'000</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Bananen</td>
-                    <td>schlecht</td>
-                    <td>mittel</td>
-                    <td>40'000</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Sojaprodukte</td>
-                    <td>schlecht</td>
-                    <td>mittel</td>
-                    <td>30'000</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Bier</td>
-                    <td>schlecht</td>
-                    <td>schlecht</td>
-                    <td>20'000</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Eiweiss</td>
-                    <td>schlecht</td>
-                    <td>schlecht</td>
-                    <td>10'000</td>
-                </tr>
-                </tbody>
-            </table>
-        </aside>
     </div>
     <!-- #main -->
 </div>
@@ -218,7 +158,7 @@
         <a href="https://www.nahrungsmittel-intoleranz.com">https://www.nahrungsmittel-intoleranz.com</a>
         <h3>Impressum</h3>
         <p> © 2017 PSIT1/2, WEB1, ZHAW<br>
-            Powered by: André Livramento (livraand), Raphael Caradonna (caradrap) , Marko Despotovic (despomar), Fabio
+            Powered by: Mich�le Trebo (trebomic), Raphael Caradonna (caradrap) , Marko Despotovic (despomar), Fabio
             Jaenecke (jaenefab)
         </p>
         <!-- Sharingbutton E-Mail -->
@@ -238,7 +178,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/>
                                 </svg>
-                                livraand
+                                trebomic
                             </div>
                         </div>
                     </a>
