@@ -29,5 +29,16 @@ public abstract class Lebensmittelsuche implements Suche {
 	public Lebensmitteldaten getLebensmittelInfoByKategorie(String kategorieName, String lebensmittelName) {
 		return lebensmittelmanager.getLebensmittelInfoByKategorie(kategorieName, lebensmittelName);
 	}
-
+	
+	public Lebensmitteldaten getNextLebensmittel() {
+		if (lebensmittelmanager.listIterator().hasNext() != true) {
+			getNextLebensmittel(); 
+		}
+		else {
+			next = lebensmittelmanager.listIterator().next(); 
+		}
+		return next; 
+	}
 }
+
+//TODO: write getNextLebensmittel-Method (caradrap)
