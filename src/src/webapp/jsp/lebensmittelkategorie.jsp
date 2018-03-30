@@ -75,7 +75,7 @@
                     </tr>
  					<tr>
 	                    <%
-	                    while(rs.next()){
+	                    while(Lebensmittelsuche.next()){
 	                    	Lebensmittelsuche kategorie;
 	                    	kategorie.getLebensmittelInfoByName("kategorie");
 	                        System.out.println(kategorie); 
@@ -88,7 +88,7 @@
 	                    </td>
                         
 	                    <%
-	                    while(rs.next()){
+	                    while(Lebensmittelsuche.next()){
 	                    	Lebensmittelsuche karenzphase;
 	                    	karenzphase.getLebensmittelInfoByName("Karenzphase");
 	                        System.out.println(karenzphase); 
@@ -101,7 +101,7 @@
 	                    </td>
 	                        
 	                    <% 
-	                    while(rs.next()){
+	                    while(Lebensmittelsuche.next()){
 	                    	Lebensmittelsuche dauerernaehrung;
 	                    	dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
 	                        System.out.println(dauerernaehrung); 
@@ -140,7 +140,7 @@
                     </tr>
                     <tr>
 	                    <%
-	                    while(rs.next()){
+	                    while(Lebensmittelsuche.next()){
 	                    	Lebensmittelsuche kategorie2;
 	                    	kategorie2.getLebensmittelInfoByName("kategorie");
 	                        System.out.println(kategorie2); 
@@ -153,7 +153,7 @@
 	                    </td>
                         
 	                    <%
-	                    while(rs.next()){
+	                    while(Lebensmittelsuche.next()){
 	                    	Lebensmittelsuche karenzphase2;
 	                    	karenzphase2.getLebensmittelInfoByName("Karenzphase");
 	                        System.out.println(karenzphase2); 
@@ -166,7 +166,7 @@
 	                    </td>
 	                        
 	                    <% 
-	                    while(rs.next()){
+	                    while(Lebensmittelsuche.next()){
 	                    	Lebensmittelsuche dauerernaehrung2;
 	                    	dauerernaehrung2.getLebensmittelInfoByName("Dauerernaehrung");
 	                        System.out.println(dauerernaehrung2); 
