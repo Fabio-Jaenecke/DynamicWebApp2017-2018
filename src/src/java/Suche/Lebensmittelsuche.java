@@ -2,6 +2,7 @@ package Suche;
 
 import controller.Lebensmittelmanager;
 import datenbank.container.Lebensmitteldaten;
+import java.util.ListIterator;
 
 /**
  * Klasse fuer die spezifische Suche nach einem Lebensmittel. 
@@ -12,6 +13,7 @@ import datenbank.container.Lebensmitteldaten;
 public abstract class Lebensmittelsuche implements Suche {
 	
 	private Lebensmittelmanager lebensmittelmanager = new Lebensmittelmanager();
+	private ListIterator<Lebensmitteldaten> litr = null;
 	
 	/**
 	 * Rufe die Methode getLebensmittelInfoByName auf. 
@@ -30,17 +32,14 @@ public abstract class Lebensmittelsuche implements Suche {
 		return lebensmittelmanager.getLebensmittelInfoByKategorie(kategorieName, lebensmittelName);
 	}
 	
-	// TODO either use method or remove it
-	/**
-	public Lebensmitteldaten getNextLebensmittel() {
-		if (lebensmittelmanager.listIterator().hasNext() != true) {
-			getNextLebensmittel(); 
+	public void getNextLebensmittel() {
+		litr = lebensmittelmanager.lebensmittel.listIterator();
+		int i = 1;
+		while (litr.hasNext()) {
+		    lebensmittelmanager.lebensmittelAusgeben(i);
+		    i++;
 		}
-		else {
-			next = lebensmittelmanager.listIterator().next(); 
-		}
-		return next; 
-	}*/
+	}
 }
 
-//TODO: write getNextLebensmittel-Method (caradrap)
+//TODO: review getNextLebensmittel-Method (caradrap)

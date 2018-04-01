@@ -14,7 +14,7 @@ public class Lebensmittelmanager
 {
 	// Eine ArrayList, in der die Namen von Lebensmitteln gespeichert
 	// werden koennen.  
-	private ArrayList<Lebensmitteldaten> lebensmittel; 
+	public ArrayList<Lebensmitteldaten> lebensmittel; 
 	
 	/**
 	 * Erzeuge eine Lebensmittelsammlung. 
