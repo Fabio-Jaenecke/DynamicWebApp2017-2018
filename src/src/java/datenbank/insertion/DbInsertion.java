@@ -1,6 +1,10 @@
 package datenbank.insertion;
 
-public class DatabaseInsertion implements DatabaseInsertionInterface {
+public class DbInsertion implements DatabaseInsertionInterface {
+	
+	public void insertIntoTables() {
+		
+	}
 
 	@Override
 	public void insertIntoTableLebensmitteldaten() {

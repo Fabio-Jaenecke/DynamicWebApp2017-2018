@@ -1,12 +1,25 @@
 package datenbank.creation;
 
-public class DatabaseCreation implements DatabaseCreationInterface {
+import datenbank.connector.DbConnector;
 
+public class DbCreation implements DbCreationInterface {
+
+	DbConnector conn = new DbConnector();
+	
+	public DbCreation() {
+		
+	}
 	
 	@Override
-	public void setUpH2Database() {
-		// TODO Auto-generated method stub
-		
+	public void setUpTables() {
+		setUpTableLebensmitteldaten();
+		setUpTableZugriffsskala();
+		setUpTableLebensmittelkategorie();
+		setUpTableNaehrstoff();
+		setUpTableFavorit();
+		setUpTableKatzugehoerigkeit();
+		setUpTableEnhaelt();
+		setUpTableNaehrzugehoerigkeit();
 	}
 
 	@Override
@@ -28,7 +41,7 @@ public class DatabaseCreation implements DatabaseCreationInterface {
 	}
 
 	@Override
-	public void setUpTableNaehrstoff() {
+	public void setUpTableNaehrstoff(){
 		// TODO Auto-generated method stub
 		
 	}
@@ -57,5 +70,5 @@ public class DatabaseCreation implements DatabaseCreationInterface {
 		
 	}
 	
-	
+
 }

@@ -5,9 +5,9 @@ package datenbank.creation;
  * @author Raphael
  *
  */
-public interface DatabaseCreationInterface {
+public interface DbCreationInterface {
 
-	void setUpH2Database();
+	void setUpTables();
 	
 	void setUpTableLebensmitteldaten();
 	
@@ -24,4 +24,6 @@ public interface DatabaseCreationInterface {
 	void setUpTableEnhaelt();
 	
 	void setUpTableNaehrzugehoerigkeit();
+
+		
 }
