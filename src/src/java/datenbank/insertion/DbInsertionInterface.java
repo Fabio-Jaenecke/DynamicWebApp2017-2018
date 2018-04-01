@@ -1,6 +1,6 @@
 package datenbank.insertion;
 
-public interface DatabaseInsertionInterface {
+public interface DbInsertionInterface {
 
 	void insertIntoTableLebensmitteldaten();
 	
