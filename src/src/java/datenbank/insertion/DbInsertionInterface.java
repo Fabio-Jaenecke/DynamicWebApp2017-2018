@@ -8,8 +8,6 @@ public interface DbInsertionInterface {
 	
 	void insertIntoTableLebensmittelkategorie();
 	
-	void insertIntoTableKategorieneinteilung();
-	
 	void insertIntoTableNaehrstoff();
 	
 	void insertIntoTableFavorit();
