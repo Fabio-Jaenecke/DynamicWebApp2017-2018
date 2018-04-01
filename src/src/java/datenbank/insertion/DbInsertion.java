@@ -2,12 +2,16 @@ package datenbank.insertion;
 
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import datenbank.DatabaseConnector;
 import datenbank.connector.DbConnector;
 
 public class DbInsertion implements DbInsertionInterface {
 	
-	DbConnector conn = new DbConnector();
+	private DbConnector conn = new DbConnector();
+	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	
 	public DbInsertion() {
 		insertIntoTables();
@@ -121,8 +125,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}
@@ -139,8 +142,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}
@@ -158,8 +160,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}
@@ -230,8 +231,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}
@@ -263,8 +263,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}

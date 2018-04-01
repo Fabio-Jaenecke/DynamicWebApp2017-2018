@@ -2,12 +2,16 @@ package datenbank.creation;
 
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import datenbank.DatabaseConnector;
 import datenbank.connector.DbConnector;
 
 public class DbCreation implements DbCreationInterface {
 
-	DbConnector conn = new DbConnector();
+	private DbConnector conn = new DbConnector();
+	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	
 	public DbCreation() {
 		setUpTables();
@@ -37,8 +41,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}
@@ -54,8 +57,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 	}
 
@@ -84,8 +86,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}	
 	}
 
@@ -100,8 +101,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 	}
 
@@ -117,8 +117,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}
@@ -135,8 +134,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 	}
 
@@ -152,8 +150,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 	}
 	
