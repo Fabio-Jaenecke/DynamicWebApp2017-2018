@@ -58,7 +58,7 @@
             <header>
             </header>
             <section>
-          		<form>
+          		<form action="${pageContext.request.contextPath}//">
             		<div>
             			<input type="search" id="mySearch" name="q">
             			<button>Suche</button>
