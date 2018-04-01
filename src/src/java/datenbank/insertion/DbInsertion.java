@@ -1,6 +1,6 @@
 package datenbank.insertion;
 
-public class DbInsertion implements DatabaseInsertionInterface {
+public class DbInsertion implements DbInsertionInterface {
 	
 	public void insertIntoTables() {
 		
