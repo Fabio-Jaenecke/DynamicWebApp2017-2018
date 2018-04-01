@@ -1,11 +1,11 @@
-package datenbank;
+package datenbank.creation;
 
 /**
  * interface for creation of tables
  * @author Raphael
  *
  */
-public interface DatabaseCreation {
+public interface DatabaseCreationInterface {
 
 	void setUpH2Database();
 	

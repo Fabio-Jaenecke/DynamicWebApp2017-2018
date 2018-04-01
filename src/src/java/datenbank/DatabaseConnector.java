@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  * @author Raphael
  *
  */
-public class DatabaseConnector implements DatabaseCreation{
+public class DatabaseConnector {
 	private static Connection conn = null;
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	
