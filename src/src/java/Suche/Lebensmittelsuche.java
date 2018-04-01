@@ -30,6 +30,8 @@ public abstract class Lebensmittelsuche implements Suche {
 		return lebensmittelmanager.getLebensmittelInfoByKategorie(kategorieName, lebensmittelName);
 	}
 	
+	// TODO either use method or remove it
+	/**
 	public Lebensmitteldaten getNextLebensmittel() {
 		if (lebensmittelmanager.listIterator().hasNext() != true) {
 			getNextLebensmittel(); 
@@ -38,7 +40,7 @@ public abstract class Lebensmittelsuche implements Suche {
 			next = lebensmittelmanager.listIterator().next(); 
 		}
 		return next; 
-	}
+	}*/
 }
 
 //TODO: write getNextLebensmittel-Method (caradrap)
