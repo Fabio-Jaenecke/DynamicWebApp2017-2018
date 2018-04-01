@@ -10,10 +10,10 @@ public class DbConnector {
 
 	// TODO use empty connection
 	private static Connection conn = null;
-	private final String DB_Connection = "jdbc:h2:~/histarantia";
-	private final String DB_Driver = "org.h2.Driver";	
-	private final String DB_User = "user";
-	private final String DB_Password = "";
+	private static final String DB_Connection = "jdbc:h2:~/histarantia";
+	private static final String DB_Driver = "org.h2.Driver";	
+	private static final String DB_User = "user";
+	private static final String DB_Password = "";
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	public DbConnector() {
