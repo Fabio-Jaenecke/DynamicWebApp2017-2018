@@ -143,10 +143,9 @@ public class DbCreation implements DbCreationInterface {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
-			statement.execute("drop table enthaelt if exists");
-			statement.execute("CREATE TABLE enthaelt(kindex int(4), nname varchar(100), primary key(kindex, nname),"
-					+ " foreign key(kindex) references lebensmittelkategorie, "
-					+ "foreign key(nname) references naehrstoff);");
+			statement.execute("drop table naehrzugehoerigkeit if exists");
+			statement.execute("CREATE TABLE naehrzugehoerigkeit(lindex int(4), nname varchar(100), primary key(lindex, nname)," 
+					+ " foreign key(lindex) references lebensmitteldaten, foreign key(nname) references naehrstoff);");
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
