@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import datenbank.DatabaseConnector;
+import datenbank.manager.DbManager;
 
 /**
  * Servlet implementation class HistarantiaServlet
@@ -19,7 +20,8 @@ import datenbank.DatabaseConnector;
 public class HistarantiaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private DatabaseConnector conn = new DatabaseConnector();
+	// TODO remove: private DatabaseConnector conn = new DatabaseConnector();
+	private DbManager manager = new DbManager();
        
     /**
      * @see HttpServlet#HttpServlet()
