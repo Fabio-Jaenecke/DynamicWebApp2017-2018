@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class DbConnectorStub {
 	
 	private Connection conn = null;
-	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(DbConnectorStub.class.getName());
 	
 	/*
 	 * as this class is only a stub, we only need an empty constructor

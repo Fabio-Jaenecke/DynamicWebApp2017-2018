@@ -41,6 +41,18 @@ public class DbConnector {
 		return conn;
 	}
 
+	public String getDbConnection() {
+		return DB_Connection;
+	}
+
+	public String getDbUser() {
+		return DB_User;
+	}
+
+	public String getDbPassword() {
+		return DB_Password;
+	}
+
 	public static Connection getConn() {
 		return conn;
 	}
