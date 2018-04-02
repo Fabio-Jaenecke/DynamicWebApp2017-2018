@@ -3,6 +3,10 @@ package rangliste;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import controller.Lebensmittelmanager;
+import datenbank.container.Lebensmitteldaten;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Diese Klasse implementiert die Funktion F2100 - Sortieren der Rangliste in Lebensmittelkategorie.
@@ -14,73 +18,49 @@ import java.util.Collections;
  *
  */
 public class SortierenDerRangliste {
-	private List<String> lebensmittel;
+	private Lebensmittelmanager lebensmittelmanager = new Lebensmittelmanager();
+	private ArrayList<String> lebensmittelnamenliste;
 
 	/**
 	 * Erstellt ein Objekt mit einer Lebensmittelliste -
 	 */
 	public SortierenDerRangliste() {
-		lebensmittel = new ArrayList<>();
+		lebensmittelnamenliste = new ArrayList<>(); 
+		
 	}	
 	
-	public List<String> getLebensmittel() {
-		return lebensmittel;
+	public void alleLebensmittelNamenGeben() {
+		for (Lebensmitteldaten derLebensmittelName : lebensmittelmanager.lebensmittel) {
+			    lebensmittelnamenliste.add(derLebensmittelName.getLname());
+		}
 	}
-
-	public void setLebensmittel(List<String> lebensmittel) {
-		this.lebensmittel = lebensmittel;
-	}
-
-	/**
-	 * Befüllt eine ArrayList mit Lebensmittelnamen
-	 */
-	public void befuelleSortierungMitLebensmitteln() {
-		lebensmittel.add("Birnen");
-		lebensmittel.add("Kirschen");
-		lebensmittel.add("Ananas");	
+	
+	public void alleLebensmittelNamenZurückSchreiben() {
+		for (String derLebensmittelName : lebensmittelnamenliste) {
+			lebensmittelmanager.lebensmittelHinzufuegen(new Lebensmitteldaten(rs));
+		}
 	}
 	
 	/**
-	 *  Diese Methode sortiert die Lebensmittel in der Arraylist Aufsteigend (A-Z).
+	 *  Diese Methode sortiert die Lebensmittel Aufsteigend (A-Z).
 	 */
 	public void sortiereAufsteigend() {
-		Collections.sort(lebensmittel);
+		alleLebensmittelNamenGeben();
+		Collections.sort(lebensmittelnamenliste);
+		//zurück in den Lebensmittelmanager schreiben:
+		alleLebensmittelNamenZurückSchreiben();
 	}
 	
 	/**
-	 *  Diese Methode sortiert die Lebensmittel in der Arraylist Absteigend (Z-A).
+	 *  Diese Methode sortiert die Lebensmittel Absteigend (Z-A).
 	 */
 	public void sortiereAbsteigend() {
-		Collections.sort(lebensmittel, Collections.reverseOrder());
+		alleLebensmittelNamenGeben();
+		Collections.sort(lebensmittelnamenliste, Collections.reverseOrder());
+		//zurück in den Lebensmittelmanager schreiben:
+		alleLebensmittelNamenZurückSchreiben();
+		
 	}
-	
-	/**
-	 * Gibt die Lebensmittel der Liste aus.
-	 */
-	public void erhalteLebensmittelNamen() {
-		for (String name : lebensmittel) {
-		    System.out.println(name);
-		    }
-	}
-	
-	/**
-	 * Testet die Anwendung. Dieser Teil des Codes sollte noch entfernt werden.
-	 * 
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		SortierenDerRangliste sortierung = new SortierenDerRangliste();
-		sortierung.befuelleSortierungMitLebensmitteln();
-		//Sollte Lebensmittel unsortiert ausgeben:
-		System.out.println("Unsortiert:");
-		sortierung.erhalteLebensmittelNamen();
-		//Sollte Lebensmittel sortiert ausgeben:
-		System.out.println("Sortiert A-Z:");
-		sortierung.sortiereAufsteigend();
-		sortierung.erhalteLebensmittelNamen();
-		System.out.println("Sortiert Z-A:");
-		sortierung.sortiereAbsteigend();
-		sortierung.erhalteLebensmittelNamen();
-	}
-
 }
+
+//TODO: 'rs' - Fehler beheben. @caradrap

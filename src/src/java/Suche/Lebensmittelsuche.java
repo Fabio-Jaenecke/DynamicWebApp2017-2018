@@ -34,7 +34,7 @@ public abstract class Lebensmittelsuche implements Suche {
 	
 	public void getNextLebensmittel() {
 		litr = lebensmittelmanager.lebensmittel.listIterator();
-		int i = 1;
+		int i = 0;
 		while (litr.hasNext()) {
 		    lebensmittelmanager.lebensmittelAusgeben(i);
 		    i++;
