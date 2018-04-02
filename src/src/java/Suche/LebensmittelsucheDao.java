@@ -13,10 +13,13 @@ public class LebensmittelsucheDao {
 		
 	}
 	
+	// TODO fix method or remove it
+	/*
 	public Lebensmitteldaten getLebensmittel(String lebensmittel) {
 		String query = "select * from lebensmitteldaten where lebensmittel = " + lebensmittel;
-		ResultSet rs = query.getResult(query);
-		Lebensmitteldaten lebensmitteldaten = new Lebensmitteldaten(rs);
-		return lebensmitteldaten;
-	}
+		// TODO fix method getResult(query) 
+		// ResultSet rs = query.getResult(query);
+		// Lebensmitteldaten lebensmitteldaten = new Lebensmitteldaten(rs);
+		// return lebensmitteldaten;
+	}*/
 }
