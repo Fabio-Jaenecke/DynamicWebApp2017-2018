@@ -41,7 +41,7 @@
            			<a href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a>
            			<a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
            			<a href="${pageContext.request.contextPath}/beliebtheitsskala/">Zugriffsskala</a>
-           			<a class="active" href="${pageContext.request.contextPath}/suchfilter/">Suche</a>
+           			<a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche</a>
            			<a href="${pageContext.request.contextPath}/faq/">FAQ</a>
                 </div>
             </nav>
