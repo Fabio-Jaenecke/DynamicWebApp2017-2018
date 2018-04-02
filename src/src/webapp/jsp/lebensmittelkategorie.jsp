@@ -58,7 +58,7 @@
             <header>
             </header>
             <section>
-          		<form action="${pageContext.request.contextPath}//">
+          		<form action="${pageContext.request.contextPath}/lebensmittel/">
             		<div>
             			<input type="search" id="mySearch" name="q">
             			<button>Suche</button>
