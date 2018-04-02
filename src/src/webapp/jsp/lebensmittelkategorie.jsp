@@ -58,7 +58,7 @@
             <header>
             </header>
             <section>
-          		<form>
+          		<form action="${pageContext.request.contextPath}/lebensmittel/">
             		<div>
             			<input type="search" id="mySearch" name="q">
             			<button>Suche</button>
@@ -75,10 +75,12 @@
                     </tr>
  					<tr>
 	                    <%
-	                    while(Lebensmittelsuche.next()){
+	                    // TODO replace "true" with Lebensmittelsuche.next()
+	                    while(true){
 	                    	Lebensmittelsuche kategorie;
-	                    	kategorie.getLebensmittelInfoByName("kategorie");
-	                        System.out.println(kategorie); 
+	                    	// TODO initialize kategorie 
+	                    	// kategorie.getLebensmittelInfoByName("kategorie");
+	                        //System.out.println(kategorie); 
 	                        }%>
 	                    <td>
 	                    <%
@@ -88,7 +90,8 @@
 	                    </td>
                         
 	                    <%
-	                    while(Lebensmittelsuche.next()){
+	                 // TODO replace "true" with Lebensmittelsuche.next()
+	                    while(true){
 	                    	Lebensmittelsuche karenzphase;
 	                    	karenzphase.getLebensmittelInfoByName("Karenzphase");
 	                        System.out.println(karenzphase); 
@@ -101,7 +104,7 @@
 	                    </td>
 	                        
 	                    <% 
-	                    while(Lebensmittelsuche.next()){
+	                    while(true){
 	                    	Lebensmittelsuche dauerernaehrung;
 	                    	dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
 	                        System.out.println(dauerernaehrung); 
@@ -140,7 +143,8 @@
                     </tr>
                     <tr>
 	                    <%
-	                    while(Lebensmittelsuche.next()){
+	                 // TODO replace "true" with Lebensmittelsuche.next()
+	                    while(true){
 	                    	Lebensmittelsuche kategorie2;
 	                    	kategorie2.getLebensmittelInfoByName("kategorie");
 	                        System.out.println(kategorie2); 
@@ -153,7 +157,8 @@
 	                    </td>
                         
 	                    <%
-	                    while(Lebensmittelsuche.next()){
+	                 // TODO replace "true" with Lebensmittelsuche.next()
+	                    while(true){
 	                    	Lebensmittelsuche karenzphase2;
 	                    	karenzphase2.getLebensmittelInfoByName("Karenzphase");
 	                        System.out.println(karenzphase2); 
@@ -166,7 +171,8 @@
 	                    </td>
 	                        
 	                    <% 
-	                    while(Lebensmittelsuche.next()){
+	                 // TODO replace "true" with Lebensmittelsuche.next()
+	                    while(true){
 	                    	Lebensmittelsuche dauerernaehrung2;
 	                    	dauerernaehrung2.getLebensmittelInfoByName("Dauerernaehrung");
 	                        System.out.println(dauerernaehrung2); 

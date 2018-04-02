@@ -12,33 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import datenbank.DatabaseConnector;
 import datenbank.manager.DbManager;
 
-/**
- * Servlet implementation class HistarantiaServlet
- */
-@WebServlet(description = "Main servlet for application", urlPatterns = { "/home" })
+@WebServlet(description = "searching one lebensmittel in database", urlPatterns = { "/lebensmittel" })
 
-public class HistarantiaServlet extends HttpServlet {
+public class LebensmittelsucheServlet {
 	
 	private static final long serialVersionUID = 1L;
-	// TODO remove: private DatabaseConnector conn = new DatabaseConnector();
-	private DbManager manager = new DbManager();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HistarantiaServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nextJSP = "/home.jsp";
+		String nextJSP = "/lebensmittel.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
 	}
-
 }
-
