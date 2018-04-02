@@ -39,8 +39,6 @@ public class DbConnectorTest {
 		assertEquals(conn.getDB_Connection(), "jdbc:h2:~/histarantia");
 	}
 	
-	//TODO write test
-	//TODO get count of tables in database
 	@Test
 	public void driver() {
 		assertEquals(conn.getDB_Driver(), "org.h2.Driver");
