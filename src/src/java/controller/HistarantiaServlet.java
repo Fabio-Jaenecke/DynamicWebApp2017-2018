@@ -15,7 +15,7 @@ import datenbank.manager.DbManager;
 /**
  * Servlet implementation class HistarantiaServlet
  */
-@WebServlet(description = "Main servlet for application", urlPatterns = { "/home" })
+@WebServlet(description = "Main servlet for application", urlPatterns = { "/home/" })
 
 public class HistarantiaServlet extends HttpServlet {
 	
