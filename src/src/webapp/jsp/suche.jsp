@@ -125,7 +125,7 @@
             			<button>Suche</button>
             		</div>
            		</form>
-           		<select> name="select">
+           		<select name="select">
            			<option value="fleisch">Fleisch</option>
            			<option value="obst">Obst</option>
            			<option value="gemuese">Gemuese</option>
@@ -190,8 +190,8 @@
     <!-- #main -->
 </div>
 <!-- #main-container -->
-<div class="footer-container">
 <!-- 
+<div class="footer-container">
  <footer class="wrapper">
         <h4>Quelle:</h4>
         <a href="https://www.nahrungsmittel-intoleranz.com">https://www.nahrungsmittel-intoleranz.com</a>
