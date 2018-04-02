@@ -15,7 +15,7 @@ import datenbank.DatabaseConnector;
 /**
 * Servlet implementation class LebensmittelKategorieServlet
 */
-@WebServlet(description = "LebensmittelKategorieServlet", urlPatterns = { "/lebensmittel" })
+@WebServlet(description = "Servlet für die Lebensmittelrangliste", urlPatterns = { "/lebensmittel/" })
 
 public class LebensmittelKategorieServlet extends HttpServlet {
 	
@@ -35,7 +35,7 @@ public class LebensmittelKategorieServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nextJSP = "/lebensmittelkategorie.jsp";
+		String nextJSP = "/jsp/lebensmittelkategorie.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
 	}
