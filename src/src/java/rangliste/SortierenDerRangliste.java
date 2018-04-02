@@ -35,9 +35,10 @@ public class SortierenDerRangliste {
 		}
 	}
 	
-	public void alleLebensmittelNamenZurückSchreiben() {
+	public void alleLebensmittelNamenZurueckSchreiben() {
 		for (String derLebensmittelName : lebensmittelnamenliste) {
-			lebensmittelmanager.lebensmittelHinzufuegen(new Lebensmitteldaten(rs));
+			// TODO initialize rs as local variable 
+			//lebensmittelmanager.lebensmittelHinzufuegen(new Lebensmitteldaten(rs));
 		}
 	}
 	
@@ -48,7 +49,7 @@ public class SortierenDerRangliste {
 		alleLebensmittelNamenGeben();
 		Collections.sort(lebensmittelnamenliste);
 		//zurück in den Lebensmittelmanager schreiben:
-		alleLebensmittelNamenZurückSchreiben();
+		alleLebensmittelNamenZurueckSchreiben();
 	}
 	
 	/**
@@ -58,7 +59,7 @@ public class SortierenDerRangliste {
 		alleLebensmittelNamenGeben();
 		Collections.sort(lebensmittelnamenliste, Collections.reverseOrder());
 		//zurück in den Lebensmittelmanager schreiben:
-		alleLebensmittelNamenZurückSchreiben();
+		alleLebensmittelNamenZurueckSchreiben();
 		
 	}
 }
