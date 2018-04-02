@@ -34,7 +34,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nextJSP = "jsp/mahlzeitassistent.jsp";
+		String nextJSP = "/jsp/mahlzeitassistent.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
 	}
