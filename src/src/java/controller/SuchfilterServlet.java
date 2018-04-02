@@ -15,12 +15,11 @@ import datenbank.DatabaseConnector;
 /**
 * Servlet implementation class LebensmittelKategorieServlet
 */
-@WebServlet(description = "LebensmittelKategorieServlet", urlPatterns = { "/suchfilter" })
+@WebServlet(description = "Servlet für den Suchfilter", urlPatterns = { "/suchfilter/" })
 
 public class SuchfilterServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private DatabaseConnector conn = new DatabaseConnector();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,7 +34,7 @@ public class SuchfilterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nextJSP = "/Suchfilter.jsp";
+		String nextJSP = "jsp/suchfilter.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
 	}
