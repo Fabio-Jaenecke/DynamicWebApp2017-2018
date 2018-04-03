@@ -1,8 +1,6 @@
 package Suche; 
 
-import controller.Lebensmittelmanager;
 import datenbank.container.Lebensmitteldaten;
-import java.util.ListIterator;
 
 /**
  * Klasse fuer die spezifische Suche nach einem Lebensmittel. 
@@ -12,8 +10,6 @@ import java.util.ListIterator;
  */
 public abstract class Lebensmittelsuche implements Suche {
 	
-	private Lebensmittelmanager lebensmittelmanager = new Lebensmittelmanager();
-	private ListIterator<Lebensmitteldaten> litr = null;
 	private LebensmittelsucheDao sucheDao = new LebensmittelsucheDao();
 	
 	/**
