@@ -14,13 +14,19 @@ public abstract class Lebensmittelsuche implements Suche {
 	
 	private Lebensmittelmanager lebensmittelmanager = new Lebensmittelmanager();
 	private ListIterator<Lebensmitteldaten> litr = null;
+	private LebensmittelsucheDao sucheDao = new LebensmittelsucheDao();
 	
 	/**
 	 * Rufe die Methode getLebensmittelInfoByName auf. 
 	 * @param lebensmittelName das gesuchte Lebensmittel 
 	 */
 	public Lebensmitteldaten getLebensmittelInfoByName(String lebensmittelName) {
-		return lebensmittelmanager.getLebensmittelInfoByName(lebensmittelName);
+		Lebensmitteldaten lebensmittel = null;
+		if (lebensmittelName != null) {
+			lebensmittel = sucheDao.getLebensmittel(lebensmittelName);
+		}
+		
+		return lebensmittel;
 	}
 	
 	/**
@@ -29,6 +35,13 @@ public abstract class Lebensmittelsuche implements Suche {
 	 * @param lebensmittelName das gesuchte Lebensmittel
 	 */
 	public Lebensmitteldaten getLebensmittelInfoByKategorie(String kategorieName, String lebensmittelName) {
-		return lebensmittelmanager.getLebensmittelInfoByKategorie(kategorieName, lebensmittelName);
+		Lebensmitteldaten lebensmittel = null; 
+		if (kategorieName != null){
+			lebensmittel = sucheDao.getLebensmittel(kategorieName);
+		}
+		if (lebensmittelName != null){
+			lebensmittel = sucheDao.getLebensmittel(lebensmittelName);
+		}
+		return lebensmittel; 
 	}
 }
