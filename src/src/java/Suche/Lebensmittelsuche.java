@@ -1,5 +1,7 @@
 package Suche; 
 
+import java.util.List;
+
 import datenbank.container.Lebensmitteldaten;
 
 /**
@@ -30,14 +32,11 @@ public abstract class Lebensmittelsuche implements Suche {
 	 * @param kategorieName die gesuchte Kategorie
 	 * @param lebensmittelName das gesuchte Lebensmittel
 	 */
-	public Lebensmitteldaten getLebensmittelInfoByKategorie(String kategorieName, String lebensmittelName) {
-		Lebensmitteldaten lebensmittel = null; 
+	public List<Lebensmitteldaten> getLebensmittelInfoByKategorie(String kategorieName) {
+		List<Lebensmitteldaten> kategorie = null; 
 		if (kategorieName != null){
-			lebensmittel = sucheDao.getLebensmittel(kategorieName);
+			kategorie = sucheDao.getKategorie(kategorieName);
 		}
-		if (lebensmittelName != null){
-			lebensmittel = sucheDao.getLebensmittel(lebensmittelName);
-		}
-		return lebensmittel; 
+		return kategorie; 
 	}
 }
