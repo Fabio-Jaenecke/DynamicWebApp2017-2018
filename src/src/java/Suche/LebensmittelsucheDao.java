@@ -1,6 +1,7 @@
 package Suche;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import datenbank.container.Lebensmitteldaten;
 import datenbank.dao.DbQuery;
@@ -12,14 +13,17 @@ public class LebensmittelsucheDao {
 	public LebensmittelsucheDao() {
 		
 	}
-	
-	// TODO fix method or remove it
-	/*
+		
+//	TODO: replace query with prepared statements
 	public Lebensmitteldaten getLebensmittel(String lebensmittel) {
 		String query = "select * from lebensmitteldaten where lebensmittel = " + lebensmittel;
-		// TODO fix method getResult(query) 
-		// ResultSet rs = query.getResult(query);
-		// Lebensmitteldaten lebensmitteldaten = new Lebensmitteldaten(rs);
-		// return lebensmitteldaten;
-	}*/
+		 ResultSet rs = this.query.getResult(query);
+		 Lebensmitteldaten lebensmitteldaten = null;
+		try {
+			lebensmitteldaten = rs.getObject(0) == null ? null : (Lebensmitteldaten) rs.getObject(0);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		 return lebensmitteldaten;
+	}
 }
