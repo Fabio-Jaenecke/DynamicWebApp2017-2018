@@ -34,27 +34,27 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Zugriffsskala&nbsp;</span>
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Mahlzeitsassistent&nbsp;</span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-               <a  href="${pageContext.request.contextPath}/home/">Home</a>
+                <a href="${pageContext.request.contextPath}/home/">Home</a>
        			<a href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a>
-       			<a href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a>
+       			<a class="active" href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a>
        			<a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
-       			<a class="active" href="${pageContext.request.contextPath}/beliebtheitsskala/">Zugriffsskala</a>
-       			<a href="${pageContext.request.contextPath}/suchfilter/">Suche</a>
+       			<a href="${pageContext.request.contextPath}/beliebtheitsskala/">Zugriffsskala</a>
+       			<a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche</a>
        			<a href="${pageContext.request.contextPath}/faq/">FAQ</a>
             </div>
         </nav>
-        <a class="suchicon" href="Suchfilter.html">&#8981;</a>
+        <a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a>
     </header>
 </div>
 <div class="main-container">
     <div class="main wrapper clearfix">
         <article>
             <header>
-                <h2>Zugriffsskala</h2>
-                <p>Diese Skala zeigt die Lebensmittel für welchen die Benutzer am meisten Interesse gezeigt haben.</p>
+                <h2>Mahzeitsassistent</h2>
+                <p>Hier könne Sie bald Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>
                 
             </header>
 

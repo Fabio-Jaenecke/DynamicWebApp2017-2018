@@ -1,88 +1,38 @@
-package datenbank;
+package datenbank.insertion;
 
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * TODO refactor class
- * establish database connection and set up tables
- * @author Raphael
- *
- */
-public class DatabaseConnector {
-	private static Connection conn = null;
+import datenbank.DatabaseConnector;
+import datenbank.connector.DbConnector;
+
+public class DbInsertion implements DbInsertionInterface {
+	
+	private DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	
-	/**
-	 * constructor for class DatabaseConstructor
-	 */
-	public DatabaseConnector() {
-		try {
-			conn = establishH2DBConnection();
-			setUpH2Database();
-		}
-		catch(Exception e){
-			LOGGER.log(Level.SEVERE, " You cannot use the database. Either there's already a connection "
-					+ "or the configuration settings are false", e);
-		}
+	public DbInsertion() {
+		insertIntoTables();
 	}
 	
-	/**
-	 * try to establish database connection
-	 * @return database connection
-	 */
-	public Connection establishH2DBConnection() {
-		String DB_Connection = "jdbc:h2:~/histarantia";
-		String DB_Driver = "org.h2.Driver";	
-		String DB_User = "user";
-		String DB_Password = "";
-		
-		try {
-			Class.forName(DB_Driver);
-		} 
-		catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-		}
-		
-		try {
-			conn = DriverManager.getConnection(DB_Connection, DB_User, DB_Password);
-		} 
-		catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		
-		return conn;
+	public void insertIntoTables() {
+		insertIntoTableLebensmitteldaten();
+		insertIntoTableZugriffsskala();
+		insertIntoTableLebensmittelkategorie();
+		insertIntoTableNaehrstoff();
+		insertIntoTableFavorit();
+		insertIntoTableKatzugehoerigkeit();
+		insertIntoTableEnhaelt();
+		insertIntoTableNaehrzugehoerigkeit();
 	}
 
-	/*
-	 * set up different tables
-	 */
-	public void setUpH2Database() {
-		setUpTableLebensmitteldaten();
-		setUpTableZugriffsskala();
-		setUpTableLebensmittelkategorie();
-		setUpTableNaehrstoff();
-		setUpTableFavorit();
-		setUpTableKatzugehoerigkeit();
-		setUpTableEnhaelt();
-		setUpTableNaehrzugehoerigkeit();
-	}
-	
-	/*
-	 * set up table lebensmitteldaten
-	 */
-	public void setUpTableLebensmitteldaten() {
+	@Override
+	public void insertIntoTableLebensmitteldaten() {
+		Statement statement;
 		try {
-			Statement statement;
-			statement = conn.createStatement();
-			statement.execute("drop table lebensmitteldaten if exists");
-			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(4) primary key, lname varchar(100),"
-				+ " karenzphase varchar(100), dauerernaehrung varchar(100));");
-			
+			statement = conn.getConn().createStatement();
 			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1001, 'Schwein', 'mittel', 'gut')");
 			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1002, 'Rind', 'gut', 'gut')");
 			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (1003, 'Haehnchen', 'gut', 'gut')");
@@ -127,24 +77,20 @@ public class DatabaseConnector {
 			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (9003, 'Teig', 'gut', 'gut')");
 			statement.executeUpdate("INSERT INTO lebensmitteldaten " + "VALUES (9004, 'Alkohol', 'schlecht', 'schlecht')");
 			
-			
 			statement.close();
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
-			catchException(e);
+			// TODO Auto-generated catch block
+			
+			e.printStackTrace();
 		}
-		
-	};
-	
-	/*
-	 * set up table zugriffsskala
-	 */
-	public void setUpTableZugriffsskala() {
+	}
+
+	@Override
+	public void insertIntoTableZugriffsskala() {
+		Statement statement;
 		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table zugriffsskala if exists");
-			statement.execute("CREATE TABLE zugriffsskala(zindex int(3) primary key, platzierung int(3),"
-					+ " aZugriffe int(3));");
+			statement = conn.getConn().createStatement();
 			
 			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (100, 11, 111)");
 			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (200, 12, 211)");
@@ -153,21 +99,19 @@ public class DatabaseConnector {
 			statement.executeUpdate("INSERT INTO zugriffsskala " + "VALUES (500, 15, 113)");
 			
 			statement.close();
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
-			catchException(e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-	};
 	
-	/*
-	 * set up table lebensmittelkategorie
-	 */
-	public void setUpTableLebensmittelkategorie() {
+	}
+
+	@Override
+	public void insertIntoTableLebensmittelkategorie() {
+		Statement statement;
 		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table lebensmittelkategorie if exists");
-			statement.execute("CREATE TABLE lebensmittelkategorie(kindex int(4) primary key, kname varchar(100));");
-		
+			statement = conn.getConn().createStatement();
 			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (1000, 'Fleisch')");
 			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (2000, 'Obst')");
 			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (3000, 'Gemuese')");
@@ -179,67 +123,53 @@ public class DatabaseConnector {
 			statement.executeUpdate("INSERT INTO lebensmittelkategorie " + "VALUES (9000, 'Sonstiges')");
 			
 			statement.close();
-			
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
+		
 	}
-	
-	
-	/*
-	 * set up table naehrstoff
-	 */
-	public void setUpTableNaehrstoff() {
+
+	@Override
+	public void insertIntoTableNaehrstoff() {
+		Statement statement;
 		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table naehrstoff if exists");
-			statement.execute("CREATE TABLE naehrstoff(nname varchar(100) primary key);");
-			
+			statement = conn.getConn().createStatement();
 			statement.executeUpdate("INSERT INTO naehrstoff " + "VALUES ('Staerkebeilage')");
 			statement.executeUpdate("INSERT INTO naehrstoff " + "VALUES ('Proteine')");
 			statement.executeUpdate("INSERT INTO naehrstoff " + "VALUES ('Vitamine')");
 			
 			statement.close();
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
-			catchException(e);
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
-	};
-	
-	/*
-	 * set up table favorit
-	 */
-	public void setUpTableFavorit() {
+		
+	}
+
+	@Override
+	public void insertIntoTableFavorit() {
+		Statement statement;
 		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table favorit if exists");
-			statement.execute("CREATE TABLE favorit(zindex int(3), lindex int(4), primary key(zindex, lindex),"
-					+ "foreign key(zindex) references zugriffsskala, foreign key(lindex) references lebensmitteldaten);");
-			
+			statement = conn.getConn().createStatement();
 			statement.executeUpdate("INSERT INTO favorit " + "VALUES (100, 1001)");
 			statement.executeUpdate("INSERT INTO favorit " + "VALUES (200, 2001)");
 			statement.executeUpdate("INSERT INTO favorit " + "VALUES (300, 3001)");
 			statement.executeUpdate("INSERT INTO favorit " + "VALUES (400, 4001)");
 			
 			statement.close();
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
-			catchException(e);
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
-	};		
-	
-	/*
-	 * set up table katzugehoerigkeit
-	 */
-	public void setUpTableKatzugehoerigkeit() {
+		
+	}
+
+	@Override
+	public void insertIntoTableKatzugehoerigkeit() {
+		Statement statement;
 		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table katzugehoerigkeit if exists");
-			statement.execute("CREATE TABLE katzugehoerigkeit(lindex int(4), kindex int(4),"
-					+ " primary key(lindex, kindex),foreign key(kindex) references lebensmittelkategorie"
-					+ ", foreign key(lindex) references lebensmitteldaten);");
-			
+			statement = conn.getConn().createStatement();
 			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1001, 1000)");
 			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1002, 1000)");
 			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (1003, 1000)");
@@ -277,23 +207,18 @@ public class DatabaseConnector {
 			statement.executeUpdate("INSERT INTO katzugehoerigkeit " + "VALUES (9004, 9000)");
 			
 			statement.close();
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
-			catchException(e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-	};		
-	
-	/*
-	 * set up table enthaelt
-	 */
-	public void setUpTableEnhaelt() {
+	}
+
+	@Override
+	public void insertIntoTableEnhaelt() {
+		Statement statement;
 		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table enthaelt if exists");
-			statement.execute("CREATE TABLE enthaelt(kindex int(4), nname varchar(100), primary key(kindex, nname),"
-					+ " foreign key(kindex) references lebensmittelkategorie, "
-					+ "foreign key(nname) references naehrstoff);");
-			
+			statement = conn.getConn().createStatement();
 			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (1000, 'Proteine')");
 			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (2000, 'Vitamine')");
 			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (3000, 'Vitamine')");
@@ -304,22 +229,18 @@ public class DatabaseConnector {
 			statement.executeUpdate("INSERT INTO enthaelt " + "VALUES (9000, 'Staerkebeilage')");
 			
 			statement.close();
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
-			catchException(e);
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
-	};		
-	
-	/*
-	 * set up table naehrzugheorigkeit
-	 */
-	public void setUpTableNaehrzugehoerigkeit() {
+		
+	}
+
+	@Override
+	public void insertIntoTableNaehrzugehoerigkeit() {
+		Statement statement;
 		try {
-			Statement statement = conn.createStatement();
-			statement.execute("drop table naehrzugehoerigkeit if exists");
-			statement.execute("CREATE TABLE naehrzugehoerigkeit(lindex int(4), nname varchar(100), primary key(lindex, nname)," 
-					+ " foreign key(lindex) references lebensmitteldaten, foreign key(nname) references naehrstoff);");
-			
+			statement = conn.getConn().createStatement();
 			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (1001, 'Proteine')");
 			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (1002, 'Proteine')");
 			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (1003, 'Proteine')");
@@ -340,26 +261,11 @@ public class DatabaseConnector {
 			statement.executeUpdate("INSERT INTO naehrzugehoerigkeit " + "VALUES (9003, 'Staerkebeilage')");
 			
 			statement.close();
-			conn.commit();
+			conn.getConn().commit();
 		} catch (SQLException e) {
-			catchException(e);
+			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
-	}
-	
-	/*
-	 * print error message for exception
-	 */
-	private void catchException(Exception e) {
-		LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+		
 	}
 
-	/*
-	 * close connection after usage
-	 */
-	protected void finalize() throws SQLException {
-    	if(null != conn) {
-    		conn.close();    
-    	}
-    }
-	
-}	
+}

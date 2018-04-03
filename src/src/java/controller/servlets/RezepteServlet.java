@@ -1,4 +1,4 @@
-package controller;
+package controller.servlets;
 
 import java.io.IOException;
 
@@ -15,17 +15,16 @@ import datenbank.DatabaseConnector;
 /**
 * Servlet implementation class LebensmittelKategorieServlet
 */
-@WebServlet(description = "LebensmittelKategorieServlet", urlPatterns = { "/lebensmittel" })
+@WebServlet(description = "LebensmittelKategorieServlet", urlPatterns = { "/rezepte/" })
 
-public class LebensmittelKategorieServlet extends HttpServlet {
+public class RezepteServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private DatabaseConnector conn = new DatabaseConnector();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LebensmittelKategorieServlet() {
+    public RezepteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +34,7 @@ public class LebensmittelKategorieServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nextJSP = "/lebensmittelkategorie.jsp";
+		String nextJSP = "/jsp/rezepte.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
 	}

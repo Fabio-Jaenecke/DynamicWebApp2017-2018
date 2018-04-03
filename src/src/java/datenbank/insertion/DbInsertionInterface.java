@@ -1,14 +1,12 @@
-package datenbank;
+package datenbank.insertion;
 
-public interface DatabaseFilling {
+public interface DbInsertionInterface {
 
 	void insertIntoTableLebensmitteldaten();
 	
 	void insertIntoTableZugriffsskala();
 	
 	void insertIntoTableLebensmittelkategorie();
-	
-	void insertIntoTableKategorieneinteilung();
 	
 	void insertIntoTableNaehrstoff();
 	
