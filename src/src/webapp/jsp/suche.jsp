@@ -67,6 +67,7 @@
            		<%@ page import="java.sql.ResultSet"%>
            		<%@ page import ="datenbank.container.*" %>
            		<%@ page import ="Suche.*" %>
+           		<%@ page import = "java.util.Iterator" %>
                 <table class="table_lebensmittelname">
                		<tr>
                     <th>Kategorie</th>
@@ -75,15 +76,14 @@
                     </tr>
  					<tr>
 	                    <%
-	                    // TODO replace "true" with Lebensmittelsuche.next()
-	                    while(true){
-	                    	Lebensmittelsuche kategorie;
-	                    	// TODO initialize kategorie 
-	                    	// kategorie.getLebensmittelInfoByName("kategorie");
-	                        //System.out.println(kategorie); 
+	                    Lebensmittelsuche kategorie;
+	                    Iterator it = kategorie.getLebensmittelInfoByKategorie("kategorie").iterator();
+	                    while(it.hasNext()){
+	                    	System.out.println(kategorie); 
 	                        }%>
 	                    <td>
 	                    <%
+	                 // TODO: replace kategorie 
 	                    Lebensmittelsuche kategorie;
 	                    kategorie.getLebensmittelInfoByName("kategorie");
 	                    %>
