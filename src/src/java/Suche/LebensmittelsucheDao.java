@@ -34,20 +34,16 @@ public class LebensmittelsucheDao {
 			try {
 				  while (result.next()) {
 				    String lname = result.getString("lname");
-				    System.out.println(lname);
 				    return lname;
 				  }
 
-				  } catch (SQLException e1) {
-				    // TODO Auto-generated catch block
-				    e1.printStackTrace();
-				    System.out.println("Fehler");
-				    return "fehler";
-				  } finally {
-					//TODO: Handle exceptions
-					  return selectSQL;
-					
-				  }
+			  } catch (SQLException e1) {
+			    e1.printStackTrace();
+			    return "fehler";
+			  } finally {
+				//TODO: Handle exceptions
+				  return selectSQL;
+			  }
 		
 
 		
