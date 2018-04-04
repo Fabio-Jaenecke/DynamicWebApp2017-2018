@@ -73,12 +73,23 @@
 			 					<%
 									if (request.getParameter("sucheintrag") == null) {
 										// it's not there
-									%>
-				                    <%
+									
+							
 				                    //TODO: Gives Nullpointer / Doesn't work
 									}else{
-										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao();
-				                    	String lebensmittelname = request.getParameter("sucheintrag");
+										String lebensmittelname = request.getParameter("sucheintrag");
+										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao(lebensmittelname);
+										String resultat = suchauftrag.doStuff();
+										if (resultat.equals(lebensmittelname)){
+											response.sendRedirect(request.getContextPath() + "/sucheErfolgreich/");
+						            }else{
+						            	response.sendRedirect(request.getContextPath() + "/nichterfolgreich/");
+						            }
+						            	
+						            }
+									
+				                    %>	
+				                    	<!-- 
 				                    	if (suchauftrag.getLebensmittel(lebensmittelname).getLname().equals(lebensmittelname)){
 				                    		session.setAttribute("sucheintrag", lebensmittelname);
 				                    		response.sendRedirect(request.getContextPath() + "/erfolgreich/");
@@ -88,8 +99,9 @@
 				                    		session.setAttribute("sucheintrag", lebensmittelname);
 				                    	}
 				                    	
+				                    	
 				                    }
-				                    %>
+				                    %> -->
 				                    <!--
 				                    //TODO: Gives nullpointer or Compile error
 				                    }else{
