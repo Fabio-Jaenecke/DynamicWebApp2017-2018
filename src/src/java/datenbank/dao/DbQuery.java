@@ -25,7 +25,6 @@ public class DbQuery {
 		Connection connection;
 		connection = conn.getConn();
 		try {
-			
 			statement = connection.createStatement();
 			result = statement.executeQuery(query);
 			return result;
