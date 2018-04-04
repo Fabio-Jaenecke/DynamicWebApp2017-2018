@@ -9,7 +9,6 @@ import java.sql.Connection;
 
 public class LebensmittelsucheDao {
 	
-	private DbQuery preparedStatement;
 	private String selectSQL;
 	Statement statement;
 	ResultSet result; 
