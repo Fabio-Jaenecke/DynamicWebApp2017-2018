@@ -54,70 +54,95 @@
 </div>
 <div class="main-container">
     <div class="main wrapper clearfix">
-        <article>
-            <header>
-            </header>
             <section>
-          		<form action="${pageContext.request.contextPath}/lebensmittel/">
-            		<div>
-            			<input type="search" id="mySearch" name="q">
-            			<button>Suche</button>
-            		</div>
-           		</form>
-           		<%@ page import="java.sql.ResultSet"%>
-           		<%@ page import ="datenbank.container.*" %>
-           		<%@ page import ="Suche.*" %>
-           		<%@ page import = "java.util.Iterator" %>
-                <table class="table_lebensmittelname">
-               		<tr>
-                    <th>Kategorie</th>
-                    <th>Karenzphase</th>
-                    <th>Dauerernaehrung</th>
-                    </tr>
- 					<tr>
-	                    <%
-	                    Lebensmittelsuche kategorie;
-	                    Iterator it = kategorie.getLebensmittelInfoByKategorie("kategorie").iterator();
-	                    while(it.hasNext()){
-	                    	System.out.println(kategorie); 
-	                        }%>
-	                    <td>
-	                    <%
-	                 // TODO: replace kategorie 
-	                    Lebensmittelsuche kategorie;
-	                    kategorie.getLebensmittelInfoByName("kategorie");
-	                    %>
-	                    </td>
-                        
-	                    <%
-	                 // TODO replace "true" with Lebensmittelsuche.next()
-	                    while(true){
-	                    	Lebensmittelsuche karenzphase;
-	                    	karenzphase.getLebensmittelInfoByName("Karenzphase");
-	                        System.out.println(karenzphase); 
-	                        }%>
-	                    <td>
-	                    <%
-	                    Lebensmittelsuche karenzphase;
-	                    karenzphase.getLebensmittelInfoByName("Karenzphase");
-	                    %>
-	                    </td>
-	                        
-	                    <% 
-	                    while(true){
-	                    	Lebensmittelsuche dauerernaehrung;
-	                    	dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
-	                        System.out.println(dauerernaehrung); 
-	                        }%>
-	                    <td>
-	                    <%
-	                    Lebensmittelsuche dauerernaehrung;
-	                    dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
-	                    %>
-	                    </td>
-                    </tr>
-                </table>
+	            <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
+	            		<div>
+	            			<input type="text" name="sucheintrag" value="" />
+		 					<%@ page import="java.sql.ResultSet"%>
+			           		<%@ page import ="datenbank.container.*" %>
+			           		<%@ page import ="Suche.*" %>
+			           		<%@ page import = "java.util.Iterator" %>
+		           			  <table class="table_lebensmittelname">
+			               		<!--<tr>
+			                    <th>Kategorie</th>
+			                    <th>Karenzphase</th>
+			                    <th>Dauerernaehrung</th>
+			                    </tr>-->
+			 					<tr>
+			 					<td>
+			 					<%
+									if (request.getParameter("sucheintrag") == null) {
+										// it's not there
+									%>
+				                    <%
+				                    //TODO: Gives Nullpointer / Doesn't work
+									}else{
+										LebensmittelsucheDao myvariable = new LebensmittelsucheDao();
+				                    	String lebensmittelname = request.getParameter("sucheintrag");
+				                    	if (myvariable.getLebensmittel(lebensmittelname).getLname().equals(lebensmittelname)){
+				                    		session.setAttribute("sucheintrag", lebensmittelname);
+				                    		response.sendRedirect(request.getContextPath() + "/erfolgreich/");
+				                    	}else{
+				                    		System.out.println("Leider nichts gefunden");
+				                    		response.sendRedirect(request.getContextPath() + "/nichterfolgreich/");
+				                    		session.setAttribute("sucheintrag", lebensmittelname);
+				                    	}
+				                    	
+				                    }
+				                    %>
+				                    <!--
+				                    //TODO: Gives nullpointer or Compile error
+				                    }else{
+									Lebensmittelsuche kategorie;
+					                    Iterator it = kategorie.getLebensmittelInfoByKategorie("kategorie").iterator();
+					                    while(it.hasNext()){
+					                    	System.out.println(kategorie); 
+					                        }
+									}-->
+				                   
+				                    <input type="submit" value="Suche" />
+				                    
+				                    <!-- TODO: replace kategorie 
+				                    Lebensmittelsuche kategorie;
+				                    kategorie.getLebensmittelInfoByName("kategorie");
+				                    %>
+				                    </td>
+			                        
+				                    
+				                 // TODO replace "true" with Lebensmittelsuche.next()
+				                    while(true){
+				                    	Lebensmittelsuche karenzphase;
+				                    	karenzphase.getLebensmittelInfoByName("Karenzphase");
+				                        System.out.println(karenzphase); 
+				                        }%>
+				                    <td>
+				                    
+				                    Lebensmittelsuche karenzphase;
+				                    karenzphase.getLebensmittelInfoByName("Karenzphase");
+				                    %>
+				                    </td>
+				                        
+				                    <
+				                    while(true){
+				                    	Lebensmittelsuche dauerernaehrung;
+				                    	dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
+				                        System.out.println(dauerernaehrung); 
+				                        }%>
+				                    <td>
+				                    
+				                    Lebensmittelsuche dauerernaehrung;
+				                    dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
+				                    %>-->
+				                    </td>
+			                    </tr>
+			                </table>
+		                     
+	            		</div>
+	           		</form>
+           		
+               
             </section>
+            <!-- 
             <section>
           		<form>
             		<div>
@@ -142,7 +167,7 @@
                     <th>Dauerernaehrung</th>
                     </tr>
                     <tr>
-	                    <%
+	                    <!-- 
 	                 // TODO replace "true" with Lebensmittelsuche.next()
 	                    while(true){
 	                    	Lebensmittelsuche kategorie2;
@@ -150,13 +175,13 @@
 	                        System.out.println(kategorie2); 
 	                        }%>
 	                    <td>
-	                    <%
+	                    
 	                    Lebensmittelsuche kategorie2;
 	                    kategorie2.getLebensmittelInfoByName("kategorie");
 	                    %>
 	                    </td>
                         
-	                    <%
+	                    
 	                 // TODO replace "true" with Lebensmittelsuche.next()
 	                    while(true){
 	                    	Lebensmittelsuche karenzphase2;
@@ -164,13 +189,13 @@
 	                        System.out.println(karenzphase2); 
 	                        }%>
 	                    <td>
-	                    <%
+	                    
 	                    Lebensmittelsuche karenzphase2;
 	                    karenzphase2.getLebensmittelInfoByName("Karenzphase");
 	                    %>
 	                    </td>
 	                        
-	                    <% 
+	                    
 	                 // TODO replace "true" with Lebensmittelsuche.next()
 	                    while(true){
 	                    	Lebensmittelsuche dauerernaehrung2;
@@ -178,14 +203,15 @@
 	                        System.out.println(dauerernaehrung2); 
 	                        }%>
 	                    <td>
-	                    <%
+	                    
 	                    Lebensmittelsuche dauerernaehrung2;
 	                    dauerernaehrung2.getLebensmittelInfoByName("Dauerernaehrung");
 	                    %>
-	                    </td>
+	                    
+	                    </td> 
                     </tr>
                 </table>
-            </section>
+            </section>-->
     </div>
     <!-- #main -->
 </div>
