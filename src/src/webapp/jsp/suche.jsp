@@ -77,9 +77,9 @@
 				                    <%
 				                    //TODO: Gives Nullpointer / Doesn't work
 									}else{
-										LebensmittelsucheDao myvariable = new LebensmittelsucheDao();
+										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao();
 				                    	String lebensmittelname = request.getParameter("sucheintrag");
-				                    	if (myvariable.getLebensmittel(lebensmittelname).getLname().equals(lebensmittelname)){
+				                    	if (suchauftrag.getLebensmittel(lebensmittelname).getLname().equals(lebensmittelname)){
 				                    		session.setAttribute("sucheintrag", lebensmittelname);
 				                    		response.sendRedirect(request.getContextPath() + "/erfolgreich/");
 				                    	}else{
