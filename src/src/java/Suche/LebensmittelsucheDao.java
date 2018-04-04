@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import datenbank.connector.DbConnector;
-import datenbank.dao.DbQuery;
 import java.sql.Connection;
 
 public class LebensmittelsucheDao {
