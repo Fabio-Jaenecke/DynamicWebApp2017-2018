@@ -28,7 +28,6 @@ public class HistarantiaServlet extends HttpServlet {
      */
     public HistarantiaServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

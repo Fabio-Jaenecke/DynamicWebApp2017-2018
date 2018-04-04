@@ -27,14 +27,12 @@ public class LebensmittelKategorieServlet extends HttpServlet {
      */
     public LebensmittelKategorieServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
     /**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String nextJSP = "/jsp/lebensmittelkategorie.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
