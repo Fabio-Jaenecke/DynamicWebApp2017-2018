@@ -9,16 +9,17 @@ import datenbank.dao.DbQuery;
 
 public class LebensmittelsucheDao {
 	
-	DbQuery query = new DbQuery();
+	DbQuery query;
 	private List<Lebensmitteldaten> lebensmitteldaten;
 	
 	public LebensmittelsucheDao() {
+		query = new DbQuery();
 		
 	}
 		
 //	TODO: replace query with prepared statements
-	public Lebensmitteldaten getLebensmittel(String lebensmittel) {
-		String query = "select * from lebensmitteldaten where lebensmittel = " + lebensmittel;
+	public Lebensmitteldaten getLebensmittel(String lebensmittelname) {
+		String query = "select * from lebensmitteldaten where lname = '" + lebensmittelname + "'";
 		 ResultSet rs = this.query.getResult(query);
 		 Lebensmitteldaten lebensmitteldaten = null;
 		try {
@@ -40,5 +41,19 @@ public class LebensmittelsucheDao {
 			e.printStackTrace();
 		}
 		 return lebensmitteldaten;
+	}
+
+	/**
+	 * @return the lebensmitteldaten
+	 */
+	public List<Lebensmitteldaten> getLebensmitteldaten() {
+		return lebensmitteldaten;
+	}
+
+	/**
+	 * @param lebensmitteldaten the lebensmitteldaten to set
+	 */
+	public void setLebensmitteldaten(List<Lebensmitteldaten> lebensmitteldaten) {
+		this.lebensmitteldaten = lebensmitteldaten;
 	}	
 }
