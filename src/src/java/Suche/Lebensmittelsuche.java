@@ -1,8 +1,8 @@
 package Suche; 
 
-import controller.Lebensmittelmanager;
+import java.util.List;
+
 import datenbank.container.Lebensmitteldaten;
-import java.util.ListIterator;
 
 /**
  * Klasse fuer die spezifische Suche nach einem Lebensmittel. 
@@ -12,34 +12,31 @@ import java.util.ListIterator;
  */
 public abstract class Lebensmittelsuche implements Suche {
 	
-	private Lebensmittelmanager lebensmittelmanager = new Lebensmittelmanager();
-	private ListIterator<Lebensmitteldaten> litr = null;
+	private LebensmittelsucheDao sucheDao = new LebensmittelsucheDao();
 	
 	/**
 	 * Rufe die Methode getLebensmittelInfoByName auf. 
 	 * @param lebensmittelName das gesuchte Lebensmittel 
 	 */
 	public Lebensmitteldaten getLebensmittelInfoByName(String lebensmittelName) {
-		return lebensmittelmanager.getLebensmittelInfoByName(lebensmittelName);
+		Lebensmitteldaten lebensmittel = null;
+		if (lebensmittelName != null) {
+			lebensmittel = sucheDao.getLebensmittel(lebensmittelName);
+		}
+		
+		return lebensmittel;
 	}
 	
 	/**
 	 * Rufe die Methode getLebensmittelInfoByKategorie auf. 
 	 * @param kategorieName die gesuchte Kategorie
-	 * @param lebensmittelName das gesuchte Lebensmittel 
+	 * @param lebensmittelName das gesuchte Lebensmittel
 	 */
-	public Lebensmitteldaten getLebensmittelInfoByKategorie(String kategorieName, String lebensmittelName) {
-		return lebensmittelmanager.getLebensmittelInfoByKategorie(kategorieName, lebensmittelName);
-	}
-	
-	public void getNextLebensmittel() {
-		litr = lebensmittelmanager.lebensmittel.listIterator();
-		int i = 0;
-		while (litr.hasNext()) {
-		    lebensmittelmanager.lebensmittelAusgeben(i);
-		    i++;
+	public List<Lebensmitteldaten> getLebensmittelInfoByKategorie(String kategorieName) {
+		List<Lebensmitteldaten> kategorie = null; 
+		if (kategorieName != null){
+			kategorie = sucheDao.getKategorie(kategorieName);
 		}
+		return kategorie; 
 	}
 }
-
-//TODO: review getNextLebensmittel-Method (caradrap)

@@ -13,7 +13,7 @@ import datenbank.DatabaseConnector;
 
 
 /**
-* Servlet implementation class LebensmittelKategorieServlet
+* Servlet implementation class MahlzeitassistentServlet
 */
 @WebServlet(description = "Servlet für den Mahlzeitassistent", urlPatterns = { "/mahlzeitassistent/" })
 
