@@ -6,6 +6,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import java.sql.Connection;
+
 import datenbank.connector.DbConnector;
 
 public class DbQuery {
@@ -20,8 +22,11 @@ public class DbQuery {
 	public ResultSet getResult(String query) {
 		Statement statement;
 		ResultSet result; 
+		Connection connection;
+		connection = conn.getConn();
 		try {
-			statement = conn.getConn().createStatement();
+			
+			statement = connection.createStatement();
 			result = statement.executeQuery(query);
 			return result;
 		} catch (SQLException e) {
@@ -30,4 +35,6 @@ public class DbQuery {
 		// TODO return empty result
 		return null;
 	}
+	
+	
 }
