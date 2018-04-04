@@ -79,7 +79,7 @@
 									}else{
 										String lebensmittelname = request.getParameter("sucheintrag");
 										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao(lebensmittelname);
-										String resultat = suchauftrag.doStuff();
+										String resultat = suchauftrag.suche();
 										if (resultat.equals(lebensmittelname)){
 											response.sendRedirect(request.getContextPath() + "/sucheErfolgreich/");
 						            }else{

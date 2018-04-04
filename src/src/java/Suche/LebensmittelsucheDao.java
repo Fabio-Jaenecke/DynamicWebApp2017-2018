@@ -18,7 +18,7 @@ public class LebensmittelsucheDao {
 
 	
 	public LebensmittelsucheDao(String lebensmittelname) {
-		selectSQL = "select * from lebensmitteldaten where lname = '" + lebensmittelname + "'";
+		selectSQL = "select * from lebensmitteldaten where lname like '%" + lebensmittelname + "%';";
 		DbConnector conn = new DbConnector();
 		connection = conn.getConn();
 		try {
@@ -30,7 +30,7 @@ public class LebensmittelsucheDao {
 	}
 	
 	@SuppressWarnings("finally")
-	public String doStuff() {
+	public String suche() {
 		// prepare & execute select SQL stetement
 		
 			try {
@@ -44,11 +44,11 @@ public class LebensmittelsucheDao {
 				    // TODO Auto-generated catch block
 				    e1.printStackTrace();
 				    System.out.println("Fehler");
-				    return "swag";
+				    return "fehler";
 				  } finally {
-					  return "swag1";
-				    //nothing
 					//TODO: Handle exceptions
+					  return selectSQL;
+					
 				  }
 		
 
