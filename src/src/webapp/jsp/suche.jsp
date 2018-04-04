@@ -83,7 +83,7 @@
 										if (resultat.equals(lebensmittelname)){
 											response.sendRedirect(request.getContextPath() + "/sucheErfolgreich/");
 						            }else{
-						            	response.sendRedirect(request.getContextPath() + "/nichterfolgreich/");
+						            	response.sendRedirect(request.getContextPath() + "/sucheNichtErfolgreich/");
 						            }
 						            	
 						            }
