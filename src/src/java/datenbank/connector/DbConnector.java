@@ -53,7 +53,7 @@ public class DbConnector {
 		return DB_Password;
 	}
 
-	public static Connection getConn() {
+	public Connection getConn() {
 		return conn;
 	}
 }
