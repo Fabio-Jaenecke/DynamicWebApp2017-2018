@@ -13,9 +13,9 @@ import datenbank.DatabaseConnector;
 
 
 /**
-* Servlet implementation class LebensmittelKategorieServlet
+* Servlet implementation class ZugriffsskalaServlet
 */
-@WebServlet(description = "Servlet für die Beliebtheitsskala", urlPatterns = { "/beliebtheitsskala/" })
+@WebServlet(description = "Servlet für die Zugriffsskala", urlPatterns = { "/beliebtheitsskala/" })
 
 public class BeliebtheitsskalaServlet extends HttpServlet {
 	
