@@ -13,7 +13,7 @@ import datenbank.DatabaseConnector;
 
 
 /**
-* Servlet implementation class LebensmittelKategorieServlet
+* Servlet implementation class LebensmittelsucheServlet
 */
 @WebServlet(description = "Servlet für die Lebensmittelsuche", urlPatterns = { "/lebensmittelsuche/" })
 
