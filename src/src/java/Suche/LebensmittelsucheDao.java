@@ -33,8 +33,8 @@ public class LebensmittelsucheDao {
 		
 			try {
 				  while (result.next()) {
-				    String lname = result.getString("lname");
-				    return lname;
+				    String lebensmittelname = result.getString("lname");
+				    return lebensmittelname;
 				  }
 
 			  } catch (SQLException e1) {
