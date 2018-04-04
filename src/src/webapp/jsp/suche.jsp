@@ -73,9 +73,7 @@
 			 					<%
 									if (request.getParameter("sucheintrag") == null) {
 										// it's not there
-									
-							
-				                    //TODO: Gives Nullpointer / Doesn't work
+				                    //TODO: Implement proper redirecting based on search result
 									}else{
 										String lebensmittelname = request.getParameter("sucheintrag");
 										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao(lebensmittelname);
