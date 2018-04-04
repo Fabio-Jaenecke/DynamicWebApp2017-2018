@@ -27,10 +27,11 @@ public class LebensmittelsucheDao {
 		}
 	}
 	
+	/** Sucht nach lebensmittelnamen im ResultSet und gibt zutreffende Lebensmittelnamen zurück.
+	 * @return den gefundenen Lebensmittelnamen
+	 */
 	@SuppressWarnings("finally")
 	public String suche() {
-		// prepare & execute select SQL stetement
-		
 			try {
 				  while (result.next()) {
 				    String lebensmittelname = result.getString("lname");
