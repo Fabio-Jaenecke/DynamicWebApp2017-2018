@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 /**
  * stub for testing the databaseConnector class
- * TODO refactor class
  * @author Raphael
  *
  */
@@ -44,8 +43,7 @@ public class DbConnectorStub {
 			conn.commit();
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, "result set could not be resolved " + e);
 		}
 		
 		return result;

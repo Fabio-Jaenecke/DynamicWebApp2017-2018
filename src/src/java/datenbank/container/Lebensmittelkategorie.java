@@ -2,6 +2,10 @@ package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import datenbank.connector.DbConnectorStub;
 
 /**
  * stellt die Java-Klasse zur Entitaet Lebensmittelkategorie
@@ -13,16 +17,21 @@ public class Lebensmittelkategorie {
 
 	private int kindex;
 	private String kname;
+	private static final Logger LOGGER = Logger.getLogger(DbConnectorStub.class.getName());
 	
 	public Lebensmittelkategorie(int kindex, String kname) {
 		this.kindex = kindex;
 		this.kname = kname;
 	}
 	
-	// TODO add exception
 	public Lebensmittelkategorie(ResultSet rs) throws SQLException {
-	   	this.kindex = rs.getInt("keindex"); 
-	   	this.kname = rs.getString("kname"); 
+		try {
+			this.kindex = rs.getInt("keindex"); 
+		   	this.kname = rs.getString("kname"); 
+		}
+		catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "Result set of lebensmittelkategorie could not be resolved " + e);
+		}
 	}
 	
 	public int getKindex() {

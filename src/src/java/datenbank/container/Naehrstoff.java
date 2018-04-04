@@ -2,6 +2,10 @@ package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import datenbank.connector.DbConnectorStub;
 
 /**
  * stellt die Java-Klasse zur Entitaet Nahrstoff
@@ -13,16 +17,20 @@ public class Naehrstoff {
 	
 	private int nindex;
 	private String nname;
+	private static final Logger LOGGER = Logger.getLogger(Naehrstoff.class.getName());
 	
 	public Naehrstoff(int nindex, String nname) {
 		this.nindex = nindex;
 		this.nname = nname;
 	}
 	
-	// TODO add throw exceptione
-	public Naehrstoff(ResultSet rs) throws SQLException {
-    	this.nindex = rs.getInt("nindex"); 
-        this.nname = rs.getString("nname");        
+	public Naehrstoff(ResultSet rs) {
+    	try {
+			this.nindex = rs.getInt("nindex"); 
+			this.nname = rs.getString("nname");
+		} catch (SQLException e) {
+			LOGGER.log(Level.SEVERE, "Result set of naehrstoff could not be resolved " + e);
+		}        
     }
 	public int getNindex() {
 		return nindex;

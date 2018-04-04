@@ -71,8 +71,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, "table lebensmittelkategorie could not be resolved " + e);
 		}		
 	}
 

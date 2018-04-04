@@ -2,6 +2,10 @@ package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import datenbank.connector.DbConnectorStub;
 
 /**
  * stellt die Java-Klasse zur Entitaet Kategorieneinteilung
@@ -15,6 +19,7 @@ public class Kategorieneinteilung {
 	private int kindex1;
 	private int kindex2;
 	private int kindex3;
+	private static final Logger LOGGER = Logger.getLogger(Kategorieneinteilung.class.getName());
 	
 	public Kategorieneinteilung(int keindex, int kindex1, int kindex2, int kindex3) {
 		this.keindex = keindex;
@@ -23,12 +28,16 @@ public class Kategorieneinteilung {
 		this.kindex3 = kindex3;
 	}
 	
-	// TODO add exception
-	public Kategorieneinteilung(ResultSet rs) throws SQLException {
-    	this.keindex = rs.getInt("keindex"); 
-    	this.kindex1 = rs.getInt("kindex1"); 
-    	this.kindex2 = rs.getInt("kindex2"); 
-    	this.kindex3 = rs.getInt("kindex3"); 
+	public Kategorieneinteilung(ResultSet rs) {
+		try {
+			this.keindex = rs.getInt("keindex"); 
+	    	this.kindex1 = rs.getInt("kindex1"); 
+	    	this.kindex2 = rs.getInt("kindex2"); 
+	    	this.kindex3 = rs.getInt("kindex3"); 
+		}
+    	catch(SQLException e){
+    		LOGGER.log(Level.SEVERE, "Result set of kategorieneinteilung could not be resolved " + e);
+    	}
     }
 	public int getKeindex() {
 		return keindex;

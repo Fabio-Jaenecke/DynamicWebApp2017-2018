@@ -15,7 +15,6 @@ import org.junit.Test;
  */
 public class DatabaseConnectorTest {
 
-	//TODO add stub for database connector
 	private DatabaseConnectorStub conn;
 	
 	/**
@@ -43,8 +42,6 @@ public class DatabaseConnectorTest {
 		assertEquals(conn.getDB_Connection(), "jdbc:h2:~/histarantia");
 	}
 	
-	//TODO write test
-	//TODO get count of tables in database
 	@Test
 	public void driver() {
 		assertEquals(conn.getDB_Driver(), "org.h2.Driver");
@@ -56,7 +53,6 @@ public class DatabaseConnectorTest {
 		assertEquals(conn.getDB_Password(), "");
 	}
 	
-	//TODO write test
 	@Test
 	public void testTableLebensmittedaten() {
 		String sql = "select * from lebensmitteldaten";
@@ -64,7 +60,6 @@ public class DatabaseConnectorTest {
 		assertNotNull(res);
 	}
 	
-	//TODO write test
 	@Test
 	public void testTableZugriffsskala() {
 		String sql = "select * from zugriffsskala";
@@ -72,7 +67,6 @@ public class DatabaseConnectorTest {
 		assertNotNull(res);
 	}
 	
-	//TODO write test
 	@Test
 	public void testTableLebensmittelkategorie() {
 		String sql = "select * from lebensmittelkategorie";
@@ -81,7 +75,6 @@ public class DatabaseConnectorTest {
 	}
 	
 	
-	//TODO write test
 	@Test
 	public void testTableNaehrstoff() {
 		String sql = "select * from naehrstoff";

@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import datenbank.DatabaseConnector;
 import datenbank.connector.DbConnector;
+import datenbank.connector.DbConnectorStub;
 
 public class DbInsertion implements DbInsertionInterface {
 	
@@ -80,9 +81,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, "table lebensmitteldaten could not be filled " + e);
 		}
 	}
 
@@ -101,8 +100,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, "table zugriffsskala could not be filled " + e);
 		}
 	
 	}
@@ -125,7 +123,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, "table lebensmittelmittelkategorie could not be filled " + e);
 		}
 		
 	}
@@ -142,7 +140,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, "table naehrstoff could not be filled " + e);
 		}
 		
 	}
@@ -160,7 +158,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, "table favorit could not be filled " + e);
 		}
 		
 	}
@@ -209,8 +207,7 @@ public class DbInsertion implements DbInsertionInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, "table katzugehoerigkeit could not be filled " + e);
 		}
 	}
 
