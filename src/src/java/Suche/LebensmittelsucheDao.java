@@ -42,7 +42,7 @@ public class LebensmittelsucheDao {
 		    boolean gefunden = false;
 			try {
 				  while (result.next()) {
-					  gefundeneslebensmittel = result.getString("lname");
+					gefundeneslebensmittel = result.getString("lname");
 				    gefunden = true;
 				  }
 
