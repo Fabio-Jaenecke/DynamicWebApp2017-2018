@@ -40,7 +40,7 @@
            			<a href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a>
            			<a href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a>
            			<a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
-           			<a href="${pageContext.request.contextPath}/beliebtheitsskala/">Zugriffsskala</a>
+           			<a href="${pageContext.request.contextPath}/zugriffsskala/">Zugriffsskala</a>
            			<a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche</a>
            			<a href="${pageContext.request.contextPath}/faq/">FAQ</a>
                 </div>
