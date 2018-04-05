@@ -42,12 +42,12 @@ public class DbCreation implements DbCreationInterface {
 			statement = conn.getConn().createStatement();
 			statement.execute("drop table lebensmitteldaten if exists");
 			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(4) primary key, lname varchar(100),"
-				+ " karenzphase varchar(100), dauerernaehrung varchar(100));");
+				+ " karenzphase varchar(100), dauerernaehrung varchar(100))");
 			
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, "Exception occured during creation of table", e);
 		}
 		
 	}
