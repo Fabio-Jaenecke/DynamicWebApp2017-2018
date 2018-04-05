@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class Lebensmitteldaten {
 	
 	/**
-	 * Attribute aus der Entität Lebensmitteldaten
+	 * Attribute aus der Entitaet Lebensmitteldaten
 	 */
 	private int index;
 	private String name;
@@ -36,7 +36,7 @@ public class Lebensmitteldaten {
 	}
 	
 	/**
-	 * Konstruktor für ein Tupel aus der Datenbank
+	 * Konstruktor fuer ein Tupel aus der Datenbank
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
