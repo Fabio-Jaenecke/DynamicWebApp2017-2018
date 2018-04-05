@@ -9,9 +9,10 @@ import java.sql.Connection;
 public class LebensmittelsucheDao {
 	
 	private String selectSQL;
-	Statement statement;
-	ResultSet result; 
-	Connection connection;
+	private Statement statement;
+	private ResultSet result; 
+	private Connection connection;
+    private String gefundeneslebensmittel = null;
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 
 	
@@ -30,29 +31,47 @@ public class LebensmittelsucheDao {
 	/** Sucht nach lebensmittelnamen im ResultSet und gibt zutreffende Lebensmittelnamen zurück.
 	 * @return den gefundenen Lebensmittelnamen
 	 */
-	@SuppressWarnings("finally")
 	public String suche() {
+		    boolean gefunden = false;
 			try {
 				  while (result.next()) {
-				    String lebensmittelname = result.getString("lname");
-				    return lebensmittelname;
+					  gefundeneslebensmittel = result.getString("lname");
+				    gefunden = true;
 				  }
 
 			  } catch (SQLException e1) {
 			    e1.printStackTrace();
-			    return "fehler";
 			  } finally {
 				//TODO: Handle exceptions
-				  return selectSQL;
 			  }
-		
+			if (gefunden) {
+				return gefundeneslebensmittel;
+			}else{
+				return "HANDLECORRECTERRORHERETHISISJUSTANEXAMPLETEXTTHATWONTMATCHINTHEDB";
+			}
 
-		
-
-		
 	}
 
-	
+	/**
+	 * @return the selectSQL
+	 */
+	public String getSelectSQL() {
+		return selectSQL;
+	}
+
+	/**
+	 * @param selectSQL the selectSQL to set
+	 */
+	public void setSelectSQL(String selectSQL) {
+		this.selectSQL = selectSQL;
+	}
+
+	/**
+	 * @return the gefundeneslebensmittel
+	 */
+	public String getGefundeneslebensmittel() {
+		return gefundeneslebensmittel;
+	}
 }
 	
 /*	DbQuery query;

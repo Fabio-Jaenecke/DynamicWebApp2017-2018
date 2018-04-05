@@ -62,6 +62,16 @@
 			           		<%@ page import ="datenbank.container.*" %>
 			           		<%@ page import ="Suche.*" %>
 			           		<%@ page import = "java.util.Iterator" %>
+			           		<%
+			           		String query = null;
+									if (request.getParameter("sucheintrag") == null) {
+										// it's not there
+				                    
+									}else{
+										String lebensmittelname = request.getParameter("sucheintrag");
+										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao(lebensmittelname);
+										String resultat = suchauftrag.suche();
+									%>
 		           			  <table class="table_lebensmittelname">
 			               		<!--<tr>
 			                    <th>Kategorie</th>
@@ -71,22 +81,29 @@
 			 					<tr>
 			 					<td>
 			 					<%
-									if (request.getParameter("sucheintrag") == null) {
-										// it's not there
-				                    //TODO: Implement proper redirecting based on search result
-									}else{
-										String lebensmittelname = request.getParameter("sucheintrag");
-										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao(lebensmittelname);
-										String resultat = suchauftrag.suche();
-										if (resultat.equals(lebensmittelname)){
-											response.sendRedirect(request.getContextPath() + "/sucheErfolgreich/");
-						            }else{
-						            	response.sendRedirect(request.getContextPath() + "/sucheNichtErfolgreich/");
-						            }
-						            	
-						            }
-									
-				                    %>	
+			 					if (resultat.contains(lebensmittelname)){
+									out.println("Ihre Suche:");
+							    %>
+			 					</td>
+			 					<td>
+			 					<%
+									query = suchauftrag.getSelectSQL();
+									out.println("Ergab folgendes Resultat:");
+									out.println(suchauftrag.getGefundeneslebensmittel());
+			 					
+								%>
+			 					</td>
+							    <td>
+							    <%
+			 					}else{
+			 						query = suchauftrag.getSelectSQL();
+					            	out.println("Ihre Suche:");
+									out.println("ergab keine Treffer.");
+				               }
+							   }
+				               %>
+							   
+			
 				                    	<!-- 
 				                    	if (suchauftrag.getLebensmittel(lebensmittelname).getLname().equals(lebensmittelname)){
 				                    		session.setAttribute("sucheintrag", lebensmittelname);
@@ -143,8 +160,13 @@
 				                    Lebensmittelsuche dauerernaehrung;
 				                    dauerernaehrung.getLebensmittelInfoByName("Dauerernaehrung");
 				                    %>-->
-				                    </td>
+				                 </td>
 			                    </tr>
+			                    <%
+			                        out.println("Folgende Query wurde auf der Datenbank aufgerufen:");
+									out.println(query);
+			 					
+								%>
 			                </table>
 		                     
 	            		</div>
