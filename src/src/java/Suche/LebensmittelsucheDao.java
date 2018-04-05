@@ -20,6 +20,8 @@ public class LebensmittelsucheDao {
 	private ResultSet result; 
 	private Connection connection;
     private String gefundeneslebensmittel = null;
+    private String karenzphase;
+    private String dauerernaehrung;
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 
 	
@@ -42,7 +44,9 @@ public class LebensmittelsucheDao {
 		    boolean gefunden = false;
 			try {
 				  while (result.next()) {
-					gefundeneslebensmittel = result.getString("lname");
+					gefundeneslebensmittel = result.getString("lname");     
+			        karenzphase = result.getString("karenzphase");
+			        dauerernaehrung = result.getString("dauerernaehrung");
 				    gefunden = true;
 				  }
 
@@ -72,6 +76,20 @@ public class LebensmittelsucheDao {
 	 */
 	public String getGefundeneslebensmittel() {
 		return gefundeneslebensmittel;
+	}
+
+	/**
+	 * @return the karenzphase
+	 */
+	public String getKarenzphase() {
+		return karenzphase;
+	}
+
+	/**
+	 * @return the dauerernaehrung
+	 */
+	public String getDauerernaehrung() {
+		return dauerernaehrung;
 	}
 }
 
