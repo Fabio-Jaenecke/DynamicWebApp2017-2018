@@ -15,16 +15,16 @@ import datenbank.DatabaseConnector;
 /**
 * Servlet implementation class ZugriffsskalaServlet
 */
-@WebServlet(description = "Servlet für die Zugriffsskala", urlPatterns = { "/beliebtheitsskala/" })
+@WebServlet(description = "Servlet für die Zugriffsskala", urlPatterns = { "/zugriffsskala/" })
 
-public class BeliebtheitsskalaServlet extends HttpServlet {
+public class ZugriffsskalaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BeliebtheitsskalaServlet() {
+    public ZugriffsskalaServlet() {
         super();
     }
     
