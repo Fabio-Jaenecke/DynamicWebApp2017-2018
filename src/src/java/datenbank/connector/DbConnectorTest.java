@@ -29,21 +29,25 @@ public class DbConnectorTest {
 		}
 	}
 	
+	// Testing the connection to the database
 	@Test
 	public void testConnection() {
 		assertTrue(conn.establishH2DBConnection());
 	}
 
+	// Testing if the url is correct
 	@Test
 	public void url() {
 		assertEquals(conn.getDB_Connection(), "jdbc:h2:~/histarantia");
 	}
 	
+	// Testing if the right driver is in use
 	@Test
 	public void driver() {
 		assertEquals(conn.getDB_Driver(), "org.h2.Driver");
 	}
 	
+	// Testing if user name and password are correct
 	@Test
 	public void userAndPassword() {
 		assertEquals(conn.getDB_User(), "user");

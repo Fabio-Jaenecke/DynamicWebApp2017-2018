@@ -11,9 +11,8 @@ import datenbank.container.Lebensmitteldaten;
  * @version 22.03.2018 
  */
 public abstract class Lebensmittelsuche implements Suche {
-	
-	// TODO fix constructor
-	//private LebensmittelsucheDao sucheDao = new LebensmittelsucheDao();
+	// TODO fix code
+	// private LebensmittelsucheDao sucheDao = new LebensmittelsucheDao();
 	
 	/**
 	 * Rufe die Methode getLebensmittelInfoByName auf. 
@@ -22,7 +21,7 @@ public abstract class Lebensmittelsuche implements Suche {
 	public Lebensmitteldaten getLebensmittelInfoByName(String lebensmittelName) {
 		Lebensmitteldaten lebensmittel = null;
 		if (lebensmittelName != null) {
-			// TODO fix method
+			// TODO fix code
 			// lebensmittel = sucheDao.getLebensmittel(lebensmittelName);
 		}
 		
@@ -37,8 +36,8 @@ public abstract class Lebensmittelsuche implements Suche {
 	public List<Lebensmitteldaten> getLebensmittelInfoByKategorie(String kategorieName) {
 		List<Lebensmitteldaten> kategorie = null; 
 		if (kategorieName != null){
-			// TODO fix method
-			//kategorie = sucheDao.getKategorie(kategorieName);
+			// TODO fix code
+			// kategorie = sucheDao.getKategorie(kategorieName);
 		}
 		return kategorie; 
 	}
