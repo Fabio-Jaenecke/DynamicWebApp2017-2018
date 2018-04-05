@@ -1,3 +1,4 @@
+//TODO: Follow clean-code guidelines and use the Suche Interface
 package Suche;
 
 import java.sql.*;
@@ -6,6 +7,12 @@ import java.util.logging.Logger;
 import datenbank.connector.DbConnector;
 import java.sql.Connection;
 
+/** Diese Klasse übergibt die Datenbankabfrage zur Datenbank und führt eine Suche
+ * mit einem vordefinierten Lebensmitteln durch.
+ * 
+ * @author fabio jaenecke
+ *
+ */
 public class LebensmittelsucheDao {
 	
 	private String selectSQL;
@@ -47,7 +54,8 @@ public class LebensmittelsucheDao {
 			if (gefunden) {
 				return gefundeneslebensmittel;
 			}else{
-				return "HANDLECORRECTERRORHERETHISISJUSTANEXAMPLETEXTTHATWONTMATCHINTHEDB";
+				//TODO: Find proper return statement incase the lebensmittel is not found
+				return "ExampleStringBecauseLebensmittelWasNotFound";
 			}
 
 	}
@@ -60,19 +68,14 @@ public class LebensmittelsucheDao {
 	}
 
 	/**
-	 * @param selectSQL the selectSQL to set
-	 */
-	public void setSelectSQL(String selectSQL) {
-		this.selectSQL = selectSQL;
-	}
-
-	/**
 	 * @return the gefundeneslebensmittel
 	 */
 	public String getGefundeneslebensmittel() {
 		return gefundeneslebensmittel;
 	}
 }
+
+//TODO: Delete redundant code:
 	
 /*	DbQuery query;
 	private List<Lebensmitteldaten> lebensmitteldaten;
