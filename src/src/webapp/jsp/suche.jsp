@@ -39,7 +39,7 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">FrÃ¼chte&nbsp;<span
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Fruechte&nbsp;<span
                 class="arrowdown">&#9662;</span></span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
