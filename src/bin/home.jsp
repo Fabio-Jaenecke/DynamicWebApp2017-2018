@@ -93,7 +93,7 @@
                               <li><a href="HTML/lebensmittelkategorie.html">Lebensmittel</a></li>
                               <li><a href="HTML/faq.html">FAQ</a></li>
                               <li><a href="#">Mahlzeitsassistent</a></li>
-                              <li><a href="#">Beliebtheitsskala</a></li>
+                              <li><a href="#">Zugriffsskala</a></li>
                               <li><a href="#">Rezepte</a></li>
                               <li><a href="HTML/kontaktformular.html">Kontakt</a></li>
                               <li><a href="HTML/Suchfilter.html">Suche</a></li>
