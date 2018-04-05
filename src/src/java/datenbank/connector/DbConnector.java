@@ -21,6 +21,7 @@ public class DbConnector {
 		establishH2DBConnection();
 	}
 	
+	// Loading the database
 	private void loadH2Driver() {
 		try {
 			Class.forName(DB_Driver);
@@ -30,6 +31,7 @@ public class DbConnector {
 		}
 	}
 	
+	// Establishing database connection
 	public Connection establishH2DBConnection() {
 		try {
 			conn = DriverManager.getConnection(DB_Connection, DB_User, DB_Password);

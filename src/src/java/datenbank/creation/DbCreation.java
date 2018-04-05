@@ -8,6 +8,10 @@ import java.util.logging.Logger;
 import datenbank.DatabaseConnector;
 import datenbank.connector.DbConnector;
 
+/*
+ * Class for creating tables for the database
+ */
+
 public class DbCreation implements DbCreationInterface {
 
 	private DbConnector conn = new DbConnector();
@@ -17,6 +21,7 @@ public class DbCreation implements DbCreationInterface {
 		setUpTables();
 	}
 	
+	// All the tables for the database
 	@Override
 	public void setUpTables() {
 		setUpTableLebensmitteldaten();
@@ -29,6 +34,7 @@ public class DbCreation implements DbCreationInterface {
 		setUpTableNaehrzugehoerigkeit();
 	}
 
+	// Creating table "lebensmitteldaten"
 	@Override
 	public void setUpTableLebensmitteldaten() {
 		Statement statement;
@@ -46,6 +52,7 @@ public class DbCreation implements DbCreationInterface {
 		
 	}
 
+	// Creating table "zugriffsskala"
 	@Override
 	public void setUpTableZugriffsskala() {
 		Statement statement;
@@ -61,6 +68,7 @@ public class DbCreation implements DbCreationInterface {
 		}
 	}
 
+	// Creating table "lebensmittelkategorie"
 	@Override
 	public void setUpTableLebensmittelkategorie() {
 		Statement statement;
@@ -75,6 +83,7 @@ public class DbCreation implements DbCreationInterface {
 		}		
 	}
 
+	// Creating table "naehrstoff"
 	@Override
 	public void setUpTableNaehrstoff(){
 		Statement statement;
@@ -89,6 +98,7 @@ public class DbCreation implements DbCreationInterface {
 		}	
 	}
 
+	// Creating table "favorit"
 	@Override
 	public void setUpTableFavorit() {
 		Statement statement;
@@ -104,6 +114,7 @@ public class DbCreation implements DbCreationInterface {
 		}
 	}
 
+	// Creating table "katzugehoerigkeit"
 	@Override
 	public void setUpTableKatzugehoerigkeit() {
 		Statement statement;
@@ -121,6 +132,7 @@ public class DbCreation implements DbCreationInterface {
 		
 	}
 
+	// Creating table "enthaelt"
 	@Override
 	public void setUpTableEnhaelt() {
 		Statement statement;
@@ -137,6 +149,7 @@ public class DbCreation implements DbCreationInterface {
 		}
 	}
 
+	// Creating table "naehrzugehoerigkeit"
 	@Override
 	public void setUpTableNaehrzugehoerigkeit() {
 		Statement statement;

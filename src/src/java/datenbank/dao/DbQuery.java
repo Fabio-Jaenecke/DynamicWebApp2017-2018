@@ -10,6 +10,10 @@ import java.sql.Connection;
 
 import datenbank.connector.DbConnector;
 
+/*
+ * Class for the search engine. Makes a connection to the database and searches the database for the result 
+ */
+
 public class DbQuery {
 
 	DbConnector conn = new DbConnector();

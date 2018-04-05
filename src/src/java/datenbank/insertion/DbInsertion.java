@@ -9,6 +9,10 @@ import datenbank.DatabaseConnector;
 import datenbank.connector.DbConnector;
 import datenbank.connector.DbConnectorStub;
 
+/*
+ * Class for filling the tables with content
+ */
+
 public class DbInsertion implements DbInsertionInterface {
 	
 	private DbConnector conn = new DbConnector();
@@ -29,6 +33,7 @@ public class DbInsertion implements DbInsertionInterface {
 		insertIntoTableNaehrzugehoerigkeit();
 	}
 
+	// Inserting data into table lebensmitteldaten
 	@Override
 	public void insertIntoTableLebensmitteldaten() {
 		Statement statement;
@@ -85,6 +90,7 @@ public class DbInsertion implements DbInsertionInterface {
 		}
 	}
 
+	// Inserting data into table zugriffsskala
 	@Override
 	public void insertIntoTableZugriffsskala() {
 		Statement statement;
@@ -105,6 +111,7 @@ public class DbInsertion implements DbInsertionInterface {
 	
 	}
 
+	// Inserting data into table lebensmittelkategorie
 	@Override
 	public void insertIntoTableLebensmittelkategorie() {
 		Statement statement;
@@ -128,6 +135,7 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
+	// Inserting data into table naehrstoff
 	@Override
 	public void insertIntoTableNaehrstoff() {
 		Statement statement;
@@ -145,6 +153,7 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
+	// Inserting data into table favorit
 	@Override
 	public void insertIntoTableFavorit() {
 		Statement statement;
@@ -163,6 +172,7 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
+	// Inserting data into table katzugehoerigkeit
 	@Override
 	public void insertIntoTableKatzugehoerigkeit() {
 		Statement statement;
@@ -211,6 +221,7 @@ public class DbInsertion implements DbInsertionInterface {
 		}
 	}
 
+	// Inserting data into table enthaelt
 	@Override
 	public void insertIntoTableEnhaelt() {
 		Statement statement;
@@ -233,6 +244,7 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
+	// Inserting data into table naehrzugehoerigkeit
 	@Override
 	public void insertIntoTableNaehrzugehoerigkeit() {
 		Statement statement;
