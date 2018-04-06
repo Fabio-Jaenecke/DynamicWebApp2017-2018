@@ -7,14 +7,21 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * establishes connection to database and creates statements
+ * @author Raphael
+ *
+ */
 public class DbConnector {
 
-	// TODO use empty connection and make connection non static
-	private static Connection conn = null;
+	private static Connection conn;
+	private static boolean connInit = false;
+	
 	private static final String DB_Connection = "jdbc:h2:~/histarantia";
 	private static final String DB_Driver = "org.h2.Driver";	
 	private static final String DB_User = "user";
 	private static final String DB_Password = "";
+	
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	public DbConnector() {
@@ -40,29 +47,13 @@ public class DbConnector {
 	public Connection establishH2DBConnection() {
 		try {
 			conn = DriverManager.getConnection(DB_Connection, DB_User, DB_Password);
+			connInit = true;
 		} 
 		catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "Connection could not be established " + e);
 		}
 		
 		return conn;
-	}
-	
-	public Statement createStatement() {
-		Statement statement;
-		try {
-			if(conn == null) {
-				conn = establishH2DBConnection();
-			}
-			
-			statement = conn.createStatement();
-			return statement;
-		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "Statement could not be established " + e);
-		}
-		
-		// TODO return empty statement
-		return null;
 	}
 
 	public String getDbConnection() {
