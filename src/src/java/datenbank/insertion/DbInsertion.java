@@ -257,7 +257,7 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table enthaelt(non-Javadoc)
+	 *  Inserting data into table enthaelt
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableEnhaelt()
 	 */
 	@Override

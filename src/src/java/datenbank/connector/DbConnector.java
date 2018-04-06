@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class DbConnector {
 
-	// TODO use empty connection
+	// TODO use empty connection and make connection non static
 	private static Connection conn = null;
 	private static final String DB_Connection = "jdbc:h2:~/histarantia";
 	private static final String DB_Driver = "org.h2.Driver";	
@@ -21,7 +21,9 @@ public class DbConnector {
 		establishH2DBConnection();
 	}
 	
-	// Loading the database
+	/*
+	 *  Loading the database
+	 */
 	private void loadH2Driver() {
 		try {
 			Class.forName(DB_Driver);
@@ -31,7 +33,9 @@ public class DbConnector {
 		}
 	}
 	
-	// Establishing database connection
+	/*
+	 *  Establishing database connection
+	 */
 	public Connection establishH2DBConnection() {
 		try {
 			conn = DriverManager.getConnection(DB_Connection, DB_User, DB_Password);

@@ -1,5 +1,9 @@
 package datenbank.insertion;
 
+/*
+ * interface for inserting data to tables.
+ * every method inserts data to one table
+ */
 public interface DbInsertionInterface {
 
 	void insertIntoTableLebensmitteldaten();

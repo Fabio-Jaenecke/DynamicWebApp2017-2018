@@ -1,9 +1,8 @@
 package datenbank.creation;
 
-/**
- * interface for creation of tables
- * @author Raphael
- *
+/*
+ * interface for inserting data to tables.
+ * every method creates one table
  */
 public interface DbCreationInterface {
 
