@@ -72,9 +72,15 @@ public class DbConnector {
 		return conn;
 	}
 	
-	// TODO fix code
-	/*
-	public void finally() {
-		conn.close();
-	}*/
+	public void finalize() {
+		try {
+			if(!connInit) {
+	    		conn.close();    
+	    	}
+		}
+		catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "connection could not be closed " + e);
+		}
+    	
+    }
 }
