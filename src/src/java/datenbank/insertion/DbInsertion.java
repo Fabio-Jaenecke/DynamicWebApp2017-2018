@@ -10,7 +10,7 @@ import datenbank.connector.DbConnector;
 import datenbank.connector.DbConnectorStub;
 
 /*
- * Class for filling the tables with content
+ * Class for filling the tables with content, derived from interface
  */
 
 public class DbInsertion implements DbInsertionInterface {
@@ -18,6 +18,9 @@ public class DbInsertion implements DbInsertionInterface {
 	private DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	private static final String INSERT = "INSERT INTO ";
+	/*
+	 * table names as enums
+	 */
 	public enum tables{
 		LEBENSMITTELDATEN,
 		ZUGRIFFSSKALA,
@@ -33,6 +36,9 @@ public class DbInsertion implements DbInsertionInterface {
 		insertIntoTables();
 	}
 	
+	/*
+	 * insert into different tables
+	 */
 	public void insertIntoTables() {
 		insertIntoTableLebensmitteldaten();
 		insertIntoTableZugriffsskala();
@@ -44,7 +50,10 @@ public class DbInsertion implements DbInsertionInterface {
 		insertIntoTableNaehrzugehoerigkeit();
 	}
 
-	// Inserting data into table lebensmitteldaten
+	/*
+	 *  Inserting data into table lebensmitteldaten(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmitteldaten()
+	 */
 	@Override
 	public void insertIntoTableLebensmitteldaten() {
 		Statement statement;
@@ -101,7 +110,10 @@ public class DbInsertion implements DbInsertionInterface {
 		}
 	}
 
-	// Inserting data into table zugriffsskala
+	/*
+	 *  Inserting data into table zugriffsskala(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableZugriffsskala()
+	 */
 	@Override
 	public void insertIntoTableZugriffsskala() {
 		Statement statement;
@@ -122,7 +134,10 @@ public class DbInsertion implements DbInsertionInterface {
 	
 	}
 
-	// Inserting data into table lebensmittelkategorie
+	/*
+	 *  Inserting data into table lebensmittelkategorie(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmittelkategorie()
+	 */
 	@Override
 	public void insertIntoTableLebensmittelkategorie() {
 		Statement statement;
@@ -146,7 +161,10 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
-	// Inserting data into table naehrstoff
+	/*
+	 *  Inserting data into table naehrstoff(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableNaehrstoff()
+	 */
 	@Override
 	public void insertIntoTableNaehrstoff() {
 		Statement statement;
@@ -164,7 +182,10 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
-	// Inserting data into table favorit
+	/*
+	 *  Inserting data into table favorit(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableFavorit()
+	 */
 	@Override
 	public void insertIntoTableFavorit() {
 		Statement statement;
@@ -183,7 +204,10 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
-	// Inserting data into table katzugehoerigkeit
+	/*
+	 *  Inserting data into table katzugehoerigkeit(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableKatzugehoerigkeit()
+	 */
 	@Override
 	public void insertIntoTableKatzugehoerigkeit() {
 		Statement statement;
@@ -232,7 +256,10 @@ public class DbInsertion implements DbInsertionInterface {
 		}
 	}
 
-	// Inserting data into table enthaelt
+	/*
+	 *  Inserting data into table enthaelt(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableEnhaelt()
+	 */
 	@Override
 	public void insertIntoTableEnhaelt() {
 		Statement statement;
@@ -255,7 +282,10 @@ public class DbInsertion implements DbInsertionInterface {
 		
 	}
 
-	// Inserting data into table naehrzugehoerigkeit
+	/*
+	 * Inserting data into table naehrzugehoerigkeit(non-Javadoc)
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableNaehrzugehoerigkeit()
+	 */
 	@Override
 	public void insertIntoTableNaehrzugehoerigkeit() {
 		Statement statement;
