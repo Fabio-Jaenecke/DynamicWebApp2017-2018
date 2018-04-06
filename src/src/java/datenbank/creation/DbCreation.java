@@ -16,7 +16,7 @@ public class DbCreation implements DbCreationInterface {
 
 	private DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
-	private final String errorMessage = "exception occured during creation of table";
+	private static final String errorMessage = "exception occured during creation of table";
 	
 	public DbCreation() {
 		setUpTables();

@@ -104,6 +104,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table lebensmitteldaten");;
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table lebensmitteldaten could not be filled " + e);
 		}
