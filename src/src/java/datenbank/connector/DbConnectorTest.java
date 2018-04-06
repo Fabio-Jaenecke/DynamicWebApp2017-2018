@@ -13,20 +13,14 @@ import org.junit.Test;
 */
 public class DbConnectorTest {
 
-	private DbConnectorStub conn;
+	private DbConnectorStub conn = new DbConnectorStub();
 	
-	/**
-	 * setup for unit test of database connector class
-	 * we don't use a logger since it's only a unit test
+	/*
+	 * we only inistiate a connection, so no things to do in setup
 	 */
 	@Before
 	public void setUp() {
-		try {
-			conn = new DbConnectorStub();
-		}
-		catch(Exception e){
-			System.out.println("Exception occured while setting up unit test");
-		}
+		
 	}
 	
 	// Testing the connection to the database

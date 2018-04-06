@@ -62,4 +62,10 @@ public class DbConnector {
 	public Connection getConn() {
 		return conn;
 	}
+	
+	// TODO fix code
+	/*
+	public void finally() {
+		conn.close();
+	}*/
 }

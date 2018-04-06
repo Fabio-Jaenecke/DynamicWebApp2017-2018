@@ -16,9 +16,12 @@ import datenbank.connector.DbConnector;
 
 public class DbQuery {
 
-	DbConnector conn = new DbConnector();
+	private DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
+	/*
+	 * connection to database already here, so no creations in constructor
+	 */
 	public DbQuery() {
 		
 	}

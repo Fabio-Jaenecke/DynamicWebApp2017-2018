@@ -51,7 +51,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table lebensmitteldaten(non-Javadoc)
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmitteldaten()
 	 */
 	@Override
@@ -111,7 +110,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table zugriffsskala(non-Javadoc)
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableZugriffsskala()
 	 */
 	@Override
@@ -135,7 +133,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table lebensmittelkategorie(non-Javadoc)
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmittelkategorie()
 	 */
 	@Override
@@ -162,7 +159,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table naehrstoff(non-Javadoc)
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableNaehrstoff()
 	 */
 	@Override
@@ -183,7 +179,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table favorit(non-Javadoc)
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableFavorit()
 	 */
 	@Override
@@ -205,7 +200,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table katzugehoerigkeit(non-Javadoc)
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableKatzugehoerigkeit()
 	 */
 	@Override
@@ -257,7 +251,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 *  Inserting data into table enthaelt
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableEnhaelt()
 	 */
 	@Override
@@ -283,7 +276,6 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 * Inserting data into table naehrzugehoerigkeit(non-Javadoc)
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableNaehrzugehoerigkeit()
 	 */
 	@Override
