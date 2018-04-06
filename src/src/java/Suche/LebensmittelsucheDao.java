@@ -40,11 +40,13 @@ public class LebensmittelsucheDao {
 	public Lebensmitteldaten getLebensmittel(String lebensmittelname) throws SQLException {
 		Lebensmitteldaten lebensmitteldaten = null;
 		 
-		String query = "select * from lebensmitteldaten l  join katzugehoerigkeit k on l.lindex"
-				+ "= k.lindex join kategorieneinteilung j on j.kindex = k.kindex where l.lname = ?";
+		String query = "select l.lindex, l.lname, l.karenzphase, l.dauerernaherung"
+				+ " from lebensmitteldaten l  join katzugehoerigkeit k on l.lindex"
+				+ "= k.lindex join lebensmittelkategorie j on j.kindex = k.kindex where l.lname = ?";
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setString(1, lebensmittelname);
 		result = preparedStatement.executeQuery();
+		Lebensmitteldaten lebensmittelTest = new Lebensmitteldaten(result);
 		while(result.next()) {
 			lebensmitteldaten = new Lebensmitteldaten(
 					result.getInt("lindex"),
