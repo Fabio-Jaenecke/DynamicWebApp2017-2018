@@ -3,6 +3,7 @@ package datenbank.connector;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,6 +46,23 @@ public class DbConnector {
 		}
 		
 		return conn;
+	}
+	
+	public Statement createStatement() {
+		Statement statement;
+		try {
+			if(conn == null) {
+				conn = establishH2DBConnection();
+			}
+			
+			statement = conn.createStatement();
+			return statement;
+		} catch (SQLException e) {
+			LOGGER.log(Level.SEVERE, "Statement could not be established " + e);
+		}
+		
+		// TODO return empty statement
+		return null;
 	}
 
 	public String getDbConnection() {

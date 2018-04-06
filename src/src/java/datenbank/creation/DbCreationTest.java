@@ -5,9 +5,18 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import datenbank.dao.DbQuery;
+
+/**
+ * tests class DbCreation
+ * asserts that tables are created
+ * @author Raphael
+ *
+ */
 public class DbCreationTest {
 
 	DbCreation creation = new DbCreation();
+	DbQuery query = new DbQuery();
 	
 	@Before
 	public void setUp() throws Exception {
@@ -16,42 +25,42 @@ public class DbCreationTest {
 
 	@Test
 	public void testSetUpTableLebensmitteldaten() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from lebensmitteldaten"));
 	}
 
 	@Test
 	public void testSetUpTableZugriffsskala() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from zugriffsskala"));
 	}
 
 	@Test
 	public void testSetUpTableLebensmittelkategorie() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from lebensmittelkategorie"));
 	}
 
 	@Test
 	public void testSetUpTableNaehrstoff() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from naehrstoff"));
 	}
 
 	@Test
 	public void testSetUpTableFavorit() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from favorit"));
 	}
 
 	@Test
 	public void testSetUpTableKatzugehoerigkeit() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from katzugehoerigkeit"));
 	}
 
 	@Test
 	public void testSetUpTableEnhaelt() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from enthaelt"));
 	}
 
 	@Test
 	public void testSetUpTableNaehrzugehoerigkeit() {
-		fail("Not yet implemented");
+		assertNotNull(query.getResult("select 1 from naehrzugehoerigkeit"));
 	}
 
 }
