@@ -124,17 +124,18 @@
 						%>
 			        <%
 			        if (request.getParameter("kategorieauswahl") == null) {
-						//its not there
+			        	out.println("input field could not be validated");
                     
 					}else{
 						kategorienname = request.getParameter("kategorieauswahl");
-						KategoriensucheDao kategorieauftrag = new KategoriensucheDao(kategorienname);
-						kategorieresultate = kategorieauftrag.selection();
+						KategoriensucheDao2 kategorieauftrag = new KategoriensucheDao2();
+						kategorieauftrag.searchForString(kategorienname);
+						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+						
 			        %>
 			        <table class="table_lebensmittelkategorie">
 			               		<tr>
-			               		    <th>Kategorie</th>
-				                    <th>Lebensmittel</th>
+			               		    <th>Lebensmittel</th>
 				                    <th>Karenzphase</th>
 				                    <th>Dauerernaehrung</th>
 				                    
@@ -144,14 +145,10 @@
 				                out.println("<p><p>");
 				                out.println("Ausgewählte Kategorie: " + kategorienname);
 				                out.println("<p><p>");
-				                for(Lebensmitteldaten lebensmitteleintrag : kategorieresultate){
-				                	
-				                	 if (kategorienname.equals(lebensmitteleintrag.getKategorie())){
+				                
+				                for(Lebensmitteldaten lebensmitteleintrag : daten){
 				                		out.println("<tr>");
-				                		out.println("<td>");
-					                	out.println(lebensmitteleintrag.getKategorie());
-					                	out.println("</td>");
-				                		out.println("<td>");
+				                   		out.println("<td>");
 				                		out.println(lebensmitteleintrag.getLname());
 				                		out.println("</td>");
 				                		out.println("<td>");
@@ -161,9 +158,10 @@
 				                		out.println(lebensmitteleintrag.getDauerernaehrung());
 				                		out.println("</td>");
 				                		out.println("</tr>");
-				                	}
 									}
-									}
+			        			// for the next category call we have to clear the arraylist of lebensmittel
+			        			kategorieauftrag.clearLebensmittel();
+			        			}
 				                %>
 			            </table>
             </form>
