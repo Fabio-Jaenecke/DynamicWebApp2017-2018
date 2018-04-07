@@ -2,6 +2,10 @@ package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import datenbank.connector.DbConnector;
 
 /**
  * stellt die Java-Klasse zur Entitaet Lebensmitteldaten
@@ -19,6 +23,7 @@ public class Lebensmitteldaten {
 	private String karenzphase;
 	private String dauerernaehrung;
 	private String kategorie;
+	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	/**
 	 * Standardkonstruktor für ein Lebensmittel
@@ -34,18 +39,22 @@ public class Lebensmitteldaten {
 		this.dauerernaehrung = dauerernaehrung;
 		this.kategorie = kategorie; 
 	}
-	
+		
 	/**
 	 * Konstruktor fuer ein Tupel aus der Datenbank
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
-	public Lebensmitteldaten(ResultSet rs) throws SQLException {
-    	this.index = rs.getInt("lindex"); 
-        this.lebensmittelname = rs.getString("lname");        
-        this.karenzphase = rs.getString("karenzphase");
-        this.dauerernaehrung = rs.getString("dauerernaehrung");
-        this.kategorie = rs.getString("kname"); 
+	public Lebensmitteldaten(ResultSet rs) {
+		try {
+	    	this.index = rs.getInt("lindex"); 
+	        this.lebensmittelname = rs.getString("lname");        
+	        this.karenzphase = rs.getString("karenzphase");
+	        this.dauerernaehrung = rs.getString("dauerernaehrung");
+		}
+		catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "resulSet could not be resolved " + e);
+		}
     }
 
 	public int getLindex() {
