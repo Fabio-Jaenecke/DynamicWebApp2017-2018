@@ -2,31 +2,36 @@
 package Suche;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import datenbank.connector.DbConnector;
+import datenbank.container.Lebensmitteldaten;
+
 import java.sql.Connection;
 
 /** Diese Klasse übergibt die Datenbankabfrage zur Datenbank und führt eine Suche
- * mit einem vordefinierten Lebensmitteln durch.
+ * mit einer vordefinierten Kategorie durch.
  * 
  * @author fabio jaenecke
  *
  */
-public class LebensmittelsucheDao {
+public class KategoriensucheDao {
 	
 	private String selectSQL;
 	private Statement statement;
 	private ResultSet result; 
 	private Connection connection;
-    private String gefundeneslebensmittel = null;
+    private String ausgewähltekategorie = null;
+    private String lebensmittel;
     private String karenzphase;
     private String dauerernaehrung;
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 
 	
-	public LebensmittelsucheDao(String lebensmittelname) {
-		selectSQL = "select * from lebensmitteldaten where lname like '%" + lebensmittelname + "%';";
+	public KategoriensucheDao(String kategorienname) {
+			selectSQL = "Select * FROM LEBENSMITTELDATEN l JOIN KATZUGEHOERIGKEIT k ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex=lk.kindex where lk.Kname='" + kategorienname + "';";
 		DbConnector conn = new DbConnector();
 		connection = conn.getConn();
 		try {
@@ -37,17 +42,14 @@ public class LebensmittelsucheDao {
 		}
 	}
 	
-	/** Sucht nach lebensmittelnamen im ResultSet und gibt zutreffende Lebensmittelnamen zurück.
+	/** Selectiert Lebensmitteldaten und schreibt diese in eine ArrayList.
 	 * @return den gefundenen Lebensmittelnamen
 	 */
-	public String suche() {
-		    boolean gefunden = false;
+	public ArrayList<Lebensmitteldaten> selection() {
+		    ArrayList<Lebensmitteldaten> lebensmittelresultate = new ArrayList<>();
 			try {
 				  while (result.next()) {
-					gefundeneslebensmittel = result.getString("lname");     
-			        karenzphase = result.getString("karenzphase");
-			        dauerernaehrung = result.getString("dauerernaehrung");
-				    gefunden = true;
+			        lebensmittelresultate.add(new Lebensmitteldaten(result));
 				  }
 
 			  } catch (SQLException e1) {
@@ -55,13 +57,9 @@ public class LebensmittelsucheDao {
 			  } finally {
 				//TODO: Handle exceptions
 			  }
-			if (gefunden) {
-				return gefundeneslebensmittel;
-			}else{
-				//TODO: Find proper return statement incase the lebensmittel is not found
-				return "nothingfoundhere";
-			}
-
+			
+			return lebensmittelresultate;
+			
 	}
 
 	/**
@@ -74,8 +72,8 @@ public class LebensmittelsucheDao {
 	/**
 	 * @return the gefundeneslebensmittel
 	 */
-	public String getGefundeneslebensmittel() {
-		return gefundeneslebensmittel;
+	public String getAusgewähltekategorie() {
+		return ausgewähltekategorie;
 	}
 
 	/**

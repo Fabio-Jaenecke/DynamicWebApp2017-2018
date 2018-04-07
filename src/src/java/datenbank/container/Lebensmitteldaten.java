@@ -15,7 +15,7 @@ public class Lebensmitteldaten {
 	 * Attribute aus der Entitaet Lebensmitteldaten
 	 */
 	private int index;
-	private String name;
+	private String lebensmittelname;
 	private String karenzphase;
 	private String dauerernaehrung;
 	private String kategorie;
@@ -27,9 +27,9 @@ public class Lebensmitteldaten {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public Lebensmitteldaten(int index, String name, String karenzphase, String dauerernaehrung, String kategorie) {
+	public Lebensmitteldaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie) {
 		this.index = index;
-		this.name = name;
+		this.lebensmittelname = lebensmittelname;
 		this.karenzphase = karenzphase;
 		this.dauerernaehrung = dauerernaehrung;
 		this.kategorie = kategorie; 
@@ -42,10 +42,10 @@ public class Lebensmitteldaten {
 	 */
 	public Lebensmitteldaten(ResultSet rs) throws SQLException {
     	this.index = rs.getInt("lindex"); 
-        this.name = rs.getString("lname");        
+        this.lebensmittelname = rs.getString("lname");        
         this.karenzphase = rs.getString("karenzphase");
         this.dauerernaehrung = rs.getString("dauerernaehrung");
-        this.kategorie = rs.getString("kategorie"); 
+        this.kategorie = rs.getString("kname"); 
     }
 
 	public int getLindex() {
@@ -57,11 +57,11 @@ public class Lebensmitteldaten {
 	}
 
 	public String getLname() {
-		return name;
+		return lebensmittelname;
 	}
 
 	public void setLname(String lname) {
-		this.name = lname;
+		this.lebensmittelname = lname;
 	}
 
 	public String getKarenzphase() {
