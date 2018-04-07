@@ -11,7 +11,7 @@ import datenbank.container.Lebensmitteldaten;
  * Diese Klasse uebergibt die Datenbankabfrage zur Datenbank und fuehrt eine
  * Suche mit einem vordefinierten Lebensmitteln durch.
  * 
- * @author trebomic 
+ * @author trebomic
  *
  */
 public class LebensmittelsucheDao {
@@ -36,26 +36,25 @@ public class LebensmittelsucheDao {
 			LOGGER.log(Level.SEVERE, "Query could not be established " + e);
 		}
 	}
-	
+
 	public Lebensmitteldaten getLebensmittel(String lebensmittelname) throws SQLException {
+		try {
 		Lebensmitteldaten lebensmitteldaten = null;
 		 
-		String query = "select l.lindex, l.lname, l.karenzphase, l.dauerernaherung"
+		String query = "select l.lindex, l.lname, l.karenzphase, l.dauerernaehrung"
 				+ " from lebensmitteldaten l  join katzugehoerigkeit k on l.lindex"
 				+ "= k.lindex join lebensmittelkategorie j on j.kindex = k.kindex where l.lname = ?";
 		PreparedStatement preparedStatement = connection.prepareStatement(query);
 		preparedStatement.setString(1, lebensmittelname);
 		result = preparedStatement.executeQuery();
 		Lebensmitteldaten lebensmittelTest = new Lebensmitteldaten(result);
-		while(result.next()) {
-			lebensmitteldaten = new Lebensmitteldaten(
-					result.getInt("lindex"),
-					result.getString("lname"),
-					result.getString("karenzphase"),
-					result.getString("dauerernaehrung"),
-					result.getString("kname"));
+		
+		return lebensmittelTest;
 		}
-		return lebensmitteldaten;
-			
+		catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "Query could not be established " + e);
+		}
+		
+		return null;	
 	}
 }
