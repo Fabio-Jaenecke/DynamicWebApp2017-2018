@@ -37,19 +37,28 @@ public class LebensmittelsucheDao {
 		}
 	}
 
-	public Lebensmitteldaten getLebensmittel(String lebensmittelname) throws SQLException {
+	public Lebensmitteldaten getLebensmittel(String lebensmittelname)  {
 		try {
-		Lebensmitteldaten lebensmitteldaten = null;
+			Lebensmitteldaten lebensmitteldaten = null;
 		 
-		String query = "select l.lindex, l.lname, l.karenzphase, l.dauerernaehrung"
-				+ " from lebensmitteldaten l  join katzugehoerigkeit k on l.lindex"
-				+ "= k.lindex join lebensmittelkategorie j on j.kindex = k.kindex where l.lname = ?";
-		PreparedStatement preparedStatement = connection.prepareStatement(query);
-		preparedStatement.setString(1, lebensmittelname);
-		result = preparedStatement.executeQuery();
-		Lebensmitteldaten lebensmittelTest = new Lebensmitteldaten(result);
-		
-		return lebensmittelTest;
+			String query = "select l.lindex, l.lname, l.karenzphase, l.dauerernaehrung, j.kname"
+				+ " from lebensmitteldaten l  join katzugehoerigkeit k on l.lindex "
+				+ "= k.lindex join lebensmittelkategorie j on j.kindex = k.kindex where "
+				+ "l.lname like '%" + lebensmittelname + "%';";
+			DbConnector conn = new DbConnector();
+			connection = conn.getConn();
+			statement = connection.createStatement();
+			result = statement.executeQuery(query);
+			while(result.next()) {
+			lebensmitteldaten = new Lebensmitteldaten(
+					result.getInt(1),
+					result.getString(2),
+					result.getString(3),
+					result.getString(4),
+					result.getString(5));
+			}
+			
+			return lebensmitteldaten;
 		}
 		catch(SQLException e) {
 			LOGGER.log(Level.SEVERE, "Query could not be established " + e);
