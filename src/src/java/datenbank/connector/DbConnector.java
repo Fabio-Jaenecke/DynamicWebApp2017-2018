@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 public class DbConnector {
 
 	private static Connection conn;
+	// true if conn has been initialized, false if conn is null
 	private static boolean connInit = false;
 	
 	private static final String DB_Connection = "jdbc:h2:~/histarantia";
