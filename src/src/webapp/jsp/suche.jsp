@@ -62,21 +62,18 @@
 	            			<input type="submit" value="Suche" />
 			           		  <%@ page import ="Suche.*" %>
 			           		  <%
-			           			String query = null;
-			           		    String notfound = "";
-			           		    String resultat = null;
-			           		    String lebensmittelname = "StringThatsNotInTheDB";
-									if (request.getParameter("sucheintrag") == null) {
-										//its not there
+			           		    String lebensmittelname = "";
+									if (request.getParameter("sucheintrag") == "") {
+										out.println("input field could not be validated");
 				                    
-									}else{
+									}
+									else{
 										lebensmittelname = request.getParameter("sucheintrag");
-										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao(lebensmittelname);
-										resultat = suchauftrag.suche();
+										LebensmittelsucheDao2 suchauftrag = new LebensmittelsucheDao2();
+										suchauftrag.searchForString(lebensmittelname);
 										
 		                            //Print the Table if something is found:
-				 					if (resultat.contains(lebensmittelname) && lebensmittelname != ""){
-				 						query = suchauftrag.getSelectSQL();
+				 					if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
 				 						out.println("<table class='table_lebensmittelkategorie'>");
 				 						out.println("<tr>");
 				 						out.println("<th>Lebensmittel</th>");
@@ -85,22 +82,20 @@
 				 						out.println("</tr>");
 				 						out.println("<tr>");
 				 						out.println("<td>");
-				 						out.println(suchauftrag.getGefundeneslebensmittel());
+				 						out.println(suchauftrag.getLebensmittel().getLname());
 				 						out.println("</td>");
 				 						out.println("<td>");
-				 						out.println(suchauftrag.getKarenzphase());
+				 						out.println(suchauftrag.getLebensmittel().getKarenzphase());
 				 						out.println("</td>");
 				 						out.println("<td>");
-				 						out.println(suchauftrag.getDauerernaehrung());
+				 						out.println(suchauftrag.getLebensmittel().getDauerernaehrung());
 				 						out.println("</td>");
 				 						out.println("</tr>");
 				 						out.println("</table>");
 				 					//Else print a warning
 				 					}else{
-				 						query = suchauftrag.getSelectSQL();
-						            	notfound = "Ihre Suche ergab keine Treffer, versuchen Sie die Kategorienauswahl.";
-						            	out.println("<p><p>");
-						            	out.println(notfound); 
+				 				      	out.println("<p><p>");
+						            	out.println("Ihre Suche ergab keine Treffer, versuchen Sie die Kategorienauswahl."); 
 						            	out.println("<p><p>");
 					               }
 								   }
