@@ -34,8 +34,7 @@
 <div class="header-container">
     <header class="wrapper clearfix">
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Früchte&nbsp;<span
-                class="arrowdown">&#9662;</span></span>
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Lebensmittel</span>
                 <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
                 <a href="${pageContext.request.contextPath}/home/">Home</a>
@@ -55,8 +54,8 @@
         <article>
             <header>
                 <h2>Definition von Frucht</h2>
-                <p>Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe, die aus einer BlÃ¼te
-                    hervorgehen, und die die Pflanzensamen bis zu deren Reife umschlieÃen. FrÃ¼chte bilden prinzipiell
+                <p>Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe, die aus einer Bluete
+                    hervorgehen, und die die Pflanzensamen bis zu deren Reife umschliessen. Fruechte bilden prinzipiell
                     nur die Pflanzen, die einen geschlossenen Fruchtknoten besitzen (Bedecktsamer = Angiospermen) -
                     Wikipedia</p>
                 <a href="https://de.wikipedia.org/wiki/Frucht">Mehr</a>
@@ -123,18 +122,18 @@
                 <h3 class="title_legende">Legende:</h3>
                 <ul class="legende">
                     <li>KP = Karenzphase</li>
-                    <li>DE = DauerernÃ¤hrung</li>
+                    <li>DE = Dauerernaehrung</li>
                 </ul>
             </section>
         </article>
         <aside>
-            <h3>Beliebte Lebensmittel (Kategorie Ã¼bergreifend)</h3>
+            <h3>Häufige Zugriffe</h3>
             <table class="table_beliebte_lebensmittel">
                 <thead>
                 <tr>
                     <th rowspan="2">Platz</th>
                     <th rowspan="2">Lebensmittel</th>
-                    <th colspan="2">VertrÃ¤glichkeit</th>
+                    <th colspan="2">Vertraeglichkeit</th>
                     <th rowspan="2">Zugriffe</th>
                 </tr>
                 <tr>
