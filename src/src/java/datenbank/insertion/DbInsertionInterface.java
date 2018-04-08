@@ -39,7 +39,7 @@ public interface DbInsertionInterface {
 	/*
 	 *   Inserting data into table enthaelt 
 	 */
-	void insertIntoTableEnhaelt();
+	void insertIntoTableenthaelt();
 	
 	/*
 	 * Inserting data into table naehrzugehoerigkeit

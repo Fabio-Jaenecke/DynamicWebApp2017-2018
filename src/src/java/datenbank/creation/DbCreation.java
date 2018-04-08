@@ -159,7 +159,7 @@ public class DbCreation implements DbCreationInterface {
 	 * @see datenbank.creation.DbCreationInterface#setUpTableEnhaelt()
 	 */
 	@Override
-	public void setUpTableEnhaelt() {
+	public void setUpTableEnthaelt() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();

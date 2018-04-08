@@ -46,7 +46,7 @@ public class DbInsertion implements DbInsertionInterface {
 		insertIntoTableNaehrstoff();
 		insertIntoTableFavorit();
 		insertIntoTableKatzugehoerigkeit();
-		insertIntoTableEnhaelt();
+		insertIntoTableEnthaelt();
 		insertIntoTableNaehrzugehoerigkeit();
 	}
 
@@ -127,6 +127,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table zugriffsskala");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table zugriffsskala could not be filled " + e);
 		}
@@ -153,6 +154,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table lebensmittelmittelkategorie");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table lebensmittelmittelkategorie could not be filled " + e);
 		}
@@ -173,6 +175,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table naehrstoff");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table naehrstoff could not be filled " + e);
 		}
@@ -194,6 +197,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table favorit");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table favorit could not be filled " + e);
 		}
@@ -246,16 +250,17 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table katzugehoerigkeit");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table katzugehoerigkeit could not be filled " + e);
 		}
 	}
 
 	/*
-	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableEnhaelt()
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableEnthaelt()
 	 */
 	@Override
-	public void insertIntoTableEnhaelt() {
+	public void insertIntoTableEnthaelt() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
@@ -270,6 +275,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table enthaelt");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
@@ -305,6 +311,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table naehrzugehoerigkeit");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}

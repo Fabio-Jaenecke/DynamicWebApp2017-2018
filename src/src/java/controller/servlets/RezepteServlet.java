@@ -15,7 +15,7 @@ import datenbank.DatabaseConnector;
 /**
 * Servlet implementation class RezepteServlet
 */
-@WebServlet(description = "Servlet für Rezepte", urlPatterns = { "/rezepte/" })
+@WebServlet(description = "Servlet fuer Rezepte", urlPatterns = { "/rezepte/" })
 
 public class RezepteServlet extends HttpServlet {
 	
