@@ -12,7 +12,7 @@ import datenbank.container.Lebensmitteldaten;
  * Suche mit einem vordefinierten Lebensmitteln durch.
  * 
  * @author trebomic
- *
+ * @version 05.04.2018
  */
 public class LebensmittelsucheDao {
 
