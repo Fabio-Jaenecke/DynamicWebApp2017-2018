@@ -35,8 +35,7 @@
                <div class="header-container">
                   <header class="wrapper clearfix">
                      <nav>
-                        <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Fruechte&nbsp;<span
-                           class="arrowdown">&#9662;</span></span>
+                        <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Suche</span>
                         <div id="mySidenav" class="sidenav side-nav">
                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
                            <a href="${pageContext.request.contextPath}/home/">Home</a>
@@ -76,11 +75,11 @@
                                               //Print the Table if something is found:
                                  if (resultat.contains(lebensmittelname) && lebensmittelname != ""){
                                  query = suchauftrag.getSelectSQL();
-                                 out.println("<table class='table_lebensmittelkategorie'>");
+                                 out.println("<table class='table_lebensmittelkategorie' style='margin-top: 30px;'>");
                                  out.println("<tr>");
-                                 out.println("<th>Lebensmittel</th>");
-                                 out.println("<th>Karenzphase</th>");
-                                 out.println("<th>Dauerernaehrung</th>");
+                                 out.println("<th style='text-align: left;'>Lebensmittel</th>");
+                                 out.println("<th style='text-align: left;'>Karenzphase</th>");
+                                 out.println("<th style='text-align: left;'>Dauerernaehrung</th>");
                                  out.println("</tr>");
                                  out.println("<tr>");
                                  out.println("<td>");
@@ -137,16 +136,16 @@
                            <table class="table_lebensmittelkategorie" style="margin-top: 30px;">
                               <thead>
                                  <tr>
-                                    <th colspan="3">
+                                    <th style="text-align: left;" colspan="3">
                                        <%
-                                          out.println(kategorienname);
-                                          %>
+                                          out.println("Lebensmittelkategorie: " + kategorienname);
+                                       %>
                                     </th>
                                  </tr>
                                  <tr>
-                                    <th>Lebensmittel</th>
-                                    <th>Karenzphase</th>
-                                    <th>Dauerernaehrung</th>
+                                    <th style="text-align: left;">Lebensmittel</th>
+                                    <th style="text-align: left;">Karenzphase</th>
+                                    <th style="text-align: left;">Dauerernaehrung</th>
                                  </tr>
                               </thead>
                               <tbody>
