@@ -34,7 +34,7 @@ public class DbCreation implements DbCreationInterface {
 		setUpTableNaehrstoff();
 		setUpTableFavorit();
 		setUpTableKatzugehoerigkeit();
-		setUpTableEnhaelt();
+		setUpTableEnthaelt();
 		setUpTableNaehrzugehoerigkeit();
 	}
 

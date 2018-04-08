@@ -20,9 +20,8 @@ public interface DbCreationInterface {
 	
 	void setUpTableKatzugehoerigkeit();
 	
-	void setUpTableEnhaelt();
+	void setUpTableEnthaelt();
 	
 	void setUpTableNaehrzugehoerigkeit();
-
 		
 }
