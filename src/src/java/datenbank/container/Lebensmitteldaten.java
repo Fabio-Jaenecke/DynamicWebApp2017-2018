@@ -2,6 +2,10 @@ package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import datenbank.connector.DbConnector;
 
 /**
  * stellt die Java-Klasse zur Entitaet Lebensmitteldaten
@@ -15,10 +19,11 @@ public class Lebensmitteldaten {
 	 * Attribute aus der Entitaet Lebensmitteldaten
 	 */
 	private int index;
-	private String name;
+	private String lebensmittelname;
 	private String karenzphase;
 	private String dauerernaehrung;
 	private String kategorie;
+	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	/**
 	 * Standardkonstruktor für ein Lebensmittel
@@ -27,25 +32,31 @@ public class Lebensmitteldaten {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public Lebensmitteldaten(int index, String name, String karenzphase, String dauerernaehrung, String kategorie) {
+	public Lebensmitteldaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie) {
 		this.index = index;
-		this.name = name;
+		this.lebensmittelname = lebensmittelname;
 		this.karenzphase = karenzphase;
 		this.dauerernaehrung = dauerernaehrung;
 		this.kategorie = kategorie; 
 	}
-	
+		
 	/**
 	 * Konstruktor fuer ein Tupel aus der Datenbank
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
-	public Lebensmitteldaten(ResultSet rs) throws SQLException {
-    	this.index = rs.getInt("lindex"); 
-        this.name = rs.getString("lname");        
-        this.karenzphase = rs.getString("karenzphase");
-        this.dauerernaehrung = rs.getString("dauerernaehrung");
-        this.kategorie = rs.getString("kategorie"); 
+	public Lebensmitteldaten(ResultSet rs) {
+		try {
+			while(rs.next()) {
+				this.index = rs.getInt("lindex"); 
+		        this.lebensmittelname = rs.getString("lname");        
+		        this.karenzphase = rs.getString("karenzphase");
+		        this.dauerernaehrung = rs.getString("dauerernaehrung");
+			}
+		}
+		catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
+		}
     }
 
 	public int getLindex() {
@@ -57,11 +68,11 @@ public class Lebensmitteldaten {
 	}
 
 	public String getLname() {
-		return name;
+		return lebensmittelname;
 	}
 
 	public void setLname(String lname) {
-		this.name = lname;
+		this.lebensmittelname = lname;
 	}
 
 	public String getKarenzphase() {

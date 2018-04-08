@@ -10,7 +10,7 @@ import datenbank.connector.DbConnector;
 import datenbank.connector.DbConnectorStub;
 
 /*
- * Class for filling the tables with content
+ * Class for filling the tables with content, derived from interface
  */
 
 public class DbInsertion implements DbInsertionInterface {
@@ -18,6 +18,9 @@ public class DbInsertion implements DbInsertionInterface {
 	private DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
 	private static final String INSERT = "INSERT INTO ";
+	/*
+	 * table names as enums
+	 */
 	public enum tables{
 		LEBENSMITTELDATEN,
 		ZUGRIFFSSKALA,
@@ -33,6 +36,9 @@ public class DbInsertion implements DbInsertionInterface {
 		insertIntoTables();
 	}
 	
+	/*
+	 * insert into different tables
+	 */
 	public void insertIntoTables() {
 		insertIntoTableLebensmitteldaten();
 		insertIntoTableZugriffsskala();
@@ -40,11 +46,13 @@ public class DbInsertion implements DbInsertionInterface {
 		insertIntoTableNaehrstoff();
 		insertIntoTableFavorit();
 		insertIntoTableKatzugehoerigkeit();
-		insertIntoTableEnhaelt();
+		insertIntoTableEnthaelt();
 		insertIntoTableNaehrzugehoerigkeit();
 	}
 
-	// Inserting data into table lebensmitteldaten
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmitteldaten()
+	 */
 	@Override
 	public void insertIntoTableLebensmitteldaten() {
 		Statement statement;
@@ -96,12 +104,15 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table lebensmitteldaten");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table lebensmitteldaten could not be filled " + e);
 		}
 	}
 
-	// Inserting data into table zugriffsskala
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableZugriffsskala()
+	 */
 	@Override
 	public void insertIntoTableZugriffsskala() {
 		Statement statement;
@@ -116,13 +127,16 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table zugriffsskala");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table zugriffsskala could not be filled " + e);
 		}
 	
 	}
 
-	// Inserting data into table lebensmittelkategorie
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmittelkategorie()
+	 */
 	@Override
 	public void insertIntoTableLebensmittelkategorie() {
 		Statement statement;
@@ -140,13 +154,16 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table lebensmittelmittelkategorie");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table lebensmittelmittelkategorie could not be filled " + e);
 		}
 		
 	}
 
-	// Inserting data into table naehrstoff
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableNaehrstoff()
+	 */
 	@Override
 	public void insertIntoTableNaehrstoff() {
 		Statement statement;
@@ -158,13 +175,16 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table naehrstoff");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table naehrstoff could not be filled " + e);
 		}
 		
 	}
 
-	// Inserting data into table favorit
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableFavorit()
+	 */
 	@Override
 	public void insertIntoTableFavorit() {
 		Statement statement;
@@ -177,13 +197,16 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table favorit");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table favorit could not be filled " + e);
 		}
 		
 	}
 
-	// Inserting data into table katzugehoerigkeit
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableKatzugehoerigkeit()
+	 */
 	@Override
 	public void insertIntoTableKatzugehoerigkeit() {
 		Statement statement;
@@ -227,14 +250,17 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table katzugehoerigkeit");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "table katzugehoerigkeit could not be filled " + e);
 		}
 	}
 
-	// Inserting data into table enthaelt
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableEnthaelt()
+	 */
 	@Override
-	public void insertIntoTableEnhaelt() {
+	public void insertIntoTableEnthaelt() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
@@ -249,13 +275,16 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table enthaelt");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
 		
 	}
 
-	// Inserting data into table naehrzugehoerigkeit
+	/*
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableNaehrzugehoerigkeit()
+	 */
 	@Override
 	public void insertIntoTableNaehrzugehoerigkeit() {
 		Statement statement;
@@ -282,6 +311,7 @@ public class DbInsertion implements DbInsertionInterface {
 			
 			statement.close();
 			conn.getConn().commit();
+			LOGGER.info("inserted data into table naehrzugehoerigkeit");
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
 		}
@@ -289,3 +319,4 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 }
+

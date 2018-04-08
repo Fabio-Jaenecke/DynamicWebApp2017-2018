@@ -52,9 +52,9 @@
                   <div class="main wrapper clearfix">
                      <article>
                         <header>
-                           <h2>Gibt es Labortests zur Diagnose der HistaminunvertrÃ¤glichkeit?</h2>
+                           <h2>Gibt es Labortests zur Diagnose der Histaminunvertraeglichkeit?</h2>
                            <a name="neu1"></a>
-                           <div id="text1" style="display: none">Nein, bis heute fehlen geeignete Labortests zur Diagnose einer HistaminunvertrÃ¤glichkeit. Angebotene Tests zur Messung des Diaminoxidasespiegels im Blut oder auch die Bestimmung von Histamin im Blutplasma oder Urin sind wenig aussagekrÃ¤ftig und werden nicht empfohlen. Das gleiche gilt fÃ¼r den sogenannten âHistamin 50 Prick-Testâ. Da diese Tests keine verlÃ¤sslichen Aussagen zulassen, werden sie auch meistens nicht von den Krankenkassen erstattet.</div>
+                           <div id="text1" style="display: none">Nein, bis heute fehlen geeignete Labortests zur Diagnose einer Histaminunvertraeglichkeit. Angebotene Tests zur Messung des Diaminoxidasespiegels im Blut oder auch die Bestimmung von Histamin im Blutplasma oder Urin sind wenig aussagekraeftig und werden nicht empfohlen. Das gleiche gilt fuer den sogenannten Histamin 50 Prick-Test. Da diese Tests keine verlaesslichen Aussagen zulassen, werden sie auch meistens nicht von den Krankenkassen erstattet.</div>
                            <a class="resp-sharing-button__link" onclick="text1.style.display='block';auf1.style.display='none';zu1.style.display='block'" id="auf1" style="display: block" href="#neu1" aria-label="">
                               <div class="resp-sharing-button resp-sharing-button--faq resp-sharing-button--small">
                                  <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -73,7 +73,7 @@
                         <section>
                            <h2>Kann man das Histaminintoleranzsyndrom mit Medikamenten behandeln?</h2>
                            <a name="neu2"></a>
-                           <div id="text2" style="display: none">Wenn eine konsequente ErnÃ¤hrungsumstellung nicht mÃ¶glich ist, kÃ¶nnen Medikamente eingenommen werden, die an die Histaminrezeptoren H1 und H2 binden und diese blockieren. Zu diesen als Antihistaminika bezeichneten Medikamenten zÃ¤hlen zum Beispiel Ceterizin und Cimetidin. Auch Medikamente, die die AktivitÃ¤t der Diaminooxidase (DAO) fÃ¶rdern, haben in Studien gute EffektivitÃ¤t in der Behandlung des HIS gezeigt (z.B. DAOSiN). Wie wichtig die DAO fÃ¼r den Menschen ist zeigen Studien, bei denen die DAO in ihrer Funktion gezielt eingeschrÃ¤nkt wird. Ist die DAO nicht mehr aktiv und kommt es zu einer Aufnahme groÃer Mengen Histamin, kann es zu lebensbedrohlichen KÃ¶rperreaktionen kommen, wie zum Beispiel Blutdruckabfall, Luftnot und Schock.</div>
+                           <div id="text2" style="display: none">Wenn eine konsequente Ernaehrungsumstellung nicht moeglich ist, koennen Medikamente eingenommen werden, die an die Histaminrezeptoren H1 und H2 binden und diese blockieren. Zu diesen als Antihistaminika bezeichneten Medikamenten zaehlen zum Beispiel Ceterizin und Cimetidin. Auch Medikamente, die die Aktivitaet der Diaminooxidase (DAO) foerdern, haben in Studien gute Effektivitaet in der Behandlung des HIS gezeigt (z.B. DAOSiN). Wie wichtig die DAO fuer den Menschen ist zeigen Studien, bei denen die DAO in ihrer Funktion gezielt eingeschraenkt wird. Ist die DAO nicht mehr aktiv und kommt es zu einer Aufnahme grosser Mengen Histamin, kann es zu lebensbedrohlichen Koerperreaktionen kommen, wie zum Beispiel Blutdruckabfall, Luftnot und Schock.</div>
                            <a class="resp-sharing-button__link" onclick="text2.style.display='block';auf2.style.display='none';zu2.style.display='block'" id="auf2" style="display: block" href="#neu2" aria-label="">
                               <div class="resp-sharing-button resp-sharing-button--faq resp-sharing-button--small">
                                  <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -92,7 +92,7 @@
                         <section>
                            <h2>Wie funktioniert DAOSiN?</h2>
                            <a name="neu3"></a>
-                           <div id="text3" style="display: none">Durch den Verzehr der DAOSiN-Kapsel vor dem Essen wird die DAO-Menge im DÃ¼nndarm und somit die FÃ¤higkeit zum Histaminabbau durch die natÃ¼rliche DAO erhÃ¶ht. Dadurch kann ein ausreichender Abbau von Histamin aus Lebensmitteln im Verdauungstrakt erzielt werden.</div>
+                           <div id="text3" style="display: none">Durch den Verzehr der DAOSiN-Kapsel vor dem Essen wird die DAO-Menge im Duenndarm und somit die Faehigkeit zum Histaminabbau durch die natuerliche DAO erhoeht. Dadurch kann ein ausreichender Abbau von Histamin aus Lebensmitteln im Verdauungstrakt erzielt werden.</div>
                            <a class="resp-sharing-button__link" onclick="text3.style.display='block';auf3.style.display='none';zu3.style.display='block'" id="auf3" style="display: block" href="#neu3" aria-label="">
                               <div class="resp-sharing-button resp-sharing-button--faq resp-sharing-button--small">
                                  <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -109,9 +109,9 @@
                            </a>
                         </section>
                         <section>
-                           <h2>KÃ¶nnen histaminhaltige Lebensmittel wie z.B. Essig oder Wein durch Zugabe von Daosin histaminfrei gemacht werden, schon in der Flasche, noch bevor man sie konsumiert?</h2>
+                           <h2>Koennen histaminhaltige Lebensmittel wie z.B. Essig oder Wein durch Zugabe von Daosin histaminfrei gemacht werden, schon in der Flasche, noch bevor man sie konsumiert?</h2>
                            <a name="neu4"></a>
-                           <div id="text4" style="display: none">Nein, das funktioniert nicht. Das in Daosin enthaltene Enzym Diamin oxidase arbeitet nur unter basischen Bedin gungen, wie sie im Darm herrschen. In saurem Milieu (z.B. in Essig) ist das Enzym inaktiv oder wird sogar denaturiert (zerstÃ¶rt). Die in der Daosin-Kapsel enthaltenen KÃ¼gelchen sind ausserdem mit einem sÃ¤ure resistenten Ãberzug versehen, als Schutz vor der Magen sÃ¤ure wÃ¤hrend der Magen passage. Diese Schutz schicht lÃ¶st sich erst im basischen Milieu des Darms auf. Das Enzym Diamin oxidase ist zudem ein empfind liches MolekÃ¼l, dessen AktivitÃ¤t durch die Anwesen heit vieler anderer Stoffe wie z.B. Alkohol gestÃ¶rt werden kann (DAO-Hemmer).</div>
+                           <div id="text4" style="display: none">Nein, das funktioniert nicht. Das in Daosin enthaltene Enzym Diamin oxidase arbeitet nur unter basischen Bedin gungen, wie sie im Darm herrschen. In saurem Milieu (z.B. in Essig) ist das Enzym inaktiv oder wird sogar denaturiert (zerstoert). Die in der Daosin-Kapsel enthaltenen Kuegelchen sind ausserdem mit einem saeure resistenten Ueberzug versehen, als Schutz vor der Magen saeure waehrend der Magen passage. Diese Schutz schicht loest sich erst im basischen Milieu des Darms auf. Das Enzym Diamin oxidase ist zudem ein empfind liches Molekuel, dessen Aktivitaet durch die Anwesen heit vieler anderer Stoffe wie z.B. Alkohol gestoert werden kann (DAO-Hemmer).</div>
                            <a class="resp-sharing-button__link" onclick="text4.style.display='block';auf4.style.display='none';zu4.style.display='block'" id="auf4" style="display: block" href="#neu4" aria-label="">
                               <div class="resp-sharing-button resp-sharing-button--faq resp-sharing-button--small">
                                  <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -130,7 +130,7 @@
                         <section>
                            <h2>Was sind Histaminliberatoren?</h2>
                            <a name="neu5"></a>
-                           <div id="text5" style="display: none">Das sind Stoffe, welche die kÃ¶rpereigenen Histaminspeicherzellen (Mastzellen, basophile Granulazyten etc.) dazu bringen kÃ¶nnen, kÃ¶rpereigenes Histamin und andere EntzÃ¼ndungsmediatoren freizusetzen. Auf diese Weise kÃ¶nnen sogar absolut histaminfreie Lebensmittel eine Histaminreaktion im KÃ¶rper verursachen.</div>
+                           <div id="text5" style="display: none">Das sind Stoffe, welche die koerpereigenen Histaminspeicherzellen (Mastzellen, basophile Granulazyten etc.) dazu bringen koennen, koerpereigenes Histamin und andere Entzuendungsmediatoren freizusetzen. Auf diese Weise koennen sogar absolut histaminfreie Lebensmittel eine Histaminreaktion im Koerper verursachen.</div>
                            <a class="resp-sharing-button__link" onclick="text5.style.display='block';auf5.style.display='none';zu5.style.display='block'" id="auf5" style="display: block" href="#neu5" aria-label="">
                               <div class="resp-sharing-button resp-sharing-button--faq resp-sharing-button--small">
                                  <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">

@@ -58,56 +58,55 @@
                      <article>
                         <header>
                            <h2>Was ist Histamin-Intoleranz?</h2>
-                           <p>Histaminintoleranz (Histaminose, HistaminunvertrÃÂ¤glichkeit) ist die UnvertrÃÂ¤glichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die UnfÃÂ¤higkeit des menschlichen KÃÂ¶rpers, das aufgenommene Histamin in ausreichendem MaÃÂe abzubauen. In diesem Artikel gibt es einige Grundinformationen.
+                           <p>Histaminintoleranz (Histaminose, Histaminunvertraeglichkeit) ist die Unvertraeglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfaehigkeit des menschlichen Koerpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
                            </p>
                            <a href="#">Mehr</a>
                         </header>
                         <section>
                            <h2>Histamingehalt von Lebensmitteln</h2>
-                           <p>Welche Nahrungsmittel sind vertrÃÂ¤glich, welche sind bei Histaminintoleranz nicht vertrÃÂ¤glich? FÃÂ¼r Betroffene ist es schwer, einzukaufen.
+                           <p>Welche Nahrungsmittel sind vertraeglich, welche sind bei Histaminintoleranz nicht vertraeglich? Fuer Betroffene ist es schwer, einzukaufen.
                            </p>
                            <a href="#">Mehr</a>
                         </section>
                         <section>
                            <h2>Symptome der Histamin-Intoleranz</h2>
-                           <p>Die Symptome der Histaminintoleranz sind sehr vielfÃÂ¤ltig und teilweise schwer von Symptomen anderer, hÃÂ¤ufigerer Krankheiten zu unterscheiden. Sie machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher beziehungsweise histaminfreisetzender oder DAO-blockierender Nahrungsmittel bemerkbar.
+                           <p>Die Symptome der Histaminintoleranz sind sehr vielfaeltig und teilweise schwer von Symptomen anderer, haeufigerer Krankheiten zu unterscheiden. Sie machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher beziehungsweise histaminfreisetzender oder DAO-blockierender Nahrungsmittel bemerkbar.
                            </p>
                            <a href="#">Mehr</a>
                         </section>
                         <section>
                            <h2>Diagnose der Histamin-Intoleranz</h2>
-                           <p> Wir wird die Histaminintoleranz diagnostiziert? Was ist dabei zu beachten? Ein Leitfaden fÃÂ¼r ÃÂrzte und Betroffene.
+                           <p> Wir wird die Histaminintoleranz diagnostiziert? Was ist dabei zu beachten? Ein Leitfaden fuer Aerzte und Betroffene.
                            </p>
                            <a href="#">Mehr</a>
                         </section>
                         <section>
                            <h2>Behandlung der Histamin-Intoleranz</h2>
-                           <p> Wie kann man die Histaminintoleranz behandeln? Was kann man tun, welche Medikamente gibt es? Dieser Artikel klÃÂ¤rt dich ÃÂ¼ber diese wichtigen Fragen auf.
+                           <p> Wie kann man die Histaminintoleranz behandeln? Was kann man tun, welche Medikamente gibt es? Dieser Artikel klaert dich ueber diese wichtigen Fragen auf.
                            </p>
                            <a href="#">Mehr</a>
                         </section>
                         <footer>
-                           <h3>StÃÂ¶bern Sie weiter</h3>
+                           <h3>Stoebern Sie weiter</h3>
                            <ul>
-                              <li><a href="index.html">Home</a></li>
-                              <li><a href="HTML/lebensmittelkategorie.html">Lebensmittel</a></li>
-                              <li><a href="HTML/faq.html">FAQ</a></li>
-                              <li><a href="#">Mahlzeitsassistent</a></li>
-                              <li><a href="#">Zugriffsskala</a></li>
-                              <li><a href="#">Rezepte</a></li>
-                              <li><a href="HTML/kontaktformular.html">Kontakt</a></li>
-                              <li><a href="HTML/Suchfilter.html">Suche</a></li>
+                              <li><a href="${pageContext.request.contextPath}/home/">Home</a></li>
+                              <li><a href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a></li>
+                              <li><a href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a></li>
+                              <li><a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a></li>
+                              <li><a href="${pageContext.request.contextPath}/zugriffsskala/">Zugriffsskala</a></li>
+                              <li><a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche</a></li>
+                              <li><a href="${pageContext.request.contextPath}/faq/">FAQ</a></li>
                            </ul>
                         </footer>
                      </article>
                      <aside>
-                        <h3>Beliebte Lebensmittel (Kategorie ÃÂ¼bergreifend)</h3>
+                        <h3>Häufige Zugriffe</h3>
                         <table class="table_beliebte_lebensmittel">
                            <thead>
                               <tr>
                                  <th rowspan="2">Platz</th>
                                  <th rowspan="2">Lebensmittel</th>
-                                 <th colspan="2">VertrÃÂ¤glichkeit</th>
+                                 <th colspan="2">Vertraeglichkeit</th>
                                  <th rowspan="2">Zugriffe</th>
                               </tr>
                               <tr>

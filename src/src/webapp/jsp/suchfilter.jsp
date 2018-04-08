@@ -27,8 +27,8 @@
     <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body>
-    <!-- die Seite Suchverlauf besteht aus einem header, nav, einem fieldset fÃ¼r die Sucheingabe
-    und einer section fÃ¼r die mÃ¶glichen Suchresultate
+    <!-- die Seite Suchverlauf besteht aus einem header, nav, einem fieldset fuer die Sucheingabe
+    und einer section fuer die moeglichen Suchresultate
     -->
     <div class="header-container">
         <header class="wrapper clearfix">
@@ -55,12 +55,12 @@
             <input id="suche" type="text" name="suche">
             <button type="button" id="suchknopf"> Suchen </button>
         </fieldset>
-        <!-- die section, in der nach drÃ¼cken des Buttons Suchresulate angezeigt werden-->
+        <!-- die section, in der nach druecken des Buttons Suchresulate angezeigt werden-->
         <section class="resultate">
                 <article>
                     <a> www.histarantia.ch/home </a>
-                    <p> Histaminintoleranz ist die UnvertrÃ¤glichkeit von stark histaminhaltigen
-                        Nahrungsmitteln beziehungsweise die UnfÃ¤higkeit  ...  </p>
+                    <p> Histaminintoleranz ist die Unvertraeglichkeit von stark histaminhaltigen
+                        Nahrungsmitteln beziehungsweise die Unfaehigkeit  ...  </p>
                 </article>
                 <article>
                     <a> www.histarantia.ch/rangliste </a>
@@ -70,11 +70,11 @@
                 <article>
                     <a> www.histarantia.ch/lebensmittelkategorie </a>
                     <p> Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe,
-                        die aus einer BlÃ¼te hervorgehen .. </p>
+                        die aus einer Bluete hervorgehen .. </p>
                 </article>
                 <article>
                     <a> www.histarantia.ch/faq </a>
-                    <p> Gibt es Labortests zur Diagnose der HistaminunvertrÃ¤glichkeit? Die Antwort
+                    <p> Gibt es Labortests zur Diagnose der Histaminunvertraeglichkeit? Die Antwort
                         ist nicht so leicht zu beantworten ... </p>
                 </article>
             </section>

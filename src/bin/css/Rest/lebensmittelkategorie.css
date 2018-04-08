@@ -21,6 +21,10 @@
     border: solid;
     padding: 5px;
     border-color: black;
+<<<<<<< HEAD
+=======
+    text-align: left;
+>>>>>>> refs/heads/master
 }
 
 .table_lebensmittelkategorie thead {

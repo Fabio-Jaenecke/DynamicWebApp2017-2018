@@ -16,12 +16,16 @@ public class DbCreation implements DbCreationInterface {
 
 	private DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
+	private static final String errorMessage = "exception occured during creation of table";
 	
 	public DbCreation() {
 		setUpTables();
 	}
 	
-	// All the tables for the database
+	/*
+	 *  All the tables for the database
+	 * @see datenbank.creation.DbCreationInterface#setUpTables()
+	 */
 	@Override
 	public void setUpTables() {
 		setUpTableLebensmitteldaten();
@@ -30,11 +34,14 @@ public class DbCreation implements DbCreationInterface {
 		setUpTableNaehrstoff();
 		setUpTableFavorit();
 		setUpTableKatzugehoerigkeit();
-		setUpTableEnhaelt();
+		setUpTableEnthaelt();
 		setUpTableNaehrzugehoerigkeit();
 	}
 
-	// Creating table "lebensmitteldaten"
+	/*
+	 *  Creating table "lebensmitteldaten"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableLebensmitteldaten()
+	 */
 	@Override
 	public void setUpTableLebensmitteldaten() {
 		Statement statement;
@@ -42,17 +49,20 @@ public class DbCreation implements DbCreationInterface {
 			statement = conn.getConn().createStatement();
 			statement.execute("drop table lebensmitteldaten if exists");
 			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(4) primary key, lname varchar(100),"
-				+ " karenzphase varchar(100), dauerernaehrung varchar(100))");
+				+ " karenzphase varchar(100), dauerernaehrung varchar(100));");
 			
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "Exception occured during creation of table", e);
+			LOGGER.log(Level.SEVERE, errorMessage, e);
 		}
 		
 	}
 
-	// Creating table "zugriffsskala"
+	/*
+	 *  Creating table "zugriffsskala"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableZugriffsskala()
+	 */
 	@Override
 	public void setUpTableZugriffsskala() {
 		Statement statement;
@@ -64,11 +74,14 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, errorMessage, e);
 		}
 	}
 
-	// Creating table "lebensmittelkategorie"
+	/*
+	 *  Creating table "lebensmittelkategorie"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableLebensmittelkategorie()
+	 */
 	@Override
 	public void setUpTableLebensmittelkategorie() {
 		Statement statement;
@@ -79,11 +92,14 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "table lebensmittelkategorie could not be resolved " + e);
+			LOGGER.log(Level.SEVERE,  errorMessage, e);
 		}		
 	}
 
-	// Creating table "naehrstoff"
+	/*
+	 *  Creating table "naehrstoff"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableNaehrstoff()
+	 */
 	@Override
 	public void setUpTableNaehrstoff(){
 		Statement statement;
@@ -94,11 +110,14 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE,  errorMessage, e);
 		}	
 	}
 
-	// Creating table "favorit"
+	/*
+	 *  Creating table "favorit"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableFavorit()
+	 */
 	@Override
 	public void setUpTableFavorit() {
 		Statement statement;
@@ -110,11 +129,14 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, errorMessage, e);
 		}
 	}
 
-	// Creating table "katzugehoerigkeit"
+	/*
+	 *  Creating table "katzugehoerigkeit"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableKatzugehoerigkeit()
+	 */
 	@Override
 	public void setUpTableKatzugehoerigkeit() {
 		Statement statement;
@@ -127,14 +149,17 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, errorMessage, e);
 		}
 		
 	}
 
-	// Creating table "enthaelt"
+	/*
+	 *  Creating table "enthaelt"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableEnhaelt()
+	 */
 	@Override
-	public void setUpTableEnhaelt() {
+	public void setUpTableEnthaelt() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
@@ -145,11 +170,14 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, errorMessage, e);
 		}
 	}
 
-	// Creating table "naehrzugehoerigkeit"
+	/*
+	 * Creating table "naehrzugehoerigkeit"
+	 * @see datenbank.creation.DbCreationInterface#setUpTableNaehrzugehoerigkeit()
+	 */
 	@Override
 	public void setUpTableNaehrzugehoerigkeit() {
 		Statement statement;
@@ -161,7 +189,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, errorMessage, e);
 		}
 	}
 	
