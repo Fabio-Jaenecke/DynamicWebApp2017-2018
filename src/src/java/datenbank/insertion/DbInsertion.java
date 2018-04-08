@@ -277,7 +277,7 @@ public class DbInsertion implements DbInsertionInterface {
 			conn.getConn().commit();
 			LOGGER.info("inserted data into table enthaelt");
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, "table enthaelt could not be filled " + e);
 		}
 		
 	}
@@ -313,7 +313,7 @@ public class DbInsertion implements DbInsertionInterface {
 			conn.getConn().commit();
 			LOGGER.info("inserted data into table naehrzugehoerigkeit");
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, " Exception occured during creation of table ", e);
+			LOGGER.log(Level.SEVERE, "table naehrzugehoerigkeit could not be filled " + e);
 		}
 		
 	}
