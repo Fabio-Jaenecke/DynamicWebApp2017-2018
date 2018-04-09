@@ -26,7 +26,7 @@ public class KategoriensucheDao2 {
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 
 	/**
-	 * Konstruktor der Kategoriensuche. 
+	 * Konstruktor der KategoriensucheDao. 
 	 */
 	public KategoriensucheDao2() {
 
@@ -61,7 +61,7 @@ public class KategoriensucheDao2 {
 	}
 
 	/**
-	 * Liefere die Lebensmittel. 
+	 * Liefere die Liste der Lebensmittel der entsprechenden Kategorie. 
 	 * @return lebensmittel 
 	 */
 	public ArrayList<Lebensmitteldaten> getLebensmittel() {
