@@ -8,12 +8,14 @@ import datenbank.container.Lebensmitteldaten;
  * Eine Klasse zur Verwaltung von Lebensmitteln.
  *
  * @author mjtre
- * @version 17.03.2018 
+ * @version 09.04.2018
  */
 public class Lebensmittelmanager
 {
-	// Eine ArrayList, in der die Namen von Lebensmitteln gespeichert
-	// werden koennen.  
+	/**
+	 * Eine ArrayList, in der die Namen von Lebensmitteln gespeichert 
+	 * werden koennen. 
+	 */ 
 	public ArrayList<Lebensmitteldaten> lebensmittel; 
 	
 	/**
