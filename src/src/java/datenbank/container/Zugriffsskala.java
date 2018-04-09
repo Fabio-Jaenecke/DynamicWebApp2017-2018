@@ -36,7 +36,7 @@ public class Zugriffsskala {
 	   		LOGGER.log(Level.SEVERE, "Result set of zugriffsskala could not be resolved " + e);
 	   	}
 	}
-	
+
 	public int getZindex() {
 		return zindex;
 	}
