@@ -13,7 +13,7 @@ import datenbank.dao.DbQuery;
  * Diese Klasse uebergibt die Datenbankabfrage zur Datenbank und fuehrt eine Suche
  * mit einem vordefinierten Lebensmitteln durch.
  *
- * @author Raphael Caradonna und Michele Trebo 
+ * @author Raphael Caradonna und Michele Trebo und Fabio Jaenecke
  * @version 09.04.2018 
  */
 public class LebensmittelsucheDao2 {
