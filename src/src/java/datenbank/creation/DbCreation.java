@@ -5,7 +5,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import datenbank.DatabaseConnector;
 import datenbank.connector.DbConnector;
 
 /*
@@ -15,7 +14,7 @@ import datenbank.connector.DbConnector;
 public class DbCreation implements DbCreationInterface {
 
 	private DbConnector conn = new DbConnector();
-	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(DbCreation.class.getName());
 	private static final String errorMessage = "exception occured during creation of table";
 	
 	public DbCreation() {

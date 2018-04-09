@@ -5,7 +5,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import datenbank.DatabaseConnector;
 import datenbank.connector.DbConnector;
 import datenbank.connector.DbConnectorStub;
 
@@ -16,7 +15,7 @@ import datenbank.connector.DbConnectorStub;
 public class DbInsertion implements DbInsertionInterface {
 	
 	private DbConnector conn = new DbConnector();
-	private static final Logger LOGGER = Logger.getLogger(DatabaseConnector.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(DbInsertion.class.getName());
 	private static final String INSERT = "INSERT INTO ";
 	/*
 	 * table names as enums
