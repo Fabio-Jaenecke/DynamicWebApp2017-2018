@@ -11,9 +11,12 @@ import java.sql.Connection;
  * mit einem vordefinierten Lebensmitteln durch.
  * 
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @author trebomic
  * @version 05.04.2018
 =======
+=======
+>>>>>>> refs/heads/master
  * @author fabio jaenecke
  *
 >>>>>>> refs/heads/master
