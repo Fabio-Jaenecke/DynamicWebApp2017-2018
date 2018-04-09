@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import datenbank.DatabaseConnector;
 
 
 /**
@@ -20,7 +19,6 @@ import datenbank.DatabaseConnector;
 public class LebensmittelKategorieServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private DatabaseConnector conn = new DatabaseConnector();
        
     /**
      * @see HttpServlet#HttpServlet()
