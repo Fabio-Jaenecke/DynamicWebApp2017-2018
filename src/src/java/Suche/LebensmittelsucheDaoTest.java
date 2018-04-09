@@ -14,7 +14,7 @@ import datenbank.container.Lebensmitteldaten;
  * @author mjtre
  * @version 22.03.2018 
  */
-public class LebensmittelsucheTest {
+public class LebensmittelsucheDaoTest {
 	static Lebensmittelmanager lebensmittelliste;
 	
 	@BeforeClass
