@@ -1,147 +1,59 @@
-//TODO: Follow clean-code guidelines and use the Suche Interface
 package Suche;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import datenbank.connector.DbConnector;
-import java.sql.Connection;
 
-/** Diese Klasse übergibt die Datenbankabfrage zur Datenbank und führt eine Suche
+import datenbank.connector.DbConnector;
+import datenbank.container.Lebensmitteldaten;
+import datenbank.dao.DbQuery;
+
+/**
+ * Diese Klasse uebergibt die Datenbankabfrage der Datenbank und fuehrt eine Suche
  * mit einem vordefinierten Lebensmitteln durch.
- * 
- * @author fabio jaenecke
  *
+ * @author Raphael Caradonna und Michele Trebo und Fabio Jaenecke 
+ * @version 09.04.2018 
  */
 public class LebensmittelsucheDao {
-	
-	private String selectSQL;
-	private Statement statement;
-	private ResultSet result; 
-	private Connection connection;
-    private String gefundeneslebensmittel = null;
-    private String karenzphase;
-    private String dauerernaehrung;
-	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 
+	private Lebensmitteldaten lebensmittel;
+	DbQuery query = new DbQuery();
+	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
-	public LebensmittelsucheDao(String lebensmittelname) {
-		selectSQL = "select * from lebensmitteldaten where lname like '%" + lebensmittelname + "%';";
-		DbConnector conn = new DbConnector();
-		connection = conn.getConn();
+	/**
+	 * Erzeuge LebensmittelsucheDao. 
+	 */
+	public LebensmittelsucheDao() {
+		
+	}
+	
+	/**
+	 * Suche nach dem Lebensmittel. 
+	 * @param lebensmittelname der Name des Lebensmittels. 
+	 */
+	public void searchForString(String lebensmittelname) {
+		String selectSQL = "select * from lebensmitteldaten where lname like '%" + lebensmittelname + "%';";
+		ResultSet result = query.getResult(selectSQL);
 		try {
-			statement = connection.createStatement();
-			result = statement.executeQuery(selectSQL);
-		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "Query could not be established " + e);
+			if(result.isBeforeFirst()) {
+				lebensmittel = new Lebensmitteldaten(result);
+			}
+			else {
+				LOGGER.log(Level.SEVERE, "Selected lebensmittel does not exist in database ");
+			}
+		}
+		catch(SQLException e){
+			LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
 		}
 	}
 	
-	/** Sucht nach lebensmittelnamen im ResultSet und gibt zutreffende Lebensmittelnamen zurück.
-	 * @return den gefundenen Lebensmittelnamen
-	 */
-	public String suche() {
-		    boolean gefunden = false;
-			try {
-				  while (result.next()) {
-					gefundeneslebensmittel = result.getString("lname");     
-			        karenzphase = result.getString("karenzphase");
-			        dauerernaehrung = result.getString("dauerernaehrung");
-				    gefunden = true;
-				  }
-
-			  } catch (SQLException e1) {
-			    e1.printStackTrace();
-			  } finally {
-				//TODO: Handle exceptions
-			  }
-			if (gefunden) {
-				return gefundeneslebensmittel;
-			}else{
-				//TODO: Find proper return statement incase the lebensmittel is not found
-				return "nothingfoundhere";
-			}
-
-	}
-
 	/**
-	 * @return the selectSQL
+	 * Liefere die Lebensmitteldaten des entsprechenden Lebensmittels. 
+	 * @return lebensmittel 
 	 */
-	public String getSelectSQL() {
-		return selectSQL;
-	}
-
-	/**
-	 * @return the gefundeneslebensmittel
-	 */
-	public String getGefundeneslebensmittel() {
-		return gefundeneslebensmittel;
-	}
-
-	/**
-	 * @return the karenzphase
-	 */
-	public String getKarenzphase() {
-		return karenzphase;
-	}
-
-	/**
-	 * @return the dauerernaehrung
-	 */
-	public String getDauerernaehrung() {
-		return dauerernaehrung;
+	public Lebensmitteldaten getLebensmittel() {
+		return lebensmittel;
 	}
 }
-
-//TODO: Delete redundant code:
-	
-/*	DbQuery query;
-	private List<Lebensmitteldaten> lebensmitteldaten;
-	
-	public LebensmittelsucheDao() {
-		query = new DbQuery();
-		
-	}
-		
-//	TODO: replace query with prepared statements
-	public Lebensmitteldaten getLebensmittel(String lebensmittelname) {
-		String query = "select * from lebensmitteldaten where lname = '" + lebensmittelname + "'";
-		 ResultSet rs = this.query.getResult(query);
-		 Lebensmitteldaten lebensmitteldaten = null;
-		try {
-			lebensmitteldaten = rs.getObject(0) == null ? null : (Lebensmitteldaten) rs.getObject(0);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		 return lebensmitteldaten;
-	}
-
-//	TODO: replace query with prepared statements
-	public List<Lebensmitteldaten> getKategorie(String kategorie) {
-		String query = "select * from lebensmitteldaten where kategorie = " + kategorie;
-		 ResultSet rs = this.query.getResult(query);
-		 lebensmitteldaten = null;
-		try {
-				lebensmitteldaten.add(new Lebensmitteldaten(rs));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		 return lebensmitteldaten;
-	}
-
-	/**
-	 * @return the lebensmitteldaten
-	 */
-	/*public List<Lebensmitteldaten> getLebensmitteldaten() {
-		return lebensmitteldaten;
-	}
-
-	/**
-	 * @param lebensmitteldaten the lebensmitteldaten to set
-	 */
-	/*public void setLebensmitteldaten(List<Lebensmitteldaten> lebensmitteldaten) {
-		this.lebensmitteldaten = lebensmitteldaten;
-	}
-	
-	
-}*/
