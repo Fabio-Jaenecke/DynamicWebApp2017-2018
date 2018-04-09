@@ -18,7 +18,7 @@ public class Zugriffsskala {
 	private int zindex;
 	private int platzierung;
 	private int azugriffe;
-	private static final Logger LOGGER = Logger.getLogger(DbConnectorStub.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(Zugriffsskala.class.getName());
 	
 	public Zugriffsskala(int zindex, int platzierung, int azugriffe) {
 		this.zindex = zindex;
