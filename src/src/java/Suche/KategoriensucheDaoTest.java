@@ -7,14 +7,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Testklasse für die Klasse LebensmittelsucheDao. 
+ * Testklasse für die Klasse KategoriesucheDaoTest.java
  * 
  * @author Fabio Jaenecke und Michele Trebo
  * @version 09.04.2018
  */
 
 //TODO: Write testclass 
-public class LebensmittelsucheDaoTest {
+public class KategoriensucheDaoTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
