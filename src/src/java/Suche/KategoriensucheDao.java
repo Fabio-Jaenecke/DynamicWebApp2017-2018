@@ -11,7 +11,7 @@ import datenbank.container.Lebensmitteldaten;
 import datenbank.dao.DbQuery;
 
 /**
- * Diese Klasse uebergibt die Datenbankabfrage zur Datenbank und fuehrt eine Suche
+ * Diese Klasse uebergibt die Datenbankabfrage der Datenbank und fuehrt eine Suche
  * mit einer vordefinierten Kategorie durch und gibt die Lebensmittel in der entsprechenden
  * Kategorie aus.
  *

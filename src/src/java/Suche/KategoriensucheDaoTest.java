@@ -7,9 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Testklasse für die Klasse KategoriesucheDaoTest.java
+ * Testklasse für die Klasse KategoriesucheDao.
  * 
- * @author Fabio Jaenecke und Michele Trebo
+ * @author Michele Trebo
  * @version 09.04.2018
  */
 

@@ -9,7 +9,7 @@ import org.junit.Test;
 /**
  * Testklasse für die Klasse LebensmittelsucheDao. 
  * 
- * @author Fabio Jaenecke und Michele Trebo
+ * @author Michele Trebo
  * @version 09.04.2018
  */
 

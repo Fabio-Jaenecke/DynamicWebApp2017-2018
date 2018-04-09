@@ -11,8 +11,8 @@ import datenbank.container.Lebensmitteldaten;
 /**
  * Testklasse für die Klasse Lebensmittelmanager.
  *
- * @author mjtre
- * @version 22.03.2018 
+ * @author Michele Trebo
+ * @version 09.04.2018 
  */
 public class LebensmittelmanagerTest {
 	static Lebensmittelmanager lebensmittelliste; 
@@ -43,19 +43,16 @@ public class LebensmittelmanagerTest {
 	
 	@Test 
 	public void testGetKategorieApfel() {
-		String lebensmittel = lebensmittelliste.getKategorie("Apfel");
 		assertEquals("Obst", lebensmittelliste.getKategorie("Apfel"));
 	}
 	
 	@Test 
 	public void testGetKarenzphaseApfel() {
-		String lebensmittel = lebensmittelliste.getKarenzphase("Apfel");
 		assertEquals("verschieden", lebensmittelliste.getKarenzphase("Apfel"));
 	}
 	
 	@Test
 	public void testGetDauerernaehrungApfel() {
-		String lebensmittel = lebensmittelliste.getDauerernaehrung("Apfel");
 		assertEquals("vertraeglich", lebensmittelliste.getDauerernaehrung("Apfel"));
 	}
 
