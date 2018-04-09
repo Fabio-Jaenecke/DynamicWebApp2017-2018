@@ -26,7 +26,7 @@ public class KategoriensucheDao2 {
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 
 	/**
-	 * Konstruktor der KategoriensucheDao. 
+	 * Erzeuge KategoriensucheDao. 
 	 */
 	public KategoriensucheDao2() {
 

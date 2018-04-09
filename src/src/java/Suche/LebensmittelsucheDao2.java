@@ -23,7 +23,7 @@ public class LebensmittelsucheDao2 {
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	/**
-	 * Konstruktor für LebensmittelsucheDao. 
+	 * Erzeuge LebensmittelsucheDao. 
 	 */
 	public LebensmittelsucheDao2() {
 		
