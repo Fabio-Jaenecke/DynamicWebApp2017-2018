@@ -63,18 +63,18 @@
 			           		  <%@ page import ="Suche.*" %>
 			           		  <%
 			           		    String lebensmittelname = "";
-									if (request.getParameter("sucheintrag") == "") {
-										out.println("input field could not be validated");
+									if (request.getParameter("sucheintrag") == null) {
+										//Technically, this is not required:
+							        	//out.println("input field could not be validated");
 				                    
-									}
-									else{
+									}else{
 										lebensmittelname = request.getParameter("sucheintrag");
 										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao();
 										suchauftrag.searchForString(lebensmittelname);
 										
 		                            //Print the Table if something is found:
 				 					if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
-				 						out.println("<table class='table_lebensmittelkategorie'>");
+				 						out.println("<table class='table_lebensmittelkategorie' style='margin-top: 30px';>");
 				 						out.println("<tr>");
 				 						out.println("<th>Lebensmittel</th>");
 				 						out.println("<th>Karenzphase</th>");
@@ -106,25 +106,27 @@
             <section>
             <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<h3>Suche nach Kategorien</h3>
-					<select onchange="this.form.submit()" name="kategorieauswahl">
-			           			<option value="Fleisch">Fleisch</option>
-			           			<option value="Obst">Obst</option>
-			           			<option value="Gemuese">Gemuese</option>
-			           			<option value="Huelsenfruechte">Huelsenfruechte</option>
-			           			<option value="Nuesse und Samen">Nuesse und Samen</option>
-			           			<option value="Fisch">Fisch</option>
-			           			<option value="Milch und Milchprodukte">Milch und Milchprodukte</option>
-			        </select>
-			            <%@ page import="datenbank.container.*" %>
+						<%@ page import="datenbank.container.*" %>
 						<%@ page import="Suche.*" %>
 						<%@ page import="java.util.ArrayList" %>
+					<select onchange="this.form.submit()" name="kategorieauswahl">
+								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
+			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
+			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
+			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
+			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
+			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
+			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
+			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
+			        </select>
 						<%
-						String kategorienname = "somethingthatsnotIntheDB";
+						String kategorienname = "";
 						ArrayList<Lebensmitteldaten> kategorieresultate = new ArrayList<>();
 						%>
 			        <%
 			        if (request.getParameter("kategorieauswahl") == null) {
-			        	out.println("input field could not be validated");
+			        	//Technically, this is not required:
+			        	//out.println("input field could not be validated");
                     
 					}else{
 						kategorienname = request.getParameter("kategorieauswahl");
@@ -133,19 +135,24 @@
 						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
 						
 			        %>
-			        <table class="table_lebensmittelkategorie">
-			               		<tr>
-			               		    <th>Lebensmittel</th>
-				                    <th>Karenzphase</th>
-				                    <th>Dauerernaehrung</th>
-				                    
-				                </tr>
+			         <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
+                             <thead>
+                                 <tr>
+                                    <th colspan="3">
+                                       <%
+                                          out.println(kategorienname);
+                                          %>
+                                    </th>
+                                 </tr>
+                                 <tr>
+                                    <th>Lebensmittel</th>
+                                    <th>Karenzphase</th>
+                                    <th>Dauerernaehrung</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
 				                
 				                <%
-				                out.println("<p><p>");
-				                out.println("Ausgewählte Kategorie: " + kategorienname);
-				                out.println("<p><p>");
-				                
 				                for(Lebensmitteldaten lebensmitteleintrag : daten){
 				                		out.println("<tr>");
 				                   		out.println("<td>");
@@ -163,6 +170,7 @@
 			        			kategorieauftrag.clearLebensmittel();
 			        			}
 				                %>
+				                </tbody>
 			            </table>
             </form>
             
