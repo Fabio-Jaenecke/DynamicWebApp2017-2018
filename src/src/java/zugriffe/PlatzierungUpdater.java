@@ -1,5 +1,6 @@
 package zugriffe;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,15 +50,15 @@ public class PlatzierungUpdater {
 	
 	public void putToDb() {
 		for(Zugriffsskala zugriff: zugriffe) {
-			// TODO first get connection if error appears
 			try {
 				String updateSql = "update zugriffsskala set platzierung = ? where zindex = ?";
-				PreparedStatement statement = conn.getConn().prepareStatement(updateSql);
+				Connection connection = conn.getConn();
+				PreparedStatement statement = connection.prepareStatement(updateSql);
 				statement.setInt(1,  zugriff.getPlatzierung());
 				statement.setInt(2, zugriff.getZindex());
 				statement.execute();
 				statement.close();
-				conn.getConn().commit();
+				connection.commit();
 			} catch (SQLException e) {
 				LOGGER.log(Level.SEVERE, "rows in zugriffsskala could not be set " + e);
 			}

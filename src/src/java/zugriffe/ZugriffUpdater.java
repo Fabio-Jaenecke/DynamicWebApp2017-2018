@@ -1,5 +1,6 @@
 package zugriffe;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ public class ZugriffUpdater {
 	
 	public void anpassenZugriff(Lebensmitteldaten lebensmittel) {
 		getZugriff(lebensmittel);
+		updateAZugriffe();
 	}
 		
 	private void getZugriff(Lebensmitteldaten lebensmittel) {
@@ -42,7 +44,8 @@ public class ZugriffUpdater {
 	public void updateAZugriffe() {
 		String updateSql = "update zugriffskala set aZugriffe = ? where zindex = ?";
 		try {
-			PreparedStatement statement = conn.getConn().prepareStatement(updateSql);
+			Connection connection = conn.getConn();
+			PreparedStatement statement = connection.prepareStatement(updateSql);
 			zugriff.setAzugriffe(zugriff.getAzugriffe()+1);
 			statement.setInt(1, zugriff.getAzugriffe());
 			statement.setInt(2, zugriff.getZindex());
