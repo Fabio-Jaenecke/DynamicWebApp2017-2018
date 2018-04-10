@@ -17,7 +17,7 @@ public class Lebensmittelkategorie {
 
 	private int kindex;
 	private String kname;
-	private static final Logger LOGGER = Logger.getLogger(DbConnectorStub.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(Lebensmittelkategorie.class.getName());
 	
 	public Lebensmittelkategorie(int kindex, String kname) {
 		this.kindex = kindex;

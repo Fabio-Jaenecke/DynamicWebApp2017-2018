@@ -2,6 +2,7 @@ package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,7 +14,7 @@ import datenbank.connector.DbConnectorStub;
  * @author Raphael Caradonna
  *
  */
-public class Zugriffsskala implements Comparable {
+public class Zugriffsskala {
 
 	private int zindex;
 	private int platzierung;
@@ -30,7 +31,7 @@ public class Zugriffsskala implements Comparable {
 		try {
 			this.zindex = rs.getInt("zindex"); 
 		   	this.platzierung = rs.getInt("platzierung"); 
-		   	this.azugriffe = rs.getInt("azugriffe"); 
+		   	this.azugriffe = rs.getInt("azugriffe");
 		}
 	   	catch(SQLException e) {
 	   		LOGGER.log(Level.SEVERE, "Result set of zugriffsskala could not be resolved " + e);
@@ -59,9 +60,5 @@ public class Zugriffsskala implements Comparable {
 		this.azugriffe = azugriffe;
 	}
 
-	@Override
-	public int compareTo(Object zugriff) {
-		int compareAzugriffe = ((Zugriffsskala)zugriff).getAzugriffe();
-		return this.azugriffe - compareAzugriffe;
-	}
+
 }

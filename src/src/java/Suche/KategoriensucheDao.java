@@ -37,7 +37,6 @@ public class KategoriensucheDao {
 	 * @param kategorienname der Name der gesuchten Kategorie. 
 	 */
 	public void searchForString(String kategorienname) {
-		// TODO fix sql-statement so that it returns multiple rows
 		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN KATZUGEHOERIGKEIT k "
 				+ "ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex = lk.kindex " + "where lk.Kname= '"
 				+ kategorienname + "';";
