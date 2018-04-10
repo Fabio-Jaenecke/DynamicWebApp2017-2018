@@ -23,7 +23,7 @@ public class KategoriensucheDao {
 	private ArrayList<Lebensmitteldaten> lebensmittel = new ArrayList<>();
 	DbQuery query = new DbQuery();
 	DbConnector conn = new DbConnector();
-	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(KategoriensucheDao.class.getName());
 
 	/**
 	 * Erzeuge KategoriensucheDao. 

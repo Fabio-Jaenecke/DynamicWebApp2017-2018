@@ -13,12 +13,12 @@ import datenbank.connector.DbConnectorStub;
  * @author Raphael Caradonna
  *
  */
-public class Zugriffsskala {
+public class Zugriffsskala implements Comparable {
 
 	private int zindex;
 	private int platzierung;
 	private int azugriffe;
-	private static final Logger LOGGER = Logger.getLogger(DbConnectorStub.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(Zugriffsskala.class.getName());
 	
 	public Zugriffsskala(int zindex, int platzierung, int azugriffe) {
 		this.zindex = zindex;
@@ -36,7 +36,7 @@ public class Zugriffsskala {
 	   		LOGGER.log(Level.SEVERE, "Result set of zugriffsskala could not be resolved " + e);
 	   	}
 	}
-	
+
 	public int getZindex() {
 		return zindex;
 	}
@@ -57,5 +57,11 @@ public class Zugriffsskala {
 	}
 	public void setAzugriffe(int azugriffe) {
 		this.azugriffe = azugriffe;
+	}
+
+	@Override
+	public int compareTo(Object zugriff) {
+		int compareAzugriffe = ((Zugriffsskala)zugriff).getAzugriffe();
+		return this.azugriffe - compareAzugriffe;
 	}
 }

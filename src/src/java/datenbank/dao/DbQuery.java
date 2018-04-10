@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import datenbank.connector.DbConnector;
 
@@ -17,7 +18,7 @@ import datenbank.connector.DbConnector;
 public class DbQuery {
 
 	private DbConnector conn = new DbConnector();
-	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(DbQuery.class.getName());
 	
 	/*
 	 * connection to database already here, so no creations in constructor
@@ -41,6 +42,4 @@ public class DbQuery {
 		// TODO return empty result
 		return null;
 	}
-	
-	
 }
