@@ -1,4 +1,4 @@
-<%-- TODO: JAVA-CODE richtig implementieren, bzw. DAO implementieren (Dann könnte die JSP Logik von hier übernommen werden --%>
+<%-- TODO:JAVA-CODE richtig implementieren, bzw. DAO implementieren (Dann könnte die JSP Logik von hier übernommen werden --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

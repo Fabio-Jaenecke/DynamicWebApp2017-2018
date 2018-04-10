@@ -7,13 +7,13 @@ import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
 import datenbank.container.Lebensmitteldaten;
-import datenbank.dao.DbQuery;
+import datenbank.dao.DbQuery;  
 
 /**
- * Diese Klasse uebergibt die Datenbankabfrage zur Datenbank und fuehrt eine Suche
+ * Diese Klasse uebergibt die Datenbankabfrage der Datenbank und fuehrt eine Suche
  * mit einem vordefinierten Lebensmitteln durch.
  *
- * @author Raphael Caradonna und Michele Trebo und Fabio Jaenecke
+ * @author Raphael Caradonna und Michele Trebo und Fabio Jaenecke 
  * @version 09.04.2018 
  */
 public class LebensmittelsucheDao {
@@ -31,7 +31,7 @@ public class LebensmittelsucheDao {
 	
 	/**
 	 * Suche nach dem Lebensmittel. 
-	 * @param lebensmittelname der Name des Lebensmittel. 
+	 * @param lebensmittelname der Name des Lebensmittels. 
 	 */
 	public void searchForString(String lebensmittelname) {
 		String selectSQL = "select * from lebensmitteldaten where lname like '%" + lebensmittelname + "%';";
@@ -50,7 +50,7 @@ public class LebensmittelsucheDao {
 	}
 	
 	/**
-	 * Liefere die Lebensmitteldaten des entsprechenden Lebensmittel. 
+	 * Liefere die Lebensmitteldaten des entsprechenden Lebensmittels. 
 	 * @return lebensmittel 
 	 */
 	public Lebensmitteldaten getLebensmittel() {
