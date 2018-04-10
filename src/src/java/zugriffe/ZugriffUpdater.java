@@ -50,6 +50,8 @@ public class ZugriffUpdater {
 			statement.setInt(1, zugriff.getAzugriffe());
 			statement.setInt(2, zugriff.getZindex());
 			statement.execute(updateSql);
+			connection.commit();
+			statement.close();
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "AnzahlZugriff could not be incremented " + e);
 		}
