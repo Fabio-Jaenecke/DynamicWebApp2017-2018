@@ -270,14 +270,18 @@
 
 							ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
 							
+							//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
 							boolean gefunden = false;
 							for(Lebensmitteldaten lebensmitteleintrag : daten){	
 								if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
 									out.println(lebensmitteleintrag.getLname());
 									gefunden = true;
 								}
-								
 							}	
+							//if nothing is found:
+							if (gefunden==false){
+								out.println("no :)");
+							}
 
 							// for the next category call we have to clear the arraylist of lebensmittel
 							kategorieauftrag.clearLebensmittel();
@@ -332,6 +336,7 @@
 
 							ArrayList<Lebensmitteldaten> daten2 = kategorieauftrag2.getLebensmittel();
 							
+							//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
 							boolean gefunden = false;
 							for(Lebensmitteldaten lebensmitteleintrag : daten2){	
 								if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
@@ -341,6 +346,10 @@
 									gefunden = true;
 								}
 								
+							}
+							//if nothing is found:
+							if (gefunden==false){
+								out.println("no :)");
 							}
 
 							// for the next category call we have to clear the arraylist of lebensmittel
@@ -396,6 +405,7 @@
 
 							ArrayList<Lebensmitteldaten> daten3 = kategorieauftrag3.getLebensmittel();
 							
+							//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
 							boolean gefunden = false;
 							for(Lebensmitteldaten lebensmitteleintrag : daten3){	
 								if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
@@ -404,6 +414,10 @@
 								}
 								
 							}	
+							//if nothing is found:
+							if (gefunden==false){
+								out.println("no :)");
+							}
 
 							// for the next category call we have to clear the arraylist of lebensmittel
 							kategorieauftrag3.clearLebensmittel();
