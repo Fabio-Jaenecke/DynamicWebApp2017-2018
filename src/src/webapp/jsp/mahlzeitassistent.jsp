@@ -438,7 +438,7 @@
 					
 												NaehrstoffsucheDao naehrstoffauftrag2 = new NaehrstoffsucheDao();
 					
-												naehrstoffauftrag2.searchForString(naehrstoffname);
+												naehrstoffauftrag2.searchForString(naehrstoffname2);
 					
 												ArrayList<Lebensmitteldaten> daten2 = naehrstoffauftrag2.getLebensmittel();
 												
@@ -492,7 +492,7 @@
 					
 												NaehrstoffsucheDao naehrstoffauftrag3 = new NaehrstoffsucheDao();
 					
-												naehrstoffauftrag3.searchForString(naehrstoffname);
+												naehrstoffauftrag3.searchForString(naehrstoffname3);
 					
 												ArrayList<Lebensmitteldaten> daten3 = naehrstoffauftrag3.getLebensmittel();
 												
