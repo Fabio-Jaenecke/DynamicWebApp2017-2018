@@ -142,7 +142,7 @@
 					
 											<%@ page import="java.util.ArrayList" %>
 											
-											<div class='selektiereLebensmittelDrittel erstesDrittel'>
+											<div class='selektiereDrittel erstesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
 											<select name='kategorieauswahl' class="dropdown1drittel">
 					
@@ -204,7 +204,7 @@
 					
 											%>
 											</div>
-											<div class='selektiereLebensmittelDrittel zweitesDrittel'>
+											<div class='selektiereDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
 											<select name='kategorieauswahl2' class="dropdown2drittel">
 					
@@ -271,7 +271,7 @@
 					
 											%>
 											</div>
-											<div class='selektiereLebensmittelDrittel drittesDrittel'>
+											<div class='selektiereDrittel drittesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate240'>
 											<select name='kategorieauswahl3' class="dropdown3drittel">
 					
@@ -361,7 +361,7 @@
 					
 											<%@ page import="java.util.ArrayList" %>
 											
-											<div class='selektiereLebensmittelDrittel erstesDrittel'>
+											<div class='selektiereDrittel erstesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
 											<select name='naehrstoffauswahl' class="dropdown1drittel">
 					
@@ -415,7 +415,7 @@
 					
 											%>
 											</div>
-											<div class='selektiereLebensmittelDrittel zweitesDrittel'>
+											<div class='selektiereDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircle" class='rotate120'>
 											<select name='naehrstoffauswahl2' class="dropdown2drittel">
 					
@@ -474,7 +474,7 @@
 					
 											%>
 											</div>
-											<div class='selektiereLebensmittelDrittel drittesDrittel'>
+											<div class='selektiereDrittel drittesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircle" class='rotate240'>
 											<select name='naehrstoffauswahl3' class="dropdown3drittel">
 					
