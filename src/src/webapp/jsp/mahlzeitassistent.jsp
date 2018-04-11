@@ -438,7 +438,7 @@
 					
 											if (request.getParameter("naehrstoffauswahl2") == null) {
 					
-												out.println("&#8598;wähle");
+												out.println("wähle&#8599;");
 					
 											
 					
@@ -494,7 +494,7 @@
 					
 											if (request.getParameter("naehrstoffauswahl3") == null) {
 					
-												out.println("&#8598;wähle");
+												out.println("&#8595;wähle");
 					
 											
 					
