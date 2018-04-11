@@ -164,7 +164,7 @@
 					
 											</select>
 											</div>
-											<div class='zeigeLebensmittelDrittel zeigeErstesDrittel'>
+											<div class='zeigeDrittel zeigeErstesDrittel'>
 											<%
 										
 											String kategorienname = "";
@@ -226,7 +226,7 @@
 					
 											</select>
 											</div>
-											<div class='zeigeLebensmittelDrittel zeigeZweitesDrittel'>
+											<div class='zeigeDrittel zeigeZweitesDrittel'>
 											<%
 										
 											String kategorienname2 = "";
@@ -293,7 +293,7 @@
 					
 											</select>
 											</div>
-											<div class='zeigeLebensmittelDrittel zeigeDrittesDrittel'>
+											<div class='zeigeDrittel zeigeDrittesDrittel'>
 											<%
 										
 											String kategorienname3 = "";
@@ -375,7 +375,7 @@
 					
 											</select>
 											</div>
-											<div class='zeigeLebensmittelDrittel zeigeErstesDrittel'>
+											<div class='zeigeDrittel zeigeErstesDrittel'>
 											<%
 										
 											String kategorienname = "";
@@ -429,7 +429,7 @@
 					
 											</select>
 											</div>
-											<div class='zeigeLebensmittelDrittel zeigeZweitesDrittel'>
+											<div class='zeigeDrittel zeigeZweitesDrittel'>
 											<%
 										
 											String kategorienname2 = "";
@@ -488,7 +488,7 @@
 					
 											</select>
 											</div>
-											<div class='zeigeLebensmittelDrittel zeigeDrittesDrittel'>
+											<div class='zeigeDrittel zeigeDrittesDrittel'>
 											<%
 										
 											String kategorienname3 = "";
