@@ -45,106 +45,14 @@
     <link rel="stylesheet" href="../css/Main/main.css">
 
     <link rel="stylesheet" href="../css/Rest/lebensmittelkategorie.css">
+    
+    <link rel="stylesheet" href="../css/Rest/mahlzeitassistent.css">
 
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
 
     <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
 
     <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-	<style>
-	.zeigeLebensmittelDrittel{
-		color: white;
-		font-size: x-large;
-		font-weight: bold;
-		background-color: #6FA8DC;
-		padding: 10px;
-	}
-	
-	.erstelleMahlzeit{
-		position: absolute;
-		top: 560px;
-		left: 680px;
-	}
-	
-	.zeigeErstesDrittel{
-		position: absolute;
-		top: 280px;
-		left: 280px;
-	}
-	
-	.zeigeZweitesDrittel{
-		position: absolute;
-		top: 280px;
-		left: 465px;
-	}
-	
-	.zeigeDrittesDrittel{
-		position: absolute;
-		top: 450px;
-		left: 375px;
-	}
-	
-	.mahlzeitassistent{
-		position: relative;
-		margin-top: -200px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	.dropdown1drittel{
-		position: absolute;
-		left: -180px;
-		top: 80px;
-	}
-	
-	.dropdown2drittel{
-		position: absolute;
-		left: 200px;
-		top: 88px;
-		
-	}
-	
-	.dropdown3drittel{
-		position: absolute;
-		top: 240px;
-		left: 5px;
-	    
-	}
-	
-	.erstesDrittel{
-		position: absolute;
-		left: 200px;
-		top: 150px;
-	}
-	
-	.zweitesDrittel{
-		position: absolute;
-		left: 400px;
-		top: 143px;
-	}
-		
-	.drittesDrittel{
-		position: absolute;
-		left: 305px;
-		top: 320px;
-	}
-	
-	.rotate120 {
-			-webkit-transform: rotate(120deg);
-			-moz-transform: rotate(120deg);
-			-o-transform: rotate(120deg);
-			-ms-transform: rotate(120deg);
-			transform: rotate(120deg);
-	}
-	.rotate240{
-			-webkit-transform: rotate(240deg);
-			-moz-transform: rotate(240deg);
-			-o-transform: rotate(240deg);
-			-ms-transform: rotate(240deg);
-			transform: rotate(240deg);
-	}
-	</style>
 	
 </head>
 
