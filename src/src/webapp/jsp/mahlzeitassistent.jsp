@@ -169,8 +169,6 @@
 										
 											String kategorienname = "";
 					
-											ArrayList<Lebensmitteldaten> kategorieresultate = new ArrayList<>();
-					
 											if (request.getParameter("kategorieauswahl") == null) {
 					
 												out.println("&#8598;wähle");
@@ -230,8 +228,6 @@
 											<%
 										
 											String kategorienname2 = "";
-					
-											ArrayList<Lebensmitteldaten> kategorieresultate2 = new ArrayList<>();
 					
 											if (request.getParameter("kategorieauswahl2") == null) {
 					
@@ -297,8 +293,6 @@
 											<%
 										
 											String kategorienname3 = "";
-					
-											ArrayList<Lebensmitteldaten> kategorieresultate3 = new ArrayList<>();
 					
 											if (request.getParameter("kategorieauswahl3") == null) {
 					
@@ -380,8 +374,6 @@
 										
 											String naehrstoffname = "";
 					
-											ArrayList<Lebensmitteldaten> naehrstoffresultate = new ArrayList<>();
-					
 											if (request.getParameter("naehrstoffauswahl") == null) {
 					
 												out.println("&#8598;wähle");
@@ -433,9 +425,7 @@
 											<%
 										
 											String naehrstoffname2 = "";
-											
-											ArrayList<Lebensmitteldaten> naehrstoffresultate2 = new ArrayList<>();
-					
+														
 											if (request.getParameter("naehrstoffauswahl2") == null) {
 					
 												out.println("wähle&#8599;");
@@ -489,8 +479,6 @@
 											<%
 										
 											String naehrstoffname3 = "";
-											
-											ArrayList<Lebensmitteldaten> naehrstoffresultate3 = new ArrayList<>();
 					
 											if (request.getParameter("naehrstoffauswahl3") == null) {
 					
