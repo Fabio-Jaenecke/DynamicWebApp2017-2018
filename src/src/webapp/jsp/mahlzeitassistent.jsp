@@ -58,6 +58,25 @@
 		font-size: x-large;
 		font-weight: bold;
 		background-color: #6FA8DC;
+		padding: 10px;
+	}
+	
+	.zeigeErstesDrittel{
+		position: absolute;
+		top: 280px;
+		left: 280px;
+	}
+	
+	.zeigeZweitesDrittel{
+		position: absolute;
+		top: 280px;
+		left: 465px;
+	}
+	
+	.zeigeDrittesDrittel{
+		position: absolute;
+		top: 450px;
+		left: 375px;
 	}
 	
 	.mahlzeitassistent{
@@ -226,7 +245,7 @@
 
 						</select>
 						</div>
-						<div class='zeigeLebensmittelDrittel erstesDrittel1'>
+						<div class='zeigeLebensmittelDrittel zeigeErstesDrittel'>
 						<%
 					
 						String kategorienname = "";
@@ -288,7 +307,7 @@
 
 						</select>
 						</div>
-						<div class='zeigeLebensmittelDrittel zweitesDrittel2'>
+						<div class='zeigeLebensmittelDrittel zeigeZweitesDrittel'>
 						<%
 					
 						String kategorienname2 = "";
@@ -352,7 +371,7 @@
 
 						</select>
 						</div>
-						<div class='zeigeLebensmittelDrittel drittesDrittel'>
+						<div class='zeigeLebensmittelDrittel zeigeDrittesDrittel'>
 						<%
 					
 						String kategorienname3 = "";
