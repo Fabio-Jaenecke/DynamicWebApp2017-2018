@@ -363,23 +363,15 @@
 											
 											<div class='selektiereLebensmittelDrittel erstesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
-											<select name='kategorieauswahl' class="dropdown1drittel">
+											<select name='naehrstoffauswahl' class="dropdown1drittel">
 					
-													<option value="" disabled selected>Wählen Sie eine Kategorie</option>
+													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Staerkebeilage")){out.println("selected");} %> value="Staerkebeilage">Staerkebeilage</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
 					
 											</select>
 											</div>
@@ -425,23 +417,15 @@
 											</div>
 											<div class='selektiereLebensmittelDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircle" class='rotate120'>
-											<select name='kategorieauswahl2' class="dropdown2drittel">
+											<select name='naehrstoffauswahl2' class="dropdown2drittel">
 					
-													<option value="" disabled selected>Wählen Sie eine Kategorie</option>
+													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl2") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl2").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl2") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl2").equals("Staerkebeilage")){out.println("selected");} %> value="Staerkebeilage">Staerkebeilage</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl2") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl2").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
 					
 											</select>
 											</div>
@@ -492,23 +476,15 @@
 											</div>
 											<div class='selektiereLebensmittelDrittel drittesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircle" class='rotate240'>
-											<select name='kategorieauswahl3' class="dropdown3drittel">
+											<select name='naehrstoffauswahl3' class="dropdown3drittel">
 					
-													<option value="" disabled selected>Wählen Sie eine Kategorie</option>
+													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl3") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl3").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl3") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl3").equals("Staerkebeilage")){out.println("selected");} %> value="Staerkebeilage">Staerkebeilage</option>
 					
-								           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
+								           			<option <%if (request.getParameter("naehrstoffauswahl3") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl3").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
 					
 											</select>
 											</div>
