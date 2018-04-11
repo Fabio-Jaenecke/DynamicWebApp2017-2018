@@ -129,7 +129,7 @@
 			    <input  type="radio" name="radiobutton"  id="kategorien" value="kategorienframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("kategorienframe")){out.println("checked");} %> onclick="this.form.submit()"/>
 				<label style="cursor:pointer;" for="kategorien">Kategorien</label><br>
 				<input type="radio"  name="radiobutton" id="naehrstoffe" value="naehrstoffeframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("naehrstoffeframe")){out.println("checked");} %> onclick="this.form.submit()"/>
-				<label style="cursor:pointer;" for="naehrstoffe">Naehrstoofe</label><br>
+				<label style="cursor:pointer;" for="naehrstoffe">Naehrstoffe</label><br>
 			<%
 			if (request.getParameter("radiobutton") == null) {/*its not there*/
 				} else if(request.getParameter("radiobutton").equals("kategorienframe")) {
