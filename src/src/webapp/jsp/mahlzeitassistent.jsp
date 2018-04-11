@@ -244,18 +244,11 @@
 
 							ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
 							
-							for(Lebensmitteldaten lebensmitteleintrag : daten){
-								boolean gefunden=false;
-								if((gefunden==false && lebensmitteleintrag.getKarenzphase()=="mittel") || (gefunden==false && lebensmitteleintrag.getKarenzphase()=="gut")){
-									out.println("<table>");
-									out.println("<tr>");
-									out.println("<td>");
+							for(Lebensmitteldaten lebensmitteleintrag : daten){	
+								if(lebensmitteleintrag.getKarenzphase().toString().equals("gut") || lebensmitteleintrag.getDauerernaehrung().toString().equals("gut")){
 									out.println(lebensmitteleintrag.getLname());
-									out.println("</td>");
-									out.println("</tr>");
-									out.println("</table>");
-									gefunden=true;
 								}
+								
 							}	
 
 							// for the next category call we have to clear the arraylist of lebensmittel
