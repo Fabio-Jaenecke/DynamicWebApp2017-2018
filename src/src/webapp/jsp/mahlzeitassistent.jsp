@@ -328,16 +328,6 @@
 											%>
 											</div>
 											<div>
-											<% 
-											
-											
-											if (request.getParameter("kategorieauswahl") == null || request.getParameter("kategorieauswahl2") == null || request.getParameter("kategorieauswahl3") == null) {
-												/*at least one parameter is not there*/
-											}else if (request.getParameter("kategorieauswahl1") != null && request.getParameter("kategorieauswahl2") != null && request.getParameter("kategorieauswahl3") !=null ) {
-												out.println("<input type='submit' value='Mahlzeit erstellen'>");
-											}	
-											
-											%>
 											<input type='submit' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
 											</div>
 									
@@ -515,16 +505,6 @@
 											%>
 											</div>
 											<div>
-											<% 
-											
-											
-											if (request.getParameter("naehrstoffauswahl") == null || request.getParameter("naehrstoffauswahl2") == null || request.getParameter("naehrstoffauswahl3") == null) {
-												/*at least one parameter is not there*/
-											}else{
-												out.println("<input type='submit' value='Mahlzeit erstellen'>");
-											}	
-											
-											%>
 											<input type='submit' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
 											</div>
 									
