@@ -118,7 +118,7 @@
             	<em>Anleitung:</em>
             	<ol>
             		<li>Entscheiden Sie sich für den Assistenten in Kategorien oder in Naehrstoffen.</li>
-            		<li>Wählen Sie drei Lebensmittelkategorien/Naehrstoffkateogiren aus der jeweiligen Auswahlliste aus.</li>
+            		<li>Wählen Sie drei Lebensmittelkategorien/Naehrstoffkategorien aus der jeweiligen Auswahlliste aus.</li>
             	    <li>Drücken Sie auf "Mahlzeit erstellen"</li>
             	    <li>Sie erhalten einen Teller mit vorgeschlagenen Lebensmitteln</li>
             	</ol>
