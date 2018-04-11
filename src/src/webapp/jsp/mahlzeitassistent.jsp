@@ -378,23 +378,23 @@
 											<div class='zeigeDrittel zeigeErstesDrittel'>
 											<%
 										
-											String kategorienname = "";
+											String naehrstoffname = "";
 					
-											ArrayList<Lebensmitteldaten> kategorieresultate = new ArrayList<>();
+											ArrayList<Lebensmitteldaten> naehrstoffresultate = new ArrayList<>();
 					
-											if (request.getParameter("kategorieauswahl") == null) {
+											if (request.getParameter("naehrstoffauswahl") == null) {
 					
 												out.println("&#8598;wähle");
 					
 											}else{
 					
-												kategorienname = request.getParameter("kategorieauswahl");
+												naehrstoffname = request.getParameter("naehrstoffauswahl");
 					
-												KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
+												NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
 					
-												kategorieauftrag.searchForString(kategorienname);
+												naehrstoffauftrag.searchForString(naehrstoffname);
 					
-												ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+												ArrayList<Lebensmitteldaten> daten = naehrstoffauftrag.getLebensmittel();
 												
 												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
 												boolean gefunden = false;
@@ -410,13 +410,13 @@
 												}
 					
 												// for the next category call we have to clear the arraylist of lebensmittel
-												kategorieauftrag.clearLebensmittel();
+												naehrstoffauftrag.clearLebensmittel();
 											}
 					
 											%>
 											</div>
 											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircle" class='rotate120'>
+											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class='rotate120'>
 											<select name='naehrstoffauswahl2' class="dropdown2drittel">
 					
 													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
@@ -432,50 +432,47 @@
 											<div class='zeigeDrittel zeigeZweitesDrittel'>
 											<%
 										
-											String kategorienname2 = "";
+											String naehrstoffname2 = "";
+											
+											ArrayList<Lebensmitteldaten> naehrstoffresultate2 = new ArrayList<>();
 					
-											ArrayList<Lebensmitteldaten> kategorieresultate2 = new ArrayList<>();
+											if (request.getParameter("naehrstoffauswahl2") == null) {
 					
-											if (request.getParameter("kategorieauswahl2") == null) {
-					
-												out.println("wähle&#8599;");
+												out.println("&#8598;wähle");
 					
 											
 					
 											}else{
 					
-												kategorienname2 = request.getParameter("kategorieauswahl2");
+												naehrstoffname2 = request.getParameter("naehrstoffauswahl2");
 					
-												KategoriensucheDao kategorieauftrag2 = new KategoriensucheDao();
+												NaehrstoffsucheDao naehrstoffauftrag2 = new NaehrstoffsucheDao();
 					
-												kategorieauftrag2.searchForString(kategorienname2);
+												naehrstoffauftrag2.searchForString(naehrstoffname);
 					
-												ArrayList<Lebensmitteldaten> daten2 = kategorieauftrag2.getLebensmittel();
+												ArrayList<Lebensmitteldaten> daten2 = naehrstoffauftrag2.getLebensmittel();
 												
 												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
 												boolean gefunden = false;
 												for(Lebensmitteldaten lebensmitteleintrag : daten2){	
 													if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
-														out.println("<div class='assistentenfeld'>");
 														out.println(lebensmitteleintrag.getLname());
-														out.println("</div>");
 														gefunden = true;
 													}
-													
-												}
+												}	
 												//if nothing is found:
 												if (gefunden==false){
-													out.println("emtpy");
+													out.println("empty");
 												}
 					
 												// for the next category call we have to clear the arraylist of lebensmittel
-												kategorieauftrag2.clearLebensmittel();
+												naehrstoffauftrag2.clearLebensmittel();
 											}
 					
 											%>
 											</div>
 											<div class='selektiereDrittel drittesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircle" class='rotate240'>
+											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class='rotate240'>
 											<select name='naehrstoffauswahl3' class="dropdown3drittel">
 					
 													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
@@ -491,23 +488,25 @@
 											<div class='zeigeDrittel zeigeDrittesDrittel'>
 											<%
 										
-											String kategorienname3 = "";
-					
-											ArrayList<Lebensmitteldaten> kategorieresultate3 = new ArrayList<>();
-					
-											if (request.getParameter("kategorieauswahl3") == null) {
-					
-												out.println("&#8595;wähle");
+											String naehrstoffname3 = "";
 											
+											ArrayList<Lebensmitteldaten> naehrstoffresultate3 = new ArrayList<>();
+					
+											if (request.getParameter("naehrstoffauswahl3") == null) {
+					
+												out.println("&#8598;wähle");
+					
+											
+					
 											}else{
 					
-												kategorienname3 = request.getParameter("kategorieauswahl3");
+												naehrstoffname3 = request.getParameter("naehrstoffauswahl3");
 					
-												KategoriensucheDao kategorieauftrag3 = new KategoriensucheDao();
+												NaehrstoffsucheDao naehrstoffauftrag3 = new NaehrstoffsucheDao();
 					
-												kategorieauftrag3.searchForString(kategorienname3);
+												naehrstoffauftrag3.searchForString(naehrstoffname);
 					
-												ArrayList<Lebensmitteldaten> daten3 = kategorieauftrag3.getLebensmittel();
+												ArrayList<Lebensmitteldaten> daten3 = naehrstoffauftrag3.getLebensmittel();
 												
 												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
 												boolean gefunden = false;
@@ -516,7 +515,6 @@
 														out.println(lebensmitteleintrag.getLname());
 														gefunden = true;
 													}
-													
 												}	
 												//if nothing is found:
 												if (gefunden==false){
@@ -524,7 +522,7 @@
 												}
 					
 												// for the next category call we have to clear the arraylist of lebensmittel
-												kategorieauftrag3.clearLebensmittel();
+												naehrstoffauftrag3.clearLebensmittel();
 											}
 											%>
 											</div>
@@ -532,9 +530,9 @@
 											<% 
 											
 											
-											if (request.getParameter("kategorieauswahl") == null || request.getParameter("kategorieauswahl2") == null || request.getParameter("kategorieauswahl3") == null) {
+											if (request.getParameter("naehrstoffauswahl") == null || request.getParameter("naehrstoffauswahl2") == null || request.getParameter("naehrstoffauswahl3") == null) {
 												/*at least one parameter is not there*/
-											}else if (request.getParameter("kategorieauswahl1") != null && request.getParameter("kategorieauswahl2") != null && request.getParameter("kategorieauswahl3") !=null ) {
+											}else{
 												out.println("<input type='submit' value='Mahlzeit erstellen'>");
 											}	
 											
