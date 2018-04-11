@@ -53,6 +53,13 @@
     <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 	<style>
+	.zeigeLebensmittelDrittel{
+		color: white;
+		font-size: x-large;
+		font-weight: bold;
+		background-color: #6FA8DC;
+	}
+	
 	.mahlzeitassistent{
 		position: relative;
 		margin-top: -200px;
@@ -309,7 +316,9 @@
 							boolean gefunden = false;
 							for(Lebensmitteldaten lebensmitteleintrag : daten2){	
 								if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
+									out.println("<div class='assistentenfeld'>");
 									out.println(lebensmitteleintrag.getLname());
+									out.println("</div>");
 									gefunden = true;
 								}
 								
