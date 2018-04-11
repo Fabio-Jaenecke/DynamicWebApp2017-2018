@@ -122,23 +122,20 @@
             	    <li>Drücken Sie auf "Mahlzeit erstellen"</li>
             	    <li>Sie erhalten einen Teller mit vorgeschlagenen Lebensmitteln</li>
             	</ol>
-            	<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-			    <input  type="radio" name="radiobutton"  id="kategorien" value="kategorienframe" onclick="this.form.submit()"/>
-				Kategorien<br>
-				<input type="radio" name="radiobutton" id="naehrstoffe" value="naehrstoffeframe" onclick="this.form.submit()"/>
-				Naehrstoffe<br>
-			</form>
             </article>
       </div>
       <div class="main wrapper clearfix">
-		
+			<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
+			    <input  type="radio" name="radiobutton"  id="kategorien" value="kategorienframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("kategorienframe")){out.println("checked");} %> onclick="this.form.submit()"/>
+				<label style="cursor:pointer;" for="kategorien">Kategorien</label><br>
+				<input type="radio"  name="radiobutton" id="naehrstoffe" value="naehrstoffeframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("naehrstoffeframe")){out.println("checked");} %> onclick="this.form.submit()"/>
+				<label style="cursor:pointer;" for="naehrstoffe">Naehrstoofe</label><br>
 			<%
 			if (request.getParameter("radiobutton") == null) {/*its not there*/
 				} else if(request.getParameter("radiobutton").equals("kategorienframe")) {
 					out.println("<div id='kategorienframe'>");
 					%>
 					            <section class="mahlzeitassistent">
-						            <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
 											<%@ page import="datenbank.container.*" %>
 					
 											<%@ page import="Suche.*" %>
@@ -198,7 +195,7 @@
 												}	
 												//if nothing is found:
 												if (gefunden==false){
-													out.println("no :)");
+													out.println("empty");
 												}
 					
 												// for the next category call we have to clear the arraylist of lebensmittel
@@ -265,7 +262,7 @@
 												}
 												//if nothing is found:
 												if (gefunden==false){
-													out.println("no :)");
+													out.println("emtpy");
 												}
 					
 												// for the next category call we have to clear the arraylist of lebensmittel
@@ -328,7 +325,7 @@
 												}	
 												//if nothing is found:
 												if (gefunden==false){
-													out.println("no :)");
+													out.println("empty");
 												}
 					
 												// for the next category call we have to clear the arraylist of lebensmittel
@@ -349,7 +346,7 @@
 											%>
 											<input type='submit' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
 											</div>
-									</form>
+									
 								</section>	
 					<%
 					
@@ -359,6 +356,7 @@
 				}
 			
 			%>
+			</form>
 		</div>
 	</div>
 
