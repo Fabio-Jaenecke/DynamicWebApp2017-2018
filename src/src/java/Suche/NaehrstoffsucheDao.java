@@ -16,7 +16,7 @@ import datenbank.dao.DbQuery;
  * Kategorie aus.
  *
  * @author Raphael Caradonna und Michele Trebo und Fabio Jaenecke 
- * @version 09.04.2018 
+ * @version 11.04.2018 
  */
 public class NaehrstoffsucheDao {
 
