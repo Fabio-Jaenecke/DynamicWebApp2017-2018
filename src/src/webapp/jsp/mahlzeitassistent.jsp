@@ -61,6 +61,12 @@
 		padding: 10px;
 	}
 	
+	.erstelleMahlzeit{
+		position: absolute;
+		top: 560px;
+		left: 680px;
+	}
+	
 	.zeigeErstesDrittel{
 		position: absolute;
 		top: 280px;
@@ -254,11 +260,7 @@
 
 						if (request.getParameter("kategorieauswahl") == null) {
 
-							//Technically, this is not required:
-
-							//out.println("input field could not be validated");
-
-						
+							out.println("&#8598;wähle");
 
 						}else{
 
@@ -320,9 +322,7 @@
 
 						if (request.getParameter("kategorieauswahl2") == null) {
 
-							//Technically, this is not required:
-
-							//out.println("input field could not be validated");
+							out.println("wähle&#8599;");
 
 						
 
@@ -389,12 +389,8 @@
 
 						if (request.getParameter("kategorieauswahl3") == null) {
 
-							//Technically, this is not required:
-
-							//out.println("input field could not be validated");
-
+							out.println("&#8595;wähle");
 						
-
 						}else{
 
 							kategorienname3 = request.getParameter("kategorieauswahl3");
@@ -435,7 +431,7 @@
 						}	
 						
 						%>
-						<input type='submit' value='Mahlzeit erstellen'>
+						<input type='submit' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
 						</div>
 				</form>
 			</section>	
