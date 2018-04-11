@@ -199,7 +199,7 @@
 						
 						<div class='selektiereLebensmittelDrittel erstesDrittel'>
 						<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
-						<select onchange="<%out.println("name='kategorieauswahl'");%>" class="dropdown1drittel">
+						<select name='kategorieauswahl' class="dropdown1drittel">
 
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 
@@ -266,7 +266,7 @@
 						</div>
 						<div class='selektiereLebensmittelDrittel zweitesDrittel'>
 						<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
-						<select onchange="<%out.println("name='kategorieauswahl2'");%>" class="dropdown2drittel">
+						<select name='kategorieauswahl2' class="dropdown2drittel">
 
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 
@@ -327,7 +327,7 @@
 						</div>
 						<div class='selektiereLebensmittelDrittel drittesDrittel'>
 						<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate240'>
-						<select onchange="<%out.println("name='kategorieauswahl3'");%>" class="dropdown3drittel">
+						<select name='kategorieauswahl3' class="dropdown3drittel">
 
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 
