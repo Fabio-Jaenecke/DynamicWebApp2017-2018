@@ -306,12 +306,13 @@
 
 							ArrayList<Lebensmitteldaten> daten2 = kategorieauftrag2.getLebensmittel();
 							
-							for(Lebensmitteldaten lebensmitteleintrag : daten2){
-								boolean gefunden=false;
-								if((gefunden==false && lebensmitteleintrag.getKarenzphase()=="mittel") || (gefunden==false && lebensmitteleintrag.getKarenzphase()=="gut")){
+							boolean gefunden = false;
+							for(Lebensmitteldaten lebensmitteleintrag : daten2){	
+								if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
 									out.println(lebensmitteleintrag.getLname());
-									gefunden=true;
+									gefunden = true;
 								}
+								
 							}
 
 							// for the next category call we have to clear the arraylist of lebensmittel
@@ -367,12 +368,13 @@
 
 							ArrayList<Lebensmitteldaten> daten3 = kategorieauftrag3.getLebensmittel();
 							
-							for(Lebensmitteldaten lebensmitteleintrag : daten3){
-								boolean gefunden=false;
-								if((gefunden==false && lebensmitteleintrag.getKarenzphase()=="mittel") || (gefunden==false && lebensmitteleintrag.getKarenzphase()=="gut")){
+							boolean gefunden = false;
+							for(Lebensmitteldaten lebensmitteleintrag : daten3){	
+								if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
 									out.println(lebensmitteleintrag.getLname());
-									gefunden=true;
+									gefunden = true;
 								}
+								
 							}	
 
 							// for the next category call we have to clear the arraylist of lebensmittel
