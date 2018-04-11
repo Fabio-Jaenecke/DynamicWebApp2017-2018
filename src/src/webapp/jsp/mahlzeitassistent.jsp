@@ -112,7 +112,17 @@
 
                 <h2>Mahzeitsassistent</h2>
 
-                <p>Hier könne Sie bald Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>
+                <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>
+                
+                <article style="min-width:100%;">
+                	<em>Anleitung:</em>
+                	<ol>
+                		<li>Entscheiden Sie sich für den Assistenten in Kategorien oder in Naehrstoffen.</li>
+                		<li>Wählen Sie drei Lebensmittelkategorien aus der jeweiligen Auswahlliste aus.</li>
+                	    <li>Drücken Sie auf "Mahlzeit erstellen"</li>
+                	    <li>Sie erhalten einen Teller mit vorgeschlagenen Lebensmitteln</li>
+                	</ol>
+                </article>
 
                 
 
