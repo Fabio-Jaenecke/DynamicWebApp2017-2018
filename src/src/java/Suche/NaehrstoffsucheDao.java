@@ -12,10 +12,10 @@ import datenbank.dao.DbQuery;
 
 /**
  * Diese Klasse uebergibt die Datenbankabfrage der Datenbank und fuehrt eine Suche
- * mit einer vordefinierten Kategorie durch und gibt die Lebensmittel in der entsprechenden
- * Kategorie aus.
+ * mit einer vordefinierten Naehrstoffen durch und gibt die Lebensmittel in der entsprechenden
+ * Naehrstoffeinteilung aus.
  *
- * @author Raphael Caradonna und Michele Trebo und Fabio Jaenecke 
+ * @author Fabio Jaenecke 
  * @version 11.04.2018 
  */
 public class NaehrstoffsucheDao {
@@ -26,14 +26,14 @@ public class NaehrstoffsucheDao {
 	private static final Logger LOGGER = Logger.getLogger(NaehrstoffsucheDao.class.getName());
 
 	/**
-	 * Erzeuge KategoriensucheDao. 
+	 * Erzeuge NaehrstoffsucheDao. 
 	 */
 	public NaehrstoffsucheDao() {
 
 	}
 
 	/**
-	 * Suche nach dem Namen der Kategorie und deren zugehoerigen Lebensmitteln.  
+	 * Suche nach dem Namen der Naehrstoffeinteilung und deren zugehoerigen Lebensmitteln.  
 	 * @param kategorienname der Name der gesuchten Kategorie. 
 	 */
 	public void searchForString(String naehrstoffname) {
@@ -60,7 +60,7 @@ public class NaehrstoffsucheDao {
 	}
 
 	/**
-	 * Liefere die Liste der Lebensmittel der entsprechenden Kategorie. 
+	 * Liefere die Liste der Lebensmittel der entsprechenden Naehrstoffeinteilung. 
 	 * @return lebensmittel 
 	 */
 	public ArrayList<Lebensmitteldaten> getLebensmittel() {
