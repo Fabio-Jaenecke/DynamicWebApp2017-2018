@@ -244,9 +244,11 @@
 
 							ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
 							
+							boolean gefunden = false;
 							for(Lebensmitteldaten lebensmitteleintrag : daten){	
-								if(lebensmitteleintrag.getKarenzphase().toString().equals("gut") || lebensmitteleintrag.getDauerernaehrung().toString().equals("gut")){
+								if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
 									out.println(lebensmitteleintrag.getLname());
+									gefunden = true;
 								}
 								
 							}	
