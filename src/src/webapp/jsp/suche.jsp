@@ -60,7 +60,7 @@
 	            		<h3>Suche nach Lebensmitteln</h3>
 	            			<input type="text" name="sucheintrag" value="" />
 	            			<input type="submit" value="Suche" />
-			           		  <%@ page import ="Suche.*" %>
+			           		  <%@ page import ="suche.*" %>
 			           		  <%
 			           		    String lebensmittelname = "";
 									if (request.getParameter("sucheintrag") == null) {
@@ -107,7 +107,7 @@
             <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<h3>Suche nach Kategorien</h3>
 						<%@ page import="datenbank.container.*" %>
-						<%@ page import="Suche.*" %>
+						<%@ page import="suche.*" %>
 						<%@ page import="java.util.ArrayList" %>
 					<select onchange="this.form.submit()" name="kategorieauswahl">
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>

@@ -1,4 +1,4 @@
-package Suche;
+package suche;
 
 import static org.junit.Assert.*;
 

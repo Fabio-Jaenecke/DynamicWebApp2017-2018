@@ -1,4 +1,4 @@
-package Suche;
+package suche;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
