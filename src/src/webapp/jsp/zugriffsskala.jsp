@@ -55,7 +55,6 @@
             <header>
                 <h2>Zugriffsskala</h2>
                 <p>Diese Skala zeigt die Lebensmittel für welchen die Benutzer am meisten Interesse gezeigt haben.</p>
-                
             </header>
 
         </article>

@@ -111,6 +111,8 @@ public class DbInsertion implements DbInsertionInterface {
 
 	/*
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableZugriffsskala()
+	 * TODO remove
+	 * 35 lebensmittel exists
 	 */
 	@Override
 	public void insertIntoTableZugriffsskala() {
@@ -118,12 +120,45 @@ public class DbInsertion implements DbInsertionInterface {
 		try {
 			statement = conn.getConn().createStatement();
 			
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (100, 11, 111)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (200, 12, 211)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (300, 13, 121)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (400, 14, 112)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (500, 15, 113)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (100, 11, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (110, 12, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (120, 13, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (130, 14, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (140, 15, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (150, 16, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (160, 17, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (170, 18, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (180, 19, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (190, 20, 0)");
 			
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (200, 21, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (210, 22, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (220, 23, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (230, 24, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (240, 25, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (250, 26, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (260, 27, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (270, 28, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (280, 29, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (290, 30, 0)");
+			
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (300, 31, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (310, 32, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (320, 33, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (330, 34, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (340, 35, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (350, 36, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (360, 37, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (370, 38, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (380, 39, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (390, 40, 0)");
+			
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (400, 41, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (410, 42, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (420, 43, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (430, 44, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (440, 45, 0)");
+						
 			statement.close();
 			conn.getConn().commit();
 			LOGGER.info("inserted data into table zugriffsskala");
@@ -190,9 +225,43 @@ public class DbInsertion implements DbInsertionInterface {
 		try {
 			statement = conn.getConn().createStatement();
 			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (100, 1001)");
-			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (200, 2001)");
-			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (300, 3001)");
-			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (400, 4001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (110, 1002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (120, 1003)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (130, 1004)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (140, 1005)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (150, 1006)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (160, 2001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (170, 2002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (180, 2003)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (190, 2004)"); 
+			
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (200, 2005)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (210, 3001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (220, 3002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (230, 3003)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (240, 3004)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (250, 3005)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (260, 4001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (270, 4002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (280, 5001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (290, 5002)"); 
+			
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (300, 6001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (310, 6002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (320, 7001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (330, 7002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (340, 7003)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (350, 7004)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (360, 7005)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (370, 8001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (380, 8002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (390, 8003)");
+			
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (400, 8004)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (410, 9001)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (420, 9002)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (430, 9003)");
+			statement.executeUpdate(INSERT + tables.FAVORIT + " VALUES (440, 9004)");
 			
 			statement.close();
 			conn.getConn().commit();

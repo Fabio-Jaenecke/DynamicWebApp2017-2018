@@ -1,4 +1,4 @@
-package Suche;
+package suche;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
 import datenbank.container.Lebensmitteldaten;
-import datenbank.dao.DbQuery;
+import datenbank.dao.DbQuery;  
 
 /**
  * Diese Klasse uebergibt die Datenbankabfrage der Datenbank und fuehrt eine Suche
@@ -20,7 +20,7 @@ public class LebensmittelsucheDao {
 
 	private Lebensmitteldaten lebensmittel;
 	DbQuery query = new DbQuery();
-	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(LebensmittelsucheDao.class.getName());
 	
 	/**
 	 * Erzeuge LebensmittelsucheDao. 
@@ -37,7 +37,7 @@ public class LebensmittelsucheDao {
 		String selectSQL = "select * from lebensmitteldaten where lname like '%" + lebensmittelname + "%';";
 		ResultSet result = query.getResult(selectSQL);
 		try {
-			if(result.isBeforeFirst()) {
+			if(result.next()) {
 				lebensmittel = new Lebensmitteldaten(result);
 			}
 			else {

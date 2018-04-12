@@ -47,12 +47,10 @@ public class Lebensmitteldaten {
 	 */
 	public Lebensmitteldaten(ResultSet rs) {
 		try {
-			while(rs.next()) {
 				this.index = rs.getInt("lindex"); 
 		        this.lebensmittelname = rs.getString("lname");        
 		        this.karenzphase = rs.getString("karenzphase");
 		        this.dauerernaehrung = rs.getString("dauerernaehrung");
-			}
 		}
 		catch(SQLException e) {
 			LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);

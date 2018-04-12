@@ -1,4 +1,4 @@
-package Suche;
+package suche;
 
 import static org.junit.Assert.*;
 
@@ -7,14 +7,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Testklasse für die Klasse KategoriesucheDao.
+ * Testklasse für die Klasse LebensmittelsucheDao. 
  * 
  * @author Michele Trebo
  * @version 09.04.2018
  */
 
 //TODO: Write testclass 
-public class KategoriensucheDaoTest {
+public class LebensmittelsucheDaoTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
