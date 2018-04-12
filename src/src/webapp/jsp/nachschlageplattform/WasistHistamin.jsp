@@ -88,77 +88,25 @@
                      <input type="submit" value="Zurück" onchange="history.back()">
                      	<ul class="breadcrumb">
                      	<li><a href="${pageContext.request.contextPath}/home/">Home</a></li>
-						 <li>Diagnose der Histamin-Intoleranz</li>
+						 <li>Was ist Histamin?</li>
 						</ul>
 						                        	
                         <header>
-                           <h2>Diagnose der Histamin-Intoleranz</h2>
+                           <h2>Was ist Histamin?</h2>
                            
                     
                        		<article style="min-width: 100%">
-                       		Diagnose Histaminintoleranz
-                       		
-								Zusammenfassung
-								Histaminintoleranz wird diagnostiziert, indem man ein Ernährungs- und Symptomtagebuch führt, das vom Arzt ausgewertet wird. Darauf folgt eine Differenzialdiagniostik des Arztes, sowie eine Eliminationsdiät inkl. einiger Untersuchungen. Heimtests wie Blutanalysen, IgG4-Tests, Stuhl- oder Urintests und DAO-Bestimmungen des Blutes sind nicht geeignet, eine Histaminintoleranz zu diagnostizieren.
-								
-								Wie eine Histaminintoleranz (HIT) diagnostiziert wird, hat sich in den letzten Jahren laufend geändert. Da die HIT eine sehr neue Erscheinung ist, musste man erst Studien machen und Erfahrungen sammeln. Aktuell gibt es eine Leitlinie, die den Gold-Standard in der Diagnostik vorgibt. Im folgenden Beitrag zeigen wir euch auch verschiedene historische Diagnosewege und deren Probleme.
-								
-								Einige Begriffe und Erklärungen
-								Diaminoxidase (DAO) ist ein Enzym, welches unter anderem im Dünndarm produziert wird und über die Nahrung aufgenommenes Histamin abbaut. Für diesen Vorgang benötigt die DAO unter anderem Vitamin B6 und Kupfer. DAO wird von gewissen Substanzen wie Alkohol oder anderen biogenen Aminen gehemmt. Histamin bildet sich ganz natürlich durch Bakterien, d.h. Nahrung die lange gelagert wird enthält mehr Histamin, als frische Nahrung. Auch die Darmbakterien produzieren Histamin und andere biogene Amine. Daher benötigt unser Körper dieses Enzym im Darm, um das aufgenommene und im Darm produzierte Histamin abzubauen.
-								
-								Histamin-N-Methyl-Transferase (HNMT) ist ein Enzym, das in den Zellen vorkommt, vor allem in Leberzellen, aber auch im Darm. Auch HNMT baut Histamin ab.
-								
-								Wie diagnostiziert man eine Histaminintoleranz?
-								Es gibt mittlerweile eine Leitlinie die von führenden Fachorganisationen empfohlen wird. Wichtig ist, keine Selbstdiagnosen zu machen, sondern immer im Dialog mit dem Arzt zu einer Diagnose zu kommen. Folgender Diagnoseweg gilt aktuell als Gold-Standard:
-								
-								Erster Schritt: Symptomtagebuch und Differenzialdiagnose
-								Bevor man zum Arzt geht sollte man auf jeden Fall ein Symptomtagebuch führen. Dadurch tut sich der behandelnde Arzt deutlich leichter mit einer Eingrenzung der Symptome.
-								
-								Unser Symptom-Tagebuch ist auch als App für Android Geräte verfügbar.
-								
-								Wir haben auch einen Vordruck für ein Symptomtagebuch zum kostenlosen Download:
-								
-								
-								Symptomtagebuch zum Ausdrucken (A4)
-								Während du ein Symptomtagebuch führst, solltest du dich normal ernähren und keine Diät halten oder plötzlich auf bestimmte Produkte verzichten. Dein Arzt muss sich Zeit für dich nehmen und ein sehr intensives Gespräch mit dir führen. Am besten ist es, wenn du dein Ernährungs- / Symptomtagebuch mitbringst. Vermerke im Tagebuch auch den Menstruationszyklus, sowie jede Einnahme von Medikamenten! Vermerke auch die Symptome die du hast.
-								
-								Dein Arzt wird versuchen mittels Differenzialdiagnose andere Erkrankungen auszuschließen. Hierzu gehören zum Beispiel Allergien, Mastozytose, chronisch entzündliche Darmerkrankungen oder andere Unverträglichkeiten. Differnzialdiagnose heißt, dass man zuerst andere Erkrankungen mit sehr ähnlichen Symptomen, ausschließt. Allergien z.Bsp. über Prick- und RAST-Test, intestinale Fruktoseintoleranz oder Laktoseintoleranz über H2-Atemtest. Es gibt noch einige andere Erkrankungen, zum Beispiel die sehr seltene Mastozytose, die man zuerst ausschließen sollte.
-								
-								Zweiter Schritt: Eliminationsdiät mit oder ohne Provokationstest
-								Da man für diesen Diagnoseweg eine genaue Kenntnis über den Histamingehalt und die Histaminkarenz benötigt, ist dieser Diagnoseweg sehr schwierig und muss ernährungstherapeutisch begleitet werden!
-								
-								Zuerst macht man eine gut geplante und im Idealfall diätologisch begleitete Karenzphase inklusive eines sehr genauen Ernährungs- bzw. Symptomtagebuchs. Diese Phase dauert 2-4 Wochen. In der Karenz werden alle Lebensmittel mit biogenen Aminen vermieden, kein Alkohol getrunken, keine DAO-blockierenden Medikamente genommen (mit Arzt besprechen!) und keine Antihistaminika genommen.
-								
-								Kommt es zu einer Besserung der Symptome, ist eine HIT, nach Ausschluss anderer möglicher Erkrankungen per Differentialdiagnose, sehr wahrscheinlich.
-								
-								Bei positivem Befund sollte dein Arzt Kupfer und Vitamin B6 durch eine Blutuntersuchung testen lassen, da die DAO diese Stoffe benötigt, um richtig zu funktionieren. Sind zu wenig davon da, kann die DAO nicht gebildet werden bzw. nicht richtig funktionieren. Eine Substitutuion kann dann die HIT deutlich verbessern.
-								
-								Dritter Schritt: Provokationstest
-								Nun, nach dieser Karenz, kann man einen Provokationstest machen, welcher allerdings im Idealfall placebokontrolliert und doppelt verblindet durchgeführt werden sollte. Hierbei bekommt man verschiedene Flüssigkeiten zu trinken und die Reaktionen werden protokolliert. Dies ist aber wohl nur in Spezialkliniken möglich und wird von einigen Leitlinien nicht empfohlen, bzw. explizit davon abgeraten. Alternativ kann man (in Absprache mit dem Arzt!) histaminhaltige Nahrungsmittel essen und seine Reaktionen darauf im Tagebuch festhalten. Wichtig ist jeden Tag nur 1 Lebensmittel zu testen! Beispielsweise Bergkäse, Rotwein oder Sauerkraut. Die Reaktionen sollten dann innerhalb von 4 Stunden auftreten. Bei einer schweren Form der Histaminintoleranz (was sehr selten ist!) könnte es beim Provokationstest zu einem anaphylaktischen Schock kommen, weshalb man dies besser nicht ohne ärztliche Begleitung machen sollte.
-								
-								Dieser Schritt ist meist nicht mehr notwendig, da meistens schon nach Schritt zwei die Diagnose klar ist.
-								
-								Nicht mehr empfohlene Methoden
-								Achtung: Es gibt am Markt noch Blutheimtests oder andere Tests für zu Hause zur Histaminintoleranz-Diagnostik. Auch einige Ärzte machen noch Bluttests zur Bestimmung der DAO. Diese Tests werden aber von den Fachoprganisationen und aus den dargelegten Gründen als nicht geeignet eingestuft und können Fehldiagnosen liefern.
-								
-								Diagnoseweg: Laborparameter "Blut"
-								blutabnahme bei histaminintoleranz; (C) Michael Zechmann / nmi-PortalDa wir ja die Enzyme DAO und HNMT zum Abbau haben, könnte man vermuten, dass die Menge der Enzyme im Blut als Diagnoseverfahren herangezogen werden könnte. Das funktioniert aber leider nicht. Man hat auch versucht die Aktivität der DAO, also nicht die Menge, als Diagnose-Faktor zu etablieren. Ebenfalls mit mäßigem Erfolg. Man hat nämlich festgestellt, dass die Aktivität der Enzyme in der Dünndarmschleimhaut nicht mit der Menge oder Aktivität im Blut zusammenhängt.
-								
-								Diagnoseweg: Dünndarmbiopsie DAO-Aktivität
-								Alternativ kann über eine Dünndarmbiopsie mittels eines ELISA (enzyme-linked immunosorbent assay) die Aktivität bestimmt werden. Letzteres bietet sich an, wenn sowieso schon eine Dünndarmbiopsie durchgeführt wird. Daher ist diese Methode keine übliche Diagnosemethode.
-								
-								Die Interpretation der DAO-Aktivität muss jedoch auch hier im Kontext mit der Klinik und der Anamnese durchgeführt werden, das heißt der oben beschriebene Gold-Standard muss sowieso beschritten werden.
-								
-								Diagnoseweg: Laborparameter "Urin" und "Stuhl"
-								Man kann auch die Histamin und Methylhistamin Konzentration im Harn bestimmen. Mehylhistamin ist das Abbauprodukt der HNMT. Liegt ein DAO-Mangel vor, wird das Histamin vermehrt in den Zellen über die HNMT abgebaut. Entsprechend erhöht sich das Abbauprodukt Methylhistamin, welches über den Harn ausgeschieden wird und damit über einen 12-h-Sammelurintest von einem Labor bestimmt werden kann. Dann wird einige Tage lang eine strikte Kartoffel-Reis-Diät gehalten und der Urintest wiederholt. Aus der Änderung der Ergebnisse dachte man, könnte man auf eine HIT schließen. Das hat sich als nicht richtig herausgestellt. Auch hier ist nämlich eine Differentialdiagnose wichtig, da dieser Test alleine nicht aussagekräftig genug ist, um eine Histaminintoleranz zu diagnostizieren. 5)
-								
-								Auch im Stuhl kann die Histaminmenge bestimmt werden. Diese Menge zeigt jedoch nur an, wieviel Histamin nicht im Darm abgebaut wurde. Diese Menge variiert je nach dem, was man zuvor gegessen hat, also je nachdem wie hoch die zugeführte Histaminmenge war, und je nachdem wie die Bakterienzusammensetzung im Darm ist. Das vom Körper selbst produzierte Histamin kann dieser Test nicht berücksichtigen. Dieser Test galt schon länger als unsicher und zählt daher zu den veralteten Diagnosewegen. 5)
-								
-								Das heißt Messungen der DAO oder des Histamins über den Urin oder den Stuhl haben sich als nicht aussagekräftig erwiesen. Damit bleibt, nach aktuellem Stand, nur eine rein klinische Diagnose (siehe oben) für die Histaminintoleranz übrig, da es (noch) keine verlässlichen Laborparameter gibt.
-								
-								Andere Diagnoseverfahren wie IgG Test, Auspendeln, Bioresonanz oder Speicheltests
-								Der IgG Test mißt die Immunreaktion des körpereigenen Immunglobulin G. Diese Tests sind definitiv nicht geeignet, Laktoseintoleranz, Fructosemalabsorption oder Histaminintoleranz nachzuweisen! Infos dazu hier...  Auch andere am Markt angebotene Tests sind als unseriös einzustufen. Es gibt für die meisten dieser Tests, auch wenn sie sehr wissenschaftlich klingen und die Hersteller mit Positiv-Beispielen werben, keine Studien oder Evaluationen.
-								                       		</article>
+                       		Was ist Histamin?
+							Histamin ist ein sogenanntes biogenes Amin und dient im Körper unter anderem als wichtiger Botenstoff. Unser Organismus produziert eigenständig Histamin, das in verschiedenen Abläufen des Körpers beteiligt ist. So spielt Histamin eine wichtige Rolle bei der Magensaftproduktion, der Regulierung des Blutdrucks und des Schlaf-Wach-Rhythmus oder ist bei der Appetitkontrolle beteiligt. Histamin ist aber auch „schuld“ an den juckenden Quaddeln nach einem Mückenstich oder an einer laufenden Nase. Dies sind nur einige Beispiele dafür, wie Histamin auf verschiedenste Art und Weise in hunderten Prozessen unseres Körpers mitwirkt. Da Histamin so eine große Rolle spielt, produziert unser Körper Histamin auf Vorrat und speichert es u.a. in den sogenannten Mastzellen. Bei Bedarf wird das Histamin dann freigesetzt. Unser Körper baut das Histamin über Enzyme auch wieder ab, er schafft sich sozusagen ein Histamingleichgewicht.
+							
+							Histamin in der Nahrung
+							Histamin kann aber auch über die Nahrung aufgenommen werden, dann kann dieses System aus dem Gleichgewicht kommen. Dies passiert, wenn wir z.B. verdorbenen Fisch essen und eine Fischvergiftung haben. Bei Personen mit Histaminintoleranz wird dieses Gleichgewicht schneller bzw. durch weniger zugeführtes Histamin aus dem Gleichgewicht gebracht, bzw. könnte es sein, dass die Enzyme nicht richtig funktionieren oder zu wenig davon vorhanden sind.
+							
+							Wo kommt Histamin vor?
+							Histamin kommt nicht nur in unserem Körper vor, sondern auch in allen anderen Tieren und Pflanzen. Wenn wir uns an Brennnesseln brennen, so wird der Juckreiz zum einen von unserem eigenen Histamin ausgelöst, aber auch von Histamin, das von der Brennnessel in unsere Haut injiziert wurde. Da die Brennnessel viel Histamin enthält, ist z.B. Brennnesseltee bei Histaminintoleranz nicht verträglich. Nur wenige frische Nahrungsmittel enthalten so viel Histamin, dass es bei einer Histaminintoleranz zu Problemen kommt. Hierzu gehören neben der Brennnessel z.B. Tomaten oder Auberginen (Melanzani). Eine Datenbank mit verträglichen und unverträglichen Nahrungsmitteln findest du auf der Webseite nmidb.de.
+							
+							Histamin wird aber auch durch mikrobiologischen Abbau gebildet, d.h. es gibt gewisse Bakterien (nicht alle!) die Histamin produzieren. Hierbei wird die Aminosäure Histidin, die ebenfalls in allen biologischen Organismen vorkommt, zu Histamin abgebaut. Das heißt Nahrungsmittel, die mit solchen Histamin bildenden Mikroorganismen in Berührung kommen, die z.B. reifender Käse, enthalten deutlich mehr Histamin (und andere biogene Amine). Somit gibt es leider doch viele Nahrungsmittel, die bei Histaminintoleranz nicht verträglich sind.
+							</article>
                         </header>
                         
                      </article>
