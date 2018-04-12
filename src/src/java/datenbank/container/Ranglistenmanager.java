@@ -6,71 +6,49 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Diese Klasse holt die Lebensmitteldaten, die fuer die Zugriffsskala benoetigt werden, 
+ * Diese Klasse holt die Lebensmitteldaten, die fuer die Rangliste benoetigt werden, 
  * aus der Datenbank und stellt diese zur Verfuegung. 
  * 
- * @author Michele Trebo 
- * @verison 12.04.2018 
+ * @author Michele Trebo
+ * @version 12.04.2018
  */
-public class Zugriffsmanager {
+public class Ranglistenmanager {
 
-	private int platzierung;
-	private String lname;
+	private String lname; 
 	private String kategorie; 
-	private String karenzphase;
-	private String dauerernaehrung;
-	private static final Logger LOGGER = Logger.getLogger(Zugriffsmanager.class.getName());
+	private String karenzphase; 
+	private String dauerernaehrung; 
+	private static final Logger LOGGER = Logger.getLogger(Ranglistenmanager.class.getName());
 
 	/**
-	 * Erzeuge den Zugriffsmanager. 
+	 * Erzeugt die Rangliste für die Lebensmittelvertraeglichkeit. 
 	 * 
-	 * @param platzierung die Platzierung der Lebensmittel 
 	 * @param lname der Lebensmittelname
-	 * @param kategorie die Lebensmittelkategorie 
-	 * @param karenzphase die Karenzphase
-	 * @param dauerernaehrung die Dauerernaehrung
+	 * @param kategorie die Lebensmittelkategorie
+	 * @param karenzphase die Vertraeglichkeit waehrend der Karenzphase
+	 * @param dauerernaehrung die Vertraeglichkeit waehrend der Dauerernaehrung
 	 */
-	public Zugriffsmanager(int platzierung, String lname, String kategorie, String karenzphase, String dauerernaehrung) {
-		this.platzierung = platzierung;
+	public Ranglistenmanager(String lname, String kategorie, String karenzphase, String dauerernaehrung) {
 		this.lname = lname;
 		this.kategorie = kategorie; 
 		this.karenzphase = karenzphase;
 		this.dauerernaehrung = dauerernaehrung;
-	}
-
+	} 
+	
 	/**
-	 * Erzeuge den Zugriffsmanager mittels Daten aus der Datenbank. 
+	 * Erzeuge den Ranglistenmanager mittels Daten aus der Datenbank. 
 	 * 
 	 * @param rs das ResultSet
 	 */
-	public Zugriffsmanager(ResultSet rs) {
+	public Ranglistenmanager(ResultSet rs) {
 		try {
-			this.platzierung = rs.getInt("platzierung");
 			this.lname = rs.getString("lname");
 			this.kategorie = rs.getString("kategorie"); 
 			this.karenzphase = rs.getString("karenzphase");
 			this.dauerernaehrung = rs.getString("dauerernaehrung");
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "Result set of zugriffsmanager could not be resolved " + e);
+			LOGGER.log(Level.SEVERE, "Result set of ranglistenmanager could not be resolved " + e);
 		}
-	}
-
-	/**
-	 * Gib die Platzierung. 
-	 * 
-	 * @return platzierung 
-	 */
-	public int getPlatzierung() {
-		return platzierung;
-	}
-
-	/**
-	 * Setze die Platzierung. 
-	 * 
-	 * @param platzierung die Platzierung 
-	 */
-	public void setPlatzierung(int platzierung) {
-		this.platzierung = platzierung;
 	}
 	
 	/**
@@ -110,7 +88,7 @@ public class Zugriffsmanager {
 	}
 	
 	/**
-	 * Gib die Karenzphase. 
+	 * Gib die Vertraeglichkeit waehrend der Karenzphase. 
 	 * 
 	 * @return karenzphase 
 	 */
@@ -119,16 +97,16 @@ public class Zugriffsmanager {
 	}
 
 	/**
-	 * Setze die Karenzphase. 
+	 * Setze die Vertraeglichkeit waehrend der Karenzphase. 
 	 * 
-	 * @param karenzphase die Karenzphase
+	 * @param karenzphase die Vertraeglichkeit waehrend der Karenzphase
 	 */
 	public void setKarenzphase(String karenzphase) {
 		this.karenzphase = karenzphase;
 	}
 
 	/**
-	 * Gib die Dauerernaehrung.
+	 * Gib die Vertraeglichkeit waehrend der Dauerernaehrung.
 	 * 
 	 * @return dauerernaehrung 
 	 */
@@ -137,11 +115,11 @@ public class Zugriffsmanager {
 	}
 
 	/**
-	 * Setze die Dauerernaehrung.
+	 * Setze die Vertraeglichkeit waehrend der Dauerernaehrung.
 	 * 
-	 * @param dauerernaehrung die Dauerernaehrung 
+	 * @param dauerernaehrung die Vertraeglichkeit waehrend der Dauerernaehrung 
 	 */
 	public void setDauerernaehrung(String dauerernaehrung) {
 		this.dauerernaehrung = dauerernaehrung;
-	}
+	}	
 }

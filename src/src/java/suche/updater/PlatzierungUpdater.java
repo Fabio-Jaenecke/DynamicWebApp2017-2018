@@ -1,4 +1,4 @@
-package zugriffe;
+package suche.updater;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
