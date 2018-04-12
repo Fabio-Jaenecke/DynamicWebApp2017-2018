@@ -121,10 +121,10 @@ public class DbInsertion implements DbInsertionInterface {
 			statement = conn.getConn().createStatement();
 			
 			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (100, 11, 0)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (110, 12, 0)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (120, 13, 0)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (130, 14, 0)");
-			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (140, 15, 0)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (110, 12, 4)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (120, 13, 3)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (130, 14, 1)");
+			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (140, 15, 5)");
 			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (150, 16, 0)");
 			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (160, 17, 0)");
 			statement.executeUpdate(INSERT + tables.ZUGRIFFSSKALA + " VALUES (170, 18, 0)");

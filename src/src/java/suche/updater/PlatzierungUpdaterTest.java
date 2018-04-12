@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class PlatzierungUpdaterTest {
 
+	PlatzierungUpdater updater = new PlatzierungUpdater();
+	
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -18,7 +20,7 @@ public class PlatzierungUpdaterTest {
 
 	@Test
 	public void testSortByAZugriffe() {
-		fail("Not yet implemented");
+		updater.sortByAZugriffe();
 	}
 
 	@Test
