@@ -36,26 +36,22 @@ public class Rangliste {
 	}
 	
 	/**
-	 * Suche nach der Karenzphase. 
-	 * @param karenzphase. 
+	 * Suche nach dem Lebensmittel. 
+	 * @param lebensmittelname der Name des Lebensmittels. 
 	 */
-	public void searchForString(String lname, String karenzphase, String dauerernaehrung) {
-		String selectSQL = "select * from rangliste where karenzphase like '%" + karenzphase + "%';";
+	public void searchForString() {
+		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN KATZUGEHOERIGKEIT k "
+				+ "ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex = lk.kindex';";
 		ResultSet result = query.getResult(selectSQL);
 		try {
 			if(result.next()) {
-				tabelle = new Ranglistenmanager(result);
-			}
-			else {
-				LOGGER.log(Level.SEVERE, "Selected karenzphase does not exist in database ");
+				tabelle.add(new Ranglistenmanager(result));
 			}
 		}
 		catch(SQLException e){
 			LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
 		}
 	}
-	
-	
 	
 	/**
 	 * Leere die Tabelle. 
@@ -79,7 +75,7 @@ public class Rangliste {
 	public static void sortiereKarenzphaseGutBisSchlecht(String [] args) {
 		List<Ranglistenmanager> karenzphasen = new ArrayList<Ranglistenmanager>(); 
 		karenzphasen.addAll(karenzphasen); 
-		Collections.sort(karenzphasen);
+		Collections.sort(karenzphasen); //TODO: fix problem
 		for (Ranglistenmanager karenzphase: karenzphasen) {
 			System.out.println(karenzphase);
 		}
@@ -92,7 +88,7 @@ public class Rangliste {
 	public static void sortiereKarenzphaseSchlechtBisGut(String [] args) {
 		List<Ranglistenmanager> karenzphasen = new ArrayList<Ranglistenmanager>(); 
 		karenzphasen.addAll(karenzphasen); 
-		Collections.sort(karenzphasen);
+		Collections.sort(karenzphasen); //TODO: fix problem
 		Collections.reverse(karenzphasen);
 		for (Ranglistenmanager karenzphase: karenzphasen) {
 			System.out.println(karenzphase);
@@ -106,7 +102,7 @@ public class Rangliste {
 	public static void sortiereDauerernaehrungGutBisSchlecht(String [] args) {
 		List<Ranglistenmanager> dauerernaehrungen = new ArrayList<Ranglistenmanager>(); 
 		dauerernaehrungen.addAll(dauerernaehrungen); 
-		Collections.sort(dauerernaehrungen);
+		Collections.sort(dauerernaehrungen); //TODO: fix problem
 		for (Ranglistenmanager dauerernaehrung: dauerernaehrungen) {
 			System.out.println(dauerernaehrung);
 		}
@@ -119,7 +115,7 @@ public class Rangliste {
 	public static void sortiereDauerernaehrungSchlechtBisGut(String [] args) {
 		List<Ranglistenmanager> dauerernaehrungen = new ArrayList<Ranglistenmanager>(); 
 		dauerernaehrungen.addAll(dauerernaehrungen); 
-		Collections.sort(dauerernaehrungen);
+		Collections.sort(dauerernaehrungen); //TODO: fix problem
 		Collections.reverse(dauerernaehrungen);
 		for (Ranglistenmanager dauerernaehrung: dauerernaehrungen) {
 			System.out.println(dauerernaehrung);
@@ -133,7 +129,7 @@ public class Rangliste {
 	public static void sortiereLebensmittelnamenAbisZ(String [] args) {
 		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>();
 		lnamen.addAll(lnamen); 
-		Collections.sort(lnamen);
+		Collections.sort(lnamen); //TODO: fix problem
 		for (Zugriffsmanager lname: lnamen) {
 			System.out.println(lname);
 		}
@@ -146,7 +142,7 @@ public class Rangliste {
 	public void sortiereLebensmittelnameZbisA(String [] args) {
 		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>(); 
 		lnamen.addAll(lnamen); 
-		Collections.sort(lnamen);
+		Collections.sort(lnamen); //TODO: fix problem
 		Collections.reverse(lnamen);
 		for (Zugriffsmanager lname: lnamen) {
 			System.out.println(lname);
