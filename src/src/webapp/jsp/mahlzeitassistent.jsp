@@ -113,14 +113,16 @@
                 <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>                
 
         </article>
-        
+
 		<article style="min-width:100%;">
             	<em>Anleitung:</em>
             	<ol>
-            		<li>Entscheiden Sie sich für den Assistenten in Kategorien oder in Naehrstoffen.</li>
-            		<li>Wählen Sie drei Lebensmittelkategorien/Naehrstoffkategorien aus der jeweiligen Auswahlliste aus.</li>
-            	    <li>Drücken Sie auf "Mahlzeit erstellen"</li>
-            	    <li>Sie erhalten einen Teller mit vorgeschlagenen Lebensmitteln</li>
+            		<li>Waehlen Sie zwischen dem Assisten für Lebensmittelkategorien oder für Naehrstoffe.</li>
+            		<% if (request.getParameter("radiobutton") == null) {/*its not there*/}else if(request.getParameter("radiobutton").equals("kategorienframe")){out.println("<li>Waehlen Sie drei Lebensmittelkategorien aus der jeweiligen Auswahlliste aus.</li>");%>
+            	    <% out.println("<li>Druecken Sie auf 'Mahlzeit erstellen'</li>");}%>
+            	    <% if (request.getParameter("radiobutton") == null) {/*its not there*/}else if(request.getParameter("radiobutton").equals("naehrstoffeframe")){out.println("<li>Waehlen Sie drei Naehrstoffkategorien aus der jeweiligen Auswahlliste aus.</li>");%>
+            	    <% out.println("<li>Druecken Sie auf 'Mahlzeit erstellen'</li>");}%>
+            	    <% if (request.getParameter("button_clicked") == null) {/*its not there*/}else if ("Mahlzeit erstellen".equals(request.getParameter("button_clicked"))){out.println("<li>Sie erhalten einen Teller mit vorgeschlagenen Lebensmitteln</li>");} %>
             	</ol>
             </article>
       </div>
@@ -141,7 +143,6 @@
 											<%@ page import="Suche.*" %>
 					
 											<%@ page import="java.util.ArrayList" %>
-											
 											<div class='selektiereDrittel erstesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
 											<select name='kategorieauswahl' class="dropdown1drittel">
@@ -328,7 +329,7 @@
 											%>
 											</div>
 											<div>
-											<input type='submit' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
+											<input type='submit' name='button_clicked' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
 											</div>
 									
 								</section>	       
@@ -505,7 +506,7 @@
 											%>
 											</div>
 											<div>
-											<input type='submit' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
+											<input type='submit' name='button_clicked' value='Mahlzeit erstellen' class='erstelleMahlzeit'>
 											</div>
 									
 								</section>	
