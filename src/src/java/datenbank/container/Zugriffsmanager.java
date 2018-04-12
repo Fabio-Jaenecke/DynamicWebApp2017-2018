@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Diese Klasse holt die Lebensmitteldaten, welche fuer die Zugriffsskala benoetigt werden, 
+ * Diese Klasse holt die Lebensmitteldaten, die fuer die Zugriffsskala benoetigt werden, 
  * aus der Datenbank und stellt diese zur Verfuegung. 
  * 
  * @author Michele Trebo 
