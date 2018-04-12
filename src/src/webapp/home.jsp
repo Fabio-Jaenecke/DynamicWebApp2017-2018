@@ -72,19 +72,19 @@
                            <h2>Symptome der Histamin-Intoleranz</h2>
                            <p>Die Symptome der Histaminintoleranz sind sehr vielfaeltig und teilweise schwer von Symptomen anderer, haeufigerer Krankheiten zu unterscheiden. Sie machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher beziehungsweise histaminfreisetzender oder DAO-blockierender Nahrungsmittel bemerkbar.
                            </p>
-                           <a href="#">Mehr</a>
+                           <a href="${pageContext.request.contextPath}/jsp/nachschlageplattform/SymptomederHistaminIntoleranz.jsp">Mehr</a>
                         </section>
                         <section>
                            <h2>Diagnose der Histamin-Intoleranz</h2>
                            <p> Wir wird die Histaminintoleranz diagnostiziert? Was ist dabei zu beachten? Ein Leitfaden fuer Aerzte und Betroffene.
                            </p>
-                           <a href="#">Mehr</a>
+                           <a href="${pageContext.request.contextPath}/jsp/nachschlageplattform/DiagnosederHistaminIntoleranz.jsp">Mehr</a>
                         </section>
                         <section>
-                           <h2>Behandlung der Histamin-Intoleranz</h2>
-                           <p> Wie kann man die Histaminintoleranz behandeln? Was kann man tun, welche Medikamente gibt es? Dieser Artikel klaert dich ueber diese wichtigen Fragen auf.
+                           <h2>Was ist Histamin?</h2>
+                           <p> Histamin ist ein sogenanntes biogenes Amin und dient im Körper unter anderem als wichtiger Botenstoff.
                            </p>
-                           <a href="#">Mehr</a>
+                           <a href="${pageContext.request.contextPath}/jsp/nachschlageplattform/DiagnosederHistaminIntoleranz.jsp">Mehr</a>
                         </section>
                         <footer>
                            <h3>Stoebern Sie weiter</h3>
