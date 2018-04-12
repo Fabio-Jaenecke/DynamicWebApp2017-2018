@@ -92,11 +92,12 @@
                            <h2>Was ist Histamin-Intoleranz?</h2>
                            <p>Histaminintoleranz (Histaminose, Histaminunvertraeglichkeit) ist die Unvertraeglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfaehigkeit des menschlichen Koerpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
                            </p>
-                           <%
-                           int zahl = 1;
+                           <%@ page import="home.*" %>
+                           <% Nachschlageplattform nachschlageplattform = new Nachschlageplattform();
+                           int zaehler = nachschlageplattform.getZaehler();
+                           
                            %>
-                        
-                           <input type="submit" name="wasistdas" value="<% if(zahl % 2 == 1){out.println("Mehr");}else if(zahl % 2 == 0){out.println("Weniger");} %>" onclick="">
+                           <input type="submit" name="wasistdas" value="<% if(zaehler % 2 == 1){out.println("Mehr");}else if(zaehler % 2 == 0){out.println("Weniger");} %>" onclick="<%nachschlageplattform.knoepfedruckZaehlen();%>">
                            <!-- <input type="submit" value="Mehr" onchange="history.back()"> -->
                            
                            <%
