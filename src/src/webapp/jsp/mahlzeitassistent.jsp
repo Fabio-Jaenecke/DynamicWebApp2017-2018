@@ -1,3 +1,5 @@
+<!-- TODO: Refactor JSP and make use of MahlzeitassistentServlet for the Java code. -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 
     pageEncoding="UTF-8"%>
