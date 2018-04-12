@@ -38,8 +38,8 @@ public class Zugriffsskalamanager {
 	 * @param platzierung die Platzierung der Lebensmittel 
 	 */
 	public void searchForString() {
-		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
-				+ "ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex';";
+		String selectSQL = "Select * FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
+				+" ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex;";
 		try {
 			ResultSet result = query.getResult(selectSQL);
 			while (result.next()) {
