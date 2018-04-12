@@ -74,11 +74,11 @@ public class Zugriffsskalamanager {
 		
 	}
 	
-	public void sortiereLebensmittelnamenAZ() {
+	public void sortiereLebensmittelnamenAbisZ() {
 		
 	}
 	
-	public void sortiereLebensmittelnameZA() {
+	public void sortiereLebensmittelnameZbisA() {
 		
 	}
 }

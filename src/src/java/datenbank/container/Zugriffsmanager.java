@@ -21,15 +21,15 @@ public class Zugriffsmanager {
 	private String dauerernaehrung;
 	private static final Logger LOGGER = Logger.getLogger(Zugriffsmanager.class.getName());
 
-/**
- * Erzeuge den Zugriffsmanager. 
- * 
- * @param platzierung die Platzierung der Lebensmittel 
- * @param lname der Lebensmittelname
- * @param kategorie die Lebensmittelkategorie 
- * @param karenzphase die Karenzphase
- * @param dauerernaehrung die Dauerernaehrung
- */
+	/**
+	 * Erzeuge den Zugriffsmanager. 
+	 * 
+	 * @param platzierung die Platzierung der Lebensmittel 
+	 * @param lname der Lebensmittelname
+	 * @param kategorie die Lebensmittelkategorie 
+	 * @param karenzphase die Karenzphase
+	 * @param dauerernaehrung die Dauerernaehrung
+	 */
 	public Zugriffsmanager(int platzierung, String lname, String kategorie, String karenzphase, String dauerernaehrung) {
 		this.platzierung = platzierung;
 		this.lname = lname;
@@ -38,11 +38,11 @@ public class Zugriffsmanager {
 		this.dauerernaehrung = dauerernaehrung;
 	}
 
-/**
- * Erzeuge den Zugriffsmanager mittels Daten aus der Datenbank. 
- * 
- * @param rs das ResultSet
- */
+	/**
+	 * Erzeuge den Zugriffsmanager mittels Daten aus der Datenbank. 
+	 * 
+	 * @param rs das ResultSet
+	 */
 	public Zugriffsmanager(ResultSet rs) {
 		try {
 			this.platzierung = rs.getInt("platzierung");
