@@ -28,8 +28,8 @@ public class PlatzierungUpdater  {
 	
 	public PlatzierungUpdater() {
 		getZugriffeInDB();
-		sortByAZugriffe();
-		putToDb();
+		//sortByAZugriffe();
+		//putToDb();
 	}
 	
 	public void getZugriffeInDB() {
@@ -53,6 +53,7 @@ public class PlatzierungUpdater  {
 			}
 		});
 		zugriffe.stream().forEach(a -> System.out.println(a.getAzugriffe()));
+		zugriffe.clear();
 	}
 
 	
@@ -71,9 +72,5 @@ public class PlatzierungUpdater  {
 				LOGGER.log(Level.SEVERE, "rows in zugriffsskala could not be set " + e);
 			}
 		}
-	}
-	
-	public static void main(String [] args) {
-		PlatzierungUpdater a = new PlatzierungUpdater();
 	}
 }

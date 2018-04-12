@@ -49,35 +49,14 @@
         </header>
     </div>
     <div class="main-container">
-        <div class="main wrapper clearfix">
-        <!-- das fieldset, um einen Suchbegriff einzugeben und dann mithilfe des Buttons zu suchen-->
-        <fieldset class="suche">
-            <input id="suche" type="text" name="suche">
-            <button type="button" id="suchknopf"> Suchen </button>
-        </fieldset>
-        <!-- die section, in der nach druecken des Buttons Suchresulate angezeigt werden-->
-        <section class="resultate">
-                <article>
-                    <a> www.histarantia.ch/home </a>
-                    <p> Histaminintoleranz ist die Unvertraeglichkeit von stark histaminhaltigen
-                        Nahrungsmitteln beziehungsweise die Unfaehigkeit  ...  </p>
-                </article>
-                <article>
-                    <a> www.histarantia.ch/rangliste </a>
-                    <p> Hier folgt eine Tabelle, die die Anzahl Zugriffe auf ein Lebensmittel
-                        darstellen. Das Lebensmittel mit den meisten .. </p>
-                </article>
-                <article>
-                    <a> www.histarantia.ch/lebensmittelkategorie </a>
-                    <p> Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe,
-                        die aus einer Bluete hervorgehen .. </p>
-                </article>
-                <article>
-                    <a> www.histarantia.ch/faq </a>
-                    <p> Gibt es Labortests zur Diagnose der Histaminunvertraeglichkeit? Die Antwort
-                        ist nicht so leicht zu beantworten ... </p>
-                </article>
-            </section>
+        <div class="main wrapper clearfix">			     
+            <input id="suche" type="text" name="keyword">
+            <input type="submit" value="Suche" />
+            <%@ page import = suchfilter.* %>
+            <%
+            	Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
+            %>
+       	
         </div>
         <!-- #main -->
     </div>
