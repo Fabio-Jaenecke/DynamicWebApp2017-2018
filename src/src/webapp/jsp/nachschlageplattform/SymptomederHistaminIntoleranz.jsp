@@ -96,10 +96,9 @@
                            
                     
                        		<article style="min-width: 100%">
-                       		Symptome und Behandlung der Histaminintoleranz
 							Die Symptome der Histaminintoleranz sind vielfältig. Auch die Behandlung ist abhängig von einigen Faktoren. Im Folgenden wollen wir uns diese beiden Themen anschauen. Direkt zur Behandlung der Histaminintoleranz.
 							
-							Symptome der Histaminunverträglichkeit
+							<h3>Symptome der Histaminunverträglichkeit</h3>
 							Zusammenfassung (leichte Sprache)
 							Die Symptome der Histaminintoleranz treten meist kurz nach oder wenige Stunden nach einer histaminreichen Mahlzeit auf. Die Symptome sind u.a. Kopfschmerzen, Hautrötungen, Juckreiz, Übelkeit, Duchfall oder Herzrasen .
 							
@@ -107,7 +106,7 @@
 							
 							Die Schwierigkeit in der Diagnostik der Histaminunverträglichkeit ist die Vielfältigkeit der Symptome. Es gibt gewisse Symptomgruppen: Herz-Kreislaufsystem, Haut / Schleimhäute und Verdauung. Oft treten mehrere Symptome einer dieser Kategorien gehäuft auf. Oft treten einige Symptome gemeinsam auf, es können sich aber auch nur einzelne Symptome bemerkbar machen. Dies ist individuell unterschiedlich und auch abhängig von den Nahrungsmitteln oder zusätzlichen Intoleranzen!
 							
-							Bei der Histaminintoleranz können mehrere Bereiche betroffen sein:
+							<h3>Bei der Histaminintoleranz können mehrere Bereiche betroffen sein:</h3>
 							HIT Symptome
 							
 							Herz-Kreislauf-System
@@ -118,50 +117,67 @@
 							
 							In unserer Studie mit 141 Teilnehmern, haben wir folgende Verteilung von Symptomen gefunden: Am häufigsten waren Kopfschmerzen (38%) und Flush (36%; Hautrötungen im Gesichts- und Halsbereich), gefolgt von Bauchschmerzen (31%), Durchfall (26%), Nasenrinnen bzw. Nasenschleimhautschwellung (19%). Blähungen und Übelkeit verzeichneten wir jeweils mit etwa 17%, gefolgt von Herzrasen mit nur noch etwa 12%. Weniger oft, aber immer noch in mehr als 5% der Fälle, kommen Ausschlag, juckende Haut, Müdigkeit, Schwindel und Kreislaufprobleme vor.
 							
-							Die häufigsten Symptome der verschiedenen Symptomgruppen sind:
-							Herz-Kreislauf-System / ZNS
-							Kopfschmerz (bis hin zu Migräne)
-							Herzrasen
-							Schwindel
-							Müdigkeit
-							Kreislaufprobleme
-							Haut
-							Flush (rot werden im Hals- und Gesichtsbereich)
-							Ausschlag
-							Juckreiz
-							Quaddeln und Schwellungen
-							Verdauungstrakt
-							Übelkeit
-							Bauchschmerzen (auch krampfhaft)
-							Blähungen
-							Durchfall
+							<h3>Die häufigsten Symptome der verschiedenen Symptomgruppen sind:</h3>
+							<table>
+							  <tr>
+							    <th><br>  Herz-Kreislauf-System / ZNS</th>
+							    <th><br>  <br>  <br>  Haut</th>
+							    <th><br>  <br>  <br>  Verdauungstrakt</th>
+							  </tr>
+							  <tr>
+							    <td>Kopfschmerz<br>  (bis hin zu Migräne)</td>
+							    <td>Flush (rot werden im Hals- und<br>  Gesichtsbereich)</td>
+							    <td>Übelkeit</td>
+							  </tr>
+							  <tr>
+							    <td>Herzrasen</td>
+							    <td>Ausschlag</td>
+							    <td>Bauchschmerzen (auch krampfhaft)</td>
+							  </tr>
+							  <tr>
+							    <td>Schwindel</td>
+							    <td>Juckreiz</td>
+							    <td>Blähungen</td>
+							  </tr>
+							  <tr>
+							    <td>Müdigkeit<br>  / Kreislaufprobleme<br>    </td>
+							    <td>Quaddeln und Schwellungen</td>
+							    <td>Durchfall<br>  <br>  </td>
+							  </tr>
+							  <tr>
+							    <td>VerdauungstraktÜbelkeitBauchschmerzen (auch krampfhaft)BlähungenDurchfall</td>
+							    <td></td>
+							    <td></td>
+							  </tr>
+							</table>
 							Bei der Histaminintoleranz wird generell davor gewarnt, dass es in sehr seltenen Fällen zu lebensbedrohlichen Zuständen kommen könnte. Bisher wurde jedoch kein solcher Fall dokumentiert!
 							
-							Folgende Symptome werden von einigen Betroffenen zusätzlich berichtet:
-							Nesselsucht (Urtikaria)
-							Probleme beim Wasserlassen
-							Schweißausbrüche
-							Kribbeln in Fingern, Beinen
-							Muskel/Gelenksschmerzen
-							Schlafstörungen
-							Asthma/Atemnot
-							Niesen
-							Augenjucken
-							Sodbrennen
-							Sehstörungen
-							Hitzewallungen
-							Niesanfälle
-							Tinnitus, Ohrensausen
-							Zahn- und Kieferschmerzen
-							raue, pelzige Zunge
-							Mundaphten oder sonstige Entzündungen im Mund
-							verstärkte Akne
-							Antriebslosigkeit
-							Konzentrationsschwierigkeiten
-							Stimmungsschwankungen/Weinerlichkeit/Aggressivität
-							erhöhte Temperatur bzw. grippeartiges Gefühl
-							Erbrechen
-							...
+							<h3>Folgende Symptome werden von einigen Betroffenen zusätzlich berichtet:</h3>
+							<ul>
+								<li>Nesselsucht (Urtikaria)</li>
+								<li>Probleme beim Wasserlassen</li>
+								<li>Schweißausbrüche</li>
+								<li>Kribbeln in Fingern, Beinen</li>
+								<li>Muskel/Gelenksschmerzen</li>
+								<li>Schlafstörungen</li>
+								<li>Asthma/Atemnot</li>
+								<li>Niesen</li>
+								<li>Augenjucken</li>
+								<li>Sodbrennen</li>
+								<li>Sehstörungen</li>
+								<li>Hitzewallungen</li>
+								<li>Niesanfälle</li>
+								<li>Tinnitus, Ohrensausen</li>
+								<li>Zahn- und Kieferschmerzen</li>
+								<li>raue, pelzige Zunge</li>
+								<li>Mundaphten oder sonstige Entzündungen im Mund</li>
+								<li>verstärkte Akne</li>
+								<li>Antriebslosigkeit</li>
+								<li>Konzentrationsschwierigkeiten</li>
+								<li>Stimmungsschwankungen/Weinerlichkeit/Aggressivität</li>
+								<li>erhöhte Temperatur bzw. grippeartiges Gefühl</li>
+								<li>Erbrechen</li>
+							</ul>
                        		</article>
                         </header>
                         
