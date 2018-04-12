@@ -98,7 +98,9 @@
                        		<article style="min-width: 100%">
 							Welche Nahrungsmittel kann man bei Histaminintoleranz essen, welche nicht? Das ist nicht so einfach, da man verschiedene Faktoren berücksichtigen muss. Zum einen des Histamingehalt, der ja stark schwanken kann, zum anderen den Gehalt an biogenen Aminen, Histidin, anderen Stoffe die die DAO blockieren können oder den Reifegrad. Im Folgenden haben wir einige dieser Faktoren für dich erklärt, sowie eine Tabelle mit Histaminwerten erstellt, die auch alle anderen Faktoren bestmöglich berücksichtigt.
 							
-							Springe sofort zu: <a href="${pageContext.request.contextPath}/lebensmittel/">Tabelle mit Lebensmitteln</a> <a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche von Lebensmitteln</a>
+							Springe sofort zu: 
+							<a href="${pageContext.request.contextPath}/lebensmittel/">Tabelle mit Lebensmitteln</a> 
+							<a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche von Lebensmitteln</a>
 							
 							<h3>Histamingehalt: Grundlagen</h3>
 							In diesem Artikel wollen wir dir einige Kategorien von Nahrungs- und Lebensmitteln vorstellen, die histaminarm, histaminreich oder histaminfreisetzend sind. Beachte bei der Bewertung deiner Nahrungsmittel bitte folgendes Beispiel:
