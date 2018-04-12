@@ -37,14 +37,12 @@ public class Zugriffsskalamanager {
 	 * Hole die Platzierungen sowie die entsprechenden Lebensmitteldaten und gib diese in eine Tabelle. 
 	 * @param platzierung die Platzierung der Lebensmittel 
 	 */
-	public void searchForInteger(int platzierung) {
+	public void searchForString() {
 		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
-				+ "ON l.lindex=f.lindex JOIN Zugriffsskala z on f.findex = z.findex " + "where z.Lname= '"
-				+ platzierung + "';";
+				+ "ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex';";
 		try {
 			ResultSet result = query.getResult(selectSQL);
 			while (result.next()) {
-
 				tabelle.add(new Zugriffsmanager(result));
 			}
 		} 
@@ -75,7 +73,7 @@ public class Zugriffsskalamanager {
 	public static void sortierePlatzierungErsteBisLetzte(String [] args) {
 		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
 		platzierung.addAll(platzierung); 
-		Collections.sort(platzierung);
+		Collections.sort(platzierung); //TODO: fix problem
 		for (int i=0; i<platzierung.size(); i++) {
 			System.out.println(platzierung.get(i));
 		}
@@ -88,7 +86,7 @@ public class Zugriffsskalamanager {
 	public static void sortierePlatzierungLetzteBisErste(String [] args) {
 		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
 		platzierung.addAll(platzierung); 
-		Collections.sort(platzierung);
+		Collections.sort(platzierung); //TODO: fix problem
 		for (int i=0; i>platzierung.size(); i--) {
 			System.out.println(platzierung.get(i));
 		}
@@ -101,7 +99,7 @@ public class Zugriffsskalamanager {
 	public static void sortiereLebensmittelnamenAbisZ(String [] args) {
 		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>();
 		lnamen.addAll(lnamen); 
-		Collections.sort(lnamen);
+		Collections.sort(lnamen); //TODO: fix problem
 		for (Zugriffsmanager lname: lnamen) {
 			System.out.println(lname);
 		}
@@ -114,7 +112,7 @@ public class Zugriffsskalamanager {
 	public void sortiereLebensmittelnameZbisA(String [] args) {
 		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>(); 
 		lnamen.addAll(lnamen); 
-		Collections.sort(lnamen);
+		Collections.sort(lnamen); //TODO: fix problem
 		Collections.reverse(lnamen);
 		for (Zugriffsmanager lname: lnamen) {
 			System.out.println(lname);
