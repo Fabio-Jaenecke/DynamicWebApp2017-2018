@@ -96,81 +96,87 @@
                            
                     
                        		<article style="min-width: 100%">
-                       		Histamingehalte von Nahrungsmitteln
 							Welche Nahrungsmittel kann man bei Histaminintoleranz essen, welche nicht? Das ist nicht so einfach, da man verschiedene Faktoren berücksichtigen muss. Zum einen des Histamingehalt, der ja stark schwanken kann, zum anderen den Gehalt an biogenen Aminen, Histidin, anderen Stoffe die die DAO blockieren können oder den Reifegrad. Im Folgenden haben wir einige dieser Faktoren für dich erklärt, sowie eine Tabelle mit Histaminwerten erstellt, die auch alle anderen Faktoren bestmöglich berücksichtigt.
 							
-							Springe sofort zu: Tabelle mit Histaminbewertung | Datenbank zum Filtern von Nahrungsmitteln
+							Springe sofort zu: <a href="${pageContext.request.contextPath}/lebensmittel/">Tabelle mit Lebensmitteln</a> <a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche von Lebensmitteln</a>
 							
-							Histamingehalt: Grundlagen
+							<h3>Histamingehalt: Grundlagen</h3>
 							In diesem Artikel wollen wir dir einige Kategorien von Nahrungs- und Lebensmitteln vorstellen, die histaminarm, histaminreich oder histaminfreisetzend sind. Beachte bei der Bewertung deiner Nahrungsmittel bitte folgendes Beispiel:
 							
-							Beispiel: Histamingehalt von Fisch
+							<h4>Beispiel: Histamingehalt von Fisch</h4>
 							Fangfrischer Fisch (weißer Fisch) - histaminarm
 							derselbe Fisch ungekühlt gelagert zwei Stunden später: histaminhaltig
 							derselbe Fisch ungekühlt bis wenig gekühlt einen Tag später: stark histaminhaltig
 							
 							Noch ein wichtiger Hinweis: Auch hier gilt, dass es individuelle Grenzen zu beachten gilt!
 							
-							Unterschiedliche Histamingehalte in unterschiedlichen Tabellen?
+							<h4>Unterschiedliche Histamingehalte in unterschiedlichen Tabellen?</h4>
 							Wir werden oft gefragt warum die Histamin-Angaben in verschiedenen Tabellen unterschiedliche Werte haben. Die Antwort ist recht einfach: Der Histamingehalt ist - anders als zum Beispiel der Laktosegehalt - starken natürlichen Schwankungen (Lagerung, Alter, ...) unterworfen. D.h. die Werte in solchen Tabellen können nur als Anhaltspunkte gelten. Mittlerweile ist man generell von der Angabe von Histaminwerten abgegangen. Sinnvoller sind Listen mit Verträglichkeitsangaben die die üblichen Verzehrmengen und Zubereitungsarten, sowie Faktoren wie biogene Amine oder andere relevante Inhaltsstoffe berücksichtigen. Wir haben so eine Histamin-Verträglichkeits-Liste erstmalig erstellt.
 							
-							Histaminarme Lebensmittel - meistens verträglich bei Histaminintoleranz ( / )
-							iStock_kartoffelFrischkäse: junger Gouda, Frischkäse, Butterkäse, Mascarpone, Mozzarella, Ricotta
-							pasteurisierte Milch
-							frisches Fleisch (frisch, gekühlt, gefroren) - mit Schweinefleisch haben einige Betroffene Probleme
-							Fangfrischer Fisch
-							Frisches Obst: Melone, Heidelbeeren, Preiselbeeren, Litchi, Mango, Khaki, Rhababer, Kirschen, Blaubeeren, Johannisbeeren, Aprikosen, Äpfel
-							Frisches Gemüse: Grüner Salat, Kohlsorten, Rote Beete, Kürbis, Zwiebel, Radieschen, Rettich, Rapunzel, Paprika, Karotten, Brokkoli, Kartoffeln, Gurke, Lauch, Zucchini, Mais, Spargel, Knoblauch
-							Getreide/Beilagen: Reis, Mais, Dinkel, Quinoa, Amaranth, Hafer, Hirse, Kastanien
-							Teigwaren: Dinkel-, Mais-, Reisnudeln, hefefreies Roggenbrot, Mais-Reis-Knäckebrote, Reiswaffeln
-							Milchersatz: Reis-, Hafer-, Kokosmilch - individuell testen!
-							alle frischen, nicht zitrushaltigen und/oder tomatenhaltigen Obstsäfte, alle Gemüsesäfte (außer Sauerkraut)
-							Kräutertees
-							Eigelb (Eiweiß/Eiklar ist schlecht verträglich)
-							Essig: Alkoholessig, Branntweinessig, Weingeistessig, Apfelesseig, Essigessenz - (Balsamico und Weinessige sind nicht verträglich!)
-							Nahrungsmittel die nicht verträglich sind ()
-							iStock_wein_kase_2Eingelegte/konservierte Lebensmittel
-							Käse: vor allem Hartkäse - je älter ( je länger gereift)  desto mehr Histamin
-							Geräuchertes Fleisch, Schinken, Salami, ...
-							die meisten Fischprodukte, v.a. Fischkonserven
-							Bohnen und Hülsenfrüchte (besonders Kichererbsen und Sojabohnen, auch Erdnüsse)
-							Sojaprodukte (Sojamilch, Sojasahne, Tofu, Sojasaucen, ...)
-							Produkte aus Weizen (werden manchmal gut vertragen!)
-							Sauerkraut
-							Fertiggerichte
-							Einige Obstsorten (Bananen, Birnen, Melanzani, Orangen, Kiwi, ...)
-							Alkoholische Getränke / vergorene Getränke
-							Schwarzer Tee
-							Schokolade, Kakao
-							Balsamico, Rotweinessig, Weissweinessig
-							Hefe/ Bäckerhefe / Bierhefe - diese wandeln Histidin in Histamin um und erhöhen somit nochmals den Histaminspiegel
-							Nahrungsmittel, die Histamin freisetzen (Histaminliberatoren) - nicht verträglich ()
-							Hülsenfrüchte
-							Erdbeeren
-							Zitrusfrüchte (werden teilweise gut vertragen)
-							Tomaten
-							Nüsse
-							Ananas
-							Kakao und Schokolade
-							Diaminoxidase blockierende Nahrungsmittel - nicht verträglich ()
-							Alkohol
-							Kakao
-							schwarzer Tee, grüner Tee, Mate Tee
-							Energy Drinks
-							Spezialfall: Weizen
+							<h3>Histaminarme Lebensmittel - meistens verträglich bei Histaminintoleranz</h3>
+							<ul>
+								<li>Frischkäse: junger Gouda, Frischkäse, Butterkäse, Mascarpone, Mozzarella, Ricotta</li>
+								<li>pasteurisierte Milch</li>
+								<li>frisches Fleisch (frisch, gekühlt, gefroren) - mit Schweinefleisch haben einige Betroffene Probleme</li>
+								<li>Fangfrischer Fisch</li>
+								<li>Frisches Obst: Melone, Heidelbeeren, Preiselbeeren, Litchi, Mango, Khaki, Rhababer, Kirschen, Blaubeeren, Johannisbeeren, Aprikosen, Äpfel</li>
+								<li>Frisches Gemüse: Grüner Salat, Kohlsorten, Rote Beete, Kürbis, Zwiebel, Radieschen, Rettich, Rapunzel, Paprika, Karotten, Brokkoli, Kartoffeln, Gurke, Lauch, Zucchini, Mais, Spargel, Knoblauch</li>
+								<li>Getreide/Beilagen: Reis, Mais, Dinkel, Quinoa, Amaranth, Hafer, Hirse, Kastanien</li>
+								<li>Teigwaren: Dinkel-, Mais-, Reisnudeln, hefefreies Roggenbrot, Mais-Reis-Knäckebrote, Reiswaffeln</li>
+								<li>Milchersatz: Reis-, Hafer-, Kokosmilch - individuell testen!</li>
+								<li>alle frischen, nicht zitrushaltigen und/oder tomatenhaltigen Obstsäfte, alle Gemüsesäfte (außer Sauerkraut)</li>
+								<li>Kräutertees</li>
+								<li>Eigelb (Eiweiß/Eiklar ist schlecht verträglich)</li>
+								<li>Essig: Alkoholessig, Branntweinessig, Weingeistessig, Apfelesseig, Essigessenz - (Balsamico und Weinessige sind nicht verträglich!)</li>
+							</ul>
+							<h3>Nahrungsmittel die nicht verträglich sind</h3>
+							<ul>
+								<li>Frischkäse: junger Gouda, Frischkäse, Butterkäse, Mascarpone, Mozzarella, Ricotta</li>
+								<li>pasteurisierte Milch</li>
+								<li>frisches Fleisch (frisch, gekühlt, gefroren) - mit Schweinefleisch haben einige Betroffene Probleme</li>
+								<li>Fangfrischer Fisch</li>
+								<li>Frisches Obst: Melone, Heidelbeeren, Preiselbeeren, Litchi, Mango, Khaki, Rhababer, Kirschen, Blaubeeren, Johannisbeeren, Aprikosen, Äpfel</li>
+								<li>Frisches Gemüse: Grüner Salat, Kohlsorten, Rote Beete, Kürbis, Zwiebel, Radieschen, Rettich, Rapunzel, Paprika, Karotten, Brokkoli, Kartoffeln, Gurke, Lauch, Zucchini, Mais, Spargel, Knoblauch</li>
+								<li>Getreide/Beilagen: Reis, Mais, Dinkel, Quinoa, Amaranth, Hafer, Hirse, Kastanien</li>
+								<li>Teigwaren: Dinkel-, Mais-, Reisnudeln, hefefreies Roggenbrot, Mais-Reis-Knäckebrote, Reiswaffeln</li>
+								<li>Milchersatz: Reis-, Hafer-, Kokosmilch - individuell testen!</li>
+								<li>alle frischen, nicht zitrushaltigen und/oder tomatenhaltigen Obstsäfte, alle Gemüsesäfte (außer Sauerkraut)</li>
+								<li>Kräutertees</li>
+								<li>Eigelb (Eiweiß/Eiklar ist schlecht verträglich)</li>
+								<li>Essig: Alkoholessig, Branntweinessig, Weingeistessig, Apfelesseig, Essigessenz - (Balsamico und Weinessige sind nicht verträglich!)</li>
+							</ul>
+							
+							<h3>Nahrungsmittel, die Histamin freisetzen (Histaminliberatoren) - nicht verträglich</h3>
+							<ul>
+								<li>Hülsenfrüchte</li>
+								<li>Erdbeeren</li>
+								<li>Zitrusfrüchte (werden teilweise gut vertragen)</li>
+								<li>Tomaten</li>
+								<li>Nüsse</li>
+								<li>Ananas</li>
+								<li>Kakao und Schokolade</li>
+							</ul>
+							<h3>Diaminoxidase blockierende Nahrungsmittel - nicht verträglich</h3>
+							<ul>
+								<li>Alkohol</li>
+								<li>Kakao</li>
+								<li>schwarzer Tee, grüner Tee, Mate Tee</li>
+								<li>Energy Drinks</li>
+							</ul>
+							<h3>Spezialfall: Weizen</h3>
 							Viele Betroffene berichten davon, dass die Weizen schlecht vertragen, Roggen und Dinkel hingegen gut. Dieses Phänomen ist bisher nicht geklärt. Es gibt aber seit neuestem eine Vermutung, wie die schweizer Histaminseite SIGHI berichtet.
 							
 							Man kann zwischen Hochleistungs-Weizensorten und alten Sorten (Emmer, Einkorn, Urdinkel) unterscheiden.  Letzere sind meist gut, erstere oft - und nicht nur für Histaminintolerante - schlecht verträglich. Die Ursache hierfür vermutet man derzeit einerseits im Gluten bzw. Gliadin, andererseits könnte ein ein Insektengift, welches in die neuen Sorten hineingezüchtet wurde (ATI-Weizen), verantwortlich sein. Wir bleiben dran und berichten über neue Erkenntnisse hierüber!
 							
-							Du solltest auf jeden Fall mit einem Ernährungsberater/Diätologen eine genaue Diät erarbeiten! 
+							<em>Du solltest auf jeden Fall mit einem Ernährungsberater/Diätologen eine genaue Diät erarbeiten!</em>
 							
-							Histidingehalte und Hefe bei Histaminintoleranz
+							<h3>Histidingehalte und Hefe bei Histaminintoleranz</h3>	
 							Histidin wird im Körper zu Histamin abgebaut. Dies geschieht mit dem Enzym L-Histidin-Decarboxylase (HDC). Dieses Enzym kommt auch in Bakterien und in Hefe vor. Somit sind Lebensmittel mit hohem Histidingehalt mit einiger Vorsicht zu genießen. Vor allem, wenn sie länger ungekühlt aufbewahrt werden (bakterielle Zersetzung) oder sie durch Hefen verarbeitet wurden! Dieses Thema ist sehr komplex, denn es gibt unglaublich viele verschiedene Hefen. So wird zum Beispiel zur Produktion von Bordeaux-Wein eine spezielle Bordeauxhefe verwendet. Die verschiedenen Hefen produzieren verschiedene Mengen an Histamin. Dadurch ist eine Normierung dieser Werte fast unmöglich!
 							
 							Wichtig ist aber: Hoher Gehalt an Histidin geht oft einher mit schlechter Verträglichkeit bei Histaminintoleranz. Vor allem bei verarbeiteten Lebensmitteln.
 							
 							Oft liest man, dass Hefe bei Histaminintoleranz schlecht verträglich ist. Das stimmt nicht. Die Hefe an sich ist an sich histaminarm, aber sie baut das Histidin zu Histamin ab. Weizenmehl hat mit 450 mg/100g relativ viel Histidin, das durch die Verarbeitung der Hefe dann auch viel Histamin ergibt. Daher sollte man bei Produkten denen Hefe zugesetzt wurde vorsichtig sein.
-							                            </article>
+							</article>
                         </header>
                         
                      </article>
