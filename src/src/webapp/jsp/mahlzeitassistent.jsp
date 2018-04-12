@@ -142,7 +142,7 @@
 					     <section class="mahlzeitassistent">
 											<%@ page import="datenbank.container.*" %>
 					
-											<%@ page import="Suche.*" %>
+											<%@ page import="suche.*" %>
 					
 											<%@ page import="java.util.ArrayList" %>
 											<div class='selektiereDrittel erstesDrittel'>
@@ -344,7 +344,7 @@
 					<section class="mahlzeitassistent">
 											<%@ page import="datenbank.container.*" %>
 					
-											<%@ page import="Suche.*" %>
+											<%@ page import="suche.*" %>
 					
 											<%@ page import="java.util.ArrayList" %>
 											
