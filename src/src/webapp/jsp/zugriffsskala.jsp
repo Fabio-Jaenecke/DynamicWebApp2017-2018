@@ -51,14 +51,54 @@
 </div>
 <div class="main-container">
     <div class="main wrapper clearfix">
-        <article>
-            <header>
-                <h2>Zugriffsskala</h2>
-                <p>Diese Skala zeigt die Lebensmittel für welchen die Benutzer am meisten Interesse gezeigt haben.</p>
-            </header>
-
-        </article>
-        
+    	<section>
+    		<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
+    			<div>
+    			<h3>Zugriffsskala</h3>
+    				<input type="text" name="sucheintrag" value="" />
+    				<inpit type="submit" value="Suche" /> 
+    					<%@ page import = "suche.*" %>
+			           		  <%
+			           		    String lebensmittelname = "";
+									if (request.getParameter("sucheintrag") == null) {
+										//Technically, this is not required:
+							        	        //out.println("input field could not be validated");
+				                    
+									}else{
+										lebensmittelname = request.getParameter("sucheintrag");
+										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao();
+										suchauftrag.searchForString(lebensmittelname);
+										
+		                                                        //Print the Table if something is found:
+				 					if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
+				 						out.println("<table class='table_lebensmittelkategorie' style='margin-top: 30px';>");
+				 						out.println("<tr>");
+				 						out.println("<th>Lebensmittel</th>");
+				 						out.println("<th>Karenzphase</th>");
+				 						out.println("<th>Dauerernaehrung</th>");
+				 						out.println("</tr>");
+				 						out.println("<tr>");
+				 						out.println("<td>");
+				 						out.println(suchauftrag.getLebensmittel().getLname());
+				 						out.println("</td>");
+				 						out.println("<td>");
+				 						out.println(suchauftrag.getLebensmittel().getKarenzphase());
+				 						out.println("</td>");
+				 						out.println("<td>");
+				 						out.println(suchauftrag.getLebensmittel().getDauerernaehrung());
+				 						out.println("</td>");
+				 						out.println("</tr>");
+				 						out.println("</table>");
+				 					//Else print a warning
+				 					}else{
+				 				      	out.println("<p><p>");
+						            	out.println("Ihre Suche ergab keine Treffer, versuchen Sie die Kategorienauswahl."); 
+						            	out.println("<p><p>");
+					               }
+								   }
+					               %>
+    			</div>		
+        </section>
     </div>
     <!-- #main -->
 </div> 
