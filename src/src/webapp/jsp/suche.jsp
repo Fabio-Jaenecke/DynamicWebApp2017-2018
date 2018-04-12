@@ -1,5 +1,3 @@
-<%-- TODO:JAVA-CODE richtig implementieren, bzw. DAO implementieren (Dann könnte die JSP Logik von hier übernommen werden --%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -65,14 +63,14 @@
 			           		    String lebensmittelname = "";
 									if (request.getParameter("sucheintrag") == null) {
 										//Technically, this is not required:
-							        	//out.println("input field could not be validated");
+							        	        //out.println("input field could not be validated");
 				                    
 									}else{
 										lebensmittelname = request.getParameter("sucheintrag");
 										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao();
 										suchauftrag.searchForString(lebensmittelname);
 										
-		                            //Print the Table if something is found:
+		                                                        //Print the Table if something is found:
 				 					if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
 				 						out.println("<table class='table_lebensmittelkategorie' style='margin-top: 30px';>");
 				 						out.println("<tr>");
@@ -121,9 +119,6 @@
 			        </select>
 						<%
 						String kategorienname = "";
-						ArrayList<Lebensmitteldaten> kategorieresultate = new ArrayList<>();
-						%>
-			        <%
 			        if (request.getParameter("kategorieauswahl") == null) {
 			        	//Technically, this is not required:
 			        	//out.println("input field could not be validated");
