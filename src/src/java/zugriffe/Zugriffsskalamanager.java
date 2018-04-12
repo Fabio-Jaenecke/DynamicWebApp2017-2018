@@ -1,6 +1,8 @@
 package zugriffe;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException; 
 import java.util.logging.Level; 
@@ -35,7 +37,7 @@ public class Zugriffsskalamanager {
 	 * Hole die Platzierungen sowie die entsprechenden Lebensmitteldaten und gib diese in eine Tabelle. 
 	 * @param platzierung die Platzierung der Lebensmittel 
 	 */
-	public void searchForInteger(Integer platzierung) {
+	public void searchForInteger(int platzierung) {
 		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
 				+ "ON l.lindex=f.lindex JOIN Zugriffsskala z on f.findex = z.findex " + "where z.Lname= '"
 				+ platzierung + "';";
@@ -66,19 +68,56 @@ public class Zugriffsskalamanager {
 		return tabelle; 
 	}
 	
-	public void sortierePlatzierungErsteBisLetzte() {
-			
+	/**
+	 * Sortiere die Tabelle von der ersten Platzierung bis zur letzten. 
+	 * @param args
+	 */
+	public static void sortierePlatzierungErsteBisLetzte(String [] args) {
+		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
+		platzierung.addAll(platzierung); 
+		Collections.sort(platzierung);
+		for (int i=0; i<platzierung.size(); i++) {
+			System.out.println(platzierung.get(i));
 		}
-	
-	public void sortierePlatzierungLetzteBisErste() {
-		
 	}
 	
-	public void sortiereLebensmittelnamenAbisZ() {
-		
+	/**
+	 * Sortiere die Tabelle von der letzten Platzierung bis zur ersten. 
+	 * @param args
+	 */
+	public static void sortierePlatzierungLetzteBisErste(String [] args) {
+		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
+		platzierung.addAll(platzierung); 
+		Collections.sort(platzierung);
+		for (int i=0; i>platzierung.size(); i--) {
+			System.out.println(platzierung.get(i));
+		}
 	}
 	
-	public void sortiereLebensmittelnameZbisA() {
-		
+	/**
+	 * Sortiere die Tabelle nach den Lebensmittelnamen von A bis Z. 
+	 * @param args
+	 */
+	public static void sortiereLebensmittelnamenAbisZ(String [] args) {
+		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>();
+		lnamen.addAll(lnamen); 
+		Collections.sort(lnamen);
+		for (Zugriffsmanager lname: lnamen) {
+			System.out.println(lname);
+		}
+	}
+	
+	/**
+	 * Sortiere die Tabelle nach den Lebensmittelnamen von Z bis A. 
+	 * @param args
+	 */
+	public void sortiereLebensmittelnameZbisA(String [] args) {
+		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>(); 
+		lnamen.addAll(lnamen); 
+		Collections.sort(lnamen);
+		Collections.reverse(lnamen);
+		for (Zugriffsmanager lname: lnamen) {
+			System.out.println(lname);
+		}
 	}
 }
