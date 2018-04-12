@@ -92,21 +92,7 @@
                            <h2>Was ist Histamin-Intoleranz?</h2>
                            <p>Histaminintoleranz (Histaminose, Histaminunvertraeglichkeit) ist die Unvertraeglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfaehigkeit des menschlichen Koerpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
                            </p>
-                           <%@ page import="home.*" %>
-                           <% Nachschlageplattform nachschlageplattform = new Nachschlageplattform();
-                           int zaehler = nachschlageplattform.getZaehler();
-                           
-                           %>
-                           <input type="submit" name="wasistdas" value="<% if(zaehler % 2 == 1){out.println("Mehr");}else if(zaehler % 2 == 0){out.println("Weniger");} %>" onclick="<%nachschlageplattform.knoepfedruckZaehlen();%>">
-                           <!-- <input type="submit" value="Mehr" onchange="history.back()"> -->
-                           
-                           <%
-                           if (request.getParameter("wasistdas") == null) {
-                        	   /*its not there*/
-                        	   }else if ("Mehr".equals(request.getParameter("wasistdas")))
-
-                        	   {out.println("<div>");
-                           %>
+                           <input type="submit" name="wasistdas" value="Mehr" onchange="this.form.submit()">
                            
                     
                        		<article>
@@ -138,7 +124,7 @@
 							
 							Ein gesunder Mensch produziert laufend DAO, das ins Darmlumen abgegeben wird. Wird dann histaminreiche Nahrung gegessen, kann das Histamin bereits im Darm "neutralisiert" werden. Dies funktioniert natürlich nur bis zu einer gewissen Grenze. Wird zuviel Histamin zugeführt (zum Beispiel verdorbene Nahrung - oft verdorbener Fisch), so kommt es auch bei einem gesunden Menschen zu den typischen Symptomen einer "Histaminvergiftung". Man nennt das dann Lebensmittelvergiftung. Wird zu wenig DAO produziert, hat man schon bei geringen Mengen Histamin diese Symptome.
 							</article>
-                        	
+                        	<input type="submit" value="Weniger" onchange="history.back()">
                    
                            <%
                            
