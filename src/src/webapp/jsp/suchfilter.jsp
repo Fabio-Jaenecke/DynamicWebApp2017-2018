@@ -49,11 +49,16 @@
         </header>
     </div>
     <div class="main-container">
+     <form method="get" action="${pageContext.request.contextPath}/suchfilter/">
         <div class="main wrapper clearfix">			     
-            <input id="suche" type="text" name="keyword">
+            <input id="suche" type="text" name="keyword" value="">
             <input type="submit" value="Suche" />
-            <%@ page import = suchfilter.* %>
+            <%@ page import = "suchfilter.*" %>
             <%
+            	if(request.getParameter("keyword") == null){
+            		
+            	}
+            	else{
             	Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
             	suche.search();
             	
@@ -65,8 +70,10 @@
             		out.println(vorschau.getTagName() + vorschau.getText());
             		out.println("</p>");
             	}
+            	}
             %>
         </div>
+        </form>
         <!-- #main -->
     </div>
 <!-- javascript einbinden, um nav ein- und auszublenden-->
