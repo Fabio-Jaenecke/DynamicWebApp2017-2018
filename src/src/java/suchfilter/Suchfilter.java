@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.jsoup.nodes.*;
 
 /**
- * konvertiert die Html-Seiten zu Xml, führt das Suchen nahc einem Wort aus und zeigt
+ * konvertiert die Html-Seiten zu Xml, führt das Suchen nach einem Wort aus und zeigt
  * die Suchresultate an
  * @author Raphael
  *
@@ -18,20 +18,23 @@ public class Suchfilter {
 	
 	/*
 	 * converts all sites in html-folder to xml-files and adds them to xmlSites
+	 * initializes new search engine with keyword and xml-files
 	 */
 	public Suchfilter(String keyWord) {
 		initializeXmlSites();
-		searcher = new SearchEngine(xmlSites, keyWord);
+		searcher = new SearchEngine(keyWord);
 	}
 	
 	/*
-	 * sucht zuerst nach Überschriften, dann nach Paragraphen, dann nach Listenelementen und nach
-	 * Buttons
+	 * searches if headings, paragraphes, list items or buttons contain the key word
 	 */
 	public void search() {
-		searcher.sucheNachText();
+		searcher.sucheNachText(xmlSites);
 	}
 	
+	/*
+	 * load html-files for convertion to xml	
+	 */
 	public void initializeXmlSites(){
 		xmlSites.add(converter.convert(new File("src/webapp/html/lebensmittelkategorie.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/faq.html")));
@@ -41,6 +44,9 @@ public class Suchfilter {
 		xmlSites.add(converter.convert(new File("src/webapp/html/zugriffsskala.html")));
 	}
 
+	/*
+	 * returns searchEngine
+	 */
 	public SearchEngine getSearcher() {
 		return searcher;
 	}
