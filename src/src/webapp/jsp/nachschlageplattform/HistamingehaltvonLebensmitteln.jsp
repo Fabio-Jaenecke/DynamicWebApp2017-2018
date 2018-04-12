@@ -88,7 +88,7 @@
                      <input type="submit" value="Zurück" onchange="history.back()">
                      	<ul class="breadcrumb">
                      	<li><a href="${pageContext.request.contextPath}/home/">Home</a></li>
-						 <li>Was ist Histamin-Inteloreranz?</li>
+						 <li>Histamingehalt von Lebensmitteln</li>
 						</ul>
 						                        	
                         <header>
