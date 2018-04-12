@@ -73,7 +73,8 @@ public class Zugriffsskalamanager {
 	public static void sortierePlatzierungErsteBisLetzte(String [] args) {
 		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
 		platzierung.addAll(platzierung); 
-		Collections.sort(platzierung); //TODO: fix problem
+		//TODO: fix problem
+	//	Collections.sort(platzierung); 
 		for (int i=0; i<platzierung.size(); i++) {
 			System.out.println(platzierung.get(i));
 		}
@@ -86,7 +87,8 @@ public class Zugriffsskalamanager {
 	public static void sortierePlatzierungLetzteBisErste(String [] args) {
 		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
 		platzierung.addAll(platzierung); 
-		Collections.sort(platzierung); //TODO: fix problem
+		//TODO: fix problem
+	//	Collections.sort(platzierung); 
 		for (int i=0; i>platzierung.size(); i--) {
 			System.out.println(platzierung.get(i));
 		}
@@ -99,7 +101,8 @@ public class Zugriffsskalamanager {
 	public static void sortiereLebensmittelnamenAbisZ(String [] args) {
 		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>();
 		lnamen.addAll(lnamen); 
-		Collections.sort(lnamen); //TODO: fix problem
+		//TODO: fix problem
+	//	Collections.sort(lnamen); 
 		for (Zugriffsmanager lname: lnamen) {
 			System.out.println(lname);
 		}
@@ -112,7 +115,8 @@ public class Zugriffsskalamanager {
 	public void sortiereLebensmittelnameZbisA(String [] args) {
 		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>(); 
 		lnamen.addAll(lnamen); 
-		Collections.sort(lnamen); //TODO: fix problem
+		//TODO: fix problem
+	//	Collections.sort(lnamen); 
 		Collections.reverse(lnamen);
 		for (Zugriffsmanager lname: lnamen) {
 			System.out.println(lname);
