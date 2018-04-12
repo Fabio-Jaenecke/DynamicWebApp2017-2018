@@ -103,4 +103,12 @@ public class SearchEngine {
 		return results;
 	}
 
+	public ArrayList<Vorschau> getSuchresultate(){
+		ArrayList<Vorschau> vorschauen = new ArrayList<>();
+		for(Suchresultat resultat: suchresultate) {
+			resultat.getErsteZweiElemente();
+			vorschauen.addAll(resultat.getResultate());
+		}
+		return vorschauen;
+	}
 }

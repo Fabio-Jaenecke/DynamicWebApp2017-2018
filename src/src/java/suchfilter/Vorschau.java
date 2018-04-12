@@ -4,6 +4,7 @@ import org.jsoup.nodes.Element;
 
 public class Vorschau {
 
+	private String url;
 	private String tagName;
 	private String text;
 	
@@ -18,5 +19,9 @@ public class Vorschau {
 
 	public String getText() {
 		return text;
+	}
+	
+	public void setUrl(String url) {
+		this.url = url;
 	}
 }

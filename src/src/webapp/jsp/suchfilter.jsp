@@ -55,8 +55,17 @@
             <%@ page import = suchfilter.* %>
             <%
             	Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
+            	suche.search();
+            	
+            	for(Vorschau vorschau: suche.getSearcher().getSuchresultate()){
+            		out.println("<a>");
+            		out.println("test.de");
+            		out.println("</a>");
+            		out.println("<p>");
+            		out.println(vorschau.getTagName() + vorschau.getText());
+            		out.println("</p>");
+            	}
             %>
-       	
         </div>
         <!-- #main -->
     </div>

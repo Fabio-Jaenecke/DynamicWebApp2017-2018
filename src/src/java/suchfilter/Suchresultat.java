@@ -17,14 +17,6 @@ public class Suchresultat {
 		this.keyElements = results;
 	}
 	
-	public Document getXmlSite() {
-		return xmlSite;
-	}
-
-	public ArrayList<Element> getKeyElements() {
-		return keyElements;
-	}
-	
 	/*
 	 * suche den zugehörigen Link und einen kleinen Metatext für die gefundene Stelle heraus
 	 */
@@ -36,4 +28,17 @@ public class Suchresultat {
 		resultate.add(new Vorschau(keyElements.get(0)));
 		resultate.add(new Vorschau(keyElements.get(1)));
 	}
+	
+	public ArrayList<Vorschau> getResultate() {
+		return resultate;
+	}
+
+	public Document getXmlSite() {
+		return xmlSite;
+	}
+
+	public ArrayList<Element> getKeyElements() {
+		return keyElements;
+	}
+	
 }

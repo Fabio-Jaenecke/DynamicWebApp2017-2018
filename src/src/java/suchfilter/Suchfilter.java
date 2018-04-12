@@ -40,4 +40,8 @@ public class Suchfilter {
 		xmlSites.add(converter.convert(new File("src/webapp/html/suche.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/zugriffsskala.html")));
 	}
+
+	public SearchEngine getSearcher() {
+		return searcher;
+	}
 }
