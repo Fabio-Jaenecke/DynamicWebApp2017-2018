@@ -62,21 +62,6 @@
                     <p> Histaminintoleranz ist die Unvertraeglichkeit von stark histaminhaltigen
                         Nahrungsmitteln beziehungsweise die Unfaehigkeit  ...  </p>
                 </article>
-                <article>
-                    <a> www.histarantia.ch/rangliste </a>
-                    <p> Hier folgt eine Tabelle, die die Anzahl Zugriffe auf ein Lebensmittel
-                        darstellen. Das Lebensmittel mit den meisten .. </p>
-                </article>
-                <article>
-                    <a> www.histarantia.ch/lebensmittelkategorie </a>
-                    <p> Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe,
-                        die aus einer Bluete hervorgehen .. </p>
-                </article>
-                <article>
-                    <a> www.histarantia.ch/faq </a>
-                    <p> Gibt es Labortests zur Diagnose der Histaminunvertraeglichkeit? Die Antwort
-                        ist nicht so leicht zu beantworten ... </p>
-                </article>
             </section>
         </div>
         <!-- #main -->
