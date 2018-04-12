@@ -24,7 +24,7 @@ public class Zugriffsmanager {
 /**
  * Erzeuge den Zugriffsmanager. 
  * 
- * @param platzierung die Lebensmittelplatzierung
+ * @param platzierung die Platzierung der Lebensmittel 
  * @param lname der Lebensmittelname
  * @param kategorie die Lebensmittelkategorie 
  * @param karenzphase die Karenzphase
