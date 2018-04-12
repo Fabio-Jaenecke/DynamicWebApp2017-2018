@@ -1,4 +1,4 @@
-package zugriffe;
+package Suche.updater;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,8 +14,7 @@ import datenbank.dao.DbQuery;
 
 public class ZugriffUpdater {
 	
-	private DbConnector conn = new DbConnector();
-	DbQuery query = new DbQuery();
+	private DbQuery query = new DbQuery();
 	Zugriffsskala zugriff;
 	private static final Logger LOGGER = Logger.getLogger(ZugriffUpdater.class.getName());
 	
@@ -40,10 +39,11 @@ public class ZugriffUpdater {
 			LOGGER.log(Level.SEVERE, "row in table zugriff could not be determined " + e);
 		}	
 	}
-	
+
 	public void updateAZugriffe() {
 		String updateSql = "update zugriffskala set aZugriffe = ? where zindex = ?";
 		try {
+			DbConnector conn = new DbConnector();
 			Connection connection = conn.getConn();
 			PreparedStatement statement = connection.prepareStatement(updateSql);
 			zugriff.setAzugriffe(zugriff.getAzugriffe()+1);
@@ -55,5 +55,9 @@ public class ZugriffUpdater {
 		} catch (SQLException e) {
 			LOGGER.log(Level.SEVERE, "AnzahlZugriff could not be incremented " + e);
 		}
+	}
+	
+	public Zugriffsskala getZugriff() {
+		return zugriff;
 	}
 }

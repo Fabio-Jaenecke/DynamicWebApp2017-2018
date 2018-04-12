@@ -1,4 +1,4 @@
-package zugriffe;
+package Suche.updater;
 
 import static org.junit.Assert.*;
 
