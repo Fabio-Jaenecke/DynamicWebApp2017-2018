@@ -65,4 +65,20 @@ public class Zugriffsskalamanager {
 	public ArrayList<Zugriffsmanager> getTabelle() {
 		return tabelle; 
 	}
+	
+	public void sortierePlatzierungErsteBisLetzte() {
+			
+		}
+	
+	public void sortierePlatzierungLetzteBisErste() {
+		
+	}
+	
+	public void sortiereLebensmittelnamenAZ() {
+		
+	}
+	
+	public void sortiereLebensmittelnameZA() {
+		
+	}
 }
