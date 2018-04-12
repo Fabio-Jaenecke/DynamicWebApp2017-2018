@@ -66,7 +66,7 @@
                            <h2>Histamingehalt von Lebensmitteln</h2>
                            <p>Welche Nahrungsmittel sind vertraeglich, welche sind bei Histaminintoleranz nicht vertraeglich? Fuer Betroffene ist es schwer, einzukaufen.
                            </p>
-                           <a href="#">Mehr</a>
+                           <a href="${pageContext.request.contextPath}/jsp/nachschlageplattform/HistamingehaltvonLebensmitteln.jsp">Mehr</a>
                         </section>
                         <section>
                            <h2>Symptome der Histamin-Intoleranz</h2>
