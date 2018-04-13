@@ -18,15 +18,13 @@ public class XmlConverterTest {
 		converter = new XmlConverter();
 	}
 
+	/*
+	 * tests if html elements in hmtl folder can be converted and asserts that converted
+	 * document is not null
+	 * TODO add other html files
+	 */
 	@Test
 	public void testConvert() {
 		assertNotNull(converter.convert(new File("src/webapp/html/faq.html")));
 	}
-	
-	@Test
-	public void testDocument() {
-		assertNotNull(document.text());
-		assertNotNull(document.val());
-	}
-
 }

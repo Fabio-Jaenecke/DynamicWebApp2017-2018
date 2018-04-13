@@ -10,14 +10,14 @@ import org.jsoup.nodes.Element;
  */
 public class SearchEngine {
 
-	private String keyWord;
-	private ArrayList<Searchresult> searchResults;
+	private String keyword;
+	private ArrayList<Searchresult> searchResults = new ArrayList<>();
 
 	/*
 	 * eine ArrayList von xml-Seiten und das Suchwort werden übergeben
 	 */
 	public SearchEngine(String keyword) {
-		this.keyWord = keyWord;
+		this.keyword = keyword;
 	}
 	
 	/*
@@ -48,9 +48,7 @@ public class SearchEngine {
 		results.addAll(searchForTag(site, "h2"));
 		results.addAll(searchForTag(site, "h3"));
 		results.addAll(searchForTag(site, "h4"));
-		
 		return results;
-
 	}
 
 	/*
@@ -87,11 +85,18 @@ public class SearchEngine {
 	public ArrayList<Element> searchForTag(Document site, String tag) {
 		ArrayList<Element> results = new ArrayList<>();
 		for (Element result : site.getElementsByTag(tag)) {
-			if (result.text().equals(keyWord)) {
+			if (result.text().equals(keyword)) {
 				results.add(result);
 			}
 		}
-
 		return results;
+	}
+
+	public ArrayList<Searchresult> getSearchResults() {
+		return searchResults;
+	}
+
+	public void setSearchResults(ArrayList<Searchresult> searchResults) {
+		this.searchResults = searchResults;
 	}
 }

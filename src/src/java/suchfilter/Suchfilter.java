@@ -21,7 +21,7 @@ public class Suchfilter {
 	 * initializes new search engine with keyword and xml-files
 	 */
 	public Suchfilter(String keyWord) {
-		initializeXmlSites();
+		xmlSites = initializeXmlSites();
 		searcher = new SearchEngine(keyWord);
 	}
 	
@@ -35,13 +35,15 @@ public class Suchfilter {
 	/*
 	 * load html-files for convertion to xml	
 	 */
-	public void initializeXmlSites(){
+	public ArrayList<Document> initializeXmlSites(){
+		ArrayList<Document> xmlSites = new ArrayList<>();
 		xmlSites.add(converter.convert(new File("src/webapp/html/lebensmittelkategorie.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/faq.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/mahlzeitassistent.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/rezepte.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/suche.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/zugriffsskala.html")));
+		return xmlSites;
 	}
 
 	/*
