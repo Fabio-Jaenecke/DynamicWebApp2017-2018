@@ -9,24 +9,35 @@ import org.junit.Test;
 /**
  * Testklasse für die Klasse LebensmittelsucheDao. 
  * 
- * @author Michele Trebo
+ * @author Michele Trebo, Marko Despotovic
  * @version 09.04.2018
  */
-
-//TODO: Write testclass 
+ 
 public class LebensmittelsucheDaoTest {
+	
+	private LebensmittelsucheDao dao;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
 
 	@Before
+	// Creates new Database for the search option
 	public void setUp() throws Exception {
+		dao = new LebensmittelsucheDao();
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	// Testing if the search method gives a result back
+	public void searchForStringTest() {
+		dao.searchForString("apfel");
+		
+		assertNotNull(dao.getLebensmittel());
+		assertTrue("Apfel".equals(dao.getLebensmittel().getLname()));
+		
+		// Search attempt for a non existing entry
+		dao.searchForString("Pizza");
+		assertNull(dao.getLebensmittel());
 	}
 
 }
