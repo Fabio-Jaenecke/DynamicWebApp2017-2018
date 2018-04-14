@@ -56,6 +56,14 @@
 
     <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	
+	<style>
+	.auswahl {
+		position: abolute;
+		top: 0;
+		left: 0;
+	}
+	</style>
+	
 </head>
 
 <body>
@@ -109,16 +117,49 @@
     <div class="main wrapper clearfix">
 
         <article>
-
+				<%@ page import="controller.servlets.*" %>		
                 <h2>Mahzeitsassistent</h2>
 				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
-				<% 
-				if (request.getSession().getAttribute("auswahl")==null){
-					//then print nothing
-				}else{
-					out.println("Auswahl: " + request.getSession().getAttribute("auswahl"));
-				}
+                <% String auswahlkontext = "stupidjsp";
+                if (request.getParameter("auswaehler") == null) {
+		        	//Technically, this is not required:
+		        	//out.println("input field could not be validated");
+                	auswahlkontext = "come on";
+				%>
+                <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
+               	
+                <input type="text" name="auswahlkontextes" value="" />
+                <input type="submit" name="auswahlkontexte" value="kategorie1" />
+                
+				</form>
+				<%@ page import="controller.servlets.*" %>	
+				<%
+                }else{
+					
+                }	
                 %>
+                
+                <a href="${pageContext.request.contextPath}/mahlzeitassistent/?auswahlkontext=kategorie1">kategorie1click</a>
+	 		    <% auswahlkontext = request.getParameter( "auswahlkontext" ); %>
+                <% session.setAttribute( "auswahlkontext", auswahlkontext );
+                
+				session.setAttribute("auswahl", "gehezurauswahl");
+				
+				%>	
+				<%--
+				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
+                <%
+							                session.setAttribute("auswahl", "gehezurauswahl");
+											
+											if (request.getSession().getAttribute("auswahl1")==null){
+								        		 //do nothing
+								        	 }else{
+								        		 out.println("Ausgewaehltes Lebensmittel2: " + request.getSession().getAttribute("auswahl2"));
+								        	 }
+											
+											<input type='submit' name="auswahlsender" value="kategorie2">
+				</form>
+				
                 <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>     
                 
 
@@ -158,25 +199,43 @@
 											<div class='zeigeDrittel zeigeErstesDrittel'>
 											<p>hier</p>
 											<%
-							                session.setAttribute("auswahl", "gehezurauswahl");
+							                session.setAttribute("auswahl", "gehezurauswahl1");
+											
+											if (request.getSession().getAttribute("auswahl1")==null){
+								        		 //do nothing
+								        	 }else{
+								        		 out.println("Ausgewaehltes Lebensmittel1: " + request.getSession().getAttribute("auswahl1"));
+								        	 }
 											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/">auswaehlen</a>
+											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
 											</div>
 											<div class='selektiereDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
 											<p>hier</p>
 											<%
 							                session.setAttribute("auswahl", "gehezurauswahl");
+											
+											if (request.getSession().getAttribute("auswahl2")==null){
+								        		 //do nothing
+								        	 }else{
+								        		 out.println("Ausgewaehltes Lebensmittel2: " + request.getSession().getAttribute("auswahl2"));
+								        	 }
 											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/">auswaehlen</a>
+											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
 											</div>
 											<div class='selektiereDrittel drittesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate240'>
 											<p>hier</p>
 											<%
 							                session.setAttribute("auswahl", "gehezurauswahl");
+											
+											if (request.getSession().getAttribute("auswahl3")==null){
+								        		 //do nothing
+								        	 }else{
+								        		 out.println("Ausgewaehltes Lebensmittel3: " + request.getSession().getAttribute("auswahl3"));
+								        	 }
 											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/">auswaehlen</a>
+											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
 											</div>
 									
 								</section>	       
@@ -193,36 +252,56 @@
 					
 											<%@ page import="java.util.ArrayList" %>
 											
+											
+											
 											<div class='selektiereDrittel erstesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
 											<p>hier</p>
 											<%
 							                session.setAttribute("auswahl", "gehezurauswahl");
+											
+											if (request.getSession().getAttribute("auswahl4")==null){
+								        		 //do nothing
+								        	 }else{
+								        		 out.println("Ausgewaehltes Lebensmittel4: " + request.getSession().getAttribute("auswahl4"));
+								        	 }
 											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/">auswaehlen</a>
+											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
 											</div>
 											<div class='selektiereDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class='rotate120'>
 											<p>hier</p>
 											<%
 							                session.setAttribute("auswahl", "gehezurauswahl");
+											
+											if (request.getSession().getAttribute("auswahl5")==null){
+								        		 //do nothing
+								        	 }else{
+								        		 out.println("Ausgewaehltes Lebensmittel5: " + request.getSession().getAttribute("auswahl5"));
+								        	 }
 											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/">auswaehlen</a>
+											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
 											</div>
 											<div class='selektiereDrittel drittesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class='rotate240'>
 											<p>hier</p>
 											<%
 							                session.setAttribute("auswahl", "gehezurauswahl");
+											
+											if (request.getSession().getAttribute("auswahl6")==null){
+								        		 //do nothing
+								        	 }else{
+								        		 out.println("Ausgewaehltes Lebensmittel6: " + request.getSession().getAttribute("auswahl6"));
+								        	 }
 											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/">auswaehlen</a>
+											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
 											</div>
 																		
 								</section>	
 				<%
 				}
 				%>
-			</form>
+			</form>--%>
 		</div>
 	</div>
 

@@ -66,7 +66,7 @@
 							}else{
 			                auswahl = request.getParameter("auswahle");
 			                session.setAttribute("auswahl", auswahl);
-							}
+			                }
 						%>
 						
 					<select onchange="this.form.submit()" name="kategorieauswahl">
@@ -135,6 +135,9 @@
 			        	 }else{
 			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
 			        	 }
+			         
+				                 
+			             
 					
 			            		
 			            %>
