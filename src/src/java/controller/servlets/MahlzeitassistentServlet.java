@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MahlzeitassistentServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
+	private String auswahl;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -34,6 +35,14 @@ public class MahlzeitassistentServlet extends HttpServlet {
 		String nextJSP = "/jsp/mahlzeitassistent.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
+	}
+
+	public String getAuswahl() {
+		return auswahl;
+	}
+
+	public void setAuswahl(String auswahl) {
+		this.auswahl = auswahl;
 	}
 
 }
