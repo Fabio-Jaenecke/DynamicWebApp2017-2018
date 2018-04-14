@@ -30,7 +30,7 @@ public class Zugriffsskalamanager {
 	 * Erzeuge den Zugriffsskalamanager. 
 	 */
 	public Zugriffsskalamanager() {
-		
+		tabelle = new ArrayList<Zugriffsmanager>();
 	}
 	
 	/**

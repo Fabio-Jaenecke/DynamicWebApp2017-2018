@@ -20,11 +20,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" href="../imgs/apple-touch-icon.png">
 <link rel="stylesheet" href="../css/normalize.min.css">
+<script src="../js/jquery.min.js"></script>
 <link rel="stylesheet" href="../css/Main/main.css">
 <link rel="stylesheet" href="../css/Rest/lebensmittelkategorie.css">
 <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
 <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
 <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="../js/zugriffsskala.js"></script>
 </head>
 <body>
 	<!--[if lt IE 8]>
@@ -61,19 +63,21 @@
 					<%@ page import="java.util.ArrayList" %>
 					<%  Zugriffsskalamanager tabelle = new Zugriffsskalamanager();
 						tabelle.searchForString();
+						out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
+						out.println("<div class='sortieren'>SORTIEREN</div>");
+ 						out.println("<thead>"); 								
+						out.println("<tr>");
+ 						out.println("<th>Platzierung</th>");
+ 						out.println("<th>Lebensmittel</th>");
+ 						out.println("<th>Karenzphase</th>");
+ 						out.println("<th>Dauerernaehrung</th>");
+ 						out.println("</tr>");
+ 						out.println("</thead>"); 
+ 						out.println("<tbody class='meineTabelle'>");
         		  			for(Zugriffsmanager zugriff : tabelle.getTabelle()) {
            		  				// System.out.println(zugriff); 
-								out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
-		 						out.println("<thead>"); 
-								out.println("<tr>");
-		 						out.println("<th>Platzierung</th>");
-		 						out.println("<th>Lebensmittel</th>");
-		 						out.println("<th>Karenzphase</th>");
-		 						out.println("<th>Dauerernaehrung</th>");
-		 						out.println("</tr>");
-		 						out.println("</thead>"); 
-		 						out.println("<tbody>");
-		 						out.println("<tr>");
+
+		 						out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
 		 						out.println("<td>");
 		 						out.println(zugriff.getPlatzierung()); 
 		 						out.println("</td>");
@@ -87,18 +91,20 @@
 		 						out.println(zugriff.getDauerernaehrung());
 		 						out.println("</td>");
 		 						out.println("</tr>");
-		 						out.println("</tbody>");
-		 						out.println("<tfoot>"); 
-		 						out.println("<tr>");
-		 						out.println("<th>Platzierung</th>");
-		 						out.println("<th>Lebensmittel</th>");
-		 						out.println("<th>Kategorie</th>");
-		 						out.println("<th>Karenzphase</th>");
-		 						out.println("<th>Dauerernaehrung</th>");
-		 						out.println("</tr>");
-		 						out.println("</tfoot>");
-		 						out.println("</table>");
+
+
            		  			}
+	 						out.println("</tbody>");
+	 						out.println("<tfoot>"); 
+	 						out.println("<tr>");
+	 						out.println("<th>Platzierung</th>");
+	 						out.println("<th>Lebensmittel</th>");
+	 						out.println("<th>Kategorie</th>");
+	 						out.println("<th>Karenzphase</th>");
+	 						out.println("<th>Dauerernaehrung</th>");
+	 						out.println("</tr>");
+	 						out.println("</tfoot>");
+	 						out.println("</table>");
 		               %>
 				</div>
 			</section>
