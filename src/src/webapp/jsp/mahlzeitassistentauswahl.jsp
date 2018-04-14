@@ -104,28 +104,27 @@
 				               
 				               			<% 
 				               			for(Lebensmitteldaten lebensmitteleintrag : daten){
-				               				String karenzphase = lebensmitteleintrag.getKarenzphase().toString();
-				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung().toString();
-				               				String lebensmittelname = null;
-											if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
-												lebensmittelname = lebensmitteleintrag.getLname();
-											}
+				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
+				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
+				               				
 											
 										
 				                		// for the next category call we have to clear the arraylist of lebensmittel
-				                		kategorieauftrag.clearLebensmittel();
-				                		%>
+					                		if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
+												String lebensmittelname = lebensmitteleintrag.getLname();
+					                		%>
 				                		<tr>
 				                	 	<td>
-				                	 		<input type='submit' name="auswahle" value="<%out.println(lebensmittelname);%>" style="width:100%">
+				                	 		<input type='submit' name="auswahle" value="<%out.println(lebensmittelname);%>" style='width:100%'>
 				                	 		
 				                	 	</td>
 				                		<tr>
 				                		
-				                    <%
-									}		
-								}
-				                %>
+				                    	<%
+				                			}
+										}
+					}
+				               			%>
 				                </tbody>
 			            </table>
 			            
@@ -136,7 +135,7 @@
 			        	 }else{
 			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
 			        	 }
-			            
+					
 			            		
 			            %>
 			            <p><p>
