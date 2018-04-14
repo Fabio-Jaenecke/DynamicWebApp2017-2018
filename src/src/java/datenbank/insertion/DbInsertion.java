@@ -111,8 +111,6 @@ public class DbInsertion implements DbInsertionInterface {
 
 	/*
 	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableZugriffsskala()
-	 * TODO remove
-	 * 35 lebensmittel exists
 	 */
 	@Override
 	public void insertIntoTableZugriffsskala() {

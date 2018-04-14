@@ -16,7 +16,6 @@ public class Zugriffsmanager {
 
 	private int platzierung;
 	private String lname;
-	private String kategorie; 
 	private String karenzphase;
 	private String dauerernaehrung;
 	private static final Logger LOGGER = Logger.getLogger(Zugriffsmanager.class.getName());
@@ -30,10 +29,9 @@ public class Zugriffsmanager {
 	 * @param karenzphase die Karenzphase
 	 * @param dauerernaehrung die Dauerernaehrung
 	 */
-	public Zugriffsmanager(int platzierung, String lname, String kategorie, String karenzphase, String dauerernaehrung) {
+	public Zugriffsmanager(int platzierung, String lname, String karenzphase, String dauerernaehrung) {
 		this.platzierung = platzierung;
 		this.lname = lname;
-		this.kategorie = kategorie; 
 		this.karenzphase = karenzphase;
 		this.dauerernaehrung = dauerernaehrung;
 	}
@@ -46,8 +44,7 @@ public class Zugriffsmanager {
 	public Zugriffsmanager(ResultSet rs) {
 		try {
 			this.platzierung = rs.getInt("platzierung");
-			this.lname = rs.getString("lname");
-			this.kategorie = rs.getString("kategorie"); 
+			this.lname = rs.getString("lname"); 
 			this.karenzphase = rs.getString("karenzphase");
 			this.dauerernaehrung = rs.getString("dauerernaehrung");
 		} catch (SQLException e) {
@@ -91,24 +88,6 @@ public class Zugriffsmanager {
 		this.lname = lname;
 	}
 
-	/**
-	 * Gib die Lebensmittelkategorie. 
-	 * 
-	 * @return kategorie
-	 */
-	public String getKategorie() {
-		return kategorie;
-	}
-
-	/**
-	 * Setze die Lebensmittelkategorie. 
-	 * 
-	 * @param kategrie die Lebensmittelkategorie
-	 */
-	public void setKategorie(String kategorie) {
-		this.kategorie = kategorie;
-	}
-	
 	/**
 	 * Gib die Karenzphase. 
 	 * 

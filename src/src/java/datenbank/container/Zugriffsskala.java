@@ -14,7 +14,7 @@ import datenbank.connector.DbConnectorStub;
  * @author Raphael Caradonna und Michele Trebo
  * @version 12.04.2018 
  */
-public class Zugriffsskala {
+public class Zugriffsskala implements Comparable {
 
 	private int zindex;
 	private int platzierung;
@@ -103,4 +103,10 @@ public class Zugriffsskala {
 	public void setAzugriffe(int azugriffe) {
 		this.azugriffe = azugriffe;
 	}
+	
+	@Override
+	public int compareTo(Object comparestu) {
+        int compareAzugriffe = ((Zugriffsskala)comparestu).getAzugriffe();
+        return compareAzugriffe -this.azugriffe;
+    }
 }
