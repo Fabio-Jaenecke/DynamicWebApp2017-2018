@@ -102,12 +102,9 @@
                               </thead>
                               <tbody>
 				               
-				                <% 
-				                
-				                
-				                
-				                for(Lebensmitteldaten lebensmitteleintrag : daten){
-				                	String lebensmittelname = lebensmitteleintrag.getLname();
+				               			<% 
+				               			for(Lebensmitteldaten lebensmitteleintrag : daten){
+				                		String lebensmittelname = lebensmitteleintrag.getLname();
 				                		%>
 				                		<tr>
 				                	 	<td>
@@ -117,19 +114,8 @@
 				                		<tr>
 				                		
 				                    <%
-
-									}
-				               /* for (String match: auswahlen){
-				                	if (match.equals("Birne")){
-				                		auswahl = match;
-				                	}
-				                }*/
-				               
-				               
-				                
-			        			// for the next category call we have to clear the arraylist of lebensmittel
-			        			kategorieauftrag.clearLebensmittel();
-					}
+									}		
+								}
 				                %>
 				                </tbody>
 			            </table>
