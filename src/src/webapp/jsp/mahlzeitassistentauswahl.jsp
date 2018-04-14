@@ -53,60 +53,22 @@
 <div class="main-container">
     <div class="main wrapper clearfix">
             <section>
-	            <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-	            		<div>
-	            		<h3>Suche nach Lebensmitteln</h3>
-	            			<input type="text" name="sucheintrag" value="" />
-	            			<input type="submit" value="Suche" />
-			           		  <%@ page import ="suche.*" %>
-			           		  <%
-			           		    String lebensmittelname = "";
-									if (request.getParameter("sucheintrag") == null) {
-										//Technically, this is not required:
-							        	        //out.println("input field could not be validated");
-				                    
-									}else{
-										lebensmittelname = request.getParameter("sucheintrag");
-										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao();
-										suchauftrag.searchForString(lebensmittelname);
-										
-		                                                        //Print the Table if something is found:
-				 					if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
-				 						out.println("<table class='table_lebensmittelkategorie' style='margin-top: 30px';>");
-				 						out.println("<tr>");
-				 						out.println("<th>Lebensmittel</th>");
-				 						out.println("<th>Karenzphase</th>");
-				 						out.println("<th>Dauerernaehrung</th>");
-				 						out.println("</tr>");
-				 						out.println("<tr>");
-				 						out.println("<td>");
-				 						out.println(suchauftrag.getLebensmittel().getLname());
-				 						out.println("</td>");
-				 						out.println("<td>");
-				 						out.println(suchauftrag.getLebensmittel().getKarenzphase());
-				 						out.println("</td>");
-				 						out.println("<td>");
-				 						out.println(suchauftrag.getLebensmittel().getDauerernaehrung());
-				 						out.println("</td>");
-				 						out.println("</tr>");
-				 						out.println("</table>");
-				 					//Else print a warning
-				 					}else{
-				 				      	out.println("<p><p>");
-						            	out.println("Ihre Suche ergab keine Treffer, versuchen Sie die Kategorienauswahl."); 
-						            	out.println("<p><p>");
-					               }
-								   }
-					               %>
-	            		</div>
-	           		</form>
-            </section>
-            <section>
-            <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
+            <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
 				<h3>Suche nach Kategorien</h3>
 						<%@ page import="datenbank.container.*" %>
 						<%@ page import="suche.*" %>
 						<%@ page import="java.util.ArrayList" %>
+						<%@ page import="controller.servlets.*" %>
+						<%
+						String auswahl = null;
+						 if (request.getParameter("auswahle")==null || "gehezurauswahl".equals(request.getParameter("auswahle"))){
+			        		//do nothing
+							}else{
+			                auswahl = request.getParameter("auswahle");
+			                session.setAttribute("auswahl", auswahl);
+							}
+						%>
+						
 					<select onchange="this.form.submit()" name="kategorieauswahl">
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
@@ -130,44 +92,61 @@
 						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
 						
 			        %>
-			         <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
+			        </form>
+			        <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
+			        <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
                              <thead>
                                  <tr>
-                                    <th colspan="3">
-                                       <%
-                                          out.println(kategorienname);
-                                          %>
-                                    </th>
-                                 </tr>
-                                 <tr>
                                     <th>Lebensmittel</th>
-                                    <th>Karenzphase</th>
-                                    <th>Dauerernaehrung</th>
                                  </tr>
                               </thead>
                               <tbody>
+				               
+				                <% 
 				                
-				                <%
+				                
+				                
 				                for(Lebensmitteldaten lebensmitteleintrag : daten){
-				                		out.println("<tr>");
-				                   		out.println("<td>");
-				                		out.println(lebensmitteleintrag.getLname());
-				                		out.println("</td>");
-				                		out.println("<td>");
-				                		out.println(lebensmitteleintrag.getKarenzphase());
-				                		out.println("</td>");
-				                		out.println("<td>");
-				                		out.println(lebensmitteleintrag.getDauerernaehrung());
-				                		out.println("</td>");
-				                		out.println("</tr>");
+				                	String lebensmittelname = lebensmitteleintrag.getLname();
+				                		%>
+				                		<tr>
+				                	 	<td>
+				                	 		<input type='submit' name="auswahle" value="<%out.println(lebensmittelname);%>" style="width:100%">
+				                	 		
+				                	 	</td>
+				                		<tr>
+				                		
+				                    <%
+
 									}
+				               /* for (String match: auswahlen){
+				                	if (match.equals("Birne")){
+				                		auswahl = match;
+				                	}
+				                }*/
+				               
+				               
+				                
 			        			// for the next category call we have to clear the arraylist of lebensmittel
 			        			kategorieauftrag.clearLebensmittel();
-			        			}
+					}
 				                %>
 				                </tbody>
 			            </table>
-            </form>
+			            
+			            <p><p>
+			         <%
+			        	 if (auswahl==null){
+			        		 //do nothing
+			        	 }else{
+			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
+			        	 }
+			            
+			            		
+			            %>
+			            <p><p>
+            <input type='submit' name="Bestaetigen" value="Bestaetigen">
+			        </form> 
             
             </section>
             
