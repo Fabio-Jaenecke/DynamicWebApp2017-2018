@@ -61,14 +61,16 @@
             	else{
             	Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
             	suche.search();
-            	
-            	for(Vorschau vorschau: suche.getSearcher().getSuchresultate()){
-            		out.println("<a>");
-            		out.println("test.de");
-            		out.println("</a>");
-            		out.println("<p>");
-            		out.println(vorschau.getTagName() + vorschau.getText());
-            		out.println("</p>");
+            	for(Searchresult result: suche.getSearcher().getSearchResults()){
+            		result.prepareResult();
+            		for(ResultPreview preview : result.getPreviews()){
+            			out.println("<a>");
+                		out.println(preview.getUrl());
+                		out.println("</a>");
+                		out.println("<p>");
+                		out.println(preview.getMetaData());
+                		out.println("</p>");
+            		}
             	}
             	}
             %>
