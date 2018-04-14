@@ -111,13 +111,14 @@
         <article>
 
                 <h2>Mahzeitsassistent</h2>
-		
-		Auswahl:
-		<% out.println(request.getSession().getAttribute("auswahl"));%>
-
-        <c:forEach items="${req.requestURL}" var="col">
-            <td>${req.requestURL}</td>
-        </c:forEach>
+				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
+				<% 
+				if (request.getSession().getAttribute("auswahl")==null){
+					//then print nothing
+				}else{
+					out.println("Auswahl: " + request.getSession().getAttribute("auswahl"));
+				}
+                %>
                 <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>     
                 
 
@@ -514,10 +515,9 @@
 											</div>
 									
 								</section>	
-					<%
+				<%
 				}
-			
-			%>
+				%>
 			</form>
 		</div>
 	</div>
