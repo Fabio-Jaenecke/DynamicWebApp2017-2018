@@ -1,11 +1,12 @@
 package suchfilter;
+
 import java.io.File;
 import java.util.ArrayList;
 
 import org.jsoup.nodes.*;
 
 /**
- * konvertiert die Html-Seiten zu Xml, führt das Suchen nahc einem Wort aus und zeigt
+ * konvertiert die Html-Seiten zu Xml, führt das Suchen nach einem Wort aus und zeigt
  * die Suchresultate an
  * @author Raphael
  *
@@ -18,29 +19,37 @@ public class Suchfilter {
 	
 	/*
 	 * converts all sites in html-folder to xml-files and adds them to xmlSites
+	 * initializes new search engine with keyword and xml-files
 	 */
 	public Suchfilter(String keyWord) {
-		initializeXmlSites();
-		searcher = new SearchEngine(xmlSites, keyWord);
+		xmlSites = initializeXmlSites();
+		searcher = new SearchEngine(keyWord);
 	}
 	
 	/*
-	 * sucht zuerst nach Überschriften, dann nach Paragraphen, dann nach Listenelementen und nach
-	 * Buttons
+	 * searches if headings, paragraphes, list items or buttons contain the key word
 	 */
 	public void search() {
-		searcher.sucheNachText();
+		searcher.sucheNachText(xmlSites);
 	}
 	
-	public void initializeXmlSites(){
+	/*
+	 * load html-files for convertion to xml	
+	 */
+	public ArrayList<Document> initializeXmlSites(){
+		ArrayList<Document> xmlSites = new ArrayList<>();
 		xmlSites.add(converter.convert(new File("src/webapp/html/lebensmittelkategorie.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/faq.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/mahlzeitassistent.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/rezepte.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/suche.html")));
 		xmlSites.add(converter.convert(new File("src/webapp/html/zugriffsskala.html")));
+		return xmlSites;
 	}
 
+	/*
+	 * returns searchEngine
+	 */
 	public SearchEngine getSearcher() {
 		return searcher;
 	}

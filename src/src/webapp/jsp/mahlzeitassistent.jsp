@@ -111,8 +111,16 @@
         <article>
 
                 <h2>Mahzeitsassistent</h2>
-
-                <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>                
+				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
+				<% 
+				if (request.getSession().getAttribute("auswahl")==null){
+					//then print nothing
+				}else{
+					out.println("Auswahl: " + request.getSession().getAttribute("auswahl"));
+				}
+                %>
+                <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>     
+                
 
         </article>
 
@@ -145,27 +153,16 @@
 											<%@ page import="suche.*" %>
 					
 											<%@ page import="java.util.ArrayList" %>
+											
+											<%@ page import="controller.servlets.*" %>
 											<div class='selektiereDrittel erstesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
-											<select name='kategorieauswahl' class="dropdown1drittel">
-					
-													<option value="" disabled selected>Wählen Sie eine Kategorie</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
-					
-											</select>
+											<p>hier</p>
+											<%
+							                session.setAttribute("auswahl", "gehezurauswahl");
+											%>
+
+											<a href="${pageContext.request.contextPath}/mahlzeitassistent/">auswaehlen</a>
 											</div>
 											<div class='zeigeDrittel zeigeErstesDrittel'>
 											<%
@@ -187,7 +184,12 @@
 												ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
 												
 												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
-												boolean gefunden = false;
+												
+												MahlzeitassistentServlet assistent = new MahlzeitassistentServlet();
+												
+												
+												
+												/*boolean gefunden = false;
 												for(Lebensmitteldaten lebensmitteleintrag : daten){	
 													if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
 														out.println(lebensmitteleintrag.getLname());
@@ -197,13 +199,14 @@
 												//if nothing is found:
 												if (gefunden==false){
 													out.println("empty");
-												}
+												}*/
 					
 												// for the next category call we have to clear the arraylist of lebensmittel
 												kategorieauftrag.clearLebensmittel();
 											}
 					
 											%>
+											
 											</div>
 											<div class='selektiereDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
@@ -512,10 +515,9 @@
 											</div>
 									
 								</section>	
-					<%
+				<%
 				}
-			
-			%>
+				%>
 			</form>
 		</div>
 	</div>
