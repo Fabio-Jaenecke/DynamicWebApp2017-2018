@@ -13,11 +13,11 @@
 		color: white;
 		font-size: x-large;
 		font-weight: bold;
-		background: #6fa8dc;
-		background: -moz-radial-gradient(center, ellipse cover, #6fa8dc 0%, #fdc818 100%);
-		background: -webkit-radial-gradient(center, ellipse cover, #6fa8dc 0%,#fdc818 100%);
-		background: radial-gradient(ellipse at center, #6fa8dc 0%,#fdc818 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fa8dc', endColorstr='#fdc818',GradientType=1 );
+		background: #fff;
+		background: -moz-radial-gradient(center, ellipse cover, #fff 0%, #fdc818 100%);
+		background: -webkit-radial-gradient(center, ellipse cover, #fff 0%,#fdc818 100%);
+		background: radial-gradient(ellipse at center, #fff 0%,#fdc818 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fdc818',GradientType=1 );
 	}
 	
 	.erstelleMahlzeit{
@@ -29,19 +29,19 @@
 	.zeigeErstesDrittel{
 		position: absolute;
 		top: 120px;
-		left: 100px;
+		left: 90px;
 	}
 	
 	.zeigeZweitesDrittel{
 		position: absolute;
-		top: 280px;
-		left: 465px;
+		top: 125px;
+		left: 80px;
 	}
 	
 	.zeigeDrittesDrittel{
 		position: absolute;
-		top: 450px;
-		left: 375px;
+		top: 130px;
+		left: 80px;
 	}
 	
 	.mahlzeitassistent{
@@ -146,9 +146,18 @@
 		display: none;
 		position: absolute;
 		top: 100px;
-		left: 100px;
+		left: 90px;
 	}
 	
 	.oeffneAuswahl:hover > .selektiereDrittel > .oeffnenText { 
 		display: inline-block;
+	}
+	
+	.kategorien {
+		position: relative;
+	}
+	
+	.naehrstoffe {
+		position: relative;
+		margin-top: 25em;
 	}
