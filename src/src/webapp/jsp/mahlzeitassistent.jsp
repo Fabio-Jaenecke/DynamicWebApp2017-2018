@@ -129,43 +129,6 @@
 	 		    <%
 	 		    session.setAttribute("auswahl", "gehezurauswahl");
 				%>	
-				<%-- DELETE
-				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-                <%
-							                session.setAttribute("auswahl", "gehezurauswahl");
-											
-											if (request.getSession().getAttribute("auswahl1")==null){
-								        		 //do nothing
-								        	 }else{
-								        		 out.println("Ausgewaehltes Lebensmittel2: " + request.getSession().getAttribute("auswahl2"));
-								        	 }
-											
-											<input type='submit' name="auswahlsender" value="kategorie2">
-				</form>
-				
-                <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>     
-                
-
-        </article>
-
-		<article style="min-width:100%;">
-            	<em>Anleitung:</em>
-            	<ol>
-            		<li>Waehlen Sie zwischen dem Assisten für Lebensmittelkategorien oder für Naehrstoffe.</li>
-            		<% if (request.getParameter("radiobutton") == null) {/*its not there*/}else if(request.getParameter("radiobutton").equals("kategorienframe")){out.println("<li>Waehlen Sie drei Lebensmittelkategorien aus der jeweiligen Auswahlliste aus.</li>");}%>
-            	    <% if (request.getParameter("radiobutton") == null) {/*its not there*/}else if(request.getParameter("radiobutton").equals("naehrstoffeframe")){out.println("<li>Waehlen Sie drei Naehrstoffkategorien aus der jeweiligen Auswahlliste aus.</li>");}%>
-            	</ol>
-            </article>
-      </div>
-      <div class="main wrapper clearfix">
-			<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-			    <input  type="radio" name="radiobutton"  id="kategorien" value="kategorienframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("kategorienframe")){out.println("checked");} %> onclick="this.form.submit()"/>
-				<label style="cursor:pointer;" for="kategorien">Kategorien</label><br>
-				<input type="radio"  name="radiobutton" id="naehrstoffe" value="naehrstoffeframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("naehrstoffeframe")){out.println("checked");} %> onclick="this.form.submit()"/>
-				<label style="cursor:pointer;" for="naehrstoffe">Naehrstoffe</label><br>
-			<%
-			if (request.getParameter("radiobutton") == null) {/*its not there*/
-				} else if(request.getParameter("radiobutton").equals("kategorienframe")) { --%>
 					<div class='kategorien'>
 					<h3>Assistent Kategorien</h3>
 					     <section class="mahlzeitassistent">
@@ -181,19 +144,43 @@
 											<div class="auswahlDrittel auswahlerstesDrittel" style="position: relative; top: 15em; left: 2em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel erstesDrittel'>
-														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
+							                        	<%
+														String auswahl1 = null;
+														if (request.getSession().getAttribute("auswahl1")==null){
+															//do nothing
+														}else{
+														auswahl1 = (String) request.getSession().getAttribute("auswahl1");
+														}
+														if (auswahl1==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
+															<%
+														
+														}else{
+															String kategorienname1 = null;
+															if (request.getSession().getAttribute("kategorienname1")==null){
+																//do nothing
+															}else{
+															kategorienname1 = (String) request.getSession().getAttribute("kategorienname1");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname1);%>circle.png" alt="kategoriencircle" class="rotate0" >
+															<%
+														}
+														
+														%>
+														
 														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>Aendern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
 													<%
-													String auswahl1 = null;
-													if (request.getSession().getAttribute("auswahl1")==null){
-														//do nothing
+													if (auswahl1==null){
+														// print nothing
 													}else{
-													auswahl1 = (String) request.getSession().getAttribute("auswahl1");
-													out.println(auswahl1);
+														out.println(auswahl1);
 													}
 													%>
 													</div>
