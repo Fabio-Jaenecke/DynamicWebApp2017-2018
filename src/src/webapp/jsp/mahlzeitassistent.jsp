@@ -186,7 +186,7 @@
 											</div>
 											<div class='zeigeDrittel zeigeErstesDrittel'>
 												<p></p>
-												<a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl1.jsp" class="auswahl">kategorie1click</a>
+												<a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl.jsp" class="auswahl">kategorie1click</a>
 											</div>
 											
 											<div class='selektiereDrittel zweitesDrittel'>

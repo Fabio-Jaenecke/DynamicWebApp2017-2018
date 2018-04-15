@@ -60,10 +60,19 @@
 						<%@ page import="java.util.ArrayList" %>
 						<%@ page import="controller.servlets.*" %>
 						<%
-						String auswahl = null;
-						 
-						%>
 						
+						String auswahl = "Birne";
+						auswahl=(String) session.getAttribute("auswahl");
+						if (request.getParameter("auswahle")==null || "gehezurauswahl".equals(request.getParameter("auswahle"))){
+			        		//do nothing
+							}else{
+			                auswahl = request.getParameter("auswahle");
+			                session.setAttribute("auswahl1", auswahl);
+			                
+			                
+			                }
+					
+						%>
 					<select onchange="this.form.submit()" name="kategorieauswahl">
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
@@ -76,13 +85,14 @@
 			        </select>
 						<%
 						String kategorienname = "";
+						
 			        if (request.getParameter("kategorieauswahl") == null) {
 			        	//Technically, this is not required:
 			        	//out.println("input field could not be validated");
                     
 					}else{
 						session.setAttribute( "auswahlkontext", "kategorie1" );
-						session.setAttribute("auswahl", "Gurke");
+						
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
@@ -118,16 +128,11 @@
 				                		<tr>
 				                		
 				                    	<%
-				                			}
+				                    			}
+					                		
+											}
+				               					
 										}
-				               			if (request.getParameter("auswahle")==null || "gehezurauswahl".equals(request.getParameter("auswahle"))){
-							        		//do nothing
-											}else{
-							                auswahl = request.getParameter("auswahle");
-							                
-							                
-							                }
-					}
 				               			%>
 				                </tbody>
 			            </table>
@@ -146,8 +151,11 @@
 			            		
 			            %>
 			            <p><p>
-            <input type='submit' name="Bestaetigen" value="Bestaetigen">
+			           
 			        </form> 
+			         <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
+		            	<input type='submit' name="Bestaetigen" value="Bestaetigen">
+		            </form>
 			        <div>
             		<select name='kategorieauswahl2' class="dropdown2drittel">
 					

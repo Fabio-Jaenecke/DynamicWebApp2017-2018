@@ -42,6 +42,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	String auswahl=(String) session.getAttribute("auswahl");
     	String auswahlkontext=(String) session.getAttribute("auswahlkontext");
     	
+    	
     	if (auswahl==null){
     		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
     		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
@@ -65,7 +66,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
   	         
     	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie1")) {
 	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 session.setAttribute("auswahl1", auswahl);
+	   	
 	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 	         dispatcher.forward(request, response);
 	         System.out.print("kontext:");
@@ -76,13 +77,14 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	     
     	}if (auswahlkontext.equals("kategorie1")) {
 	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 session.setAttribute("auswahl1", auswahl);
 	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 	         dispatcher.forward(request, response);
 	         System.out.print("kontext:");
             System.out.println(request.getSession().getAttribute("auswahlkontext"));
             System.out.print("Auswahlok:");
             System.out.println(request.getSession().getAttribute("auswahl"));
+            System.out.print("Auswahlok1:");
+            System.out.println(session.getAttribute("auswahl1"));
 	         return;
 	         
  	        
