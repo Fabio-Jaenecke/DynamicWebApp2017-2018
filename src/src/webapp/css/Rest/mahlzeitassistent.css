@@ -1,4 +1,4 @@
-	.zeigeDrittel{
+	.zeigeDrittelkategorie{
 		color: white;
 		font-size: medium;
 		font-weight: bold;
@@ -6,7 +6,18 @@
 		background: -moz-radial-gradient(center, ellipse cover, #6fa8dc 0%, #002060 99%);
 		background: -webkit-radial-gradient(center, ellipse cover, #6fa8dc 0%,#002060 99%);
 		background: radial-gradient(ellipse at center, #6fa8dc 0%,#002060 99%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fa8dc', endColorstr='#002060',GradientType=1 );
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002060', endColorstr='#6fa8dc',GradientType=1 );
+	}
+	
+	.zeigeDrittelnaehrstoff{
+		color: white;
+		font-size: medium;
+		font-weight: bold;
+		background: #FDC818;
+		background: -moz-radial-gradient(center, ellipse cover, #FDC818 0%, #002060 99%);
+		background: -webkit-radial-gradient(center, ellipse cover, #FDC818 0%,#002060 99%);
+		background: radial-gradient(ellipse at center, #FDC818 0%,#002060 99%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FDC818', endColorstr='#002060',GradientType=1 );
 	}
 	
 	.erstelleMahlzeit{
