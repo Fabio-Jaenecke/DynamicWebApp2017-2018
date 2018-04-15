@@ -2,8 +2,11 @@
 		color: white;
 		font-size: medium;
 		font-weight: bold;
-		background-color: #6FA8DC;
-		padding: 10px;
+		background: #6fa8dc;
+		background: -moz-radial-gradient(center, ellipse cover, #6fa8dc 0%, #002060 99%);
+		background: -webkit-radial-gradient(center, ellipse cover, #6fa8dc 0%,#002060 99%);
+		background: radial-gradient(ellipse at center, #6fa8dc 0%,#002060 99%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fa8dc', endColorstr='#002060',GradientType=1 );
 	}
 	
 	.erstelleMahlzeit{
