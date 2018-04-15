@@ -61,15 +61,12 @@
 						<%@ page import="controller.servlets.*" %>
 						<%
 						
-						String auswahl = "";
-						auswahl=(String) session.getAttribute("auswahl");
-						if (request.getParameter("auswahle")==null || "gehezurauswahl".equals(request.getParameter("auswahle"))){
+						String auswahl = null;
+						if (request.getParameter("auswahle")==null){
 			        		//do nothing
 							}else{
 			                auswahl = request.getParameter("auswahle");
 			                session.setAttribute("auswahl1", auswahl);
-			                
-			                
 			                }
 					
 						%>
@@ -84,14 +81,13 @@
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
 			        </select>
 						<%
-						String kategorienname = "";
-						
+						String kategorienname = null;
 			        if (request.getParameter("kategorieauswahl") == null) {
 			        	//Technically, this is not required:
 			        	//out.println("input field could not be validated");
                     
 					}else{
-						session.setAttribute( "auswahlkontext", "kategorie1" );
+						session.setAttribute("auswahlkontext", "kategorie1");
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
@@ -138,17 +134,12 @@
 			            </table>
 			            
 			            <p><p>
-			         <%
+			         	<%
 			        	 if (auswahl==null){
 			        		 //do nothing
 			        	 }else{
 			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
-			        	 }
-			         
-				                 
-			             
-					
-			            		
+			        	 }	
 			            %>
 			            <p><p>
 			           

@@ -56,14 +56,6 @@
 
     <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	
-	<style>
-	.auswahl {
-		position: abolute;
-		top: 0;
-		left: 0;
-	}
-	</style>
-	
 </head>
 
 <body>
@@ -182,23 +174,44 @@
 											<%@ page import="controller.servlets.*" %>
 											
 											<div class='selektiereDrittel erstesDrittel'>
-												<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
+											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
+											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
+
+												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl1.jsp" style='color: white;' >
+												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+							                                Auswahl 1
+							                           </div>
+							                        </div>
+							                    </a>
 											</div>
+												</div>
 											<div class='zeigeDrittel zeigeErstesDrittel'>
-												<p></p>
-												<a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl.jsp" class="auswahl">kategorie1click</a>
+												<%
+												String auswahl1 = null;
+												if (request.getSession().getAttribute("auswahl1")==null){
+													//donothing
+												}else{
+												auswahl1 = (String) request.getSession().getAttribute("auswahl1");
+												out.println(auswahl1);
+												}
+												%>
 											</div>
+											
 											
 											<div class='selektiereDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
 												<p></p>
-												<a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl2.jsp" class="auswahl">kategorie2click</a>
+												<a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl2.jsp" class="auswahl">Waehle 2tes Lebensmittel aus kategorie</a>
 											</div>
 											
 											<div class='selektiereDrittel drittesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate240'>
 												<p></p>
-												<a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl3.jsp" class="auswahl">kategorie3click</a>
+												<table>
+												<td><a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl3.jsp" class="auswahl">Waehle 3tes Lebensmittel aus kategorie</a>
+												</td>
+												</table>
 											</div>
 								</section>
 					</div>
