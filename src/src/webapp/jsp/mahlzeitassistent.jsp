@@ -180,10 +180,11 @@
 							                                Auswahl 1
 							                           </div>
 							                        </div>
-							                    </a>
-							                    <div class='selektiereDrittel erstesDrittel'>
+							                        <div class='selektiereDrittel erstesDrittel'>
 													<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
 												</div>
+							                    </a>
+							                    
 											</div>
 											<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
 												<%
