@@ -18,13 +18,13 @@
     <title>Histarantia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="../imgs/apple-touch-icon.png">
-    <link rel="stylesheet" href="../css/normalize.min.css">
-    <link rel="stylesheet" href="../css/Main/main.css">
-    <link rel="stylesheet" href="../css/Rest/lebensmittelkategorie.css">
-    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
-    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/imgs/apple-touch-icon.png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Main/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Rest/lebensmittelkategorie.css">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
+    <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 8]>
