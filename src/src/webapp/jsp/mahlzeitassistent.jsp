@@ -177,7 +177,7 @@
 													<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
 													<%
 													if (auswahl1==null){
-														// print nothing
+														out.println("______");
 													}else{
 														out.println(auswahl1);
 													}
@@ -187,7 +187,7 @@
 											</div>
 											
 											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
-												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" >
 							                        <div class='selektiereDrittel zweitesDrittel'>
 														<%
 														String auswahl2 = null;
@@ -222,7 +222,7 @@
 													<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
 													<%
 													if (auswahl2==null){
-														// print nothing
+														out.println("______");
 													}else{
 														out.println(auswahl2);
 													}
@@ -232,7 +232,7 @@
 											</div>
 											
 											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
-												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" >
 							                        <div class='selektiereDrittel drittesDrittel'>
 														<%
 														String auswahl3 = null;
@@ -241,7 +241,7 @@
 														}else{
 														auswahl3 = (String) request.getSession().getAttribute("auswahl3");
 														}
-														if (auswahl2==null){
+														if (auswahl3==null){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
 															<%
@@ -267,7 +267,7 @@
 													<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
 													<%
 													if (auswahl3==null){
-														// print nothing
+														out.println("______");
 													}else{
 														out.println(auswahl3);
 													}
@@ -298,21 +298,44 @@
 											
 											
 											<div class="auswahlDrittel auswahlerstesDrittel" style="position: relative; top: 15em; left: 2em">
-												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp" style='color: white;' >
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp">
 							                        <div class='selektiereDrittel erstesDrittel'>
-														<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate0" >
+														<%
+														String auswahl4 = null;
+														if (request.getSession().getAttribute("auswahl4")==null){
+															//do nothing
+														}else{
+														auswahl4 = (String) request.getSession().getAttribute("auswahl4");
+														}
+														if (auswahl4==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate0" >
+															<%
+														
+														}else{
+															String naehrstoffname1 = null;
+															if (request.getSession().getAttribute("naehrstoffname1")==null){
+																//do nothing
+															}else{
+															naehrstoffname1 = (String) request.getSession().getAttribute("naehrstoffname1");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname1);%>circle.png" alt="naehrstoffcircle" class="rotate0" >
+															<%
+														}
+														
+														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
 															<p>Aendern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeErstesDrittel'>
 													<%
-													String auswahl4 = null;
-													if (request.getSession().getAttribute("auswahl4")==null){
-														//do nothing
+													if (auswahl4==null){
+														out.println("______");
 													}else{
-													auswahl4 = (String) request.getSession().getAttribute("auswahl4");
-													out.println(auswahl4);
+														out.println(auswahl4);
 													}
 													%>
 													</div>
@@ -320,21 +343,44 @@
 											</div>
 											
 											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
-												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp" style='color: white;' >
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp">
 							                        <div class='selektiereDrittel zweitesDrittel'>
-														<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate120" >
+														<%
+														String auswahl5 = null;
+														if (request.getSession().getAttribute("auswahl5")==null){
+															//do nothing
+														}else{
+														auswahl5 = (String) request.getSession().getAttribute("auswahl5");
+														}
+														if (auswahl5==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate120" >
+															<%
+														
+														}else{
+															String naehrstoffname2 = null;
+															if (request.getSession().getAttribute("naehrstoffname2")==null){
+																//do nothing
+															}else{
+															naehrstoffname2 = (String) request.getSession().getAttribute("naehrstoffname2");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname2);%>circle.png" alt="naehrstoffcircle" class="rotate120" >
+															<%
+														}
+														
+														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
 															<p>Aendern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeZweitesDrittel'>
 													<%
-													String auswahl5 = null;
-													if (request.getSession().getAttribute("auswahl5")==null){
-														//do nothing
+													if (auswahl5==null){
+														out.println("______");
 													}else{
-													auswahl5 = (String) request.getSession().getAttribute("auswahl5");
-													out.println(auswahl5);
+														out.println(auswahl5);
 													}
 													%>
 													</div>
@@ -342,21 +388,44 @@
 											</div>
 											
 											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
-												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" style='color: white;' >
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" >
 							                        <div class='selektiereDrittel drittesDrittel'>
-														<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate240" >
+														<%
+														String auswahl6 = null;
+														if (request.getSession().getAttribute("auswahl6")==null){
+															//do nothing
+														}else{
+														auswahl6 = (String) request.getSession().getAttribute("auswahl6");
+														}
+														if (auswahl6==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate240" >
+															<%
+														
+														}else{
+															String naehrstoffname3 = null;
+															if (request.getSession().getAttribute("naehrstoffname3")==null){
+																//do nothing
+															}else{
+															naehrstoffname3 = (String) request.getSession().getAttribute("naehrstoffname3");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname3);%>circle.png" alt="naehrstoffcircle" class="rotate240" >
+															<%
+														}
+														
+														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
 															<p>Aendern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeDrittesDrittel'>
 													<%
-													String auswahl6 = null;
-													if (request.getSession().getAttribute("auswahl6")==null){
-														//do nothing
+													if (auswahl6==null){
+														out.println("______");
 													}else{
-													auswahl6 = (String) request.getSession().getAttribute("auswahl6");
-													out.println(auswahl6);
+														out.println(auswahl6);
 													}
 													%>
 													</div>

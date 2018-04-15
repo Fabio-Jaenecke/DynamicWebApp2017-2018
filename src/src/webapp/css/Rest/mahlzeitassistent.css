@@ -11,12 +11,16 @@
 		color: white;
 		font-size: x-large;
 		font-weight: bold;
+		max-width:100px;
+    	word-wrap:break-word;
 	}
 	
 	.zeigeDrittelnaehrstoff{
-		color: white;
+		color: black;
 		font-size: x-large;
 		font-weight: bold;
+		max-width:100px;
+    	word-wrap:break-word;
 	}
 	
 	.erstelleMahlzeit{
@@ -34,7 +38,7 @@
 	.zeigeZweitesDrittel{
 		position: absolute;
 		top: 125px;
-		left: 60px;
+		left: 70px;
 	}
 	
 	.zeigeDrittesDrittel{
