@@ -38,7 +38,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="../imgs/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/imgs/apple-touch-icon.png">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.min.css">
 
@@ -48,11 +48,11 @@
     
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Rest/mahlzeitassistent.css">
 
-    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
 
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
 
-    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	
 </head>
 
@@ -173,7 +173,7 @@
 											<%@ page import="controller.servlets.*" %>
 											
 											<div class='selektiereDrittel erstesDrittel'>
-											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
+											<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: 100px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
@@ -199,7 +199,7 @@
 											
 											
 											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
+											<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
 											<div class="auswahlzweitesDrittel" style="position: absolute; top: 100px; left: 600px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
@@ -224,7 +224,7 @@
 											</div>
 											
 											<div class='selektiereDrittel drittesDrittel'>
-											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate240">
+											<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240">
 											<div class="auswahldrittesDrittel" style="position: absolute; top: 400px; left: 200px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
@@ -264,7 +264,7 @@
 											
 											
 											<div class='selektiereDrittel erstesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
+											<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp" style='color: white;' >
@@ -289,7 +289,7 @@
 											</div>
 											
 											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate120">
+											<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate120">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp" style='color: white;' >
@@ -314,7 +314,7 @@
 											</div>
 											
 											<div class='selektiereDrittel drittesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate240">
+											<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate240">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" style='color: white;' >
@@ -346,9 +346,9 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="${pageContext.request.contextPath}/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-<script src="../js/main.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
