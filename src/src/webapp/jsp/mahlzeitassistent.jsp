@@ -173,9 +173,8 @@
 											<%@ page import="controller.servlets.*" %>
 											
 											<div class='selektiereDrittel erstesDrittel'>
-											<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
+												<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
-
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
 												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -199,9 +198,8 @@
 											
 											
 											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
+												<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
 											<div class="auswahlzweitesDrittel" style="position: absolute; top: 100px; left: 220px; width: 100%;">
-
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
 												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -224,9 +222,8 @@
 											</div>
 											
 											<div class='selektiereDrittel drittesDrittel'>
-											<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240">
+												<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240">
 											<div class="auswahldrittesDrittel" style="position: absolute; top: 250px; left: 50px; width: 100%">
-
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
 												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -264,9 +261,8 @@
 											
 											
 											<div class='selektiereDrittel erstesDrittel'>
-											<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
+												<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
-
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp" style='color: white;' >
 												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -289,9 +285,8 @@
 											</div>
 											
 											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate120">
+												<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate120">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: 220px; width: 100%;">
-
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp" style='color: white;' >
 												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -301,7 +296,7 @@
 							                    </a>
 											</div>
 											</div>
-											<div class='zeigeDrittelnaehrstoff zeigeErstesDrittel'>
+											<div class='zeigeDrittelnaehrstoff zeigeZweitesDrittel'>
 												<%
 												String auswahl5 = null;
 												if (request.getSession().getAttribute("auswahl5")==null){
@@ -314,9 +309,8 @@
 											</div>
 											
 											<div class='selektiereDrittel drittesDrittel'>
-											<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate240">
+												<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate240">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 250px; left: 50px; width: 100%">
-
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" style='color: white;' >
 												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
@@ -326,7 +320,7 @@
 							                    </a>
 											</div>
 											</div>
-											<div class='zeigeDrittelnaehrstoff zeigeErstesDrittel'>
+											<div class='zeigeDrittelnaehrstoff zeigeDrittesDrittel'>
 												<%
 												String auswahl6 = null;
 												if (request.getSession().getAttribute("auswahl6")==null){
