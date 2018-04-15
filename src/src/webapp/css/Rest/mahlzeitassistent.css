@@ -62,8 +62,14 @@
 	
 	.erstesDrittel{
 		position: absolute;
-		left: -50px;
+		left: 200px;
 		top: 150px;
+	}
+	
+	.auswahlerstesDrittel{
+		position: absolute;
+		top: 125px; 
+		left: -100px
 	}
 	
 	.zweitesDrittel{
