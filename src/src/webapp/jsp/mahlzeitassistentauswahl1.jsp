@@ -53,7 +53,7 @@
 <div class="main-container">
     <div class="main wrapper clearfix">
             <section>
-            <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl.jsp">
+            <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl1.jsp">
 				<h3>Suche nach Kategorien</h3>
 						<%@ page import="datenbank.container.*" %>
 						<%@ page import="suche.*" %>
@@ -95,7 +95,7 @@
 						
 			        %>
 			        </form>
-			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl.jsp">
+			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl1.jsp">
 			        <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
                              <thead>
                                  <tr>
