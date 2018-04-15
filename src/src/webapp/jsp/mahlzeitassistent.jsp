@@ -173,85 +173,78 @@
 											<%@ page import="controller.servlets.*" %>
 											
 											
-											<div class="auswahlDrittel auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
-												 	<div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 1
-							                           </div>
-							                        </div>
+											<div class="auswahlDrittel auswahlerstesDrittel" style="position: relative; top: 15em; left: 2em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel erstesDrittel'>
-													<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
-												</div>
-							                    </a>
-							                    
-											</div>
-											<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
-												<%
-												String auswahl1 = null;
-												if (request.getSession().getAttribute("auswahl1")==null){
-													//donothing
-												}else{
-												auswahl1 = (String) request.getSession().getAttribute("auswahl1");
-												out.println(auswahl1);
-												}
-												%>
-											</div>
-											
-											
-											<div class='selektiereDrittel zweitesDrittel'>
-												<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
-											<div class="auswahlzweitesDrittel" style="position: absolute; top: 100px; left: 220px; width: 100%;">
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 2
-							                           </div>
-							                        </div>
-							                    </a>
-											</div>
-											</div>
-											<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
-												<%
-												String auswahl2 = null;
-												if (request.getSession().getAttribute("auswahl2")==null){
-													//donothing
-												}else{
-												auswahl2 = (String) request.getSession().getAttribute("auswahl2");
-												out.println(auswahl2);
-												}
-												%>
+														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
+														<div class="oeffnenText zeigeDrittelkategorie">
+															<p>Aendern</p>
+														</div>
+													</div>
+													<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
+													<%
+													String auswahl1 = null;
+													if (request.getSession().getAttribute("auswahl1")==null){
+														//donothing
+													}else{
+													auswahl1 = (String) request.getSession().getAttribute("auswahl1");
+													out.println(auswahl1);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
 											
-											<div class='selektiereDrittel drittesDrittel'>
-												<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240">
-											<div class="auswahldrittesDrittel" style="position: absolute; top: 250px; left: 50px; width: 100%">
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 3
-							                           </div>
-							                        </div>
-							                    </a>
+											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 15em; left: 20em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
+							                        <div class='selektiereDrittel zweitesDrittel'>
+														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate120" >
+													</div>
+													<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
+													<%
+													String auswahl2 = null;
+													if (request.getSession().getAttribute("auswahl2")==null){
+														//donothing
+													}else{
+													auswahl2 = (String) request.getSession().getAttribute("auswahl2");
+													out.println(auswahl2);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
+											
+											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: 20em; left: 5em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
+							                        <div class='selektiereDrittel drittesDrittel'>
+														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
+													</div>
+													<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
+													<%
+													String auswahl3 = null;
+													if (request.getSession().getAttribute("auswahl3")==null){
+														//donothing
+													}else{
+													auswahl3 = (String) request.getSession().getAttribute("auswahl3");
+													out.println(auswahl3);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
-											<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
-												<%
-												String auswahl3 = null;
-												if (request.getSession().getAttribute("auswahl3")==null){
-													//donothing
-												}else{
-												auswahl3 = (String) request.getSession().getAttribute("auswahl3");
-												out.println(auswahl3);
-												}
-												%>
-											</div>
-							
+											
+										
+										
+										
+										
+											
+											
+										
 								</section>
 					</div>
 					
 					
-					<div id='naehrstoffeframe'style="position: absolute; top: 700px;">
+					<div id='naehrstoffeframe'style="position: relative; top: 20em;">
 					<h3>Assistent Naehrstoffe</h3>
 					<section class="mahlzeitassistent">
 											<%@ page import="datenbank.container.*" %>

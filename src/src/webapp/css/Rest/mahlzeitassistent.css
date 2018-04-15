@@ -28,8 +28,8 @@
 	
 	.zeigeErstesDrittel{
 		position: absolute;
-		top: 280px;
-		left: 270px;
+		top: 120px;
+		left: 100px;
 	}
 	
 	.zeigeZweitesDrittel{
@@ -73,8 +73,8 @@
 	
 	.erstesDrittel{
 		position: absolute;
-		left: 200px;
-		top: 150px;
+		left: 0;
+		top: 0;
 	}
 	
 	.auswahlerstesDrittel{
@@ -86,14 +86,14 @@
 	
 	.zweitesDrittel{
 		position: absolute;
-		left: 400px;
-		top: 143px;
+		left: 0;
+		top: 0;
 	}
 		
 	.drittesDrittel{
 		position: absolute;
-		left: 305px;
-		top: 320px;
+		left: 0;
+		top: 0;
 	}
 	
 	.rotate120 {
@@ -128,7 +128,7 @@
 	
 	}
 	
-	.resp-sharing-button__link:hover > .selektiereDrittel { 
+	.oeffneAuswahl:hover > .selektiereDrittel { 
 	
 	    z-index: 2;
 	    -webkit-transition: all 200ms ease-in;
@@ -139,4 +139,16 @@
 	    -moz-transform: scale(1.2);
 	    transition: all 200ms ease-in;
 	    transform: scale(1.2);
+	}
+	
+	.oeffnenText{
+		color: pink;
+		display: none;
+		position: absolute;
+		top: 100px;
+		left: 100px;
+	}
+	
+	.oeffneAuswahl:hover > .selektiereDrittel > .oeffnenText { 
+		display: inline-block;
 	}
