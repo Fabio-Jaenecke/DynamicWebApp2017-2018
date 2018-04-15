@@ -40,7 +40,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
     	String auswahl=(String) session.getAttribute("auswahl");
-    	String auswahlkontext=(String) request.getSession().getAttribute("auswahlkontext");
+    	String auswahlkontext=(String) session.getAttribute("auswahlkontext");
     	
     	if (auswahl==null){
     		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
@@ -52,15 +52,26 @@ public class MahlzeitassistentServlet extends HttpServlet {
              System.out.println(request.getSession().getAttribute("auswahl"));
   	         return;
   	         
+    	} if (auswahlkontext==null){
+      		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
+      		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+               dispatcher.forward(request, response);
+               System.out.print("kontext:");
+               System.out.println(request.getSession().getAttribute("auswahlkontext"));
+               System.out.print("Auswahlkontextnull:");
+               System.out.println(request.getSession().getAttribute("auswahl"));
+    	         return;
+    	         
+  	         
     	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie1")) {
 	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
 	   		 session.setAttribute("auswahl1", auswahl);
 	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 	         dispatcher.forward(request, response);
 	         System.out.print("kontext:");
-            System.out.println(request.getSession().getAttribute("auswahlkontext"));
-            System.out.print("Auswahl11413412:");
-            System.out.println(request.getSession().getAttribute("auswahl"));
+             System.out.println(request.getSession().getAttribute("auswahlkontext"));
+             System.out.print("Auswahl11413412:");
+             System.out.println(request.getSession().getAttribute("auswahl1"));
 	         return;
 	     
     	}if (auswahlkontext.equals("kategorie1")) {

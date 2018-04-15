@@ -53,7 +53,7 @@
 <div class="main-container">
     <div class="main wrapper clearfix">
             <section>
-            <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
+            <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl.jsp">
 				<h3>Suche nach Kategorien</h3>
 						<%@ page import="datenbank.container.*" %>
 						<%@ page import="suche.*" %>
@@ -61,12 +61,7 @@
 						<%@ page import="controller.servlets.*" %>
 						<%
 						String auswahl = null;
-						 if (request.getParameter("auswahle")==null || "gehezurauswahl".equals(request.getParameter("auswahle"))){
-			        		//do nothing
-							}else{
-			                auswahl = request.getParameter("auswahle");
-			                session.setAttribute("auswahl", auswahl);
-			                }
+						 
 						%>
 						
 					<select onchange="this.form.submit()" name="kategorieauswahl">
@@ -86,6 +81,8 @@
 			        	//out.println("input field could not be validated");
                     
 					}else{
+						session.setAttribute( "auswahlkontext", "kategorie1" );
+						session.setAttribute("auswahl", "Gurke");
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
@@ -93,7 +90,7 @@
 						
 			        %>
 			        </form>
-			        <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
+			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl.jsp">
 			        <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
                              <thead>
                                  <tr>
@@ -123,6 +120,13 @@
 				                    	<%
 				                			}
 										}
+				               			if (request.getParameter("auswahle")==null || "gehezurauswahl".equals(request.getParameter("auswahle"))){
+							        		//do nothing
+											}else{
+							                auswahl = request.getParameter("auswahle");
+							                
+							                
+							                }
 					}
 				               			%>
 				                </tbody>

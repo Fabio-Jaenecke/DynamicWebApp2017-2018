@@ -120,11 +120,8 @@
 				<%@ page import="controller.servlets.*" %>		
                 <h2>Mahzeitsassistent</h2>
 				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
-                <% String auswahlkontext = "stupidjsp";
+                <% 
                 if (request.getParameter("auswaehler") == null) {
-		        	//Technically, this is not required:
-		        	//out.println("input field could not be validated");
-                	auswahlkontext = "come on";
 				%>
                 <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
                	
@@ -139,12 +136,9 @@
                 }	
                 %>
                 
-                <a href="${pageContext.request.contextPath}/mahlzeitassistent/?auswahlkontext=kategorie1">kategorie1click</a>
-	 		    <% auswahlkontext = request.getParameter( "auswahlkontext" ); %>
-                <% session.setAttribute( "auswahlkontext", auswahlkontext );
-                
-				session.setAttribute("auswahl", "gehezurauswahl");
-				
+                <a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl.jsp">kategorie1click</a>
+	 		    <%
+	 		    session.setAttribute("auswahl", "gehezurauswahl");
 				%>	
 				<%--
 				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
