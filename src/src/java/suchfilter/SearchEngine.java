@@ -81,6 +81,7 @@ public class SearchEngine {
 
 	/*
 	 * searches site for certain tag
+	 * TODO look if text in element contains seQuence of keyword
 	 */
 	public ArrayList<Element> searchForTag(Document site, String tag) {
 		ArrayList<Element> results = new ArrayList<>();
