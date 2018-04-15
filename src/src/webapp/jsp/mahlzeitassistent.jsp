@@ -111,7 +111,7 @@
                 <h2>Mahzeitsassistent</h2>
 
                 <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwaehlen oder zu aendern.<br>
-                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoff Assistent waehlen.</p>
+                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoffassistenten waehlen.</p>
 
                 
 				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
