@@ -92,6 +92,7 @@
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
 						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+						session.setAttribute("kategorienname2", kategorienname);
 						
 			        %>
 			        </form>

@@ -92,7 +92,7 @@
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
 						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
-						
+						session.setAttribute("kategorienname1", kategorienname);
 			        %>
 			        </form>
 			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp">

@@ -92,7 +92,7 @@
 						NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
 						naehrstoffauftrag.searchForString(naehrstoffname);
 						ArrayList<Lebensmitteldaten> daten = naehrstoffauftrag.getLebensmittel();
-						
+						session.setAttribute("naehrstoffname2", naehrstoffname);
 			        %>
 			        </form>
 			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp">

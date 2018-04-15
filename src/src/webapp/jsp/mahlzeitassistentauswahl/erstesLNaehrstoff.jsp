@@ -92,6 +92,7 @@
 						NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
 						naehrstoffauftrag.searchForString(naehrstoffname);
 						ArrayList<Lebensmitteldaten> daten = naehrstoffauftrag.getLebensmittel();
+						session.setAttribute("naehrstoffname1", naehrstoffname);
 						
 			        %>
 			        </form>
