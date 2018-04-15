@@ -170,7 +170,6 @@
 														}
 														
 														%>
-														
 														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>Aendern</p>
 														</div>
@@ -190,19 +189,42 @@
 											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel zweitesDrittel'>
-														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate120" >
+														<%
+														String auswahl2 = null;
+														if (request.getSession().getAttribute("auswahl2")==null){
+															//do nothing
+														}else{
+														auswahl2 = (String) request.getSession().getAttribute("auswahl2");
+														}
+														if (auswahl2==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate120" >
+															<%
+														
+														}else{
+															String kategorienname2 = null;
+															if (request.getSession().getAttribute("kategorienname2")==null){
+																//do nothing
+															}else{
+															kategorienname2 = (String) request.getSession().getAttribute("kategorienname2");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname2);%>circle.png" alt="kategoriencircle" class="rotate120" >
+															<%
+														}
+														
+														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>Aendern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
 													<%
-													String auswahl2 = null;
-													if (request.getSession().getAttribute("auswahl2")==null){
-														//do nothing
+													if (auswahl2==null){
+														// print nothing
 													}else{
-													auswahl2 = (String) request.getSession().getAttribute("auswahl2");
-													out.println(auswahl2);
+														out.println(auswahl2);
 													}
 													%>
 													</div>
@@ -212,19 +234,42 @@
 											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel drittesDrittel'>
-														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
+														<%
+														String auswahl3 = null;
+														if (request.getSession().getAttribute("auswahl3")==null){
+															//do nothing
+														}else{
+														auswahl3 = (String) request.getSession().getAttribute("auswahl3");
+														}
+														if (auswahl2==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
+															<%
+														
+														}else{
+															String kategorienname3 = null;
+															if (request.getSession().getAttribute("kategorienname3")==null){
+																//do nothing
+															}else{
+															kategorienname3 = (String) request.getSession().getAttribute("kategorienname3");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname3);%>circle.png" alt="kategoriencircle" class="rotate240" >
+															<%
+														}
+														
+														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>Aendern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
 													<%
-													String auswahl3 = null;
-													if (request.getSession().getAttribute("auswahl3")==null){
-														//do nothing
+													if (auswahl3==null){
+														// print nothing
 													}else{
-													auswahl3 = (String) request.getSession().getAttribute("auswahl3");
-													out.println(auswahl3);
+														out.println(auswahl3);
 													}
 													%>
 													</div>
