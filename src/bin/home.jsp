@@ -26,9 +26,9 @@
                <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
                <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
                <link rel="apple-touch-icon" href="../imgs/apple-touch-icon.png">
-			   <link rel="stylesheet" href="../css/normalize.min.css">
-			   <link rel="stylesheet" href="../css/Main/main.css">
-			   <link rel="stylesheet" href="../css/Rest/lebensmittelkategorie.css">
+			   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.min.css">
+			   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Main/main.css">
+			   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Rest/lebensmittelkategorie.css">
 			   <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
 			   <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
                <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
