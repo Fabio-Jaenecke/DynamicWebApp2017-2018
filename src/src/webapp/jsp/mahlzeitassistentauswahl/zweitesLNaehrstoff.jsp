@@ -70,28 +70,28 @@
 			                }
 					
 						%>
-					<select onchange="this.form.submit()" name="kategorieauswahl">
-								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
-			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
-			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
-			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
-			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
-			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
-			        </select>
+					<select onchange="this.form.submit()" name="naehrstoffauswahl">
+								<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
+					
+			           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
+
+			           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Staerkebeilage")){out.println("selected");} %> value="Staerkebeilage">Staerkebeilage</option>
+
+			           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
+					
+					</select>
 						<%
-						String kategorienname = null;
-			        if (request.getParameter("kategorieauswahl") == null) {
+						String naehrstoffname = null;
+			        if (request.getParameter("naehrstoffauswahl") == null) {
 			        	//Technically, this is not required:
 			        	//out.println("input field could not be validated");
                     
 					}else{
 						session.setAttribute("auswahlkontext", "naehrstoff2");
-						kategorienname = request.getParameter("kategorieauswahl");
-						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
-						kategorieauftrag.searchForString(kategorienname);
-						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+						naehrstoffname = request.getParameter("naehrstoffauswahl");
+						NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
+						naehrstoffauftrag.searchForString(naehrstoffname);
+						ArrayList<Lebensmitteldaten> daten = naehrstoffauftrag.getLebensmittel();
 						
 			        %>
 			        </form>
