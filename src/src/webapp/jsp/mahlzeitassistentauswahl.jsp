@@ -61,7 +61,7 @@
 						<%@ page import="controller.servlets.*" %>
 						<%
 						
-						String auswahl = "Birne";
+						String auswahl = "";
 						auswahl=(String) session.getAttribute("auswahl");
 						if (request.getParameter("auswahle")==null || "gehezurauswahl".equals(request.getParameter("auswahle"))){
 			        		//do nothing
@@ -92,7 +92,6 @@
                     
 					}else{
 						session.setAttribute( "auswahlkontext", "kategorie1" );
-						
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
@@ -116,7 +115,7 @@
 				               				
 											
 										
-				                		// for the next category call we have to clear the arraylist of lebensmittel
+				                		
 					                		if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
 												String lebensmittelname = lebensmitteleintrag.getLname();
 					                		%>
@@ -131,7 +130,8 @@
 				                    			}
 					                		
 											}
-				               					
+				               		    // for the next category call we have to clear the arraylist
+				               			daten.clear();
 										}
 				               			%>
 				                </tbody>
@@ -156,270 +156,6 @@
 			         <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
 		            	<input type='submit' name="Bestaetigen" value="Bestaetigen">
 		            </form>
-			        <div>
-            		<select name='kategorieauswahl2' class="dropdown2drittel">
-					
-													<option value="" disabled selected>Wählen Sie eine Kategorie</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
-					
-								           			<option <%if (request.getParameter("kategorieauswahl2") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl2").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
-					
-											</select>
-											</div>
-											<div class='zeigeDrittel zeigeZweitesDrittel'>
-											<%
-										
-											String kategorienname2 = "";
-					
-											if (request.getParameter("kategorieauswahl2") == null) {
-					
-												out.println("wähle&#8599;");
-					
-											
-					
-											}else{
-					
-												kategorienname2 = request.getParameter("kategorieauswahl2");
-					
-												KategoriensucheDao kategorieauftrag2 = new KategoriensucheDao();
-					
-												kategorieauftrag2.searchForString(kategorienname2);
-					
-												ArrayList<Lebensmitteldaten> daten2 = kategorieauftrag2.getLebensmittel();
-												
-												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
-												
-					
-												
-											}
-					
-											%>
-											</div>
-						<select name='kategorieauswahl3' class="dropdown3drittel">
-				
-												<option value="" disabled selected>Wählen Sie eine Kategorie</option>
-				
-							           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
-				
-							           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
-				
-							           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
-				
-							           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Huelsenfruechte")){out.println("selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-				
-							           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Nuesse und Samen")){out.println("selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-				
-							           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
-				
-							           			<option <%if (request.getParameter("kategorieauswahl3") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl3").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
-				
-										</select>
-										</div>
-										<div class='zeigeDrittel zeigeDrittesDrittel'>
-										<%
-									
-										String kategorienname3 = "";
-				
-										if (request.getParameter("kategorieauswahl3") == null) {
-				
-											out.println("&#8595;wähle");
-										
-										}else{
-				
-											kategorienname3 = request.getParameter("kategorieauswahl3");
-				
-											KategoriensucheDao kategorieauftrag3 = new KategoriensucheDao();
-				
-											kategorieauftrag3.searchForString(kategorienname3);
-				
-											ArrayList<Lebensmitteldaten> daten3 = kategorieauftrag3.getLebensmittel();
-											
-											//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
-											boolean gefunden = false;
-											for(Lebensmitteldaten lebensmitteleintrag : daten3){	
-												if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
-													out.println(lebensmitteleintrag.getLname());
-													gefunden = true;
-												}
-												
-											}	
-											//if nothing is found:
-											if (gefunden==false){
-												out.println("empty");
-											}
-				
-											// for the next category call we have to clear the arraylist of lebensmittel
-											kategorieauftrag3.clearLebensmittel();
-										}
-										%>
-										</div>
-										<div>
-										<select name='naehrstoffauswahl' class="dropdown1drittel">
-					
-													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Staerkebeilage")){out.println("selected");} %> value="Staerkebeilage">Staerkebeilage</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
-					
-											</select>
-											</div>
-											<div class='zeigeDrittel zeigeErstesDrittel'>
-											<%
-										
-											String naehrstoffname = "";
-					
-											if (request.getParameter("naehrstoffauswahl") == null) {
-					
-												out.println("&#8598;wähle");
-					
-											}else{
-					
-												naehrstoffname = request.getParameter("naehrstoffauswahl");
-					
-												NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
-					
-												naehrstoffauftrag.searchForString(naehrstoffname);
-					
-												ArrayList<Lebensmitteldaten> daten = naehrstoffauftrag.getLebensmittel();
-												
-												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
-												boolean gefunden = false;
-												for(Lebensmitteldaten lebensmitteleintrag : daten){	
-													if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
-														out.println(lebensmitteleintrag.getLname());
-														gefunden = true;
-													}
-												}	
-												//if nothing is found:
-												if (gefunden==false){
-													out.println("empty");
-												}
-					
-												// for the next category call we have to clear the arraylist of lebensmittel
-												naehrstoffauftrag.clearLebensmittel();
-											}
-					
-											%>
-											</div>
-											<div>
-											<select name='naehrstoffauswahl2' class="dropdown2drittel">
-					
-													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl2") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl2").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl2") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl2").equals("Staerkebeilage")){out.println("selected");} %> value="Staerkebeilage">Staerkebeilage</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl2") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl2").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
-					
-											</select>
-											</div>
-											<div class='zeigeDrittel zeigeZweitesDrittel'>
-											<%
-										
-											String naehrstoffname2 = "";
-														
-											if (request.getParameter("naehrstoffauswahl2") == null) {
-					
-												out.println("wähle&#8599;");
-					
-											
-					
-											}else{
-					
-												naehrstoffname2 = request.getParameter("naehrstoffauswahl2");
-					
-												NaehrstoffsucheDao naehrstoffauftrag2 = new NaehrstoffsucheDao();
-					
-												naehrstoffauftrag2.searchForString(naehrstoffname2);
-					
-												ArrayList<Lebensmitteldaten> daten2 = naehrstoffauftrag2.getLebensmittel();
-												
-												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
-												boolean gefunden = false;
-												for(Lebensmitteldaten lebensmitteleintrag : daten2){	
-													if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
-														out.println(lebensmitteleintrag.getLname());
-														gefunden = true;
-													}
-												}	
-												//if nothing is found:
-												if (gefunden==false){
-													out.println("empty");
-												}
-					
-												// for the next category call we have to clear the arraylist of lebensmittel
-												naehrstoffauftrag2.clearLebensmittel();
-											}
-					
-											%>
-											</div>
-											<div>
-											<select name='naehrstoffauswahl3' class="dropdown3drittel">
-					
-													<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl3") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl3").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl3") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl3").equals("Staerkebeilage")){out.println("selected");} %> value="Staerkebeilage">Staerkebeilage</option>
-					
-								           			<option <%if (request.getParameter("naehrstoffauswahl3") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl3").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
-					
-											</select>
-											</div>
-											<div class='zeigeDrittel zeigeDrittesDrittel'>
-											<%
-										
-											String naehrstoffname3 = "";
-					
-											if (request.getParameter("naehrstoffauswahl3") == null) {
-					
-												out.println("&#8595;wähle");
-					
-											
-					
-											}else{
-					
-												naehrstoffname3 = request.getParameter("naehrstoffauswahl3");
-					
-												NaehrstoffsucheDao naehrstoffauftrag3 = new NaehrstoffsucheDao();
-					
-												naehrstoffauftrag3.searchForString(naehrstoffname3);
-					
-												ArrayList<Lebensmitteldaten> daten3 = naehrstoffauftrag3.getLebensmittel();
-												
-												//give a result if a Lebensmittel has either karenzphase or dauerernaehrug gut
-												boolean gefunden = false;
-												for(Lebensmitteldaten lebensmitteleintrag : daten3){	
-													if((lebensmitteleintrag.getKarenzphase().toString().equals("gut") && gefunden==false) || (lebensmitteleintrag.getDauerernaehrung().toString().equals("gut") && gefunden==false)){
-														out.println(lebensmitteleintrag.getLname());
-														gefunden = true;
-													}
-												}	
-												//if nothing is found:
-												if (gefunden==false){
-													out.println("empty");
-												}
-					
-												// for the next category call we have to clear the arraylist of lebensmittel
-												naehrstoffauftrag3.clearLebensmittel();
-											}
-											%>
-											</div>
             </section>
             
     </div>
