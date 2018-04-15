@@ -164,6 +164,7 @@
 			if (request.getParameter("radiobutton") == null) {/*its not there*/
 				} else if(request.getParameter("radiobutton").equals("kategorienframe")) { --%>
 					<div id='kategorienframe'>
+					<h3>Assistent Kategorien</h3>
 					     <section class="mahlzeitassistent">
 											<%@ page import="datenbank.container.*" %>
 					
@@ -253,7 +254,8 @@
 					</div>
 					
 					
-					<div id='naehrstoffeframe'>
+					<div id='naehrstoffeframe'style="position: absolute; top: 700px;">
+					<h3>Assistent Naehrstoffe</h3>
 					<section class="mahlzeitassistent">
 											<%@ page import="datenbank.container.*" %>
 					
@@ -288,6 +290,8 @@
 												%>
 											</div>
 											
+											<div class='selektiereDrittel zweitesDrittel'>
+											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate120">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp" style='color: white;' >
@@ -311,6 +315,8 @@
 												%>
 											</div>
 											
+											<div class='selektiereDrittel drittesDrittel'>
+											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate240">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
 
 												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" style='color: white;' >
