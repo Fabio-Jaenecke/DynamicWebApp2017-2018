@@ -177,7 +177,7 @@
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
 											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
 
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl1.jsp" style='color: white;' >
+												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
 												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 							                                Auswahl 1
