@@ -185,7 +185,7 @@
 							                        </div>
 							                    </a>
 											</div>
-												</div>
+											</div>
 											<div class='zeigeDrittel zeigeErstesDrittel'>
 												<%
 												String auswahl1 = null;
@@ -201,22 +201,58 @@
 											
 											<div class='selektiereDrittel zweitesDrittel'>
 											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
-												<p></p>
-												<a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl2.jsp" class="auswahl">Waehle 2tes Lebensmittel aus kategorie</a>
+											<div class="auswahlzweitesDrittel" style="position: absolute; top: 100px; left: 600px">
+
+												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
+												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+							                                Auswahl 2
+							                           </div>
+							                        </div>
+							                    </a>
+											</div>
+											</div>
+											<div class='zeigeDrittel zeigeZweitesDrittel'>
+												<%
+												String auswahl2 = null;
+												if (request.getSession().getAttribute("auswahl2")==null){
+													//donothing
+												}else{
+												auswahl2 = (String) request.getSession().getAttribute("auswahl2");
+												out.println(auswahl2);
+												}
+												%>
 											</div>
 											
 											<div class='selektiereDrittel drittesDrittel'>
-											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate240'>
-												<p></p>
-												<table>
-												<td><a href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl3.jsp" class="auswahl">Waehle 3tes Lebensmittel aus kategorie</a>
-												</td>
-												</table>
+											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate240">
+											<div class="auswahldrittesDrittel" style="position: absolute; top: 400px; left: 200px">
+
+												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
+												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+							                                Auswahl 3
+							                           </div>
+							                        </div>
+							                    </a>
 											</div>
+											</div>
+											<div class='zeigeDrittel zeigeDrittesDrittel'>
+												<%
+												String auswahl3 = null;
+												if (request.getSession().getAttribute("auswahl3")==null){
+													//donothing
+												}else{
+												auswahl3 = (String) request.getSession().getAttribute("auswahl3");
+												out.println(auswahl3);
+												}
+												%>
+											</div>
+							
 								</section>
 					</div>
 					
-					<%-- PUT INTO NEW JSP:
+					
 					<div id='naehrstoffeframe'>
 					<section class="mahlzeitassistent">
 											<%@ page import="datenbank.container.*" %>
@@ -229,52 +265,78 @@
 											
 											<div class='selektiereDrittel erstesDrittel'>
 											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
-											<p>hier</p>
-											<%
-							                session.setAttribute("auswahl", "gehezurauswahl");
-											
-											if (request.getSession().getAttribute("auswahl4")==null){
-								        		 //do nothing
-								        	 }else{
-								        		 out.println("Ausgewaehltes Lebensmittel4: " + request.getSession().getAttribute("auswahl4"));
-								        	 }
-											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
+											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
+
+												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp" style='color: white;' >
+												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+							                                Auswahl 1
+							                           </div>
+							                        </div>
+							                    </a>
 											</div>
-											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class='rotate120'>
-											<p>hier</p>
-											<%
-							                session.setAttribute("auswahl", "gehezurauswahl");
-											
-											if (request.getSession().getAttribute("auswahl5")==null){
-								        		 //do nothing
-								        	 }else{
-								        		 out.println("Ausgewaehltes Lebensmittel5: " + request.getSession().getAttribute("auswahl5"));
-								        	 }
-											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
 											</div>
-											<div class='selektiereDrittel drittesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class='rotate240'>
-											<p>hier</p>
-											<%
-							                session.setAttribute("auswahl", "gehezurauswahl");
+											<div class='zeigeDrittel zeigeErstesDrittel'>
+												<%
+												String auswahl4 = null;
+												if (request.getSession().getAttribute("auswahl4")==null){
+													//donothing
+												}else{
+												auswahl4 = (String) request.getSession().getAttribute("auswahl4");
+												out.println(auswahl4);
+												}
+												%>
+											</div>
 											
-											if (request.getSession().getAttribute("auswahl6")==null){
-								        		 //do nothing
-								        	 }else{
-								        		 out.println("Ausgewaehltes Lebensmittel6: " + request.getSession().getAttribute("auswahl6"));
-								        	 }
-											%>
-											<a href="${pageContext.request.contextPath}/mahlzeitassistent/" class="auswahl">auswaehlen</a>
+											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
+
+												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp" style='color: white;' >
+												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+							                                Auswahl 2
+							                           </div>
+							                        </div>
+							                    </a>
+											</div>
+											</div>
+											<div class='zeigeDrittel zeigeErstesDrittel'>
+												<%
+												String auswahl5 = null;
+												if (request.getSession().getAttribute("auswahl5")==null){
+													//donothing
+												}else{
+												auswahl5 = (String) request.getSession().getAttribute("auswahl5");
+												out.println(auswahl5);
+												}
+												%>
+											</div>
+											
+											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
+
+												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" style='color: white;' >
+												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+							                                Auswahl 3
+							                           </div>
+							                        </div>
+							                    </a>
+											</div>
+											</div>
+											<div class='zeigeDrittel zeigeErstesDrittel'>
+												<%
+												String auswahl6 = null;
+												if (request.getSession().getAttribute("auswahl6")==null){
+													//donothing
+												}else{
+												auswahl6 = (String) request.getSession().getAttribute("auswahl6");
+												out.println(auswahl6);
+												}
+												%>
 											</div>
 																		
 								</section>	
-				<%
-				}
-				%>
-			</form>--%>
+				
+			</form>
 		</div>
 	</div>
 
