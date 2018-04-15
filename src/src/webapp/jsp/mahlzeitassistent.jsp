@@ -110,9 +110,8 @@
 				<%@ page import="controller.servlets.*" %>		
                 <h2>Mahzeitsassistent</h2>
 
-                <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwaehlen oder zu aendern.</p>
-                
-                <p>Sie koennen zwischen dem Kategorienassisten und dem Naehrstoff Assistent waehlen</p>
+                <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwaehlen oder zu aendern.<br>
+                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoff Assistent waehlen.</p>
 
                 
 				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
@@ -201,11 +200,11 @@
 							                    </a> 
 											</div>
 											
-											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 15.5em">
+											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel zweitesDrittel'>
 														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate120" >
-														<div class="oeffnenText zeigeDrittelkategorie" style="left: 2.2em;">
+														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>Aendern</p>
 														</div>
 													</div>
@@ -223,11 +222,11 @@
 							                    </a> 
 											</div>
 											
-											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: 0; left: 9em">
+											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel drittesDrittel'>
 														<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
-														<div class="oeffnenText zeigeDrittelkategorie" style="left: 2.6em;">
+														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>Aendern</p>
 														</div>
 													</div>
@@ -288,7 +287,7 @@
 							                    </a> 
 											</div>
 											
-											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 15.5em">
+											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel zweitesDrittel'>
 														<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate120" >
@@ -310,7 +309,7 @@
 							                    </a> 
 											</div>
 											
-											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: 0; left: 9em">
+											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel drittesDrittel'>
 														<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate240" >

@@ -1,23 +1,22 @@
+	.kategorien {
+		position: relative;
+	}
+	
+	.naehrstoffe {
+		position: relative;
+		margin-top: 25em;
+	}
+	
 	.zeigeDrittelkategorie{
 		color: white;
 		font-size: x-large;
 		font-weight: bold;
-		background: #6fa8dc;
-		background: -moz-radial-gradient(center, ellipse cover, #6fa8dc 0%, #002060 99%);
-		background: -webkit-radial-gradient(center, ellipse cover, #6fa8dc 0%,#002060 99%);
-		background: radial-gradient(ellipse at center, #6fa8dc 0%,#002060 99%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002060', endColorstr='#6fa8dc',GradientType=1 );
 	}
 	
 	.zeigeDrittelnaehrstoff{
 		color: white;
 		font-size: x-large;
 		font-weight: bold;
-		background: #fff;
-		background: -moz-radial-gradient(center, ellipse cover, #fff 0%, #fdc818 100%);
-		background: -webkit-radial-gradient(center, ellipse cover, #fff 0%,#fdc818 100%);
-		background: radial-gradient(ellipse at center, #fff 0%,#fdc818 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fdc818',GradientType=1 );
 	}
 	
 	.erstelleMahlzeit{
@@ -35,7 +34,7 @@
 	.zeigeZweitesDrittel{
 		position: absolute;
 		top: 125px;
-		left: 80px;
+		left: 60px;
 	}
 	
 	.zeigeDrittesDrittel{
@@ -112,7 +111,7 @@
 	}
 	
 	.selektiereDrittel {
-		 display:inline-block;
+		display:inline-block;
 	    border:0;
 	    width:196px;
 	    height:210px;
@@ -141,23 +140,50 @@
 	    transform: scale(1.2);
 	}
 	
-	.oeffnenText{
-		color: pink;
+	.oeffneAuswahl:hover > .erstesDrittel { 
+		-webkit-transform: translate(-20px, -20px); 
+		-ms-transform: translate(-20px, -20px);    
+		-moz-transform: translate(-20px, -20px); 
+		transform: translate(-20px, -20px); 
+	}
+	
+	.oeffneAuswahl:hover > .zweitesDrittel {
+		-webkit-transform: translate(20px, -20px); 
+		-ms-transform: translate(20px, -20px);    
+		-moz-transform: translate(20px, -20px); 
+		transform: translate(20px, -20px); 
+	}
+	
+	.oeffneAuswahl:hover > .drittesDrittel {
+		-webkit-transform: translate(0, 20px); 
+		-ms-transform: translate(0, 20px);  
+		-moz-transform: translate(0, 20px);
+		transform: translate(0, 20px);
+	}
+	
+	.oeffnenText {
+		color: red;
 		display: none;
 		position: absolute;
+	}
+	
+	.erstesDrittel > .oeffnenText{
 		top: 100px;
-		left: 90px;
+		left: 75px;
+	}
+	
+	.zweitesDrittel > .oeffnenText{
+		top: 100px;
+		left: 2.4em;
+	}
+	
+	.drittesDrittel > .oeffnenText{
+		top: 100px;
+		left: 2.6em;
 	}
 	
 	.oeffneAuswahl:hover > .selektiereDrittel > .oeffnenText { 
 		display: inline-block;
 	}
 	
-	.kategorien {
-		position: relative;
-	}
 	
-	.naehrstoffe {
-		position: relative;
-		margin-top: 25em;
-	}
