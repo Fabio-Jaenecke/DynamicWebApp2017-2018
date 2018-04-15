@@ -151,13 +151,14 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	     */    
     	}else{
     		/*error - something went wrong */
-             String nextJSP = "/home.jsp";
+             String nextJSP = "/jsp/mahlzeitassistent.jsp";
              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
              dispatcher.forward(request, response);
              System.out.print("kontext:");
              System.out.println(request.getSession().getAttribute("auswahlkontext"));
              System.out.print("Auswahl:");
              System.out.println(request.getSession().getAttribute("auswahl"));
+             System.out.print("Error:");
              return;
     	}
 	}
