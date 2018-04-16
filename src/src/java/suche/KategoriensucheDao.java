@@ -38,8 +38,8 @@ public class KategoriensucheDao {
 	 */
 	public void searchForString(String kategorienname) {
 		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN KATZUGEHOERIGKEIT k "
-				+ "ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex = lk.kindex " + "where lk.Kname= '"
-				+ kategorienname + "';";
+				+ "ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex = lk.kindex " + "where lower(lk.Kname)= '"
+				+ kategorienname.toLowerCase() + "';";
 		try {
 			ResultSet result = query.getResult(selectSQL);
 			while (result.next()) {
