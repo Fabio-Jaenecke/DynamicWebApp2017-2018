@@ -276,14 +276,9 @@
 							                    </a> 
 											</div>
 											
-										
-										
-										
-										
 											
-											
-										
 								</section>
+								
 					</div>
 					
 					
@@ -432,10 +427,44 @@
 							                    </a> 
 											</div>				
 								</section>	
-			</form>
+							</div>
+			<footer>
+               <h3>Zu den Rezepten:</h3>
+               <a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
+            </footer>				
+			</article>
+		 	
+			<aside>
+				<h3>Legende</h3>
+				<div class='my-legend'>
+					<div class='legend-title'>Kategorien:</div>
+					<div class='legend-scale'>
+					  <ul class='legend-labels'>
+					    <li><span style='background:#FF7F7F;'></span>Fleisch</li>
+					    <li><span style='background:#3EAC33;'></span>Obst</li>
+					    <li><span style='background:#00933A;'></span>Gemuese</li>
+					    <li><span style='background:#FEC576;'></span>Huelsenfruechte</li>
+					    <li><span style='background:#D1B89B;'></span>Nuesse und Samen</li>
+					    <li><span style='background:#BFD1E0;'></span>Fisch</li>
+					    <li><span style='background:#A2D3FF;'></span>Milch und Milchprodukte</li>
+					  </ul>
+					</div>
+				</div>
+				<div class='my-legend'>
+					<div class='legend-title'>Naehrstoffe:</div>
+					<div class='legend-scale'>
+					  <ul class='legend-labels'>
+					    <li><span style='background:#FFEBE4;'></span>Proteine</li>
+					    <li><span style='background:#E8E9FF;'></span>Staerkebeilage</li>
+					    <li><span style='background:#E4FFF2;'></span>Vitamine</li>
+					  </ul>
+					</div>
+				</div>
+			</aside>
 		</div>
-	</div>
-
+	<!-- #main -->
+</div>
+	
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 <script>window.jQuery || document.write('<script src="${pageContext.request.contextPath}/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
