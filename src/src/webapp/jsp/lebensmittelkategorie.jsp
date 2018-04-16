@@ -52,6 +52,121 @@
 <div class="main-container">
     <div class="main wrapper clearfix">
         <article>
+       		<form method="get" action="${pageContext.request.contextPath}/lebensmittel/">
+	            		<div>
+	            		<h3>Lebensmittelliste</h3>
+	            			
+    						
+    						<table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
+	                             <thead>
+	                             	<tr>
+	                                    <th><input type="submit" name="desc" value="desc"> <input type="submit" name="asc" value="asc"></th>
+	                                    <th><input type="submit" name="desc" value="desc"><input type="submit" name="asc" value="asc"></th>
+	                                    <th><input type="submit" name="desc" value="desc"><input type="submit" name="asc" value="asc"></th>
+	                                 </tr>
+	                                 <tr>
+	                                    <th>Lebensmittel</th>
+	                                    <th>Karenzphase</th>
+	                                    <th>Dauerernaehrung</th>
+	                                 </tr>
+	                              </thead>
+			           		  <%@ page import ="suche.*" %>
+			           		  <%@ page import="datenbank.container.*" %>
+							  <%@ page import="java.util.ArrayList" %>
+			           		  <%
+			           	String myvariable = null;
+			           	if(request.getParameter("desc")==null){
+			           		//donothing
+			           		
+			           	}else{
+			           		myvariable = request.getParameter("desc");
+			           	}
+			           	
+			           	if(request.getParameter("asc")==null){
+			           		//donothing
+			           		
+			           	}else{
+			           		myvariable = request.getParameter("asc");
+			           	}
+			           	
+			           	if (request.getParameter("desc")==null && request.getParameter("asc")==null){
+			           		SortiererDao sortierer = new SortiererDao();
+							
+				           	
+				           	//Standard:
+				           	sortierer.searchForString("LName", "asc");
+				           	
+				           	
+							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
+				            
+						    %>
+						     
+	                              <tbody>
+					                
+					                <%
+					                for(Lebensmitteldaten lebensmitteleintrag : daten){
+					                		out.println("<tr>");
+					                   		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getLname());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getKarenzphase());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getDauerernaehrung());
+					                		out.println("</td>");
+					                		out.println("</tr>");
+										}
+				        			// for the next category call we have to clear the arraylist of lebensmittel
+				        			sortierer.clearLebensmittel();
+				        			
+					                %>
+					                </tbody>
+				            </table>
+			            <%
+			           	}else{
+			           	
+			           	SortiererDao sortierer = new SortiererDao();
+						
+			           	
+			           	//TODO: SORTIERE FUER "Dauerernaehrung" und "Karenzphase" (hier anstatt "LName")
+			           	// und verstehen, wieso dieser Parameter angepasst werden muss.
+			           	sortierer.searchForString("LName", myvariable);
+			           	
+			           	
+						ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
+			            
+					    %>
+					     
+                              <tbody>
+				                
+				                <%
+				                for(Lebensmitteldaten lebensmitteleintrag : daten){
+				                		out.println("<tr>");
+				                   		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getLname());
+				                		out.println("</td>");
+				                		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getKarenzphase());
+				                		out.println("</td>");
+				                		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getDauerernaehrung());
+				                		out.println("</td>");
+				                		out.println("</tr>");
+									}
+			        			// for the next category call we have to clear the arraylist of lebensmittel
+			        			sortierer.clearLebensmittel();
+			        			}
+				                %>
+				                </tbody>
+			            </table>
+	            		</div>
+	           		</form>
+        
+        
+        
+            <%--
+            
             <header>
                 <h2>Definition von Frucht</h2>
                 <p>Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe, die aus einer Bluete
@@ -125,6 +240,8 @@
                     <li>DE = Dauerernaehrung</li>
                 </ul>
             </section>
+            
+            --%>
         </article>
         <aside>
             <h3>Häufige Zugriffe</h3>
