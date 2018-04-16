@@ -54,6 +54,7 @@
 
     <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	
+	
 </head>
 
 <body>
@@ -430,7 +431,7 @@
 							</div>
 			<footer>
                <h3>Zu den Rezepten:</h3>
-               <a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
+               <a class="link" href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
             </footer>				
 			</article>
 		 	
