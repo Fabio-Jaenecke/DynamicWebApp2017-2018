@@ -112,7 +112,9 @@
                 <h2>Mahzeitsassistent</h2>
 
                 <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwaehlen oder zu aendern.<br>
-                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoffassistenten waehlen.</p>
+                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoffassistenten waehlen.<br>
+                Es werden nur Lebensmittel angezeigt, welche als gut oder mittel vertraeglich eingestuft wurden.
+                </p>
 
                 
 				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
