@@ -33,7 +33,7 @@ public class SortiererDaoTest {
 		dao.searchForString("lebensmitteldaten", "asc");
 		
 		assertNotNull(dao.getLebensmittel());
-		assertTrue("Apfel".equals(dao.getLebensmittel().getLname()));
+		assertTrue("Apfel".equals(dao.getLebensmittel()));
 		
 		//Search attempt for a non existing entry
 		dao.searchForString("Dauerernaehrung", "desc");
