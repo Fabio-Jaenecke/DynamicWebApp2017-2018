@@ -1,5 +1,3 @@
-<!-- TODO: Refactor JSP and make use of MahlzeitassistentServlet for the Java code. -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 
     pageEncoding="UTF-8"%>
@@ -40,21 +38,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="../imgs/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/imgs/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="../css/normalize.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.min.css">
 
-    <link rel="stylesheet" href="../css/Main/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Main/main.css">
 
-    <link rel="stylesheet" href="../css/Rest/lebensmittelkategorie.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Rest/lebensmittelkategorie.css">
     
-    <link rel="stylesheet" href="../css/Rest/mahlzeitassistent.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Rest/mahlzeitassistent.css">
 
-    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
 
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
 
-    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	
 	
 </head>
 
@@ -111,6 +110,13 @@
         <article>
 				<%@ page import="controller.servlets.*" %>		
                 <h2>Mahzeitsassistent</h2>
+
+                <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwaehlen oder zu aendern.<br>
+                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoffassistenten waehlen.<br>
+                Es werden nur Lebensmittel angezeigt, welche als gut oder mittel vertraeglich eingestuft wurden.
+                </p>
+
+                
 				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
                 <% 
                 	if (request.getParameter("auswaehler") == null) {
@@ -126,44 +132,7 @@
 	 		    <%
 	 		    session.setAttribute("auswahl", "gehezurauswahl");
 				%>	
-				<%-- DELETE
-				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-                <%
-							                session.setAttribute("auswahl", "gehezurauswahl");
-											
-											if (request.getSession().getAttribute("auswahl1")==null){
-								        		 //do nothing
-								        	 }else{
-								        		 out.println("Ausgewaehltes Lebensmittel2: " + request.getSession().getAttribute("auswahl2"));
-								        	 }
-											
-											<input type='submit' name="auswahlsender" value="kategorie2">
-				</form>
-				
-                <p>Hier können Sie Ihre Mahlzeiten schön und leicht selber konfigurieren.</p>     
-                
-
-        </article>
-
-		<article style="min-width:100%;">
-            	<em>Anleitung:</em>
-            	<ol>
-            		<li>Waehlen Sie zwischen dem Assisten für Lebensmittelkategorien oder für Naehrstoffe.</li>
-            		<% if (request.getParameter("radiobutton") == null) {/*its not there*/}else if(request.getParameter("radiobutton").equals("kategorienframe")){out.println("<li>Waehlen Sie drei Lebensmittelkategorien aus der jeweiligen Auswahlliste aus.</li>");}%>
-            	    <% if (request.getParameter("radiobutton") == null) {/*its not there*/}else if(request.getParameter("radiobutton").equals("naehrstoffeframe")){out.println("<li>Waehlen Sie drei Naehrstoffkategorien aus der jeweiligen Auswahlliste aus.</li>");}%>
-            	</ol>
-            </article>
-      </div>
-      <div class="main wrapper clearfix">
-			<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-			    <input  type="radio" name="radiobutton"  id="kategorien" value="kategorienframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("kategorienframe")){out.println("checked");} %> onclick="this.form.submit()"/>
-				<label style="cursor:pointer;" for="kategorien">Kategorien</label><br>
-				<input type="radio"  name="radiobutton" id="naehrstoffe" value="naehrstoffeframe" <%if (request.getParameter("radiobutton") == null) {/*its not there*/} else if (request.getParameter("radiobutton").equals("naehrstoffeframe")){out.println("checked");} %> onclick="this.form.submit()"/>
-				<label style="cursor:pointer;" for="naehrstoffe">Naehrstoffe</label><br>
-			<%
-			if (request.getParameter("radiobutton") == null) {/*its not there*/
-				} else if(request.getParameter("radiobutton").equals("kategorienframe")) { --%>
-					<div id='kategorienframe'>
+					<div class='kategorien'>
 					<h3>Assistent Kategorien</h3>
 					     <section class="mahlzeitassistent">
 											<%@ page import="datenbank.container.*" %>
@@ -174,89 +143,151 @@
 											
 											<%@ page import="controller.servlets.*" %>
 											
-											<div class='selektiereDrittel erstesDrittel'>
-											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate0">
-											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
-
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 1
-							                           </div>
-							                        </div>
-							                    </a>
+											
+											<div class="auswahlDrittel auswahlerstesDrittel" style="position: relative; top: 15em; left: 2em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
+							                        <div class='selektiereDrittel erstesDrittel'>
+							                        	<%
+														String auswahl1 = null;
+														if (request.getSession().getAttribute("auswahl1")==null){
+															//do nothing
+														}else{
+														auswahl1 = (String) request.getSession().getAttribute("auswahl1");
+														}
+														if (auswahl1==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
+															<%
+														
+														}else{
+															String kategorienname1 = null;
+															if (request.getSession().getAttribute("kategorienname1")==null){
+																//do nothing
+															}else{
+															kategorienname1 = (String) request.getSession().getAttribute("kategorienname1");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname1);%>circle.png" alt="kategoriencircle" class="rotate0" >
+															<%
+														}
+														
+														%>
+														<div class="oeffnenText zeigeDrittelkategorie">
+															<p>Aendern</p>
+														</div>
+													</div>
+													<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
+													<%
+													if (auswahl1==null){
+														out.println("______");
+													}else{
+														out.println(auswahl1);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
+											
+											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" >
+							                        <div class='selektiereDrittel zweitesDrittel'>
+														<%
+														String auswahl2 = null;
+														if (request.getSession().getAttribute("auswahl2")==null){
+															//do nothing
+														}else{
+														auswahl2 = (String) request.getSession().getAttribute("auswahl2");
+														}
+														if (auswahl2==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate120" >
+															<%
+														
+														}else{
+															String kategorienname2 = null;
+															if (request.getSession().getAttribute("kategorienname2")==null){
+																//do nothing
+															}else{
+															kategorienname2 = (String) request.getSession().getAttribute("kategorienname2");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname2);%>circle.png" alt="kategoriencircle" class="rotate120" >
+															<%
+														}
+														
+														%>
+														<div class="oeffnenText zeigeDrittelkategorie">
+															<p>Aendern</p>
+														</div>
+													</div>
+													<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
+													<%
+													if (auswahl2==null){
+														out.println("______");
+													}else{
+														out.println(auswahl2);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
-											<div class='zeigeDrittel zeigeErstesDrittel'>
-												<%
-												String auswahl1 = null;
-												if (request.getSession().getAttribute("auswahl1")==null){
-													//donothing
-												}else{
-												auswahl1 = (String) request.getSession().getAttribute("auswahl1");
-												out.println(auswahl1);
-												}
-												%>
+											
+											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" >
+							                        <div class='selektiereDrittel drittesDrittel'>
+														<%
+														String auswahl3 = null;
+														if (request.getSession().getAttribute("auswahl3")==null){
+															//do nothing
+														}else{
+														auswahl3 = (String) request.getSession().getAttribute("auswahl3");
+														}
+														if (auswahl3==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
+															<%
+														
+														}else{
+															String kategorienname3 = null;
+															if (request.getSession().getAttribute("kategorienname3")==null){
+																//do nothing
+															}else{
+															kategorienname3 = (String) request.getSession().getAttribute("kategorienname3");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname3);%>circle.png" alt="kategoriencircle" class="rotate240" >
+															<%
+														}
+														
+														%>
+														<div class="oeffnenText zeigeDrittelkategorie">
+															<p>Aendern</p>
+														</div>
+													</div>
+													<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
+													<%
+													if (auswahl3==null){
+														out.println("______");
+													}else{
+														out.println(auswahl3);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
 											
 											
-											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class='rotate120'>
-											<div class="auswahlzweitesDrittel" style="position: absolute; top: 100px; left: 600px">
-
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 2
-							                           </div>
-							                        </div>
-							                    </a>
-											</div>
-											</div>
-											<div class='zeigeDrittel zeigeZweitesDrittel'>
-												<%
-												String auswahl2 = null;
-												if (request.getSession().getAttribute("auswahl2")==null){
-													//donothing
-												}else{
-												auswahl2 = (String) request.getSession().getAttribute("auswahl2");
-												out.println(auswahl2);
-												}
-												%>
-											</div>
-											
-											<div class='selektiereDrittel drittesDrittel'>
-											<img src="../imgs/thirdcircle.png" alt="thirdcircle" class="rotate240">
-											<div class="auswahldrittesDrittel" style="position: absolute; top: 400px; left: 200px">
-
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 3
-							                           </div>
-							                        </div>
-							                    </a>
-											</div>
-											</div>
-											<div class='zeigeDrittel zeigeDrittesDrittel'>
-												<%
-												String auswahl3 = null;
-												if (request.getSession().getAttribute("auswahl3")==null){
-													//donothing
-												}else{
-												auswahl3 = (String) request.getSession().getAttribute("auswahl3");
-												out.println(auswahl3);
-												}
-												%>
-											</div>
-							
 								</section>
+								
 					</div>
 					
 					
-					<div id='naehrstoffeframe'style="position: absolute; top: 700px;">
-					<h3>Assistent Naehrstoffe</h3>
-					<section class="mahlzeitassistent">
+					<div class='naehrstoffe' >
+					<h3 style="margin-top: -250px">Assistent Naehrstoffe</h3>
+					<section class="mahlzeitassistent" style="margin-top: -200px">
 											<%@ page import="datenbank.container.*" %>
 					
 											<%@ page import="suche.*" %>
@@ -264,93 +295,184 @@
 											<%@ page import="java.util.ArrayList" %>
 											
 											
-											
-											<div class='selektiereDrittel erstesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate0">
-											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
-
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 1
-							                           </div>
-							                        </div>
-							                    </a>
-											</div>
-											</div>
-											<div class='zeigeDrittel zeigeErstesDrittel'>
-												<%
-												String auswahl4 = null;
-												if (request.getSession().getAttribute("auswahl4")==null){
-													//donothing
-												}else{
-												auswahl4 = (String) request.getSession().getAttribute("auswahl4");
-												out.println(auswahl4);
-												}
-												%>
-											</div>
-											
-											<div class='selektiereDrittel zweitesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate120">
-											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
-
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 2
-							                           </div>
-							                        </div>
-							                    </a>
-											</div>
-											</div>
-											<div class='zeigeDrittel zeigeErstesDrittel'>
-												<%
-												String auswahl5 = null;
-												if (request.getSession().getAttribute("auswahl5")==null){
-													//donothing
-												}else{
-												auswahl5 = (String) request.getSession().getAttribute("auswahl5");
-												out.println(auswahl5);
-												}
-												%>
+											<div class="auswahlDrittel auswahlerstesDrittel" style="position: relative; top: 15em; left: 2em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp">
+							                        <div class='selektiereDrittel erstesDrittel'>
+														<%
+														String auswahl4 = null;
+														if (request.getSession().getAttribute("auswahl4")==null){
+															//do nothing
+														}else{
+														auswahl4 = (String) request.getSession().getAttribute("auswahl4");
+														}
+														if (auswahl4==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate0" >
+															<%
+														
+														}else{
+															String naehrstoffname1 = null;
+															if (request.getSession().getAttribute("naehrstoffname1")==null){
+																//do nothing
+															}else{
+															naehrstoffname1 = (String) request.getSession().getAttribute("naehrstoffname1");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname1);%>circle.png" alt="naehrstoffcircle" class="rotate0" >
+															<%
+														}
+														
+														%>
+														<div class="oeffnenText zeigeDrittelnaehrstoff">
+															<p>Aendern</p>
+														</div>
+													</div>
+													<div class='zeigeDrittelnaehrstoff zeigeErstesDrittel'>
+													<%
+													if (auswahl4==null){
+														out.println("______");
+													}else{
+														out.println(auswahl4);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
 											
-											<div class='selektiereDrittel drittesDrittel'>
-											<img src="../imgs/thirdcircleyellow.png" alt="thirdcircleyellow" class="rotate240">
-											<div class="auswahlerstesDrittel" style="position: absolute; top: 100px; left: -100px">
-
-												<a class="resp-sharing-button__link" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" style='color: white;' >
-												 <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
-							                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-							                                Auswahl 3
-							                           </div>
-							                        </div>
-							                    </a>
+											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp">
+							                        <div class='selektiereDrittel zweitesDrittel'>
+														<%
+														String auswahl5 = null;
+														if (request.getSession().getAttribute("auswahl5")==null){
+															//do nothing
+														}else{
+														auswahl5 = (String) request.getSession().getAttribute("auswahl5");
+														}
+														if (auswahl5==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate120" >
+															<%
+														
+														}else{
+															String naehrstoffname2 = null;
+															if (request.getSession().getAttribute("naehrstoffname2")==null){
+																//do nothing
+															}else{
+															naehrstoffname2 = (String) request.getSession().getAttribute("naehrstoffname2");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname2);%>circle.png" alt="naehrstoffcircle" class="rotate120" >
+															<%
+														}
+														
+														%>
+														<div class="oeffnenText zeigeDrittelnaehrstoff">
+															<p>Aendern</p>
+														</div>
+													</div>
+													<div class='zeigeDrittelnaehrstoff zeigeZweitesDrittel'>
+													<%
+													if (auswahl5==null){
+														out.println("______");
+													}else{
+														out.println(auswahl5);
+													}
+													%>
+													</div>
+							                    </a> 
 											</div>
-											</div>
-											<div class='zeigeDrittel zeigeErstesDrittel'>
-												<%
-												String auswahl6 = null;
-												if (request.getSession().getAttribute("auswahl6")==null){
-													//donothing
-												}else{
-												auswahl6 = (String) request.getSession().getAttribute("auswahl6");
-												out.println(auswahl6);
-												}
-												%>
-											</div>
-																		
+											
+											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
+												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" >
+							                        <div class='selektiereDrittel drittesDrittel'>
+														<%
+														String auswahl6 = null;
+														if (request.getSession().getAttribute("auswahl6")==null){
+															//do nothing
+														}else{
+														auswahl6 = (String) request.getSession().getAttribute("auswahl6");
+														}
+														if (auswahl6==null){
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate240" >
+															<%
+														
+														}else{
+															String naehrstoffname3 = null;
+															if (request.getSession().getAttribute("naehrstoffname3")==null){
+																//do nothing
+															}else{
+															naehrstoffname3 = (String) request.getSession().getAttribute("naehrstoffname3");
+															}
+															
+															%>
+															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname3);%>circle.png" alt="naehrstoffcircle" class="rotate240" >
+															<%
+														}
+														
+														%>
+														<div class="oeffnenText zeigeDrittelnaehrstoff">
+															<p>Aendern</p>
+														</div>
+													</div>
+													<div class='zeigeDrittelnaehrstoff zeigeDrittesDrittel'>
+													<%
+													if (auswahl6==null){
+														out.println("______");
+													}else{
+														out.println(auswahl6);
+													}
+													%>
+													</div>
+							                    </a> 
+											</div>				
 								</section>	
-				
-			</form>
+							</div>
+			<footer>
+               <h3>Zu den Rezepten:</h3>
+               <a class="link" href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
+            </footer>				
+			</article>
+		 	
+			<aside>
+				<h3>Legende</h3>
+				<div class='my-legend'>
+					<div class='legend-title'>Kategorien:</div>
+					<div class='legend-scale'>
+					  <ul class='legend-labels'>
+					    <li><span style='background:#FF7F7F;'></span>Fleisch</li>
+					    <li><span style='background:#3EAC33;'></span>Obst</li>
+					    <li><span style='background:#00933A;'></span>Gemuese</li>
+					    <li><span style='background:#FEC576;'></span>Huelsenfruechte</li>
+					    <li><span style='background:#D1B89B;'></span>Nuesse und Samen</li>
+					    <li><span style='background:#BFD1E0;'></span>Fisch</li>
+					    <li><span style='background:#A2D3FF;'></span>Milch und Milchprodukte</li>
+					  </ul>
+					</div>
+				</div>
+				<div class='my-legend'>
+					<div class='legend-title'>Naehrstoffe:</div>
+					<div class='legend-scale'>
+					  <ul class='legend-labels'>
+					    <li><span style='background:#FFEBE4;'></span>Proteine</li>
+					    <li><span style='background:#E8E9FF;'></span>Staerkebeilage</li>
+					    <li><span style='background:#E4FFF2;'></span>Vitamine</li>
+					  </ul>
+					</div>
+				</div>
+			</aside>
 		</div>
-	</div>
-
+	<!-- #main -->
+</div>
+	
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="${pageContext.request.contextPath}/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-<script src="../js/main.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 

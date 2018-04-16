@@ -1,9 +1,30 @@
-	.zeigeDrittel{
+	/*Positionierung der Assistenten*/
+	
+	.kategorien {
+		position: relative;
+	}
+	
+	.naehrstoffe {
+		position: relative;
+		margin-top: 25em;
+	}
+	
+	/*Positionierung der Drittel*/
+	
+	.zeigeDrittelkategorie{
 		color: white;
-		font-size: medium;
+		font-size: x-large;
 		font-weight: bold;
-		background-color: #6FA8DC;
-		padding: 10px;
+		max-width:100px;
+    	word-wrap:break-word;
+	}
+	
+	.zeigeDrittelnaehrstoff{
+		color: black;
+		font-size: x-large;
+		font-weight: bold;
+		max-width:100px;
+    	word-wrap:break-word;
 	}
 	
 	.erstelleMahlzeit{
@@ -14,20 +35,20 @@
 	
 	.zeigeErstesDrittel{
 		position: absolute;
-		top: 280px;
-		left: 270px;
+		top: 120px;
+		left: 90px;
 	}
 	
 	.zeigeZweitesDrittel{
 		position: absolute;
-		top: 280px;
-		left: 465px;
+		top: 125px;
+		left: 70px;
 	}
 	
 	.zeigeDrittesDrittel{
 		position: absolute;
-		top: 450px;
-		left: 375px;
+		top: 130px;
+		left: 80px;
 	}
 	
 	.mahlzeitassistent{
@@ -59,21 +80,30 @@
 	
 	.erstesDrittel{
 		position: absolute;
-		left: -50px;
-		top: 150px;
+		left: 0;
+		top: 0;
+	}
+	
+	.auswahlerstesDrittel{
+		position: absolute;
+		top: 125px; 
+		left: -100px;
+		
 	}
 	
 	.zweitesDrittel{
 		position: absolute;
-		left: 400px;
-		top: 143px;
+		left: 0;
+		top: 0;
 	}
 		
 	.drittesDrittel{
 		position: absolute;
-		left: 305px;
-		top: 320px;
+		left: 0;
+		top: 0;
 	}
+	
+	/*Transitions der Drittel */
 	
 	.rotate120 {
 			-webkit-transform: rotate(120deg);
@@ -89,3 +119,128 @@
 			-ms-transform: rotate(240deg);
 			transform: rotate(240deg);
 	}
+	
+	.selektiereDrittel {
+		display:inline-block;
+	    border:0;
+	    width:196px;
+	    height:210px;
+	    position: relative;
+	    -webkit-transition: all 200ms ease-in;
+	    -webkit-transform: scale(1); 
+	    -ms-transition: all 200ms ease-in;
+	    -ms-transform: scale(1); 
+	    -moz-transition: all 200ms ease-in;
+	    -moz-transform: scale(1);
+	    transition: all 200ms ease-in;
+	    transform: scale(1); 
+	
+	}
+	
+	.oeffneAuswahl:hover > .selektiereDrittel { 
+	
+	    z-index: 2;
+	    -webkit-transition: all 200ms ease-in;
+	    -webkit-transform: scale(1.2);
+	    -ms-transition: all 200ms ease-in;
+	    -ms-transform: scale(1.2);   
+	    -moz-transition: all 200ms ease-in;
+	    -moz-transform: scale(1.2);
+	    transition: all 200ms ease-in;
+	    transform: scale(1.2);
+	}
+	
+	.oeffneAuswahl:hover > .erstesDrittel { 
+		-webkit-transform: translate(-20px, -20px); 
+		-ms-transform: translate(-20px, -20px);    
+		-moz-transform: translate(-20px, -20px); 
+		transform: translate(-20px, -20px); 
+	}
+	
+	.oeffneAuswahl:hover > .zweitesDrittel {
+		-webkit-transform: translate(20px, -20px); 
+		-ms-transform: translate(20px, -20px);    
+		-moz-transform: translate(20px, -20px); 
+		transform: translate(20px, -20px); 
+	}
+	
+	.oeffneAuswahl:hover > .drittesDrittel {
+		-webkit-transform: translate(0, 20px); 
+		-ms-transform: translate(0, 20px);  
+		-moz-transform: translate(0, 20px);
+		transform: translate(0, 20px);
+	}
+	
+	/*Auswahlknopf*/
+	
+	.oeffnenText {
+		color: red;
+		display: none;
+		position: absolute;
+	}
+	
+	.erstesDrittel > .oeffnenText{
+		top: 100px;
+		left: 75px;
+	}
+	
+	.zweitesDrittel > .oeffnenText{
+		top: 100px;
+		left: 2.4em;
+	}
+	
+	.drittesDrittel > .oeffnenText{
+		top: 100px;
+		left: 2.6em;
+	}
+	
+	.oeffneAuswahl:hover > .selektiereDrittel > .oeffnenText { 
+		display: inline-block;
+	}
+	
+	/*Legende*/
+	
+	.my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+   .my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+	
+	.link {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: medium;
+    color: White;
+    background: #6FA8DC;
+    border-radius: 5px;
+}
+	
+	
