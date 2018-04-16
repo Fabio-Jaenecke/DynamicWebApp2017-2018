@@ -60,9 +60,9 @@
     						<table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
 	                             <thead>
 	                             	<tr>
-	                                    <th><input type="submit" name="desc" value="desc"> <input type="submit" name="asc" value="asc"></th>
-	                                    <th><input type="submit" name="desc" value="desc"><input type="submit" name="asc" value="asc"></th>
-	                                    <th><input type="submit" name="desc" value="desc"><input type="submit" name="asc" value="asc"></th>
+	                                    <th><input type="submit" name="lebensmittelnameabsteigend" value="desc"> <input type="submit" name="lebensmittelnameaufsteigend" value="asc"></th>
+	                                    <th><input type="submit" name="TODO" value="desc"><input type="submit" name="TODO" value="asc"></th>
+	                                    <th><input type="submit" name="TODO" value="desc"><input type="submit" name="TODO" value="asc"></th>
 	                                 </tr>
 	                                 <tr>
 	                                    <th>Lebensmittel</th>
@@ -74,31 +74,61 @@
 			           		  <%@ page import="datenbank.container.*" %>
 							  <%@ page import="java.util.ArrayList" %>
 			           		  <%
-			           	String myvariable = null;
-			           	if(request.getParameter("desc")==null){
+			           	
+			           	//CATCH EXCEPTIONS BLOCK1: lebensmittelnamenknoepfe:
+			           		  
+			           	String orderlebensmittelname = null;
+			           	if(request.getParameter("lebensmittelnameabsteigend")==null){
 			           		//donothing
-			           		
 			           	}else{
-			           		myvariable = request.getParameter("desc");
+			           		orderlebensmittelname = request.getParameter("lebensmittelnameabsteigend");
+			           	}
+			           	if(request.getParameter("lebensmittelnameaufsteigend")==null){
+			           		//donothing
+			           	}else{
+			           		orderlebensmittelname = request.getParameter("lebensmittelnameaufsteigend");
 			           	}
 			           	
-			           	if(request.getParameter("asc")==null){
+			          	//CATCH EXCEPTIONS BLOCK2: Karenzphaseknoepfe:
+		           		  
+			           	String orderKarenzphase = null;
+			           	if(request.getParameter("TODO")==null){
 			           		//donothing
-			           		
 			           	}else{
-			           		myvariable = request.getParameter("asc");
+			           		orderKarenzphase = request.getParameter("TODO");
+			           	}
+			           	if(request.getParameter("TODO")==null){
+			           		//donothing
+			           	}else{
+			           		orderKarenzphase = request.getParameter("TODO");
 			           	}
 			           	
-			           	if (request.getParameter("desc")==null && request.getParameter("asc")==null){
+			          	//CATCH EXCEPTIONS BLOCK3: Dauerernaehrungknoepfe:
+		           		  
+			           	String orderDauerernaehrung = null;
+			           	if(request.getParameter("TODO")==null){
+			           		//donothing
+			           	}else{
+			           		orderDauerernaehrung = request.getParameter("TODO");
+			           	}
+			           	if(request.getParameter("TODO")==null){
+			           		//donothing
+			           	}else{
+			           		orderDauerernaehrung = request.getParameter("TODO");
+			           	}
+			           	
+			          	//Die Standardtabelle:
+			           	
+			           	if (request.getParameter("lebensmittelnameabsteigend")==null && request.getParameter("lebensmittelnameaufsteigend")==null){
 			           		SortiererDao sortierer = new SortiererDao();
 							
 				           	
-				           	//Standard:
+			           		
 				           	sortierer.searchForString("LName", "asc");
 				           	
 				           	
 							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
-				            
+							//Die Standardtabelle:
 						    %>
 						     
 	                              <tbody>
@@ -124,6 +154,7 @@
 					                </tbody>
 				            </table>
 			            <%
+			            //Sonst schauen, ob order-variable gesetzt ist
 			           	}else{
 			           	
 			           	SortiererDao sortierer = new SortiererDao();
@@ -131,7 +162,9 @@
 			           	
 			           	//TODO: SORTIERE FUER "Dauerernaehrung" und "Karenzphase" (hier anstatt "LName")
 			           	// und verstehen, wieso dieser Parameter angepasst werden muss.
-			           	sortierer.searchForString("LName", myvariable);
+			           	sortierer.searchForString("LName", orderlebensmittelname);
+			           	/*TODO    sortierer.searchForString("TODO", orderKarenzphase);*/
+			           	/*TODO	  sortierer.searchForString("TODO", orderDauerernaehrung);*/
 			           	
 			           	
 						ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
