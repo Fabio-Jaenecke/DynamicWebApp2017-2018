@@ -182,6 +182,10 @@ a.suchicon {
     padding: 0px 5% 10px;
 }
 
+aside {
+    min-height: 250px;
+}
+
 .footer-container footer {
     color: white;
     padding: 20px 0;
