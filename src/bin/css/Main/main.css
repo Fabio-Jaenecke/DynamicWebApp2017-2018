@@ -164,7 +164,7 @@ a.suchicon {
 
 	.flex-grid,
 	 .flex-grid-thirds {
-	   display: block;
+	   display: flex;
 	 }
 	 .flex-grid .col,
 	 .flex-grid-thirds .col {
@@ -186,16 +186,16 @@ a.suchicon {
 	  font-size: 30px;
 	}
 	
-	col:nth-child(1) {
+	.col:nth-child(1) {
 	  cursor: pointer;
 	  text-align: left;
 	}
 	
-	col:nth-child(2) {
+	.col:nth-child(2) {
 		text-align: center;
 	}
 	
-	col:nth-child(3) {
+	.col:nth-child(3) {
 		text-align: right;
 	}
 

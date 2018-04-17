@@ -53,7 +53,7 @@
 		
                 <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-			<a href="${pageContext.request.contextPath}/home/">Home</a> ^
+			<a href="${pageContext.request.contextPath}/home/">Home</a> 
 			<a href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a>
 			<a href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a>
 			<a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
