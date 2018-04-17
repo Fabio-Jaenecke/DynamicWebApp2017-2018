@@ -32,7 +32,7 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 <div class="header-container">
-    <header class="wrapper clearfix">
+    <header class="wrapper clearfix"><div class="flex-grid-thirds"><div class="col menugrid"><span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></div><div class="col titlegrid">Mahlzeitassistent</div><div class="col suchgrid"><a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a></div></div>
         <nav>
             <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Fruechte&nbsp;<span
                 class="arrowdown">&#9662;</span></span>
