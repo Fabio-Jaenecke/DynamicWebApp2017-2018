@@ -77,58 +77,56 @@
 			           	
 			           	//CATCH EXCEPTIONS BLOCK1: lebensmittelnamenknoepfe:
 			           		  
-			           	String orderlebensmittelname = null;
+			           	String order = "asc"; // Die Standardsortierung
+			           	String auswahl = "LName"; // Die Standardspalte
 			           	if(request.getParameter("lebensmittelnameabsteigend")==null){
-			           		//donothing
+			           		//do nothing
 			           	}else{
-			           		orderlebensmittelname = request.getParameter("lebensmittelnameabsteigend");
+			           		order = request.getParameter("lebensmittelnameabsteigend");
+			           		auswahl = "LName";
 			           	}
 			           	if(request.getParameter("lebensmittelnameaufsteigend")==null){
-			           		//donothing
+			           		//do nothing
 			           	}else{
-			           		orderlebensmittelname = request.getParameter("lebensmittelnameaufsteigend");
+			           		order = request.getParameter("lebensmittelnameaufsteigend");
+			           		auswahl = "LName";
 			           	}
 			           	
 			          	//CATCH EXCEPTIONS BLOCK2: Karenzphaseknoepfe:
-		           		  
-			           	String orderKarenzphase = null;
+		           		
+			          		
 			           	if(request.getParameter("karenzphaseabsteigend")==null){
-			           		//donothing
+			           		//do nothing
 			           	}else{
-			           		orderKarenzphase = request.getParameter("karenzphaseabsteigend");
+			           		order = request.getParameter("karenzphaseabsteigend");
+			           		auswahl = "Karenzphase";
 			           	}
 			           	if(request.getParameter("karenzphaseaufsteigend")==null){
-			           		//donothing
+			           		//do nothing
 			           	}else{
-			           		orderKarenzphase = request.getParameter("karenzphaseaufsteigend");
+			           		order = request.getParameter("karenzphaseaufsteigend");
+			           		auswahl = "Karenzphase";
 			           	}
 			           	
 			          	//CATCH EXCEPTIONS BLOCK3: Dauerernaehrungknoepfe:
 		           		  
-			           	String orderDauerernaehrung = null;
+			           	
 			           	if(request.getParameter("dauerernaehrungabsteigend")==null){
-			           		//donothing
+			           		//do nothing
 			           	}else{
-			           		orderDauerernaehrung = request.getParameter("dauerernaehrungabsteigend");
+			           		order = request.getParameter("dauerernaehrungabsteigend");
+			           		auswahl = "Dauerernaehrung";
 			           	}
 			           	if(request.getParameter("dauerernaehrungaufsteigend")==null){
-			           		//donothing
+			           		//do nothing
 			           	}else{
-			           		orderDauerernaehrung = request.getParameter("dauerernaehrungaufsteigend");
+			           		order = request.getParameter("dauerernaehrungaufsteigend");
+			           		auswahl = "Dauerernaehrung";
 			           	}
 			           	
-			          	//Die Standardtabelle: Sortierung nach Lebensmittelname
-			           					        			
-					                
-			           	if (request.getParameter("lebensmittelnameabsteigend")==null && request.getParameter("lebensmittelnameaufsteigend")==null){
+			          	//Die Tabelle
 			           		SortiererDao sortierer = new SortiererDao();
-							
-				           	
-			           		
-				           	sortierer.searchForString("LName", "asc");
-				           	
-				           	
-				           	
+			           		sortierer.searchForString(auswahl, order);
 							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
 							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite waere dann leer
 						    %>
@@ -153,138 +151,9 @@
 					                %>
 					                </tbody>
 				            </table>
-			            <%
-			            //Sonst schauen, ob order-variable gesetzt ist. Jetzt koennen wir die knoepfe druecken. Jedes mal, wenn ein knopf gedrueckt ist,
-						//wird die Form abgesendet (die seite laedt neu). Je nach dem, welcher knopf gedrueckt wurde, enthaelt jeweils nur ein Parameter 
-						//(Lname, Karenzphase oder Dauerernaehrung) einen wert entweder desc oder asc. Wird erneut ein Knopf gedrueckt, wird wiederum nur
-						//der jeweilige Parameter gesetzt per Knopfdruck. Die Lebenszeit des Parameters besteht nur fuer jeweils einen Form-Submit.
-						//Mit den obigen Exception-Blocks werden nur Variablen befüllt, die gedrueckt wurden, sonst sind sie einfach 'null' .
-						//Das heisst, das nur ein Parameter jeweils 'not null' sein kann, diesen lassen wir jetzt per if bedingung in die Methode searchForString laden.
-			           	}else{
-			           	
-			           	SortiererDao sortierer = new SortiererDao();
-						
-			           	if (orderlebensmittelname != null) {
-							sortierer.searchForString("LName", orderlebensmittelname);
-						}
-						if (orderKarenzphase != null) {
-							sortierer.searchForString("Karenzphase", orderKarenzphase);;
-						}
-			            if (orderDauerernaehrung != null) {          	
-							sortierer.searchForString("Dauerernaehrung", orderDauerernaehrung);
-						}
-			
-           	
-			           	
-						ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
-			            
-					    %>
-					     
-                              <tbody>
-				                
-				                <%
-				                for(Lebensmitteldaten lebensmitteleintrag : daten){
-				                		out.println("<tr>");
-				                   		out.println("<td>");
-				                		out.println(lebensmitteleintrag.getLname());
-				                		out.println("</td>");
-				                		out.println("<td>");
-				                		out.println(lebensmitteleintrag.getKarenzphase());
-				                		out.println("</td>");
-				                		out.println("<td>");
-				                		out.println(lebensmitteleintrag.getDauerernaehrung());
-				                		out.println("</td>");
-				                		out.println("</tr>");
-									}
-			        			// for the next category call we have to clear the arraylist of lebensmittel
-			        			sortierer.clearLebensmittel();
-			        			}
-				                %>
-				                </tbody>
-			            </table>
 	            		</div>
 	           		</form>
 				</article>
-        
-        
-        
-            <%--
-            
-            <header>
-                <h2>Definition von Frucht</h2>
-                <p>Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe, die aus einer Bluete
-                    hervorgehen, und die die Pflanzensamen bis zu deren Reife umschliessen. Fruechte bilden prinzipiell
-                    nur die Pflanzen, die einen geschlossenen Fruchtknoten besitzen (Bedecktsamer = Angiospermen) -
-                    Wikipedia</p>
-                <a href="https://de.wikipedia.org/wiki/Frucht">Mehr</a>
-            </header>
-            <section>
-                <table class="table_lebensmittelkategorie">
-                    <thead>
-                        <tr>
-                            <th>Nahrungsmittel</th>
-                            <th>KP</th>
-                            <th>DE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Blaubeeren</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Wassermelonen</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Zuckermelone</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Apfel</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Pfirsich</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Stachelbeeren</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Avocados</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Bananen</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Erdbeeren</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section class="table_legend"> <!--IDEE: Legende nur anzeigen bei mobiler Ansicht-->
-                <h3 class="title_legende">Legende:</h3>
-                <ul class="legende">
-                    <li>KP = Karenzphase</li>
-                    <li>DE = Dauerernaehrung</li>
-                </ul>
-            </section>
-            
-            --%>
         </article>
         <aside>
             <h3>Häufige Zugriffe</h3>
