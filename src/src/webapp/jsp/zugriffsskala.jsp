@@ -27,6 +27,21 @@
 <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
 <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/zugriffsskala.js"></script>
+<style>
+.sortieren{
+	cursor: pointer;
+	background-color: #6FA8DC;
+    border: none;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+</style>
+
 </head>
 <body>
 	<!--[if lt IE 8]>
@@ -53,8 +68,7 @@
 	<div class="main-container">
 		<div class="main wrapper clearfix">
 			<section>
-			<form method="get"
-				action="${pageContext.request.contextPath}/lebensmittelsuche/">
+			<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<div>
 					<h3>Zugriffsskala</h3>
 					<input type="text" name="tabelle" value="" />
@@ -99,7 +113,6 @@
 	 						out.println("<tr>");
 	 						out.println("<th>Platzierung</th>");
 	 						out.println("<th>Lebensmittel</th>");
-	 						out.println("<th>Kategorie</th>");
 	 						out.println("<th>Karenzphase</th>");
 	 						out.println("<th>Dauerernaehrung</th>");
 	 						out.println("</tr>");
