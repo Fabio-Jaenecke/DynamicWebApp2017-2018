@@ -61,8 +61,8 @@
 	                             <thead>
 	                             	<tr>
 	                                    <th><input type="submit" name="lebensmittelnameabsteigend" value="desc"> <input type="submit" name="lebensmittelnameaufsteigend" value="asc"></th>
-	                                    <th><input type="submit" name="TODO" value="desc"><input type="submit" name="TODO" value="asc"></th>
-	                                    <th><input type="submit" name="TODO" value="desc"><input type="submit" name="TODO" value="asc"></th>
+	                                    <th><input type="submit" name="karenzphaseabsteigend" value="desc"><input type="submit" name="karenzphaseaufsteigend" value="asc"></th>
+	                                    <th><input type="submit" name="dauerernaehrungabsteigend" value="desc"><input type="submit" name="dauerernaehrungaufsteigend" value="asc"></th>
 	                                 </tr>
 	                                 <tr>
 	                                    <th>Lebensmittel</th>
@@ -92,32 +92,32 @@
 			          	//CATCH EXCEPTIONS BLOCK2: Karenzphaseknoepfe:
 		           		  
 			           	String orderKarenzphase = null;
-			           	if(request.getParameter("TODO")==null){
+			           	if(request.getParameter("karenzphaseabsteigend")==null){
 			           		//donothing
 			           	}else{
-			           		orderKarenzphase = request.getParameter("TODO");
+			           		orderKarenzphase = request.getParameter("karenzphaseabsteigend");
 			           	}
-			           	if(request.getParameter("TODO")==null){
+			           	if(request.getParameter("karenzphaseaufsteigend")==null){
 			           		//donothing
 			           	}else{
-			           		orderKarenzphase = request.getParameter("TODO");
+			           		orderKarenzphase = request.getParameter("karenzphaseaufsteigend");
 			           	}
 			           	
 			          	//CATCH EXCEPTIONS BLOCK3: Dauerernaehrungknoepfe:
 		           		  
 			           	String orderDauerernaehrung = null;
-			           	if(request.getParameter("TODO")==null){
+			           	if(request.getParameter("dauerernaehrungabsteigend")==null){
 			           		//donothing
 			           	}else{
-			           		orderDauerernaehrung = request.getParameter("TODO");
+			           		orderDauerernaehrung = request.getParameter("dauerernaehrungabsteigend");
 			           	}
-			           	if(request.getParameter("TODO")==null){
+			           	if(request.getParameter("dauerernaehrungaufsteigend")==null){
 			           		//donothing
 			           	}else{
-			           		orderDauerernaehrung = request.getParameter("TODO");
+			           		orderDauerernaehrung = request.getParameter("dauerernaehrungaufsteigend");
 			           	}
 			           	
-			          	//Die Standardtabelle:
+			          	//Die Standardtabelle: Sortierung nach Lebensmittelname
 			           	
 			           	if (request.getParameter("lebensmittelnameabsteigend")==null && request.getParameter("lebensmittelnameaufsteigend")==null){
 			           		SortiererDao sortierer = new SortiererDao();
@@ -127,8 +127,9 @@
 				           	sortierer.searchForString("LName", "asc");
 				           	
 				           	
+				           	
 							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
-							//Die Standardtabelle:
+							//Die Standardtabelle: Sortierung nach Lebensmittelname
 						    %>
 						     
 	                              <tbody>
@@ -160,11 +161,149 @@
 			           	SortiererDao sortierer = new SortiererDao();
 						
 			           	
-			           	//TODO: SORTIERE FUER "Dauerernaehrung" und "Karenzphase" (hier anstatt "LName")
-			           	// und verstehen, wieso dieser Parameter angepasst werden muss.
-			           	sortierer.searchForString("LName", orderlebensmittelname);
-			           	/*TODO    sortierer.searchForString("TODO", orderKarenzphase);*/
-			           	/*TODO	  sortierer.searchForString("TODO", orderDauerernaehrung);*/
+			            sortierer.searchForString("LName", orderlebensmittelname);
+			           				           	
+			           	
+						ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
+			            
+					    %>
+					     
+                              <tbody>
+				                
+				                <%
+				                for(Lebensmitteldaten lebensmitteleintrag : daten){
+				                		out.println("<tr>");
+				                   		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getLname());
+				                		out.println("</td>");
+				                		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getKarenzphase());
+				                		out.println("</td>");
+				                		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getDauerernaehrung());
+				                		out.println("</td>");
+				                		out.println("</tr>");
+									}
+			        			// for the next category call we have to clear the arraylist of lebensmittel
+			        			sortierer.clearLebensmittel();
+			        			}
+			           	
+						//Die Standardtabelle: Sortierung nach Karenzphase
+			           	
+			           	if (request.getParameter("karenzphaseabsteigend")==null && request.getParameter("karenzphaseaufsteigend")==null){
+			           		SortiererDao sortierer = new SortiererDao();
+							
+				           	
+			           		
+				           	sortierer.searchForString("Karenzphase", "asc");
+				           	
+				           	
+				           	
+							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
+							//Die Standardtabelle: Sortierung nach Karenzphase
+						    %>
+						     
+	                              <tbody>
+					                
+					                <%
+					                for(Lebensmitteldaten lebensmitteleintrag : daten){
+					                		out.println("<tr>");
+					                   		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getLname());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getKarenzphase());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getDauerernaehrung());
+					                		out.println("</td>");
+					                		out.println("</tr>");
+										}
+				        			// for the next category call we have to clear the arraylist of lebensmittel
+				        			sortierer.clearLebensmittel();
+				        			
+					                %>
+					                </tbody>
+				            </table>
+			            <%
+			            //Sonst schauen, ob order-variable gesetzt ist
+			           	}else{
+			           	
+			           	SortiererDao sortierer = new SortiererDao();
+						
+			           	
+
+			           	sortierer.searchForString("Karenzphase", orderKarenzphase);
+
+			           			           	
+						ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();			            
+					    %>
+					     
+                              <tbody>
+				                
+				                <%
+				                for(Lebensmitteldaten lebensmitteleintrag : daten){
+				                		out.println("<tr>");
+				                   		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getLname());
+				                		out.println("</td>");
+				                		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getKarenzphase());
+				                		out.println("</td>");
+				                		out.println("<td>");
+				                		out.println(lebensmitteleintrag.getDauerernaehrung());
+				                		out.println("</td>");
+				                		out.println("</tr>");
+									}
+			        			// for the next category call we have to clear the arraylist of lebensmittel
+			        			sortierer.clearLebensmittel();
+			        			}
+			        	
+						//Die Standardtabelle: Sortierung nach Dauerernaehrung
+			           	
+			           	if (request.getParameter("dauerernaehrungabsteigend")==null && request.getParameter("dauerernaehrungaufsteigend")==null){
+			           		SortiererDao sortierer = new SortiererDao();
+							
+				           	
+			           		
+				           	sortierer.searchForString("Dauerernaehrung", "asc");
+				           	
+				           	
+				           	
+							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
+							//Die Standardtabelle: Sortierung nach Dauerernaehrung
+						    %>
+						     
+	                              <tbody>
+					                
+					                <%
+					                for(Lebensmitteldaten lebensmitteleintrag : daten){
+					                		out.println("<tr>");
+					                   		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getLname());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getKarenzphase());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getDauerernaehrung());
+					                		out.println("</td>");
+					                		out.println("</tr>");
+										}
+				        			// for the next category call we have to clear the arraylist of lebensmittel
+				        			sortierer.clearLebensmittel();
+				        			
+					                %>
+					                </tbody>
+				            </table>
+			            <%
+			            //Sonst schauen, ob order-variable gesetzt ist
+			           	}else{
+			           	
+			           	SortiererDao sortierer = new SortiererDao();
+						
+			           	
+			           	sortierer.searchForString("Dauerernaehrung", orderDauerernaehrung);
 			           	
 			           	
 						ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();

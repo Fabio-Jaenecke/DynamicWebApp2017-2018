@@ -11,8 +11,8 @@ import datenbank.connector.DbConnectorStub;
 /**
  * Diese Klasse stellt die Java-Klasse zur Entitaet Zugriffsskala in der Datenbank dar. 
  * 
- * @author Raphael Caradonna und Michele Trebo
- * @version 12.04.2018 
+ * @author Michele Trebo
+ * @version 17.04.2018 
  */
 public class Zugriffsskala implements Comparable {
 

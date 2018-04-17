@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  * aus der Datenbank und stellt diese zur Verfuegung. 
  * 
  * @author Michele Trebo 
- * @verison 12.04.2018 
+ * @verison 17.04.2018 
  */
 public class Zugriffsmanager {
 

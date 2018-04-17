@@ -53,24 +53,20 @@
 	<div class="main-container">
 		<div class="main wrapper clearfix">
 			<section>
-			<form method="get"
-				action="${pageContext.request.contextPath}/lebensmittelsuche/">
+			<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<div>
-					<h3>Zugriffsskala</h3>
-					<input type="text" name="tabelle" value="" />
-					<%@ page import="zugriffe.*"%>
+					<%@ page import="container.*"%>
 					<%@ page import="datenbank.container.*"%>
 					<%@ page import="java.util.ArrayList" %>
 					<%  Zugriffsskalamanager tabelle = new Zugriffsskalamanager();
 						tabelle.searchForString();
 						out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
-						out.println("<div class='sortieren'>SORTIEREN</div>");
- 						out.println("<thead>"); 								
+						out.println("<thead>"); 								
 						out.println("<tr>");
- 						out.println("<th>Platzierung</th>");
- 						out.println("<th>Lebensmittel</th>");
- 						out.println("<th>Karenzphase</th>");
- 						out.println("<th>Dauerernaehrung</th>");
+ 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN</div></th>");
+ 						out.println("<th>Lebensmittel<div class='sortieren'>SORTIEREN</div></th>");
+ 						out.println("<th>Karenzphase<div class='sortieren'>SORTIEREN</div></th>");
+ 						out.println("<th>Dauerernaehrung<div class='sortieren'>SORTIEREN</div></th>");
  						out.println("</tr>");
  						out.println("</thead>"); 
  						out.println("<tbody class='meineTabelle'>");
