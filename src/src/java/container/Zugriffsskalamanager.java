@@ -1,4 +1,4 @@
-package zugriffe;
+package container;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -64,62 +64,5 @@ public class Zugriffsskalamanager {
 	 */
 	public ArrayList<Zugriffsmanager> getTabelle() {
 		return tabelle; 
-	}
-	
-	/**
-	 * Sortiere die Tabelle von der ersten Platzierung bis zur letzten. 
-	 * @param args
-	 */
-	public static void sortierePlatzierungErsteBisLetzte(String [] args) {
-		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
-		platzierung.addAll(platzierung); 
-		//TODO: fix problem
-	//	Collections.sort(platzierung); 
-		for (int i=0; i<platzierung.size(); i++) {
-			System.out.println(platzierung.get(i));
-		}
-	}
-	
-	/**
-	 * Sortiere die Tabelle von der letzten Platzierung bis zur ersten. 
-	 * @param args
-	 */
-	public static void sortierePlatzierungLetzteBisErste(String [] args) {
-		List<Zugriffsmanager> platzierung = new ArrayList<Zugriffsmanager>(); 
-		platzierung.addAll(platzierung); 
-		//TODO: fix problem
-	//	Collections.sort(platzierung); 
-		for (int i=0; i>platzierung.size(); i--) {
-			System.out.println(platzierung.get(i));
-		}
-	}
-	
-	/**
-	 * Sortiere die Tabelle nach den Lebensmittelnamen von A bis Z. 
-	 * @param args
-	 */
-	public static void sortiereLebensmittelnamenAbisZ(String [] args) {
-		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>();
-		lnamen.addAll(lnamen); 
-		//TODO: fix problem
-	//	Collections.sort(lnamen); 
-		for (Zugriffsmanager lname: lnamen) {
-			System.out.println(lname);
-		}
-	}
-	
-	/**
-	 * Sortiere die Tabelle nach den Lebensmittelnamen von Z bis A. 
-	 * @param args
-	 */
-	public void sortiereLebensmittelnameZbisA(String [] args) {
-		List<Zugriffsmanager> lnamen = new ArrayList<Zugriffsmanager>(); 
-		lnamen.addAll(lnamen); 
-		//TODO: fix problem
-	//	Collections.sort(lnamen); 
-		Collections.reverse(lnamen);
-		for (Zugriffsmanager lname: lnamen) {
-			System.out.println(lname);
-		}
 	}
 }

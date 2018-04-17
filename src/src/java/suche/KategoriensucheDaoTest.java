@@ -9,12 +9,14 @@ import org.junit.Test;
 /**
  * Testklasse für die Klasse KategoriesucheDao.
  * 
- * @author Michele Trebo
- * @version 09.04.2018
+ * @author Michele Trebo, Marko Despotovic
+ * @version 15.04.2018
  */
 
-//TODO: Write testclass 
+
 public class KategoriensucheDaoTest {
+	
+	private KategoriensucheDao katDao;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -22,11 +24,19 @@ public class KategoriensucheDaoTest {
 
 	@Before
 	public void setUp() throws Exception {
+		katDao = new KategoriensucheDao();
 	}
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		katDao.searchForString("Obst");
+		
+		assertNotNull(katDao.getLebensmittel());
+		assertTrue("Obst".equals(katDao.getLebensmittel()));
+		
+		//Search attempt for a non existing entry
+		katDao.searchForString("Blumen");
+		assertNull(katDao.getLebensmittel());
 	}
 
 }

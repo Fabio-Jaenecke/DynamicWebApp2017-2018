@@ -34,14 +34,15 @@ public class LebensmittelsucheDao {
 	 * @param lebensmittelname der Name des Lebensmittels. 
 	 */
 	public void searchForString(String lebensmittelname) {
-		String selectSQL = "select * from lebensmitteldaten where lname like '%" + lebensmittelname + "%';";
+		String selectSQL = "select * from lebensmitteldaten where lower(lname) like '%" + lebensmittelname.toLowerCase() + "%';";
 		ResultSet result = query.getResult(selectSQL);
 		try {
 			if(result.next()) {
 				lebensmittel = new Lebensmitteldaten(result);
 			}
 			else {
-				LOGGER.log(Level.SEVERE, "Selected lebensmittel does not exist in database ");
+				lebensmittel = null;
+				LOGGER.log(Level.WARNING, "Selected lebensmittel does not exist in database ");
 			}
 		}
 		catch(SQLException e){
