@@ -25,6 +25,18 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
     <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
     <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<style>
+	input[type=submit]{
+		display: none;
+	}
+	label{
+		cursor: pointer;
+	}
+	span.sortierer{
+		float: right;
+	}
+	</style>
+
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -56,18 +68,31 @@
 	            		<div>
 	            		<h3>Lebensmittelliste</h3>
 	            			
+	            			<p>Hier werden alle Lebensmittel und ihre Werte für Karenzphase und Dauerernaehrung angezeigt.<br>
+	            			Sie koennen die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
+	            			</p>
     						
     						<table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
 	                             <thead>
-	                             	<tr>
-	                                    <th><input type="submit" name="lebensmittelnameabsteigend" value="desc"> <input type="submit" name="lebensmittelnameaufsteigend" value="asc"></th>
-	                                    <th><input type="submit" name="karenzphaseabsteigend" value="desc"><input type="submit" name="karenzphaseaufsteigend" value="asc"></th>
-	                                    <th><input type="submit" name="dauerernaehrungabsteigend" value="desc"><input type="submit" name="dauerernaehrungaufsteigend" value="asc"></th>
-	                                 </tr>
 	                                 <tr>
-	                                    <th>Lebensmittel</th>
-	                                    <th>Karenzphase</th>
-	                                    <th>Dauerernaehrung</th>
+	                                    <th style="min-width: 180px">Lebensmittel
+	                                    <span class="sortierer">
+	                                    <label><input type="submit" name="lebensmittelnameabsteigend" value="desc">▼</label>
+	                                    <label><input type="submit" name="lebensmittelnameaufsteigend" value="asc">▲</label>
+	                                    </span>
+	                                    </th>
+	                                    <th style="min-width: 180px">Karenzphase
+	                                    <span class="sortierer">
+	                                    <label><input type="submit" name="karenzphaseabsteigend" value="desc">▼</label>
+	                                    <label><input type="submit" name="karenzphaseaufsteigend" value="asc">▲</label>
+	                                    </span>
+	                                    </th>
+	                                    <th style="min-width: 180px">Dauerernaehrung
+	                                    <span class="sortierer">
+	                                    <label><input type="submit" name="dauerernaehrungabsteigend" value="desc">▼</label>
+	                                    <label><input type="submit" name="dauerernaehrungaufsteigend" value="asc">▲</label>
+	                                    </span>
+	                                    </th>
 	                                 </tr>
 	                              </thead>
 			           		  <%@ page import ="suche.*" %>
