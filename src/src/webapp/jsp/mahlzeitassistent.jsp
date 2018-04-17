@@ -69,7 +69,7 @@
 
 <div class="header-container">
 
-    <header class="wrapper clearfix">
+    <header class="wrapper clearfix" style="max-height: 50px;">
     <div class="flex-grid-thirds">
 		<div class="col menugrid"><span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></div>
 		<div class="col titlegrid">Mahlzeitassistent</div>
