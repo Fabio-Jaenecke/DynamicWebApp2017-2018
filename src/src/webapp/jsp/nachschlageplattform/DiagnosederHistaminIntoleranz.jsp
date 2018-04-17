@@ -78,7 +78,7 @@
                 			<a href="${pageContext.request.contextPath}/faq/">FAQ</a>
                         </div>
                      </nav>
-                     <a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a>
+                      
                   </header>
                </div>
                <div class="main-container">

@@ -102,7 +102,7 @@
 
         </nav>
 
-        <a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a>
+         
 
     </header>
 
