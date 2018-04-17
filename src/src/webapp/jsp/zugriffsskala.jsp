@@ -30,15 +30,14 @@
 <style>
 .sortieren{
 	cursor: pointer;
-	background-color: #6FA8DC;
     border: none;
-    color: white;
-    padding: 7px;
+    color: black;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 10px;
+    float: right;
 }
 </style>
 
@@ -49,21 +48,22 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 	<div class="header-container">
-		<header class="wrapper clearfix"> <nav> <span
-			onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span>
-		<span class="title">Zugriffsskala&nbsp;</span>
-		<div id="mySidenav" class="sidenav side-nav">
-			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
-			<a href="${pageContext.request.contextPath}/home/">Home</a> <a
-				href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a>
+		<header class="wrapper clearfix"> 
+		<nav> 
+		<span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Zugriffsskala</span>
+                <div id="mySidenav" class="sidenav side-nav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
+			<a href="${pageContext.request.contextPath}/home/">Home</a> ^
+			<a href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a>
 			<a href="${pageContext.request.contextPath}/mahlzeitassistent/">Mahlzeitsassistent</a>
-			<a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a> <a
-				class="active"
-				href="${pageContext.request.contextPath}/zugriffsskala/">Zugriffsskala</a>
+			<a href="${pageContext.request.contextPath}/rezepte/">Rezepte</a>
+			<a class="active" href="${pageContext.request.contextPath}/zugriffsskala/">Zugriffsskala</a>
 			<a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche</a>
 			<a href="${pageContext.request.contextPath}/faq/">FAQ</a>
 		</div>
-		</nav> </header>
+		</nav>
+        <a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a>
+    </header>
 	</div>
 	<div class="main-container">
 		<div class="main wrapper clearfix">
@@ -78,10 +78,10 @@
 						out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
 						out.println("<thead>"); 								
 						out.println("<tr>");
- 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN</div></th>");
- 						out.println("<th>Lebensmittel<div class='sortieren'>SORTIEREN</div></th>");
- 						out.println("<th>Karenzphase<div class='sortieren'>SORTIEREN</div></th>");
- 						out.println("<th>Dauerernaehrung<div class='sortieren'>SORTIEREN</div></th>");
+ 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN▼▲</div></th>");
+ 						out.println("<th>Lebensmittel<div class='sortieren'>SORTIEREN▼▲</div></th>");
+ 						out.println("<th>Karenzphase<div class='sortieren'>SORTIEREN▼▲</div></th>");
+ 						out.println("<th>Dauerernaehrung<div class='sortieren'>SORTIEREN▼▲</div></th>");
  						out.println("</tr>");
  						out.println("</thead>"); 
  						out.println("<tbody class='meineTabelle'>");
