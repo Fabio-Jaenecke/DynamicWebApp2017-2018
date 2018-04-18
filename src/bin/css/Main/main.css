@@ -183,7 +183,7 @@ a.suchicon {
 	  align-self: center;
 	  color: white;
 	  font-weight: bold;
-	  font-size: 45px;
+	  font-size: 30px;
 	}
 	
 	.col:nth-child(1) {
@@ -375,7 +375,6 @@ footer h4 {
 	  width: 32%;
 	}
 	
-	
 }
 
 @media only screen and (min-width: 1140px) {
@@ -396,6 +395,7 @@ footer h4 {
         transform: scale(1);
         margin-left: 0;
     }
+  
 
 }
 
@@ -592,7 +592,7 @@ nav span {
 
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 200px) {
     .sidenav {
         padding-top: 15px;
     }
@@ -600,6 +600,14 @@ nav span {
     .sidenav a {
         font-size: 18px;
     }
+    
+    .col {
+	  font-size: 15px;
+	}
+	
+	p, h1, h2, h3, a, th, td {
+		size: 60%;
+	}
 
 }
 
