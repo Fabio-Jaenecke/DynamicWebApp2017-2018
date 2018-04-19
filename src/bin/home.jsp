@@ -96,25 +96,25 @@
                      <article>
                         <header>
                            <h2>Was ist Histamin-Intoleranz?</h2>
-                           <p>Histaminintoleranz (Histaminose, Histaminunvertraeglichkeit) ist die Unvertraeglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfaehigkeit des menschlichen Koerpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
+                           <p>Histaminintoleranz (Histaminose, Histaminunverträglichkeit) ist die Unverträglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfähigkeit des menschlichen Koerpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/WasIstHistaminIntoleranz.jsp">Mehr</a>
                         </header>
                         <section>
                            <h2>Histamingehalt von Lebensmitteln</h2>
-                           <p>Welche Nahrungsmittel sind vertraeglich, welche sind bei Histaminintoleranz nicht vertraeglich? Fuer Betroffene ist es schwer, einzukaufen.
+                           <p>Welche Nahrungsmittel sind verträglich, welche sind bei Histaminintoleranz nicht verträglich? Fuer Betroffene ist es schwer, einzukaufen.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/HistamingehaltvonLebensmitteln.jsp">Mehr</a>
                         </section>
                         <section>
                            <h2>Symptome der Histamin-Intoleranz</h2>
-                           <p>Die Symptome der Histaminintoleranz sind sehr vielfaeltig und teilweise schwer von Symptomen anderer, haeufigerer Krankheiten zu unterscheiden. Sie machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher beziehungsweise histaminfreisetzender oder DAO-blockierender Nahrungsmittel bemerkbar.
+                           <p>Die Symptome der Histaminintoleranz sind sehr vielfältig und teilweise schwer von Symptomen anderer, häufigerer Krankheiten zu unterscheiden. Sie machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher beziehungsweise histaminfreisetzender oder DAO-blockierender Nahrungsmittel bemerkbar.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/SymptomederHistaminIntoleranz.jsp">Mehr</a>
                         </section>
                         <section>
                            <h2>Diagnose der Histamin-Intoleranz</h2>
-                           <p> Wir wird die Histaminintoleranz diagnostiziert? Was ist dabei zu beachten? Ein Leitfaden fuer Aerzte und Betroffene.
+                           <p> Wir wird die Histaminintoleranz diagnostiziert? Was ist dabei zu beachten? Ein Leitfaden fuer ärzte und Betroffene.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/DiagnosederHistaminIntoleranz.jsp">Mehr</a>
                         </section>
@@ -138,13 +138,13 @@
                         </footer>
                      </article>
                      <aside>
-                        <h3>Haeufige Zugriffe</h3>
+                        <h3>Häufige Zugriffe</h3>
                         <table class="table_beliebte_lebensmittel">
                            <thead>
                               <tr>
                                  <th rowspan="2">Platz</th>
                                  <th rowspan="2">Lebensmittel</th>
-                                 <th colspan="2">Vertraeglichkeit</th>
+                                 <th colspan="2">Verträglichkeit</th>
                                  <th rowspan="2">Zugriffe</th>
                               </tr>
                               <tr>

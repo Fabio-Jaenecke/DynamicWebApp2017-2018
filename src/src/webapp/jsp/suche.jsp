@@ -107,7 +107,7 @@
 						<%@ page import="suche.*" %>
 						<%@ page import="java.util.ArrayList" %>
 					<select onchange="this.form.submit()" name="kategorieauswahl">
-								<option value="" disabled selected>Waehlen Sie eine Kategorie</option>
+								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Obst")){out.println("selected");} %> value="Obst">Obst</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Gemuese")){out.println("selected");} %> value="Gemuese">Gemuese</option>
@@ -141,7 +141,7 @@
                                  <tr>
                                     <th>Lebensmittel</th>
                                     <th>Karenzphase</th>
-                                    <th>Dauerernaehrung</th>
+                                    <th>Dauerernährung</th>
                                  </tr>
                               </thead>
                               <tbody>
