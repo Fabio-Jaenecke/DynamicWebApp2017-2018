@@ -13,7 +13,7 @@ import datenbank.connector.DbConnector;
  * @author Raphael Caradonna
  *
  */
-public class Lebensmitteldaten {
+public class LebensmittelDaten {
 	
 	/**
 	 * Attribute aus der Entitaet Lebensmitteldaten
@@ -32,7 +32,7 @@ public class Lebensmitteldaten {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public Lebensmitteldaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie) {
+	public LebensmittelDaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie) {
 		this.index = index;
 		this.lebensmittelname = lebensmittelname;
 		this.karenzphase = karenzphase;
@@ -45,7 +45,7 @@ public class Lebensmitteldaten {
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
-	public Lebensmitteldaten(ResultSet rs) {
+	public LebensmittelDaten(ResultSet rs) {
 		try {
 				this.index = rs.getInt("lindex"); 
 		        this.lebensmittelname = rs.getString("lname");        
