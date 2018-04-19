@@ -9,8 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger; 
 
 import datenbank.connector.DbConnector;
-import datenbank.container.Lebensmitteldaten;
-import datenbank.container.Ranglistenmanager;
+import datenbank.container.LebensmittelDaten;
+import datenbank.container.RanglistenManager;
 import datenbank.container.Zugriffsmanager;
 import datenbank.dao.DbQuery; 
 
@@ -23,7 +23,7 @@ import datenbank.dao.DbQuery;
  *
  */
 public class Rangliste {
-	private ArrayList<Ranglistenmanager> tabelle; 
+	private ArrayList<RanglistenManager> tabelle; 
 	DbQuery query = new DbQuery(); 
 	DbConnector conn = new DbConnector(); 
 	private static final Logger LOGGER = Logger.getLogger(Rangliste.class.getName()); 
@@ -45,7 +45,7 @@ public class Rangliste {
 		ResultSet result = query.getResult(selectSQL);
 		try {
 			if(result.next()) {
-				tabelle.add(new Ranglistenmanager(result));
+				tabelle.add(new RanglistenManager(result));
 			}
 		}
 		catch(SQLException e){
@@ -64,7 +64,7 @@ public class Rangliste {
 	 * Liefere die Tabelle mit der Karenzphase und der Dauerernaehrung sowie den entsprechenden Lebensmitteldaten.
 	 * @return
 	 */
-	public ArrayList<Ranglistenmanager> getTabelle() {
+	public ArrayList<RanglistenManager> getTabelle() {
 		return tabelle; 
 	}
 }
