@@ -19,8 +19,7 @@ import datenbank.dao.DbQuery;
 public class ZugriffsskalaManager {
 
 	private ArrayList<ZugriffsManager> tabelle;
-	DbQuery query = new DbQuery(); 
-	DbConnector conn = new DbConnector(); 
+	private DbQuery query = new DbQuery(); 
 	private static final Logger LOGGER = Logger.getLogger(ZugriffsskalaManager.class.getName()); 
 	
 	/**
@@ -37,8 +36,7 @@ public class ZugriffsskalaManager {
 	public void searchForString() {
 		String selectSQL = "Select * FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
 				+" ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex;";
-		try {
-			ResultSet result = query.getResult(selectSQL);
+		try (ResultSet result = query.getResult(selectSQL)){
 			while (result.next()) {
 				tabelle.add(new ZugriffsManager(result));
 			}
