@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import datenbank.connector.DbConnector;
 import datenbank.container.Lebensmitteldaten;
 import datenbank.dao.DbQuery;  
 
