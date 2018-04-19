@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
 import datenbank.container.LebensmittelDaten;
-import datenbank.container.Zugriffsmanager;
+import datenbank.container.ZugriffsManager;
 import datenbank.dao.DbQuery; 
 
 /**
@@ -21,7 +21,7 @@ import datenbank.dao.DbQuery;
  */
 public class ZugriffsskalaManager {
 
-	private ArrayList<Zugriffsmanager> tabelle;
+	private ArrayList<ZugriffsManager> tabelle;
 	DbQuery query = new DbQuery(); 
 	DbConnector conn = new DbConnector(); 
 	private static final Logger LOGGER = Logger.getLogger(ZugriffsskalaManager.class.getName()); 
@@ -30,7 +30,7 @@ public class ZugriffsskalaManager {
 	 * Erzeuge den Zugriffsskalamanager. 
 	 */
 	public ZugriffsskalaManager() {
-		tabelle = new ArrayList<Zugriffsmanager>();
+		tabelle = new ArrayList<ZugriffsManager>();
 	}
 	
 	/**
@@ -43,7 +43,7 @@ public class ZugriffsskalaManager {
 		try {
 			ResultSet result = query.getResult(selectSQL);
 			while (result.next()) {
-				tabelle.add(new Zugriffsmanager(result));
+				tabelle.add(new ZugriffsManager(result));
 			}
 		} 
 		catch (SQLException e) {
@@ -62,7 +62,7 @@ public class ZugriffsskalaManager {
 	 * Liefere die Tabelle mit den Platzierungen und den entsprechenden Lebensmitteldaten. 
 	 * @return tabelle
 	 */
-	public ArrayList<Zugriffsmanager> getTabelle() {
+	public ArrayList<ZugriffsManager> getTabelle() {
 		return tabelle; 
 	}
 }

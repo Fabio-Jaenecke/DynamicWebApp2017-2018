@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import datenbank.connector.DbConnector;
 import datenbank.container.LebensmittelDaten;
 import datenbank.container.RanglistenManager;
-import datenbank.container.Zugriffsmanager;
+import datenbank.container.ZugriffsManager;
 import datenbank.dao.DbQuery; 
 
 /**
