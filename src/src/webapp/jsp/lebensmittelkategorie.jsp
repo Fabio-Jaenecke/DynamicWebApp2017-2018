@@ -156,13 +156,13 @@
 			          	//Die Tabelle
 			           		SortiererDao sortierer = new SortiererDao();
 			           		sortierer.searchForString(auswahl, order);
-							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
+							ArrayList<LebensmittelDaten> daten = sortierer.getLebensmittel();
 							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite waere dann leer
 						    %>
 						     
 	                              <tbody>
 					                <%
-					                for(Lebensmitteldaten lebensmitteleintrag : daten){
+					                for(LebensmittelDaten lebensmitteleintrag : daten){
 					                		out.println("<tr>");
 					                   		out.println("<td>");
 					                		out.println(lebensmitteleintrag.getLname());
