@@ -96,7 +96,7 @@
                      <article>
                         <header>
                            <h2>Was ist Histamin-Intoleranz?</h2>
-                           <p>Histaminintoleranz (Histaminose, Histaminunverträglichkeit) ist die Unverträglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfähigkeit des menschlichen Koerpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
+                           <p>Histaminintoleranz (Histaminose, Histaminunverträglichkeit) ist die Unverträglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfähigkeit des menschlichen Körpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/WasIstHistaminIntoleranz.jsp">Mehr</a>
                         </header>
@@ -120,12 +120,12 @@
                         </section>
                         <section>
                            <h2>Was ist Histamin?</h2>
-                           <p> Histamin ist ein sogenanntes biogenes Amin und dient im Koerper unter anderem als wichtiger Botenstoff.
+                           <p> Histamin ist ein sogenanntes biogenes Amin und dient im Körper unter anderem als wichtiger Botenstoff.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/WasistHistamin.jsp">Mehr</a>
                         </section>
                         <footer>
-                           <h3>Stoebern Sie weiter</h3>
+                           <h3>Stöbern Sie weiter</h3>
                            <ul>
                               <li><a class="link" href="${pageContext.request.contextPath}/home/">Home</a></li>
                               <li><a class="link" href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a></li>
