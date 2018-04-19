@@ -41,4 +41,8 @@ public class DbQuery {
 		// TODO return empty result
 		return null;
 	}
+	
+	public void finalize() {
+		conn.closeConnection(); 
+	} 
 }
