@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger; 
 
 import datenbank.connector.DbConnector;
-import datenbank.container.Lebensmitteldaten;
+import datenbank.container.LebensmittelDaten;
 import datenbank.container.Zugriffsmanager;
 import datenbank.dao.DbQuery; 
 
@@ -19,17 +19,17 @@ import datenbank.dao.DbQuery;
  * @author Michele Trebo
  * @verison 12.04.2018
  */
-public class Zugriffsskalamanager {
+public class ZugriffsskalaManager {
 
 	private ArrayList<Zugriffsmanager> tabelle;
 	DbQuery query = new DbQuery(); 
 	DbConnector conn = new DbConnector(); 
-	private static final Logger LOGGER = Logger.getLogger(Zugriffsskalamanager.class.getName()); 
+	private static final Logger LOGGER = Logger.getLogger(ZugriffsskalaManager.class.getName()); 
 	
 	/**
 	 * Erzeuge den Zugriffsskalamanager. 
 	 */
-	public Zugriffsskalamanager() {
+	public ZugriffsskalaManager() {
 		tabelle = new ArrayList<Zugriffsmanager>();
 	}
 	
