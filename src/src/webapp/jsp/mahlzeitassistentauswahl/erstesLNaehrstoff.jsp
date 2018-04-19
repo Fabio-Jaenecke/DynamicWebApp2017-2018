@@ -91,7 +91,7 @@
 						naehrstoffname = request.getParameter("naehrstoffauswahl");
 						NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
 						naehrstoffauftrag.searchForString(naehrstoffname);
-						ArrayList<Lebensmitteldaten> daten = naehrstoffauftrag.getLebensmittel();
+						ArrayList<LebensmittelDaten> daten = naehrstoffauftrag.getLebensmittel();
 						session.setAttribute("naehrstoffname1", naehrstoffname);
 						
 			        %>
@@ -106,7 +106,7 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(Lebensmitteldaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : daten){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
 				               				
