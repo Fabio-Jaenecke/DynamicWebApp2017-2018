@@ -47,21 +47,6 @@ public class PlatzierungUpdater  {
 		Collections.sort(zugriffe);
 	}
 
-	// TODO: remove unusued code
-	/*
-	public void sortByAZugriffe() {
-		zugriffe.stream().sorted(Collections.reverseOrder());
-		Collections.sort(zugriffe, new Comparator<Zugriffsskala>() {
-			@Override
-			public int compare(Zugriffsskala o1, Zugriffsskala o2) {
-				return o1.getAzugriffe() > o2.getAzugriffe() ? 0 : -1;
-			}
-		});
-		zugriffe.stream().forEach(a -> System.out.println(a.getAzugriffe()));
-		zugriffe.clear();
-	}*/
-
-	
 	public ArrayList<Zugriffsskala> getZugriffe() {
 		return zugriffe;
 	}
