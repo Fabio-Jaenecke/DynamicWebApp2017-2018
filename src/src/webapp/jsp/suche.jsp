@@ -126,7 +126,7 @@
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
-						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
 						
 			        %>
 			         <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
@@ -147,7 +147,7 @@
                               <tbody>
 				                
 				                <%
-				                for(Lebensmitteldaten lebensmitteleintrag : daten){
+				                for(LebensmittelDaten lebensmitteleintrag : daten){
 				                		out.println("<tr>");
 				                   		out.println("<td>");
 				                		out.println(lebensmitteleintrag.getLname());
