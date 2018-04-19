@@ -30,8 +30,7 @@ public class ZugriffUpdater {
 	private void getZugriff(LebensmittelDaten lebensmittel) {
 		String selectSql = "select z.zindex from zugriffsskala z join favorit f on z.zindex = f.zindex where f.lindex = '"
 				+ lebensmittel.getLindex() + "';";
-		try {
-			ResultSet result = query.getResult(selectSql);
+		try (ResultSet result = query.getResult(selectSql)){
 			while(result.next()) {
 				zugriff = new Zugriffsskala(result);
 		}

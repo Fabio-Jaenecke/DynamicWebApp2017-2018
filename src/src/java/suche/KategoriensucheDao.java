@@ -40,8 +40,7 @@ public class KategoriensucheDao {
 		String selectSQL = "Select * " + " FROM lebensmittelDaten l JOIN KATZUGEHOERIGKEIT k "
 				+ "ON l.lindex=k.lindex JOIN lebensmittelkategorie lk on k.kindex = lk.kindex " + "where lower(lk.Kname)= '"
 				+ kategorienname.toLowerCase() + "';";
-		try {
-			ResultSet result = query.getResult(selectSQL);
+		try (ResultSet result = query.getResult(selectSQL)){
 			while (result.next()) {
 
 				lebensmittel.add(new LebensmittelDaten(result));

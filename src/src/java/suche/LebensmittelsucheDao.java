@@ -34,8 +34,7 @@ public class LebensmittelsucheDao {
 	 */
 	public void searchForString(String lebensmittelname) {
 		String selectSQL = "select * from lebensmittelDaten where lower(lname) like '%" + lebensmittelname.toLowerCase() + "%';";
-		ResultSet result = query.getResult(selectSQL);
-		try {
+		try (ResultSet result = query.getResult(selectSQL)){
 			if(result.next()) {
 				lebensmittel = new LebensmittelDaten(result);
 			}

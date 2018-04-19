@@ -33,8 +33,7 @@ public class PlatzierungUpdater  {
 	
 	public void getZugriffeInDB() {
 		String selectSql = "select * from zugriffsskala";
-		ResultSet result = query.getResult(selectSql);
-		try {
+		try (ResultSet result = query.getResult(selectSql)){
 			while(result.next()) {
 				zugriffe.add(new Zugriffsskala(result));
 			}

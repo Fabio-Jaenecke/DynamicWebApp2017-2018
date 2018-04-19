@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import datenbank.connector.DbConnector;
 import datenbank.container.LebensmittelDaten;
 import datenbank.dao.DbQuery;
 
@@ -22,7 +21,6 @@ public class NaehrstoffsucheDao {
 
 	private ArrayList<LebensmittelDaten> lebensmittel = new ArrayList<>();
 	DbQuery query = new DbQuery();
-	DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(NaehrstoffsucheDao.class.getName());
 
 	/**
@@ -40,8 +38,7 @@ public class NaehrstoffsucheDao {
 		String selectSQL = "SELECT * FROM lebensmittelDaten l JOIN NAEHRZUGEHOERIGKEIT n" + 
 				" ON l.lindex=n.lindex" + 
 				" WHERE n.nname='" + naehrstoffname + "';";
-		try {
-			ResultSet result = query.getResult(selectSQL);
+		try (ResultSet result = query.getResult(selectSQL)){
 			while (result.next()) {
 
 				lebensmittel.add(new LebensmittelDaten(result));

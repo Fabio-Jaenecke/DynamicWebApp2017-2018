@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import datenbank.connector.DbConnector;
 import datenbank.container.LebensmittelDaten;
 import datenbank.dao.DbQuery;
 
@@ -22,7 +21,6 @@ public class SortiererDao {
 
 	private ArrayList<LebensmittelDaten> lebensmittel = new ArrayList<>();
 	DbQuery query = new DbQuery();
-	DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(SortiererDao.class.getName());
 
 	/**
@@ -38,8 +36,7 @@ public SortiererDao() {
 	 */
 public void searchForString(String zusortierendeSpalte, String order) {
 	String selectSQL = "select * from lebensmittelDaten Order BY " + zusortierendeSpalte + " " + order + ";";
-		try {
-			ResultSet result = query.getResult(selectSQL);
+		try (ResultSet result = query.getResult(selectSQL)){
 			while (result.next()) {
 
 				lebensmittel.add(new LebensmittelDaten(result));
