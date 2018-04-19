@@ -72,7 +72,7 @@ public class DbConnector {
 		return conn;
 	}
 	
-	public void finalize() {
+	public void closeConnection() {
 		try {
 			if(connInit) {
 	    		conn.close();    
