@@ -65,6 +65,17 @@
 					margin-right: 2px;
 				}
 				
+				.sortieren{
+					cursor: pointer;
+				    border: none;
+				    color: black;
+				    text-align: center;
+				    text-decoration: none;
+				    display: inline-block;
+				    font-size: 16px;
+				    border-radius: 10px;
+				    float: right;
+				}
                
                </style>
             </head>
@@ -150,7 +161,7 @@
 									out.println("<table id='zugriffsskala' class='table_beliebte_lebensmittel'>");
 									out.println("<thead>"); 								
 									out.println("<tr>");
-			 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN ▼▲</div></th>");
+			 						out.println("<th>Platzierung</th>");
 			 						out.println("<th>Lebensmittel</th>");
 			 						out.println("<th>Karenzphase</th>");
 			 						out.println("<th>Dauerernährung</th>");
