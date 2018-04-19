@@ -1,6 +1,6 @@
 package container;
 
-import java.util.*;
+import java.util.ArrayList;
 
 import datenbank.container.Lebensmitteldaten; 
 

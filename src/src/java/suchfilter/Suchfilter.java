@@ -3,10 +3,12 @@ package suchfilter;
 import java.io.File;
 import java.util.ArrayList;
 
-import org.jsoup.nodes.*;
+import org.jsoup.nodes.Document;
+
+
 
 /**
- * konvertiert die Html-Seiten zu Xml, führt das Suchen nach einem Wort aus und zeigt
+ * konvertiert die Html-Seiten zu Xml, fï¿½hrt das Suchen nach einem Wort aus und zeigt
  * die Suchresultate an
  * @author Raphael
  *
