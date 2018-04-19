@@ -25,6 +25,18 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
     <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
     <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<style>
+	input[type=submit]{
+		display: none;
+	}
+	label{
+		cursor: pointer;
+	}
+	span.sortierer{
+		float: right;
+	}
+	</style>
+
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -32,9 +44,13 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 <div class="header-container">
-    <header class="wrapper clearfix">
+    <header class="wrapper clearfix" style="max-height: 50px; padding-top: 15px;">
+    	<div class="flex-grid-thirds">
+						  <div class="col menugrid"><span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></div>
+						  <div class="col titlegrid">Lebensmittel</div>
+						  <div class="col suchgrid"><a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a></div>
+		</div>
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Lebensmittel</span>
                 <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
                 <a href="${pageContext.request.contextPath}/home/">Home</a>
@@ -46,85 +62,127 @@
        			<a href="${pageContext.request.contextPath}/faq/">FAQ</a>
             </div>
         </nav>
-        <a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a>
+         
     </header>
 </div>
 <div class="main-container">
     <div class="main wrapper clearfix">
         <article>
-            <header>
-                <h2>Definition von Frucht</h2>
-                <p>Die Frucht (von lateinisch fructus) einer Pflanze ist die Gesamtheit der Organe, die aus einer Bluete
-                    hervorgehen, und die die Pflanzensamen bis zu deren Reife umschliessen. Fruechte bilden prinzipiell
-                    nur die Pflanzen, die einen geschlossenen Fruchtknoten besitzen (Bedecktsamer = Angiospermen) -
-                    Wikipedia</p>
-                <a href="https://de.wikipedia.org/wiki/Frucht">Mehr</a>
-            </header>
-            <section>
-                <table class="table_lebensmittelkategorie">
-                    <thead>
-                        <tr>
-                            <th>Nahrungsmittel</th>
-                            <th>KP</th>
-                            <th>DE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Blaubeeren</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Wassermelonen</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Zuckermelone</td>
-                        <td>gut</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Apfel</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Pfirsich</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Stachelbeeren</td>
-                        <td>mittel</td>
-                        <td>gut</td>
-                    </tr>
-                    <tr>
-                        <td>Avocados</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Bananen</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    <tr>
-                        <td>Erdbeeren</td>
-                        <td>schlecht</td>
-                        <td>mittel</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section class="table_legend"> <!--IDEE: Legende nur anzeigen bei mobiler Ansicht-->
-                <h3 class="title_legende">Legende:</h3>
-                <ul class="legende">
-                    <li>KP = Karenzphase</li>
-                    <li>DE = Dauerernaehrung</li>
-                </ul>
-            </section>
+       		<form method="get" action="${pageContext.request.contextPath}/lebensmittel/">
+	            		<div>
+	            		<h3>Lebensmittelliste</h3>
+	            			
+	            			<p>Hier werden alle Lebensmittel und ihre Werte für Karenzphase und Dauerernaehrung angezeigt.<br>
+	            			Sie koennen die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
+	            			</p>
+    						
+    						<table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
+	                             <thead>
+	                                 <tr>
+	                                    <th style="min-width: 180px">Lebensmittel
+	                                    <span class="sortierer">
+	                                    <label><input type="submit" name="lebensmittelnameabsteigend" value="desc">▼</label>
+	                                    <label><input type="submit" name="lebensmittelnameaufsteigend" value="asc">▲</label>
+	                                    </span>
+	                                    </th>
+	                                    <th style="min-width: 180px">Karenzphase
+	                                    <span class="sortierer">
+	                                    <label><input type="submit" name="karenzphaseabsteigend" value="desc">▼</label>
+	                                    <label><input type="submit" name="karenzphaseaufsteigend" value="asc">▲</label>
+	                                    </span>
+	                                    </th>
+	                                    <th style="min-width: 180px">Dauerernaehrung
+	                                    <span class="sortierer">
+	                                    <label><input type="submit" name="dauerernaehrungabsteigend" value="desc">▼</label>
+	                                    <label><input type="submit" name="dauerernaehrungaufsteigend" value="asc">▲</label>
+	                                    </span>
+	                                    </th>
+	                                 </tr>
+	                              </thead>
+			           		  <%@ page import ="suche.*" %>
+			           		  <%@ page import="datenbank.container.*" %>
+							  <%@ page import="java.util.ArrayList" %>
+			           		  <%
+			           	
+			           	//CATCH EXCEPTIONS BLOCK1: lebensmittelnamenknoepfe:
+			           		  
+			           	String order = "asc"; // Die Standardsortierung
+			           	String auswahl = "LName"; // Die Standardspalte
+			           	if(request.getParameter("lebensmittelnameabsteigend")==null){
+			           		//do nothing
+			           	}else{
+			           		order = request.getParameter("lebensmittelnameabsteigend");
+			           		auswahl = "LName";
+			           	}
+			           	if(request.getParameter("lebensmittelnameaufsteigend")==null){
+			           		//do nothing
+			           	}else{
+			           		order = request.getParameter("lebensmittelnameaufsteigend");
+			           		auswahl = "LName";
+			           	}
+			           	
+			          	//CATCH EXCEPTIONS BLOCK2: Karenzphaseknoepfe:
+		           		
+			          		
+			           	if(request.getParameter("karenzphaseabsteigend")==null){
+			           		//do nothing
+			           	}else{
+			           		order = request.getParameter("karenzphaseabsteigend");
+			           		auswahl = "Karenzphase";
+			           	}
+			           	if(request.getParameter("karenzphaseaufsteigend")==null){
+			           		//do nothing
+			           	}else{
+			           		order = request.getParameter("karenzphaseaufsteigend");
+			           		auswahl = "Karenzphase";
+			           	}
+			           	
+			          	//CATCH EXCEPTIONS BLOCK3: Dauerernaehrungknoepfe:
+		           		  
+			           	
+			           	if(request.getParameter("dauerernaehrungabsteigend")==null){
+			           		//do nothing
+			           	}else{
+			           		order = request.getParameter("dauerernaehrungabsteigend");
+			           		auswahl = "Dauerernaehrung";
+			           	}
+			           	if(request.getParameter("dauerernaehrungaufsteigend")==null){
+			           		//do nothing
+			           	}else{
+			           		order = request.getParameter("dauerernaehrungaufsteigend");
+			           		auswahl = "Dauerernaehrung";
+			           	}
+			           	
+			          	//Die Tabelle
+			           		SortiererDao sortierer = new SortiererDao();
+			           		sortierer.searchForString(auswahl, order);
+							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
+							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite waere dann leer
+						    %>
+						     
+	                              <tbody>
+					                <%
+					                for(Lebensmitteldaten lebensmitteleintrag : daten){
+					                		out.println("<tr>");
+					                   		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getLname());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getKarenzphase());
+					                		out.println("</td>");
+					                		out.println("<td>");
+					                		out.println(lebensmitteleintrag.getDauerernaehrung());
+					                		out.println("</td>");
+					                		out.println("</tr>");
+										}
+				        			// for the next category call we have to clear the arraylist of lebensmittel
+				        			sortierer.clearLebensmittel();
+					                %>
+					                </tbody>
+				            </table>
+	            		</div>
+	           		</form>
+				</article>
         </article>
         <aside>
             <h3>Häufige Zugriffe</h3>

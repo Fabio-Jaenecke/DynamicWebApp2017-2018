@@ -55,9 +55,8 @@ textarea {
     display: none;
 }
 
-.title {
+.titlegrid {
     display: inline;
-    padding-left: 40px;
 }
 .link {
     display: inline-block;
@@ -82,7 +81,7 @@ body {
 
 .wrapper {
     width: 90%;
-    margin: 0 5%;
+    margin: 0;
 }
 
 /* ===================
@@ -104,7 +103,7 @@ body {
     background: #6FA8DC;
 }
 
-.title, .suchicon {
+.titlegrid, .suchicon {
     color: white;
 }
 
@@ -145,9 +144,8 @@ nav.active:hover {
     text-decoration: underline;
 }
 
-h1.title {
+h1.titlegrid {
     margin: 20px auto 20px auto;
-    float: right;
 }
 
 nav {
@@ -156,14 +154,50 @@ nav {
 }
 
 a.suchicon {
-    margin: 20px auto 20px auto;
-    float: right;
-    font-size: 3em;
+    margin-top: 20px;
+    font-size: 2em;
     font-weight: bold;
     line-height: 0.6;
     cursor: pointer;
     text-decoration: none;
 }
+
+	.flex-grid,
+	 .flex-grid-thirds {
+	   display: flex;
+	 }
+	 .flex-grid .col,
+	 .flex-grid-thirds .col {
+	   width: 100%;
+	   margin: 0 20px 0 0;
+ 	}
+ 	body {
+	  padding: 0;
+	}
+	
+	.flex-grid {
+	  margin: 0 20px 0 0;
+	}
+	
+	.col {
+	  align-self: center;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 30px;
+	}
+	
+	.col:nth-child(1) {
+	  cursor: pointer;
+	  text-align: left;
+	}
+	
+	.col:nth-child(2) {
+		text-align: center;
+	}
+	
+	.col:nth-child(3) {
+		text-align: right;
+	}
 
 /* ==============
     MOBILE: Main
@@ -182,6 +216,10 @@ a.suchicon {
     padding: 0px 5% 10px;
 }
 
+aside {
+    min-height: 250px;
+}
+
 .footer-container footer {
     color: white;
     padding: 20px 0;
@@ -191,7 +229,7 @@ a.suchicon {
     ALL: IE Fixes
    =============== */
 
-.ie7 .title {
+.ie7 .titlegrid {
     padding-top: 20px;
 }
 
@@ -297,7 +335,7 @@ footer h4 {
         display: inline;
     }
 
-    .title {
+    .titlegrid {
         margin-left: 90%;
     }
 
@@ -318,6 +356,25 @@ footer h4 {
         transform: scale(0.6);
         margin-left: -80px;
     }
+    
+    .flex-grid {
+	  display: flex;
+	  margin-bottom: 0;
+	}
+	
+	.flex-grid .col {
+	  flex: 1;
+	}
+	
+	.flex-grid-thirds {
+	  display: flex;
+	  justify-content: space-between;
+	}
+	
+	.flex-grid-thirds .col {
+	  width: 32%;
+	}
+	
 }
 
 @media only screen and (min-width: 1140px) {
@@ -330,7 +387,7 @@ footer h4 {
         margin: 0 auto;
     }
 
-    .title {
+    .titlegrid {
         margin-left: 150%;
     }
 
@@ -338,6 +395,7 @@ footer h4 {
         transform: scale(1);
         margin-left: 0;
     }
+  
 
 }
 
@@ -412,8 +470,8 @@ footer h4 {
         content: " (" attr(href) ")";
     }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
+    abbr[titlegrid]:after {
+        content: " (" attr(titlegrid) ")";
     }
 
     a[href^="#"]:after,
@@ -534,7 +592,7 @@ nav span {
 
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 200px) {
     .sidenav {
         padding-top: 15px;
     }
@@ -542,6 +600,14 @@ nav span {
     .sidenav a {
         font-size: 18px;
     }
+    
+    .col {
+	  font-size: 15px;
+	}
+	
+	p, h1, h2, h3, a, th, td {
+		size: 60%;
+	}
 
 }
 
