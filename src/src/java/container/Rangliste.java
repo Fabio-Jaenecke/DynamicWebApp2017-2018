@@ -20,8 +20,7 @@ import datenbank.dao.DbQuery;
  */
 public class Rangliste {
 	private ArrayList<RanglistenManager> tabelle; 
-	DbQuery query = new DbQuery(); 
-	DbConnector conn = new DbConnector(); 
+	private DbQuery query = new DbQuery(); 
 	private static final Logger LOGGER = Logger.getLogger(Rangliste.class.getName()); 
 	
 	/**
@@ -38,8 +37,7 @@ public class Rangliste {
 	public void searchForString() {
 		String selectSQL = "Select * " + " FROM lebensmittelDaten l JOIN KATZUGEHOERIGKEIT k "
 				+ "ON l.lindex=k.lindex JOIN lebensmittelkategorie lk on k.kindex = lk.kindex';";
-		ResultSet result = query.getResult(selectSQL);
-		try {
+		try (ResultSet result = query.getResult(selectSQL)){
 			if(result.next()) {
 				tabelle.add(new RanglistenManager(result));
 			}
