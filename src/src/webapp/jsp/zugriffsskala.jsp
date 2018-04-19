@@ -68,6 +68,7 @@
 	<div class="main-container">
 		<div class="main wrapper clearfix">
 			<section>
+			<h3>Häufige Zugriffe</h3>
 			<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<div>
 					<%@ page import="container.*"%>
@@ -76,13 +77,13 @@
 					<%  
 						ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
 						tabelle.searchForString();
-						out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
+						out.println("<table id='zugriffsskala' class='table_beliebte_lebensmittel' style='width:100%'>");
 						out.println("<thead>"); 								
 						out.println("<tr>");
- 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN▼▲</div></th>");
- 						out.println("<th>Lebensmittel<div class='sortieren'>SORTIEREN▼▲</div></th>");
- 						out.println("<th>Karenzphase<div class='sortieren'>SORTIEREN▼▲</div></th>");
- 						out.println("<th>Dauerernährung<div class='sortieren'>SORTIEREN▼▲</div></th>");
+ 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN ▼▲</div></th>");
+ 						out.println("<th>Lebensmittel</th>");
+ 						out.println("<th>Karenzphase</th>");
+ 						out.println("<th>Dauerernährung</th>");
  						out.println("</tr>");
  						out.println("</thead>"); 
  						out.println("<tbody class='meineTabelle'>");
@@ -118,8 +119,8 @@
 	 						out.println("</table>");
 		               %>
 				</div>
+				</form>
 			</section>
-			</from>
 		</div>
 		<!-- #main -->
 	</div>

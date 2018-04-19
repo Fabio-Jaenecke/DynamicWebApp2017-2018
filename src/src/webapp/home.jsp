@@ -1,5 +1,3 @@
-<!-- TODO: Adjust dynamic path for nachschlageplattform -->
-<!-- TODO: Adjust dynamic path for Stylesheets -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -32,6 +30,7 @@
 			   <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
 			   <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
                <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+               <script src="${pageContext.request.contextPath}/js/zugriffsskala.js"></script>
                <style>
                .link {
 				   display: inline-block;
@@ -138,86 +137,60 @@
                         </footer>
                      </article>
                      <aside>
-                        <h3>Häufige Zugriffe</h3>
-                        <table class="table_beliebte_lebensmittel">
-                           <thead>
-                              <tr>
-                                 <th rowspan="2">Platz</th>
-                                 <th rowspan="2">Lebensmittel</th>
-                                 <th colspan="2">Verträglichkeit</th>
-                                 <th rowspan="2">Zugriffe</th>
-                              </tr>
-                              <tr>
-                                 <th>KP</th>
-                                 <th>DE</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                              <tr>
-                                 <td>1</td>
-                                 <td>Kartoffeln</td>
-                                 <td>gut</td>
-                                 <td>gut</td>
-                                 <td>100'000</td>
-                              </tr>
-                              <tr>
-                                 <td>2</td>
-                                 <td>Brokkoli</td>
-                                 <td>gut</td>
-                                 <td>gut</td>
-                                 <td>80'000</td>
-                              </tr>
-                              <tr>
-                                 <td>3</td>
-                                 <td>Rindfleisch</td>
-                                 <td>gut</td>
-                                 <td>gut</td>
-                                 <td>70'000</td>
-                              </tr>
-                              <tr>
-                                 <td>4</td>
-                                 <td>Mango</td>
-                                 <td>mittel</td>
-                                 <td>gut</td>
-                                 <td>60'000</td>
-                              </tr>
-                              <tr>
-                                 <td>5</td>
-                                 <td>Kokosmilch</td>
-                                 <td>mittel</td>
-                                 <td>mittel</td>
-                                 <td>50'000</td>
-                              </tr>
-                              <tr>
-                                 <td>6</td>
-                                 <td>Bananen</td>
-                                 <td>schlecht</td>
-                                 <td>mittel</td>
-                                 <td>40'000</td>
-                              </tr>
-                              <tr>
-                                 <td>7</td>
-                                 <td>Sojaprodukte</td>
-                                 <td>schlecht</td>
-                                 <td>mittel</td>
-                                 <td>30'000</td>
-                              </tr>
-                              <tr>
-                                 <td>8</td>
-                                 <td>Bier</td>
-                                 <td>schlecht</td>
-                                 <td>schlecht</td>
-                                 <td>20'000</td>
-                              </tr>
-                              <tr>
-                                 <td>9</td>
-                                 <td>Eiweiss</td>
-                                 <td>schlecht</td>
-                                 <td>schlecht</td>
-                                 <td>10'000</td>
-                              </tr>
-                           </tbody>
-                        </table>
+                        <section>
+						<h3>Häufige Zugriffe</h3>
+						<form method="get" action="${pageContext.request.contextPath}/home/">
+							<div>
+								<%@ page import="container.*"%>
+								<%@ page import="datenbank.container.*"%>
+								<%@ page import="java.util.ArrayList" %>
+								<%  
+									ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
+									tabelle.searchForString();
+									out.println("<table id='zugriffsskala' class='table_beliebte_lebensmittel'>");
+									out.println("<thead>"); 								
+									out.println("<tr>");
+			 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN ▼▲</div></th>");
+			 						out.println("<th>Lebensmittel</th>");
+			 						out.println("<th>Karenzphase</th>");
+			 						out.println("<th>Dauerernährung</th>");
+			 						out.println("</tr>");
+			 						out.println("</thead>"); 
+			 						out.println("<tbody class='meineTabelle'>");
+			        		  			for(ZugriffsManager zugriff : tabelle.getTabelle()) {
+			           		  				// System.out.println(zugriff); 
+			
+					 						out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
+					 						out.println("<td>");
+					 						out.println(zugriff.getPlatzierung()); 
+					 						out.println("</td>");
+					 						out.println("<td>");
+					 						out.println(zugriff.getLname());
+					 						out.println("</td>");
+					 						out.println("<td>");
+					 						out.println(zugriff.getKarenzphase());
+					 						out.println("</td>");
+					 						out.println("<td>");
+					 						out.println(zugriff.getDauerernaehrung());
+					 						out.println("</td>");
+					 						out.println("</tr>");
+			
+			
+			           		  			}
+				 						out.println("</tbody>");
+				 						out.println("<tfoot>"); 
+				 						out.println("<tr>");
+				 						out.println("<th>Platzierung</th>");
+				 						out.println("<th>Lebensmittel</th>");
+				 						out.println("<th>Karenzphase</th>");
+				 						out.println("<th>Dauerernährung</th>");
+				 						out.println("</tr>");
+				 						out.println("</tfoot>");
+				 						out.println("</table>");
+					               %>
+							</div>
+							</form>
+						</section>
                      </aside>
                      </form>
                   </div>
