@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
-import datenbank.container.Lebensmitteldaten;
+import datenbank.container.LebensmittelDaten;
 import datenbank.dao.DbQuery;
 
 /**
@@ -20,7 +20,7 @@ import datenbank.dao.DbQuery;
  */
 public class SortiererDao {
 
-	private ArrayList<Lebensmitteldaten> lebensmittel = new ArrayList<>();
+	private ArrayList<LebensmittelDaten> lebensmittel = new ArrayList<>();
 	DbQuery query = new DbQuery();
 	DbConnector conn = new DbConnector();
 	private static final Logger LOGGER = Logger.getLogger(SortiererDao.class.getName());
@@ -42,7 +42,7 @@ public void searchForString(String zusortierendeSpalte, String order) {
 			ResultSet result = query.getResult(selectSQL);
 			while (result.next()) {
 
-				lebensmittel.add(new Lebensmitteldaten(result));
+				lebensmittel.add(new LebensmittelDaten(result));
 			}
 		} 
 		catch (SQLException e) {
@@ -61,7 +61,7 @@ public void searchForString(String zusortierendeSpalte, String order) {
 	 * Liefere die Liste der Lebensmittel der entsprechenden Kategorie. 
 	 * @return lebensmittel 
 	 */
-	public ArrayList<Lebensmitteldaten> getLebensmittel() {
+	public ArrayList<LebensmittelDaten> getLebensmittel() {
 		return lebensmittel;
 	}
 }
