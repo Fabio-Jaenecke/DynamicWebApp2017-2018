@@ -3,6 +3,7 @@ package datenbank.dao;
 import static org.junit.Assert.assertNotNull;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -30,10 +31,12 @@ public class DbQueryTest {
 
 	// Testing if table zugriffsskala is not empty
 	@Test
-	public void testTableZugriffsskala() {
+	public void testTableZugriffsskala() throws SQLException {
 		String sql = "select * from zugriffsskala";
-		ResultSet res = dbQuery.getResult(sql);
-		assertNotNull(res);
+		try (ResultSet res = dbQuery.getResult(sql)){
+			assertNotNull(res);
+		};
+		
 	}
 
 	// Testing if table zugriffsskala is not empty

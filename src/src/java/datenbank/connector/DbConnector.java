@@ -74,7 +74,7 @@ public class DbConnector {
 	
 	public void finalize() {
 		try {
-			if(!connInit) {
+			if(connInit) {
 	    		conn.close();    
 	    	}
 		}

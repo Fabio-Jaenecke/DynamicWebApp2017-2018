@@ -14,7 +14,7 @@ public class DbConnectorTest {
 	private DbConnectorStub conn = new DbConnectorStub();
 	
 	/*
-	 * we only inistiate a connection, so no things to do in setup
+	 * we only instantiate a connection, so no things to do in setup
 	 */
 	@Before
 	public void setUp() {
