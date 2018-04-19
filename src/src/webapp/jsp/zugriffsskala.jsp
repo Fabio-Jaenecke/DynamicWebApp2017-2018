@@ -79,10 +79,10 @@
 						out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
 						out.println("<thead>"); 								
 						out.println("<tr>");
- 						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN▼▲</div></th>");
- 						out.println("<th>Lebensmittel<div class='sortieren'>SORTIEREN▼▲</div></th>");
- 						out.println("<th>Karenzphase<div class='sortieren'>SORTIEREN▼▲</div></th>");
- 						out.println("<th>Dauerernährung<div class='sortieren'>SORTIEREN▼▲</div></th>");
+ 						out.println("<th>Platzierung<div class='sortieren'>▼▲</div></th>");
+ 						out.println("<th>Lebensmittel<div class='sortieren'>▼▲</div></th>");
+ 						out.println("<th>Karenzphase<div class='sortieren'>▼▲</div></th>");
+ 						out.println("<th>Dauerernährung<div class='sortieren'>▼▲</div></th>");
  						out.println("</tr>");
  						out.println("</thead>"); 
  						out.println("<tbody class='meineTabelle'>");
