@@ -73,7 +73,7 @@
 	            		<h3>Lebensmittelliste</h3>
 	            			
 	            			<p>Hier werden alle Lebensmittel und ihre Werte fuer Karenzphase und Dauerernährung angezeigt.<br>
-	            			Sie koennen die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
+	            			Sie können die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
 	            			</p>
     						
     						<table class='table_lebensmittelkategorie' style='margin-top: 30px;'>

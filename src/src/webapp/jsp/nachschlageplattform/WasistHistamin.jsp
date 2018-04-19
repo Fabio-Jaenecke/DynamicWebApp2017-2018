@@ -85,9 +85,9 @@
                   <div class="main wrapper clearfix">
                   	<form method="get" action="${pageContext.request.contextPath}/home/">
                      <article>
-                     <input type="submit" value="Zurueck" onchange="history.back()">
+                     <input type="submit" value="Zurück" onchange="history.back()">
                      	<ul class="breadcrumb">
-                     	<li><a href="${pageContext.request.contextPath}/home/">Home</a></li>
+                     	<li><a href="${pageContext.reqüst.contextPath}/home/">Home</a></li>
 						 <li>Was ist Histamin?</li>
 						</ul>
 						                        	
@@ -96,15 +96,15 @@
                            
                     
                        		<article style="min-width: 100%">
-							Histamin ist ein sogenanntes biogenes Amin und dient im Koerper unter anderem als wichtiger Botenstoff. Unser Organismus produziert eigenständig Histamin, das in verschiedenen Abläufen des Koerpers beteiligt ist. So spielt Histamin eine wichtige Rolle bei der Magensaftproduktion, der Regulierung des Blutdrucks und des Schlaf-Wach-Rhythmus oder ist bei der Appetitkontrolle beteiligt. Histamin ist aber auch „schuld“ an den juckenden Quaddeln nach einem Mueckenstich oder an einer laufenden Nase. Dies sind nur einige Beispiele dafuer, wie Histamin auf verschiedenste Art und Weise in hunderten Prozessen unseres Koerpers mitwirkt. Da Histamin so eine große Rolle spielt, produziert unser Koerper Histamin auf Vorrat und speichert es u.a. in den sogenannten Mastzellen. Bei Bedarf wird das Histamin dann freigesetzt. Unser Koerper baut das Histamin ueber Enzyme auch wieder ab, er schafft sich sozusagen ein Histamingleichgewicht.
+							Histamin ist ein sogenanntes biogenes Amin und dient im Körper unter anderem als wichtiger Botenstoff. Unser Organismus produziert eigenständig Histamin, das in verschiedenen Abläufen des Körpers beteiligt ist. So spielt Histamin eine wichtige Rolle bei der Magensaftproduktion, der Regulierung des Blutdrucks und des Schlaf-Wach-Rhythmus oder ist bei der Appetitkontrolle beteiligt. Histamin ist aber auch „schuld“ an den juckenden Quaddeln nach einem Mückenstich oder an einer laufenden Nase. Dies sind nur einige Beispiele dafür, wie Histamin auf verschiedenste Art und Weise in hunderten Prozessen unseres Körpers mitwirkt. Da Histamin so eine große Rolle spielt, produziert unser Körper Histamin auf Vorrat und speichert es u.a. in den sogenannten Mastzellen. Bei Bedarf wird das Histamin dann freigesetzt. Unser Körper baut das Histamin über Enzyme auch wieder ab, er schafft sich sozusagen ein Histamingleichgewicht.
 							
 							<h3>Histamin in der Nahrung</h3>
-							Histamin kann aber auch ueber die Nahrung aufgenommen werden, dann kann dieses System aus dem Gleichgewicht kommen. Dies passiert, wenn wir z.B. verdorbenen Fisch essen und eine Fischvergiftung haben. Bei Personen mit Histaminintoleranz wird dieses Gleichgewicht schneller bzw. durch weniger zugefuehrtes Histamin aus dem Gleichgewicht gebracht, bzw. koennte es sein, dass die Enzyme nicht richtig funktionieren oder zu wenig davon vorhanden sind.
+							Histamin kann aber auch über die Nahrung aufgenommen werden, dann kann dieses System aus dem Gleichgewicht kommen. Dies passiert, wenn wir z.B. verdorbenen Fisch essen und eine Fischvergiftung haben. Bei Personen mit Histaminintoleranz wird dieses Gleichgewicht schneller bzw. durch weniger zugeführtes Histamin aus dem Gleichgewicht gebracht, bzw. könnte es sein, dass die Enzyme nicht richtig funktionieren oder zu wenig davon vorhanden sind.
 							
 							<h3>Wo kommt Histamin vor?</h3>
-							Histamin kommt nicht nur in unserem Koerper vor, sondern auch in allen anderen Tieren und Pflanzen. Wenn wir uns an Brennnesseln brennen, so wird der Juckreiz zum einen von unserem eigenen Histamin ausgeloest, aber auch von Histamin, das von der Brennnessel in unsere Haut injiziert wurde. Da die Brennnessel viel Histamin enthält, ist z.B. Brennnesseltee bei Histaminintoleranz nicht verträglich. Nur wenige frische Nahrungsmittel enthalten so viel Histamin, dass es bei einer Histaminintoleranz zu Problemen kommt. Hierzu gehoeren neben der Brennnessel z.B. Tomaten oder Auberginen (Melanzani). Eine Datenbank mit verträglichen und unverträglichen Nahrungsmitteln findest du auf der Webseite nmidb.de.
+							Histamin kommt nicht nur in unserem Körper vor, sondern auch in allen anderen Tieren und Pflanzen. Wenn wir uns an Brennnesseln brennen, so wird der Juckreiz zum einen von unserem eigenen Histamin ausgelöst, aber auch von Histamin, das von der Brennnessel in unsere Haut injiziert wurde. Da die Brennnessel viel Histamin enthält, ist z.B. Brennnesseltee bei Histaminintoleranz nicht verträglich. Nur wenige frische Nahrungsmittel enthalten so viel Histamin, dass es bei einer Histaminintoleranz zu Problemen kommt. Hierzu gehören neben der Brennnessel z.B. Tomaten oder Auberginen (Melanzani). Eine Datenbank mit verträglichen und unverträglichen Nahrungsmitteln findest du auf der Webseite nmidb.de.
 							
-							Histamin wird aber auch durch mikrobiologischen Abbau gebildet, d.h. es gibt gewisse Bakterien (nicht alle!) die Histamin produzieren. Hierbei wird die Aminosäure Histidin, die ebenfalls in allen biologischen Organismen vorkommt, zu Histamin abgebaut. Das heißt Nahrungsmittel, die mit solchen Histamin bildenden Mikroorganismen in Beruehrung kommen, die z.B. reifender Käse, enthalten deutlich mehr Histamin (und andere biogene Amine). Somit gibt es leider doch viele Nahrungsmittel, die bei Histaminintoleranz nicht verträglich sind.
+							Histamin wird aber auch durch mikrobiologischen Abbau gebildet, d.h. es gibt gewisse Bakterien (nicht alle!) die Histamin produzieren. Hierbei wird die Aminosäure Histidin, die ebenfalls in allen biologischen Organismen vorkommt, zu Histamin abgebaut. Das heißt Nahrungsmittel, die mit solchen Histamin bildenden Mikroorganismen in Berührung kommen, die z.B. reifender Käse, enthalten deutlich mehr Histamin (und andere biogene Amine). Somit gibt es leider doch viele Nahrungsmittel, die bei Histaminintoleranz nicht verträglich sind.
 							</article>
                         </header>
                         

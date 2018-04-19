@@ -117,7 +117,7 @@
                 <h2>Mahzeitsassistent</h2>
 
                 <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwählen oder zu ändern.<br>
-                Sie koennen zwischen dem Kategorienassisten und dem Nährstoffassistenten wählen.<br>
+                Sie können zwischen dem Kategorienassisten und dem Nährstoffassistenten wählen.<br>
                 Es werden nur Lebensmittel angezeigt, welche als gut oder mittel verträglich eingestuft wurden.
                 </p>
 
@@ -450,9 +450,9 @@
 					  <ul class='legend-labels'>
 					    <li><span style='background:#FF7F7F;'></span>Fleisch</li>
 					    <li><span style='background:#3EAC33;'></span>Obst</li>
-					    <li><span style='background:#00933A;'></span>Gemuese</li>
-					    <li><span style='background:#FEC576;'></span>Huelsenfruechte</li>
-					    <li><span style='background:#D1B89B;'></span>Nuesse und Samen</li>
+					    <li><span style='background:#00933A;'></span>Gemüse</li>
+					    <li><span style='background:#FEC576;'></span>Hülsenfrüchte</li>
+					    <li><span style='background:#D1B89B;'></span>Nüsse und Samen</li>
 					    <li><span style='background:#BFD1E0;'></span>Fisch</li>
 					    <li><span style='background:#A2D3FF;'></span>Milch und Milchprodukte</li>
 					  </ul>
