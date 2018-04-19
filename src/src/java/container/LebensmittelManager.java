@@ -10,7 +10,7 @@ import datenbank.container.LebensmittelDaten;
  * @author Michele Trebo
  * @version 09.04.2018
  */
-public class Lebensmittelmanager
+public class LebensmittelManager
 {
 	/**
 	 * Eine ArrayList, in der die Namen von Lebensmitteln gespeichert 
@@ -21,7 +21,7 @@ public class Lebensmittelmanager
 	/**
 	 * Erzeuge eine Lebensmittelsammlung. 
 	 */
-	public Lebensmittelmanager()
+	public LebensmittelManager()
 	{
 		lebensmittel = new ArrayList<>(); 
 	}
