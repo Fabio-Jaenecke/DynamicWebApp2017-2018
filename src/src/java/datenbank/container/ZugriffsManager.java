@@ -12,13 +12,13 @@ import java.util.logging.Logger;
  * @author Michele Trebo 
  * @verison 17.04.2018 
  */
-public class Zugriffsmanager {
+public class ZugriffsManager {
 
 	private int platzierung;
 	private String lname;
 	private String karenzphase;
 	private String dauerernaehrung;
-	private static final Logger LOGGER = Logger.getLogger(Zugriffsmanager.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(ZugriffsManager.class.getName());
 
 	/**
 	 * Erzeuge den Zugriffsmanager. 
@@ -29,7 +29,7 @@ public class Zugriffsmanager {
 	 * @param karenzphase die Karenzphase
 	 * @param dauerernaehrung die Dauerernaehrung
 	 */
-	public Zugriffsmanager(int platzierung, String lname, String karenzphase, String dauerernaehrung) {
+	public ZugriffsManager(int platzierung, String lname, String karenzphase, String dauerernaehrung) {
 		this.platzierung = platzierung;
 		this.lname = lname;
 		this.karenzphase = karenzphase;
@@ -41,7 +41,7 @@ public class Zugriffsmanager {
 	 * 
 	 * @param rs das ResultSet
 	 */
-	public Zugriffsmanager(ResultSet rs) {
+	public ZugriffsManager(ResultSet rs) {
 		try {
 			this.platzierung = rs.getInt("platzierung");
 			this.lname = rs.getString("lname"); 
