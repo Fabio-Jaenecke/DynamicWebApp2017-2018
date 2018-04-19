@@ -73,7 +73,8 @@
 					<%@ page import="container.*"%>
 					<%@ page import="datenbank.container.*"%>
 					<%@ page import="java.util.ArrayList" %>
-					<%  ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
+					<%  
+						ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
 						tabelle.searchForString();
 						out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
 						out.println("<thead>"); 								
