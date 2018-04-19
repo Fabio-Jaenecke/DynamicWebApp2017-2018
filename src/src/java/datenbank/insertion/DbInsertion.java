@@ -6,7 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
-import datenbank.connector.DbConnectorStub;
 
 /*
  * Class for filling the tables with content, derived from interface

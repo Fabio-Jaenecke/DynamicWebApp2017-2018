@@ -1,6 +1,7 @@
 package suche;
 
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.BeforeClass;

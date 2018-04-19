@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import datenbank.manager.DbManager;
-
 /**
  * Servlet implementation class HistarantiaServlet
  */
@@ -19,7 +17,6 @@ import datenbank.manager.DbManager;
 public class HistarantiaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private DbManager manager = new DbManager();
        
     /**
      * @see HttpServlet#HttpServlet()

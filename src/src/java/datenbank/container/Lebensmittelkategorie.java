@@ -5,10 +5,16 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+<<<<<<< HEAD
 import datenbank.connector.DbConnectorStub;
 
 /**
  * stellt die Java-Klasse zur Entitaet lebensmittelkategorie
+=======
+
+/**
+ * stellt die Java-Klasse zur Entitaet Lebensmittelkategorie
+>>>>>>> refs/heads/master
  * in der Datenbank da
  * @author Raphael Caradonna
  *
