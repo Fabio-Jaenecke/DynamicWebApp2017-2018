@@ -12,13 +12,13 @@ import java.util.logging.Logger;
  * @author Michele Trebo
  * @version 17.04.2018
  */
-public class Ranglistenmanager {
+public class RanglistenManager {
 
 	private String lname; 
 	private String kategorie; 
 	private String karenzphase; 
 	private String dauerernaehrung; 
-	private static final Logger LOGGER = Logger.getLogger(Ranglistenmanager.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(RanglistenManager.class.getName());
 
 	/**
 	 * Erzeugt die Rangliste für die Lebensmittelvertraeglichkeit. 
@@ -28,7 +28,7 @@ public class Ranglistenmanager {
 	 * @param karenzphase die Vertraeglichkeit waehrend der Karenzphase
 	 * @param dauerernaehrung die Vertraeglichkeit waehrend der Dauerernaehrung
 	 */
-	public Ranglistenmanager(String lname, String kategorie, String karenzphase, String dauerernaehrung) {
+	public RanglistenManager(String lname, String kategorie, String karenzphase, String dauerernaehrung) {
 		this.lname = lname;
 		this.kategorie = kategorie; 
 		this.karenzphase = karenzphase;
@@ -40,7 +40,7 @@ public class Ranglistenmanager {
 	 * 
 	 * @param rs das ResultSet
 	 */
-	public Ranglistenmanager(ResultSet rs) {
+	public RanglistenManager(ResultSet rs) {
 		try {
 			this.lname = rs.getString("lname");
 			this.kategorie = rs.getString("kategorie"); 
