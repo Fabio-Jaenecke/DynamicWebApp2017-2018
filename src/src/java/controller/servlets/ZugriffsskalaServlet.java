@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
 * Servlet implementation class ZugriffsskalaServlet
 */
-@WebServlet(description = "Servlet für die Zugriffsskala", urlPatterns = { "/zugriffsskala/" })
+@WebServlet(description = "Servlet fuer die Zugriffsskala", urlPatterns = { "/zugriffsskala/" })
 
 public class ZugriffsskalaServlet extends HttpServlet {
 	

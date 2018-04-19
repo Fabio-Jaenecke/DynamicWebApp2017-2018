@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
 * Servlet implementation class FAQServlet
 */
-@WebServlet(description = "Servlet für die FAQ-Seite", urlPatterns = { "/faq/" })
+@WebServlet(description = "Servlet fuer die FAQ-Seite", urlPatterns = { "/faq/" })
 
 public class FAQServlet extends HttpServlet {
 	

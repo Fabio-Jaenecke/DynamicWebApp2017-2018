@@ -71,7 +71,7 @@
 					
 						%>
 					<select onchange="this.form.submit()" name="naehrstoffauswahl">
-								<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
+								<option value="" disabled selected>Waehlen Sie einen Naehrstoff</option>
 					
 			           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
 

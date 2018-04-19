@@ -72,7 +72,7 @@
 	            		<div>
 	            		<h3>Lebensmittelliste</h3>
 	            			
-	            			<p>Hier werden alle Lebensmittel und ihre Werte für Karenzphase und Dauerernaehrung angezeigt.<br>
+	            			<p>Hier werden alle Lebensmittel und ihre Werte fuer Karenzphase und Dauerernaehrung angezeigt.<br>
 	            			Sie koennen die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
 	            			</p>
     						
@@ -185,7 +185,7 @@
 				</article>
         </article>
         <aside>
-            <h3>Häufige Zugriffe</h3>
+            <h3>Haeufige Zugriffe</h3>
             <table class="table_beliebte_lebensmittel">
                 <thead>
                 <tr>

@@ -26,7 +26,7 @@ public class LebensmittelDaten {
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	/**
-	 * Standardkonstruktor für ein Lebensmittel
+	 * Standardkonstruktor fuer ein Lebensmittel
 	 * @param index der Index des Lebensmittels
 	 * @param name der Name des Lebensmittels
 	 * @param karenzphase der erste Toleranzwert
@@ -98,7 +98,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * gibt Datenfelder des Lebensmittels als String zurück
+	 * gibt Datenfelder des Lebensmittels als String zurueck
 	 * @override
 	 */
 	public String toString() {

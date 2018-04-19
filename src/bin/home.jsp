@@ -138,7 +138,7 @@
                         </footer>
                      </article>
                      <aside>
-                        <h3>Häufige Zugriffe</h3>
+                        <h3>Haeufige Zugriffe</h3>
                         <table class="table_beliebte_lebensmittel">
                            <thead>
                               <tr>

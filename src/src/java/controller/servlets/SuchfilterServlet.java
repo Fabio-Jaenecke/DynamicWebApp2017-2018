@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
 * Servlet implementation class SuchfilterServlet
 */
-@WebServlet(description = "Servlet für den Suchfilter", urlPatterns = { "/suchfilter/" })
+@WebServlet(description = "Servlet fuer den Suchfilter", urlPatterns = { "/suchfilter/" })
 
 public class SuchfilterServlet extends HttpServlet {
 	
