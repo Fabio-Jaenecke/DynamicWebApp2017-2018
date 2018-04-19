@@ -91,7 +91,7 @@
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
-						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
 						session.setAttribute("kategorienname2", kategorienname);
 						
 			        %>
@@ -106,7 +106,7 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(Lebensmitteldaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : daten){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
 				               				
