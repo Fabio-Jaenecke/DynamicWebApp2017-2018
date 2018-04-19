@@ -73,7 +73,7 @@
 					<%@ page import="container.*"%>
 					<%@ page import="datenbank.container.*"%>
 					<%@ page import="java.util.ArrayList" %>
-					<%  Zugriffsskalamanager tabelle = new Zugriffsskalamanager();
+					<%  ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
 						tabelle.searchForString();
 						out.println("<table id='zugriffsskala' class='table table-striped table-bordered' style='width:100%'>");
 						out.println("<thead>"); 								
@@ -85,7 +85,7 @@
  						out.println("</tr>");
  						out.println("</thead>"); 
  						out.println("<tbody class='meineTabelle'>");
-        		  			for(Zugriffsmanager zugriff : tabelle.getTabelle()) {
+        		  			for(ZugriffsManager zugriff : tabelle.getTabelle()) {
            		  				// System.out.println(zugriff); 
 
 		 						out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
