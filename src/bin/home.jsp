@@ -120,7 +120,7 @@
                         </section>
                         <section>
                            <h2>Was ist Histamin?</h2>
-                           <p> Histamin ist ein sogenanntes biogenes Amin und dient im Körper unter anderem als wichtiger Botenstoff.
+                           <p> Histamin ist ein sogenanntes biogenes Amin und dient im Koerper unter anderem als wichtiger Botenstoff.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/WasistHistamin.jsp">Mehr</a>
                         </section>

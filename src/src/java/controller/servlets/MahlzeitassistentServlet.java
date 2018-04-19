@@ -30,8 +30,8 @@ public class MahlzeitassistentServlet extends HttpServlet {
         super();
     }
     
-    /** Das Servlet ruft standardmässig den Mahlzeitassistent auf, um ihn zu öffnen.
-     *  Sollte der Benutzer auf eine Auswahl klicken, wird Mahlzeitassistentenauswahl geöffnet
+    /** Das Servlet ruft standardmässig den Mahlzeitassistent auf, um ihn zu oeffnen.
+     *  Sollte der Benutzer auf eine Auswahl klicken, wird Mahlzeitassistentenauswahl geoeffnet
      *  Mit einer auswahl in Mahlzeitassisten kehrt der Benutzer wieder zu Mahlzeitassistent zurück
      *  Else, falls kein richtiger Paramter gefunden wurde, kehre zur Home-Seite zurück.  
      * 

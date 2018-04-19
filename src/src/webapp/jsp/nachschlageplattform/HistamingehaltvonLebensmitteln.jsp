@@ -96,7 +96,7 @@
                            
                     
                        		<article style="min-width: 100%">
-							Welche Nahrungsmittel kann man bei Histaminintoleranz essen, welche nicht? Das ist nicht so einfach, da man verschiedene Faktoren berücksichtigen muss. Zum einen des Histamingehalt, der ja stark schwanken kann, zum anderen den Gehalt an biogenen Aminen, Histidin, anderen Stoffe die die DAO blockieren können oder den Reifegrad. Im Folgenden haben wir einige dieser Faktoren für dich erklärt, sowie eine Tabelle mit Histaminwerten erstellt, die auch alle anderen Faktoren bestmöglich berücksichtigt.
+							Welche Nahrungsmittel kann man bei Histaminintoleranz essen, welche nicht? Das ist nicht so einfach, da man verschiedene Faktoren berücksichtigen muss. Zum einen des Histamingehalt, der ja stark schwanken kann, zum anderen den Gehalt an biogenen Aminen, Histidin, anderen Stoffe die die DAO blockieren koennen oder den Reifegrad. Im Folgenden haben wir einige dieser Faktoren für dich erklärt, sowie eine Tabelle mit Histaminwerten erstellt, die auch alle anderen Faktoren bestmoeglich berücksichtigt.
 							
 							Springe sofort zu: 
 							<a href="${pageContext.request.contextPath}/lebensmittel/">Tabelle mit Lebensmitteln</a> 
@@ -113,7 +113,7 @@
 							Noch ein wichtiger Hinweis: Auch hier gilt, dass es individuelle Grenzen zu beachten gilt!
 							
 							<h4>Unterschiedliche Histamingehalte in unterschiedlichen Tabellen?</h4>
-							Wir werden oft gefragt warum die Histamin-Angaben in verschiedenen Tabellen unterschiedliche Werte haben. Die Antwort ist recht einfach: Der Histamingehalt ist - anders als zum Beispiel der Laktosegehalt - starken natürlichen Schwankungen (Lagerung, Alter, ...) unterworfen. D.h. die Werte in solchen Tabellen können nur als Anhaltspunkte gelten. Mittlerweile ist man generell von der Angabe von Histaminwerten abgegangen. Sinnvoller sind Listen mit Verträglichkeitsangaben die die üblichen Verzehrmengen und Zubereitungsarten, sowie Faktoren wie biogene Amine oder andere relevante Inhaltsstoffe berücksichtigen. Wir haben so eine Histamin-Verträglichkeits-Liste erstmalig erstellt.
+							Wir werden oft gefragt warum die Histamin-Angaben in verschiedenen Tabellen unterschiedliche Werte haben. Die Antwort ist recht einfach: Der Histamingehalt ist - anders als zum Beispiel der Laktosegehalt - starken natürlichen Schwankungen (Lagerung, Alter, ...) unterworfen. D.h. die Werte in solchen Tabellen koennen nur als Anhaltspunkte gelten. Mittlerweile ist man generell von der Angabe von Histaminwerten abgegangen. Sinnvoller sind Listen mit Verträglichkeitsangaben die die üblichen Verzehrmengen und Zubereitungsarten, sowie Faktoren wie biogene Amine oder andere relevante Inhaltsstoffe berücksichtigen. Wir haben so eine Histamin-Verträglichkeits-Liste erstmalig erstellt.
 							
 							<h3>Histaminarme Lebensmittel - meistens verträglich bei Histaminintoleranz</h3>
 							<ul>
@@ -168,12 +168,12 @@
 							<h3>Spezialfall: Weizen</h3>
 							Viele Betroffene berichten davon, dass die Weizen schlecht vertragen, Roggen und Dinkel hingegen gut. Dieses Phänomen ist bisher nicht geklärt. Es gibt aber seit neuestem eine Vermutung, wie die schweizer Histaminseite SIGHI berichtet.
 							
-							Man kann zwischen Hochleistungs-Weizensorten und alten Sorten (Emmer, Einkorn, Urdinkel) unterscheiden.  Letzere sind meist gut, erstere oft - und nicht nur für Histaminintolerante - schlecht verträglich. Die Ursache hierfür vermutet man derzeit einerseits im Gluten bzw. Gliadin, andererseits könnte ein ein Insektengift, welches in die neuen Sorten hineingezüchtet wurde (ATI-Weizen), verantwortlich sein. Wir bleiben dran und berichten über neue Erkenntnisse hierüber!
+							Man kann zwischen Hochleistungs-Weizensorten und alten Sorten (Emmer, Einkorn, Urdinkel) unterscheiden.  Letzere sind meist gut, erstere oft - und nicht nur für Histaminintolerante - schlecht verträglich. Die Ursache hierfür vermutet man derzeit einerseits im Gluten bzw. Gliadin, andererseits koennte ein ein Insektengift, welches in die neuen Sorten hineingezüchtet wurde (ATI-Weizen), verantwortlich sein. Wir bleiben dran und berichten über neue Erkenntnisse hierüber!
 							
 							<em>Du solltest auf jeden Fall mit einem Ernährungsberater/Diätologen eine genaue Diät erarbeiten!</em>
 							
 							<h3>Histidingehalte und Hefe bei Histaminintoleranz</h3>	
-							Histidin wird im Körper zu Histamin abgebaut. Dies geschieht mit dem Enzym L-Histidin-Decarboxylase (HDC). Dieses Enzym kommt auch in Bakterien und in Hefe vor. Somit sind Lebensmittel mit hohem Histidingehalt mit einiger Vorsicht zu genießen. Vor allem, wenn sie länger ungekühlt aufbewahrt werden (bakterielle Zersetzung) oder sie durch Hefen verarbeitet wurden! Dieses Thema ist sehr komplex, denn es gibt unglaublich viele verschiedene Hefen. So wird zum Beispiel zur Produktion von Bordeaux-Wein eine spezielle Bordeauxhefe verwendet. Die verschiedenen Hefen produzieren verschiedene Mengen an Histamin. Dadurch ist eine Normierung dieser Werte fast unmöglich!
+							Histidin wird im Koerper zu Histamin abgebaut. Dies geschieht mit dem Enzym L-Histidin-Decarboxylase (HDC). Dieses Enzym kommt auch in Bakterien und in Hefe vor. Somit sind Lebensmittel mit hohem Histidingehalt mit einiger Vorsicht zu genießen. Vor allem, wenn sie länger ungekühlt aufbewahrt werden (bakterielle Zersetzung) oder sie durch Hefen verarbeitet wurden! Dieses Thema ist sehr komplex, denn es gibt unglaublich viele verschiedene Hefen. So wird zum Beispiel zur Produktion von Bordeaux-Wein eine spezielle Bordeauxhefe verwendet. Die verschiedenen Hefen produzieren verschiedene Mengen an Histamin. Dadurch ist eine Normierung dieser Werte fast unmoeglich!
 							
 							Wichtig ist aber: Hoher Gehalt an Histidin geht oft einher mit schlechter Verträglichkeit bei Histaminintoleranz. Vor allem bei verarbeiteten Lebensmitteln.
 							
