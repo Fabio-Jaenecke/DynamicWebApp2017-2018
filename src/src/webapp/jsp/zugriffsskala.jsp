@@ -82,7 +82,7 @@
  						out.println("<th>Platzierung<div class='sortieren'>SORTIEREN▼▲</div></th>");
  						out.println("<th>Lebensmittel<div class='sortieren'>SORTIEREN▼▲</div></th>");
  						out.println("<th>Karenzphase<div class='sortieren'>SORTIEREN▼▲</div></th>");
- 						out.println("<th>Dauerernaehrung<div class='sortieren'>SORTIEREN▼▲</div></th>");
+ 						out.println("<th>Dauerernährung<div class='sortieren'>SORTIEREN▼▲</div></th>");
  						out.println("</tr>");
  						out.println("</thead>"); 
  						out.println("<tbody class='meineTabelle'>");
@@ -112,7 +112,7 @@
 	 						out.println("<th>Platzierung</th>");
 	 						out.println("<th>Lebensmittel</th>");
 	 						out.println("<th>Karenzphase</th>");
-	 						out.println("<th>Dauerernaehrung</th>");
+	 						out.println("<th>Dauerernährung</th>");
 	 						out.println("</tr>");
 	 						out.println("</tfoot>");
 	 						out.println("</table>");

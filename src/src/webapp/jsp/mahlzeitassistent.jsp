@@ -116,9 +116,9 @@
 				<%@ page import="controller.servlets.*" %>		
                 <h2>Mahzeitsassistent</h2>
 
-                <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwaehlen oder zu aendern.<br>
-                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoffassistenten waehlen.<br>
-                Es werden nur Lebensmittel angezeigt, welche als gut oder mittel vertraeglich eingestuft wurden.
+                <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwählen oder zu ändern.<br>
+                Sie koennen zwischen dem Kategorienassisten und dem Nährstoffassistenten wählen.<br>
+                Es werden nur Lebensmittel angezeigt, welche als gut oder mittel verträglich eingestuft wurden.
                 </p>
 
                 
@@ -179,7 +179,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
@@ -224,7 +224,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
@@ -269,7 +269,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
@@ -291,7 +291,7 @@
 					
 					
 					<div class='naehrstoffe' >
-					<h3 style="margin-top: -250px">Assistent Naehrstoffe</h3>
+					<h3 style="margin-top: -250px">Assistent Nährstoffe</h3>
 					<section class="mahlzeitassistent" style="margin-top: -200px">
 											<%@ page import="datenbank.container.*" %>
 					
@@ -330,7 +330,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeErstesDrittel'>
@@ -375,7 +375,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeZweitesDrittel'>
@@ -420,7 +420,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeDrittesDrittel'>
@@ -459,11 +459,11 @@
 					</div>
 				</div>
 				<div class='my-legend'>
-					<div class='legend-title'>Naehrstoffe:</div>
+					<div class='legend-title'>Nährstoffe:</div>
 					<div class='legend-scale'>
 					  <ul class='legend-labels'>
 					    <li><span style='background:#FFEBE4;'></span>Proteine</li>
-					    <li><span style='background:#E8E9FF;'></span>Staerkebeilage</li>
+					    <li><span style='background:#E8E9FF;'></span>Stärkebeilage</li>
 					    <li><span style='background:#E4FFF2;'></span>Vitamine</li>
 					  </ul>
 					</div>

@@ -72,7 +72,7 @@
 	            		<div>
 	            		<h3>Lebensmittelliste</h3>
 	            			
-	            			<p>Hier werden alle Lebensmittel und ihre Werte fuer Karenzphase und Dauerernaehrung angezeigt.<br>
+	            			<p>Hier werden alle Lebensmittel und ihre Werte fuer Karenzphase und Dauerernährung angezeigt.<br>
 	            			Sie koennen die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
 	            			</p>
     						
@@ -91,7 +91,7 @@
 	                                    <label><input type="submit" name="karenzphaseaufsteigend" value="asc">▲</label>
 	                                    </span>
 	                                    </th>
-	                                    <th style="min-width: 180px">Dauerernaehrung
+	                                    <th style="min-width: 180px">Dauerernährung
 	                                    <span class="sortierer">
 	                                    <label><input type="submit" name="dauerernaehrungabsteigend" value="desc">▼</label>
 	                                    <label><input type="submit" name="dauerernaehrungaufsteigend" value="asc">▲</label>
@@ -157,7 +157,7 @@
 			           		SortiererDao sortierer = new SortiererDao();
 			           		sortierer.searchForString(auswahl, order);
 							ArrayList<LebensmittelDaten> daten = sortierer.getLebensmittel();
-							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite waere dann leer
+							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite wäre dann leer
 						    %>
 						     
 	                              <tbody>
@@ -185,13 +185,13 @@
 				</article>
         </article>
         <aside>
-            <h3>Haeufige Zugriffe</h3>
+            <h3>Häufige Zugriffe</h3>
             <table class="table_beliebte_lebensmittel">
                 <thead>
                 <tr>
                     <th rowspan="2">Platz</th>
                     <th rowspan="2">Lebensmittel</th>
-                    <th colspan="2">Vertraeglichkeit</th>
+                    <th colspan="2">Verträglichkeit</th>
                     <th rowspan="2">Zugriffe</th>
                 </tr>
                 <tr>

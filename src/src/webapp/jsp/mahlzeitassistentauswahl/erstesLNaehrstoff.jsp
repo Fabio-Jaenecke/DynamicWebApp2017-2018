@@ -71,7 +71,7 @@
 					
 						%>
 					<select onchange="this.form.submit()" name="naehrstoffauswahl">
-								<option value="" disabled selected>Waehlen Sie einen Naehrstoff</option>
+								<option value="" disabled selected>Wählen Sie einen Nährstoff</option>
 					
 			           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
 
@@ -139,14 +139,14 @@
 			        	 if (auswahl==null){
 			        		 //do nothing
 			        	 }else{
-			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
+			        		 out.println("Ausgewähltes Lebensmittel: " + auswahl);
 			        	 }	
 			            %>
 			            <p><p>
 			           
 			        </form> 
 			         <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
-		            	<input type='submit' name="Bestaetigen" value="Bestaetigen">
+		            	<input type='submit' name="Bestaetigen" value="Bestätigen">
 		            </form>
             </section>
             
