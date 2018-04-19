@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import datenbank.connector.DbConnector;
 
 /**
- * stellt die Java-Klasse zur Entitaet Lebensmitteldaten
+ * stellt die Java-Klasse zur Entitaet lebensmittelDaten
  * in der Datenbank da
  * @author Raphael Caradonna
  *
@@ -16,7 +16,7 @@ import datenbank.connector.DbConnector;
 public class LebensmittelDaten {
 	
 	/**
-	 * Attribute aus der Entitaet Lebensmitteldaten
+	 * Attribute aus der Entitaet lebensmittelDaten
 	 */
 	private int index;
 	private String lebensmittelname;

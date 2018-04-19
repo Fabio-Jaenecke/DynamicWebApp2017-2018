@@ -37,7 +37,7 @@ public class NaehrstoffsucheDao {
 	 * @param kategorienname der Name der gesuchten Kategorie. 
 	 */
 	public void searchForString(String naehrstoffname) {
-		String selectSQL = "SELECT * FROM LEBENSMITTELDATEN l JOIN NAEHRZUGEHOERIGKEIT n" + 
+		String selectSQL = "SELECT * FROM lebensmittelDaten l JOIN NAEHRZUGEHOERIGKEIT n" + 
 				" ON l.lindex=n.lindex" + 
 				" WHERE n.nname='" + naehrstoffname + "';";
 		try {

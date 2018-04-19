@@ -14,7 +14,7 @@ import datenbank.container.ZugriffsManager;
 import datenbank.dao.DbQuery; 
 
 /**
- * Diese Klasse erstellt eine Tabelle mit den Platzierungen der Lebensmittel sowie den entsprechenden Lebensmitteldaten. 
+ * Diese Klasse erstellt eine Tabelle mit den Platzierungen der Lebensmittel sowie den entsprechenden lebensmittelDaten. 
  * 
  * @author Michele Trebo
  * @verison 12.04.2018
@@ -27,18 +27,18 @@ public class ZugriffsskalaManager {
 	private static final Logger LOGGER = Logger.getLogger(ZugriffsskalaManager.class.getName()); 
 	
 	/**
-	 * Erzeuge den Zugriffsskalamanager. 
+	 * Erzeuge den ZugriffsskalaManager. 
 	 */
 	public ZugriffsskalaManager() {
 		tabelle = new ArrayList<ZugriffsManager>();
 	}
 	
 	/**
-	 * Hole die Platzierungen sowie die entsprechenden Lebensmitteldaten und gib diese in eine Tabelle. 
+	 * Hole die Platzierungen sowie die entsprechenden lebensmittelDaten und gib diese in eine Tabelle. 
 	 * @param platzierung die Platzierung der Lebensmittel 
 	 */
 	public void searchForString() {
-		String selectSQL = "Select * FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
+		String selectSQL = "Select * FROM lebensmittelDaten l JOIN FAVORIT f"
 				+" ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex;";
 		try {
 			ResultSet result = query.getResult(selectSQL);
@@ -59,7 +59,7 @@ public class ZugriffsskalaManager {
 	}
 	
 	/**
-	 * Liefere die Tabelle mit den Platzierungen und den entsprechenden Lebensmitteldaten. 
+	 * Liefere die Tabelle mit den Platzierungen und den entsprechenden lebensmittelDaten. 
 	 * @return tabelle
 	 */
 	public ArrayList<ZugriffsManager> getTabelle() {

@@ -20,10 +20,10 @@ public class DbQueryTest {
 		dbQuery = new DbQuery();
 	}
 
-	// Testing if table lebensmitteldaten is not empty
+	// Testing if table lebensmittelDaten is not empty
 	@Test
 	public void testTableLebensmittledaten() {
-		String sql = "select * from lebensmitteldaten";
+		String sql = "select * from lebensmittelDaten";
 		ResultSet res = dbQuery.getResult(sql);
 		assertNotNull(res);
 	}
@@ -38,7 +38,7 @@ public class DbQueryTest {
 
 	// Testing if table zugriffsskala is not empty
 	@Test
-	public void testTableLebensmittelkategorie() {
+	public void testTablelebensmittelkategorie() {
 		String sql = "select * from lebensmittelkategorie";
 		ResultSet res = dbQuery.getResult(sql);
 		assertNotNull(res);

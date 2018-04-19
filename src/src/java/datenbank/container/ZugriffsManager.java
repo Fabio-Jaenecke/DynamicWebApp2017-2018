@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Diese Klasse holt die Lebensmitteldaten, die fuer die Zugriffsskala benoetigt werden, 
+ * Diese Klasse holt die lebensmittelDaten, die fuer die Zugriffsskala benoetigt werden, 
  * aus der Datenbank und stellt diese zur Verfuegung. 
  * 
  * @author Michele Trebo 
@@ -21,11 +21,11 @@ public class ZugriffsManager {
 	private static final Logger LOGGER = Logger.getLogger(ZugriffsManager.class.getName());
 
 	/**
-	 * Erzeuge den Zugriffsmanager. 
+	 * Erzeuge den ZugriffsManager. 
 	 * 
 	 * @param platzierung die Platzierung der Lebensmittel 
 	 * @param lname der Lebensmittelname
-	 * @param kategorie die Lebensmittelkategorie 
+	 * @param kategorie die lebensmittelkategorie 
 	 * @param karenzphase die Karenzphase
 	 * @param dauerernaehrung die Dauerernaehrung
 	 */
@@ -37,7 +37,7 @@ public class ZugriffsManager {
 	}
 
 	/**
-	 * Erzeuge den Zugriffsmanager mittels Daten aus der Datenbank. 
+	 * Erzeuge den ZugriffsManager mittels Daten aus der Datenbank. 
 	 * 
 	 * @param rs das ResultSet
 	 */
@@ -48,7 +48,7 @@ public class ZugriffsManager {
 			this.karenzphase = rs.getString("karenzphase");
 			this.dauerernaehrung = rs.getString("dauerernaehrung");
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "Result set of zugriffsmanager could not be resolved " + e);
+			LOGGER.log(Level.SEVERE, "Result set of ZugriffsManager could not be resolved " + e);
 		}
 	}
 

@@ -40,8 +40,8 @@ public class Rangliste {
 	 * @param lebensmittelname der Name des Lebensmittels. 
 	 */
 	public void searchForString() {
-		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN KATZUGEHOERIGKEIT k "
-				+ "ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex = lk.kindex';";
+		String selectSQL = "Select * " + " FROM lebensmittelDaten l JOIN KATZUGEHOERIGKEIT k "
+				+ "ON l.lindex=k.lindex JOIN lebensmittelkategorie lk on k.kindex = lk.kindex';";
 		ResultSet result = query.getResult(selectSQL);
 		try {
 			if(result.next()) {
@@ -61,7 +61,7 @@ public class Rangliste {
 	}
 	
 	/**
-	 * Liefere die Tabelle mit der Karenzphase und der Dauerernaehrung sowie den entsprechenden Lebensmitteldaten.
+	 * Liefere die Tabelle mit der Karenzphase und der Dauerernaehrung sowie den entsprechenden lebensmittelDaten.
 	 * @return
 	 */
 	public ArrayList<RanglistenManager> getTabelle() {

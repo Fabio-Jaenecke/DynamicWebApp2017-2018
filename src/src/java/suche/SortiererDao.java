@@ -37,7 +37,7 @@ public SortiererDao() {
 	 * @param kategorienname der Name der gesuchten Kategorie. 
 	 */
 public void searchForString(String zusortierendeSpalte, String order) {
-	String selectSQL = "select * from lebensmitteldaten Order BY " + zusortierendeSpalte + " " + order + ";";
+	String selectSQL = "select * from lebensmittelDaten Order BY " + zusortierendeSpalte + " " + order + ";";
 		try {
 			ResultSet result = query.getResult(selectSQL);
 			while (result.next()) {

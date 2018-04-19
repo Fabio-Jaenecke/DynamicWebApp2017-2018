@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
-* Servlet implementation class LebensmittelKategorieServlet
+* Servlet implementation class lebensmittelkategorieServlet
 */
 @WebServlet(description = "Servlet für die Lebensmittelrangliste", urlPatterns = { "/lebensmittel/" })
 

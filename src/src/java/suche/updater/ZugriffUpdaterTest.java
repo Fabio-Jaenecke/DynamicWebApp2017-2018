@@ -17,7 +17,7 @@ public class ZugriffUpdaterTest {
 	@Before
 	public void setUp() throws Exception {
 		LebensmittelDaten lebensmittel = new LebensmittelDaten(
-				query.getResult("select * from lebensmitteldaten where lindex = 1001"));
+				query.getResult("select * from lebensmittelDaten where lindex = 1001"));
 		updater = new ZugriffUpdater(lebensmittel);
 	}
 

@@ -24,10 +24,10 @@ public class DbCreationTest {
 		creation.setUpTables();
 	}
 
-	// Testing the create table statements for the table lebensmitteldaten
+	// Testing the create table statements for the table lebensmittelDaten
 	@Test
-	public void testSetUpTableLebensmitteldaten() {
-		assertNotNull(query.getResult("select 1 from lebensmitteldaten"));
+	public void testSetUpTablelebensmittelDaten() {
+		assertNotNull(query.getResult("select 1 from lebensmittelDaten"));
 	}
 
 	// Testing the create table statements for the table zugriffsskala
@@ -38,7 +38,7 @@ public class DbCreationTest {
 
 	// Testing the create table statements for the table lebensmittelkategorie
 	@Test
-	public void testSetUpTableLebensmittelkategorie() {
+	public void testSetUpTablelebensmittelkategorie() {
 		assertNotNull(query.getResult("select 1 from lebensmittelkategorie"));
 	}
 

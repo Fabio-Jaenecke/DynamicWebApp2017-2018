@@ -8,23 +8,23 @@ import java.util.logging.Logger;
 import datenbank.connector.DbConnectorStub;
 
 /**
- * stellt die Java-Klasse zur Entitaet Lebensmittelkategorie
+ * stellt die Java-Klasse zur Entitaet lebensmittelkategorie
  * in der Datenbank da
  * @author Raphael Caradonna
  *
  */
-public class LebensmittelKategorie {
+public class Lebensmittelkategorie {
 
 	private int kindex;
 	private String kname;
-	private static final Logger LOGGER = Logger.getLogger(LebensmittelKategorie.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(Lebensmittelkategorie.class.getName());
 	
-	public LebensmittelKategorie(int kindex, String kname) {
+	public Lebensmittelkategorie(int kindex, String kname) {
 		this.kindex = kindex;
 		this.kname = kname;
 	}
 	
-	public LebensmittelKategorie(ResultSet rs) throws SQLException {
+	public Lebensmittelkategorie(ResultSet rs) throws SQLException {
 		try {
 			this.kindex = rs.getInt("keindex"); 
 		   	this.kname = rs.getString("kname"); 

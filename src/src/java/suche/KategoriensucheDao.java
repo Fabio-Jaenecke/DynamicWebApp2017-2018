@@ -37,8 +37,8 @@ public class KategoriensucheDao {
 	 * @param kategorienname der Name der gesuchten Kategorie. 
 	 */
 	public void searchForString(String kategorienname) {
-		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN KATZUGEHOERIGKEIT k "
-				+ "ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex = lk.kindex " + "where lower(lk.Kname)= '"
+		String selectSQL = "Select * " + " FROM lebensmittelDaten l JOIN KATZUGEHOERIGKEIT k "
+				+ "ON l.lindex=k.lindex JOIN lebensmittelkategorie lk on k.kindex = lk.kindex " + "where lower(lk.Kname)= '"
 				+ kategorienname.toLowerCase() + "';";
 		try {
 			ResultSet result = query.getResult(selectSQL);
