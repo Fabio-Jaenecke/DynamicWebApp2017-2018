@@ -117,7 +117,7 @@
                 <h2>Mahzeitsassistent</h2>
 
                 <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwählen oder zu ändern.<br>
-                Sie koennen zwischen dem Kategorienassisten und dem Nährstoffassistenten wählen.<br>
+                Sie können zwischen dem Kategorienassisten und dem Nährstoffassistenten wählen.<br>
                 Es werden nur Lebensmittel angezeigt, welche als gut oder mittel verträglich eingestuft wurden.
                 </p>
 

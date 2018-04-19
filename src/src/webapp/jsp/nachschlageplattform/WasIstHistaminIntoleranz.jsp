@@ -97,25 +97,25 @@
                     
                        		<article style="min-width: 100%">
 							
-							Histaminintoleranz, auch Histaminunverträglichkeit genannt, ist der Zustand, wenn zu viel Histamin im Koerper ist und folglich Probleme auftreten. Histamin ist ein biogenes Amin und ein sehr wichtiger Stoff, der im Koerper vorkommen muss und dort wichtige Aufgaben erfuellt. Besteht aber ein Ungleichgewicht, so kann es zu Problemen kommen. Das nennt man dann Histaminintoleranz. Dieses Ungleichgewicht kann durch eine verringerte Aktivität des Enzyms Diaminoxidase (DAO), sowie durch erhoehte Aufnahme von biogenen Aminen durch die Nahrung, durch Produktion biogener Amine von koerpereigenen Darmbakterien und durch externe Inhibitoren (also Hemmstoffe) Symptome wie Hautroetungen, Bauchschmerzen, Durchfälle, usw. verursachen. Wobei nicht alle diese Ausloeser zeitgleich auftreten muessen. Das Symptomspektrum ist dabei sehr variabel.
+							Histaminintoleranz, auch Histaminunverträglichkeit genannt, ist der Zustand, wenn zu viel Histamin im Körper ist und folglich Probleme auftreten. Histamin ist ein biogenes Amin und ein sehr wichtiger Stoff, der im Körper vorkommen muss und dort wichtige Aufgaben erfuellt. Besteht aber ein Ungleichgewicht, so kann es zu Problemen kommen. Das nennt man dann Histaminintoleranz. Dieses Ungleichgewicht kann durch eine verringerte Aktivität des Enzyms Diaminoxidase (DAO), sowie durch erhöhte Aufnahme von biogenen Aminen durch die Nahrung, durch Produktion biogener Amine von körpereigenen Darmbakterien und durch externe Inhibitoren (also Hemmstoffe) Symptome wie Hautrötungen, Bauchschmerzen, Durchfälle, usw. verursachen. Wobei nicht alle diese Auslöser zeitgleich auftreten muessen. Das Symptomspektrum ist dabei sehr variabel.
 							
 							<h3>Häufigkeit der Histaminintoleranz</h3>
 							
-							Die Histaminintoleranz tritt bei ca. 1-3% der Bevoelkerung auf. Nach einer Studie des nmi-Portals ist die Dunkelziffer jedoch sehr hoch, d.h. es sind vermutlich mehr Personen davon Betroffen. Laut einer Studie von Jarisch sind zirka 80% der Betroffenen Frauen, die meisten davon ab dem 40. Lebensjahr. In der Umfrage des nmi-Portals konnte diese Tendenz nicht verifiziert werden.
+							Die Histaminintoleranz tritt bei ca. 1-3% der Bevölkerung auf. Nach einer Studie des nmi-Portals ist die Dunkelziffer jedoch sehr hoch, d.h. es sind vermutlich mehr Personen davon Betroffen. Laut einer Studie von Jarisch sind zirka 80% der Betroffenen Frauen, die meisten davon ab dem 40. Lebensjahr. In der Umfrage des nmi-Portals konnte diese Tendenz nicht verifiziert werden.
 							
 							<h3>Zwei Arten von Histaminintoleranz</h3>
 							
-							Histidin (eine natuerliche Aminosäure) wird in der Nahrung durch Bakterien (oder Hefe) zu Histamin abgebaut. Dieses wird dann im menschlichen Koerper durch die Enzyme Diaminoxidase [DAO] (außerhalb der Zellen; zu finden in Duenndarm) bzw. N-Methyl-Transferase [HNMT] (innerhalb von Zellen; zum Beispiel in der Leber) abgebaut. Enzyme sind Molekuele die dem Koerper dabei helfen bestimmte Reaktionen auszufuehren. Sie koennen z.B. andere Molekuele spalten oder dabei helfen ein Molekuel in ein anderes umzuwandeln.
+							Histidin (eine natuerliche Aminosäure) wird in der Nahrung durch Bakterien (oder Hefe) zu Histamin abgebaut. Dieses wird dann im menschlichen Körper durch die Enzyme Diaminoxidase [DAO] (außerhalb der Zellen; zu finden in Duenndarm) bzw. N-Methyl-Transferase [HNMT] (innerhalb von Zellen; zum Beispiel in der Leber) abgebaut. Enzyme sind Molekuele die dem Körper dabei helfen bestimmte Reaktionen auszufuehren. Sie können z.B. andere Molekuele spalten oder dabei helfen ein Molekuel in ein anderes umzuwandeln.
 							
 							<h4>Typ Diaminoxidase - DAO</h4>
 							
-							Das Enzym DAO benoetigt die Hilfe von Kupfer und Vitamin B6 um richtig zu funktionieren. Bei einer Histaminintoleranz vom "Typ DAO" ist die Aktivität der Diaminoxidase (DAO) eingeschränkt und durch die Nahrung aufgenommenes Histamin kann nicht oder nur teilweise abgebaut werden. Beim Verzehr histaminhaltiger oder histaminfreisetzender Nahrungsmittel kommt es zu einer pseudoallergischen Reaktion des Koerpers.
+							Das Enzym DAO benötigt die Hilfe von Kupfer und Vitamin B6 um richtig zu funktionieren. Bei einer Histaminintoleranz vom "Typ DAO" ist die Aktivität der Diaminoxidase (DAO) eingeschränkt und durch die Nahrung aufgenommenes Histamin kann nicht oder nur teilweise abgebaut werden. Beim Verzehr histaminhaltiger oder histaminfreisetzender Nahrungsmittel kommt es zu einer pseudoallergischen Reaktion des Körpers.
 							
 							<h4>Typ HNMT</h4>
 							
-							Die HNMT kommt vermehrt in Organen wie Leber, Haut, Atemwege oder im Zentralnervensystem vor. Ist zu wenig dieser HNMT vorhanden, kommt es ebenfalls zu einer Histaminintoleranz, allerdings "Typ HNMT". Hier kommt es zu einer allmälichen und langsamen Ansammlung von Histamin im Koerper. Wird dann Histamin dem Koerper zugefuehrt, bringt dies sozusagen das Fass zum ueberlaufen. Die Symptomatik ist bei diesem Typ oft weniger auffällig, dafuer länger andauernd.
+							Die HNMT kommt vermehrt in Organen wie Leber, Haut, Atemwege oder im Zentralnervensystem vor. Ist zu wenig dieser HNMT vorhanden, kommt es ebenfalls zu einer Histaminintoleranz, allerdings "Typ HNMT". Hier kommt es zu einer allmälichen und langsamen Ansammlung von Histamin im Körper. Wird dann Histamin dem Körper zugefuehrt, bringt dies sozusagen das Fass zum ueberlaufen. Die Symptomatik ist bei diesem Typ oft weniger auffällig, dafuer länger andauernd.
 							
-							Der Abbau des Histamins wird durch Vitamin C gefoerdert.
+							Der Abbau des Histamins wird durch Vitamin C gefördert.
 							
 							<h3>Welchen Typ habe ich?</h3>
 							

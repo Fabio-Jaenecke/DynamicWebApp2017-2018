@@ -28,7 +28,7 @@
 </head>
 <body>
     <!-- die Seite Suchverlauf besteht aus einem header, nav, einem fieldset fuer die Sucheingabe
-    und einer section fuer die moeglichen Suchresultate
+    und einer section fuer die möglichen Suchresultate
     -->
     <div class="header-container">
         <header class="wrapper clearfix" style="max-height: 50px; padding-top: 15px;"><div class="flex-grid-thirds"><div class="col menugrid"><span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></div><div class="col titlegrid">Suchfilter</div><div class="col suchgrid"><a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a></div></div>

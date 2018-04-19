@@ -100,22 +100,22 @@
 							
 							<h3>Symptome der Histaminunverträglichkeit</h3>
 							Zusammenfassung (leichte Sprache)
-							Die Symptome der Histaminintoleranz treten meist kurz nach oder wenige Stunden nach einer histaminreichen Mahlzeit auf. Die Symptome sind u.a. Kopfschmerzen, Hautroetungen, Juckreiz, uebelkeit, Duchfall oder Herzrasen .
+							Die Symptome der Histaminintoleranz treten meist kurz nach oder wenige Stunden nach einer histaminreichen Mahlzeit auf. Die Symptome sind u.a. Kopfschmerzen, Hautrötungen, Juckreiz, uebelkeit, Duchfall oder Herzrasen .
 							
 							Die Symptome der Histaminintoleranz sind sehr vielfältig (siehe unten) und teilweise schwer von den Symptomen anderer Krankheiten zu unterscheiden. Vor allem Allergie-Symptome ähneln denen der Histaminintoleranz. Die Symptome machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher bzw. histaminfreisetzender oder das Enzym DAO blockierender Nahrungsmittel bemerkbar. Nach einer Studie an 141 Betroffenen, treten bei 41% der Betroffenen die Symptome bereits wenige Minuten, bei 47% wenige Stunden nach dem Verzehr der entsprechenden Nahrungsmittel auf. Nur etwa 12% berichten von Symptomen an darauffolgenden Tagen.
 							
-							Die Schwierigkeit in der Diagnostik der Histaminunverträglichkeit ist die Vielfältigkeit der Symptome. Es gibt gewisse Symptomgruppen: Herz-Kreislaufsystem, Haut / Schleimhäute und Verdauung. Oft treten mehrere Symptome einer dieser Kategorien gehäuft auf. Oft treten einige Symptome gemeinsam auf, es koennen sich aber auch nur einzelne Symptome bemerkbar machen. Dies ist individuell unterschiedlich und auch abhängig von den Nahrungsmitteln oder zusätzlichen Intoleranzen!
+							Die Schwierigkeit in der Diagnostik der Histaminunverträglichkeit ist die Vielfältigkeit der Symptome. Es gibt gewisse Symptomgruppen: Herz-Kreislaufsystem, Haut / Schleimhäute und Verdauung. Oft treten mehrere Symptome einer dieser Kategorien gehäuft auf. Oft treten einige Symptome gemeinsam auf, es können sich aber auch nur einzelne Symptome bemerkbar machen. Dies ist individuell unterschiedlich und auch abhängig von den Nahrungsmitteln oder zusätzlichen Intoleranzen!
 							
-							<h3>Bei der Histaminintoleranz koennen mehrere Bereiche betroffen sein:</h3>
+							<h3>Bei der Histaminintoleranz können mehrere Bereiche betroffen sein:</h3>
 							HIT Symptome
 							
 							Herz-Kreislauf-System
 							Haut
 							Gastrointestinaltrakt (Verdauungstrakt)
 							Genitaltrakt*
-							*Die Symptomgruppe "Genitaltrakt" konnte in unserer Umfrage nicht bestätigt werden, da keine einzige der Befragten diese Symptomgruppe erwähnte. Jarisch beschreibt in seinem Buch, dass ein Zusammenhang zwischen krampfartigen Regelschmerzen und Histamin-Intoleranz plausibel sein koennte.
+							*Die Symptomgruppe "Genitaltrakt" konnte in unserer Umfrage nicht bestätigt werden, da keine einzige der Befragten diese Symptomgruppe erwähnte. Jarisch beschreibt in seinem Buch, dass ein Zusammenhang zwischen krampfartigen Regelschmerzen und Histamin-Intoleranz plausibel sein könnte.
 							
-							In unserer Studie mit 141 Teilnehmern, haben wir folgende Verteilung von Symptomen gefunden: Am häufigsten waren Kopfschmerzen (38%) und Flush (36%; Hautroetungen im Gesichts- und Halsbereich), gefolgt von Bauchschmerzen (31%), Durchfall (26%), Nasenrinnen bzw. Nasenschleimhautschwellung (19%). Blähungen und uebelkeit verzeichneten wir jeweils mit etwa 17%, gefolgt von Herzrasen mit nur noch etwa 12%. Weniger oft, aber immer noch in mehr als 5% der Fälle, kommen Ausschlag, juckende Haut, Muedigkeit, Schwindel und Kreislaufprobleme vor.
+							In unserer Studie mit 141 Teilnehmern, haben wir folgende Verteilung von Symptomen gefunden: Am häufigsten waren Kopfschmerzen (38%) und Flush (36%; Hautrötungen im Gesichts- und Halsbereich), gefolgt von Bauchschmerzen (31%), Durchfall (26%), Nasenrinnen bzw. Nasenschleimhautschwellung (19%). Blähungen und uebelkeit verzeichneten wir jeweils mit etwa 17%, gefolgt von Herzrasen mit nur noch etwa 12%. Weniger oft, aber immer noch in mehr als 5% der Fälle, kommen Ausschlag, juckende Haut, Muedigkeit, Schwindel und Kreislaufprobleme vor.
 							
 							<h3>Die häufigsten Symptome der verschiedenen Symptomgruppen sind:</h3>
 							<table>
@@ -150,7 +150,7 @@
 							    <td></td>
 							  </tr>
 							</table>
-							Bei der Histaminintoleranz wird generell davor gewarnt, dass es in sehr seltenen Fällen zu lebensbedrohlichen Zuständen kommen koennte. Bisher wurde jedoch kein solcher Fall dokumentiert!
+							Bei der Histaminintoleranz wird generell davor gewarnt, dass es in sehr seltenen Fällen zu lebensbedrohlichen Zuständen kommen könnte. Bisher wurde jedoch kein solcher Fall dokumentiert!
 							
 							<h3>Folgende Symptome werden von einigen Betroffenen zusätzlich berichtet:</h3>
 							<ul>
@@ -159,12 +159,12 @@
 								<li>Schweißausbrueche</li>
 								<li>Kribbeln in Fingern, Beinen</li>
 								<li>Muskel/Gelenksschmerzen</li>
-								<li>Schlafstoerungen</li>
+								<li>Schlafstörungen</li>
 								<li>Asthma/Atemnot</li>
 								<li>Niesen</li>
 								<li>Augenjucken</li>
 								<li>Sodbrennen</li>
-								<li>Sehstoerungen</li>
+								<li>Sehstörungen</li>
 								<li>Hitzewallungen</li>
 								<li>Niesanfälle</li>
 								<li>Tinnitus, Ohrensausen</li>
@@ -175,7 +175,7 @@
 								<li>Antriebslosigkeit</li>
 								<li>Konzentrationsschwierigkeiten</li>
 								<li>Stimmungsschwankungen/Weinerlichkeit/Aggressivität</li>
-								<li>erhoehte Temperatur bzw. grippeartiges Gefuehl</li>
+								<li>erhöhte Temperatur bzw. grippeartiges Gefuehl</li>
 								<li>Erbrechen</li>
 							</ul>
                        		</article>
