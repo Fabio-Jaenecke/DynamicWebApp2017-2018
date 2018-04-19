@@ -1,8 +1,8 @@
 package container;
 
 import java.util.ArrayList;
+import datenbank.container.LebensmittelDaten;
 
-import datenbank.container.Lebensmitteldaten; 
 
 /**
  * Eine Klasse zur Verwaltung von Lebensmitteln.
@@ -10,18 +10,18 @@ import datenbank.container.Lebensmitteldaten;
  * @author Michele Trebo
  * @version 09.04.2018
  */
-public class Lebensmittelmanager
+public class LebensmittelManager
 {
 	/**
 	 * Eine ArrayList, in der die Namen von Lebensmitteln gespeichert 
 	 * werden koennen. 
 	 */ 
-	public ArrayList<Lebensmitteldaten> lebensmittel; 
+	public ArrayList<LebensmittelDaten> lebensmittel; 
 	
 	/**
 	 * Erzeuge eine Lebensmittelsammlung. 
 	 */
-	public Lebensmittelmanager()
+	public LebensmittelManager()
 	{
 		lebensmittel = new ArrayList<>(); 
 	}
@@ -30,7 +30,7 @@ public class Lebensmittelmanager
 	 * Fuege der Sammlung ein Lebensmittel hinzu.
 	 * @param lebensmittelname das hinzugefuegte Lebensmittel.
 	 */
-	public void lebensmittelHinzufuegen(Lebensmitteldaten lebensmittelname)
+	public void lebensmittelHinzufuegen(LebensmittelDaten lebensmittelname)
 	{
 		lebensmittel.add(lebensmittelname);
 	}
@@ -74,7 +74,7 @@ public class Lebensmittelmanager
 	 */
 	public String getKategorie(String name) {
 		String kategorie = null;
-		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
+		for(LebensmittelDaten lebensmittelIterator : lebensmittel) {
 			if(lebensmittelIterator.getLname().equals(name)) {
 				kategorie = lebensmittelIterator.getKategorie();
 				break;
@@ -90,7 +90,7 @@ public class Lebensmittelmanager
 	 */
 	public String getKarenzphase(String name) {
 		String karenzphase = null;
-		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
+		for(LebensmittelDaten lebensmittelIterator : lebensmittel) {
 			if(lebensmittelIterator.getLname().equals(name)) {
 				karenzphase = lebensmittelIterator.getKarenzphase();
 				break;
@@ -106,7 +106,7 @@ public class Lebensmittelmanager
 	 */
 	public String getDauerernaehrung(String name) {
 		String dauerernaehrung = null;
-		for(Lebensmitteldaten lebensmittelIterator : lebensmittel) {
+		for(LebensmittelDaten lebensmittelIterator : lebensmittel) {
 			if(lebensmittelIterator.getLname().equals(name)) {
 				dauerernaehrung = lebensmittelIterator.getDauerernaehrung();
 				break;
@@ -121,8 +121,8 @@ public class Lebensmittelmanager
 	 * @return lebensmittel 
 	 * @return null falls Lebensmittel nicht gefunden
 	 */
-	public Lebensmitteldaten getLebensmittelInfoByName(String name) {
-		for(Lebensmitteldaten lebensmittel: lebensmittel) {
+	public LebensmittelDaten getLebensmittelInfoByName(String name) {
+		for(LebensmittelDaten lebensmittel: lebensmittel) {
 			if(lebensmittel.getLname().equals(name)) {
 				return lebensmittel;
 			}
@@ -137,8 +137,8 @@ public class Lebensmittelmanager
 	 * @return lebensmittel 
 	 * @return null falls Lebensmittel nicht gefunden
 	 */
-	public Lebensmitteldaten getLebensmittelInfoByKategorie(String name, String kategorie) {
-		for(Lebensmitteldaten lebensmittel : lebensmittel) {
+	public LebensmittelDaten getLebensmittelInfoByKategorie(String name, String kategorie) {
+		for(LebensmittelDaten lebensmittel : lebensmittel) {
 			if(lebensmittel.getKategorie().equals(kategorie)) {
 				if(lebensmittel.getLname().equals(name)) {
 					return lebensmittel;
