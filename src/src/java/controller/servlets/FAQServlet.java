@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import datenbank.connector.DbConnector;
-
 
 /**
 * Servlet implementation class FAQServlet
@@ -20,7 +18,6 @@ import datenbank.connector.DbConnector;
 public class FAQServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private DbConnector conn = new DbConnector();
        
     /**
      * @see HttpServlet#HttpServlet()

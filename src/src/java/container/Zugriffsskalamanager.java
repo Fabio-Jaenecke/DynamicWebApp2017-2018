@@ -1,16 +1,13 @@
 package container;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException; 
 import java.util.logging.Level; 
 import java.util.logging.Logger; 
 
 import datenbank.connector.DbConnector;
-import datenbank.container.LebensmittelDaten;
-import datenbank.container.ZugriffsManager;
+import datenbank.container.Zugriffsmanager;
 import datenbank.dao.DbQuery; 
 
 /**
@@ -19,18 +16,18 @@ import datenbank.dao.DbQuery;
  * @author Michele Trebo
  * @verison 12.04.2018
  */
-public class ZugriffsskalaManager {
+public class Zugriffsskalamanager {
 
-	private ArrayList<ZugriffsManager> tabelle;
+	private ArrayList<Zugriffsmanager> tabelle;
 	DbQuery query = new DbQuery(); 
 	DbConnector conn = new DbConnector(); 
-	private static final Logger LOGGER = Logger.getLogger(ZugriffsskalaManager.class.getName()); 
+	private static final Logger LOGGER = Logger.getLogger(Zugriffsskalamanager.class.getName()); 
 	
 	/**
 	 * Erzeuge den Zugriffsskalamanager. 
 	 */
-	public ZugriffsskalaManager() {
-		tabelle = new ArrayList<ZugriffsManager>();
+	public Zugriffsskalamanager() {
+		tabelle = new ArrayList<Zugriffsmanager>();
 	}
 	
 	/**
@@ -43,7 +40,7 @@ public class ZugriffsskalaManager {
 		try {
 			ResultSet result = query.getResult(selectSQL);
 			while (result.next()) {
-				tabelle.add(new ZugriffsManager(result));
+				tabelle.add(new Zugriffsmanager(result));
 			}
 		} 
 		catch (SQLException e) {
@@ -62,7 +59,7 @@ public class ZugriffsskalaManager {
 	 * Liefere die Tabelle mit den Platzierungen und den entsprechenden Lebensmitteldaten. 
 	 * @return tabelle
 	 */
-	public ArrayList<ZugriffsManager> getTabelle() {
+	public ArrayList<Zugriffsmanager> getTabelle() {
 		return tabelle; 
 	}
 }
