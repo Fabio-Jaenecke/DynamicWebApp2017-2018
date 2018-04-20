@@ -43,5 +43,10 @@ public class SearchEngineTest {
 	public void testSucheNachButtons() {
 		assertNotNull(searcher.sucheNachButtons(document));
 	}
-
+	
+	@Test
+	public void testeTeilsuche() {
+		searcher.setKeyword("rem");
+		assertNotNull(searcher.sucheNachListenelementen(document).get(0));
+	}
 }

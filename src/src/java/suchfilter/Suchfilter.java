@@ -35,15 +35,16 @@ public class Suchfilter {
 	
 	/*
 	 * load html-files for convertion to xml	
+	 * TODO replace file locations with own path
 	 */
 	public ArrayList<Document> initializeXmlSites(){
 		ArrayList<Document> xmlSites = new ArrayList<>();
-		xmlSites.add(converter.convert(new File("src/webapp/html/lebensmittelkategorie.html")));
-		xmlSites.add(converter.convert(new File("src/webapp/html/faq.html")));
-		xmlSites.add(converter.convert(new File("src/webapp/html/mahlzeitassistent.html")));
-		xmlSites.add(converter.convert(new File("src/webapp/html/rezepte.html")));
-		xmlSites.add(converter.convert(new File("src/webapp/html/suche.html")));
-		xmlSites.add(converter.convert(new File("src/webapp/html/zugriffsskala.html")));
+		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src//webapp/html/lebensmittelkategorie.html")));
+		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/faq.html")));
+		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/mahlzeitassistent.html")));
+		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/rezepte.html")));
+		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/suche.html")));
+		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/zugriffsskala.html")));
 		return xmlSites;
 	}
 

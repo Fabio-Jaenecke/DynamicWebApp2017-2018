@@ -61,17 +61,23 @@
             	else{
             	Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
             	suche.search();
-            	for(Searchresult result: suche.getSearcher().getSearchResults()){
-            		result.prepareResult();
-            		for(ResultPreview preview : result.getPreviews()){
-            			out.println("<a>");
-                		out.println(preview.getUrl());
-                		out.println("</a>");
-                		out.println("<p>");
-                		out.println(preview.getMetaData());
-                		out.println("</p>");
-            		}
+            	if(suche.getSearcher().getSearchResults().isEmpty()){
+            		out.println("Leider keine Suchergebnisse");
             	}
+            	else{
+            		for(Searchresult result: suche.getSearcher().getSearchResults()){
+                		result.prepareResult();
+                		for(ResultPreview preview : result.getPreviews()){
+                			String url = "<a href=\"/PSIT2/" + preview.getUrl() + "/\">";
+                			out.println(url);
+                    		out.println(preview.getUrl());
+                    		out.println("</a>");
+                    		out.println("<p>");
+                    		out.println(preview.getMetaData());
+                    		out.println("</p>");
+                		}
+                	}
+                	}
             	}
             %>
         </div>

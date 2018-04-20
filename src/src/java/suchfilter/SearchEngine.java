@@ -86,7 +86,7 @@ public class SearchEngine {
 	public ArrayList<Element> searchForTag(Document site, String tag) {
 		ArrayList<Element> results = new ArrayList<>();
 		for (Element result : site.getElementsByTag(tag)) {
-			if (result.text().equals(keyword)) {
+			if (result.text().contains(keyword)) {
 				results.add(result);
 			}
 		}
@@ -99,5 +99,13 @@ public class SearchEngine {
 
 	public void setSearchResults(ArrayList<Searchresult> searchResults) {
 		this.searchResults = searchResults;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
 	}
 }
