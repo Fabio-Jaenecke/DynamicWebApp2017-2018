@@ -71,7 +71,7 @@
 					
 						%>
 					<select onchange="this.form.submit()" name="naehrstoffauswahl">
-								<option value="" disabled selected>Wählen Sie einen Naehrstoff</option>
+								<option value="" disabled selected>Wählen Sie einen Nährstoff</option>
 					
 			           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Proteine")){out.println("selected");} %> value="Proteine">Proteine</option>
 
@@ -91,7 +91,7 @@
 						naehrstoffname = request.getParameter("naehrstoffauswahl");
 						NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
 						naehrstoffauftrag.searchForString(naehrstoffname);
-						ArrayList<Lebensmitteldaten> daten = naehrstoffauftrag.getLebensmittel();
+						ArrayList<LebensmittelDaten> daten = naehrstoffauftrag.getLebensmittel();
 						session.setAttribute("naehrstoffname3", naehrstoffname);
 			        %>
 			        </form>
@@ -105,7 +105,7 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(Lebensmitteldaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : daten){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
 				               				
@@ -138,14 +138,14 @@
 			        	 if (auswahl==null){
 			        		 //do nothing
 			        	 }else{
-			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
+			        		 out.println("Ausgewähltes Lebensmittel: " + auswahl);
 			        	 }	
 			            %>
 			            <p><p>
 			           
 			        </form> 
 			         <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
-		            	<input type='submit' name="Bestaetigen" value="Bestaetigen">
+		            	<input type='submit' name="Bestaetigen" value="Bestätigen">
 		            </form>
             </section>
             

@@ -1,8 +1,9 @@
 package datenbank.dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,25 +21,27 @@ public class DbQueryTest {
 		dbQuery = new DbQuery();
 	}
 
-	// Testing if table lebensmitteldaten is not empty
+	// Testing if table lebensmittelDaten is not empty
 	@Test
 	public void testTableLebensmittledaten() {
-		String sql = "select * from lebensmitteldaten";
+		String sql = "select * from lebensmittelDaten";
 		ResultSet res = dbQuery.getResult(sql);
 		assertNotNull(res);
 	}
 
 	// Testing if table zugriffsskala is not empty
 	@Test
-	public void testTableZugriffsskala() {
+	public void testTableZugriffsskala() throws SQLException {
 		String sql = "select * from zugriffsskala";
-		ResultSet res = dbQuery.getResult(sql);
-		assertNotNull(res);
+		try (ResultSet res = dbQuery.getResult(sql)){
+			assertNotNull(res);
+		};
+		
 	}
 
 	// Testing if table zugriffsskala is not empty
 	@Test
-	public void testTableLebensmittelkategorie() {
+	public void testTablelebensmittelkategorie() {
 		String sql = "select * from lebensmittelkategorie";
 		ResultSet res = dbQuery.getResult(sql);
 		assertNotNull(res);

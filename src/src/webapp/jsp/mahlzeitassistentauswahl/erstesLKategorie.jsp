@@ -91,7 +91,7 @@
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
-						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
 						session.setAttribute("kategorienname1", kategorienname);
 			        %>
 			        </form>
@@ -105,7 +105,7 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(Lebensmitteldaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : daten){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
 				               				
@@ -138,14 +138,14 @@
 			        	 if (auswahl==null){
 			        		 //do nothing
 			        	 }else{
-			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
+			        		 out.println("Ausgewähltes Lebensmittel: " + auswahl);
 			        	 }	
 			            %>
 			            <p><p>
 			           
 			        </form> 
 			         <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
-		            	<input type='submit' name="Bestaetigen" value="Bestaetigen">
+		            	<input type='submit' name="Bestaetigen" value="Bestätigen">
 		            </form>
             </section>
             

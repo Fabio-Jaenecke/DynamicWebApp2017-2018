@@ -1,9 +1,7 @@
 package datenbank.connector;
 
-import static org.junit.Assert.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +14,7 @@ public class DbConnectorTest {
 	private DbConnectorStub conn = new DbConnectorStub();
 	
 	/*
-	 * we only inistiate a connection, so no things to do in setup
+	 * we only instantiate a connection, so no things to do in setup
 	 */
 	@Before
 	public void setUp() {

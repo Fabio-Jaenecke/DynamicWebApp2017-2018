@@ -34,7 +34,7 @@
 <div class="header-container">
     <header class="wrapper clearfix" style="max-height: 50px; padding-top: 15px;"><div class="flex-grid-thirds"><div class="col menugrid"><span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></div><div class="col titlegrid">Mahlzeitassistent</div><div class="col suchgrid"><a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a></div></div>
         <nav>
-            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Fruechte&nbsp;<span
+            <span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></span><span class="title">Früchte&nbsp;<span
                 class="arrowdown">&#9662;</span></span>
             <div id="mySidenav" class="sidenav side-nav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9587;</a>
@@ -91,7 +91,7 @@
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
 						kategorieauftrag.searchForString(kategorienname);
-						ArrayList<Lebensmitteldaten> daten = kategorieauftrag.getLebensmittel();
+						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
 						session.setAttribute("kategorienname3", kategorienname);
 			        %>
 			        </form>
@@ -105,7 +105,7 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(Lebensmitteldaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : daten){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
 				               				
@@ -138,14 +138,14 @@
 			        	 if (auswahl==null){
 			        		 //do nothing
 			        	 }else{
-			        		 out.println("Ausgewaehltes Lebensmittel: " + auswahl);
+			        		 out.println("Ausgewähltes Lebensmittel: " + auswahl);
 			        	 }	
 			            %>
 			            <p><p>
 			           
 			        </form> 
 			         <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
-		            	<input type='submit' name="Bestaetigen" value="Bestaetigen">
+		            	<input type='submit' name="Bestaetigen" value="Bestätigen">
 		            </form>
             </section>
             

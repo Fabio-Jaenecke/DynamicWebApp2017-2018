@@ -1,13 +1,15 @@
 package suche;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Testklasse für die Klasse KategoriesucheDao.
+ * Testklasse fï¿½r die Klasse KategoriesucheDao.
  * 
  * @author Michele Trebo, Marko Despotovic
  * @version 15.04.2018

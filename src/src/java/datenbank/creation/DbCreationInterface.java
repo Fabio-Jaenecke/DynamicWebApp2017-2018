@@ -8,11 +8,11 @@ public interface DbCreationInterface {
 
 	void setUpTables();
 	
-	void setUpTableLebensmitteldaten();
+	void setUpTablelebensmittelDaten();
 	
 	void setUpTableZugriffsskala();
 	
-	void setUpTableLebensmittelkategorie();
+	void setUpTablelebensmittelkategorie();
 	
 	void setUpTableNaehrstoff();
 	

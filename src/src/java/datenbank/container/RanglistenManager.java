@@ -6,29 +6,29 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Diese Klasse holt die Lebensmitteldaten, die fuer die Rangliste benoetigt werden, 
+ * Diese Klasse holt die lebensmittelDaten, die fuer die Rangliste benoetigt werden, 
  * aus der Datenbank und stellt diese zur Verfuegung. 
  * 
  * @author Michele Trebo
  * @version 17.04.2018
  */
-public class Ranglistenmanager {
+public class RanglistenManager {
 
 	private String lname; 
 	private String kategorie; 
 	private String karenzphase; 
 	private String dauerernaehrung; 
-	private static final Logger LOGGER = Logger.getLogger(Ranglistenmanager.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(RanglistenManager.class.getName());
 
 	/**
 	 * Erzeugt die Rangliste für die Lebensmittelvertraeglichkeit. 
 	 * 
 	 * @param lname der Lebensmittelname
-	 * @param kategorie die Lebensmittelkategorie
+	 * @param kategorie die lebensmittelkategorie
 	 * @param karenzphase die Vertraeglichkeit waehrend der Karenzphase
 	 * @param dauerernaehrung die Vertraeglichkeit waehrend der Dauerernaehrung
 	 */
-	public Ranglistenmanager(String lname, String kategorie, String karenzphase, String dauerernaehrung) {
+	public RanglistenManager(String lname, String kategorie, String karenzphase, String dauerernaehrung) {
 		this.lname = lname;
 		this.kategorie = kategorie; 
 		this.karenzphase = karenzphase;
@@ -36,18 +36,18 @@ public class Ranglistenmanager {
 	} 
 	
 	/**
-	 * Erzeuge den Ranglistenmanager mittels Daten aus der Datenbank. 
+	 * Erzeuge den RanglistenManager mittels Daten aus der Datenbank. 
 	 * 
 	 * @param rs das ResultSet
 	 */
-	public Ranglistenmanager(ResultSet rs) {
+	public RanglistenManager(ResultSet rs) {
 		try {
 			this.lname = rs.getString("lname");
 			this.kategorie = rs.getString("kategorie"); 
 			this.karenzphase = rs.getString("karenzphase");
 			this.dauerernaehrung = rs.getString("dauerernaehrung");
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "Result set of ranglistenmanager could not be resolved " + e);
+			LOGGER.log(Level.SEVERE, "Result set of RanglistenManager could not be resolved " + e);
 		}
 	}
 	
@@ -70,7 +70,7 @@ public class Ranglistenmanager {
 	}
 
 	/**
-	 * Gib die Lebensmittelkategorie. 
+	 * Gib die lebensmittelkategorie. 
 	 * 
 	 * @return kategorie
 	 */
@@ -79,9 +79,9 @@ public class Ranglistenmanager {
 	}
 
 	/**
-	 * Setze die Lebensmittelkategorie. 
+	 * Setze die lebensmittelkategorie. 
 	 * 
-	 * @param kategrie die Lebensmittelkategorie
+	 * @param kategrie die lebensmittelkategorie
 	 */
 	public void setKategorie(String kategorie) {
 		this.kategorie = kategorie;

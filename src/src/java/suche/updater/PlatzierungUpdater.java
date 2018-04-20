@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,7 +14,7 @@ import datenbank.container.Zugriffsskala;
 import datenbank.dao.DbQuery;
 
 /*
- * sucht alle Einträge der Tabelle Zugriffsskala raus, speichert sie in einer ArrayList vom Objekt Zugriff ab
+ * sucht alle Eintrï¿½ge der Tabelle Zugriffsskala raus, speichert sie in einer ArrayList vom Objekt Zugriff ab
  * sortiert diese nach der AnzahlZugriffe absteigend. speichert diese in der Datenbank ab mit einer neuen
  * Platzierungsnummer
  */
@@ -35,8 +33,7 @@ public class PlatzierungUpdater  {
 	
 	public void getZugriffeInDB() {
 		String selectSql = "select * from zugriffsskala";
-		ResultSet result = query.getResult(selectSql);
-		try {
+		try (ResultSet result = query.getResult(selectSql)){
 			while(result.next()) {
 				zugriffe.add(new Zugriffsskala(result));
 			}
@@ -49,21 +46,6 @@ public class PlatzierungUpdater  {
 		Collections.sort(zugriffe);
 	}
 
-	// TODO: remove unusued code
-	/*
-	public void sortByAZugriffe() {
-		zugriffe.stream().sorted(Collections.reverseOrder());
-		Collections.sort(zugriffe, new Comparator<Zugriffsskala>() {
-			@Override
-			public int compare(Zugriffsskala o1, Zugriffsskala o2) {
-				return o1.getAzugriffe() > o2.getAzugriffe() ? 0 : -1;
-			}
-		});
-		zugriffe.stream().forEach(a -> System.out.println(a.getAzugriffe()));
-		zugriffe.clear();
-	}*/
-
-	
 	public ArrayList<Zugriffsskala> getZugriffe() {
 		return zugriffe;
 	}

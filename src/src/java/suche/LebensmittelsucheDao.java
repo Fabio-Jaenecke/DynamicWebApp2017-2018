@@ -5,8 +5,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import datenbank.connector.DbConnector;
-import datenbank.container.Lebensmitteldaten;
+import datenbank.container.LebensmittelDaten;
 import datenbank.dao.DbQuery;  
 
 /**
@@ -18,7 +17,7 @@ import datenbank.dao.DbQuery;
  */
 public class LebensmittelsucheDao {
 
-	private Lebensmitteldaten lebensmittel;
+	private LebensmittelDaten lebensmittel;
 	DbQuery query = new DbQuery();
 	private static final Logger LOGGER = Logger.getLogger(LebensmittelsucheDao.class.getName());
 	
@@ -34,11 +33,10 @@ public class LebensmittelsucheDao {
 	 * @param lebensmittelname der Name des Lebensmittels. 
 	 */
 	public void searchForString(String lebensmittelname) {
-		String selectSQL = "select * from lebensmitteldaten where lower(lname) like '%" + lebensmittelname.toLowerCase() + "%';";
-		ResultSet result = query.getResult(selectSQL);
-		try {
+		String selectSQL = "select * from lebensmittelDaten where lower(lname) like '%" + lebensmittelname.toLowerCase() + "%';";
+		try (ResultSet result = query.getResult(selectSQL)){
 			if(result.next()) {
-				lebensmittel = new Lebensmitteldaten(result);
+				lebensmittel = new LebensmittelDaten(result);
 			}
 			else {
 				lebensmittel = null;
@@ -51,10 +49,10 @@ public class LebensmittelsucheDao {
 	}
 	
 	/**
-	 * Liefere die Lebensmitteldaten des entsprechenden Lebensmittels. 
+	 * Liefere die lebensmittelDaten des entsprechenden Lebensmittels. 
 	 * @return lebensmittel 
 	 */
-	public Lebensmitteldaten getLebensmittel() {
+	public LebensmittelDaten getLebensmittel() {
 		return lebensmittel;
 	}
 }

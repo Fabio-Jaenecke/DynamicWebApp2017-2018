@@ -25,6 +25,7 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
     <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
     <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/zugriffsskala.js"></script>
 	<style>
 	input[type=submit]{
 		display: none;
@@ -35,6 +36,20 @@
 	span.sortierer{
 		float: right;
 	}
+	
+	
+	.sortieren{
+		cursor: pointer;
+	    border: none;
+	    color: black;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    border-radius: 10px;
+	    float: right;
+	}
+	
 	</style>
 
 </head>
@@ -72,8 +87,8 @@
 	            		<div>
 	            		<h3>Lebensmittelliste</h3>
 	            			
-	            			<p>Hier werden alle Lebensmittel und ihre Werte für Karenzphase und Dauerernaehrung angezeigt.<br>
-	            			Sie koennen die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
+	            			<p>Hier werden alle Lebensmittel und ihre Werte fuer Karenzphase und Dauerernährung angezeigt.<br>
+	            			Sie können die einzelnen Spalten sortieren, indem Sie auf die Pfeilsymbole klicken.
 	            			</p>
     						
     						<table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
@@ -91,7 +106,7 @@
 	                                    <label><input type="submit" name="karenzphaseaufsteigend" value="asc">▲</label>
 	                                    </span>
 	                                    </th>
-	                                    <th style="min-width: 180px">Dauerernaehrung
+	                                    <th style="min-width: 180px">Dauerernährung
 	                                    <span class="sortierer">
 	                                    <label><input type="submit" name="dauerernaehrungabsteigend" value="desc">▼</label>
 	                                    <label><input type="submit" name="dauerernaehrungaufsteigend" value="asc">▲</label>
@@ -156,13 +171,13 @@
 			          	//Die Tabelle
 			           		SortiererDao sortierer = new SortiererDao();
 			           		sortierer.searchForString(auswahl, order);
-							ArrayList<Lebensmitteldaten> daten = sortierer.getLebensmittel();
-							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite waere dann leer
+							ArrayList<LebensmittelDaten> daten = sortierer.getLebensmittel();
+							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite wäre dann leer
 						    %>
 						     
 	                              <tbody>
 					                <%
-					                for(Lebensmitteldaten lebensmitteleintrag : daten){
+					                for(LebensmittelDaten lebensmitteleintrag : daten){
 					                		out.println("<tr>");
 					                   		out.println("<td>");
 					                		out.println(lebensmitteleintrag.getLname());
@@ -185,86 +200,60 @@
 				</article>
         </article>
         <aside>
-            <h3>Häufige Zugriffe</h3>
-            <table class="table_beliebte_lebensmittel">
-                <thead>
-                <tr>
-                    <th rowspan="2">Platz</th>
-                    <th rowspan="2">Lebensmittel</th>
-                    <th colspan="2">Vertraeglichkeit</th>
-                    <th rowspan="2">Zugriffe</th>
-                </tr>
-                <tr>
-                    <th>KP</th>
-                    <th>DE</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                   <td>1</td>
-                    <td>Kartoffeln</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>100'000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Brokkoli</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>80'000</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Rindfleisch</td>
-                    <td>gut</td>
-                    <td>gut</td>
-                    <td>70'000</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Mango</td>
-                    <td>mittel</td>
-                    <td>gut</td>
-                    <td>60'000</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Kokosmilch</td>
-                    <td>mittel</td>
-                    <td>mittel</td>
-                    <td>50'000</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Bananen</td>
-                    <td>schlecht</td>
-                    <td>mittel</td>
-                    <td>40'000</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Sojaprodukte</td>
-                    <td>schlecht</td>
-                    <td>mittel</td>
-                    <td>30'000</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Bier</td>
-                    <td>schlecht</td>
-                    <td>schlecht</td>
-                    <td>20'000</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Eiweiss</td>
-                    <td>schlecht</td>
-                    <td>schlecht</td>
-                    <td>10'000</td>
-                </tr>
-                </tbody>
-            </table>
+            <section>
+			<h3>Häufige Zugriffe</h3>
+			<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
+				<div>
+					<%@ page import="container.*"%>
+					<%@ page import="datenbank.container.*"%>
+					<%@ page import="java.util.ArrayList" %>
+					<%  
+						ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
+						tabelle.searchForString();
+						%>
+						<table id='zugriffsskala' class='table_beliebte_lebensmittel' style='width:100%'>
+							<thead>							
+							<tr>
+	 						<th>Platzierung<div class='sortieren'>▼▲</div></th>
+	 						<th>Lebensmittel</th>
+	 						<th>Karenzphase</th>
+	 						<th>Dauerernährung</th>
+	 						</tr>
+	 						</thead> 
+	 						<tbody class='meineTabelle'>
+	 						<%
+	        		  			for(ZugriffsManager zugriff : tabelle.getTabelle()) {
+	           		  				// System.out.println(zugriff); 
+	
+			 						out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getPlatzierung()); 
+			 						out.println("</td>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getLname());
+			 						out.println("</td>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getKarenzphase());
+			 						out.println("</td>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getDauerernaehrung());
+			 						out.println("</td>");
+			 						out.println("</tr>");
+           		  			}
+	 						%>
+	 						</tbody>
+	 						<tfoot>
+	 						<tr>
+	 						<th>Platzierung</th>
+	 						<th>Lebensmittel</th>
+	 						<th>Karenzphase</th>
+	 						<th>Dauerernährung</th>
+	 						</tr>
+	 						</tfoot>
+	 						</table>
+				</div>
+				</form>
+			</section>
         </aside>
     </div>
     <!-- #main -->

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
 * Servlet implementation class LebensmittelsucheServlet
 */
-@WebServlet(description = "Servlet für die Lebensmittelsuche", urlPatterns = { "/lebensmittelsuche/" })
+@WebServlet(description = "Servlet fuer die Lebensmittelsuche", urlPatterns = { "/lebensmittelsuche/" })
 
 public class LebensmittelsucheServlet extends HttpServlet {
 	

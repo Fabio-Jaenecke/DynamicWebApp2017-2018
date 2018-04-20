@@ -85,7 +85,7 @@
                   <div class="main wrapper clearfix">
                   	<form method="get" action="${pageContext.request.contextPath}/home/">
                      <article>
-                     <input type="submit" value="Zurück" onchange="history.back()">
+                     <input type="submit" value="Zurueck" onchange="history.back()">
                      	<ul class="breadcrumb">
                      	<li><a href="${pageContext.request.contextPath}/home/">Home</a></li>
 						 <li>Histamingehalt von Lebensmitteln</li>
@@ -110,7 +110,7 @@
 							derselbe Fisch ungekühlt gelagert zwei Stunden später: histaminhaltig
 							derselbe Fisch ungekühlt bis wenig gekühlt einen Tag später: stark histaminhaltig
 							
-							Noch ein wichtiger Hinweis: Auch hier gilt, dass es individuelle Grenzen zu beachten gilt!
+							Noch ein wichtiger Hinweis: Auch hier gilt, dass es individülle Grenzen zu beachten gilt!
 							
 							<h4>Unterschiedliche Histamingehalte in unterschiedlichen Tabellen?</h4>
 							Wir werden oft gefragt warum die Histamin-Angaben in verschiedenen Tabellen unterschiedliche Werte haben. Die Antwort ist recht einfach: Der Histamingehalt ist - anders als zum Beispiel der Laktosegehalt - starken natürlichen Schwankungen (Lagerung, Alter, ...) unterworfen. D.h. die Werte in solchen Tabellen können nur als Anhaltspunkte gelten. Mittlerweile ist man generell von der Angabe von Histaminwerten abgegangen. Sinnvoller sind Listen mit Verträglichkeitsangaben die die üblichen Verzehrmengen und Zubereitungsarten, sowie Faktoren wie biogene Amine oder andere relevante Inhaltsstoffe berücksichtigen. Wir haben so eine Histamin-Verträglichkeits-Liste erstmalig erstellt.
@@ -121,12 +121,12 @@
 								<li>pasteurisierte Milch</li>
 								<li>frisches Fleisch (frisch, gekühlt, gefroren) - mit Schweinefleisch haben einige Betroffene Probleme</li>
 								<li>Fangfrischer Fisch</li>
-								<li>Frisches Obst: Melone, Heidelbeeren, Preiselbeeren, Litchi, Mango, Khaki, Rhababer, Kirschen, Blaubeeren, Johannisbeeren, Aprikosen, Äpfel</li>
+								<li>Frisches Obst: Melone, Heidelbeeren, Preiselbeeren, Litchi, Mango, Khaki, Rhababer, Kirschen, Blaubeeren, Johannisbeeren, Aprikosen, äpfel</li>
 								<li>Frisches Gemüse: Grüner Salat, Kohlsorten, Rote Beete, Kürbis, Zwiebel, Radieschen, Rettich, Rapunzel, Paprika, Karotten, Brokkoli, Kartoffeln, Gurke, Lauch, Zucchini, Mais, Spargel, Knoblauch</li>
 								<li>Getreide/Beilagen: Reis, Mais, Dinkel, Quinoa, Amaranth, Hafer, Hirse, Kastanien</li>
 								<li>Teigwaren: Dinkel-, Mais-, Reisnudeln, hefefreies Roggenbrot, Mais-Reis-Knäckebrote, Reiswaffeln</li>
-								<li>Milchersatz: Reis-, Hafer-, Kokosmilch - individuell testen!</li>
-								<li>alle frischen, nicht zitrushaltigen und/oder tomatenhaltigen Obstsäfte, alle Gemüsesäfte (außer Sauerkraut)</li>
+								<li>Milchersatz: Reis-, Hafer-, Kokosmilch - individüll testen!</li>
+								<li>alle frischen, nicht zitrushaltigen und/oder tomatenhaltigen Obstsäfte, alle Gemüsesäfte (außer Saürkraut)</li>
 								<li>Kräutertees</li>
 								<li>Eigelb (Eiweiß/Eiklar ist schlecht verträglich)</li>
 								<li>Essig: Alkoholessig, Branntweinessig, Weingeistessig, Apfelesseig, Essigessenz - (Balsamico und Weinessige sind nicht verträglich!)</li>
@@ -137,12 +137,12 @@
 								<li>pasteurisierte Milch</li>
 								<li>frisches Fleisch (frisch, gekühlt, gefroren) - mit Schweinefleisch haben einige Betroffene Probleme</li>
 								<li>Fangfrischer Fisch</li>
-								<li>Frisches Obst: Melone, Heidelbeeren, Preiselbeeren, Litchi, Mango, Khaki, Rhababer, Kirschen, Blaubeeren, Johannisbeeren, Aprikosen, Äpfel</li>
+								<li>Frisches Obst: Melone, Heidelbeeren, Preiselbeeren, Litchi, Mango, Khaki, Rhababer, Kirschen, Blaubeeren, Johannisbeeren, Aprikosen, äpfel</li>
 								<li>Frisches Gemüse: Grüner Salat, Kohlsorten, Rote Beete, Kürbis, Zwiebel, Radieschen, Rettich, Rapunzel, Paprika, Karotten, Brokkoli, Kartoffeln, Gurke, Lauch, Zucchini, Mais, Spargel, Knoblauch</li>
 								<li>Getreide/Beilagen: Reis, Mais, Dinkel, Quinoa, Amaranth, Hafer, Hirse, Kastanien</li>
 								<li>Teigwaren: Dinkel-, Mais-, Reisnudeln, hefefreies Roggenbrot, Mais-Reis-Knäckebrote, Reiswaffeln</li>
-								<li>Milchersatz: Reis-, Hafer-, Kokosmilch - individuell testen!</li>
-								<li>alle frischen, nicht zitrushaltigen und/oder tomatenhaltigen Obstsäfte, alle Gemüsesäfte (außer Sauerkraut)</li>
+								<li>Milchersatz: Reis-, Hafer-, Kokosmilch - individüll testen!</li>
+								<li>alle frischen, nicht zitrushaltigen und/oder tomatenhaltigen Obstsäfte, alle Gemüsesäfte (außer Saürkraut)</li>
 								<li>Kräutertees</li>
 								<li>Eigelb (Eiweiß/Eiklar ist schlecht verträglich)</li>
 								<li>Essig: Alkoholessig, Branntweinessig, Weingeistessig, Apfelesseig, Essigessenz - (Balsamico und Weinessige sind nicht verträglich!)</li>
@@ -166,9 +166,9 @@
 								<li>Energy Drinks</li>
 							</ul>
 							<h3>Spezialfall: Weizen</h3>
-							Viele Betroffene berichten davon, dass die Weizen schlecht vertragen, Roggen und Dinkel hingegen gut. Dieses Phänomen ist bisher nicht geklärt. Es gibt aber seit neuestem eine Vermutung, wie die schweizer Histaminseite SIGHI berichtet.
+							Viele Betroffene berichten davon, dass die Weizen schlecht vertragen, Roggen und Dinkel hingegen gut. Dieses Phänomen ist bisher nicht geklärt. Es gibt aber seit neüstem eine Vermutung, wie die schweizer Histaminseite SIGHI berichtet.
 							
-							Man kann zwischen Hochleistungs-Weizensorten und alten Sorten (Emmer, Einkorn, Urdinkel) unterscheiden.  Letzere sind meist gut, erstere oft - und nicht nur für Histaminintolerante - schlecht verträglich. Die Ursache hierfür vermutet man derzeit einerseits im Gluten bzw. Gliadin, andererseits könnte ein ein Insektengift, welches in die neuen Sorten hineingezüchtet wurde (ATI-Weizen), verantwortlich sein. Wir bleiben dran und berichten über neue Erkenntnisse hierüber!
+							Man kann zwischen Hochleistungs-Weizensorten und alten Sorten (Emmer, Einkorn, Urdinkel) unterscheiden.  Letzere sind meist gut, erstere oft - und nicht nur für Histaminintolerante - schlecht verträglich. Die Ursache hierfür vermutet man derzeit einerseits im Gluten bzw. Gliadin, andererseits könnte ein ein Insektengift, welches in die neün Sorten hineingezüchtet wurde (ATI-Weizen), verantwortlich sein. Wir bleiben dran und berichten über neü Erkenntnisse hierüber!
 							
 							<em>Du solltest auf jeden Fall mit einem Ernährungsberater/Diätologen eine genaue Diät erarbeiten!</em>
 							

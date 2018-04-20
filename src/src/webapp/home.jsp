@@ -1,5 +1,3 @@
-<!-- TODO: Adjust dynamic path for nachschlageplattform -->
-<!-- TODO: Adjust dynamic path for Stylesheets -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -32,6 +30,7 @@
 			   <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
 			   <link rel="icon" href="${pageContext.request.contextPath}/imgs/favicon.ico" type="image/x-icon">
                <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+               <script src="${pageContext.request.contextPath}/js/zugriffsskala.js"></script>
                <style>
                .link {
 				   display: inline-block;
@@ -66,6 +65,17 @@
 					margin-right: 2px;
 				}
 				
+				.sortieren{
+					cursor: pointer;
+				    border: none;
+				    color: black;
+				    text-align: center;
+				    text-decoration: none;
+				    display: inline-block;
+				    font-size: 16px;
+				    border-radius: 10px;
+				    float: right;
+				}
                
                </style>
             </head>
@@ -96,25 +106,25 @@
                      <article>
                         <header>
                            <h2>Was ist Histamin-Intoleranz?</h2>
-                           <p>Histaminintoleranz (Histaminose, Histaminunvertraeglichkeit) ist die Unvertraeglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfaehigkeit des menschlichen Koerpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
+                           <p>Histaminintoleranz (Histaminose, Histaminunverträglichkeit) ist die Unverträglichkeit von stark histaminhaltigen Nahrungsmitteln beziehungsweise die Unfähigkeit des menschlichen Körpers, das aufgenommene Histamin in ausreichendem Mauee abzubauen. In diesem Artikel gibt es einige Grundinformationen.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/WasIstHistaminIntoleranz.jsp">Mehr</a>
                         </header>
                         <section>
                            <h2>Histamingehalt von Lebensmitteln</h2>
-                           <p>Welche Nahrungsmittel sind vertraeglich, welche sind bei Histaminintoleranz nicht vertraeglich? Fuer Betroffene ist es schwer, einzukaufen.
+                           <p>Welche Nahrungsmittel sind verträglich, welche sind bei Histaminintoleranz nicht verträglich? Fuer Betroffene ist es schwer, einzukaufen.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/HistamingehaltvonLebensmitteln.jsp">Mehr</a>
                         </section>
                         <section>
                            <h2>Symptome der Histamin-Intoleranz</h2>
-                           <p>Die Symptome der Histaminintoleranz sind sehr vielfaeltig und teilweise schwer von Symptomen anderer, haeufigerer Krankheiten zu unterscheiden. Sie machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher beziehungsweise histaminfreisetzender oder DAO-blockierender Nahrungsmittel bemerkbar.
+                           <p>Die Symptome der Histaminintoleranz sind sehr vielfältig und teilweise schwer von Symptomen anderer, häufigerer Krankheiten zu unterscheiden. Sie machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher beziehungsweise histaminfreisetzender oder DAO-blockierender Nahrungsmittel bemerkbar.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/SymptomederHistaminIntoleranz.jsp">Mehr</a>
                         </section>
                         <section>
                            <h2>Diagnose der Histamin-Intoleranz</h2>
-                           <p> Wir wird die Histaminintoleranz diagnostiziert? Was ist dabei zu beachten? Ein Leitfaden fuer Aerzte und Betroffene.
+                           <p> Wir wird die Histaminintoleranz diagnostiziert? Was ist dabei zu beachten? Ein Leitfaden fuer ärzte und Betroffene.
                            </p>
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/DiagnosederHistaminIntoleranz.jsp">Mehr</a>
                         </section>
@@ -125,7 +135,7 @@
                            <a class="link mehr" href="${pageContext.request.contextPath}/jsp/nachschlageplattform/WasistHistamin.jsp">Mehr</a>
                         </section>
                         <footer>
-                           <h3>Stoebern Sie weiter</h3>
+                           <h3>Stöbern Sie weiter</h3>
                            <ul>
                               <li><a class="link" href="${pageContext.request.contextPath}/home/">Home</a></li>
                               <li><a class="link" href="${pageContext.request.contextPath}/lebensmittel/">Lebensmittel</a></li>
@@ -138,88 +148,61 @@
                         </footer>
                      </article>
                      <aside>
-                        <h3>Häufige Zugriffe</h3>
-                        <table class="table_beliebte_lebensmittel">
-                           <thead>
-                              <tr>
-                                 <th rowspan="2">Platz</th>
-                                 <th rowspan="2">Lebensmittel</th>
-                                 <th colspan="2">Vertraeglichkeit</th>
-                                 <th rowspan="2">Zugriffe</th>
-                              </tr>
-                              <tr>
-                                 <th>KP</th>
-                                 <th>DE</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                              <tr>
-                                 <td>1</td>
-                                 <td>Kartoffeln</td>
-                                 <td>gut</td>
-                                 <td>gut</td>
-                                 <td>100'000</td>
-                              </tr>
-                              <tr>
-                                 <td>2</td>
-                                 <td>Brokkoli</td>
-                                 <td>gut</td>
-                                 <td>gut</td>
-                                 <td>80'000</td>
-                              </tr>
-                              <tr>
-                                 <td>3</td>
-                                 <td>Rindfleisch</td>
-                                 <td>gut</td>
-                                 <td>gut</td>
-                                 <td>70'000</td>
-                              </tr>
-                              <tr>
-                                 <td>4</td>
-                                 <td>Mango</td>
-                                 <td>mittel</td>
-                                 <td>gut</td>
-                                 <td>60'000</td>
-                              </tr>
-                              <tr>
-                                 <td>5</td>
-                                 <td>Kokosmilch</td>
-                                 <td>mittel</td>
-                                 <td>mittel</td>
-                                 <td>50'000</td>
-                              </tr>
-                              <tr>
-                                 <td>6</td>
-                                 <td>Bananen</td>
-                                 <td>schlecht</td>
-                                 <td>mittel</td>
-                                 <td>40'000</td>
-                              </tr>
-                              <tr>
-                                 <td>7</td>
-                                 <td>Sojaprodukte</td>
-                                 <td>schlecht</td>
-                                 <td>mittel</td>
-                                 <td>30'000</td>
-                              </tr>
-                              <tr>
-                                 <td>8</td>
-                                 <td>Bier</td>
-                                 <td>schlecht</td>
-                                 <td>schlecht</td>
-                                 <td>20'000</td>
-                              </tr>
-                              <tr>
-                                 <td>9</td>
-                                 <td>Eiweiss</td>
-                                 <td>schlecht</td>
-                                 <td>schlecht</td>
-                                 <td>10'000</td>
-                              </tr>
-                           </tbody>
-                        </table>
+                        <section>
+						<h3>Häufige Zugriffe</h3>
+						<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
+						<div>
+							<%@ page import="container.*"%>
+							<%@ page import="datenbank.container.*"%>
+							<%@ page import="java.util.ArrayList" %>
+							<%  
+								ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
+								tabelle.searchForString();
+								%>
+						<table id='zugriffsskala' class='table_beliebte_lebensmittel' style='width:100%'>
+							<thead>							
+							<tr>
+	 						<th>Platzierung<div class='sortieren'>▼▲</div></th>
+	 						<th>Lebensmittel</th>
+	 						<th>Karenzphase</th>
+	 						<th>Dauerernährung</th>
+	 						</tr>
+	 						</thead> 
+	 						<tbody class='meineTabelle'>
+	 						<%
+	        		  			for(ZugriffsManager zugriff : tabelle.getTabelle()) {
+	           		  				// System.out.println(zugriff); 
+	
+			 						out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getPlatzierung()); 
+			 						out.println("</td>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getLname());
+			 						out.println("</td>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getKarenzphase());
+			 						out.println("</td>");
+			 						out.println("<td>");
+			 						out.println(zugriff.getDauerernaehrung());
+			 						out.println("</td>");
+			 						out.println("</tr>");
+           		  			}
+	 						%>
+	 						</tbody>
+	 						<tfoot>
+	 						<tr>
+	 						<th>Platzierung</th>
+	 						<th>Lebensmittel</th>
+	 						<th>Karenzphase</th>
+	 						<th>Dauerernährung</th>
+	 						</tr>
+	 						</tfoot>
+	 						</table>
+						</div>
+						</form>
+						</section>
                      </aside>
-                     </form>
                   </div>
                   <!-- #main -->
                </div>

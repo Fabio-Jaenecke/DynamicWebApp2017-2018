@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 /**
 * Servlet implementation class MahlzeitassistentServlet
 */
-@WebServlet(description = "Servlet für den Mahlzeitassistent", urlPatterns = { "/mahlzeitassistent/" })
+@WebServlet(description = "Servlet fuer den Mahlzeitassistent", urlPatterns = { "/mahlzeitassistent/" })
 
 public class MahlzeitassistentServlet extends HttpServlet {
 	
@@ -30,10 +30,10 @@ public class MahlzeitassistentServlet extends HttpServlet {
         super();
     }
     
-    /** Das Servlet ruft standardmässig den Mahlzeitassistent auf, um ihn zu öffnen.
-     *  Sollte der Benutzer auf eine Auswahl klicken, wird Mahlzeitassistentenauswahl geöffnet
-     *  Mit einer auswahl in Mahlzeitassisten kehrt der Benutzer wieder zu Mahlzeitassistent zurück
-     *  Else, falls kein richtiger Paramter gefunden wurde, kehre zur Home-Seite zurück.  
+    /** Das Servlet ruft standardmaessig den Mahlzeitassistent auf, um ihn zu oeffnen.
+     *  Sollte der Benutzer auf eine Auswahl klicken, wird Mahlzeitassistentenauswahl geoeffnet
+     *  Mit einer auswahl in Mahlzeitassisten kehrt der Benutzer wieder zu Mahlzeitassistent zurueck
+     *  Else, falls kein richtiger Paramter gefunden wurde, kehre zur Home-Seite zurueck.  
      * 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -164,7 +164,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	}
     	
     	/** 
-    	 * Diese Methode schaut, welches Lebensmittel in der Tabelle ausgewählt wurde und gleicht dieses
+    	 * Diese Methode schaut, welches Lebensmittel in der Tabelle ausgewaehlt wurde und gleicht dieses
     	 * mit dem Attribut in der gleichen Session ab. Auswahl ist dabei ein Lebensmittelname, welcher zu einen
     	 * in der Lebensmittelliste vorkommt und zu anderen als Parameter weitergegeben wird.
     	 * 

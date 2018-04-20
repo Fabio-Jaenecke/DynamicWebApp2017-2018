@@ -7,9 +7,9 @@ package datenbank.insertion;
 public interface DbInsertionInterface {
 
 	/*
-	 * Inserting data into table lebensmitteldaten 
+	 * Inserting data into table lebensmittelDaten 
 	 */
-	void insertIntoTableLebensmitteldaten();
+	void insertIntoTablelebensmittelDaten();
 	
 	/*
 	 * Inserting data into table zugriffsskala
@@ -19,7 +19,7 @@ public interface DbInsertionInterface {
 	/*
 	 **  Inserting data into table lebensmittelkategorie 
 	 */
-	void insertIntoTableLebensmittelkategorie();
+	void insertIntoTablelebensmittelkategorie();
 	
 	/*
 	 * Inserting data into table naehrstoff

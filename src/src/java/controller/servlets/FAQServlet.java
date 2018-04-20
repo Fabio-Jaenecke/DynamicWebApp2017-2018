@@ -9,18 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import datenbank.connector.DbConnector;
-
 
 /**
 * Servlet implementation class FAQServlet
 */
-@WebServlet(description = "Servlet für die FAQ-Seite", urlPatterns = { "/faq/" })
+@WebServlet(description = "Servlet fuer die FAQ-Seite", urlPatterns = { "/faq/" })
 
 public class FAQServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private DbConnector conn = new DbConnector();
        
     /**
      * @see HttpServlet#HttpServlet()

@@ -1,11 +1,12 @@
 package suche.updater;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import datenbank.container.Lebensmitteldaten;
+import datenbank.container.LebensmittelDaten;
 import datenbank.container.Zugriffsskala;
 import datenbank.dao.DbQuery;
 
@@ -16,8 +17,8 @@ public class ZugriffUpdaterTest {
 
 	@Before
 	public void setUp() throws Exception {
-		Lebensmitteldaten lebensmittel = new Lebensmitteldaten(
-				query.getResult("select * from lebensmitteldaten where lindex = 1001"));
+		LebensmittelDaten lebensmittel = new LebensmittelDaten(
+				query.getResult("select * from lebensmittelDaten where lindex = 1001"));
 		updater = new ZugriffUpdater(lebensmittel);
 	}
 

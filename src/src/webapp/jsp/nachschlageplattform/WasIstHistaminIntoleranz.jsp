@@ -113,7 +113,7 @@
 							
 							<h4>Typ HNMT</h4>
 							
-							Die HNMT kommt vermehrt in Organen wie Leber, Haut, Atemwege oder im Zentralnervensystem vor. Ist zu wenig dieser HNMT vorhanden, kommt es ebenfalls zu einer Histaminintoleranz, allerdings "Typ HNMT". Hier kommt es zu einer allmälichen und langsamen Ansammlung von Histamin im Körper. Wird dann Histamin dem Körper zugeführt, bringt dies sozusagen das Fass zum Überlaufen. Die Symptomatik ist bei diesem Typ oft weniger auffällig, dafür länger andauernd.
+							Die HNMT kommt vermehrt in Organen wie Leber, Haut, Atemwege oder im Zentralnervensystem vor. Ist zu wenig dieser HNMT vorhanden, kommt es ebenfalls zu einer Histaminintoleranz, allerdings "Typ HNMT". Hier kommt es zu einer allmälichen und langsamen Ansammlung von Histamin im Körper. Wird dann Histamin dem Körper zugeführt, bringt dies sozusagen das Fass zum überlaufen. Die Symptomatik ist bei diesem Typ oft weniger auffällig, dafür länger andauernd.
 							
 							Der Abbau des Histamins wird durch Vitamin C gefördert.
 							

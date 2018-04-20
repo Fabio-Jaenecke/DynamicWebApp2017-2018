@@ -100,7 +100,7 @@
 							
 							<h3>Symptome der Histaminunverträglichkeit</h3>
 							Zusammenfassung (leichte Sprache)
-							Die Symptome der Histaminintoleranz treten meist kurz nach oder wenige Stunden nach einer histaminreichen Mahlzeit auf. Die Symptome sind u.a. Kopfschmerzen, Hautrötungen, Juckreiz, Übelkeit, Duchfall oder Herzrasen .
+							Die Symptome der Histaminintoleranz treten meist kurz nach oder wenige Stunden nach einer histaminreichen Mahlzeit auf. Die Symptome sind u.a. Kopfschmerzen, Hautrötungen, Juckreiz, übelkeit, Duchfall oder Herzrasen .
 							
 							Die Symptome der Histaminintoleranz sind sehr vielfältig (siehe unten) und teilweise schwer von den Symptomen anderer Krankheiten zu unterscheiden. Vor allem Allergie-Symptome ähneln denen der Histaminintoleranz. Die Symptome machen sich meist einige Minuten bis wenige Stunden nach dem Konsum histaminreicher bzw. histaminfreisetzender oder das Enzym DAO blockierender Nahrungsmittel bemerkbar. Nach einer Studie an 141 Betroffenen, treten bei 41% der Betroffenen die Symptome bereits wenige Minuten, bei 47% wenige Stunden nach dem Verzehr der entsprechenden Nahrungsmittel auf. Nur etwa 12% berichten von Symptomen an darauffolgenden Tagen.
 							
@@ -115,7 +115,7 @@
 							Genitaltrakt*
 							*Die Symptomgruppe "Genitaltrakt" konnte in unserer Umfrage nicht bestätigt werden, da keine einzige der Befragten diese Symptomgruppe erwähnte. Jarisch beschreibt in seinem Buch, dass ein Zusammenhang zwischen krampfartigen Regelschmerzen und Histamin-Intoleranz plausibel sein könnte.
 							
-							In unserer Studie mit 141 Teilnehmern, haben wir folgende Verteilung von Symptomen gefunden: Am häufigsten waren Kopfschmerzen (38%) und Flush (36%; Hautrötungen im Gesichts- und Halsbereich), gefolgt von Bauchschmerzen (31%), Durchfall (26%), Nasenrinnen bzw. Nasenschleimhautschwellung (19%). Blähungen und Übelkeit verzeichneten wir jeweils mit etwa 17%, gefolgt von Herzrasen mit nur noch etwa 12%. Weniger oft, aber immer noch in mehr als 5% der Fälle, kommen Ausschlag, juckende Haut, Müdigkeit, Schwindel und Kreislaufprobleme vor.
+							In unserer Studie mit 141 Teilnehmern, haben wir folgende Verteilung von Symptomen gefunden: Am häufigsten waren Kopfschmerzen (38%) und Flush (36%; Hautrötungen im Gesichts- und Halsbereich), gefolgt von Bauchschmerzen (31%), Durchfall (26%), Nasenrinnen bzw. Nasenschleimhautschwellung (19%). Blähungen und übelkeit verzeichneten wir jeweils mit etwa 17%, gefolgt von Herzrasen mit nur noch etwa 12%. Weniger oft, aber immer noch in mehr als 5% der Fälle, kommen Ausschlag, juckende Haut, Müdigkeit, Schwindel und Kreislaufprobleme vor.
 							
 							<h3>Die häufigsten Symptome der verschiedenen Symptomgruppen sind:</h3>
 							<table>
@@ -127,7 +127,7 @@
 							  <tr>
 							    <td>Kopfschmerz<br>  (bis hin zu Migräne)</td>
 							    <td>Flush (rot werden im Hals- und<br>  Gesichtsbereich)</td>
-							    <td>Übelkeit</td>
+							    <td>übelkeit</td>
 							  </tr>
 							  <tr>
 							    <td>Herzrasen</td>
@@ -145,7 +145,7 @@
 							    <td>Durchfall<br>  <br>  </td>
 							  </tr>
 							  <tr>
-							    <td>VerdauungstraktÜbelkeitBauchschmerzen (auch krampfhaft)BlähungenDurchfall</td>
+							    <td>VerdauungstraktübelkeitBauchschmerzen (auch krampfhaft)BlähungenDurchfall</td>
 							    <td></td>
 							    <td></td>
 							  </tr>

@@ -6,7 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
-import datenbank.connector.DbConnectorStub;
 
 /*
  * Class for filling the tables with content, derived from interface
@@ -21,9 +20,9 @@ public class DbInsertion implements DbInsertionInterface {
 	 * table names as enums
 	 */
 	public enum tables{
-		LEBENSMITTELDATEN,
+		lebensmittelDaten,
 		ZUGRIFFSSKALA,
-		LEBENSMITTELKATEGORIE,
+		lebensmittelkategorie,
 		NAEHRSTOFF,
 		FAVORIT,
 		KATZUGEHOERIGKEIT,
@@ -39,9 +38,9 @@ public class DbInsertion implements DbInsertionInterface {
 	 * insert into different tables
 	 */
 	public void insertIntoTables() {
-		insertIntoTableLebensmitteldaten();
+		insertIntoTablelebensmittelDaten();
 		insertIntoTableZugriffsskala();
-		insertIntoTableLebensmittelkategorie();
+		insertIntoTablelebensmittelkategorie();
 		insertIntoTableNaehrstoff();
 		insertIntoTableFavorit();
 		insertIntoTableKatzugehoerigkeit();
@@ -50,62 +49,62 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmitteldaten()
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTablelebensmittelDaten()
 	 */
 	@Override
-	public void insertIntoTableLebensmitteldaten() {
+	public void insertIntoTablelebensmittelDaten() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (1001, 'Schwein', 'mittel', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (1002, 'Rind', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN  + " VALUES (1003, 'Haehnchen', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN  + " VALUES (1004, 'Kalb', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (1005, 'Salami', 'schlecht', 'schlecht')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (1006, 'Bratwurst', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (1001, 'Schwein', 'mittel', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (1002, 'Rind', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten  + " VALUES (1003, 'Haehnchen', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten  + " VALUES (1004, 'Kalb', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (1005, 'Salami', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (1006, 'Bratwurst', 'schlecht', 'schlecht')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (2001, 'Apfel', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (2002, 'Birne', 'schlecht', 'mittel')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (2003, 'Mango', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (2004, 'Banane', 'schlecht', 'schlecht')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (2005, 'Pfirsich', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (2001, 'Apfel', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (2002, 'Birne', 'schlecht', 'mittel')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (2003, 'Mango', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (2004, 'Banane', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (2005, 'Pfirsich', 'gut', 'gut')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (3001, 'Gurke', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (3002, 'Brokoli', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (3003, 'Spinat', 'schlecht', 'schlecht')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (3004, 'Zwiebel', 'mittel', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (3005, 'Paprika', 'schlecht', 'mittel')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (3001, 'Gurke', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (3002, 'Brokoli', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (3003, 'Spinat', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (3004, 'Zwiebel', 'mittel', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (3005, 'Paprika', 'schlecht', 'mittel')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (4001, 'Erbse', 'schlecht', 'schlecht')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (4002, 'Sojabohnen', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (4001, 'Erbse', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (4002, 'Sojabohnen', 'schlecht', 'schlecht')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (5001, 'Reis', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (5002, 'Meis', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (5001, 'Reis', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (5002, 'Meis', 'gut', 'gut')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (6001, 'Erdnuesse', 'schlecht', 'schlecht')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (6002, 'Samen', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (6001, 'Erdnuesse', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (6002, 'Samen', 'gut', 'gut')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (7001, 'Thun-frisch', 'schlecht', 'mittel')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (7002, 'Thun-conserve', 'schlecht', 'schlecht')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (7003, 'Fischstaebchen', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (7004, 'Seeteufel', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (7005, 'Dorade', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (7001, 'Thun-frisch', 'schlecht', 'mittel')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (7002, 'Thun-conserve', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (7003, 'Fischstaebchen', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (7004, 'Seeteufel', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (7005, 'Dorade', 'gut', 'gut')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (8001, 'Hutenkaese', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (8002, 'Joghurt', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (8003, 'Hartkaese', 'schlecht', 'schlecht')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (8004, 'Milch', 'mittel', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (8001, 'Hutenkaese', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (8002, 'Joghurt', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (8003, 'Hartkaese', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (8004, 'Milch', 'mittel', 'gut')");
 			
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (9001, 'Kaffee', 'mittel', 'mittel')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (9002, 'Ei', 'mittel', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (9003, 'Teig', 'gut', 'gut')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELDATEN + " VALUES (9004, 'Alkohol', 'schlecht', 'schlecht')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (9001, 'Kaffee', 'mittel', 'mittel')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (9002, 'Ei', 'mittel', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (9003, 'Teig', 'gut', 'gut')");
+			statement.executeUpdate(INSERT + tables.lebensmittelDaten + " VALUES (9004, 'Alkohol', 'schlecht', 'schlecht')");
 			
 			statement.close();
 			conn.getConn().commit();
-			LOGGER.info("inserted data into table lebensmitteldaten");
+			LOGGER.info("inserted data into table lebensmittelDaten");
 		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "table lebensmitteldaten could not be filled " + e);
+			LOGGER.log(Level.SEVERE, "table lebensmittelDaten could not be filled " + e);
 		}
 	}
 
@@ -167,22 +166,22 @@ public class DbInsertion implements DbInsertionInterface {
 	}
 
 	/*
-	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTableLebensmittelkategorie()
+	 * @see datenbank.insertion.DbInsertionInterface#insertIntoTablelebensmittelkategorie()
 	 */
 	@Override
-	public void insertIntoTableLebensmittelkategorie() {
+	public void insertIntoTablelebensmittelkategorie() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (1000, 'Fleisch')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (2000, 'Obst')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (3000, 'Gemuese')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (4000, 'Huelsenfruechte')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (5000, 'Getreide')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (6000, 'Nuesse und Samen')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (7000, 'Fisch')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (8000, 'Milch und Milchprodukte')");
-			statement.executeUpdate(INSERT + tables.LEBENSMITTELKATEGORIE + " VALUES (9000, 'Sonstiges')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (1000, 'Fleisch')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (2000, 'Obst')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (3000, 'Gemuese')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (4000, 'Huelsenfruechte')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (5000, 'Getreide')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (6000, 'Nuesse und Samen')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (7000, 'Fisch')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (8000, 'Milch und Milchprodukte')");
+			statement.executeUpdate(INSERT + tables.lebensmittelkategorie + " VALUES (9000, 'Sonstiges')");
 			
 			statement.close();
 			conn.getConn().commit();

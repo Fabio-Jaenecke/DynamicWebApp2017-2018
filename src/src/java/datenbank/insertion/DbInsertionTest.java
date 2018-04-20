@@ -1,6 +1,8 @@
 package datenbank.insertion;
 
-import static org.junit.Assert.*;
+
+
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,10 +26,10 @@ public class DbInsertionTest {
 		insert.insertIntoTables();
 	}
 
-	// Testing the insert statements for the table lebensmitteldaten
+	// Testing the insert statements for the table lebensmittelDaten
 	@Test
-	public void testInsertIntoTableLebensmitteldaten() {
-		assertNotNull(query.getResult("select * from lebensmitteldaten"));
+	public void testInsertIntoTablelebensmittelDaten() {
+		assertNotNull(query.getResult("select * from lebensmittelDaten"));
 	}
 
 	// Testing the insert statements for the table zugriffsskala
@@ -38,7 +40,7 @@ public class DbInsertionTest {
 
 	// Testing the insert statements for the table lebensmittelkategorie
 	@Test
-	public void testInsertIntoTableLebensmittelkategorie() {
+	public void testInsertIntoTablelebensmittelkategorie() {
 		assertNotNull(query.getResult("select * from lebensmittelkategorie"));
 	}
 

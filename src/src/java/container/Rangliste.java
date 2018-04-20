@@ -1,17 +1,12 @@
 package container;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException; 
 import java.util.logging.Level; 
 import java.util.logging.Logger; 
 
-import datenbank.connector.DbConnector;
-import datenbank.container.Lebensmitteldaten;
-import datenbank.container.Ranglistenmanager;
-import datenbank.container.Zugriffsmanager;
+import datenbank.container.RanglistenManager;
 import datenbank.dao.DbQuery; 
 
 /**
@@ -23,9 +18,8 @@ import datenbank.dao.DbQuery;
  *
  */
 public class Rangliste {
-	private ArrayList<Ranglistenmanager> tabelle; 
-	DbQuery query = new DbQuery(); 
-	DbConnector conn = new DbConnector(); 
+	private ArrayList<RanglistenManager> tabelle; 
+	private DbQuery query = new DbQuery(); 
 	private static final Logger LOGGER = Logger.getLogger(Rangliste.class.getName()); 
 	
 	/**
@@ -40,12 +34,11 @@ public class Rangliste {
 	 * @param lebensmittelname der Name des Lebensmittels. 
 	 */
 	public void searchForString() {
-		String selectSQL = "Select * " + " FROM LEBENSMITTELDATEN l JOIN KATZUGEHOERIGKEIT k "
-				+ "ON l.lindex=k.lindex JOIN LEBENSMITTELKATEGORIE lk on k.kindex = lk.kindex';";
-		ResultSet result = query.getResult(selectSQL);
-		try {
+		String selectSQL = "Select * " + " FROM lebensmittelDaten l JOIN KATZUGEHOERIGKEIT k "
+				+ "ON l.lindex=k.lindex JOIN lebensmittelkategorie lk on k.kindex = lk.kindex';";
+		try (ResultSet result = query.getResult(selectSQL)){
 			if(result.next()) {
-				tabelle.add(new Ranglistenmanager(result));
+				tabelle.add(new RanglistenManager(result));
 			}
 		}
 		catch(SQLException e){
@@ -61,10 +54,10 @@ public class Rangliste {
 	}
 	
 	/**
-	 * Liefere die Tabelle mit der Karenzphase und der Dauerernaehrung sowie den entsprechenden Lebensmitteldaten.
+	 * Liefere die Tabelle mit der Karenzphase und der Dauerernaehrung sowie den entsprechenden lebensmittelDaten.
 	 * @return
 	 */
-	public ArrayList<Ranglistenmanager> getTabelle() {
+	public ArrayList<RanglistenManager> getTabelle() {
 		return tabelle; 
 	}
 }

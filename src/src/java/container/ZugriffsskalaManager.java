@@ -1,16 +1,12 @@
 package container;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException; 
 import java.util.logging.Level; 
 import java.util.logging.Logger; 
 
-import datenbank.connector.DbConnector;
-import datenbank.container.Lebensmitteldaten;
-import datenbank.container.Zugriffsmanager;
+import datenbank.container.ZugriffsManager;
 import datenbank.dao.DbQuery; 
 
 /**
@@ -19,18 +15,17 @@ import datenbank.dao.DbQuery;
  * @author Michele Trebo
  * @verison 12.04.2018
  */
-public class Zugriffsskalamanager {
+public class ZugriffsskalaManager {
 
-	private ArrayList<Zugriffsmanager> tabelle;
-	DbQuery query = new DbQuery(); 
-	DbConnector conn = new DbConnector(); 
-	private static final Logger LOGGER = Logger.getLogger(Zugriffsskalamanager.class.getName()); 
+	private ArrayList<ZugriffsManager> tabelle;
+	private DbQuery query = new DbQuery(); 
+	private static final Logger LOGGER = Logger.getLogger(ZugriffsskalaManager.class.getName()); 
 	
 	/**
 	 * Erzeuge den Zugriffsskalamanager. 
 	 */
-	public Zugriffsskalamanager() {
-		tabelle = new ArrayList<Zugriffsmanager>();
+	public ZugriffsskalaManager() {
+		tabelle = new ArrayList<ZugriffsManager>();
 	}
 	
 	/**
@@ -40,10 +35,9 @@ public class Zugriffsskalamanager {
 	public void searchForString() {
 		String selectSQL = "Select * FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
 				+" ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex;";
-		try {
-			ResultSet result = query.getResult(selectSQL);
+		try (ResultSet result = query.getResult(selectSQL)){
 			while (result.next()) {
-				tabelle.add(new Zugriffsmanager(result));
+				tabelle.add(new ZugriffsManager(result));
 			}
 		} 
 		catch (SQLException e) {
@@ -62,7 +56,7 @@ public class Zugriffsskalamanager {
 	 * Liefere die Tabelle mit den Platzierungen und den entsprechenden Lebensmitteldaten. 
 	 * @return tabelle
 	 */
-	public ArrayList<Zugriffsmanager> getTabelle() {
+	public ArrayList<ZugriffsManager> getTabelle() {
 		return tabelle; 
 	}
 }

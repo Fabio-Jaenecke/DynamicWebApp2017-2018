@@ -2,11 +2,9 @@ package datenbank.container;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import datenbank.connector.DbConnectorStub;
 
 /**
  * Diese Klasse stellt die Java-Klasse zur Entitaet Zugriffsskala in der Datenbank dar. 

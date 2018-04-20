@@ -238,7 +238,7 @@ aside {
    ========================================================================== */
 
 /*
-CODE FÜR BUTTONS QUELLE: https://sharingbuttons.io/
+CODE FueR BUTTONS QUELLE: https://sharingbuttons.io/
 */
 
 footer.wrapper ul li {
@@ -558,7 +558,7 @@ nav span {
     transition: 0.3s;
 }
 
-.sidenav a:first-child { /*für das Kreuz*/
+.sidenav a:first-child { /*fuer das Kreuz*/
     color: #c1c1c1;
     border: none;
 }
@@ -569,7 +569,7 @@ nav span {
     background-color: white;
 }
 
-.sidenav a:first-child:hover { /*für das Kreuz*/
+.sidenav a:first-child:hover { /*fuer das Kreuz*/
     color: #fff;
     border: none;
     transition: none;

@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
-import datenbank.container.Lebensmitteldaten;
+import datenbank.container.LebensmittelDaten;
 import datenbank.container.Zugriffsskala;
 import datenbank.dao.DbQuery;
 
@@ -18,20 +18,19 @@ public class ZugriffUpdater {
 	Zugriffsskala zugriff;
 	private static final Logger LOGGER = Logger.getLogger(ZugriffUpdater.class.getName());
 	
-	public ZugriffUpdater(Lebensmitteldaten lebensmittel) {
+	public ZugriffUpdater(LebensmittelDaten lebensmittel) {
 		anpassenZugriff(lebensmittel);
 	}
 	
-	public void anpassenZugriff(Lebensmitteldaten lebensmittel) {
+	public void anpassenZugriff(LebensmittelDaten lebensmittel) {
 		getZugriff(lebensmittel);
 		updateAZugriffe();
 	}
 		
-	private void getZugriff(Lebensmitteldaten lebensmittel) {
+	private void getZugriff(LebensmittelDaten lebensmittel) {
 		String selectSql = "select z.zindex from zugriffsskala z join favorit f on z.zindex = f.zindex where f.lindex = '"
 				+ lebensmittel.getLindex() + "';";
-		try {
-			ResultSet result = query.getResult(selectSql);
+		try (ResultSet result = query.getResult(selectSql)){
 			while(result.next()) {
 				zugriff = new Zugriffsskala(result);
 		}

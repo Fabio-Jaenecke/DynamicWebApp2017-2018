@@ -7,7 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 
 import datenbank.connector.DbConnector;
 
@@ -42,4 +41,8 @@ public class DbQuery {
 		// TODO return empty result
 		return null;
 	}
+	
+	public void finalize() {
+		conn.closeConnection(); 
+	} 
 }

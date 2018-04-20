@@ -116,9 +116,9 @@
 				<%@ page import="controller.servlets.*" %>		
                 <h2>Mahzeitsassistent</h2>
 
-                <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwaehlen oder zu aendern.<br>
-                Sie koennen zwischen dem Kategorienassisten und dem Naehrstoffassistenten waehlen.<br>
-                Es werden nur Lebensmittel angezeigt, welche als gut oder mittel vertraeglich eingestuft wurden.
+                <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwählen oder zu ändern.<br>
+                Sie können zwischen dem Kategorienassisten und dem Nährstoffassistenten wählen.<br>
+                Es werden nur Lebensmittel angezeigt, welche als gut oder mittel verträglich eingestuft wurden.
                 </p>
 
                 
@@ -179,7 +179,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
@@ -224,7 +224,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
@@ -269,7 +269,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
@@ -291,7 +291,7 @@
 					
 					
 					<div class='naehrstoffe' >
-					<h3 style="margin-top: -250px">Assistent Naehrstoffe</h3>
+					<h3 style="margin-top: -250px">Assistent Nährstoffe</h3>
 					<section class="mahlzeitassistent" style="margin-top: -200px">
 											<%@ page import="datenbank.container.*" %>
 					
@@ -330,7 +330,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeErstesDrittel'>
@@ -375,7 +375,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeZweitesDrittel'>
@@ -420,7 +420,7 @@
 														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
-															<p>Aendern</p>
+															<p>ändern</p>
 														</div>
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeDrittesDrittel'>
@@ -450,20 +450,20 @@
 					  <ul class='legend-labels'>
 					    <li><span style='background:#FF7F7F;'></span>Fleisch</li>
 					    <li><span style='background:#3EAC33;'></span>Obst</li>
-					    <li><span style='background:#00933A;'></span>Gemuese</li>
-					    <li><span style='background:#FEC576;'></span>Huelsenfruechte</li>
-					    <li><span style='background:#D1B89B;'></span>Nuesse und Samen</li>
+					    <li><span style='background:#00933A;'></span>Gemüse</li>
+					    <li><span style='background:#FEC576;'></span>Hülsenfrüchte</li>
+					    <li><span style='background:#D1B89B;'></span>Nüsse und Samen</li>
 					    <li><span style='background:#BFD1E0;'></span>Fisch</li>
 					    <li><span style='background:#A2D3FF;'></span>Milch und Milchprodukte</li>
 					  </ul>
 					</div>
 				</div>
 				<div class='my-legend'>
-					<div class='legend-title'>Naehrstoffe:</div>
+					<div class='legend-title'>Nährstoffe:</div>
 					<div class='legend-scale'>
 					  <ul class='legend-labels'>
 					    <li><span style='background:#FFEBE4;'></span>Proteine</li>
-					    <li><span style='background:#E8E9FF;'></span>Staerkebeilage</li>
+					    <li><span style='background:#E8E9FF;'></span>Stärkebeilage</li>
 					    <li><span style='background:#E4FFF2;'></span>Vitamine</li>
 					  </ul>
 					</div>

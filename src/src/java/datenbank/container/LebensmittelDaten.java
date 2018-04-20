@@ -8,15 +8,15 @@ import java.util.logging.Logger;
 import datenbank.connector.DbConnector;
 
 /**
- * stellt die Java-Klasse zur Entitaet Lebensmitteldaten
+ * stellt die Java-Klasse zur Entitaet lebensmittelDaten
  * in der Datenbank da
  * @author Raphael Caradonna
  *
  */
-public class Lebensmitteldaten {
+public class LebensmittelDaten {
 	
 	/**
-	 * Attribute aus der Entitaet Lebensmitteldaten
+	 * Attribute aus der Entitaet lebensmittelDaten
 	 */
 	private int index;
 	private String lebensmittelname;
@@ -26,13 +26,13 @@ public class Lebensmitteldaten {
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	/**
-	 * Standardkonstruktor für ein Lebensmittel
+	 * Standardkonstruktor fuer ein Lebensmittel
 	 * @param index der Index des Lebensmittels
 	 * @param name der Name des Lebensmittels
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public Lebensmitteldaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie) {
+	public LebensmittelDaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie) {
 		this.index = index;
 		this.lebensmittelname = lebensmittelname;
 		this.karenzphase = karenzphase;
@@ -45,7 +45,7 @@ public class Lebensmitteldaten {
 	 * @param rs ein Lebensmitteltupel
 	 * @throws SQLException SQL-Exception
 	 */
-	public Lebensmitteldaten(ResultSet rs) {
+	public LebensmittelDaten(ResultSet rs) {
 		try {
 				this.index = rs.getInt("lindex"); 
 		        this.lebensmittelname = rs.getString("lname");        
@@ -98,7 +98,7 @@ public class Lebensmitteldaten {
 	}
 
 	/**
-	 * gibt Datenfelder des Lebensmittels als String zurück
+	 * gibt Datenfelder des Lebensmittels als String zurueck
 	 * @override
 	 */
 	public String toString() {

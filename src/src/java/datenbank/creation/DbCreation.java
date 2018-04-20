@@ -27,9 +27,9 @@ public class DbCreation implements DbCreationInterface {
 	 */
 	@Override
 	public void setUpTables() {
-		setUpTableLebensmitteldaten();
+		setUpTablelebensmittelDaten();
 		setUpTableZugriffsskala();
-		setUpTableLebensmittelkategorie();
+		setUpTablelebensmittelkategorie();
 		setUpTableNaehrstoff();
 		setUpTableFavorit();
 		setUpTableKatzugehoerigkeit();
@@ -38,16 +38,16 @@ public class DbCreation implements DbCreationInterface {
 	}
 
 	/*
-	 *  Creating table "lebensmitteldaten"
-	 * @see datenbank.creation.DbCreationInterface#setUpTableLebensmitteldaten()
+	 *  Creating table "lebensmittelDaten"
+	 * @see datenbank.creation.DbCreationInterface#setUpTablelebensmittelDaten()
 	 */
 	@Override
-	public void setUpTableLebensmitteldaten() {
+	public void setUpTablelebensmittelDaten() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
-			statement.execute("drop table lebensmitteldaten if exists");
-			statement.execute("CREATE TABLE lebensmitteldaten(lindex int(4) primary key, lname varchar(100),"
+			statement.execute("drop table lebensmittelDaten if exists");
+			statement.execute("CREATE TABLE lebensmittelDaten(lindex int(4) primary key, lname varchar(100),"
 				+ " karenzphase varchar(100), dauerernaehrung varchar(100));");
 			
 			statement.close();
@@ -79,10 +79,10 @@ public class DbCreation implements DbCreationInterface {
 
 	/*
 	 *  Creating table "lebensmittelkategorie"
-	 * @see datenbank.creation.DbCreationInterface#setUpTableLebensmittelkategorie()
+	 * @see datenbank.creation.DbCreationInterface#setUpTablelebensmittelkategorie()
 	 */
 	@Override
-	public void setUpTableLebensmittelkategorie() {
+	public void setUpTablelebensmittelkategorie() {
 		Statement statement;
 		try {
 			statement = conn.getConn().createStatement();
@@ -124,7 +124,7 @@ public class DbCreation implements DbCreationInterface {
 			statement = conn.getConn().createStatement();
 			statement.execute("drop table favorit if exists");
 			statement.execute("CREATE TABLE favorit(zindex int(3), lindex int(4), primary key(zindex, lindex),"
-					+ "foreign key(zindex) references zugriffsskala, foreign key(lindex) references lebensmitteldaten);");
+					+ "foreign key(zindex) references zugriffsskala, foreign key(lindex) references lebensmittelDaten);");
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
@@ -144,7 +144,7 @@ public class DbCreation implements DbCreationInterface {
 			statement.execute("drop table katzugehoerigkeit if exists");
 			statement.execute("CREATE TABLE katzugehoerigkeit(lindex int(4), kindex int(4),"
 					+ " primary key(lindex, kindex),foreign key(kindex) references lebensmittelkategorie"
-					+ ", foreign key(lindex) references lebensmitteldaten);");
+					+ ", foreign key(lindex) references lebensmittelDaten);");
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
@@ -184,7 +184,7 @@ public class DbCreation implements DbCreationInterface {
 			statement = conn.getConn().createStatement();
 			statement.execute("drop table naehrzugehoerigkeit if exists");
 			statement.execute("CREATE TABLE naehrzugehoerigkeit(lindex int(4), nname varchar(100), primary key(lindex, nname)," 
-					+ " foreign key(lindex) references lebensmitteldaten, foreign key(nname) references naehrstoff);");
+					+ " foreign key(lindex) references lebensmittelDaten, foreign key(nname) references naehrstoff);");
 			statement.close();
 			conn.getConn().commit();
 		} catch (SQLException e) {
