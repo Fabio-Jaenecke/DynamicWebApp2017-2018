@@ -4,11 +4,16 @@ import java.io.File;
 import java.util.ArrayList;
 
 import org.jsoup.nodes.Document;
+import org.apache.commons.io.FileUtils;
+
+import controller.servlets.SuchfilterServlet;
+import java.io.IOException;
+import java.net.URL;
 
 
 
 /**
- * konvertiert die Html-Seiten zu Xml, f�hrt das Suchen nach einem Wort aus und zeigt
+ * konvertiert die Html-Seiten zu Xml, fuehrt das Suchen nach einem Wort aus und zeigt
  * die Suchresultate an
  * @author Raphael
  *
@@ -35,19 +40,35 @@ public class Suchfilter {
 		searcher.sucheNachText(xmlSites);
 	}
 	
+	
+
+    public File downloadSucheFilterFiles(String htmlFile) {
+        File destination = null;
+    	try {
+            URL url = new URL("http://localhost:8080/" + SuchfilterServlet.getContextPath() + "/html/" + htmlFile);
+            destination = new File(htmlFile);
+
+            // Copy bytes from the URL to the destination file.
+            FileUtils.copyURLToFile(url, destination);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    	return destination;
+    }
+	
 	/*
 	 * load html-files for convertion to xml	
 	 * TODO replace file locations with own path
 	 */
 	public ArrayList<Document> initializeXmlSites(){
 		ArrayList<Document> xmlSites = new ArrayList<>();
-		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src//webapp/html/lebensmittelkategorie.html")));
-		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/faq.html")));
-		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/suchfilter.html")));
-		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/mahlzeitassistent.html")));
-		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/rezepte.html")));
-		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/suche.html")));
-		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/zugriffsskala.html")));
+		xmlSites.add(converter.convert(downloadSucheFilterFiles("lebensmittelkategorie.html")));
+		xmlSites.add(converter.convert(downloadSucheFilterFiles("faq.html")));
+		xmlSites.add(converter.convert(downloadSucheFilterFiles("mahlzeitassistent.html")));
+		xmlSites.add(converter.convert(downloadSucheFilterFiles("suchfilter.html")));
+		xmlSites.add(converter.convert(downloadSucheFilterFiles("rezepte.html")));
+		xmlSites.add(converter.convert(downloadSucheFilterFiles("suche.html")));
+		xmlSites.add(converter.convert(downloadSucheFilterFiles("zugriffsskala.html")));
 		return xmlSites;
 	}
 

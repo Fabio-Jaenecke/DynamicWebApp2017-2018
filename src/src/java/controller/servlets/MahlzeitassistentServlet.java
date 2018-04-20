@@ -172,7 +172,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	 * @param response
     	 * @return
     	 */
-    	protected Object findeAuswahl(HttpServletRequest request, HttpServletResponse response) {
+    	protected Object findeAuswahl(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     		HttpSession session = request.getSession(true);
     		Object auswahl = session.getAttribute("auswahl");
 	    	try {
