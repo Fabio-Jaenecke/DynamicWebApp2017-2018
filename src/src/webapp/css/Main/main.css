@@ -84,6 +84,13 @@ body {
     margin: 0;
 }
 
+.wrapper.clearfix{
+	max-height: 50px;
+	padding-left: 10px;
+	padding-top: 15px;
+	width: 100%;
+}
+
 /* ===================
     ALL: Blue Theme
    =================== */

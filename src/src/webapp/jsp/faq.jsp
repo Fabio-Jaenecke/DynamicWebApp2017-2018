@@ -32,7 +32,7 @@
                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
                <![endif]-->
                <div class="header-container">
-                  <header class="wrapper clearfix" style="max-height: 50px; padding-top: 15px;">
+                  <header class="wrapper clearfix">
                   	<div class="flex-grid-thirds">
 						  <div class="col menugrid"><span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></div>
 						  <div class="col titlegrid">FAQ</div>
