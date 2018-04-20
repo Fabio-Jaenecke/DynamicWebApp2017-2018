@@ -42,6 +42,13 @@ public class Suchfilter {
 	
 	
 
+    /**
+     * This method downloads the HTML files from the TomCat server
+     * Source: https://kodejava.org/how-do-i-copy-a-url-into-a-file/
+     * 
+     * @param htmlFile
+     * @return
+     */
     public File downloadSucheFilterFiles(String htmlFile) {
         File destination = null;
     	try {
@@ -58,7 +65,7 @@ public class Suchfilter {
 	
 	/*
 	 * load html-files for convertion to xml	
-	 * TODO replace file locations with own path
+	 * files are now getting downloaded for conversion
 	 */
 	public ArrayList<Document> initializeXmlSites(){
 		ArrayList<Document> xmlSites = new ArrayList<>();
