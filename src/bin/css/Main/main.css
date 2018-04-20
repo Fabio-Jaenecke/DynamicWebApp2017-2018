@@ -621,7 +621,7 @@ nav span {
 }
 
 .table_beliebte_lebensmittel thead {
-    color: white;
+    color: black;
 }
 
 .table_beliebte_lebensmittel tbody tr:nth-child(odd) {
