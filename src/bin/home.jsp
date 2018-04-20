@@ -149,6 +149,7 @@
                      </article>
                      <aside>
                         <section>
+                        <a href="${pageContext.request.contextPath}/zugriffsskala/">
 						<h3>Häufige Zugriffe</h3>
 						<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 						<div>
@@ -201,6 +202,7 @@
 	 						</table>
 						</div>
 						</form>
+						</a>
 						</section>
                      </aside>
                   </div>
