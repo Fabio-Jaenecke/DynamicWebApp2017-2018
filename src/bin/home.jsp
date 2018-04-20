@@ -162,7 +162,7 @@
 						<table id='zugriffsskala' class='table_beliebte_lebensmittel' style='width:100%'>
 							<thead>							
 							<tr>
-	 						<th>Platzierung<div class='sortieren'>▼▲</div></th>
+	 						<th>Platzierung</th>
 	 						<th>Lebensmittel</th>
 	 						<th>Karenzphase</th>
 	 						<th>Dauerernährung</th>
