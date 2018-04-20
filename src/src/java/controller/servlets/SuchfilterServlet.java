@@ -37,11 +37,17 @@ public class SuchfilterServlet extends HttpServlet {
         dispatcher.forward(request, response);
 	}
 	
+	/**
+	 * Provides the current contextPath by Http request and assigns variable contextPath with it
+	 */
 	protected void provideContextPath(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String Path=(String) request.getContextPath();
 		SuchfilterServlet.contextPath = Path;
 	}
 
+	/**
+	 * @return return the current contextPath
+	 */
 	public static String getContextPath() {
 		return contextPath;
 	}

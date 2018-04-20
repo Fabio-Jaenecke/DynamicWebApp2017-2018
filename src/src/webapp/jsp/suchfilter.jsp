@@ -59,8 +59,6 @@
             		
             	}
             	else{
-            	String contextPath = request.getContextPath();
-            	session.setAttribute("pfad", contextPath);
             	Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
             	suche.search();
             	if(suche.getSearcher().getSearchResults().isEmpty()){
