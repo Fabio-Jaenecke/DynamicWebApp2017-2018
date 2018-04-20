@@ -43,6 +43,7 @@ public class Suchfilter {
 		ArrayList<Document> xmlSites = new ArrayList<>();
 		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src//webapp/html/lebensmittelkategorie.html")));
 		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/faq.html")));
+		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/suchfilter.html")));
 		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/mahlzeitassistent.html")));
 		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/rezepte.html")));
 		xmlSites.add(converter.convert(new File("C:/Users/Raphael/git/ps_17_gruppe23/src/src/webapp/html/suche.html")));
