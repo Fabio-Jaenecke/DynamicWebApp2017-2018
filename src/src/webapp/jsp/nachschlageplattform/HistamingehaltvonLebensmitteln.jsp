@@ -85,7 +85,7 @@
                   <div class="main wrapper clearfix">
                   	<form method="get" action="${pageContext.request.contextPath}/home/">
                      <article>
-                     <input type="submit" value="Zurueck" onchange="history.back()">
+                     <input type="submit" value="Zurück" onchange="history.back()">
                      	<ul class="breadcrumb">
                      	<li><a href="${pageContext.request.contextPath}/home/">Home</a></li>
 						 <li>Histamingehalt von Lebensmitteln</li>
