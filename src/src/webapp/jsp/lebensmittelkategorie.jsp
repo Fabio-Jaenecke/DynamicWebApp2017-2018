@@ -169,9 +169,10 @@
 			           	}
 			           	
 			          	//Die Tabelle
-			           		SortiererDao sortierer = new SortiererDao();
-			           		sortierer.searchForString(auswahl, order);
-							ArrayList<LebensmittelDaten> daten = sortierer.getLebensmittel();
+			           		KategoriensucheDao sortierauftrag = new KategoriensucheDao();
+							String abfrage = sortierauftrag.spaltenSortierer(auswahl, order);
+							sortierauftrag.searchForString(abfrage);
+							ArrayList<LebensmittelDaten> daten = sortierauftrag.getLebensmittel();
 							//Die Standardtabelle weil sonst nichts angezeigt wuerde. Eigentlich braucht es diese nicht, aber die Seite wäre dann leer
 						    %>
 						     
@@ -191,7 +192,7 @@
 					                		out.println("</tr>");
 										}
 				        			// for the next category call we have to clear the arraylist of lebensmittel
-				        			sortierer.clearLebensmittel();
+				        			sortierauftrag.clearLebensmittel();
 					                %>
 					                </tbody>
 				            </table>

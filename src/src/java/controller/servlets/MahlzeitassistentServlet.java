@@ -22,6 +22,7 @@ import javax.servlet.http.HttpSession;
 public class MahlzeitassistentServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
+	private static final Logger LOGGER = Logger.getLogger(MahlzeitassistentServlet.class.getName());
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -43,122 +44,24 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	String auswahlkontext=(String) session.getAttribute("auswahlkontext");
     	
     	
-    	if (auswahl==null){
+    	if (auswahl==null || auswahlkontext==null){
     		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
     		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
              dispatcher.forward(request, response);
-             System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl:");
-             System.out.println(request.getSession().getAttribute("auswahl"));
+             LOGGER.log(Level.CONFIG, "Leerer Mahlzeitassistent");
   	         return;
   	         
-    	} if (auswahlkontext==null){
-      		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-      		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-               dispatcher.forward(request, response);
-               System.out.print("kontext:");
-               System.out.println(request.getSession().getAttribute("auswahlkontext"));
-               System.out.print("Auswahlkontextnull:");
-               System.out.println(request.getSession().getAttribute("auswahl"));
-    	         return;
-    	         
-  	         
-    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie1")) {
+    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext != null) {
 	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
 	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 	         dispatcher.forward(request, response);
-	         System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl11413412:");
-             System.out.println(request.getSession().getAttribute("auswahl1"));
 	         return;
-	     
-    	}if (auswahlkontext.equals("kategorie1")) {
-	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-	         dispatcher.forward(request, response);
-	         System.out.print("kontext:");
-            System.out.println(request.getSession().getAttribute("auswahlkontext"));
-            System.out.print("Auswahlok:");
-            System.out.println(request.getSession().getAttribute("auswahl"));
-            System.out.print("Auswahlok1:");
-            System.out.println(session.getAttribute("auswahl1"));
-	         return;
-	         
- 	        
-    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie2")) {
-	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-	         dispatcher.forward(request, response);
-	         System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl:");
-             System.out.println(request.getSession().getAttribute("auswahl"));
-	         return;  
-	         
-    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie3")) {
-	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-	         dispatcher.forward(request, response);
-	         System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl:");
-             System.out.println(request.getSession().getAttribute("auswahl"));
-	         return;  
-	    
-    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie4")) {
-	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-	         dispatcher.forward(request, response);
-	         System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl:");
-             System.out.println(request.getSession().getAttribute("auswahl"));
-	         return;  
-	        
-    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie5")) {
-	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-	         dispatcher.forward(request, response);
-	         System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl:");
-             System.out.println(request.getSession().getAttribute("auswahl"));
-	         return;  
-	         
-    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext.equals("kategorie6")) {
-	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-	         dispatcher.forward(request, response);
-	         System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl:");
-             System.out.println(request.getSession().getAttribute("auswahl"));
-	         return;      
-	    /*
-    	}if (auswahl.equals("gehezurauswahl")) {
-    		
-   		 String nextJSP = "/jsp/mahlzeitassistentauswahl.jsp";
-   		 System.out.println(request.getSession().getAttribute("auswahl"));
-   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-            dispatcher.forward(request, response);
-            System.out.print("kontext:");
-            System.out.println(request.getSession().getAttribute("auswahlkontext"));
-            System.out.print("Auswahl:");
-            System.out.println(request.getSession().getAttribute("auswahl"));
-	         return;     
-	     */    
+    
     	}else{
-    		/*error - something went wrong */
              String nextJSP = "/jsp/mahlzeitassistent.jsp";
              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
              dispatcher.forward(request, response);
-             System.out.print("kontext:");
-             System.out.println(request.getSession().getAttribute("auswahlkontext"));
-             System.out.print("Auswahl:");
-             System.out.println(request.getSession().getAttribute("auswahl"));
-             System.out.print("Error:");
+             LOGGER.log(Level.CONFIG, "Exit Mahlzeitassistent");
              return;
     	}
 	}
@@ -178,7 +81,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	    	try {
 	            auswahl = request.getSession().getAttribute("auswahl");
 	        } catch (Exception ex) {
-	            Logger.getLogger(MahlzeitassistentServlet.class.getName()).log(Level.SEVERE, null, ex);
+	        	LOGGER.log(Level.SEVERE, null, ex);
 	        }
 	    	return auswahl;
 	}

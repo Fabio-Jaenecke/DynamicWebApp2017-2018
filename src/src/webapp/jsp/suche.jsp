@@ -125,7 +125,8 @@
 					}else{
 						kategorienname = request.getParameter("kategorieauswahl");
 						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
-						kategorieauftrag.searchForString(kategorienname);
+						String abfrage = kategorieauftrag.kategorienSuche(kategorienname);
+						kategorieauftrag.searchForString(abfrage);
 						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
 						
 			        %>

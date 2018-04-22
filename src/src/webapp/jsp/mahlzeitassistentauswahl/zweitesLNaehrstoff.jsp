@@ -87,8 +87,9 @@
 					}else{
 						session.setAttribute("auswahlkontext", "naehrstoff2");
 						naehrstoffname = request.getParameter("naehrstoffauswahl");
-						NaehrstoffsucheDao naehrstoffauftrag = new NaehrstoffsucheDao();
-						naehrstoffauftrag.searchForString(naehrstoffname);
+						KategoriensucheDao naehrstoffauftrag = new KategoriensucheDao();
+						String abfrage = naehrstoffauftrag.naehrstoffSuche(naehrstoffname);
+						naehrstoffauftrag.searchForString(abfrage);
 						ArrayList<LebensmittelDaten> daten = naehrstoffauftrag.getLebensmittel();
 						session.setAttribute("naehrstoffname2", naehrstoffname);
 			        %>
