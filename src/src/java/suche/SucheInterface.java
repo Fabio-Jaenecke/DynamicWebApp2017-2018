@@ -9,9 +9,9 @@ package suche;
 public interface SucheInterface {
 	
 	void fuehreDatenAbfrageAus(String anweisung);
-	
-    void erhalteDaten(); 
+
+	void erhalteDaten(); 
     
-    void loescheDaten(); 
+	void loescheDaten(); 
     
 }
