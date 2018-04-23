@@ -159,7 +159,7 @@
 														}else{
 														auswahl1 = (String) request.getSession().getAttribute("auswahl1");
 														}
-														if (auswahl1==null){
+														if (auswahl1==null || auswahl1.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
 															<%
@@ -184,7 +184,7 @@
 													</div>
 													<div class='zeigeDrittelkategorie zeigeErstesDrittel'>
 													<%
-													if (auswahl1==null){
+													if (auswahl1==null  || auswahl1.equals("reset")){
 														out.println("______");
 													}else{
 														out.println(auswahl1);
@@ -204,7 +204,7 @@
 														}else{
 														auswahl2 = (String) request.getSession().getAttribute("auswahl2");
 														}
-														if (auswahl2==null){
+														if (auswahl2==null || auswahl2.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate120" >
 															<%
@@ -229,7 +229,7 @@
 													</div>
 													<div class='zeigeDrittelkategorie zeigeZweitesDrittel'>
 													<%
-													if (auswahl2==null){
+													if (auswahl2==null || auswahl2.equals("reset")){
 														out.println("______");
 													}else{
 														out.println(auswahl2);
@@ -249,7 +249,7 @@
 														}else{
 														auswahl3 = (String) request.getSession().getAttribute("auswahl3");
 														}
-														if (auswahl3==null){
+														if (auswahl3==null || auswahl3.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
 															<%
@@ -274,7 +274,7 @@
 													</div>
 													<div class='zeigeDrittelkategorie zeigeDrittesDrittel'>
 													<%
-													if (auswahl3==null){
+													if (auswahl3==null || auswahl3.equals("reset")){
 														out.println("______");
 													}else{
 														out.println(auswahl3);
@@ -286,7 +286,9 @@
 											
 											
 								</section>
-								
+							 <form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
+		            			<input type='submit' name="kategorienZuruecksetzen" value="Zurücksetzen">
+		            		</form>
 					</div>
 					
 					
@@ -310,7 +312,7 @@
 														}else{
 														auswahl4 = (String) request.getSession().getAttribute("auswahl4");
 														}
-														if (auswahl4==null){
+														if (auswahl4==null  || auswahl4.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate0" >
 															<%
@@ -335,7 +337,7 @@
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeErstesDrittel'>
 													<%
-													if (auswahl4==null){
+													if (auswahl4==null  || auswahl4.equals("reset")){
 														out.println("______");
 													}else{
 														out.println(auswahl4);
@@ -355,7 +357,7 @@
 														}else{
 														auswahl5 = (String) request.getSession().getAttribute("auswahl5");
 														}
-														if (auswahl5==null){
+														if (auswahl5==null  || auswahl5.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate120" >
 															<%
@@ -380,7 +382,7 @@
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeZweitesDrittel'>
 													<%
-													if (auswahl5==null){
+													if (auswahl5==null || auswahl5.equals("reset")){
 														out.println("______");
 													}else{
 														out.println(auswahl5);
@@ -400,7 +402,7 @@
 														}else{
 														auswahl6 = (String) request.getSession().getAttribute("auswahl6");
 														}
-														if (auswahl6==null){
+														if (auswahl6==null || auswahl6.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate240" >
 															<%
@@ -425,7 +427,7 @@
 													</div>
 													<div class='zeigeDrittelnaehrstoff zeigeDrittesDrittel'>
 													<%
-													if (auswahl6==null){
+													if (auswahl6==null || auswahl6.equals("reset")){
 														out.println("______");
 													}else{
 														out.println(auswahl6);
@@ -435,6 +437,9 @@
 							                    </a> 
 											</div>				
 								</section>	
+								<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" >
+			            			<input type='submit' name="naehrstoffeZuruecksetzen" value="Zurücksetzen">
+			            		</form>
 							</div>
 			<footer>
                <h3>Zu den Rezepten:</h3>

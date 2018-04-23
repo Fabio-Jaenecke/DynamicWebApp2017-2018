@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+//TODO: Try-catch und Logger hinzufuegen um exceptions abzufangen.
 
 /**
 * Servlet implementation class MahlzeitassistentServlet
@@ -42,26 +42,30 @@ public class MahlzeitassistentServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
     	String auswahl=(String) session.getAttribute("auswahl");
     	String auswahlkontext=(String) session.getAttribute("auswahlkontext");
-    	
-    	
-    	if (auswahl==null || auswahlkontext==null){
-    		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-    		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-             dispatcher.forward(request, response);
-             LOGGER.log(Level.CONFIG, "Leerer Mahlzeitassistent");
-  	         return;
-  	         
-    	}if (auswahl.equals(findeAuswahl(request, response)) && auswahlkontext != null) {
-	   		 String nextJSP = "/jsp/mahlzeitassistent.jsp";
-	   		 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-	         dispatcher.forward(request, response);
-	         return;
-    
+    	String kategorienZuruecksetzen=(String) request.getParameter("kategorienZuruecksetzen");
+    	String naehrstoffeZuruecksetzen=(String) request.getParameter("naehrstoffeZuruecksetzen");	
+    	if (auswahl==null){
+    		getLeerenAssistent(request, response);
+    	}if (auswahlkontext==null){
+    		getLeerenAssistent(request, response);
+    	}if (kategorienZuruecksetzen==null){
+    		if (naehrstoffeZuruecksetzen==null) {
+    			getLeerenAssistent(request, response);
+    		}
+    		if (naehrstoffeZuruecksetzen.equals("Zurücksetzen")) {
+    			setzeNaehrStoffeZurueck(request, response);
+    		}    		
+    	}if (naehrstoffeZuruecksetzen==null){
+    		if (kategorienZuruecksetzen==null){
+    			getLeerenAssistent(request, response);
+    		}
+    		if (kategorienZuruecksetzen.equals("Zurücksetzen")) {
+    			setzeKategorienZurueck(request, response);
+    		}      
     	}else{
              String nextJSP = "/jsp/mahlzeitassistent.jsp";
              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
              dispatcher.forward(request, response);
-             LOGGER.log(Level.CONFIG, "Exit Mahlzeitassistent");
              return;
     	}
 	}
@@ -84,5 +88,57 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	        	LOGGER.log(Level.SEVERE, null, ex);
 	        }
 	    	return auswahl;
-	}
+    	}
+    	
+    	/**
+    	 * To get an empty Mahlzeitassistent
+    	 * 
+    	 * @param request
+    	 * @param response
+    	 * @throws ServletException
+    	 * @throws IOException
+    	 */
+    	protected void getLeerenAssistent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    		String nextJSP = "/jsp/mahlzeitassistent.jsp";
+   		 	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            dispatcher.forward(request, response);
+ 	        return;
+    	}
+    	/**
+    	 * To Setze Kategorien Zuruck
+    	 * 
+    	 * @param request
+    	 * @param response
+    	 * @throws ServletException
+    	 * @throws IOException
+    	 */
+    	protected void setzeKategorienZurueck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    		HttpSession session = request.getSession(true);
+    		session.setAttribute("auswahl1", "reset");
+    		session.setAttribute("auswahl2", "reset");
+    		session.setAttribute("auswahl3", "reset");
+    		String nextJSP = "/jsp/mahlzeitassistent.jsp";
+    		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            dispatcher.forward(request, response);
+            return;
+    	}
+    	
+    	/**
+    	 * To Setze Naehrstoffe Zuruck
+    	 * 
+    	 * @param request
+    	 * @param response
+    	 * @throws ServletException
+    	 * @throws IOException
+    	 */
+    	protected void setzeNaehrStoffeZurueck(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    		HttpSession session = request.getSession(true);
+    		session.setAttribute("auswahl4", "reset");
+    		session.setAttribute("auswahl5", "reset");
+    		session.setAttribute("auswahl6", "reset");
+    		String nextJSP = "/jsp/mahlzeitassistent.jsp";
+    		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            dispatcher.forward(request, response);
+ 	        return;
+    	}
 }
