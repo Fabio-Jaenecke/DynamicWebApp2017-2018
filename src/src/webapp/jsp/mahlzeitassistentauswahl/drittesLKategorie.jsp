@@ -88,7 +88,7 @@
 					}else{
 						session.setAttribute("auswahlkontext", "kategorie3");
 						kategorienname = request.getParameter("kategorieauswahl");
-						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
+						SucheListe kategorieauftrag = new SucheListe();
 						String abfrage = kategorieauftrag.kategorienSuche(kategorienname);
 						kategorieauftrag.searchForString(abfrage);
 						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();

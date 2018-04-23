@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * Testklasse f�r die Klasse LebensmittelsucheDao. 
+ * Testklasse fuer die Klasse SucheEintrag. 
  * 
  * @author Michele Trebo, Marko Despotovic
  * @version 09.04.2018

@@ -66,10 +66,11 @@
 				                    
 									}else{
 										lebensmittelname = request.getParameter("sucheintrag");
-										LebensmittelsucheDao suchauftrag = new LebensmittelsucheDao();
-										suchauftrag.searchForString(lebensmittelname);
+										SucheEintrag suchauftrag = new SucheEintrag();
+										String abfrage = suchauftrag.lebensmittelSuche(lebensmittelname);
+										suchauftrag.searchForString(abfrage);
 										
-		                                                        //Print the Table if something is found:
+                                    //Print the Table if something is found:
 				 					if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
 				 						out.println("<table class='table_lebensmittelkategorie' style='margin-top: 30px';>");
 				 						out.println("<tr>");
@@ -124,7 +125,7 @@
                     
 					}else{
 						kategorienname = request.getParameter("kategorieauswahl");
-						KategoriensucheDao kategorieauftrag = new KategoriensucheDao();
+						SucheListe kategorieauftrag = new SucheListe();
 						String abfrage = kategorieauftrag.kategorienSuche(kategorienname);
 						kategorieauftrag.searchForString(abfrage);
 						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();

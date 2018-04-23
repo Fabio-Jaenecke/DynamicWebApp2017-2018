@@ -169,7 +169,7 @@
 			           	}
 			           	
 			          	//Die Tabelle
-			           		KategoriensucheDao sortierauftrag = new KategoriensucheDao();
+			           		SucheListe sortierauftrag = new SucheListe();
 							String abfrage = sortierauftrag.spaltenSortierer(auswahl, order);
 							sortierauftrag.searchForString(abfrage);
 							ArrayList<LebensmittelDaten> daten = sortierauftrag.getLebensmittel();
