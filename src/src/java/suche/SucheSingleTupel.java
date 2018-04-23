@@ -4,36 +4,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import datenbank.container.LebensmittelDaten;
-import datenbank.dao.DbQuery;  
+import datenbank.dao.DbQuery;
 
-/**
- * Diese Klasse uebergibt die Datenbankabfrage der Datenbank und fuehrt eine Suche
- * mit einem vordefinierten Lebensmitteln durch.
- *
- * @author Raphael Caradonna und Michele Trebo und Fabio Jaenecke 
- * @version 09.04.2018 
- */
-public class LebensmittelsucheDao {
-
+public abstract class SucheSingleTupel implements SucheInterface {
 	private LebensmittelDaten lebensmittel;
 	DbQuery query = new DbQuery();
-	private static final Logger LOGGER = Logger.getLogger(LebensmittelsucheDao.class.getName());
+	private static final Logger LOGGER = Logger.getLogger(SucheSingleTupel.class.getName());
+
 	
-	/**
-	 * Erzeuge LebensmittelsucheDao. 
-	 */
-	public LebensmittelsucheDao() {
-		
+	public void fuehreDatenAbfrageAus(String tupelName) {
+		searchForString(tupelName);
 	}
 	
-	/**
+    public void erhalteDaten() {
+    	getLebensmittel();
+    } 
+    
+    public void loescheDaten() {
+    	//Daten werden auf Lebenszeit der Variable automatisch geloescht
+    }
+    
+    /**
 	 * Suche nach dem Lebensmittel. 
 	 * @param lebensmittelname der Name des Lebensmittels. 
 	 */
-	public void searchForString(String lebensmittelname) {
-		String selectSQL = "select * from lebensmittelDaten where lower(lname) like '%" + lebensmittelname.toLowerCase() + "%';";
+	public void searchForString(String selectSQL) {
 		try (ResultSet result = query.getResult(selectSQL)){
 			if(result.next()) {
 				lebensmittel = new LebensmittelDaten(result);

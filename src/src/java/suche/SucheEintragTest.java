@@ -15,9 +15,9 @@ import org.junit.Test;
  * @version 09.04.2018
  */
  
-public class LebensmittelsucheDaoTest {
+public class SucheEintragTest {
 	
-	private LebensmittelsucheDao dao;
+	private SucheEintrag dao;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,7 +26,7 @@ public class LebensmittelsucheDaoTest {
 	@Before
 	// Creates new Database for the search option
 	public void setUp() throws Exception {
-		dao = new LebensmittelsucheDao();
+		dao = new SucheEintrag();
 	}
 
 	@Test

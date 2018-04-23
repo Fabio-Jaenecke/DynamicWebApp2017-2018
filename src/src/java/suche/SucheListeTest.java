@@ -16,9 +16,9 @@ import org.junit.Test;
  */
 
 
-public class KategoriensucheDaoTest {
+public class SucheListeTest {
 	
-	private KategoriensucheDao katDao;
+	private SucheListe katDao;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,7 +26,7 @@ public class KategoriensucheDaoTest {
 
 	@Before
 	public void setUp() throws Exception {
-		katDao = new KategoriensucheDao();
+		katDao = new SucheListe();
 	}
 
 	@Test
