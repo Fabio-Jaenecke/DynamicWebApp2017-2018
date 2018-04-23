@@ -12,7 +12,7 @@ import org.junit.Test;
  * Testklasse f�r die Klasse LebensmittelsucheDao. 
  * 
  * @author Michele Trebo, Marko Despotovic
- * @version 15.04.2018
+ * @version 09.04.2018
  */
  
 public class LebensmittelsucheDaoTest {
@@ -30,14 +30,14 @@ public class LebensmittelsucheDaoTest {
 	}
 
 	@Test
-	// Testing if teh search method gives a result back
+	// Testing if the search method gives a result back
 	public void searchForStringTest() {
 		dao.searchForString("apfel");
 		
 		assertNotNull(dao.getLebensmittel());
 		assertTrue("Apfel".equals(dao.getLebensmittel().getLname()));
 		
-		//Search attempt for a non existing entry
+		// Search attempt for a non existing entry
 		dao.searchForString("Pizza");
 		assertNull(dao.getLebensmittel());
 	}
