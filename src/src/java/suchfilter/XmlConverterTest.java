@@ -22,16 +22,16 @@ public class XmlConverterTest {
 	/*
 	 * tests if html elements in hmtl folder can be converted and asserts that converted
 	 * document is not null
-	 * TODO add missing html files
 	 */
 	@Test
 	public void testConvert() {
 		assertNotNull(converter.convertToXml(new File("src/webapp/html/faq.html")));
-		assertNotNull(converter.convertToXml(new File("src/webapp/html/lebensmittelkategorie.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/lebensmittel.html")));
 		assertNotNull(converter.convertToXml(new File("src/webapp/html/mahlzeitassistent.html")));
 		assertNotNull(converter.convertToXml(new File("src/webapp/html/rezepte.html")));
 		assertNotNull(converter.convertToXml(new File("src/webapp/html/suche.html")));
 		assertNotNull(converter.convertToXml(new File("src/webapp/html/zugriffsskala.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/suchfilter.html")));
 		
 	}
 }

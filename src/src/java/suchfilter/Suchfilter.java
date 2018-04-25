@@ -1,14 +1,8 @@
 package suchfilter;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import org.jsoup.nodes.Document;
-import org.apache.commons.io.FileUtils;
-
-import controller.servlets.SuchfilterServlet;
-import java.io.IOException;
-import java.net.URL;
 
 /**
  * konvertiert die Html-Seiten zu Xml, fuehrt das Suchen nach einem Wort aus und
@@ -44,7 +38,8 @@ public class Suchfilter {
 	 */
 	public ArrayList<Document> initializeXmlSites() {
 		ArrayList<Document> xmlSites = new ArrayList<>();
-		xmlSites.add(converter.convertHtmlToXml("lebensmittelkategorie.html"));
+		// for getting right url, we name the file with its url pattern
+		xmlSites.add(converter.convertHtmlToXml("lebensmittel.html"));
 		xmlSites.add(converter.convertHtmlToXml("faq.html"));
 		xmlSites.add(converter.convertHtmlToXml("mahlzeitassistent.html"));
 		xmlSites.add(converter.convertHtmlToXml("suchfilter.html"));
