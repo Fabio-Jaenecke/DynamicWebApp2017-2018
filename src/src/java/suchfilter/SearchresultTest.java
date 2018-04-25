@@ -28,7 +28,7 @@ public class SearchresultTest {
 	public void setUp() throws Exception {
 		XmlConverter converter = new XmlConverter();
 		ArrayList<Document> document = new ArrayList<>();
-		document.add(converter.convert(new File("src/java/suchfilter/testing/mockup.html")));
+		document.add(converter.convertToXml(new File("src/java/suchfilter/testing/mockup.html")));
 		searcher.sucheNachText(document);
 		result.addAll(searcher.getSearchResults());
 	}

@@ -14,7 +14,7 @@ public class SearchEngine {
 	private ArrayList<Searchresult> searchResults = new ArrayList<>();
 
 	/*
-	 * eine ArrayList von xml-Seiten und das Suchwort werden übergeben
+	 * keyword for search engine
 	 */
 	public SearchEngine(String keyword) {
 		this.keyword = keyword;
@@ -81,7 +81,6 @@ public class SearchEngine {
 
 	/*
 	 * searches site for certain tag
-	 * TODO look if text in element contains seQuence of keyword
 	 */
 	public ArrayList<Element> searchForTag(Document site, String tag) {
 		ArrayList<Element> results = new ArrayList<>();

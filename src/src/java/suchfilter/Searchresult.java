@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+/*
+ * represents search result for a certain keyword
+ * result which is displayed on website is formatted in the variable previews
+ */
 public class Searchresult {
 
 	private Document xmlSite;
@@ -22,7 +26,7 @@ public class Searchresult {
 	 */
 	public void prepareResult() {
 		for (int idx = 0; idx < 2 && idx < keyElements.size(); idx++) {
-			ResultPreview preview = new ResultPreview(getUrl(xmlSite.baseUri()), getResultText(keyElements.get(idx)));
+			ResultPreview preview = new ResultPreview(getUrl(), getResultText(keyElements.get(idx)));
 			previews.add(preview);
 		}
 	}
@@ -35,8 +39,7 @@ public class Searchresult {
 	 * converts html link to jsp link
 	 * removes parent path and html-suffix
 	 */
-	public String getUrl(String url) {
-		// char "/" in unicode format is "U+002F"
+	public String getUrl() {
 		int firstIndex = xmlSite.baseUri().lastIndexOf("\\");
 		return xmlSite.baseUri().substring(firstIndex + 1, xmlSite.baseUri().length() - 5);
 	}

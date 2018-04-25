@@ -1,5 +1,9 @@
 package suchfilter;
 
+/*
+ * result which is displayed on webpage.
+ * contains link to site and short metadata of keyword text
+ */
 public class ResultPreview {
 
 	private String url;

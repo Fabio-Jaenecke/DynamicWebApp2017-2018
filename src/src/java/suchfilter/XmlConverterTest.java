@@ -26,12 +26,12 @@ public class XmlConverterTest {
 	 */
 	@Test
 	public void testConvert() {
-		assertNotNull(converter.convert(new File("src/webapp/html/faq.html")));
-		assertNotNull(converter.convert(new File("src/webapp/html/lebensmittelkategorie.html")));
-		assertNotNull(converter.convert(new File("src/webapp/html/mahlzeitassistent.html")));
-		assertNotNull(converter.convert(new File("src/webapp/html/rezepte.html")));
-		assertNotNull(converter.convert(new File("src/webapp/html/suche.html")));
-		assertNotNull(converter.convert(new File("src/webapp/html/zugriffsskala.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/faq.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/lebensmittelkategorie.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/mahlzeitassistent.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/rezepte.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/suche.html")));
+		assertNotNull(converter.convertToXml(new File("src/webapp/html/zugriffsskala.html")));
 		
 	}
 }

@@ -21,7 +21,7 @@ public class SearchEngineTest {
 	@Before
 	public void setUp() throws Exception {
 		XmlConverter converter = new XmlConverter();
-		document = converter.convert(new File("src/java/suchfilter/testing/mockup.html"));
+		document = converter.convertToXml(new File("src/java/suchfilter/testing/mockup.html"));
 		searcher = new SearchEngine("Lorem ipsum");
 	}
 

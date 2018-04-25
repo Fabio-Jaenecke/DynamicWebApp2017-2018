@@ -29,7 +29,7 @@ public class ResultPreviewTest {
 		ArrayList<Searchresult> result = new ArrayList<>();
 		
 		SearchEngine searcher = new SearchEngine("Lorem ipsum");
-		document.add(converter.convert(new File("src/java/suchfilter/testing/mockup.html")));
+		document.add(converter.convertToXml(new File("src/java/suchfilter/testing/mockup.html")));
 		searcher.sucheNachText(document);
 		result.addAll(searcher.getSearchResults());
 		searchresult = new Searchresult(document.get(0), result.get(0).getKeyElements());
