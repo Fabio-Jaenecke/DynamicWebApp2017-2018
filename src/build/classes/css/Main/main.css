@@ -55,42 +55,10 @@ textarea {
     display: none;
 }
 
-.titlegrid {
+.title {
     display: inline;
-<<<<<<< HEAD
-=======
+    padding-left: 40px;
 }
-.link {
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: x-large;
-    color: White;
-    background: #6FA8DC;
-    border-radius: 5px;
->>>>>>> refs/heads/despomar
-}
-.link {
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: x-large;
-    color: White;
-    background: #6FA8DC;
-    border-radius: 5px;
-}
-
-  header.wrapper.clearfix {
-    	max-height: 50px;
-    	padding-top: 15px;
-    }
-  
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
@@ -102,9 +70,8 @@ body {
 
 .wrapper {
     width: 90%;
-    margin: 0;
+    margin: 0 5%;
 }
-
 
 /* ===================
     ALL: Blue Theme
@@ -125,12 +92,13 @@ body {
     background: #6FA8DC;
 }
 
-.titlegrid, .suchicon {
+.title, .suchicon {
     color: white;
 }
 
 .table_beliebte_lebensmittel {
-    transform: scale(0.8) translate(-80px, -170px);
+    transform: scale(0.9);
+    margin-left: -20px;
 }
 
 /* ==============
@@ -165,8 +133,9 @@ nav.active:hover {
     text-decoration: underline;
 }
 
-h1.titlegrid {
+h1.title {
     margin: 20px auto 20px auto;
+    float: right;
 }
 
 nav {
@@ -175,50 +144,14 @@ nav {
 }
 
 a.suchicon {
-    margin-top: 20px;
-    font-size: 2em;
+    margin: 20px auto 20px auto;
+    float: right;
+    font-size: 3em;
     font-weight: bold;
     line-height: 0.6;
     cursor: pointer;
     text-decoration: none;
 }
-
-	.flex-grid,
-	 .flex-grid-thirds {
-	   display: flex;
-	 }
-	 .flex-grid .col,
-	 .flex-grid-thirds .col {
-	   width: 100%;
-	   margin: 0 20px 0 0;
- 	}
- 	body {
-	  padding: 0;
-	}
-	
-	.flex-grid {
-	  margin: 0 20px 0 0;
-	}
-	
-	.col {
-	  align-self: center;
-	  color: white;
-	  font-weight: bold;
-	  font-size: 30px;
-	}
-	
-	.col:nth-child(1) {
-	  cursor: pointer;
-	  text-align: left;
-	}
-	
-	.col:nth-child(2) {
-		text-align: center;
-	}
-	
-	.col:nth-child(3) {
-		text-align: right;
-	}
 
 /* ==============
     MOBILE: Main
@@ -237,10 +170,6 @@ a.suchicon {
     padding: 0px 5% 10px;
 }
 
-aside {
-    min-height: 250px;
-}
-
 .footer-container footer {
     color: white;
     padding: 20px 0;
@@ -250,12 +179,12 @@ aside {
     ALL: IE Fixes
    =============== */
 
-.ie7 .titlegrid {
+.ie7 .title {
     padding-top: 20px;
 }
 
 /* ==========================================================================
-    ALL: CUSTOM
+    ALL: Impressum
    ========================================================================== */
 
 /*
@@ -277,7 +206,7 @@ footer h4 {
 
 .resp-sharing-button__link {
     text-decoration: none;
-    color: #000000;
+    color: #fff;
     margin: 0.5em
 }
 
@@ -356,7 +285,7 @@ footer h4 {
         display: inline;
     }
 
-    .titlegrid {
+    .title {
         margin-left: 90%;
     }
 
@@ -374,27 +303,9 @@ footer h4 {
     }
 
     .table_beliebte_lebensmittel {
-       transform: scale(0.6) translate(-180px, -480px);
+        transform: scale(0.6);
+        margin-left: -80px;
     }
-    
-    .flex-grid {
-	  display: flex;
-	  margin-bottom: 0;
-	}
-	
-	.flex-grid .col {
-	  flex: 1;
-	}
-	
-	.flex-grid-thirds {
-	  display: flex;
-	  justify-content: space-between;
-	}
-	
-	.flex-grid-thirds .col {
-	  width: 32%;
-	}
-	
 }
 
 @media only screen and (min-width: 1140px) {
@@ -407,15 +318,14 @@ footer h4 {
         margin: 0 auto;
     }
 
-    .titlegrid {
+    .title {
         margin-left: 150%;
     }
 
     .table_beliebte_lebensmittel {
-        transform: scale(0.9) translate(-40px, -80px);
-        margin-left: -20px;
+        transform: scale(1);
+        margin-left: 0;
     }
-  
 
 }
 
@@ -490,8 +400,8 @@ footer h4 {
         content: " (" attr(href) ")";
     }
 
-    abbr[titlegrid]:after {
-        content: " (" attr(titlegrid) ")";
+    abbr[title]:after {
+        content: " (" attr(title) ")";
     }
 
     a[href^="#"]:after,
@@ -612,7 +522,7 @@ nav span {
 
 }
 
-@media screen and (max-height: 200px) {
+@media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
     }
@@ -620,14 +530,6 @@ nav span {
     .sidenav a {
         font-size: 18px;
     }
-    
-    .col {
-	  font-size: 15px;
-	}
-	
-	p, h1, h2, h3, a, th, td {
-		size: 60%;
-	}
 
 }
 
@@ -637,7 +539,7 @@ nav span {
 }
 
 .table_beliebte_lebensmittel thead {
-    color: black;
+    color: white;
 }
 
 .table_beliebte_lebensmittel tbody tr:nth-child(odd) {
@@ -671,6 +573,4 @@ article a:hover {
 .table_contact tr, .table_contact td {
     border-style: hidden;
 }
-
-
 
