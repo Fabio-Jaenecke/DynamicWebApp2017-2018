@@ -11,7 +11,7 @@ import org.jsoup.nodes.Document;
 public class Suchfilter {
 
 	private ArrayList<Document> xmlSites = new ArrayList<>();
-	private SearchEngine searcher;
+	private SearchEngine searchEngine;
 
 	/*
 	 * converts all sites in html-folder to xml-files and adds them to xmlSites
@@ -19,14 +19,14 @@ public class Suchfilter {
 	 */
 	public Suchfilter(String keyWord) {
 		xmlSites = initializeXmlSites();
-		searcher = new SearchEngine(keyWord);
+		searchEngine = new SearchEngine(keyWord);
 	}
 
 	/*
 	 * searches if headings, paragraphes, list items or buttons contain the key word
 	 */
 	public void search() {
-		searcher.sucheNachText(xmlSites);
+		searchEngine.sucheNachText(xmlSites);
 	}
 
 	/*
@@ -50,13 +50,13 @@ public class Suchfilter {
 	 * returns searchEngine
 	 */	
 	public SearchEngine getSearcher() {
-		return searcher;
+		return searchEngine;
 	}
 	
 	/*
 	 * set new keyword for testing purposes
 	 */
 	public void setKeyword(String keyword) {
-		this.searcher.setKeyword(keyword);
+		this.searchEngine.setKeyword(keyword);
 	}
 }
