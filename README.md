@@ -24,7 +24,7 @@ _(Diese Einstellungen sollten bereits im Repository entsprechend angepasst sein.
 
 1. _Context Root_
 
-Das Projekt-Root befinded sich in ```https://github.engineering.zhaw.ch/ps-17-bacn-sckt/ps_17_gruppe23/tree/master/src/``` 
+Das Projekt-Root befindet sich in ```https://github.engineering.zhaw.ch/ps-17-bacn-sckt/ps_17_gruppe23/tree/master/src/``` 
 
 und nicht in ```https://github.engineering.zhaw.ch/ps-17-bacn-sckt/ps_17_gruppe23/tree/master/```
 
