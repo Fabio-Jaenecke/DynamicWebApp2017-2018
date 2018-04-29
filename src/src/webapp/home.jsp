@@ -32,25 +32,6 @@
                <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
                <script src="${pageContext.request.contextPath}/js/zugriffsskala.js"></script>
                <style>
-               .link {
-				   display: inline-block;
-				   margin-bottom: 10px;
-				   padding: 15px;
-				   text-align: center;
-				   text-decoration: none;
-				   font-weight: bold;
-				   font-size: medium;
-				   color: White;
-				   background: #6FA8DC;
-				   border-radius: 5px;
-				}
-				.mehr {
-				   padding: 5px;
-				   margin: 0;
-				   font-size: small;
-				   
-				}
-				
 				ul {
 				  display: inline;
 				  list-style-type: none; 

@@ -51,12 +51,12 @@
 </div>
 <div class="main-container">
     <div class="main wrapper clearfix">
-            <section style="position: fixed; top: 7em; left: 32em;">
+            <section style="position: fixed; top: 7em;">
 	            <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 	            		<div>
 	            		<h3>Suche nach Lebensmitteln</h3>
 	            			<input type="text" name="sucheintrag" value="" />
-	            			<input type="submit" value="Suche" />
+	            			<input class="link" type="submit" value="Suche" />
 			           		  <%@ page import ="suche.*" %>
 			           		  <%
 			           		    String lebensmittelname = "";
@@ -101,7 +101,7 @@
 	            		</div>
 	           		</form>
             </section>
-            <section style="position: fixed; top: 20em; left: 32em;">
+            <section style="position: fixed; top: 20em;">
             <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<h3>Suche nach Kategorien</h3>
 						<%@ page import="datenbank.container.*" %>

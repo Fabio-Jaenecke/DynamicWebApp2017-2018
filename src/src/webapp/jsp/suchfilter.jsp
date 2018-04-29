@@ -70,8 +70,8 @@
 		<form method="get"
 			action="${pageContext.request.contextPath}/suchfilter/">
 			<div class="main wrapper clearfix">
-				<input id="suche" type="text" name="keyword" value=""> <input
-					type="submit" value="Suche" />
+				<input id="suche" type="text" name="keyword" value=""> 
+				<input class="link"	type="submit" value="Suche" />
 				<%@ page import="suchfilter.*"%>
 				<%
 					if (request.getParameter("keyword") == null) {
