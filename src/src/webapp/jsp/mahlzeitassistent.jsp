@@ -113,70 +113,41 @@
     <div class="main wrapper clearfix">
 
         <article>
-				<%@ page import="controller.servlets.*" %>		
                 <h2>Mahzeitsassistent</h2>
-
+                
                 <p>Klicken Sie auf ein Tellerdrittel, um ein Lebensmittel auszuwählen oder zu ändern.<br>
                 Sie können zwischen dem Kategorienassisten und dem Nährstoffassistenten wählen.<br>
                 Es werden nur Lebensmittel angezeigt, welche als gut oder mittel verträglich eingestuft wurden.
                 </p>
-
-                
-				<%--TODO: Adjust fields / TODO: Refactor some code into Java-Files --%>
-                <% 
-                	if (request.getParameter("auswaehler") == null) {
-				%>
-				<%@ page import="controller.servlets.*" %>	
-				<%
-	                }else{
-						
-	                }	
-                %>
-                
-               
-	 		    <%
-	 		    session.setAttribute("auswahl", "gehezurauswahl");
-				%>	
 					<div class='kategorien'>
 					<h3>Assistent Kategorien</h3>
 					     <section class="mahlzeitassistent">
-											<%@ page import="datenbank.container.*" %>
-					
-											<%@ page import="suche.*" %>
-					
-											<%@ page import="java.util.ArrayList" %>
-											
-											<%@ page import="controller.servlets.*" %>
-											
-											
 											<div class="auswahlDrittel auswahlerstesDrittel" style="position: relative; top: 15em; left: 2em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp" style='color: white;' >
 							                        <div class='selektiereDrittel erstesDrittel'>
-							                        	<%
+							                        	<%//Exception-Block1: Auswahlparameter1:
+							              	 		    session.setAttribute("auswahl", "gehezurauswahl");
+							                        	
 														String auswahl1 = null;
 														if (request.getSession().getAttribute("auswahl1")==null){
 															//do nothing
 														}else{
-														auswahl1 = (String) request.getSession().getAttribute("auswahl1");
-														}
-														if (auswahl1==null || auswahl1.equals("reset")){
+															auswahl1 = (String) request.getSession().getAttribute("auswahl1");
+														}if (auswahl1==null || auswahl1.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate0" >
 															<%
-														
 														}else{
 															String kategorienname1 = null;
 															if (request.getSession().getAttribute("kategorienname1")==null){
 																//do nothing
 															}else{
-															kategorienname1 = (String) request.getSession().getAttribute("kategorienname1");
+																kategorienname1 = (String) request.getSession().getAttribute("kategorienname1");
 															}
-															
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname1);%>circle.png" alt="kategoriencircle" class="rotate0" >
 															<%
 														}
-														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>ändern</p>
@@ -197,31 +168,27 @@
 											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp" >
 							                        <div class='selektiereDrittel zweitesDrittel'>
-														<%
+														<%//Exception-Block2: Auswahlparameter2:
 														String auswahl2 = null;
 														if (request.getSession().getAttribute("auswahl2")==null){
 															//do nothing
 														}else{
-														auswahl2 = (String) request.getSession().getAttribute("auswahl2");
-														}
-														if (auswahl2==null || auswahl2.equals("reset")){
+															auswahl2 = (String) request.getSession().getAttribute("auswahl2");
+														}if (auswahl2==null || auswahl2.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate120" >
 															<%
-														
 														}else{
 															String kategorienname2 = null;
 															if (request.getSession().getAttribute("kategorienname2")==null){
 																//do nothing
 															}else{
-															kategorienname2 = (String) request.getSession().getAttribute("kategorienname2");
+																kategorienname2 = (String) request.getSession().getAttribute("kategorienname2");
 															}
-															
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname2);%>circle.png" alt="kategoriencircle" class="rotate120" >
 															<%
 														}
-														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>ändern</p>
@@ -242,31 +209,27 @@
 											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp" >
 							                        <div class='selektiereDrittel drittesDrittel'>
-														<%
+														<%//Exception-Block3: Auswahlparameter3:
 														String auswahl3 = null;
 														if (request.getSession().getAttribute("auswahl3")==null){
 															//do nothing
 														}else{
-														auswahl3 = (String) request.getSession().getAttribute("auswahl3");
-														}
-														if (auswahl3==null || auswahl3.equals("reset")){
+															auswahl3 = (String) request.getSession().getAttribute("auswahl3");
+														}if (auswahl3==null || auswahl3.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircle.png" alt="thirdcircle" class="rotate240" >
 															<%
-														
 														}else{
 															String kategorienname3 = null;
 															if (request.getSession().getAttribute("kategorienname3")==null){
 																//do nothing
 															}else{
-															kategorienname3 = (String) request.getSession().getAttribute("kategorienname3");
+																kategorienname3 = (String) request.getSession().getAttribute("kategorienname3");
 															}
-															
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/<%out.println(kategorienname3);%>circle.png" alt="kategoriencircle" class="rotate240" >
 															<%
 														}
-														
 														%>
 														<div class="oeffnenText zeigeDrittelkategorie">
 															<p>ändern</p>
@@ -295,41 +258,30 @@
 					<div class='naehrstoffe' >
 					<h3 style="margin-top: -250px">Assistent Nährstoffe</h3>
 					<section class="mahlzeitassistent" style="margin-top: -200px">
-											<%@ page import="datenbank.container.*" %>
-					
-											<%@ page import="suche.*" %>
-					
-											<%@ page import="java.util.ArrayList" %>
-											
-											
 											<div class="auswahlDrittel auswahlerstesDrittel" style="position: relative; top: 15em; left: 2em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLNaehrstoff.jsp">
 							                        <div class='selektiereDrittel erstesDrittel'>
-														<%
+														<%//Exception-Block4: Auswahlparameter4:
 														String auswahl4 = null;
 														if (request.getSession().getAttribute("auswahl4")==null){
 															//do nothing
 														}else{
-														auswahl4 = (String) request.getSession().getAttribute("auswahl4");
-														}
-														if (auswahl4==null  || auswahl4.equals("reset")){
+															auswahl4 = (String) request.getSession().getAttribute("auswahl4");
+														}if (auswahl4==null  || auswahl4.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate0" >
 															<%
-														
 														}else{
 															String naehrstoffname1 = null;
 															if (request.getSession().getAttribute("naehrstoffname1")==null){
 																//do nothing
 															}else{
-															naehrstoffname1 = (String) request.getSession().getAttribute("naehrstoffname1");
+																naehrstoffname1 = (String) request.getSession().getAttribute("naehrstoffname1");
 															}
-															
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname1);%>circle.png" alt="naehrstoffcircle" class="rotate0" >
 															<%
 														}
-														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
 															<p>ändern</p>
@@ -350,31 +302,27 @@
 											<div class="auswahlDrittel auswahlzweitesDrittel" style="position: relative; top: 1.5em; left: 13.9em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLNaehrstoff.jsp">
 							                        <div class='selektiereDrittel zweitesDrittel'>
-														<%
+														<%//Exception-Block5: Auswahlparameter5:
 														String auswahl5 = null;
 														if (request.getSession().getAttribute("auswahl5")==null){
 															//do nothing
 														}else{
-														auswahl5 = (String) request.getSession().getAttribute("auswahl5");
-														}
-														if (auswahl5==null  || auswahl5.equals("reset")){
+															auswahl5 = (String) request.getSession().getAttribute("auswahl5");
+														}if (auswahl5==null  || auswahl5.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate120" >
 															<%
-														
 														}else{
 															String naehrstoffname2 = null;
 															if (request.getSession().getAttribute("naehrstoffname2")==null){
 																//do nothing
 															}else{
-															naehrstoffname2 = (String) request.getSession().getAttribute("naehrstoffname2");
+																naehrstoffname2 = (String) request.getSession().getAttribute("naehrstoffname2");
 															}
-															
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname2);%>circle.png" alt="naehrstoffcircle" class="rotate120" >
 															<%
 														}
-														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
 															<p>ändern</p>
@@ -395,31 +343,28 @@
 											<div class="auswahlDrittel auswahldrittesDrittel" style="position: relative; top: -1.1em; left: 8.3em">
 												<a class="oeffneAuswahl" href="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp" >
 							                        <div class='selektiereDrittel drittesDrittel'>
-														<%
+														<%//Exception-Block6: Auswahlparameter6:
 														String auswahl6 = null;
 														if (request.getSession().getAttribute("auswahl6")==null){
 															//do nothing
 														}else{
-														auswahl6 = (String) request.getSession().getAttribute("auswahl6");
+															auswahl6 = (String) request.getSession().getAttribute("auswahl6");
 														}
 														if (auswahl6==null || auswahl6.equals("reset")){
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/thirdcircleyellow.png" alt="thirdcircle" class="rotate240" >
 															<%
-														
 														}else{
 															String naehrstoffname3 = null;
 															if (request.getSession().getAttribute("naehrstoffname3")==null){
 																//do nothing
 															}else{
-															naehrstoffname3 = (String) request.getSession().getAttribute("naehrstoffname3");
+																naehrstoffname3 = (String) request.getSession().getAttribute("naehrstoffname3");
 															}
-															
 															%>
 															<img src="${pageContext.request.contextPath}/imgs/<%out.println(naehrstoffname3);%>circle.png" alt="naehrstoffcircle" class="rotate240" >
 															<%
 														}
-														
 														%>
 														<div class="oeffnenText zeigeDrittelnaehrstoff">
 															<p>ändern</p>
