@@ -51,7 +51,7 @@
 </div>
 <div class="main-container">
     <div class="main wrapper clearfix">
-            <section>
+            <section style="position: fixed; top: 7em; left: 32em;">
 	            <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 	            		<div>
 	            		<h3>Suche nach Lebensmitteln</h3>
@@ -101,7 +101,7 @@
 	            		</div>
 	           		</form>
             </section>
-            <section>
+            <section style="position: fixed; top: 20em; left: 32em;">
             <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<h3>Suche nach Kategorien</h3>
 						<%@ page import="datenbank.container.*" %>
