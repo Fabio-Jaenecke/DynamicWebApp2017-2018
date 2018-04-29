@@ -61,14 +61,20 @@ textarea {
 .link {
     display: inline-block;
     margin-bottom: 10px;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    font-size: x-large;
+    font-size: medium;
     color: White;
     background: #6FA8DC;
     border-radius: 5px;
+}
+.mehr {
+   padding: 5px;
+   margin: 0;
+   font-size: small;
+				   
 }
 
   header.wrapper.clearfix {
@@ -262,7 +268,7 @@ footer h4 {
 
 .resp-sharing-button__link {
     text-decoration: none;
-    color: #000000;
+    color: #fff;
     margin: 0.5em
 }
 

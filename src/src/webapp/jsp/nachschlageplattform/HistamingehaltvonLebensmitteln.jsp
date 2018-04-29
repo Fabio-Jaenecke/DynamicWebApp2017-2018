@@ -83,9 +83,10 @@
                </div>
                <div class="main-container">
                   <div class="main wrapper clearfix">
-                  	<form method="get" action="${pageContext.request.contextPath}/home/">
                      <article>
-                     <input type="submit" value="Zurück" onchange="history.back()">
+                     <form>
+                    	  <input class="link" type="button" value="Zurück" onclick="history.back()">
+                     	</form>
                      	<ul class="breadcrumb">
                      	<li><a href="${pageContext.request.contextPath}/home/">Home</a></li>
 						 <li>Histamingehalt von Lebensmitteln</li>
@@ -182,7 +183,6 @@
                         </header>
                         
                      </article>
-                     </form>
                   </div>
                   <!-- #main -->
                </div>
