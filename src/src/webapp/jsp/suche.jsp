@@ -61,9 +61,7 @@
 			           		  <%
 			           		    String lebensmittelname = "";
 									if (request.getParameter("sucheintrag") == null) {
-										//Technically, this is not required:
-							        	        //out.println("input field could not be validated");
-				                    
+										//it's not there
 									}else{
 										lebensmittelname = request.getParameter("sucheintrag");
 										SucheEintrag suchauftrag = new SucheEintrag();
@@ -104,9 +102,8 @@
             <section style="position: fixed; top: 20em;">
             <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 				<h3>Suche nach Kategorien</h3>
-						<%@ page import="datenbank.container.*" %>
-						<%@ page import="suche.*" %>
-						<%@ page import="java.util.ArrayList" %>
+					<%@ page import="mahlzeitassistent.*" %>
+					<%@ page import="datenbank.container.*" %>
 					<select onchange="this.form.submit()" name="kategorieauswahl">
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
@@ -125,11 +122,7 @@
                     
 					}else{
 						kategorienname = request.getParameter("kategorieauswahl");
-						SucheListe kategorieauftrag = new SucheListe();
-						String abfrage = kategorieauftrag.kategorienSuche(kategorienname);
-						kategorieauftrag.searchForString(abfrage);
-						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
-						
+						AssistentAuftrag auftrag = new AssistentAuftrag(kategorienname, "kategorieauswahl");
 			        %>
 			         <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
                              <thead>
@@ -149,7 +142,7 @@
                               <tbody>
 				                
 				                <%
-				                for(LebensmittelDaten lebensmitteleintrag : daten){
+				                for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
 				                		out.println("<tr>");
 				                   		out.println("<td>");
 				                		out.println(lebensmitteleintrag.getLname());
@@ -163,7 +156,7 @@
 				                		out.println("</tr>");
 									}
 			        			// for the next category call we have to clear the arraylist of lebensmittel
-			        			kategorieauftrag.clearLebensmittel();
+			        			auftrag.clearAuftragsDaten();
 			        			}
 				                %>
 				                </tbody>
