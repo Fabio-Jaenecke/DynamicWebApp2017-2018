@@ -53,20 +53,16 @@
             <section>
             <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp">
 				<h3>Suche nach Kategorien</h3>
+						<%@ page import="mahlzeitassistent.*" %>
 						<%@ page import="datenbank.container.*" %>
-						<%@ page import="suche.*" %>
-						<%@ page import="java.util.ArrayList" %>
-						<%@ page import="controller.servlets.*" %>
-						<%
-						
-						String auswahl = null;
-						if (request.getParameter("auswahle")==null){
-			        		//do nothing
+						<% //Exception-Block 1: Auswahlparameter
+							String auswahl = null;
+							if (request.getParameter("auswahle")==null){
+				        		//do nothing
 							}else{
-			                auswahl = request.getParameter("auswahle");
-			                session.setAttribute("auswahl1", auswahl);
+				                auswahl = request.getParameter("auswahle");
+				                session.setAttribute("auswahl1", auswahl);
 			                }
-					
 						%>
 					<select onchange="this.form.submit()" name="kategorieauswahl">
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
@@ -78,20 +74,15 @@
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
 			        </select>
-						<%
+					<%//Exception-Block 2: Dropdownparameter
 						String kategorienname = null;
-			        if (request.getParameter("kategorieauswahl") == null) {
-			        	//Technically, this is not required:
-			        	//out.println("input field could not be validated");
-                    
-					}else{
-						session.setAttribute("auswahlkontext", "kategorie1");
-						kategorienname = request.getParameter("kategorieauswahl");
-						SucheListe kategorieauftrag = new SucheListe();
-						String abfrage = kategorieauftrag.kategorienSuche(kategorienname);
-						kategorieauftrag.searchForString(abfrage);
-						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
-						session.setAttribute("kategorienname1", kategorienname);
+				        if (request.getParameter("kategorieauswahl") == null) {
+				        	//do nothing 
+						}else{
+							session.setAttribute("auswahlkontext", "kategorie1");
+							kategorienname = request.getParameter("kategorieauswahl");
+							AssistentAuftrag auftrag = new AssistentAuftrag(kategorienname, "kategorieauswahl");
+							session.setAttribute("kategorienname1", kategorienname);
 			        %>
 			        </form>
 			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/erstesLKategorie.jsp">
@@ -104,7 +95,7 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(LebensmittelDaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
 				               				
@@ -126,7 +117,7 @@
 					                		
 											}
 				               		    // for the next category call we have to clear the arraylist
-				               			daten.clear();
+				               			auftrag.clearAuftragsDaten();
 										}
 				               			%>
 				                </tbody>

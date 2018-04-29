@@ -53,19 +53,16 @@
             <section>
             <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp">
 				<h3>Suche nach Kategorien</h3>
+						<%@ page import="mahlzeitassistent.*" %>
 						<%@ page import="datenbank.container.*" %>
-						<%@ page import="suche.*" %>
-						<%@ page import="java.util.ArrayList" %>
-						<%@ page import="controller.servlets.*" %>
-						<%
-						
+						<% //Exception-Block 1: Auswahlparameter
 						String auswahl = null;
 						if (request.getParameter("auswahle")==null){
 			        		//do nothing
-							}else{
+						}else{
 			                auswahl = request.getParameter("auswahle");
 			                session.setAttribute("auswahl6", auswahl);
-			                }
+		                }
 					
 						%>
 					<select onchange="this.form.submit()" name="naehrstoffauswahl">
@@ -78,20 +75,15 @@
 			           			<option <%if (request.getParameter("naehrstoffauswahl") == null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals("Vitamine")){out.println("selected");} %> value="Vitamine">Vitamine</option>
 					
 					</select>
-						<%
+					<%//Exception-Block 2: Dropdownparameter
 						String naehrstoffname = null;
-			        if (request.getParameter("naehrstoffauswahl") == null) {
-			        	//Technically, this is not required:
-			        	//out.println("input field could not be validated");
-                    
-					}else{
-						session.setAttribute("auswahlkontext", "naehrstoff3");
-						naehrstoffname = request.getParameter("naehrstoffauswahl");
-						SucheListe naehrstoffauftrag = new SucheListe();
-						String abfrage = naehrstoffauftrag.naehrstoffSuche(naehrstoffname);
-						naehrstoffauftrag.searchForString(abfrage);
-						ArrayList<LebensmittelDaten> daten = naehrstoffauftrag.getLebensmittel();
-						session.setAttribute("naehrstoffname3", naehrstoffname);
+				        if (request.getParameter("naehrstoffauswahl") == null) {
+				        	//do nothing 
+						}else{
+							session.setAttribute("auswahlkontext", "naehrstoff3");
+							naehrstoffname = request.getParameter("naehrstoffauswahl");
+							AssistentAuftrag auftrag = new AssistentAuftrag(naehrstoffname, "naehrstoffauswahl");
+							session.setAttribute("naehrstoffname3", naehrstoffname);
 			        %>
 			        </form>
 			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp">
@@ -104,14 +96,10 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(LebensmittelDaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
-				               				
-											
-										
-				                		
-					                		if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
+				               				if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
 												String lebensmittelname = lebensmitteleintrag.getLname();
 					                		%>
 				                		<tr>
@@ -126,7 +114,7 @@
 					                		
 											}
 				               		    // for the next category call we have to clear the arraylist
-				               			daten.clear();
+				               			auftrag.clearAuftragsDaten();
 										}
 				               			%>
 				                </tbody>

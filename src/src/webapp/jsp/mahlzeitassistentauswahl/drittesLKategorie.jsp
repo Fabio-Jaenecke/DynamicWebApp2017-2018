@@ -1,4 +1,3 @@
-<%@page import="mahlzeitassistent.Mahlzeitassistent"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -55,22 +54,17 @@
             <section>
             <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp">
 				<h3>Suche nach Kategorien</h3>
-						<%@ page import="datenbank.container.*" %>
-						<%@ page import="suche.*" %>
-						<%@ page import="mahlzeitassistent.*" %>
-						<%@ page import="java.util.ArrayList" %>
-						<%@ page import="controller.servlets.*" %>
-						<%
-						
+					<%@ page import="mahlzeitassistent.*" %>
+					<%@ page import="datenbank.container.*" %>
+					<% //Exception-Block 1: Auswahlparameter
 						String auswahl = null;
 						if (request.getParameter("auswahle")==null){
 			        		//do nothing
-							}else{
+						}else{
 			                auswahl = request.getParameter("auswahle");
 			                session.setAttribute("auswahl3", auswahl);
-			                }
-					
-						%>
+		                }
+					%>
 					<select onchange="this.form.submit()" name="kategorieauswahl">
 								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fleisch")){out.println("selected");} %> value="Fleisch">Fleisch</option>
@@ -81,18 +75,16 @@
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Fisch")){out.println("selected");} %> value="Fisch">Fisch</option>
 			           			<option <%if (request.getParameter("kategorieauswahl") == null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals("Milch und Milchprodukte")){out.println("selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
 			        </select>
-						<%
+					<%//Exception-Block 2: Dropdownparameter
 						String kategorienname = null;
-			        if (request.getParameter("kategorieauswahl") == null) {
-			        	//Technically, this is not required:
-			        	//out.println("input field could not be validated");
-                    
-					}else{
-						session.setAttribute("auswahlkontext", "kategorie3");
-						kategorienname = request.getParameter("kategorieauswahl");
-						AssistentAuftrag auftrag = new AssistentAuftrag(kategorienname);
-						session.setAttribute("kategorienname3", kategorienname);
-			        %>
+				        if (request.getParameter("kategorieauswahl") == null) {
+				        	//do nothing 
+						}else{
+							session.setAttribute("auswahlkontext", "kategorie3");
+							kategorienname = request.getParameter("kategorieauswahl");
+							AssistentAuftrag auftrag = new AssistentAuftrag(kategorienname, "kategorieauswahl");
+							session.setAttribute("kategorienname3", kategorienname);
+		        	%>
 			        </form>
 			        <form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLKategorie.jsp">
 			        <table class='table_lebensmittelkategorie' style='margin-top: 30px;'>
@@ -103,7 +95,7 @@
                               </thead>
                               <tbody>
 				               
-				               			<% 
+				               			<%//Give me a list of options to choose from
 				               			for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
@@ -122,7 +114,7 @@
 					                		
 											}
 				               		    // for the next category call we have to clear the arraylist
-				               			auftrag.getDaten().clear();
+				               			auftrag.clearAuftragsDaten();
 										}
 				               			%>
 				                </tbody>
