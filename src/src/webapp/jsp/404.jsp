@@ -35,7 +35,7 @@
                   <header class="wrapper clearfix">
                   	<div class="flex-grid-thirds">
 						  <div class="col menugrid"><span onclick="openNav()">&#9776;<span class="menutext">&nbsp;Menu</span></div>
-						  <div class="col titlegrid">404</div>
+						  <div class="col titlegrid">Nicht gefunden</div>
 						  <div class="col suchgrid"><a class="suchicon" href="${pageContext.request.contextPath}/suchfilter/">&#8981;</a></div>
 					</div>
                      <nav>  
@@ -57,11 +57,12 @@
                   <div class="main wrapper clearfix">
                     <article>
                     	<form>
-                     	  <input class="link" type="button" value="Zurück" onclick="history.back()">
+                     	  <h2>SORRY! THIS PAGE WAS NOT FOUND! <input class="link" type="button" value="Zurück" onclick="history.back()">  </h2>
                      	</form>
                     	<img src="${pageContext.request.contextPath}/imgs/404.png" alt="404PageNotFound" height="50%" width="50%">
-                     	<h2>SORRY! THIS PAGE WAS NOT FOUND!</h2>
-                     	<a class="link mehr" href="${pageContext.request.contextPath}/home/">Home</a>
+                    	<p><br></p>
+                    	<a class="link mehr" href="${pageContext.request.contextPath}/home/">Gehe zu Histarantia Home</a>
+                     	
                      </article>
                   </div>
                   <!-- #main -->
