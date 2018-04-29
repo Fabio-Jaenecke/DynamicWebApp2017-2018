@@ -5,6 +5,8 @@ Anleitung zum Starten des Projektes:
 folgende Programme sollten bereits installiert sein:
 - Eclipse Version java-oxygen
 - Apache Tomcat Server 8.5
+- JUnit 4
+- JDK ab 1.8
 
 folgende jar-Dateien müssen noch installiert werden, um das Projekt auszuführen
 - commons-io-2.6.jar (https://commons.apache.org/proper/commons-io/download_io.cgi)
