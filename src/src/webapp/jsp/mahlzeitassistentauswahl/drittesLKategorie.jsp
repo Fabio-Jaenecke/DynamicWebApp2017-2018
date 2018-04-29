@@ -1,3 +1,4 @@
+<%@page import="mahlzeitassistent.Mahlzeitassistent"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -56,6 +57,7 @@
 				<h3>Suche nach Kategorien</h3>
 						<%@ page import="datenbank.container.*" %>
 						<%@ page import="suche.*" %>
+						<%@ page import="mahlzeitassistent.*" %>
 						<%@ page import="java.util.ArrayList" %>
 						<%@ page import="controller.servlets.*" %>
 						<%
@@ -88,10 +90,7 @@
 					}else{
 						session.setAttribute("auswahlkontext", "kategorie3");
 						kategorienname = request.getParameter("kategorieauswahl");
-						SucheListe kategorieauftrag = new SucheListe();
-						String abfrage = kategorieauftrag.kategorienSuche(kategorienname);
-						kategorieauftrag.searchForString(abfrage);
-						ArrayList<LebensmittelDaten> daten = kategorieauftrag.getLebensmittel();
+						AssistentAuftrag auftrag = new AssistentAuftrag(kategorienname);
 						session.setAttribute("kategorienname3", kategorienname);
 			        %>
 			        </form>
@@ -105,13 +104,9 @@
                               <tbody>
 				               
 				               			<% 
-				               			for(LebensmittelDaten lebensmitteleintrag : daten){
+				               			for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
 				               				String karenzphase = lebensmitteleintrag.getKarenzphase();
 				               				String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
-				               				
-											
-										
-				                		
 					                		if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
 												String lebensmittelname = lebensmitteleintrag.getLname();
 					                		%>
@@ -127,7 +122,7 @@
 					                		
 											}
 				               		    // for the next category call we have to clear the arraylist
-				               			daten.clear();
+				               			auftrag.getDaten().clear();
 										}
 				               			%>
 				                </tbody>
