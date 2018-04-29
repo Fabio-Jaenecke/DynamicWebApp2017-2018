@@ -5,16 +5,12 @@ import java.util.ArrayList;
 import org.jsoup.nodes.Document;
 
 /**
- * konvertiert die Html-Seiten zu Xml, fuehrt das Suchen nach einem Wort aus und
- * zeigt die Suchresultate an
- * 
- * @author Raphael
- *
+ * converts html sites to xml, searches for keyword and saves search results
+ * in variable searcher
  */
 public class Suchfilter {
 
 	private ArrayList<Document> xmlSites = new ArrayList<>();
-	private XmlConverter converter = new XmlConverter();
 	private SearchEngine searcher;
 
 	/*
@@ -37,6 +33,7 @@ public class Suchfilter {
 	 * download html-files for convertion to xml files
 	 */
 	public ArrayList<Document> initializeXmlSites() {
+		XmlConverter converter = new XmlConverter();
 		ArrayList<Document> xmlSites = new ArrayList<>();
 		// for getting right url, we name the file with its url pattern
 		xmlSites.add(converter.convertHtmlToXml("lebensmittel.html"));
@@ -51,8 +48,15 @@ public class Suchfilter {
 
 	/*
 	 * returns searchEngine
-	 */
+	 */	
 	public SearchEngine getSearcher() {
 		return searcher;
+	}
+	
+	/*
+	 * set new keyword for testing purposes
+	 */
+	public void setKeyword(String keyword) {
+		this.searcher.setKeyword(keyword);
 	}
 }

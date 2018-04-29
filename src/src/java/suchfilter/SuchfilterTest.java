@@ -1,26 +1,26 @@
 package suchfilter;
 
-
-
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
 
 /*
- * tests the class Suchfilter. converts html-sites to xml-sites and searches for keyword
+ * tests the class suchfilter. for simulating the search as real as possible
+ * we make a search for every html site with a keyword which is in that 
+ * html site
  */
 public class SuchfilterTest {
 
 	Suchfilter suchfilter;
-	
+
 	/*
-	 * creates suchfilter with keyword. for receiving at least one result, 
-	 * we choose "Rezepte" as keyword which is text of a heading h2 in rezepte.html
+	 * creates suchfilter with keyword. as this is only a setup,
+	 * we set the keyword as "Histarantia" which is the title of every html page.
 	 */
 	@Before
 	public void setUp() throws Exception {
-		suchfilter = new Suchfilter("Rezepte");
+		suchfilter = new Suchfilter("Histarantia");
 	}
 
 	/*
@@ -30,13 +30,49 @@ public class SuchfilterTest {
 	public void testInitializeXmlSites() {
 		assertNotNull(suchfilter.initializeXmlSites());
 	}
-	
+
 	/*
-	 * tests searching through all xml-sites for keyword "Rezepte"
+	 * tests searching for keyword in rezepte.html
+	 * first we search for h2 with text Kuerbissuppe
 	 */
 	@Test
-	public void testSearch() {
-		suchfilter.search();
-		assertNotNull(suchfilter.getSearcher().getSearchResults());
+	public void testSearchFaq() {
+		suchfilter.setKeyword("Kuerbissuppe");
+		
+	}
+	
+	@Test
+	public void testSearchLebensmittel() {
+		
+	}
+	
+	@Test
+	public void testSearchLebensmittelsuche() {
+		
+	}
+	
+	@Test
+	public void testSearchMahlzeitassistent() {
+		
+	}
+	
+	@Test
+	public void testSearchRezepte() {
+		
+	}
+	
+	@Test
+	public void testSearchSuche() {
+		
+	}
+	
+	@Test
+	public void testSearchSuchfilter() {
+		
+	}
+	
+	@Test
+	public void testSearchZugriffsskala() {
+		
 	}
 }
