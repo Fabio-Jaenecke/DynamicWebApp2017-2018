@@ -8,9 +8,6 @@ import java.util.logging.Logger;
 
 /**
  * Diese Klasse stellt die Java-Klasse zur Entitaet Zugriffsskala in der Datenbank dar. 
- * 
- * @author Michele Trebo
- * @version 17.04.2018 
  */
 public class Zugriffsskala implements Comparable {
 
@@ -21,7 +18,6 @@ public class Zugriffsskala implements Comparable {
 	
 	/**
 	 * Erzeuge die Zugriffsskala. 
-	 * 
 	 * @param zindex
 	 * @param platzierung
 	 * @param azugriffe
@@ -34,7 +30,6 @@ public class Zugriffsskala implements Comparable {
 	
 	/**
 	 * Erzeuge die Zugrifsskala anhand der Daten aus der Datenbank.
-	 * 
 	 * @param rs das ResultSet
 	 */
 	public Zugriffsskala(ResultSet rs) {
@@ -50,7 +45,6 @@ public class Zugriffsskala implements Comparable {
 
 	/**
 	 * Gib den Zugriffsindex. 
-	 * 
 	 * @return zindex 
 	 */
 	public int getZindex() {
@@ -59,7 +53,6 @@ public class Zugriffsskala implements Comparable {
 	
 	/**
 	 * Setze den Zugriffsindex. 
-	 * 
 	 * @param zindex der Zugriffsindex 
 	 */
 	public void setZindex(int zindex) {
@@ -68,7 +61,6 @@ public class Zugriffsskala implements Comparable {
 	
 	/**
 	 * Gib die Platzierung eines Lebensmittels. 
-	 * 
 	 * @return platzierung
 	 */
 	public int getPlatzierung() {
@@ -77,7 +69,6 @@ public class Zugriffsskala implements Comparable {
 	
 	/**
 	 * Setze die Platzierung eines Lebensmittels. 
-	 * 
 	 * @param platzierung die Platzierung eines Lebensmittels 
 	 */
 	public void setPlatzierung(int platzierung) {
@@ -86,7 +77,6 @@ public class Zugriffsskala implements Comparable {
 	
 	/**
 	 * Gib die Anzahl Zugriffe auf ein Lebensmittel. 
-	 * 
 	 * @return azugriffe
 	 */
 	public int getAzugriffe() {
@@ -95,7 +85,6 @@ public class Zugriffsskala implements Comparable {
 	
 	/**
 	 * Setze die Anzahl Zugriffe auf ein Lebensmittel. 
-	 * 
 	 * @param azugriffe die Anzahl Zugriffe auf ein Lebensmittel 
 	 */
 	public void setAzugriffe(int azugriffe) {
