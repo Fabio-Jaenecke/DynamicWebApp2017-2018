@@ -1,7 +1,7 @@
 package datenbank.creation;
 
 /**
- * Interface zum Einfügen von Daten in Tabellen.
+ * Interface zum Einfuegen von Daten in Tabellen.
  * Jede Methode erstellt eine Tabelle. 
  */
 public interface DbCreationInterface {
