@@ -56,7 +56,7 @@ public class LebensmittelDaten {
     }
 
 	/**
-	 * Get the Lindex. 
+	 * Gib den Lebensmittelindex. 
 	 * @return index
 	 */
 	public int getLindex() {
@@ -64,7 +64,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Set the Lindex. 
+	 * Setze den Lebensmittelindex. 
 	 * @param lindex
 	 */
 	public void setLindex(int lindex) {
@@ -72,7 +72,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Get the Lname.
+	 * Gib den Lebensmittelnamen.
 	 * @return lebensmittelname
 	 */
 	public String getLname() {
@@ -80,7 +80,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Set the Lname. 
+	 * Setze den Lebensmittelnamen. 
 	 * @param lname
 	 */
 	public void setLname(String lname) {
@@ -88,7 +88,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Get the Karenzphase. 
+	 * Gib die Karenzphase. 
 	 * @return karenzphase
 	 */
 	public String getKarenzphase() {
@@ -96,7 +96,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Set the Karenzphase.
+	 * Setze die Karenzphase.
 	 * @param karenzphase
 	 */
 	public void setKarenzphase(String karenzphase) {
@@ -104,7 +104,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Get the Dauerernaehrung. 
+	 * Gib die Dauerernaehrung. 
 	 * @return dauerernaehrung
 	 */
 	public String getDauerernaehrung() {
@@ -112,7 +112,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Set the Dauerernaehrung. 
+	 * Setze die Dauerernaehrung. 
 	 * @param dauerernaehrung
 	 */
 	public void setDauerernaehrung(String dauerernaehrung) {
@@ -120,7 +120,7 @@ public class LebensmittelDaten {
 	}
 	
 	/**
-	 * Get the Kategorie. 
+	 * Gib die Kategorie. 
 	 * @return kategorie
 	 */
 	public String getKategorie() {
@@ -128,7 +128,7 @@ public class LebensmittelDaten {
 	}
 
 	/**
-	 * Set the Kategorie. 
+	 * Setze die Kategorie. 
 	 * @param kategorie
 	 */
 	public void setKategorie(String kategorie) {
