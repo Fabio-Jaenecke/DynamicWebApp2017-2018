@@ -8,9 +8,6 @@ import java.util.logging.Logger;
 /**
  * Diese Klasse holt die lebensmittelDaten, die fuer die Zugriffsskala benoetigt werden, 
  * aus der Datenbank und stellt diese zur Verfuegung. 
- * 
- * @author Michele Trebo 
- * @verison 17.04.2018 
  */
 public class ZugriffsManager {
 
@@ -22,7 +19,6 @@ public class ZugriffsManager {
 
 	/**
 	 * Erzeuge den ZugriffsManager. 
-	 * 
 	 * @param platzierung die Platzierung der Lebensmittel 
 	 * @param lname der Lebensmittelname
 	 * @param kategorie die lebensmittelkategorie 
@@ -38,7 +34,6 @@ public class ZugriffsManager {
 
 	/**
 	 * Erzeuge den ZugriffsManager mittels Daten aus der Datenbank. 
-	 * 
 	 * @param rs das ResultSet
 	 */
 	public ZugriffsManager(ResultSet rs) {
@@ -54,7 +49,6 @@ public class ZugriffsManager {
 
 	/**
 	 * Gib die Platzierung. 
-	 * 
 	 * @return platzierung 
 	 */
 	public int getPlatzierung() {
@@ -63,7 +57,6 @@ public class ZugriffsManager {
 
 	/**
 	 * Setze die Platzierung. 
-	 * 
 	 * @param platzierung die Platzierung 
 	 */
 	public void setPlatzierung(int platzierung) {
@@ -72,7 +65,6 @@ public class ZugriffsManager {
 	
 	/**
 	 * Gib den Lebensmittelnamen. 
-	 * 
 	 * @return lname
 	 */
 	public String getLname() {
@@ -81,7 +73,6 @@ public class ZugriffsManager {
 
 	/**
 	 * Setze den Lebensmittelnamen. 
-	 * 
 	 * @param lname der Lebensmittelname
 	 */
 	public void setLname(String lname) {
@@ -89,8 +80,7 @@ public class ZugriffsManager {
 	}
 
 	/**
-	 * Gib die Karenzphase. 
-	 * 
+	 * Gib die Karenzphase.  
 	 * @return karenzphase 
 	 */
 	public String getKarenzphase() {
@@ -99,7 +89,6 @@ public class ZugriffsManager {
 
 	/**
 	 * Setze die Karenzphase. 
-	 * 
 	 * @param karenzphase die Karenzphase
 	 */
 	public void setKarenzphase(String karenzphase) {
@@ -108,7 +97,6 @@ public class ZugriffsManager {
 
 	/**
 	 * Gib die Dauerernaehrung.
-	 * 
 	 * @return dauerernaehrung 
 	 */
 	public String getDauerernaehrung() {
@@ -116,8 +104,7 @@ public class ZugriffsManager {
 	}
 
 	/**
-	 * Setze die Dauerernaehrung.
-	 * 
+	 * Setze die Dauerernaehrung. 
 	 * @param dauerernaehrung die Dauerernaehrung 
 	 */
 	public void setDauerernaehrung(String dauerernaehrung) {
