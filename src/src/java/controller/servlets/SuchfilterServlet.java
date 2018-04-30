@@ -37,10 +37,9 @@ public class SuchfilterServlet extends HttpServlet {
 	}
 
 	/**
-	 * @return return the current contextPath
+	 * @return return contextPath (current) 
 	 */
 	public static String getContextPath() {
 		return contextPath;
 	}
-
 }
