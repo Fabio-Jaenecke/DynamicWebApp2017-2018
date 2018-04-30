@@ -12,10 +12,6 @@ import datenbank.dao.DbQuery;
 /**
  * Diese Klasse uebergibt die Datenbankabfrage der Datenbank und sortiert die 
  * Rangliste der Lebensmittel. 
- * 
- * @author Michele Trebo
- * @version 17.04.2018 
- *
  */
 public class Rangliste {
 	private ArrayList<RanglistenManager> tabelle; 
@@ -54,7 +50,7 @@ public class Rangliste {
 	}
 	
 	/**
-	 * Liefere die Tabelle mit der Karenzphase und der Dauerernaehrung sowie den entsprechenden lebensmittelDaten.
+	 * Liefere die Tabelle mit der Karenzphase und der Dauerernaehrung sowie den entsprechenden Lebensmitteldaten.
 	 * @return
 	 */
 	public ArrayList<RanglistenManager> getTabelle() {
