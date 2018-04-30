@@ -6,10 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * stellt die Java-Klasse zur Entitaet Nahrstoff
- * in der Datenbank da
- * @author Raphael Caradonna
- *
+ * Stellt die Java-Klasse zur Entitaet Nahrstoff
+ * in der Datenbank dar.
  */
 public class Naehrstoff {
 	
@@ -30,15 +28,35 @@ public class Naehrstoff {
 			LOGGER.log(Level.SEVERE, "Result set of naehrstoff could not be resolved " + e);
 		}        
     }
+	
+	/**
+	 * Gib den Naehrstoffindex. 
+	 * @return
+	 */
 	public int getNindex() {
 		return nindex;
 	}
+	
+	/**
+	 * Setze den Naehrstoffindex. 
+	 * @param nindex
+	 */
 	public void setNindex(int nindex) {
 		this.nindex = nindex;
 	}
+	
+	/**
+	 * Gib den Naehrstoff. 
+	 * @return
+	 */
 	public String getNname() {
 		return nname;
 	}
+	
+	/**
+	 * Setze den Naehrstoff. 
+	 * @param nname
+	 */
 	public void setNname(String nname) {
 		this.nname = nname;
 	}
