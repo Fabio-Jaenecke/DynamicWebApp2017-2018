@@ -7,12 +7,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Establishes connection to database and creates statements.
+ * Stellt Verbindung zur Datenbank her und erstellt Anweisungen.
  */
 public class DbConnector {
 
 	private static Connection conn;
-	// true if conn has been initialized, false if conn is null
+	// true, wenn conn initialisiert wurde / false, wenn conn null ist
 	private static boolean connInit = false;
 	
 	private static final String DB_Connection = "jdbc:h2:~/histarantia";
@@ -28,7 +28,7 @@ public class DbConnector {
 	}
 	
 	/** 
-	 *  Loading the database.
+	 *  Lade die Datenbank. 
 	 */
 	private void loadH2Driver() {
 		try {
@@ -40,7 +40,7 @@ public class DbConnector {
 	}
 	
 	/**
-	 *  Establishing database connection.
+	 *  Stelle Datenbankverbindung her. 
 	 */
 	public Connection establishH2DBConnection() {
 		try {
@@ -55,7 +55,7 @@ public class DbConnector {
 	}
 
 	/**
-	 * Get the database-connection. 
+	 * Gib die Datenbankverbindung. 
 	 * @return DB_Connection
 	 */
 	public String getDbConnection() {
@@ -63,7 +63,7 @@ public class DbConnector {
 	}
 
 	/**
-	 * Get the user of the database. 
+	 * Gib den Bentzer aus der Datenbank. 
 	 * @return DB_User 
 	 */
 	public String getDbUser() {
@@ -71,7 +71,7 @@ public class DbConnector {
 	}
 
 	/**
-	 * Get the password of the database.  
+	 * Gib das Passwort aus der Datenbank.  
 	 * @return DB_Password
 	 */
 	public String getDbPassword() {
@@ -79,7 +79,7 @@ public class DbConnector {
 	}
 
 	/**
-	 * Get the connection.
+	 * Gib die Verbindung. 
 	 * @return conn
 	 */
 	public Connection getConn() {
@@ -87,7 +87,7 @@ public class DbConnector {
 	}
 	
 	/**
-	 * Close the connection. 
+	 * Schliesse die Verbindung. 
 	 */
 	public void closeConnection() {
 		try {

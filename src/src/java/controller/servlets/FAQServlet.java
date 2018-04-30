@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
-* Servlet implementation class FAQServlet
+* Servlet-Implementation der Klasse FAQServlet.
 */
 @WebServlet(description = "Servlet fuer die FAQ-Seite", urlPatterns = { "/faq/" })
 

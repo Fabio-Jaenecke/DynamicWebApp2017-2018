@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 /**
-* Servlet implementation class RezepteServlet
+* Servlet-Implementation der Klasse RezepteServlet. 
 */
 @WebServlet(description = "Servlet fuer Rezepte", urlPatterns = { "/rezepte/" })
 

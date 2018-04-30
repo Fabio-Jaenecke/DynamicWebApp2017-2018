@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HistarantiaServlet
+ * Servlet-Implementation der Klasse HistarantiaServlet. 
  */
 @WebServlet(description = "Main servlet for application", urlPatterns = { "/home/" })
 

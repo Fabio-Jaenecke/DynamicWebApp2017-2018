@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
-* Servlet implementation class SuchfilterServlet
+* Servlet-Implementation der Klasse SuchfilterServlet. 
 */
 @WebServlet(description = "Servlet fuer den Suchfilter", urlPatterns = { "/suchfilter/" })
 
@@ -37,7 +37,7 @@ public class SuchfilterServlet extends HttpServlet {
 	}
 
 	/**
-	 * @return return contextPath (current) 
+	 * @return contextPath (current) 
 	 */
 	public static String getContextPath() {
 		return contextPath;

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 //TODO: Try-catch und Logger hinzufuegen um exceptions abzufangen.
 
 /**
-* Servlet implementation class MahlzeitassistentServlet
+* Servlet-Implementation der Klasse MahlzeitassistentServlet. 
 */
 @WebServlet(description = "Servlet fuer den Mahlzeitassistent", urlPatterns = { "/mahlzeitassistent/" })
 
@@ -35,7 +35,6 @@ public class MahlzeitassistentServlet extends HttpServlet {
      *  Sollte der Benutzer auf eine Auswahl klicken, wird die Mahlzeitassistentenauswahl geoeffnet.
      *  Mit einer Auswahl in Mahlzeitassistent kehrt der Benutzer wieder zu Mahlzeitassistent zurueck.
      *  Else, falls kein richtiger Paramter gefunden wurde, kehre zur Home-Seite zurueck.  
-     * 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -74,7 +73,6 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	 * Diese Methode schaut, welches Lebensmittel in der Tabelle ausgewaehlt wurde und gleicht dieses
     	 * mit dem Attribut in der gleichen Session ab. Auswahl ist dabei ein Lebensmittelname, welcher zu einen
     	 * in der Lebensmittelliste vorkommt und zu anderen als Parameter weitergegeben wird.
-    	 * 
     	 * @param request
     	 * @param response
     	 * @return auswahl 
@@ -91,8 +89,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	}
     	
     	/**
-    	 * To get an empty Mahlzeitassistent
-    	 * 
+    	 * Gib einen leeren Mahlzeitassistenten. 
     	 * @param request
     	 * @param response
     	 * @throws ServletException
@@ -105,8 +102,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
  	        return;
     	}
     	/**
-    	 * To Setze Kategorien Zuruck
-    	 * 
+    	 * Setze die Kategorien zurueck. 
     	 * @param request
     	 * @param response
     	 * @throws ServletException
@@ -124,8 +120,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	}
     	
     	/**
-    	 * Setze Naehrstoffe zurueck.
-    	 * 
+    	 * Setze die Naehrstoffe zurueck.
     	 * @param request
     	 * @param response
     	 * @throws ServletException

@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 /**
-* Servlet implementation class lebensmittelkategorieServlet
+* Servlet-Implementation der Klasse lebensmittelkategorieServlet.
 */
 @WebServlet(description = "Servlet fuer die Lebensmittelrangliste", urlPatterns = { "/lebensmittel/" })
 
