@@ -6,11 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Diese Klasse holt die lebensmittelDaten, die fuer die Rangliste benoetigt werden, 
+ * Diese Klasse holt die Lebensmitteldaten, die fuer die Rangliste benoetigt werden, 
  * aus der Datenbank und stellt diese zur Verfuegung. 
- * 
- * @author Michele Trebo
- * @version 17.04.2018
  */
 public class RanglistenManager {
 
@@ -22,7 +19,6 @@ public class RanglistenManager {
 
 	/**
 	 * Erzeugt die Rangliste für die Lebensmittelvertraeglichkeit. 
-	 * 
 	 * @param lname der Lebensmittelname
 	 * @param kategorie die lebensmittelkategorie
 	 * @param karenzphase die Vertraeglichkeit waehrend der Karenzphase
@@ -37,7 +33,6 @@ public class RanglistenManager {
 	
 	/**
 	 * Erzeuge den RanglistenManager mittels Daten aus der Datenbank. 
-	 * 
 	 * @param rs das ResultSet
 	 */
 	public RanglistenManager(ResultSet rs) {
@@ -53,7 +48,6 @@ public class RanglistenManager {
 	
 	/**
 	 * Gib den Lebensmittelnamen. 
-	 * 
 	 * @return lname
 	 */
 	public String getLname() {
@@ -62,7 +56,6 @@ public class RanglistenManager {
 
 	/**
 	 * Setze den Lebensmittelnamen. 
-	 * 
 	 * @param lname der Lebensmittelname
 	 */
 	public void setLname(String lname) {
@@ -71,7 +64,6 @@ public class RanglistenManager {
 
 	/**
 	 * Gib die lebensmittelkategorie. 
-	 * 
 	 * @return kategorie
 	 */
 	public String getKategorie() {
@@ -80,7 +72,6 @@ public class RanglistenManager {
 
 	/**
 	 * Setze die lebensmittelkategorie. 
-	 * 
 	 * @param kategrie die lebensmittelkategorie
 	 */
 	public void setKategorie(String kategorie) {
@@ -89,7 +80,6 @@ public class RanglistenManager {
 	
 	/**
 	 * Gib die Vertraeglichkeit waehrend der Karenzphase. 
-	 * 
 	 * @return karenzphase 
 	 */
 	public String getKarenzphase() {
@@ -98,7 +88,6 @@ public class RanglistenManager {
 
 	/**
 	 * Setze die Vertraeglichkeit waehrend der Karenzphase. 
-	 * 
 	 * @param karenzphase die Vertraeglichkeit waehrend der Karenzphase
 	 */
 	public void setKarenzphase(String karenzphase) {
@@ -107,7 +96,6 @@ public class RanglistenManager {
 
 	/**
 	 * Gib die Vertraeglichkeit waehrend der Dauerernaehrung.
-	 * 
 	 * @return dauerernaehrung 
 	 */
 	public String getDauerernaehrung() {
@@ -116,7 +104,6 @@ public class RanglistenManager {
 
 	/**
 	 * Setze die Vertraeglichkeit waehrend der Dauerernaehrung.
-	 * 
 	 * @param dauerernaehrung die Vertraeglichkeit waehrend der Dauerernaehrung 
 	 */
 	public void setDauerernaehrung(String dauerernaehrung) {
