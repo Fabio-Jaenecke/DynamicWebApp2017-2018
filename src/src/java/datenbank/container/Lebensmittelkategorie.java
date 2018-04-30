@@ -6,15 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * stellt die Java-Klasse zur Entitaet lebensmittelkategorie
-=======
-
-/**
- * stellt die Java-Klasse zur Entitaet Lebensmittelkategorie
->>>>>>> refs/heads/master
- * in der Datenbank da
- * @author Raphael Caradonna
- *
+ * Stellt die Java-Klasse zur Entitaet Lebensmittelkategorie
+ * in der Datenbank dar. 
  */
 public class Lebensmittelkategorie {
 
@@ -37,15 +30,34 @@ public class Lebensmittelkategorie {
 		}
 	}
 	
+	/**
+	 * Gib den Karenzphasenindex. 
+	 * @return kindex
+	 */
 	public int getKindex() {
 		return kindex;
 	}
+	
+	/**
+	 * Setze den Karenzphasenindex. 
+	 * @param kindex
+	 */
 	public void setKindex(int kindex) {
 		this.kindex = kindex;
 	}
+	
+	/**
+	 * Gib die Karenzphase. 
+	 * @return
+	 */
 	public String getKname() {
 		return kname;
 	}
+	
+	/**
+	 * Setze die Karenzphase. 
+	 * @param kname
+	 */
 	public void setKname(String kname) {
 		this.kname = kname;
 	}
