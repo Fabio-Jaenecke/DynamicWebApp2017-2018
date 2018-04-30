@@ -6,15 +6,15 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-/*
- * unit test for testing connection details to database
-*/
+/**
+ * Unit test for testing connection details to database.
+ */
 public class DbConnectorTest {
 
 	private DbConnectorStub conn = new DbConnectorStub();
 	
-	/*
-	 * we only instantiate a connection, so no things to do in setup
+	/**
+	 * We only instantiate a connection, so no things to do in setup.
 	 */
 	@Before
 	public void setUp() {

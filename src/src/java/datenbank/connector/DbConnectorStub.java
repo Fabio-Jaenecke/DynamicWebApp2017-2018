@@ -16,7 +16,7 @@ public class DbConnectorStub {
 	private Connection conn = null;
 	private static final Logger LOGGER = Logger.getLogger(DbConnectorStub.class.getName());
 	
-	/*
+	/**
 	 * As this class is only a stub, we only need an empty constructor.
 	 */
 	public DbConnectorStub() {}
