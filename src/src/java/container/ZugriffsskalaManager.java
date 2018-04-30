@@ -11,9 +11,6 @@ import datenbank.dao.DbQuery;
 
 /**
  * Diese Klasse erstellt eine Tabelle mit den Platzierungen der Lebensmittel sowie den entsprechenden Lebensmitteldaten. 
- * 
- * @author Michele Trebo
- * @verison 12.04.2018
  */
 public class ZugriffsskalaManager {
 
