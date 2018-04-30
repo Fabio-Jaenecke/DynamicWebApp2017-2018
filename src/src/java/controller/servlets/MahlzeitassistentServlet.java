@@ -32,8 +32,8 @@ public class MahlzeitassistentServlet extends HttpServlet {
     }
     
     /** Das Servlet ruft standardmaessig den Mahlzeitassistent auf, um ihn zu oeffnen.
-     *  Sollte der Benutzer auf eine Auswahl klicken, wird Mahlzeitassistentenauswahl geoeffnet
-     *  Mit einer auswahl in Mahlzeitassisten kehrt der Benutzer wieder zu Mahlzeitassistent zurueck
+     *  Sollte der Benutzer auf eine Auswahl klicken, wird die Mahlzeitassistentenauswahl geoeffnet.
+     *  Mit einer Auswahl in Mahlzeitassistent kehrt der Benutzer wieder zu Mahlzeitassistent zurueck.
      *  Else, falls kein richtiger Paramter gefunden wurde, kehre zur Home-Seite zurueck.  
      * 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -77,7 +77,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	 * 
     	 * @param request
     	 * @param response
-    	 * @return
+    	 * @return auswahl 
     	 */
     	protected Object findeAuswahl(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     		HttpSession session = request.getSession(true);
@@ -124,7 +124,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
     	}
     	
     	/**
-    	 * To Setze Naehrstoffe Zuruck
+    	 * Setze Naehrstoffe zurueck.
     	 * 
     	 * @param request
     	 * @param response
