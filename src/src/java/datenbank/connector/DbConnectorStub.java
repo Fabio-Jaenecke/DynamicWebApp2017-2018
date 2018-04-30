@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Stub for testing the databaseConnector class.
+ * Stub zum Testen der databaseConnector-Klasse.
  */
 public class DbConnectorStub {
 	
@@ -17,7 +17,7 @@ public class DbConnectorStub {
 	private static final Logger LOGGER = Logger.getLogger(DbConnectorStub.class.getName());
 	
 	/**
-	 * As this class is only a stub, we only need an empty constructor.
+	 * Da diese Klasse nur ein Stub ist, benötigen wir nur einen leeren Konstruktor.
 	 */
 	public DbConnectorStub() {}
 
@@ -33,7 +33,7 @@ public class DbConnectorStub {
 	}
 	
 	/**
-	 * Get the resultset.
+	 * Gib das Resultset. 
 	 * @param sql
 	 * @return result 
 	 */
@@ -53,7 +53,7 @@ public class DbConnectorStub {
 	}
 	
 	/**
-	 * Get the database-connection. 
+	 * Gib die Datenbankverbindung. 
 	 * @return "jdbc:h2:~/histarantia"
 	 */
 	public String getDB_Connection() {
@@ -61,7 +61,7 @@ public class DbConnectorStub {
 	}
 
 	/**
-	 * Get the driver of the database. 
+	 * Gib den Driver aus der Datenbank.  
 	 * @return "org.h2.Driver"
 	 */
 	public String getDB_Driver() {
@@ -69,7 +69,7 @@ public class DbConnectorStub {
 	}
 
 	/**
-	 * Get the user of the database. 
+	 * Gib den Benutzer aus der Datenbank. 
 	 * @return "user"
 	 */
 	public String getDB_User() {
@@ -77,7 +77,7 @@ public class DbConnectorStub {
 	}
 
 	/**
-	 * Get the password of the database. 
+	 * Gib das Passwort aus der Datenbank. 
 	 * @return ""
 	 */
 	public String getDB_Password() {
