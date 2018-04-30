@@ -21,7 +21,7 @@ public class DbCreation implements DbCreationInterface {
 	}
 	
 	/**
-	 * Alle Tabellen für die Datenbank. 
+	 * Alle Tabellen fuer die Datenbank. 
 	 * @see datenbank.creation.DbCreationInterface#setUpTables()
 	 */
 	@Override

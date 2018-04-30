@@ -8,14 +8,12 @@ import org.junit.Test;
 import datenbank.dao.DbQuery;
 
 /**
- * tests class DbCreation
- * asserts that tables are created
- * @author Raphael
- *
+ * Testklasse DbCreation
+ * Bestaetigt, dass Tabellen erstellt werden. 
  */
 public class DbCreationTest {
 
-	// to not have any double entries, we first create the database
+	// Um keine doppelten Eintraege zu erhalten, erstellen wir zuerst die Datenbank. 
 	DbCreation creation = new DbCreation();
 	DbQuery query = new DbQuery();
 	
@@ -24,49 +22,49 @@ public class DbCreationTest {
 		creation.setUpTables();
 	}
 
-	// Testing the create table statements for the table lebensmittelDaten
+	// Testen der create table-Anweisungen fuer die Tabelle lebensmittelDaten.
 	@Test
 	public void testSetUpTablelebensmittelDaten() {
 		assertNotNull(query.getResult("select 1 from lebensmittelDaten"));
 	}
 
-	// Testing the create table statements for the table zugriffsskala
+	// Die create table-Anweisungen fuer die Tabelle zugriffsskala testen.
 	@Test
 	public void testSetUpTableZugriffsskala() {
 		assertNotNull(query.getResult("select 1 from zugriffsskala"));
 	}
 
-	// Testing the create table statements for the table lebensmittelkategorie
+	// Testen der create table-Anweisungen fuer die Tabelle lebensmittelkategorie. 
 	@Test
 	public void testSetUpTablelebensmittelkategorie() {
 		assertNotNull(query.getResult("select 1 from lebensmittelkategorie"));
 	}
 
-	// Testing the create table statements for the table naehrstoff
+	// Testen der create table-Anweisungen fuer die Tabelle naehrstoff. 
 	@Test
 	public void testSetUpTableNaehrstoff() {
 		assertNotNull(query.getResult("select 1 from naehrstoff"));
 	}
 
-	// Testing the create table statements for the table favorit
+	// Testen der create table-Anweisungen fuer die Tabelle favorit. 
 	@Test
 	public void testSetUpTableFavorit() {
 		assertNotNull(query.getResult("select 1 from favorit"));
 	}
 
-	// Testing the create table statements for the table katzugehoerigkeit
+	// Testen der create table-Anweisungen fuer die Tabelle katzugehoerigkeit.
 	@Test
 	public void testSetUpTableKatzugehoerigkeit() {
 		assertNotNull(query.getResult("select 1 from katzugehoerigkeit"));
 	}
 
-	// Testing the create table statements for the table enthaelt
+	// Testen der create table-Anweisungen fuer die Tabelle enthaelt.
 	@Test
 	public void testSetUpTableEnthaelt() {
 		assertNotNull(query.getResult("select 1 from enthaelt"));
 	}
 	
-	// Testing the create table statements for the table naehrzugehoerigkeit
+	// Testen der create table-Anweisungen fuer die Tabelle naehrzugehoerigkeit.
 	@Test
 	public void testSetUpTableNaehrzugehoerigkeit() {
 		assertNotNull(query.getResult("select 1 from naehrzugehoerigkeit"));
