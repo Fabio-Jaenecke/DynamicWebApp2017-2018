@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
-* Servlet implementation class ZugriffsskalaServlet
+* Servlet-Implementation der Klasse ZugriffsskalaServlet. 
 */
 @WebServlet(description = "Servlet fuer die Zugriffsskala", urlPatterns = { "/zugriffsskala/" })
 
