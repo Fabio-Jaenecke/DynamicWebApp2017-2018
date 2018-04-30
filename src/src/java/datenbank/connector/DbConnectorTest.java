@@ -7,39 +7,39 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Unit test for testing connection details to database.
+ * Unit-Test zum Testen der Verbindungsdetails zur Datenbank.
  */
 public class DbConnectorTest {
 
 	private DbConnectorStub conn = new DbConnectorStub();
 	
 	/**
-	 * We only instantiate a connection, so no things to do in setup.
+	 * Wir initialisieren nur eine Verbindung, ohne Dinge im Setup. 
 	 */
 	@Before
 	public void setUp() {
 		
 	}
 	
-	// Testing the connection to the database
+	// Teste die Datenbankverbindung.
 	@Test
 	public void testConnection() {
 		assertTrue(conn.establishH2DBConnection());
 	}
 
-	// Testing if the url is correct
+	// Teste ob die URL korrekt ist. 
 	@Test
 	public void url() {
 		assertEquals(conn.getDB_Connection(), "jdbc:h2:~/histarantia");
 	}
 	
-	// Testing if the right driver is in use
+	// Teste ob der richtige Driver gebraucht wird.
 	@Test
 	public void driver() {
 		assertEquals(conn.getDB_Driver(), "org.h2.Driver");
 	}
 	
-	// Testing if user name and password are correct
+	// Teste ob der Benutzername und das Passwort korrekt sind. 
 	@Test
 	public void userAndPassword() {
 		assertEquals(conn.getDB_User(), "user");
