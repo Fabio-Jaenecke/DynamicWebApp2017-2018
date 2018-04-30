@@ -7,10 +7,9 @@ import java.util.logging.Logger;
 
 import datenbank.connector.DbConnector;
 
-/*
- * Class for creating tables for the database
+/**
+ * Klasse zum Erstellen von Tabellen für die Datenbank. 
  */
-
 public class DbCreation implements DbCreationInterface {
 
 	private DbConnector conn = new DbConnector();
@@ -21,8 +20,8 @@ public class DbCreation implements DbCreationInterface {
 		setUpTables();
 	}
 	
-	/*
-	 *  All the tables for the database
+	/**
+	 * Alle Tabellen für die Datenbank. 
 	 * @see datenbank.creation.DbCreationInterface#setUpTables()
 	 */
 	@Override
@@ -37,8 +36,8 @@ public class DbCreation implements DbCreationInterface {
 		setUpTableNaehrzugehoerigkeit();
 	}
 
-	/*
-	 *  Creating table "lebensmittelDaten"
+	/**
+	 * Kreiere die Tabelle "lebensmittelDaten". 
 	 * @see datenbank.creation.DbCreationInterface#setUpTablelebensmittelDaten()
 	 */
 	@Override
@@ -58,8 +57,8 @@ public class DbCreation implements DbCreationInterface {
 		
 	}
 
-	/*
-	 *  Creating table "zugriffsskala"
+	/**
+	 * Kreiere die Tabelle "zugriffsskala".
 	 * @see datenbank.creation.DbCreationInterface#setUpTableZugriffsskala()
 	 */
 	@Override
@@ -77,8 +76,8 @@ public class DbCreation implements DbCreationInterface {
 		}
 	}
 
-	/*
-	 *  Creating table "lebensmittelkategorie"
+	/**
+	 * Kreiere die Tabelle "lebensmittelkategorie".
 	 * @see datenbank.creation.DbCreationInterface#setUpTablelebensmittelkategorie()
 	 */
 	@Override
@@ -95,8 +94,8 @@ public class DbCreation implements DbCreationInterface {
 		}		
 	}
 
-	/*
-	 *  Creating table "naehrstoff"
+	/**
+	 * Kreiere die Tabelle "naehrstoff".
 	 * @see datenbank.creation.DbCreationInterface#setUpTableNaehrstoff()
 	 */
 	@Override
@@ -113,8 +112,8 @@ public class DbCreation implements DbCreationInterface {
 		}	
 	}
 
-	/*
-	 *  Creating table "favorit"
+	/**
+	 * Kreiere die Tabelle "favorit". 
 	 * @see datenbank.creation.DbCreationInterface#setUpTableFavorit()
 	 */
 	@Override
@@ -132,8 +131,8 @@ public class DbCreation implements DbCreationInterface {
 		}
 	}
 
-	/*
-	 *  Creating table "katzugehoerigkeit"
+	/**
+	 * Kreiere die Tabelle "katzugehoerigkeit".
 	 * @see datenbank.creation.DbCreationInterface#setUpTableKatzugehoerigkeit()
 	 */
 	@Override
@@ -153,8 +152,8 @@ public class DbCreation implements DbCreationInterface {
 		
 	}
 
-	/*
-	 *  Creating table "enthaelt"
+	/**
+	 * Kreiere die Tabelle "enthaelt". 
 	 * @see datenbank.creation.DbCreationInterface#setUpTableEnhaelt()
 	 */
 	@Override
@@ -173,8 +172,8 @@ public class DbCreation implements DbCreationInterface {
 		}
 	}
 
-	/*
-	 * Creating table "naehrzugehoerigkeit"
+	/** 
+	 * Kreiere die Tabelle "naehrzugehoerigkeit". 
 	 * @see datenbank.creation.DbCreationInterface#setUpTableNaehrzugehoerigkeit()
 	 */
 	@Override
@@ -191,6 +190,4 @@ public class DbCreation implements DbCreationInterface {
 			LOGGER.log(Level.SEVERE, errorMessage, e);
 		}
 	}
-	
-
 }
