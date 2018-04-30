@@ -7,9 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * establishes connection to database and creates statements
- * @author Raphael
- *
+ * Establishes connection to database and creates statements.
  */
 public class DbConnector {
 
@@ -29,8 +27,8 @@ public class DbConnector {
 		establishH2DBConnection();
 	}
 	
-	/*
-	 *  Loading the database
+	/** 
+	 *  Loading the database.
 	 */
 	private void loadH2Driver() {
 		try {
@@ -41,8 +39,8 @@ public class DbConnector {
 		}
 	}
 	
-	/*
-	 *  Establishing database connection
+	/**
+	 *  Establishing database connection.
 	 */
 	public Connection establishH2DBConnection() {
 		try {
@@ -56,22 +54,41 @@ public class DbConnector {
 		return conn;
 	}
 
+	/**
+	 * Get the database-connection. 
+	 * @return DB_Connection
+	 */
 	public String getDbConnection() {
 		return DB_Connection;
 	}
 
+	/**
+	 * Get the user of the database. 
+	 * @return DB_User 
+	 */
 	public String getDbUser() {
 		return DB_User;
 	}
 
+	/**
+	 * Get the password of the database.  
+	 * @return DB_Password
+	 */
 	public String getDbPassword() {
 		return DB_Password;
 	}
 
+	/**
+	 * Get the connection.
+	 * @return conn
+	 */
 	public Connection getConn() {
 		return conn;
 	}
 	
+	/**
+	 * Close the connection. 
+	 */
 	public void closeConnection() {
 		try {
 			if(connInit) {
