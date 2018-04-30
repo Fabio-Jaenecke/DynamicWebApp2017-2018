@@ -34,5 +34,4 @@ public class ZugriffsskalaServlet extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
          dispatcher.forward(request, response);
 	}
-
 }
