@@ -45,3 +45,35 @@
 	background-color: white;
 	color: black;
 }
+
+.table_lebensmittelkategorie.auswahltabelle tbody {
+	background-color: white;
+}
+
+.table_lebensmittelkategorie.auswahltabelle td:hover {
+	background-color:#9FC5F8;
+}
+
+input[type=submit] {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+span.sortierer {
+	float: right;
+}
+
+.sortieren {
+	cursor: pointer;
+	border: none;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 10px;
+	float: right;
+}
