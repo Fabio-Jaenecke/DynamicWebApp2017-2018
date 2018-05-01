@@ -1,6 +1,7 @@
 package suchfilter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -31,13 +32,11 @@ public class XmlConverterTest {
   @Test
   public void testFileloading() {
     assertNotNull(new File("src/webapp/html/faq.html"));
-    assertNotNull(new File("src/webapp/html/lebensmittel.html"));
+    assertNotNull(new File("src/webapp/html/lebensmittelsuche.html"));
     assertNotNull(new File("src/webapp/html/mahlzeitassistent.html"));
     assertNotNull(new File("src/webapp/html/rezepte.html"));
     assertNotNull(new File("src/webapp/html/suche.html"));
     assertNotNull(new File("src/webapp/html/zugriffsskala.html"));
-    assertNotNull(new File("src/webapp/html/suchfilter.html"));
-    
   }
   
   /**
@@ -54,7 +53,7 @@ public class XmlConverterTest {
   }
   
   /**
-   * tests convertion of file faq.html in html folder asserts that doc has some data and a body
+   * tests convertion of file lebensmittel.html in html folder asserts that doc has some data and a body
    */
   @Test
   public void testConvertLebensmittel() {
@@ -93,29 +92,16 @@ public class XmlConverterTest {
   }
   
   /**
-   * tests convertion of file suche.html in html folder asserts that doc has body and a h3-tag
+   * tests convertion of file lebensmittelsuche.html in html folder asserts that doc has body and a h3-tag
    */
   @Test
   public void testConvertSuche() {
-    File file = new File("src/webapp/html/suche.html");
+    File file = new File("src/webapp/html/lebensmittelsuche.html");
     Document document = converter.convertToXml(file);
     Element body = document.body();
     Element h3tag = document.getElementsByTag("h3").first();
     assertNotNull(body);
     assertEquals("Suche nach Lebensmitteln", h3tag.text());
-  }
-  
-  /**
-   * tests convertion of file suchfilter.html in html folder asserts that body is not null and that doc has right title
-   */
-  @Test
-  public void testConvertSuchfilter() {
-    File file = new File("src/webapp/html/suchfilter.html");
-    Document document = converter.convertToXml(file);
-    Element body = document.body();
-    String title = document.title();
-    assertNotNull(body);
-    assertEquals("Histarantia", title);
   }
   
   /*
