@@ -10,7 +10,7 @@ import org.jsoup.nodes.Document;
 public class Suchfilter {
   
   private ArrayList<Document> xmlSites = new ArrayList<>();
-  private SearchEngine searchEngine;
+  private final SearchEngine searchEngine;
   
   /*
    * converts all sites in html-folder to xml-files and adds them to xmlSites initializes new search engine with keyword
@@ -39,7 +39,7 @@ public class Suchfilter {
     xmlSites.add(converter.convertHtmlToXml("mahlzeitassistent.html"));
     xmlSites.add(converter.convertHtmlToXml("suchfilter.html"));
     xmlSites.add(converter.convertHtmlToXml("rezepte.html"));
-    xmlSites.add(converter.convertHtmlToXml("suche.html"));
+    xmlSites.add(converter.convertHtmlToXml("lebensmittelsuche.html"));
     xmlSites.add(converter.convertHtmlToXml("zugriffsskala.html"));
     return xmlSites;
   }

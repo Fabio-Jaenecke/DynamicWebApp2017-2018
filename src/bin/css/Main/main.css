@@ -24,6 +24,22 @@ hr {
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+	-webkit-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+a:hover{
+	color: black;
+	-webkit-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
 audio, canvas, iframe, img, svg, video {
 	vertical-align: middle;
 }
@@ -78,7 +94,7 @@ body {
 }
 
 .titlegrid, .suchicon {
-	color: white;
+	color: #fff;
 }
 
 .table_beliebte_lebensmittel {
@@ -99,18 +115,9 @@ nav a {
 	margin-bottom: 10px;
 	padding: 15px 0;
 	text-align: center;
-	text-decoration: none;
 	font-weight: bold;
 	color: grey;
 	background: none;
-}
-
-nav a:hover {
-	text-decoration: underline;
-}
-
-nav.active:hover {
-	text-decoration: underline;
 }
 
 h1.titlegrid {
@@ -126,9 +133,7 @@ a.suchicon {
 	margin-top: 20px;
 	font-size: 2em;
 	font-weight: bold;
-	line-height: 0.6;
 	cursor: pointer;
-	text-decoration: none;
 }
 
 .flex-grid, .flex-grid-thirds {
@@ -137,7 +142,7 @@ a.suchicon {
 
 .flex-grid .col, .flex-grid-thirds .col {
 	width: 100%;
-	margin: 0 5px 0 5px;
+	margin: 5px 5px 0 5px;
 }
 
 body {
@@ -150,7 +155,7 @@ body {
 
 .col {
 	align-self: center;
-	color: white;
+	color: #fff;
 	font-weight: bold;
 	font-size: 30px;
 }
@@ -172,7 +177,7 @@ body {
     MOBILE: Main
    ============== */
 .main {
-	padding: 0 10px;
+	padding: 20px 20px;
 }
 
 .main article h1 {
@@ -180,7 +185,7 @@ body {
 }
 
 .main aside {
-	color: white;
+	color: #fff;
 	padding: 0px 5% 10px;
 }
 
@@ -189,7 +194,7 @@ aside {
 }
 
 .footer-container footer {
-	color: white;
+	color: #fff;
 	padding: 20px 0;
 }
 
@@ -220,7 +225,6 @@ footer h4 {
 }
 
 .resp-sharing-button__link {
-	text-decoration: none;
 	color: #fff;
 	margin: 0.5em
 }
@@ -289,25 +293,52 @@ footer h4 {
 
 .link {
 	display: inline-block;
-	margin-bottom: 10px;
-	padding: 5px;
+	padding: 0 10px;
 	text-align: center;
-	text-decoration: none;
 	font-weight: bold;
 	font-size: medium;
-	color: White;
-	background: #6FA8DC;
+	color: #fff;
+	background: #87b4dd;
 	border-radius: 5px;
+	border: none;
+	-webkit-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+.nextToTextfield {
+	border-radius: 0px;
+	-webkit-border-top-right-radius: .25em;
+	-webkit-border-bottom-right-radius: .25em;
+	-moz-border-radius-topright: .25em;
+	-moz-border-radius-bottomright: .25em;
+	border-top-right-radius: .25em;
+	border-bottom-right-radius: .25em;
+	border: 2px solid #87b4dd;
+}
+
+.link:hover {
+	background: #6FA8DC;
+	color: black;
+	-webkit-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
 }
 
 .mehr {
-	padding: 5px;
+	padding: 0 5px;
 	margin: 0;
 	font-size: small;
 }
 
+.zugriffsskala > a:visited {
+	color: #fff;
+}
+
 /* ==========================================================================
-				   Breadcrumbs
+Breadcrumbs / Source https://www.w3schools.com/howto/howto_css_breadcrumbs.asp
 ========================================================================== */
 
 ul.breadcrumb {
@@ -326,12 +357,145 @@ ul.breadcrumb li+li:before {
 }
 ul.breadcrumb li a {
 	color: #6FA8DC;
-	text-decoration: none;
 }
 ul.breadcrumb li a:hover {
 	color: #01447e;
-	text-decoration: underline;
 }
+
+/* ==========================================================================
+	Dropdowns / Source: https://codepen.io/raubaca/pen/VejpQP
+========================================================================== */
+
+ /* Reset Select */
+  select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	outline: 0;
+	box-shadow: none;
+	border: 2px solid #6FA8DC;
+	background:  #fff;
+	background-image: none;
+  }
+  /* Custom Select */
+  .select {
+	position: relative;
+	display: block;
+	width: 16.5em;
+	height: 2em;
+	line-height: 3;
+	background: #fff;
+	overflow: hidden;
+	border-radius: .25em;
+  }
+  select {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0 0 0 .5em;
+	color: black;
+	font-size: normal;
+	cursor: pointer;
+	line-height: 1;
+  }
+  select::-ms-expand {
+	display: none;
+  }
+  /* Arrow */
+  .select::after {
+	content: '\25BC';
+	font-size: small;
+	position: absolute;
+	line-height: 2.5;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 0.7em;
+	background: #6FA8DC;
+	pointer-events: none;
+	color: #fff;
+  }
+  /* Transition */
+  .select:hover::after {
+	color: #000;
+  }
+  .select::after {
+	-webkit-transition: .25s all ease;
+	-o-transition: .25s all ease;
+	transition: .25s all ease;
+  }
+  
+/* ==========================================================================
+	Input fields and buttons
+========================================================================== */
+  
+input{
+	line-height: unset;
+}  
+
+
+input[type:submit] {
+	background-color: #9FC5F8;
+}
+
+input[type:submit]:hover{
+	color: black;
+	background-color: #6FA8DC;
+	-webkit-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+input.texfield {
+
+	position: relative;
+	display: inline-block;
+	width: 16.5em;
+	overflow: hidden;
+	-webkit-border-top-left-radius: .25em;
+	-webkit-border-bottom-left-radius: .25em;
+	-moz-border-radius-topleft: .25em;
+	-moz-border-radius-bottomleft: .25em;
+	border-top-left-radius: .25em;
+	border-bottom-left-radius: .25em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	outline: 0;
+	box-shadow: none;
+	border: 2px solid #6FA8DC;
+	background:  #fff;
+	padding: 0 0 0 .5em;
+	float: left;
+}
+
+.input,
+.submit {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    float: left;
+}
+
+label {
+	-webkit-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+label:hover{
+	color: black;
+	-webkit-transition: all 200ms ease-in;
+	-ms-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+  
 
 /* ==========================================================================
    Media Queries
@@ -455,7 +619,7 @@ ul.breadcrumb li a:hover {
 		text-shadow: none !important;
 	}
 	a, a:visited {
-		text-decoration: underline;
+		color: black;
 	}
 	a[href]:after {
 		content: " (" attr(href) ")";
@@ -491,13 +655,19 @@ ul.breadcrumb li a:hover {
 /*
 CODE FUER ANIMIERTE SIDE NAVIGATION, QUELLE: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
  */
-nav span {
-	position: relative;
-	color: white;
-	font-weight: bold;
-	font-size: 30px;
-	cursor: pointer;
-	top: 100%;
+
+.suchgrid > a {
+	transition: none;
+	color: #fff;
+}
+
+.suchgrid > a:hover {
+	transition: none;
+	color: #fff;
+}
+
+.suchgrid > .suchicon {
+	padding-top: 5px;
 }
 
 .sidenav {
@@ -520,16 +690,14 @@ nav span {
 
 .sidenav a {
 	padding: 8px 8px 8px 8px;
-	text-decoration: none;
 	font-size: 25px;
-	color: white;
+	color: #fff;
 	display: block;
 	transition: 0.3s;
 }
 
 .sidenav a.active {
 	padding: 8px;
-	text-decoration: none;
 	font-size: 25px;
 	color: #111;
 	display: block;
@@ -543,8 +711,7 @@ nav span {
 
 .sidenav a:hover {
 	color: black;
-	text-decoration: none;
-	background-color: white;
+	background-color: #fff;
 }
 
 .sidenav a:first-child:hover { /*fuer das Kreuz*/
@@ -590,11 +757,12 @@ nav span {
 }
 
 .table_beliebte_lebensmittel thead {
-	color: black;
+	color: #fff;
+	background-color: #6FA8DC;
 }
 
 .table_beliebte_lebensmittel tbody tr:nth-child(odd) {
-	background-color: white;
+	background-color: #fff;
 	color: black;
 }
 
@@ -613,12 +781,7 @@ nav span {
 }
 
 article a {
-	text-decoration: none;
 	font-weight: bold;
-}
-
-article a:hover {
-	text-decoration: underline;
 }
 
 .table_contact tr, .table_contact td {

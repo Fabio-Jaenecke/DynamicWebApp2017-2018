@@ -11,7 +11,7 @@ import org.jsoup.nodes.Element;
 public class SearchEngine {
   
   private String keyword;
-  private ArrayList<Searchresult> searchResults = new ArrayList<>();
+  private final ArrayList<Searchresult> searchResults = new ArrayList<>();
   
   /*
    * keyword for search engine
@@ -30,6 +30,7 @@ public class SearchEngine {
       results.addAll(sucheNachParagraphen(document));
       results.addAll(sucheNachListenelementen(document));
       results.addAll(sucheNachButtons(document));
+      results.addAll(sucheNachDivs(document));
       if (!results.isEmpty()) {
         searchResults.add(new Searchresult(document, results));
       }
@@ -78,6 +79,15 @@ public class SearchEngine {
   }
   
   /*
+   * searches for divs
+   */
+  public ArrayList<Element> sucheNachDivs(Document site) {
+    ArrayList<Element> results = new ArrayList<>();
+    results.addAll(searchForTag(site, "div"));
+    return results;
+  }
+  
+  /*
    * searches site for certain tag
    */
   public ArrayList<Element> searchForTag(Document site, String tag) {
@@ -94,8 +104,11 @@ public class SearchEngine {
     return searchResults;
   }
   
-  public void setSearchResults(ArrayList<Searchresult> searchResults) {
-    this.searchResults = searchResults;
+  /*
+   * empty search results for testing purposes
+   */
+  public void emptySearchResults() {
+    this.searchResults.clear();
   }
   
   public String getKeyword() {

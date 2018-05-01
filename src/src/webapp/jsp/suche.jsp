@@ -66,8 +66,8 @@
 						<div>
 							
 							<h3>Suche nach Lebensmitteln</h3>
-							<input type="text" name="sucheintrag" value="" />
-							<input class="link" type="submit" value="Suche" />
+							<input class="texfield" type="text" name="sucheintrag" value="" placeholder='Suche nach...' />
+							<input class="link nextToTextfield" type="submit" value="Suche" />
 							<%@ page import ="suche.*" %>
 							<%  String lebensmittelname = "";
 								if (request.getParameter("sucheintrag") == null) {
@@ -80,7 +80,7 @@
 								
 							//Print the Table if something is found:
 								if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
-									out.println("<table class='table_lebensmittelkategorie' style='margin-top: 10px';>");
+									out.println("<table class='table_lebensmittelkategorie' style='margin-top: 20px';>");
 									out.println("<tr>");
 									out.println("<th>Lebensmittel</th>");
 									out.println("<th>Karenzphase</th>");
@@ -111,19 +111,21 @@
 				</section>
 				<section style="position: fixed; top: 22em;">
 					<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
-						<h3>Suche nach Kategorien</h3>
+						<h3>Suche in Kategorien</h3>
 						<%@ page import="mahlzeitassistent.*" %>
 						<%@ page import="datenbank.container.*" %>
-							<select onchange="this.form.submit()" name="kategorieauswahl">
-								<option value="" disabled selected>Wählen Sie eine Kategorie</option>
-								<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fleisch")){out.println( "selected");} %> value="Fleisch">Fleisch</option>
-								<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Obst")){out.println( "selected");} %> value="Obst">Obst</option>
-								<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Gemuese")){out.println( "selected");} %> value="Gemuese">Gemuese</option>
-								<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Huelsenfruechte")){out.println( "selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-								<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Nuesse und Samen")){out.println( "selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-								<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fisch")){out.println( "selected");} %> value="Fisch">Fisch</option>
-								<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Milch und Milchprodukte")){out.println( "selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
-							</select>
+							<div class="select">
+								<select onchange="this.form.submit()" name="kategorieauswahl">
+									<option value="" disabled selected>Wählen Sie eine Kategorie</option>
+									<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fleisch")){out.println( "selected");} %> value="Fleisch">Fleisch</option>
+									<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Obst")){out.println( "selected");} %> value="Obst">Obst</option>
+									<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Gemuese")){out.println( "selected");} %> value="Gemuese">Gemuese</option>
+									<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Huelsenfruechte")){out.println( "selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
+									<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Nuesse und Samen")){out.println( "selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
+									<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fisch")){out.println( "selected");} %> value="Fisch">Fisch</option>
+									<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Milch und Milchprodukte")){out.println( "selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
+								</select>
+							</div>
 							<%	String kategorienname = "";
 								if (request.getParameter("kategorieauswahl") == null) {
 									//it's not there

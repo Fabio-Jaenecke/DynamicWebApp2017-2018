@@ -57,10 +57,11 @@
 		</header>
 	</div>
 	<div class="main-container">
-		<form method="get" action="${pageContext.request.contextPath}/suchfilter/">
-			<div class="main wrapper clearfix">
-				<input id="suche" type="text" name="keyword" value="">
-				<input class="link" type="submit" value="Suche" />
+	 	<div class="main wrapper clearfix">
+			<form method="get" action="${pageContext.request.contextPath}/suchfilter/">
+				<input class="texfield" id="suche" type="text" name="keyword" value="" placeholder='Suche nach...'>
+				<input class="link nextToTextfield" type="submit" value="Suche" />
+				<p></p>
 				<%@ page import="suchfilter.*"%>
 				<%@ page import="controller.servlets.*"%>
 				<%	if (request.getParameter("keyword") == null) {
@@ -86,9 +87,9 @@
 						}
 					}
 				%>
-			</div>
-		</form>
+			</form>
 		<!-- #main -->
+		</div>
 	</div>
 	<!-- javascript einbinden, um nav ein- und auszublenden-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

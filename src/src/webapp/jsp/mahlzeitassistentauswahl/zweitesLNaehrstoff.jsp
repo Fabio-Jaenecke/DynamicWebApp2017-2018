@@ -75,12 +75,14 @@ your browser</a> to improve your experience.</p>
 						session.setAttribute("auswahl5", auswahl);
 					}
 					%>
+					<div class="select">
 						<select onchange="this.form.submit()" name="naehrstoffauswahl">
 							<option value="" disabled selected>Wählen Sie einen Nährstoff</option>
 							<option <%if (request.getParameter( "naehrstoffauswahl")==null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals( "Proteine")){out.println( "selected");} %> value="Proteine">Proteine</option>
 							<option <%if (request.getParameter( "naehrstoffauswahl")==null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals( "Staerkebeilage")){out.println( "selected");} %> value="Staerkebeilage">Staerkebeilage</option>
 							<option <%if (request.getParameter( "naehrstoffauswahl")==null) {/*its not there*/} else if (request.getParameter("naehrstoffauswahl").equals( "Vitamine")){out.println( "selected");} %> value="Vitamine">Vitamine</option>
 						</select>
+					</div>
 					<%//Exception-Block 2: Dropdownparameter
 					String naehrstoffname = null;
 					if (request.getParameter("naehrstoffauswahl") == null) {
@@ -135,7 +137,7 @@ your browser</a> to improve your experience.</p>
 					%>
 					<p></p>
 				</form>
-				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 30em;">
+				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 32em;">
 					<input type='submit' class="link" name="Bestaetigen" value="Bestätigen">
 				</form>
 			</section>
