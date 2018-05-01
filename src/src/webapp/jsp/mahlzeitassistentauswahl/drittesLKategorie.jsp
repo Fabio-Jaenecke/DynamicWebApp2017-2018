@@ -75,16 +75,18 @@ your browser</a> to improve your experience.</p>
 						session.setAttribute("auswahl3", auswahl);
 					}
 					%>
-					<select onchange="this.form.submit()" name="kategorieauswahl">
-						<option value="" disabled selected>Wählen Sie eine Kategorie</option>
-						<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fleisch")){out.println( "selected");} %> value="Fleisch">Fleisch</option>
-						<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Obst")){out.println( "selected");} %> value="Obst">Obst</option>
-						<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Gemuese")){out.println( "selected");} %> value="Gemuese">Gemuese</option>
-						<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Huelsenfruechte")){out.println( "selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
-						<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Nuesse und Samen")){out.println( "selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
-						<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fisch")){out.println( "selected");} %> value="Fisch">Fisch</option>
-						<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Milch und Milchprodukte")){out.println( "selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
-					</select>
+				 	<div class="select">
+						<select onchange="this.form.submit()" name="kategorieauswahl">
+							<option value="" disabled selected>Wählen Sie eine Kategorie</option>
+							<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fleisch")){out.println( "selected");} %> value="Fleisch">Fleisch</option>
+							<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Obst")){out.println( "selected");} %> value="Obst">Obst</option>
+							<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Gemuese")){out.println( "selected");} %> value="Gemuese">Gemuese</option>
+							<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Huelsenfruechte")){out.println( "selected");} %> value="Huelsenfruechte">Huelsenfruechte</option>
+							<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Nuesse und Samen")){out.println( "selected");} %> value="Nuesse und Samen">Nuesse und Samen</option>
+							<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Fisch")){out.println( "selected");} %> value="Fisch">Fisch</option>
+							<option <%if (request.getParameter( "kategorieauswahl")==null) {/*its not there*/} else if (request.getParameter("kategorieauswahl").equals( "Milch und Milchprodukte")){out.println( "selected");} %> value="Milch und Milchprodukte">Milch und Milchprodukte</option>
+						</select>
+					</div>
 					<%//Exception-Block 2: Dropdownparameter
 					String kategorienname = null;
 					if (request.getParameter("kategorieauswahl") == null) {

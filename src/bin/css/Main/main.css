@@ -307,7 +307,7 @@ footer h4 {
 }
 
 /* ==========================================================================
-				   Breadcrumbs
+Breadcrumbs / Source https://www.w3schools.com/howto/howto_css_breadcrumbs.asp
 ========================================================================== */
 
 ul.breadcrumb {
@@ -332,6 +332,68 @@ ul.breadcrumb li a:hover {
 	color: #01447e;
 	text-decoration: underline;
 }
+
+/* ==========================================================================
+	Dropdowns / Source: https://codepen.io/raubaca/pen/VejpQP
+========================================================================== */
+
+ /* Reset Select */
+  select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	outline: 0;
+	box-shadow: none;
+	border: 0 !important;
+	background:  #b3d4fc;
+	background-image: none;
+  }
+  /* Custom Select */
+  .select {
+	position: relative;
+	display: block;
+	width: 16.5em;
+	height: 2em;
+	line-height: 3;
+	background: #b3d4fc;
+	overflow: hidden;
+	border-radius: .25em;
+  }
+  select {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0 0 0 .5em;
+	color: black;
+	font-size: large;
+	cursor: pointer;
+  }
+  select::-ms-expand {
+	display: none;
+  }
+  /* Arrow */
+  .select::after {
+	content: '\25BC';
+	font-size: small;
+	position: absolute;
+	line-height: 2.5;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 0.7em;
+	background: #6FA8DC;
+	pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+	color: #fff;
+  }
+  .select::after {
+	-webkit-transition: .25s all ease;
+	-o-transition: .25s all ease;
+	transition: .25s all ease;
+  }
 
 /* ==========================================================================
    Media Queries
