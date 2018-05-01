@@ -10,28 +10,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class FAQServlet
- */
-@WebServlet(description = "Servlet fuer die FAQ-Seite", urlPatterns = {"/faq/"})
+* Servlet-Implementation der Klasse FAQServlet.
+*/
+@WebServlet(description = "Servlet fuer die FAQ-Seite", urlPatterns = { "/faq/" })
 
 public class FAQServlet extends HttpServlet {
-  
-  private static final long serialVersionUID = 1L;
-  
-  /**
-   * @see HttpServlet#HttpServlet()
-   */
-  public FAQServlet() {
-    super();
-  }
-  
-  /**
-   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-   */
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String nextJSP = "/jsp/faq.jsp";
-    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-    dispatcher.forward(request, response);
-  }
-  
+	
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FAQServlet() {
+        super();
+    }
+    
+    /**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nextJSP = "/jsp/faq.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+         dispatcher.forward(request, response);
+	}
 }

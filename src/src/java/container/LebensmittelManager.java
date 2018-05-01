@@ -6,9 +6,6 @@ import datenbank.container.LebensmittelDaten;
 
 /**
  * Eine Klasse zur Verwaltung von Lebensmitteln.
- *
- * @author Michele Trebo
- * @version 09.04.2018
  */
 public class LebensmittelManager {
   /**
