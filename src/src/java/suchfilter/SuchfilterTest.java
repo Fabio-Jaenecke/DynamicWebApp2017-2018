@@ -146,7 +146,7 @@ public class SuchfilterTest {
     suchfilter.search();
     ArrayList<Searchresult> results = suchfilter.getSearcher().getSearchResults();
     keyCounter = results.get(0).getKeyElements().size();
-    keytext = results.get(0).getKeyElements().get(1).text();
+    keytext = results.get(0).getKeyElements().get(0).text();
     // somehow three tags contain keyword
     assertEquals(3, keyCounter);
     assertEquals("Haeufige Zugriffe", keytext);
