@@ -1,47 +1,79 @@
 .table_legend ul {
-    margin-top: 0;
-    list-style-type: none;
-    padding-left: 0;
-    display: inline-flex;
+	margin-top: 0;
+	list-style-type: none;
+	padding-left: 0;
+	display: inline-flex;
 }
 
 .table_legend ul li {
-    padding: 5px;
+	padding: 5px;
 }
 
 .table_legend h3, h4 {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .table_lebensmittelkategorie {
-    margin-top: 5%;
+	margin-top: 5%;
 }
 
 .table_lebensmittelkategorie th, tr, td {
-    border: solid;
-    padding: 5px;
-    border-color: black;
-    text-align: left;
+	border: solid;
+	padding: 5px;
+	border-color: black;
+	text-align: left;
 }
 
 .table_lebensmittelkategorie thead {
-    color: white;
-    background-color: #6FA8DC;
+	color: white;
+	background-color: #6FA8DC;
 }
 
 .table_lebensmittelkategorie thead tr th:first-child {
-    width: 200px;
+	width: 200px;
 }
 
-.table_lebensmittelkategorie thead tr th:not(:first-child) {
-    width: 100px;
+.table_lebensmittelkategorie thead tr th:not (:first-child ) {
+	width: 100px;
 }
 
 .table_lebensmittelkategorie tbody {
-    background-color: #9FC5F8;
+	background-color: #9FC5F8;
 }
 
 .table_lebensmittelkategorie tbody tr:nth-child(odd) {
-    background-color: white;
-    color: black;
+	background-color: white;
+	color: black;
+}
+
+.table_lebensmittelkategorie.auswahltabelle tbody {
+	background-color: white;
+}
+
+.table_lebensmittelkategorie.auswahltabelle td:hover {
+	background-color:#9FC5F8;
+}
+
+input[type=submit].sorting {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+span.sortierer {
+	float: right;
+}
+
+.sortieren {
+	cursor: pointer;
+	border: none;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 10px;
+	float: right;
 }

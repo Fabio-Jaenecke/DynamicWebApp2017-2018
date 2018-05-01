@@ -15,34 +15,34 @@ import datenbank.connector.DbConnector;
  */
 
 public class DbQuery {
-
-	private DbConnector conn = new DbConnector();
-	private static final Logger LOGGER = Logger.getLogger(DbQuery.class.getName());
-	
-	/*
-	 * connection to database already here, so no creations in constructor
-	 */
-	public DbQuery() {
-		
-	}
-	
-	public ResultSet getResult(String query) {
-		Statement statement;
-		ResultSet result; 
-		Connection connection;
-		connection = conn.getConn();
-		try {
-			statement = connection.createStatement();
-			result = statement.executeQuery(query);
-			return result;
-		} catch (SQLException e) {
-			LOGGER.log(Level.SEVERE, "Query could not be established " + e);
-		}
-		// TODO return empty result
-		return null;
-	}
-	
-	public void finalize() {
-		conn.closeConnection(); 
-	} 
+  
+  private DbConnector conn = new DbConnector();
+  private static final Logger LOGGER = Logger.getLogger(DbQuery.class.getName());
+  
+  /*
+   * connection to database already here, so no creations in constructor
+   */
+  public DbQuery() {
+    
+  }
+  
+  public ResultSet getResult(String query) {
+    Statement statement;
+    ResultSet result;
+    Connection connection;
+    connection = conn.getConn();
+    try {
+      statement = connection.createStatement();
+      result = statement.executeQuery(query);
+      return result;
+    } catch (SQLException e) {
+      LOGGER.log(Level.SEVERE, "Query could not be established " + e);
+    }
+    // TODO return empty result
+    return null;
+  }
+  
+  public void finalize() {
+    conn.closeConnection();
+  }
 }
