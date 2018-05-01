@@ -37,34 +37,44 @@ public class MahlzeitassistentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
-    	String auswahl=(String) session.getAttribute("auswahl");
-    	String auswahlkontext=(String) session.getAttribute("auswahlkontext");
-    	String kategorienZuruecksetzen=(String) request.getParameter("kategorienZuruecksetzen");
-    	String naehrstoffeZuruecksetzen=(String) request.getParameter("naehrstoffeZuruecksetzen");	
-    	if (auswahl==null){
-    		getLeerenAssistent(request, response);
-    	}if (auswahlkontext==null){
-    		getLeerenAssistent(request, response);
-    	}if (kategorienZuruecksetzen==null){
-    		if (naehrstoffeZuruecksetzen==null) {
-    			getLeerenAssistent(request, response);
-    		}
-    		if (naehrstoffeZuruecksetzen.equals("Zurücksetzen")) {
-    			setzeNaehrStoffeZurueck(request, response);
-    		}    		
-    	}if (naehrstoffeZuruecksetzen==null){
-    		if (kategorienZuruecksetzen==null){
-    			getLeerenAssistent(request, response);
-    		}
-    		if (kategorienZuruecksetzen.equals("Zurücksetzen")) {
-    			setzeKategorienZurueck(request, response);
-    		}      
-    	}else{
-             String nextJSP = "/jsp/mahlzeitassistent.jsp";
-             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-             dispatcher.forward(request, response);
-             return;
-    	}
+    	try {
+        String auswahl=(String) session.getAttribute("auswahl");
+        String auswahlkontext=(String) session.getAttribute("auswahlkontext");
+        String kategorienZuruecksetzen=(String) request.getParameter("kategorienZuruecksetzen");
+        String naehrstoffeZuruecksetzen=(String) request.getParameter("naehrstoffeZuruecksetzen");	
+        if (auswahl==null){
+        	getLeerenAssistent(request, response);
+        	return;
+        }if (auswahlkontext==null){
+        	getLeerenAssistent(request, response);
+        	return;
+        }if (kategorienZuruecksetzen==null){
+        	if (naehrstoffeZuruecksetzen==null) {
+        		getLeerenAssistent(request, response);
+        		return;
+        	}
+        	if (naehrstoffeZuruecksetzen.equals("Zurücksetzen")) {
+        		setzeNaehrStoffeZurueck(request, response);
+        		return;
+        	}    		
+        }if (naehrstoffeZuruecksetzen==null){
+        	if (kategorienZuruecksetzen==null){
+        		getLeerenAssistent(request, response);
+        		return;
+        	}
+        	if (kategorienZuruecksetzen.equals("Zurücksetzen")) {
+        		setzeKategorienZurueck(request, response);
+        		return;
+        	}      
+        }else{
+               String nextJSP = "/jsp/mahlzeitassistent.jsp";
+               RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+               dispatcher.forward(request, response);
+               return;
+        }
+      } catch (Exception e) {
+          LOGGER.log(Level.SEVERE, null, e);
+      }
 	}
     	
     	/** 
