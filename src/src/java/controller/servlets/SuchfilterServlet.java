@@ -10,37 +10,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
-* Servlet implementation class SuchfilterServlet
-*/
-@WebServlet(description = "Servlet fuer den Suchfilter", urlPatterns = { "/suchfilter/" })
+ * Servlet implementation class SuchfilterServlet
+ */
+@WebServlet(description = "Servlet fuer den Suchfilter", urlPatterns = {"/suchfilter/"})
 
 public class SuchfilterServlet extends HttpServlet {
-	
-	private static final long serialVersionUID = 1L;
-	private static String contextPath;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SuchfilterServlet() {
-        super();
-    }
-    
-    /**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		contextPath = request.getContextPath();
-		String nextJSP = "/jsp/suchfilter.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        dispatcher.forward(request, response);
-	}
-
-	/**
-	 * @return return the current contextPath
-	 */
-	public static String getContextPath() {
-		return contextPath;
-	}
-
+  
+  private static final long serialVersionUID = 1L;
+  private static String contextPath;
+  
+  /**
+   * @see HttpServlet#HttpServlet()
+   */
+  public SuchfilterServlet() {
+    super();
+  }
+  
+  /**
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   */
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    contextPath = request.getContextPath();
+    String nextJSP = "/jsp/suchfilter.jsp";
+    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+    dispatcher.forward(request, response);
+  }
+  
+  /**
+   * @return return the current contextPath
+   */
+  public static String getContextPath() {
+    return contextPath;
+  }
+  
 }

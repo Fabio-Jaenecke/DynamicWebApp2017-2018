@@ -12,27 +12,26 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HistarantiaServlet
  */
-@WebServlet(description = "Main servlet for application", urlPatterns = { "/home/" })
+@WebServlet(description = "Main servlet for application", urlPatterns = {"/home/"})
 
 public class HistarantiaServlet extends HttpServlet {
-	
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HistarantiaServlet() {
-        super();
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nextJSP = "/home.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-         dispatcher.forward(request, response);
-	}
-
+  
+  private static final long serialVersionUID = 1L;
+  
+  /**
+   * @see HttpServlet#HttpServlet()
+   */
+  public HistarantiaServlet() {
+    super();
+  }
+  
+  /**
+   * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+   */
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String nextJSP = "/home.jsp";
+    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+    dispatcher.forward(request, response);
+  }
+  
 }
-
