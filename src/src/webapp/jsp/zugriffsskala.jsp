@@ -77,7 +77,7 @@ your browser</a> to improve your experience.</p>
 							<thead>
 								<tr>
 									<th>Platzierung
-										<div class='sortieren'>▼▲</div>
+										<div class='sortieren'>Sortieren▼▲</div>
 									</th>
 									<th>Lebensmittel</th>
 									<th>Karenzphase</th>

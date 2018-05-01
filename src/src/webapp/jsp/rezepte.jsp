@@ -59,32 +59,34 @@
     </div>
     <div class="main-container">
         <div class="main wrapper clearfix">
-            <article>
+            <header>
                 <h2>Rezepte</h2>
-                <header>
-
-                    <h3>Kuerbissuppe</h3>
-
+            </header>
+			<article>
+				<section>
+                    <h3>Kürbissuppe</h3>
+					
                     <a name="neu1"></a>
                     <div id="text1" style="display: none">
-                        Geeignet für die Karenzphase
-                        <br> Fuer 4 Personen
+                    	<img src="${pageContext.request.contextPath}/imgs/kuerbissuppe.jpg" alt="Kürbissuppe" height=100px>
+                        <h4> Geeignet für die Karenzphase </h4> 
+                        Für 4 Personen
                         <br> Zeit zum vorbereiten: 15 Min. + 15 Min. Garzeit
                         <br>
-                        <br> Zutaten:
-                        <br> 2 Kartoffeln, 1 kleines Stueck frischer Ingwer, 1 kg Kuerbis, 1 rote Chilischote, 50 g Butter,
-                        1 l Gemuesebruehe (hefe-frei), Salz, schwarzer Pfeffer, frisch gemahlen, 200 g Sahne, 1 EL Kuerbiskerne,
-                        1 EL Kuerbiskernoel
+                        <h4> Zutaten: </h4>
+                        2 Kartoffeln, 1 kleines Stück frischer Ingwer, 1 kg Kürbis, 1 rote Chilischote, 50 g Butter,
+                        1 l Gemüsebrühe (hefe-frei), Salz, schwarzer Pfeffer, frisch gemahlen, 200 g Sahne, 1 EL Kürbiskerne,
+                        1 EL Kürbiskernöl
                         <br>
-                        <br> Vorbereitung:
-                        <br> Die Kartoffeln und den Ingwer schaelen und gross wuerfeln. Den Kuerbis schaelen, das weiche
-                        Innere und die Kerne mit einem Loeffel herausschaben und das Fruchtfleisch in Wuerfeln schneiden.
+                        <h4> Vorbereitung: </h4>
+                        Die Kartoffeln und den Ingwer schälen und gross würfeln. Den Kürbis schälen, das weiche
+                        Innere und die Kerne mit einem Löffel herausschaben und das Fruchtfleisch in Würfeln schneiden.
                         Die Chilischote entkernen und zerkleinern.
-                        <br> Kartoffeln, Ingwer, Kuerbis und Chili in einem grossen Topf in heisser Butter anduensten, mit
-                        Gemuesebruehe abloeschen und mit Salz und Pfeffer wuerzen.
+                        <br> Kartoffeln, Ingwer, Kürbis und Chili in einem grossen Topf in heisser Butter andünsten, mit
+                        Gemüsebrühe ablöschen und mit Salz und Pfeffer würzen.
                         <br> 15 Min. lang kochen.
-                        <br> Anschliessend die Sahne einruehren und die Suppe mit einem Puerierstab fein puerieren.
-                        <br> Mit gehackten Kuerbiskerne betreut und etwas Kuerbiskernoel betraeufelt servieren.
+                        <br> Anschliessend die Sahne einrühren und die Suppe mit einem Pürierstab fein pürieren.
+                        <br> Mit gehackten Kürbiskerne betreut und etwas Kürbiskernöl beträufelt servieren.
                     </div>
                     <a class="resp-sharing-button__link" onclick="text1.style.display='block';auf1.style.display='none';zu1.style.display='block'"
                         id="auf1" style="display: block" href="#neu1" aria-label="">
@@ -102,39 +104,40 @@
                             </div>
                         </div>
                     </a>
-                </header>
+                </section>
                 <section>
 
-                    <h3>Steak mit Kraeuterkartoffeln</h3>
+                    <h3>Steak mit Kräuterkartoffeln</h3>
 
                     <a name="neu2"></a>
                     <div id="text2" style="display: none">
-                        Geeignet für die Karenzphase
-                        <br> Fuer 4 Personen
+                   		<img src="${pageContext.request.contextPath}/imgs/SteakMitKrauterKartoffeln.jpg" alt="Steak mit Kräuterkartoffeln" height=100px>
+                        <h4> Geeignet für die Karenzphase </h4> 
+                        Für 4 Personen
                         <br> Zeit zum vorbereiten: 20 Min. + 1 Std. Garzeit
                         <br>
-                        <br> Zutaten:
-                        <br> 4 sehr grosse Kartoffeln, 1 Bund Petersilie, 1 Bund Schnittlauch, 2 Knoblauchzehen, 8 schwarze
-                        Oliven ohne Stein, 2 TL Kapern, 2 TL Pinienkerne, 8EL Olivenoel, Salz, schwarzer Pfeffer, frisch
-                        gemahlen, 4 Rumpsteaks (zu jeweils 150 g), 2 EL Butterschmalz, 8 EL Kraeuterbutter
+                        <h4> Zutaten:</h4>
+                        4 sehr grosse Kartoffeln, 1 Bund Petersilie, 1 Bund Schnittlauch, 2 Knoblauchzehen, 8 schwarze
+                        Oliven ohne Stein, 2 TL Kapern, 2 TL Pinienkerne, 8EL Olivenöl, Salz, schwarzer Pfeffer, frisch
+                        gemahlen, 4 Rumpsteaks (zu jeweils 150 g), 2 EL Butterschmalz, 8 EL Kräuterbutter
                         <br>
-                        <br> Vorbereitung:
-                        <br> Kartoffeln in der Schale in Wasser 25 Min. garkochen. Den Backofen auf 200 Grand (Umluft 180
+                        <h4> Vorbereitung: </h4>
+                        Kartoffeln in der Schale in Wasser 25 Min. garkochen. Den Backofen auf 200 Grand (Umluft 180
                         Grad) vorheizen.
                         <br> Petersilie und Schnittlauch waschen und fein schneiden. Knoblauch abziehen und klein schneiden.
                         Oliven, Kapern und Pinienkerne fein hacken.
-                        <br> oel, die Kraeuter und den Knoblauch sowie Salz und Pfeffer dazugeben und gut verruehren. Die
-                        Kraeuterpaste etwas ziehen lassen. Kartoffeln abgiessen, auskuehlen lassen und in Alufolie wickeln.
+                        <br> öl, die Kräuter und den Knoblauch sowie Salz und Pfeffer dazugeben und gut verrühren. Die
+                        Kräuterpaste etwas ziehen lassen. Kartoffeln abgiessen, auskühlen lassen und in Alufolie wickeln.
                         <br> Bei 200 Grad etwa 15 Min. backen. Steaks von jeder Seite etwa 3 Min. im heissen Butterschmalz
-                        anbraten und mit Salz und Pfeffer wuerzen.
-                        <br> Die Kartoffeln aus dem Backofen nehmen, die Alufolie entfernen, laengs einschneiden und mit
-                        jeweils 2 EL Kraeuterbitter fuellen.
-                        <br> Folienkartoffeln mit dem Steak anrichten und Kraeuterdipp dazu reichen.
+                        anbraten und mit Salz und Pfeffer würzen.
+                        <br> Die Kartoffeln aus dem Backofen nehmen, die Alufolie entfernen, längs einschneiden und mit
+                        jeweils 2 EL Kräuterbitter füllen.
+                        <br> Folienkartoffeln mit dem Steak anrichten und Kräuterdipp dazu reichen.
                     </div>
                     <a class="resp-sharing-button__link" onclick="text2.style.display='block';auf2.style.display='none';zu2.style.display='block'"
                         id="auf2" style="display: block" href="#neu2" aria-label="">
                         <div class="resp-sharing-button resp-sharing-button--faq resp-sharing-button--small">
-                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                            <div aria-hidden="trü" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
                                 Show
                             </div>
                         </div>
@@ -142,7 +145,7 @@
                     <a class="resp-sharing-button__link" onclick="text2.style.display='none';auf2.style.display='block';zu2.style.display='none'"
                         id="zu2" style="display: none" href="#neu2" aria-label="">
                         <div class="resp-sharing-button resp-sharing-button--faq resp-sharing-button--small">
-                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                            <div aria-hidden="trü" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
                                 Hide
                             </div>
                         </div>
@@ -154,25 +157,26 @@
 
                     <a name="neu3"></a>
                     <div id="text3" style="display: none">
-                        Geeignet für die Dauerernaehrung
-                        <br> Fuer 4 Personen
+                    	<img src="${pageContext.request.contextPath}/imgs/lachsinFiloteig.jpg" alt="Lachs im Filoteig" height=100px> 
+                        <h4>Geeignet für die Dauerernährung</h4>
+                        Für 4 Personen
                         <br> Zeit zum vorbereiten: 40 Min. + 30 Min. Garzeit
                         <br>
-                        <br> Zutaten:
-                        <br> 4 Lachsfilets (a 200 g), Salz, schwarzer Pfeffer, frisch gemahlen, 2 EL oel, 2 Blaetter geroestete
-                        Nori-Algen, 1 Blatt Filoteig (30x40 cm), 3 EL zerlassene Butter, 2 Granataepfel, 1 EL Honig
+                        <h4> Zutaten:</h4>
+                        4 Lachsfilets (a 200 g), Salz, schwarzer Pfeffer, frisch gemahlen, 2 EL öl, 2 Blätter geröstete
+                        Nori-Algen, 1 Blatt Filoteig (30x40 cm), 3 EL zerlassene Butter, 2 Granatäpfel, 1 EL Honig
                         <br>
-                        <br> Vorbereitung:
-                        <br> Lachfilets salzen und pfeffern und im heissen oel auf beiden Seiten anbraten. Herausnehmen und
-                        etwas abkuehlen lassen.
-                        <br> Die Nori-Blaetter halbieren und jeweils ein Lachsfilet darin einwickeln.
-                        <br> Den Filoteig vorsichtig ausbreiten und die Teigplatte in 4 gleich grosse Stuecke teilen, mit
-                        1 EL zerlassener Butter bestreichen und die Lachstuecke in den Teig einschlagen.
-                        <br> Die Lachspaeckchen in der restlichen Butter vorsichtig goldbraun braten.
-                        <br> Die Fishpaeckchen aus der Pfanne nehmen und fuer etwas Kuechenkrepp abtropfen lassen.
-                        <br> Granataepfel halbieren und die Kerne herausloesen. Den dabei austretenden Saft auffangen, mit
-                        4 EL Wasser und Honig vermischen und kurz erwaermen.
-                        <br> Die Granatapfelkerne zu der Sauce geben, kurz abkuehlen lassen und zusammen mit dem Fish anrichten.
+                        <h4> Vorbereitung:</h4>
+                        Lachfilets salzen und pfeffern und im heissen öl auf beiden Seiten anbraten. Herausnehmen und
+                        etwas abkühlen lassen.
+                        <br> Die Nori-Blätter halbieren und jeweils ein Lachsfilet darin einwickeln.
+                        <br> Den Filoteig vorsichtig ausbreiten und die Teigplatte in 4 gleich grosse Stücke teilen, mit
+                        1 EL zerlassener Butter bestreichen und die Lachstücke in den Teig einschlagen.
+                        <br> Die Lachspäckchen in der restlichen Butter vorsichtig goldbraun braten.
+                        <br> Die Fishpäckchen aus der Pfanne nehmen und für etwas Küchenkrepp abtropfen lassen.
+                        <br> Granatäpfel halbieren und die Kerne herauslösen. Den dabei austretenden Saft auffangen, mit
+                        4 EL Wasser und Honig vermischen und kurz erwärmen.
+                        <br> Die Granatapfelkerne zu der Sauce geben, kurz abkühlen lassen und zusammen mit dem Fish anrichten.
                     </div>
                     <a class="resp-sharing-button__link" onclick="text3.style.display='block';auf3.style.display='none';zu3.style.display='block'"
                         id="auf3" style="display: block" href="#neu3" aria-label="">
@@ -197,20 +201,21 @@
 
                     <a name="neu4"></a>
                     <div id="text4" style="display: none">
-                        Geeignet für die Karenzphase
-                        <br> Fuer 4 Personen
+                    	<img src="${pageContext.request.contextPath}/imgs/blaubeerpfannkuchen.jpeg" alt="Blaubeer-Pfannkuchen" height=100px> 
+                        <h4>Geeignet für die Karenzphase</h4>
+                        Für 4 Personen
                         <br> Zeit zum vorbereiten: 15 Min. + 15 Min. Garzeit
                         <br>
-                        <br> Zutaten:
-                        <br> 3 EL Butter, 2 Eier, 200 g Mehl, ½ TL Salz, ½ TL Backpulver, ½ TL Vanillepulver, 3 EL Zucker,
-                        350 ml Buttermilch, oel, 200 g Blaubeeren
+                        <h4> Zutaten:</h4>
+                        3 EL Butter, 2 Eier, 200 g Mehl, ½ TL Salz, ½ TL Backpulver, ½ TL Vanillepulver, 3 EL Zucker,
+                        350 ml Buttermilch, öl, 200 g Blaubeeren
                         <br>
-                        <br> Vorbereitung:
-                        <br> Die Butter zerlassen. Die Eier leicht schaumig ruehren.
-                        <br> Mehl, Salz, Backpulver, Vanillepulver und Zucker in eine zweite Schuessel geben und Butter Eier
+                        <h4> Vorbereitung:</h4>
+                        Die Butter zerlassen. Die Eier leicht schaumig rühren.
+                        <br> Mehl, Salz, Backpulver, Vanillepulver und Zucker in eine zweite Schüssel geben und Butter Eier
                         und Buttermilch in die Mitte giessen.
                         <br> Alle Zutaten gut vermengen.
-                        <br> Eine Pfanne mit oel ausstreichen und jeweils ein viertel des Teigs einfuellen.
+                        <br> Eine Pfanne mit öl ausstreichen und jeweils ein viertel des Teigs einfüllen.
                         <br> Kurz vor dem Wenden je 50 g Blaubeeren auf den Pfannkuchen geben, danach die andere Seite goldbraun
                         ausbacken.
                     </div>
@@ -235,8 +240,8 @@
         </div>
         <!-- #main -->
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jqüry.min.js"></script>
+    <script>window.jQüry || document.write('<script src="../js/vendor/jqüry-1.11.2.min.js"><\/script>')</script>
     <script src="../js/main.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

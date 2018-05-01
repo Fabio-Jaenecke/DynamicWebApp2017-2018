@@ -60,8 +60,10 @@
     <div class="main-container">
         <div class="main wrapper clearfix">
             <article>
-                <h2>Häufige Fragen und Antworten</h2>
-                <header>
+            	<header>
+               		<h2>Häufige Fragen und Antworten</h2>
+                </header>
+                <section>
                     <h3>
                         <%@ page import ="faq.*" %>
                         <%
@@ -89,7 +91,7 @@
                             </div>
                         </div>
                     </a>
-                </header>
+                </section>
                 <section>
                     <h3>
                         <% out.println(faq.getQuestionOrAnswer(2).getQuestion()); %>

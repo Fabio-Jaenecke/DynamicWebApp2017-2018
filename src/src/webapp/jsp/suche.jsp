@@ -66,8 +66,8 @@
 						<div>
 							
 							<h3>Suche nach Lebensmitteln</h3>
-							<input type="text" name="sucheintrag" value="" />
-							<input class="link" type="submit" value="Suche" />
+							<input class="texfield" type="text" name="sucheintrag" value="" placeholder='Suche nach...' />
+							<input class="link nextToTextfield" type="submit" value="Suche" />
 							<%@ page import ="suche.*" %>
 							<%  String lebensmittelname = "";
 								if (request.getParameter("sucheintrag") == null) {
@@ -80,7 +80,7 @@
 								
 							//Print the Table if something is found:
 								if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
-									out.println("<table class='table_lebensmittelkategorie' style='margin-top: 10px';>");
+									out.println("<table class='table_lebensmittelkategorie' style='margin-top: 20px';>");
 									out.println("<tr>");
 									out.println("<th>Lebensmittel</th>");
 									out.println("<th>Karenzphase</th>");
@@ -111,7 +111,7 @@
 				</section>
 				<section style="position: fixed; top: 22em;">
 					<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
-						<h3>Suche nach Kategorien</h3>
+						<h3>Suche in Kategorien</h3>
 						<%@ page import="mahlzeitassistent.*" %>
 						<%@ page import="datenbank.container.*" %>
 							<div class="select">
