@@ -63,7 +63,7 @@ your browser</a> to improve your experience.</p>
 		<div class="main wrapper clearfix">
 			<section>
 				<form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/zweitesLKategorie.jsp">
-					<h3>Suche nach Kategorien</h3>
+					<h3>Suche in Kategorien</h3>
 					<%@ page import="mahlzeitassistent.*" %>
 					<%@ page import="datenbank.container.*" %>
 					<% //Exception-Block 1: Auswahlparameter

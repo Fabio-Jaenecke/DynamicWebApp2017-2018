@@ -59,8 +59,8 @@
 	<div class="main-container">
 	 	<div class="main wrapper clearfix">
 			<form method="get" action="${pageContext.request.contextPath}/suchfilter/">
-				<input id="suche" type="text" name="keyword" value="">
-				<input class="link" type="submit" value="Suche" />
+				<input class="texfield" id="suche" type="text" name="keyword" value="" placeholder='Suche nach...'>
+				<input class="link nextToTextfield" type="submit" value="Suche" />
 				<p></p>
 				<%@ page import="suchfilter.*"%>
 				<%@ page import="controller.servlets.*"%>

@@ -32,11 +32,11 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/zugriffsskala.js"></script>
     <style>
+    /* Specific for section 'stoebern sie weiter' */
         ul {
             display: inline;
             list-style-type: none;
             position: relative;
-
         }
 
         li {
@@ -44,18 +44,7 @@
             float: left;
             margin-left: 2px;
             margin-right: 2px;
-        }
-
-        .sortieren {
-            cursor: pointer;
-            border: none;
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 10px;
-            float: right;
+            padding-top: 10px;
         }
     </style>
 </head>
@@ -158,14 +147,13 @@
                 </footer>
             </article>
             <aside>
-                <section>
+                <section class="zugriffsskala">
                     <a href="${pageContext.request.contextPath}/zugriffsskala/">
                         <h3>Häufige Zugriffe</h3>
                         <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
                             <div>
                                 <%@ page import="container.*"%>
                                 <%@ page import="datenbank.container.*"%>
-                                <%@ page import="java.util.ArrayList" %>
                                 <%  ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
                                     tabelle.searchForString();
                                 %>
@@ -181,8 +169,6 @@
                                     <tbody class='meineTabelle'>
                                         <%
                                             for(ZugriffsManager zugriff : tabelle.getTabelle()) {
-                                                // System.out.println(zugriff); 
-
                                                 out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
                                                 out.println("<td>");
                                                 out.println(zugriff.getPlatzierung()); 
