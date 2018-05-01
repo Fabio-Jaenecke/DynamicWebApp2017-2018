@@ -134,7 +134,7 @@ your browser</a> to improve your experience.</p>
 					%>
 						<p></p>
 				</form>
-				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 30em;">
+				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 32em;">
 					<input type='submit' class="link" name="Bestaetigen" value="Bestätigen">
 				</form>
 			</section>

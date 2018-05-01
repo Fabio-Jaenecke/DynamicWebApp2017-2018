@@ -59,35 +59,34 @@
 	<div class="main-container">
 	 	<div class="main wrapper clearfix">
 			<form method="get" action="${pageContext.request.contextPath}/suchfilter/">
-				<div class="main wrapper clearfix">
-					<input id="suche" type="text" name="keyword" value="">
-					<input class="link" type="submit" value="Suche" />
-					<%@ page import="suchfilter.*"%>
-					<%@ page import="controller.servlets.*"%>
-					<%	if (request.getParameter("keyword") == null) {
-							
+				<input id="suche" type="text" name="keyword" value="">
+				<input class="link" type="submit" value="Suche" />
+				<p></p>
+				<%@ page import="suchfilter.*"%>
+				<%@ page import="controller.servlets.*"%>
+				<%	if (request.getParameter("keyword") == null) {
+						
+					} else {
+						Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
+						suche.search();
+						if (suche.getSearcher().getSearchResults().isEmpty()) {
+							out.println("Leider keine Suchergebnisse");
 						} else {
-							Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
-							suche.search();
-							if (suche.getSearcher().getSearchResults().isEmpty()) {
-								out.println("Leider keine Suchergebnisse");
-							} else {
-								for (Searchresult result : suche.getSearcher().getSearchResults()) {
-									result.prepareResult();
-									for (ResultPreview preview : result.getPreviews()) {
-										String url = "<a href=\"" + SuchfilterServlet.getContextPath() + "/" + preview.getUrl() + "/\">";
-										out.println(url);
-										out.println(preview.getUrl());
-										out.println("</a>");
-										out.println("<p>");
-										out.println(preview.getMetaData());
-										out.println("</p>");
-									}
+							for (Searchresult result : suche.getSearcher().getSearchResults()) {
+								result.prepareResult();
+								for (ResultPreview preview : result.getPreviews()) {
+									String url = "<a href=\"" + SuchfilterServlet.getContextPath() + "/" + preview.getUrl() + "/\">";
+									out.println(url);
+									out.println(preview.getUrl());
+									out.println("</a>");
+									out.println("<p>");
+									out.println(preview.getMetaData());
+									out.println("</p>");
 								}
 							}
 						}
-					%>
-				</div>
+					}
+				%>
 			</form>
 		<!-- #main -->
 		</div>
