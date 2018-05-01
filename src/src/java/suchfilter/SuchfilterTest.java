@@ -20,7 +20,7 @@ public class SuchfilterTest {
   
   /*
    * creates suchfilter with keyword. as this is only a setup, we set the keyword as "Histarantia" which is the title of every html
-   * page.
+   * page
    */
   @Before
   public void setUp() throws Exception {
