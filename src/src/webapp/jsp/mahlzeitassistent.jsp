@@ -40,7 +40,7 @@ your browser</a> to improve your experience.</p>
 			<div class="flex-grid-thirds">
 				<div class="col menugrid">
 					<span onclick="openNav()">&#9776;
-						<span class="menutext">&nbsp;Menu</span>
+					<span class="menutext">&nbsp;Menu</span>
 				</div>
 				<div class="col titlegrid">Mahlzeitassistent</div>
 				<div class="col suchgrid">
@@ -196,7 +196,7 @@ your browser</a> to improve your experience.</p>
 						</div>
 					</section>
 					<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-						<input type='submit' name="kategorienZuruecksetzen" value="Zurücksetzen">
+						<input type='submit' class='link' name="kategorienZuruecksetzen" value="Zurücksetzen">
 					</form>
 				</div>
 				<div class='naehrstoffe'>
@@ -327,7 +327,7 @@ your browser</a> to improve your experience.</p>
 						</div>
 					</section>
 					<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-						<input type='submit' name="naehrstoffeZuruecksetzen" value="Zurücksetzen">
+						<input type='submit' class="link" name="naehrstoffeZuruecksetzen" value="Zurücksetzen">
 					</form>
 				</div>
 				<footer>

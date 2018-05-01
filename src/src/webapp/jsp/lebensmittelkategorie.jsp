@@ -76,25 +76,25 @@ your browser</a> to improve your experience.</p>
 									<th style="min-width: 180px">Lebensmittel
 										<span class="sortierer">
 											<label>
-												<input type="submit" name="lebensmittelnameabsteigend" value="desc">▼</label>
+												<input type="submit" class="sorting" name="lebensmittelnameabsteigend" value="desc">▼</label>
 											<label>
-												<input type="submit" name="lebensmittelnameaufsteigend" value="asc">▲</label>
+												<input type="submit" class="sorting" name="lebensmittelnameaufsteigend" value="asc">▲</label>
 										</span>
 									</th>
 									<th style="min-width: 180px">Karenzphase
 										<span class="sortierer">
 											<label>
-												<input type="submit" name="karenzphaseabsteigend" value="desc">▼</label>
+												<input type="submit" class="sorting" name="karenzphaseabsteigend" value="desc">▼</label>
 											<label>
-												<input type="submit" name="karenzphaseaufsteigend" value="asc">▲</label>
+												<input type="submit" class="sorting" name="karenzphaseaufsteigend" value="asc">▲</label>
 										</span>
 									</th>
 									<th style="min-width: 180px">Dauerernährung
 										<span class="sortierer">
 											<label>
-												<input type="submit" name="dauerernaehrungabsteigend" value="desc">▼</label>
+												<input type="submit" class="sorting" name="dauerernaehrungabsteigend" value="desc">▼</label>
 											<label>
-												<input type="submit" name="dauerernaehrungaufsteigend" value="asc">▲</label>
+												<input type="submit" class="sorting" name="dauerernaehrungaufsteigend" value="asc">▲</label>
 										</span>
 									</th>
 								</tr>

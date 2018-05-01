@@ -138,8 +138,8 @@ your browser</a> to improve your experience.</p>
 					%>
 					<p></p>
 				</form>
-				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-					<input type='submit' name="Bestaetigen" value="Bestätigen">
+				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 26em;">
+					<input type='submit' class="link" name="Bestaetigen" value="Bestätigen">
 				</form>
 			</section>
 		</div>

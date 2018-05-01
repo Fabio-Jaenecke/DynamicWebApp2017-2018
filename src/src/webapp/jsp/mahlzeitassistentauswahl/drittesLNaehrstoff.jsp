@@ -38,7 +38,7 @@ your browser</a> to improve your experience.</p>
 			<div class="flex-grid-thirds">
 				<div class="col menugrid">
 					<span onclick="openNav()">&#9776;
-						<span class="menutext">&nbsp;Menu</span>
+					<span class="menutext">&nbsp;Menu</span>
 				</div>
 				<div class="col titlegrid">Mahlzeitassistent</div>
 				<div class="col suchgrid">
@@ -63,7 +63,7 @@ your browser</a> to improve your experience.</p>
 		<div class="main wrapper clearfix">
 			<section>
 				<form method="get" action="${pageContext.request.contextPath}/jsp/mahlzeitassistentauswahl/drittesLNaehrstoff.jsp">
-					<h3>Suche nach Kategorien</h3>
+					<h3>Suche in Nährstoffen</h3>
 					<%@ page import="mahlzeitassistent.*" %>
 					<%@ page import="datenbank.container.*" %>
 					<% //Exception-Block 1: Auswahlparameter
@@ -134,8 +134,8 @@ your browser</a> to improve your experience.</p>
 					%>
 						<p></p>
 				</form>
-				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/">
-					<input type='submit' name="Bestaetigen" value="Bestätigen">
+				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 30em;">
+					<input type='submit' class="link" name="Bestaetigen" value="Bestätigen">
 				</form>
 			</section>
 		</div>

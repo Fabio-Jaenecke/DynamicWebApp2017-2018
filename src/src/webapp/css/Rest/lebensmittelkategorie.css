@@ -54,7 +54,7 @@
 	background-color:#9FC5F8;
 }
 
-input[type=submit] {
+input[type=submit].sorting {
 	display: none;
 }
 
