@@ -1,13 +1,13 @@
 .resp-sharing-button--faq {
 	background-color: #87b4dd;
-	height: 20px;
-	width: 96%;
-	line-height: 20px;
+	height: 30px;
+	width: 60px;
+	line-height: 30px;
 	text-align: center;
 }
 
 .resp-sharing-button--faq:hover {
-	background-color: #6FA8DC;
+	background-color: #6FA8DC
 }
 
 .resp-sharing-button--faq {

@@ -82,8 +82,8 @@
 						biogenen Aminen, Histidin, anderen Stoffe die die DAO blockieren können oder den Reifegrad. Im Folgenden haben wir
 						einige dieser Faktoren für dich erklärt, sowie eine Tabelle mit Histaminwerten erstellt, die auch alle anderen Faktoren
 						bestmöglich berücksichtigt. Springe sofort zu:
-						<a href="${pageContext.request.contextPath}/lebensmittel/">Tabelle mit Lebensmitteln</a>
-						<a href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche von Lebensmitteln</a>
+						<a style="color: black" href="${pageContext.request.contextPath}/lebensmittel/">Tabelle mit Lebensmitteln</a>
+						<a style="color: black" href="${pageContext.request.contextPath}/lebensmittelsuche/">Suche von Lebensmitteln</a>
 
 						<h3>Histamingehalt: Grundlagen</h3>
 						In diesem Artikel wollen wir dir einige Kategorien von Nahrungs- und Lebensmitteln vorstellen, die histaminarm, histaminreich
