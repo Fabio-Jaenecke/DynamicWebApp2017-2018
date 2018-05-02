@@ -1,8 +1,9 @@
 package datenbank.connector;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,40 +11,60 @@ import org.junit.Test;
  * Unit-Test zum Testen der Verbindungsdetails zur Datenbank.
  */
 public class DbConnectorTest {
-
-	private DbConnectorStub conn = new DbConnectorStub();
-	
-	/**
-	 * Wir initialisieren nur eine Verbindung, ohne Dinge im Setup. 
-	 */
-	@Before
-	public void setUp() {
-		
-	}
-	
-	// Teste die Datenbankverbindung.
-	@Test
-	public void testConnection() {
-		assertTrue(conn.establishH2DBConnection());
-	}
-
-	// Teste ob die URL korrekt ist. 
-	@Test
-	public void url() {
-		assertEquals(conn.getDB_Connection(), "jdbc:h2:~/histarantia");
-	}
-	
-	// Teste ob der richtige Driver gebraucht wird.
-	@Test
-	public void driver() {
-		assertEquals(conn.getDB_Driver(), "org.h2.Driver");
-	}
-	
-	// Teste ob der Benutzername und das Passwort korrekt sind. 
-	@Test
-	public void userAndPassword() {
-		assertEquals(conn.getDB_User(), "user");
-		assertEquals(conn.getDB_Password(), "");
-	}
+  
+  private DbConnector conn;
+  
+  /**
+   * Wir initialisieren nur eine Verbindung, ohne Dinge im Setup.
+   */
+  @Before
+  public void setUp() {
+    conn = new DbConnector();
+  }
+  
+  /*
+   * make connection. assert that connection is not null and has been registred by variable connInit
+   */
+  @Test
+  public void testConnection() {
+    conn.establishH2DBConnection();
+    assertNotNull(conn.getConn());
+    assertEquals(true, conn.isConnInit());
+  }
+  
+  /*
+   * assert that variable connInit is registred to true
+   */
+  @Test(expected = AssertionError.class)
+  public void testConnInit() {
+    assertEquals(false, conn.isConnInit());
+    
+  }
+  
+  /*
+   * close connection, assert it has been registred by variable connInit
+   */
+  @Test
+  public void testCloseConnection() {
+    conn.closeConnection();
+    assertEquals(false, conn.isConnInit());
+  }
+  
+  /*
+   * reopen connection. assert that connection is not null and has been registred by variable connInit
+   */
+  @Test
+  public void testReopenConnection() {
+    conn.establishH2DBConnection();
+    assertNotNull(conn.getConn());
+    assertEquals(true, conn.isConnInit());
+  }
+  
+  /*
+   * close connection after tests have been done
+   */
+  @After
+  public void tearDown() {
+    conn.closeConnection();
+  }
 }
-
