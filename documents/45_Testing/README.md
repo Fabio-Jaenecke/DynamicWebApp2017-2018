@@ -3,7 +3,7 @@
 ## Selenium Tests
 Die Test-Suite ist in der Datei ```Histarantia - Testsuite.side``` enhalten.
 
-###Anleitung:
+### Anleitung:
 
 1. Laden Sie die Datei ```Histarantia - Testsuite.side``` herunter auf Ihren Desktop.
 2. Installieren Sie das Plugin "Selenium IDE Web Driver" für Google Chrome, Mozilla Firefox oder MS Edge:
