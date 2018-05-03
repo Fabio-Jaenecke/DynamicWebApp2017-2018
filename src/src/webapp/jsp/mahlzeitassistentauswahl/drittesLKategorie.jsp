@@ -1,3 +1,4 @@
+<%@page import="container.KarenzPhasen"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<!--[if lt IE 7]>
@@ -66,6 +67,7 @@ your browser</a> to improve your experience.</p>
 					<h3>Suche in Kategorien</h3>
 					<%@ page import="mahlzeitassistent.*" %>
 					<%@ page import="datenbank.container.*" %>
+					<%@ page import="container.*" %>
 					<% //Exception-Block 1: Auswahlparameter
 					String auswahl = null;
 					if (request.getParameter("auswahle")==null){
@@ -106,11 +108,12 @@ your browser</a> to improve your experience.</p>
 							</tr>
 						</thead>
 						<tbody>
-							<%//Give me a list of options to choose from
+							<%//Give me a list of options to choose from - 
+							// Only KarenzPhasen or DauerErnaehrung GUT or MITTEL will be displayed as those are considered acceptable for eating.
 							for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
 								String karenzphase = lebensmitteleintrag.getKarenzphase();
 								String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
-								if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
+								if(karenzphase.equals(KarenzPhasen.GUT.toString()) || karenzphase.equals(KarenzPhasen.MITTEL.toString()) || dauerernaehrung==DauerErnaehrung.GUT.toString() || dauerernaehrung.equals(DauerErnaehrung.MITTEL.toString())){
 									String lebensmittelname = lebensmitteleintrag.getLname();
 							%>
 							<tr>
