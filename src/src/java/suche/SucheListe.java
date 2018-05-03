@@ -52,4 +52,16 @@ public class SucheListe extends SucheMultiTupel {
     return selectSQL;
   }
   
+  /**
+   * Selektiere Lebensmittel und sortiere eine der Spalten auf- oder absteigend.
+   * 
+   * @param eine Spalte, die sortiert werden soll und das praedikat order, welches DESC oder ASC annehmen kann.
+   * @return die SQL query
+   */
+  public String zugriffsSkala() {
+    String selectSQL = "Select * FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
+        +" ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex;";
+    return selectSQL;
+  }
+  
 }
