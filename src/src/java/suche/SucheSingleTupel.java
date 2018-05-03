@@ -12,14 +12,17 @@ public abstract class SucheSingleTupel implements SucheInterface {
   DbQuery query = new DbQuery();
   private static final Logger LOGGER = Logger.getLogger(SucheSingleTupel.class.getName());
   
+  @Override
   public void fuehreDatenAbfrageAus(String tupelName) {
     searchForString(tupelName);
   }
   
+  @Override
   public void erhalteDaten() {
     getLebensmittel();
   }
   
+  @Override
   public void loescheDaten() {
     // Daten werden auf Lebenszeit der Variable automatisch geloescht
   }
@@ -33,9 +36,9 @@ public abstract class SucheSingleTupel implements SucheInterface {
     try (ResultSet result = query.getResult(selectSQL)) {
       if (result.next()) {
         lebensmittel = new LebensmittelDaten(result);
-      } else {
-        lebensmittel = null;
-        LOGGER.log(Level.WARNING, "Selected lebensmittel does not exist in database ");
+      }
+      if (lebensmittel.isNil()) {
+          LOGGER.log(Level.WARNING, "Selected lebensmittel does not exist in database ");
       }
     } catch (SQLException e) {
       LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
@@ -48,6 +51,9 @@ public abstract class SucheSingleTupel implements SucheInterface {
    * @return lebensmittel
    */
   public LebensmittelDaten getLebensmittel() {
-    return lebensmittel;
-  }
+    if (lebensmittel.isNil()) {
+      LOGGER.log(Level.WARNING, "Selected lebensmittel does not exist in database ");
+    }
+      return lebensmittel;
+    }
 }
