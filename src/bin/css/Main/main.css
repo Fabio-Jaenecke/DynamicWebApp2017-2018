@@ -26,18 +26,6 @@ hr {
 
 a {
 	text-decoration: none;
-	-webkit-transition: all 200ms ease-in;
-	-ms-transition: all 200ms ease-in;
-	-moz-transition: all 200ms ease-in;
-	transition: all 200ms ease-in;
-}
-
-a:hover{
-	color: black;
-	-webkit-transition: all 200ms ease-in;
-	-ms-transition: all 200ms ease-in;
-	-moz-transition: all 200ms ease-in;
-	transition: all 200ms ease-in;
 }
 
 audio, canvas, iframe, img, svg, video {
@@ -293,7 +281,7 @@ footer h4 {
 
 .link {
 	display: inline-block;
-	padding: 0 10px;
+	padding: 0px 10px;
 	text-align: center;
 	font-weight: bold;
 	font-size: medium;
@@ -305,6 +293,14 @@ footer h4 {
 	-ms-transition: all 200ms ease-in;
 	-moz-transition: all 200ms ease-in;
 	transition: all 200ms ease-in;
+}
+
+input.link {
+	padding: 7.25px 10px;
+}
+
+a.link {
+	padding: 4px 10px;
 }
 
 .nextToTextfield {
@@ -468,7 +464,7 @@ input.texfield {
 	box-shadow: none;
 	border: 2px solid #6FA8DC;
 	background:  #fff;
-	padding: 0 0 0 .5em;
+	padding: 10px 0 10px .5em;
 	float: left;
 }
 
