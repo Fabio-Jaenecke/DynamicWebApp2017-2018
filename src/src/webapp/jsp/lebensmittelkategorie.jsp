@@ -102,48 +102,77 @@ your browser</a> to improve your experience.</p>
 							<%@ page import ="suche.*" %>
 							<%@ page import="datenbank.container.*" %>
 							<%@ page import="java.util.ArrayList" %>
+							<%@ page import="container.*" %>
+							<%@ page import="java.util.logging.Level" %>
+							<%@ page import="java.util.logging.Logger"  %>
 							<%//CATCH EXCEPTIONS BLOCK1: lebensmittelnamenknoepfe:		
-								String order = "asc"; // Die Standardsortierung
+								String order = Sorting.ASC.toString(); // Die Standardsortierung
+								Logger LOGGER = Logger.getLogger(LebensmittelDaten.class.getName()); 
+								String uri = request.getRequestURI();
 								String auswahl = "LName"; // Die Standardspalte
 								if(request.getParameter("lebensmittelnameabsteigend")==null){
 									//do nothing
 								}else{
-									order = request.getParameter("lebensmittelnameabsteigend");
-									auswahl = "LName";
+								  	if (Sorting.DESC.toString().equals((String)request.getParameter("lebensmittelnameabsteigend"))){
+										order = request.getParameter("lebensmittelnameabsteigend");
+										auswahl = "LName";
+								  	}else{
+								  	  	LOGGER.log(Level.SEVERE, "Die Sortierung in " + uri.substring(uri.lastIndexOf("/")+1) + " bei der Auswahl LName mit Parameter " + request.getParameter("lebensmittelnameabsteigend") + " funktionert nicht. ");
+							  		}
 								}
 								if(request.getParameter("lebensmittelnameaufsteigend")==null){
 									//do nothing
 								}else{
-									order = request.getParameter("lebensmittelnameaufsteigend");
-									auswahl = "LName";
+								  	if (Sorting.ASC.toString().equals((String)request.getParameter("lebensmittelnameaufsteigend"))){
+										order = request.getParameter("lebensmittelnameaufsteigend");
+								  		auswahl = "LName";
+									}else{
+									  	LOGGER.log(Level.SEVERE, "Die Sortierung in " + uri.substring(uri.lastIndexOf("/")+1) + " bei der Auswahl LName mit Parameter " + request.getParameter("lebensmittelnameaufsteigend") + " funktionert nicht. ");
+								  	}
 								}
 							
 							//CATCH EXCEPTIONS BLOCK2: Karenzphaseknoepfe:	
 								if(request.getParameter("karenzphaseabsteigend")==null){
 									//do nothing
 								}else{
-									order = request.getParameter("karenzphaseabsteigend");
-									auswahl = "Karenzphase";
+								  if (Sorting.DESC.toString().equals((String)request.getParameter("karenzphaseabsteigend"))){
+										order = request.getParameter("karenzphaseabsteigend");
+									  	auswahl = "Karenzphase";
+									}else{
+									  	LOGGER.log(Level.SEVERE, "Die Sortierung in " + uri.substring(uri.lastIndexOf("/")+1) + " bei der Auswahl Karenzphase mit Parameter " + request.getParameter("karenzphaseabsteigend") + " funktionert nicht. ");
+								  	}
 								}
 								if(request.getParameter("karenzphaseaufsteigend")==null){
 									//do nothing
 								}else{
-									order = request.getParameter("karenzphaseaufsteigend");
-									auswahl = "Karenzphase";
+								  if (Sorting.ASC.toString().equals((String)request.getParameter("karenzphaseaufsteigend"))){
+										order = request.getParameter("karenzphaseaufsteigend");
+									  	auswahl = "Karenzphase";
+									}else{
+									  	LOGGER.log(Level.SEVERE, "Die Sortierung in " + uri.substring(uri.lastIndexOf("/")+1) + " bei der Auswahl Karenzphase mit Parameter " + request.getParameter("karenzphaseaufsteigend") + " funktionert nicht. ");
+								  	}
 								}
 								
 							//CATCH EXCEPTIONS BLOCK3: Dauerernaehrungknoepfe:
 								if(request.getParameter("dauerernaehrungabsteigend")==null){
 									//do nothing
 								}else{
-									order = request.getParameter("dauerernaehrungabsteigend");
-									auswahl = "Dauerernaehrung";
+									if (Sorting.DESC.toString().equals(request.getParameter("dauerernaehrungabsteigend"))){
+										order = request.getParameter("dauerernaehrungabsteigend");
+										auswahl = "Dauerernaehrung";
+									}else{
+									  	LOGGER.log(Level.SEVERE, "Die Sortierung in " + uri.substring(uri.lastIndexOf("/")+1) + " bei der Auswahl Dauerernaehrung mit Parameter " + request.getParameter("dauerernaehrungabsteigend") + " funktionert nicht. ");
+								  	}
 								}
 								if(request.getParameter("dauerernaehrungaufsteigend")==null){
 									//do nothing
 								}else{
-									order = request.getParameter("dauerernaehrungaufsteigend");
-									auswahl = "Dauerernaehrung";
+									if (Sorting.ASC.toString().equals(request.getParameter("dauerernaehrungaufsteigend"))){
+										order = request.getParameter("dauerernaehrungaufsteigend");
+										auswahl = "Dauerernaehrung";
+									}else{
+									  	LOGGER.log(Level.SEVERE, "Die Sortierung in " + uri.substring(uri.lastIndexOf("/")+1) + " bei der Auswahl Dauerernaehrung mit Parameter " + request.getParameter("dauerernaehrungaufsteigend") + " funktionert nicht. ");
+								  	}
 								}
 								
 							//Die Tabelle
@@ -169,6 +198,7 @@ your browser</a> to improve your experience.</p>
 									}
 								// for the next category call we have to clear the arraylist of lebensmittel
 								sortierauftrag.clearLebensmittel();
+								daten.clear();
 								%>
 							</tbody>
 						</table>
