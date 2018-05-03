@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--[if lt IE 7]>      
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
@@ -60,16 +61,14 @@
     <div class="main-container">
         <div class="main wrapper clearfix">
             <article>
-                <form>
-                    <h2>SORRY! THIS PAGE WAS NOT FOUND!
-                        <input class="link" type="button" value="Zurück" onclick="history.back()"> 
-                    </h2>
-                </form>
-                <img src="${pageContext.request.contextPath}/imgs/404.png" alt="404PageNotFound" height="50%" width="50%">
+                  <h2>Sorry, but this page was not found!
+                      <input class="link" type="button" value="Zurück" onclick="history.back()"> 
+                  </h2>
+                <img style='float: left;' src="${pageContext.request.contextPath}/imgs/404.png" alt="404PageNotFound" height="50%" width="50%">
                 <p>
                     <br>
                 </p>
-                <a class="link mehr" href="${pageContext.request.contextPath}/home/">Gehe zu Histarantia Home</a>
+                <a style='float: left;' class="link mehr" href="${pageContext.request.contextPath}/home/">Gehe zu Histarantia Home</a>
             </article>
         </div>
         <!-- #main -->

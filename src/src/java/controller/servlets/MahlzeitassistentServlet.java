@@ -48,6 +48,7 @@ public class MahlzeitassistentServlet extends HttpServlet {
         }if (auswahlkontext==null){
         	getLeerenAssistent(request, response);
         	return;
+        //This block handles the reset of the first cirle:
         }if (kategorienZuruecksetzen==null){
         	if (naehrstoffeZuruecksetzen==null) {
         		getLeerenAssistent(request, response);
@@ -56,7 +57,8 @@ public class MahlzeitassistentServlet extends HttpServlet {
         	if (naehrstoffeZuruecksetzen.equals("Zurücksetzen")) {
         		setzeNaehrStoffeZurueck(request, response);
         		return;
-        	}    		
+        	}   
+        //This block handles the reset of the second cirle:
         }if (naehrstoffeZuruecksetzen==null){
         	if (kategorienZuruecksetzen==null){
         		getLeerenAssistent(request, response);
@@ -65,7 +67,14 @@ public class MahlzeitassistentServlet extends HttpServlet {
         	if (kategorienZuruecksetzen.equals("Zurücksetzen")) {
         		setzeKategorienZurueck(request, response);
         		return;
-        	}      
+        	} 
+        	//Incase I already choose something inside mahlzeitassistent
+        	if (auswahl!=null){
+        	  String nextJSP = "/jsp/mahlzeitassistent.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+            dispatcher.forward(request, response);
+            return;
+        	}
         }else{
                String nextJSP = "/jsp/mahlzeitassistent.jsp";
                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
@@ -74,6 +83,11 @@ public class MahlzeitassistentServlet extends HttpServlet {
         }
       } catch (Exception e) {
           LOGGER.log(Level.SEVERE, null, e);
+          String nextJSP = "/jsp/general-error.jsp";
+          RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+          dispatcher.forward(request, response);
+          return;
+          
       }
 	}
     	
