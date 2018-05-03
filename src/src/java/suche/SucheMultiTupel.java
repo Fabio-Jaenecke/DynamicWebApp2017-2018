@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import java.util.Collections;
+import java.util.List;
 
 import datenbank.connector.DbConnector;
 import datenbank.container.LebensmittelDaten;
@@ -16,14 +19,17 @@ public abstract class SucheMultiTupel implements SucheInterface {
   DbConnector conn = new DbConnector();
   private static final Logger LOGGER = Logger.getLogger(SucheMultiTupel.class.getName());
   
+  @Override
   public void fuehreDatenAbfrageAus(String selectSQL) {
     searchForString(selectSQL);
   }
   
+  @Override
   public void erhalteDaten() {
     getLebensmittel();
   }
   
+  @Override
   public void loescheDaten() {
     clearLebensmittel();
   }
@@ -39,7 +45,7 @@ public abstract class SucheMultiTupel implements SucheInterface {
         lebensmittel.add(new LebensmittelDaten(result));
       }
     } catch (SQLException e) {
-      LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
+        LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
     }
   }
   
@@ -56,6 +62,21 @@ public abstract class SucheMultiTupel implements SucheInterface {
    * @return lebensmittel
    */
   public ArrayList<LebensmittelDaten> getLebensmittel() {
+    try {
+      checkLebensmittelListNull();
+    } catch (Exception e) {
+        LOGGER.log(Level.SEVERE, "The List was not found " + e);
+    }
     return lebensmittel;
+  }
+  
+  /**
+   * @return an empty list or an accumulated List
+   */
+  public List<String> checkLebensmittelListNull() {
+    if (lebensmittel.isEmpty()) {
+      return Collections.emptyList();
+    }
+    return lebensmittel.stream().map(LebensmittelDaten::toString).collect(Collectors.toList());
   }
 }
