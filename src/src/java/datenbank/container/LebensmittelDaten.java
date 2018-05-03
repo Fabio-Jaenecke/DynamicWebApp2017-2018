@@ -5,22 +5,15 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import container.LebensmittelManager;
 import datenbank.connector.DbConnector;
 
 /**
  * Stellt die Java-Klasse zur Entitaet lebensmittelDaten
  * in der Datenbank dar. 
  */
-public class LebensmittelDaten {
+public class LebensmittelDaten extends LebensmittelManager {
 	
-	/**
-	 * Attribute aus der Entitaet lebensmittelDaten.
-	 */
-	private int index;
-	private String lebensmittelname;
-	private String karenzphase;
-	private String dauerernaehrung;
-	private String kategorie;
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	/**
@@ -46,9 +39,9 @@ public class LebensmittelDaten {
 	public LebensmittelDaten(ResultSet rs) {
 		try {
 				this.index = rs.getInt("lindex"); 
-		        this.lebensmittelname = rs.getString("lname");        
-		        this.karenzphase = rs.getString("karenzphase");
-		        this.dauerernaehrung = rs.getString("dauerernaehrung");
+        this.lebensmittelname = rs.getString("lname");        
+        this.karenzphase = rs.getString("karenzphase");
+        this.dauerernaehrung = rs.getString("dauerernaehrung");
 		}
 		catch(SQLException e) {
 			LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
@@ -75,6 +68,7 @@ public class LebensmittelDaten {
 	 * Gib den Lebensmittelnamen.
 	 * @return lebensmittelname
 	 */
+	@Override
 	public String getLname() {
 		return lebensmittelname;
 	}
@@ -135,6 +129,7 @@ public class LebensmittelDaten {
 		this.kategorie = kategorie;
 	}
 
+
 	/**
 	 * Gibt die Datenfelder des Lebensmittels als String zurueck.
 	 * @override
@@ -143,4 +138,9 @@ public class LebensmittelDaten {
 		return getLindex() + String.format(" ", getLname(), " ", 
 				getKarenzphase(), " ", getDauerernaehrung(), " ", getKategorie());
 	}
+	
+	@Override
+  public boolean isNil() {
+     return true;
+  }
 }
