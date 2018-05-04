@@ -4,6 +4,10 @@
 package mahlzeitassistent;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import datenbank.container.LebensmittelDaten;
 import suche.SucheListe;
 
@@ -57,6 +61,16 @@ public class AssistentAuftrag {
    */
   public void clearAuftragsDaten() {
     auftragsDaten.clear();
+  }
+  
+  /**
+   * @return an empty list or an accumulated List
+   */
+  public List<String> checkLebensmittelListNull() {
+    if (auftragsDaten.isEmpty()) {
+      return Collections.emptyList();
+    }
+    return auftragsDaten.stream().map(LebensmittelDaten::getKategorie).collect(Collectors.toList());
   }
   
 }

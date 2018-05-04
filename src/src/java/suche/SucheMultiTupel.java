@@ -40,7 +40,7 @@ public abstract class SucheMultiTupel implements SucheInterface {
    * @param selectSQL eine SQL-Abfrage.
    */
   public void searchForString(String selectSQL) {
-    try (ResultSet result = query.getResult(selectSQL)) {
+    try (ResultSet result = query.getResult(selectSQL)) { 
       while (result.next()) {
         lebensmittel.add(new LebensmittelDaten(result));
       }
@@ -52,7 +52,7 @@ public abstract class SucheMultiTupel implements SucheInterface {
   /**
    * Leere die Lebensmittel.
    */
-  public void clearLebensmittel() {
+  public void clearLebensmittel() { 
     lebensmittel.clear();
   }
   
@@ -73,7 +73,7 @@ public abstract class SucheMultiTupel implements SucheInterface {
   /**
    * @return an empty list or an accumulated List
    */
-  public List<String> checkLebensmittelListNull() {
+  public List<String> checkLebensmittelListNull()  {
     if (lebensmittel.isEmpty()) {
       return Collections.emptyList();
     }
