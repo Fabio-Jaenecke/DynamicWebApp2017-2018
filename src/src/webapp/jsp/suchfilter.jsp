@@ -70,7 +70,7 @@
 						Suchfilter suche = new Suchfilter(request.getParameter("keyword"));
 						suche.search();
 						if (suche.getSearcher().getSearchResults().isEmpty()) {
-							out.println("Leider keine Suchergebnisse");
+							out.println("Leider keine Suchergebnisse"); 
 						} else {
 							for (Searchresult result : suche.getSearcher().getSearchResults()) {
 								result.prepareResult();

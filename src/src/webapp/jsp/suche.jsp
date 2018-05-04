@@ -79,7 +79,7 @@
 									suchauftrag.searchForString(abfrage);
 								
 							//Print the Table if something is found:
-								if (suchauftrag.getLebensmittel() != null && lebensmittelname != ""){
+								if (suchauftrag.getLebensmittel() != null && lebensmittelname != "" ){
 									out.println("<table class='table_lebensmittelkategorie' style='margin-top: 20px';>");
 									out.println("<tr>");
 									out.println("<th>Lebensmittel</th>");
@@ -101,7 +101,7 @@
 							//Else print a warning
 								}else {
 									out.println("<p><p>");
-									out.println("Ihre Suche ergab keine Treffer, versuchen Sie die Kategorienauswahl."); 
+									out.println("Ihre Suche ergab keine Treffer, versuchen Sie die Kategorienauswahl.");  
 									out.println("<p><p>");
 								}
 								}
