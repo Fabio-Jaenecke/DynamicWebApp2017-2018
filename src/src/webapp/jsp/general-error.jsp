@@ -81,7 +81,7 @@
 	            <tr>
 	                <td>
 	                    <a class="resp-sharing-button__link" href="mailto:trebomic@students.zhaw.ch"
-	                       target="livraand@students.zhaw.ch" aria-label="">
+	                       target="trebomic@students.zhaw.ch" aria-label="">
 	                        <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
 	                            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 	                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
