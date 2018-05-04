@@ -15,6 +15,7 @@ public abstract class LebensmittelManager {
   protected int azugriffe;
   protected int kindex;
   protected String kname;
+  protected String nName;
   
   /**
    * Gibt Lebensmitteldaten die Zuweisung 'Null' oder 'Nicht Null'

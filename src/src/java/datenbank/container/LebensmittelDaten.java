@@ -22,7 +22,7 @@ public class LebensmittelDaten extends LebensmittelManager {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public LebensmittelDaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie, int zindex, int platzierung, int azugriffe, int kindex, String kname) {
+	public LebensmittelDaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie, int zindex, int platzierung, int azugriffe, int kindex, String kname, String nname) {
 		this.index = index;
 		this.lebensmittelname = lebensmittelname;
 		this.karenzphase = karenzphase;
@@ -32,6 +32,7 @@ public class LebensmittelDaten extends LebensmittelManager {
     this.platzierung = platzierung;
     this.azugriffe = azugriffe;
     this.kindex = kindex;
+    this.nName = nname;
 	}
 		
 	/**
@@ -50,6 +51,7 @@ public class LebensmittelDaten extends LebensmittelManager {
         this.azugriffe = rs.getInt("azugriffe");
         this.kindex = rs.getInt("kindex");
         this.kname = rs.getString("kname");
+        this.nName = rs.getString("nname");
 		}
 		catch(SQLException e) {
 			LOGGER.log(Level.WARNING, "resultSet could not be resolved " + e);
@@ -219,6 +221,20 @@ public class LebensmittelDaten extends LebensmittelManager {
    */
   public void setKname(String kname) {
     this.kname = kname;
+  }
+  
+  /**
+   * @return the nName
+   */
+  public String getnName() {
+    return nName;
+  }
+
+  /**
+   * @param nName the nName to set
+   */
+  public void setnName(String nName) {
+    this.nName = nName;
   }
 
 	/**

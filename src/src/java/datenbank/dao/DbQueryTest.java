@@ -28,8 +28,7 @@ public class DbQueryTest {
   }
   
   /*
-   * test getting entry for table lebensmitteldaten. then we check if values for columns are correct TODO fix db connection error
-   * (also for other tests)
+   * Test für den Einstieg in die Tabelle Lebensmitteldaten. dann überprüfen wir, ob die Werte für die Spalten korrekt sind.
    */
   @Test
   public void testTableLebensmittledaten() {
@@ -47,4 +46,57 @@ public class DbQueryTest {
       LOGGER.log(Level.SEVERE, "resultSet could not be determined", e);
     }
   }
+  
+  /*
+   * tested Einstieg für TabelleLebensmitteldaten. dann prüfen wir, ob die Werte für die Spalten korrekt sind.
+   */
+  @Test
+  public void testTableZugriffsskala() throws SQLException {
+    String sql = "select * from zugriffsskala where zindex = 100";
+    try (ResultSet res = dbQuery.getResult(sql)) {
+      assertNotNull(res);
+      LebensmittelDaten zugriff = new LebensmittelDaten(res);
+      assertNotNull(zugriff);
+      assertEquals(100, zugriff.getZindex());
+      assertEquals(11, zugriff.getPlatzierung());
+      assertEquals(0, zugriff.getPlatzierung());
+    } catch (SQLException e) {
+      LOGGER.log(Level.SEVERE, "resultSet could not be determined", e);
+    }
+  }
+  
+  /*
+   * testet eintraege für Tabelle Lebensmitteldaten. dann prüfen wir, ob die Werte für die Spalten korrekt sind
+   */
+  @Test
+  public void testTablelebensmittelkategorie() {
+    String sql = "select * from lebensmittelkategorie where kindex = 1000";
+    try (ResultSet res = dbQuery.getResult(sql)) {
+      assertNotNull(res);
+      LebensmittelDaten kategorie = new LebensmittelDaten(res);
+      assertNotNull(kategorie);
+      assertEquals(1000, kategorie.getKindex());
+      assertEquals("Fleisch", kategorie.getKname());
+    } catch (SQLException e) {
+      LOGGER.log(Level.SEVERE, "resultSet could not be determined", e);
+    }
+  }
+  
+  
+  /**
+   *  Testet ob Narhstoffe nicht leer aber dafür korrekt sind.
+   */
+  @Test
+  public void testTableNaehrstoff() {
+    String sql = "select * from naehrstoff where nname like 'Proteine'";
+    try (ResultSet res = dbQuery.getResult(sql)) {
+      assertNotNull(res);
+      LebensmittelDaten naehrstoff = new LebensmittelDaten(res);
+      assertNotNull(naehrstoff);
+      assertEquals("Proteine", naehrstoff.getnName());
+    } catch (SQLException e) {
+      LOGGER.log(Level.SEVERE, "resultSet could not be determined", e);
+    }
+  }
+  
 }
