@@ -67,11 +67,11 @@ your browser</a> to improve your experience.</p>
 				<h2>Häufige Zugriffe</h2>
 				<form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
 					<div>
-						<%@ page import="container.*"%>
+						<%@ page import="suche.*"%>
 						<%@ page import="datenbank.container.*"%>
-						<%@ page import="java.util.ArrayList" %>
-						<%  ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
-							tabelle.searchForString();
+						<%  SucheListe auftrag = new SucheListe();
+							String abfrage = auftrag.zugriffsSkala();
+							auftrag.searchForString(abfrage);
 						%>
 						<table id='zugriffsskala' class='table_beliebte_lebensmittel' style='width:100%'>
 							<thead>
@@ -86,7 +86,7 @@ your browser</a> to improve your experience.</p>
 							</thead>
 							<tbody class='meineTabelle'>
 							<%
-								for(ZugriffsManager zugriff : tabelle.getTabelle()) {
+								for(LebensmittelDaten zugriff : auftrag.getLebensmittel()) {
 									out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
 									out.println("<td>");
 									out.println(zugriff.getPlatzierung()); 

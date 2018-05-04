@@ -152,11 +152,12 @@
                         <h3>Häufige Zugriffe</h3>
                         <form method="get" action="${pageContext.request.contextPath}/lebensmittelsuche/">
                             <div>
-                                <%@ page import="container.*"%>
-                                <%@ page import="datenbank.container.*"%>
-                                <%  ZugriffsskalaManager tabelle = new ZugriffsskalaManager();
-                                    tabelle.searchForString();
-                                %>
+                                <%@ page import="suche.*"%>
+								<%@ page import="datenbank.container.*"%>
+								<%  SucheListe auftrag = new SucheListe();
+									String abfrage = auftrag.zugriffsSkala();
+									auftrag.searchForString(abfrage);
+								%>
                                 <table id='zugriffsskala' class='table_beliebte_lebensmittel' style='width:100%'>
                                     <thead>
                                         <tr>
@@ -168,23 +169,23 @@
                                     </thead>
                                     <tbody class='meineTabelle'>
                                         <%
-                                            for(ZugriffsManager zugriff : tabelle.getTabelle()) {
-                                                out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
-                                                out.println("<td>");
-                                                out.println(zugriff.getPlatzierung()); 
-                                                out.println("</td>");
-                                                out.println("<td>");
-                                                out.println(zugriff.getLname());
-                                                out.println("</td>");
-                                                out.println("<td>");
-                                                out.println(zugriff.getKarenzphase());
-                                                out.println("</td>");
-                                                out.println("<td>");
-                                                out.println(zugriff.getDauerernaehrung());
-                                                out.println("</td>");
-                                                out.println("</tr>");
-                                            }
-                                        %>
+											for(LebensmittelDaten zugriff : auftrag.getLebensmittel()) {
+												out.println("<tr data-platzierung='"+zugriff.getPlatzierung()+"'>");
+												out.println("<td>");
+												out.println(zugriff.getPlatzierung()); 
+												out.println("</td>");
+												out.println("<td>");
+												out.println(zugriff.getLname());
+												out.println("</td>");
+												out.println("<td>");
+												out.println(zugriff.getKarenzphase());
+												out.println("</td>");
+												out.println("<td>");
+												out.println(zugriff.getDauerernaehrung());
+												out.println("</td>");
+												out.println("</tr>");
+											}
+										%>
                                     </tbody>
                                     <tfoot>
                                         <tr>

@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 /**
- * Class for filling up the questions and answers
+ * Klasse zum Ausfüllen der Fragen und Antworten
  * 
  * @author Marko Despotovic
  * @version 13.04.2018
  *
  */
 public class Faq {
-  // HashMap for all QnAs
+  // HashMap für alle QnAs
   private HashMap<Integer, QnA> qna;
   
   {

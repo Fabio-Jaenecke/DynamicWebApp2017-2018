@@ -8,10 +8,21 @@ package suche;
  */
 public interface SucheInterface {
   
-  void fuehreDatenAbfrageAus(String anweisung);
+  /**
+   * Legt fest, dass eine Abfrage erstellt und übergeben werden muss.
+   * 
+   * @param anweisung eine SQL Abfrage oder ein Tupelname
+   */
+  void fuehreDatenAbfrageAus(String anweisung); 
   
-  void erhalteDaten();
+  /**
+   * Legt fest, was mit den erhaltenen Daten passieren soll.
+   */
+  void erhalteDaten(); 
   
-  void loescheDaten();
+  /**
+   * Alle verwedeten Ressourssen müssen, wenn möglich, anschliessend gelöscht werden.
+   */
+  void loescheDaten(); 
   
 }

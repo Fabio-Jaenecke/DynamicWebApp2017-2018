@@ -6,8 +6,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 /*
- * represents search result for a certain keyword
- * result which is displayed on website is formatted in the variable previews
+ * repräsentiert das Suchergebnis für ein bestimmtes Keyword
+ * Das Ergebnis, das auf der Webseite angezeigt wird, ist in den variablen fromatiert
  */
 public class Searchresult {
   
@@ -21,7 +21,7 @@ public class Searchresult {
   }
   
   /*
-   * returns url of xmlSite and the tag containing the keyword for reasons of place at maximum two elements are returned
+   * Gibt url von xmlSite zurück und das Tag, das das Schlüsselwort enthält, wird aus Platzgründen bei maximal zwei Elementen zurückgegeben.
    */
   public void prepareResult() {
     for (int idx = 0; idx < 2 && idx < keyElements.size(); idx++) {
@@ -35,7 +35,7 @@ public class Searchresult {
   }
   
   /*
-   * converts html link to jsp link removes parent path and html-suffix
+   * konvertiert HTML-Link zu JSP-Link entfernt übergeordneten Pfad und HTML-Suffix
    */
   public String getUrl() {
     int firstIndex = xmlSite.baseUri().lastIndexOf("\\");

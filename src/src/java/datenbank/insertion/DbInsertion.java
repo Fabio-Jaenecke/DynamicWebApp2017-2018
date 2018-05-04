@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import datenbank.connector.DbConnector;
 
 /*
- * Class for filling the tables with content, derived from interface
+ * Klasse zum Füllen der Tabellen mit Inhalt, abgeleitet von der Schnittstelle
  */
 
 public class DbInsertion implements DbInsertionInterface {
@@ -18,7 +18,7 @@ public class DbInsertion implements DbInsertionInterface {
   private static final String INSERT = "INSERT INTO ";
   
   /*
-   * table names as enums
+   * Tabellennamen als enums
    */
   public enum tables {
     lebensmittelDaten, ZUGRIFFSSKALA, lebensmittelkategorie, NAEHRSTOFF, FAVORIT, KATZUGEHOERIGKEIT, ENTHAELT, NAEHRZUGEHOERIGKEIT
@@ -29,7 +29,7 @@ public class DbInsertion implements DbInsertionInterface {
   }
   
   /*
-   * insert into different tables
+   * Einfügen in verschiedene Tabellen
    */
   public void insertIntoTables() {
     insertIntoTablelebensmittelDaten();

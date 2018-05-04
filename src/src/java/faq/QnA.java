@@ -1,7 +1,7 @@
 package faq;
 
 /**
- * Class for questions and answers with all getters and setters
+ * Klasse für Fragen und Antworten mit allen Gettern und Setter
  * 
  * @author Marko Despotovic
  * @version 13.04.2018.

@@ -11,16 +11,8 @@ import datenbank.connector.DbConnector;
  * Stellt die Java-Klasse zur Entitaet lebensmittelDaten
  * in der Datenbank dar. 
  */
-public class LebensmittelDaten {
+public class LebensmittelDaten extends LebensmittelManager {
 	
-	/**
-	 * Attribute aus der Entitaet lebensmittelDaten.
-	 */
-	private int index;
-	private String lebensmittelname;
-	private String karenzphase;
-	private String dauerernaehrung;
-	private String kategorie;
 	private static final Logger LOGGER = Logger.getLogger(DbConnector.class.getName());
 	
 	/**
@@ -30,12 +22,17 @@ public class LebensmittelDaten {
 	 * @param karenzphase der erste Toleranzwert
 	 * @param dauerernaehrung der zweite Toleranzwert
 	 */
-	public LebensmittelDaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie) {
+	public LebensmittelDaten(int index, String lebensmittelname, String karenzphase, String dauerernaehrung, String kategorie, int zindex, int platzierung, int azugriffe, int kindex, String kname, String nname) {
 		this.index = index;
 		this.lebensmittelname = lebensmittelname;
 		this.karenzphase = karenzphase;
 		this.dauerernaehrung = dauerernaehrung;
-		this.kategorie = kategorie; 
+		this.kategorie = kategorie;
+		this.zindex = zindex;
+    this.platzierung = platzierung;
+    this.azugriffe = azugriffe;
+    this.kindex = kindex;
+    this.nName = nname;
 	}
 		
 	/**
@@ -46,12 +43,18 @@ public class LebensmittelDaten {
 	public LebensmittelDaten(ResultSet rs) {
 		try {
 				this.index = rs.getInt("lindex"); 
-		        this.lebensmittelname = rs.getString("lname");        
-		        this.karenzphase = rs.getString("karenzphase");
-		        this.dauerernaehrung = rs.getString("dauerernaehrung");
+        this.lebensmittelname = rs.getString("lname");        
+        this.karenzphase = rs.getString("karenzphase");
+        this.dauerernaehrung = rs.getString("dauerernaehrung");
+        this.zindex = rs.getInt("zindex"); 
+        this.platzierung = rs.getInt("platzierung"); 
+        this.azugriffe = rs.getInt("azugriffe");
+        this.kindex = rs.getInt("kindex");
+        this.kname = rs.getString("kname");
+        this.nName = rs.getString("nname");
 		}
 		catch(SQLException e) {
-			LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
+			LOGGER.log(Level.WARNING, "resultSet could not be resolved " + e);
 		}
     }
 
@@ -75,6 +78,7 @@ public class LebensmittelDaten {
 	 * Gib den Lebensmittelnamen.
 	 * @return lebensmittelname
 	 */
+	@Override
 	public String getLname() {
 		return lebensmittelname;
 	}
@@ -134,6 +138,104 @@ public class LebensmittelDaten {
 	public void setKategorie(String kategorie) {
 		this.kategorie = kategorie;
 	}
+	
+	/**
+   * Gib den Zugriffsindex. 
+   * @return zindex 
+   */
+  public int getZindex() {
+    return zindex;
+  }
+  
+  /**
+   * Setze den Zugriffsindex. 
+   * @param zindex der Zugriffsindex 
+   */
+  public void setZindex(int zindex) {
+    this.zindex = zindex;
+  }
+  
+  /**
+   * Gib die Platzierung eines Lebensmittels. 
+   * @return platzierung
+   */
+  public int getPlatzierung() {
+    return platzierung;
+  }
+  
+  /**
+   * Setze die Platzierung eines Lebensmittels. 
+   * @param platzierung die Platzierung eines Lebensmittels 
+   */
+  public void setPlatzierung(int platzierung) {
+    this.platzierung = platzierung;
+  }
+  
+  /**
+   * Gib die Anzahl Zugriffe auf ein Lebensmittel. 
+   * @return azugriffe
+   */
+  public int getAzugriffe() {
+    return azugriffe;
+  }
+  
+  /**
+   * Setze die Anzahl Zugriffe auf ein Lebensmittel. 
+   * @param azugriffe die Anzahl Zugriffe auf ein Lebensmittel 
+   */
+  public void setAzugriffe(int azugriffe) {
+    this.azugriffe = azugriffe;
+  }
+  
+  /**
+   * Gib den Karenzphasenindex.
+   * 
+   * @return kindex
+   */
+  public int getKindex() {
+    return kindex;
+  }
+  
+  /**
+   * Setze den Karenzphasenindex.
+   * 
+   * @param kindex
+   */
+  public void setKindex(int kindex) {
+    this.kindex = kindex;
+  }
+  
+  /**
+   * Gib die Karenzphase.
+   * 
+   * @return
+   */
+  public String getKname() {
+    return kname;
+  }
+  
+  /**
+   * Setze die Karenzphase.
+   * 
+   * @param kname
+   */
+  public void setKname(String kname) {
+    this.kname = kname;
+  }
+  
+  /**
+   * @return the nName
+   */
+  public String getnName() {
+    return nName;
+  }
+
+  /**
+   * @param nName the nName to set
+   */
+  public void setnName(String nName) {
+    this.nName = nName;
+  }
 
 	/**
 	 * Gibt die Datenfelder des Lebensmittels als String zurueck.
@@ -143,4 +245,9 @@ public class LebensmittelDaten {
 		return getLindex() + String.format(" ", getLname(), " ", 
 				getKarenzphase(), " ", getDauerernaehrung(), " ", getKategorie());
 	}
+	
+	@Override
+  public boolean isNil() {
+     return false;
+  }
 }

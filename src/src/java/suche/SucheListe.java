@@ -52,4 +52,15 @@ public class SucheListe extends SucheMultiTupel {
     return selectSQL;
   }
   
+  /**
+   * Gibt alle Daten aus der Tabelle Zugriffsskala aus.
+   * 
+   * @return die SQL query
+   */
+  public String zugriffsSkala() {
+    String selectSQL = "Select * FROM LEBENSMITTELDATEN l JOIN FAVORIT f"
+        +" ON l.lindex=f.lindex JOIN Zugriffsskala z on f.zindex = z.zindex;";
+    return selectSQL;
+  }
+  
 }

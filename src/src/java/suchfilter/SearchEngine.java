@@ -6,7 +6,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 /*
- * searches a list of xmlSites for a certain key word
+ * Durchsucht eine Liste von xmlSites nach einem bestimmten Schlüsselwort
  */
 public class SearchEngine {
   
@@ -14,14 +14,14 @@ public class SearchEngine {
   private final ArrayList<Searchresult> searchResults = new ArrayList<>();
   
   /*
-   * keyword for search engine
+   * keyword für die Suchmaschine
    */
   public SearchEngine(String keyword) {
     this.keyword = keyword;
   }
   
   /*
-   * searches every document for fitting headings, paragraphs, list elements and buttons
+   * Durchsucht jedes Dokument nach passenden Überschriften, Absätzen, Listenelementen und Schaltflächen
    */
   public void sucheNachText(ArrayList<Document> xmlSites) {
     for (Document document : xmlSites) {
@@ -38,7 +38,7 @@ public class SearchEngine {
   }
   
   /*
-   * searches for headings
+   * Sucht nach Überschriften
    */
   public ArrayList<Element> sucheNachUeberschriften(Document site) {
     ArrayList<Element> results = new ArrayList<>();
@@ -51,7 +51,7 @@ public class SearchEngine {
   }
   
   /*
-   * searches for paragraphs
+   * Sucht nach Absätzen
    */
   public ArrayList<Element> sucheNachParagraphen(Document site) {
     ArrayList<Element> results = new ArrayList<>();
@@ -60,7 +60,7 @@ public class SearchEngine {
   }
   
   /*
-   * searches for list elements
+   * sucht nach Listenelementen
    */
   public ArrayList<Element> sucheNachListenelementen(Document site) {
     ArrayList<Element> results = new ArrayList<>();
@@ -70,7 +70,7 @@ public class SearchEngine {
   }
   
   /*
-   * searches for buttons
+   * Sucht nach buttons
    */
   public ArrayList<Element> sucheNachButtons(Document site) {
     ArrayList<Element> results = new ArrayList<>();
@@ -79,7 +79,7 @@ public class SearchEngine {
   }
   
   /*
-   * searches for divs
+   * sucht nach divs
    */
   public ArrayList<Element> sucheNachDivs(Document site) {
     ArrayList<Element> results = new ArrayList<>();
@@ -88,7 +88,7 @@ public class SearchEngine {
   }
   
   /*
-   * searches site for certain tag
+   * searches site für bestimmte Tags
    */
   public ArrayList<Element> searchForTag(Document site, String tag) {
     ArrayList<Element> results = new ArrayList<>();
@@ -105,7 +105,7 @@ public class SearchEngine {
   }
   
   /*
-   * empty search results for testing purposes
+   * leere Suchergebnisse für Testzwecke
    */
   public void emptySearchResults() {
     this.searchResults.clear();

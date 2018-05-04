@@ -38,7 +38,7 @@ your browser</a> to improve your experience.</p>
 			<div class="flex-grid-thirds">
 				<div class="col menugrid">
 					<span onclick="openNav()">&#9776;
-						<span class="menutext">&nbsp;Menu</span>
+					<span class="menutext">&nbsp;Menu</span>
 				</div>
 				<div class="col titlegrid">Mahlzeitassistent</div>
 				<div class="col suchgrid">
@@ -67,6 +67,7 @@ your browser</a> to improve your experience.</p>
 					<h3>Suche in Nährstoffen</h3>
 					<%@ page import="mahlzeitassistent.*" %>
 					<%@ page import="datenbank.container.*" %>
+					<%@ page import="container.*" %>
 					<% //Exception-Block 1: Auswahlparameter
 					String auswahl = null;
 					if (request.getParameter("auswahle")==null){
@@ -103,13 +104,14 @@ your browser</a> to improve your experience.</p>
 							</tr>
 						</thead>
 						<tbody>
-							<% 
-								for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
-									String karenzphase = lebensmitteleintrag.getKarenzphase();
-									String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
-									if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
-										String lebensmittelname = lebensmitteleintrag.getLname();
-									%>
+							<%//Give me a list of options to choose from - 
+							// Only KarenzPhasen or DauerErnaehrung GUT or MITTEL will be displayed as those are considered acceptable for eating.
+							for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
+								String karenzphase = lebensmitteleintrag.getKarenzphase();
+								String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
+								if(karenzphase.equals(KarenzPhasen.GUT.toString()) || karenzphase.equals(KarenzPhasen.MITTEL.toString()) || dauerernaehrung==DauerErnaehrung.GUT.toString() || dauerernaehrung.equals(DauerErnaehrung.MITTEL.toString())){
+									String lebensmittelname = lebensmitteleintrag.getLname();
+							%>
 								<tr>
 									<td>
 										<input type='submit' name="auswahle" value="<%out.println(lebensmittelname);%>" style='width:100%; background: transparent; border: none !important;'>
