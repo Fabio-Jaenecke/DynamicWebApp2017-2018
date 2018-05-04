@@ -1,13 +1,2 @@
-container
-controller
-controller.servlets
-datenbank.connector
 datenbank.container
-datenbank.creation
 datenbank.dao
-datenbank.insertion
-datenbank.manager
-faq
-mahlzeitassistent
-suche
-suchfilter
