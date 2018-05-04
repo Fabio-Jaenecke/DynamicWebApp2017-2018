@@ -99,7 +99,7 @@
 									out.println("</tr>");
 									out.println("</table>");
 							//Else print a warning
-								}else{
+								}else {
 									out.println("<p><p>");
 									out.println("Ihre Suche ergab keine Treffer, versuchen Sie die Kategorienauswahl."); 
 									out.println("<p><p>");
