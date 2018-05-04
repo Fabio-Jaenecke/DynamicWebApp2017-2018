@@ -53,9 +53,8 @@ public class SucheListe extends SucheMultiTupel {
   }
   
   /**
-   * Selektiere Lebensmittel und sortiere eine der Spalten auf- oder absteigend.
+   * Gibt alle Daten aus der Tabelle Zugriffsskala aus.
    * 
-   * @param eine Spalte, die sortiert werden soll und das praedikat order, welches DESC oder ASC annehmen kann.
    * @return die SQL query
    */
   public String zugriffsSkala() {
