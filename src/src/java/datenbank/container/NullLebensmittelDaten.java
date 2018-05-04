@@ -1,7 +1,5 @@
 package datenbank.container;
 
-import container.LebensmittelManager;
-
 /** This class serves as a null-Object for type Lebensmitteldaten.
  * 
  * @author fabio jaenecke

@@ -1,4 +1,4 @@
-package container;
+package datenbank.container;
 
 /**
  * Eine Klasse zur Verwaltung von Lebensmitteln.
