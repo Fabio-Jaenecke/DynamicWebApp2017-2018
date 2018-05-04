@@ -1,7 +1,7 @@
 package datenbank.container;
 
 /**
- * Eine Klasse zur Verwaltung von Lebensmitteln.
+ * Definiert die Verwaltung von Lebensmitteln für den Zugriff auf die Datenbank.
  */
 public abstract class LebensmittelManager {
 
@@ -16,6 +16,11 @@ public abstract class LebensmittelManager {
   protected int kindex;
   protected String kname;
   
+  /**
+   * Gibt Lebensmitteldaten die Zuweisung 'Null' oder 'Nicht Null'
+   * 
+   * @return true or false
+   */
   public abstract boolean isNil();
   
   public abstract String getLname();

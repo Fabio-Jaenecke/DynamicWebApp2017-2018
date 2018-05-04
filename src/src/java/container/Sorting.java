@@ -1,5 +1,9 @@
 package container;
 
+/**
+ * Dieses Enum gibt die möglichen SQL-Sortierungen an.
+ *
+ */
 public enum Sorting {
     ASC, DESC;
   

@@ -1,6 +1,6 @@
 package datenbank.container;
 
-/** This class serves as a null-Object for type Lebensmitteldaten.
+/** Diese Klasse dient als Null-Objekt vom Typ Lebensmitteldaten.
  * 
  * @author fabio jaenecke
  *

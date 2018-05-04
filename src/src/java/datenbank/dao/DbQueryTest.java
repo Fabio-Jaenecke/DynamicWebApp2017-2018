@@ -14,7 +14,7 @@ import org.junit.Test;
 import datenbank.container.LebensmittelDaten;
 
 /*
- * Class for testing if the tables are filled with content
+ * Klasse fürs testen falls die Tabellen mit Inhalt gefüllt sind.
  */
 
 public class DbQueryTest {

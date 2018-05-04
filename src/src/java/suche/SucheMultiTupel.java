@@ -13,6 +13,13 @@ import datenbank.connector.DbConnector;
 import datenbank.container.LebensmittelDaten;
 import datenbank.dao.DbQuery;
 
+/**
+ * Diese Klasse bestimmt das Vorgehen, wenn Abfragen auf der Datenbank ausgeführt werden sollen,
+ * die mehrere Zeilen aus der Datenbank zurückgeben.
+ * 
+ * @author fabio jaenecke
+ *
+ */
 public abstract class SucheMultiTupel implements SucheInterface {
   private ArrayList<LebensmittelDaten> lebensmittel = new ArrayList<>();
   DbQuery query = new DbQuery();

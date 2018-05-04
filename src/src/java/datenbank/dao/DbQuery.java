@@ -11,7 +11,7 @@ import java.sql.Connection;
 import datenbank.connector.DbConnector;
 
 /*
- * Class for the search engine. Makes a connection to the database and searches the database for the result 
+ * Klasse für die Suchmaschine. Stellt eine Verbindugn zur Datebank her und sucht die Datenbank auf Resultate ab.
  */
 
 public class DbQuery {
@@ -20,15 +20,21 @@ public class DbQuery {
   private static final Logger LOGGER = Logger.getLogger(DbQuery.class.getName());
   
   /*
-   * connection to database already here, so no creations in constructor
+   * Verbindung zu Datebank bereits hier, also keine Erstellung im Konstruktor.
    */
   public DbQuery() {
     
   }
   
+  /**
+   * Gibt ein Resultat von der Datenbank zurück.
+   * 
+   * @param query eine SQL-Query
+   * @return das Resultat
+   */
   public ResultSet getResult(String query) {
     Statement statement;
-    ResultSet result;
+    ResultSet result = null;
     Connection connection;
     connection = conn.getConn();
     try {
@@ -38,8 +44,7 @@ public class DbQuery {
     } catch (SQLException e) {
       LOGGER.log(Level.SEVERE, "Query could not be established " + e);
     }
-    // TODO return empty result
-    return null;
+    return result;
   }
   
   public void finalize() {

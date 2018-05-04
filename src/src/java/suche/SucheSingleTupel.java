@@ -10,6 +10,13 @@ import datenbank.container.LebensmittelManager;
 import datenbank.container.NullLebensmittelDaten;
 import datenbank.dao.DbQuery;
 
+/**
+ * Diese Klasse bestimmt das Vorgehen, wenn Abfragen auf der Datenbank ausgeführt werden sollen,
+ * die mehrere Zeilen aus der Datenbank zurückgeben.
+
+ * @author fabio jaenecke
+ *
+ */
 public abstract class SucheSingleTupel implements SucheInterface {
   private LebensmittelDaten lebensmittel;
   private NullLebensmittelDaten nulllebensmittel;

@@ -45,6 +45,9 @@ public class AssistentAuftrag {
     auftragsDaten = auftrag.getLebensmittel();
   }
   
+  /**
+   * @return the auftragsDaten
+   */
   public ArrayList<LebensmittelDaten> getDaten() {
     return auftragsDaten;
   }
@@ -64,7 +67,7 @@ public class AssistentAuftrag {
   }
   
   /**
-   * @return an empty list or an accumulated List
+   * @return eine leere Liste oder eine akkumulierte Liste
    */
   public List<String> checkLebensmittelListNull() {
     if (auftragsDaten.isEmpty()) {
