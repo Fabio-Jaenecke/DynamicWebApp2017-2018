@@ -4,11 +4,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import container.LebensmittelManager;
 import datenbank.container.LebensmittelDaten;
+import datenbank.container.NullLebensmittelDaten;
 import datenbank.dao.DbQuery;
 
 public abstract class SucheSingleTupel implements SucheInterface {
   private LebensmittelDaten lebensmittel;
+  private NullLebensmittelDaten nulllebensmittel;
   DbQuery query = new DbQuery();
   private static final Logger LOGGER = Logger.getLogger(SucheSingleTupel.class.getName());
   
@@ -35,11 +39,13 @@ public abstract class SucheSingleTupel implements SucheInterface {
   public void searchForString(String selectSQL) {
     try (ResultSet result = query.getResult(selectSQL)) {
       if (result.next()) {
-        lebensmittel = new LebensmittelDaten(result);
-      }
-      if (lebensmittel.isNil()) {
-          LOGGER.log(Level.WARNING, "Selected lebensmittel does not exist in database ");
-      }
+        try {
+          lebensmittel = new LebensmittelDaten(result);
+        } catch (NullPointerException e) {
+            nulllebensmittel = new NullLebensmittelDaten(selectSQL);
+            LOGGER.log(Level.WARNING, nulllebensmittel.getLname() + e);
+          }  
+        }
     } catch (SQLException e) {
       LOGGER.log(Level.SEVERE, "resultSet could not be resolved " + e);
     }
@@ -51,9 +57,6 @@ public abstract class SucheSingleTupel implements SucheInterface {
    * @return lebensmittel
    */
   public LebensmittelDaten getLebensmittel() {
-    if (lebensmittel.isNil()) {
-      LOGGER.log(Level.WARNING, "Selected lebensmittel does not exist in database ");
-    }
       return lebensmittel;
     }
 }
