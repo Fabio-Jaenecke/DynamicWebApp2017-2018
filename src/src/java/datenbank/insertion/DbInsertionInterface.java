@@ -1,48 +1,48 @@
 package datenbank.insertion;
 
 /*
- * interface for inserting data to tables.
- * every method inserts data to one table
+ * Schnittstelle zum Einfügen von Daten in Tabellen.
+ * Jede Methode fügt Daten in eine Tabelle ein
  */
 public interface DbInsertionInterface {
   
   /*
-   * Inserting data into table lebensmittelDaten
+   * Einfügen von Daten in die Tabelle lebensmittelDaten
    */
   void insertIntoTablelebensmittelDaten();
   
   /*
-   * Inserting data into table zugriffsskala
+   * Einfügen von Daten in die Tabelle zugriffsskala
    */
   void insertIntoTableZugriffsskala();
   
   /*
-   ** Inserting data into table lebensmittelkategorie
+   ** Einfügen von Daten in Tabelle Lebensmittelklasse
    */
   void insertIntoTablelebensmittelkategorie();
   
   /*
-   * Inserting data into table naehrstoff
+   * Einfügen von Daten in Tabelle naehrstoff
    */
   void insertIntoTableNaehrstoff();
   
   /*
-   * Inserting data into table favorit
+   * Einfügen von Daten in Tabelle favorit
    */
   void insertIntoTableFavorit();
   
   /*
-   * Inserting data into table katzugehoerigkeit
+   * Einfügen von Daten in Tabelle katzugehoerigkeit
    */
   void insertIntoTableKatzugehoerigkeit();
   
   /*
-   * Inserting data into table enthaelt
+   * Einfügen von Daten in Tabelle enthaelt
    */
   void insertIntoTableEnthaelt();
   
   /*
-   * Inserting data into table naehrzugehoerigkeit
+   * Einfügen von Daten in Tabelle naehrzugehoerigkeit
    */
   
   void insertIntoTableNaehrzugehoerigkeit();

@@ -24,20 +24,20 @@ public class SucheEintragTest {
   }
   
   @Before
-  // Creates new Database for the search option
+  // Erstellt eine neue Datenbank für die Suchoption
   public void setUp() throws Exception {
     dao = new SucheEintrag();
   }
   
   @Test
-  // Testing if the search method gives a result back
+  // Testen, ob die Suchmethode ein Ergebnis zurückgibt
   public void searchForStringTest() {
     dao.searchForString("apfel");
     
     assertNotNull(dao.getLebensmittel());
     assertTrue("Apfel".equals(dao.getLebensmittel().getLname()));
     
-    // Search attempt for a non existing entry
+    // Suchversuch für einen nicht vorhandenen Eintrag
     dao.searchForString("Pizza");
     assertNull(dao.getLebensmittel());
   }

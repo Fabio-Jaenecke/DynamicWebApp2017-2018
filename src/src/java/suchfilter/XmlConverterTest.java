@@ -13,9 +13,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 /*
- * converts html files to documents
- * for every html file a own test and testing of
- * properties in document
+ * Konvertiert HTML-Dateien in Dokumente
+ * Für jede HTML-Datei ein eigener Test und Test von
+ * Eigenschaften im Dokument
  */
 public class XmlConverterTest {
   
@@ -27,7 +27,7 @@ public class XmlConverterTest {
   }
   
   /*
-   * tests if html elements in hmtl folder can be converted and asserts that converted document is not null
+   * testet, ob HTML-Elemente im HTML-Ordner konvertiert werden können und bestätigt, dass das konvertierte Dokument nicht null ist
    */
   @Test
   public void testFileloading() {
@@ -40,7 +40,7 @@ public class XmlConverterTest {
   }
   
   /**
-   * tests convertion of file faq.html in html folder asserts body is not null and doc has right title
+   * testet die Konvertierung der Datei faq.html im HTML-Ordner. Der Body ist nicht null und doc hat den richtigen Titel
    */
   @Test
   public void testConvertFaq() {
@@ -53,7 +53,7 @@ public class XmlConverterTest {
   }
   
   /**
-   * tests convertion of file lebensmittel.html in html folder asserts that doc has some data and a body
+   * tested convertion von file lebensmittel.html im html-ordner behauptet, dass doc einige daten und einen body hat
    */
   @Test
   public void testConvertLebensmittel() {
@@ -66,7 +66,7 @@ public class XmlConverterTest {
   }
   
   /**
-   * tests convertion of file mahlzeitassistent.html in html folder asserts that document has a body and a string can be extracted
+   * testet Konvertierung der Datei mahlzeit assistant.html im HTML-Ordner bestätigt, dass das Dokument einen Body hat und eine Zeichenkette extrahiert werden kann
    */
   @Test
   public void testConvertMahlzeitassistent() {
@@ -79,7 +79,7 @@ public class XmlConverterTest {
   }
   
   /**
-   * tests convertion of file rezepte.html in html folder asserts that file has outerHtml and some elements
+   * tests Konvertierung von file rezepte.html im html-ordner bestätigt, dass datei outerHtml und einige elemente hat
    */
   @Test
   public void testConvertRezepte() {
@@ -92,7 +92,7 @@ public class XmlConverterTest {
   }
   
   /**
-   * tests convertion of file lebensmittelsuche.html in html folder asserts that doc has body and a h3-tag
+   * testet die Konvertierung der Datei lebensmittel suche.html im html-Ordner, dass doc über einen Body und ein h3-Tag verfuegt
    */
   @Test
   public void testConvertSuche() {
@@ -105,7 +105,7 @@ public class XmlConverterTest {
   }
   
   /*
-   * tests convertion of file zugriffsskala.html in html folder asserts that body is not null and that doc has right table cell text
+   * testet die Konvertierung der Datei zugriffsskala.html im HTML-Ordner bestaetigt, dass der Body nicht null ist und dass das Dokument den richtigen Tabellenzellen-Text hat
    */
   @Test
   public void testConvertZugriffsskala() {

@@ -11,16 +11,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 /*
- * tests if search results for a keyword are correctly saved
- * for matching criterias of searchEngine a mockup-html is used
- * first we search for whole word "Lorem ipsum"
+ * Testet, ob die Suchergebnisse für ein Keyword korrekt gespeichert werden
+ * Für Matching-Kriterien von searchEngine wird ein Mockup-HTML verwendet
+ * Zuerst suchen wir nach dem ganzen Wort "Lorem ipsum"
  */
 public class ResultPreviewTest {
   
   ResultPreview resultPreview;
   
   /*
-   * creates a document from html file, makes search for keyword in searchEngine, creates searchresult and adds it to resultpreview
+   * Erstellt ein Dokument aus einer HTML-Datei, sucht nach einem Schlüsselwort in searchEngine, erstellt searchresult und fügt es zu resultpreview hinzu
    */
   @Before
   public void setUp() throws Exception {
@@ -39,7 +39,7 @@ public class ResultPreviewTest {
   }
   
   /*
-   * assert that url exists and has right content
+   * assert dass URL existiert und richtigen Inhalt hat
    */
   @Test
   public void testUrlWholeWord() {
@@ -48,7 +48,7 @@ public class ResultPreviewTest {
   }
   
   /*
-   * assert that metadata exists and has right content
+   * assert dass Metadaten existieren und den richtigen Inhalt haben
    */
   @Test
   public void testMetaDataWholeWord() {
@@ -58,7 +58,7 @@ public class ResultPreviewTest {
   
   @Test
   /*
-   * we search for sequence of "Lorem ispum". then we check that result has right url and right metadata
+   * Wir suchen nach der Sequenz von "Lorem ipsum". Dann überprüfen wir, ob das Ergebnis die richtige URL und die richtigen Metadaten hat
    */
   public void testSequence() {
     XmlConverter converter = new XmlConverter();

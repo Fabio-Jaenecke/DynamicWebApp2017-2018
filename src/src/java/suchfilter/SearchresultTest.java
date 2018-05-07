@@ -10,8 +10,8 @@ import org.junit.Test;
 import org.jsoup.nodes.Document;
 
 /*
- * tests if search results for a keyword are correctly saved
- * for matching criterias of searchEngine a mockup-html is used
+ * Testet, ob die Suchergebnisse für ein Keyword korrekt gespeichert werden
+  * Für Matching-Kriterien von searchEngine wird ein Mockup-HTML verwendet
  */
 public class SearchresultTest {
   
@@ -19,7 +19,7 @@ public class SearchresultTest {
   SearchEngine searcher = new SearchEngine("Lorem ipsum");
   
   /*
-   * creates a document from html file, makes search for keyword in searchEngine and add results to engine
+   * Erstellt ein Dokument aus einer HTML-Datei, sucht nach einem Schlüsselwort in searchEngine und fügt der Suchmaschine Ergebnisse hinzu
    */
   @Before
   public void setUp() throws Exception {
@@ -31,8 +31,8 @@ public class SearchresultTest {
   }
   
   /*
-   * tests if array of xmlSites in search result is correctly handled. as only one html-site is searched through, array only
-   * contains one document
+   * Testet, ob das Array von xmlSites im Suchergebnis korrekt behandelt wird. da nur eine html-Site durchsucht wird.
+   * Das Array enthält ein Dokument. 
    */
   @Test
   public void testGetXmlSite() {
@@ -40,7 +40,7 @@ public class SearchresultTest {
   }
   
   /*
-   * tests if array of keyElements in search result is correctly handled.
+   * testet, ob das Array von keyElements im Suchergebnis korrekt behandelt wird.
    */
   @Test
   public void testGetKeyElements() {

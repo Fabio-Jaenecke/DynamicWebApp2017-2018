@@ -13,14 +13,14 @@ import org.jsoup.nodes.Document;
 import controller.servlets.SuchfilterServlet;
 
 /**
- * downloads html files and converts them to a document xml file
+ * lädt HTML-Dateien herunter und konvertiert sie in eine XML-Dokumentdatei
  */
 public class XmlConverter {
   
   private static final Logger LOGGER = Logger.getLogger(XmlConverter.class.getName());
   
   /*
-   * downloads html file for a given input. converts it to xml and returns it.
+   * lädt eine HTML-Datei für eine bestimmte Eingabe herunter. wandelt es in XML um und gibt es zurück.
    */
   public Document convertHtmlToXml(String filename) {
     File download = downloadHtmlFiles(filename);
@@ -28,7 +28,8 @@ public class XmlConverter {
   }
   
   /**
-   * This method downloads the HTML files from the TomCat server Source: https://kodejava.org/how-do-i-copy-a-url-into-a-file/
+   * Diese Methode lädt die HTML-Dateien vom TomCat-Server herunter
+   * Quelle: https://kodejava.org/how-do-i-copy-a-url-into-a-file/
    */
   public File downloadHtmlFiles(String htmlFile) {
     File destination = new File("");
@@ -36,7 +37,7 @@ public class XmlConverter {
       URL url = new URL("http://localhost:8080/" + SuchfilterServlet.getContextPath() + "/html/" + htmlFile);
       destination = new File(htmlFile);
       
-      // Copy bytes from the URL to the destination file.
+      // Kopiert Bytes von der URL in die Zieldatei.
       FileUtils.copyURLToFile(url, destination);
     } catch (IOException e) {
       LOGGER.log(Level.SEVERE, "the file " + htmlFile + " could not be downloaded from the server" + e);
@@ -45,7 +46,7 @@ public class XmlConverter {
   }
   
   /*
-   * converts html file to xml document
+   * konvertiert HTML-Datei in XML-Dokument
    */
   public Document convertToXml(File file) {
     try {

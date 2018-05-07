@@ -9,7 +9,7 @@ import datenbank.creation.DbCreation;
 import datenbank.dao.DbQuery;
 
 /*
- * tests class DbInsertion.java
+ * Testet Klasse DbInsertion.java
  */
 public class DbInsertionTest {
   
@@ -18,7 +18,7 @@ public class DbInsertionTest {
   
   @Before
   public void setUp() throws Exception {
-    // to not have any double entries, we first create the database
+    // Um keine doppelten Einträge zu erhalten, erstellen wir zuerst die Datenbank
     DbCreation creation = new DbCreation();
     creation.setUpTables();
     insertion = new DbInsertion();
@@ -26,7 +26,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table lebensmittelDaten
+   * Testen die INSERT-Anweisungen für die Tabelle lebensmittelDaten
    */
   @Test
   public void testInsertIntoTablelebensmittelDaten() {
@@ -35,7 +35,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table zugriffsskala
+   * Testen die INSERT-Anweisungen für die Tabelle zugriffsskala
    */
   @Test
   public void testInsertIntoTableZugriffsskala() {
@@ -44,7 +44,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table lebensmittelkategorie
+   * Testen die INSERT-Anweisungen für die Tabelle lebensmittelkategorie
    */
   @Test
   public void testInsertIntoTablelebensmittelkategorie() {
@@ -53,7 +53,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table naehrstoff
+   * Testen die INSERT-Anweisungen für die Tabelle naehrstoff
    */
   @Test
   public void testInsertIntoTableNaehrstoff() {
@@ -62,7 +62,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table favorit
+   * Testen die INSERT-Anweisungen für die Tabelle favorit
    */
   @Test
   public void testInsertIntoTableFavorit() {
@@ -71,7 +71,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table katzugehoerigkeit
+   * Testen die INSERT-Anweisungen für die Tabelle katzugehoerigkeit
    */
   @Test
   public void testInsertIntoTableKatzugehoerigkeit() {
@@ -80,7 +80,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table enthaelt
+   * Testen die INSERT-Anweisungen für die Tabelle enthaelt
    */
   @Test
   public void testInsertIntoTableEnthaelt() {
@@ -89,7 +89,7 @@ public class DbInsertionTest {
   }
   
   /*
-   * Testing the insert statements for the table naehrzugehoerigkeit
+   * Testen die INSERT-Anweisungen für die Tabelle naehrzugehoerigkeit
    */
   @Test
   public void testInsertIntoTableNaehrzugehoerigkeit() {

@@ -10,17 +10,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 /*
- * tests the class suchfilter. for simulating the search as real as possible
- * we make a search for every html site with a keyword which is in that
- * html site
+ * Testet die Klasse solcher Filter. um die Suche so real wie möglich zu simulieren
+  * Wir suchen nach jeder HTML-Seite mit einem Schlüsselwort, das darin enthalten ist
+  * HTML-Site
  */
 public class SuchfilterTest {
   
   SuchfilterStub suchfilter;
   
   /*
-   * creates suchfilter with keyword. as this is only a setup, we set the keyword as "Histarantia" which is the title of every html
-   * page
+   * erstellt ein solches Filter mit Schlüsselwort. Da dies nur ein Setup ist, setzen wir das Keyword als "Histarantia", was der Titel jedes HTML ist
+   * Seite
    */
   @Before
   public void setUp() throws Exception {
@@ -28,7 +28,7 @@ public class SuchfilterTest {
   }
   
   /*
-   * asserts that html-sites in html folder can be converted to xml-sites
+   * asserts dass HTML-Sites im HTML-Ordner können in XML-Sites konvertiert werden
    */
   @Test
   public void testInitializeXmlSites() {
@@ -36,24 +36,23 @@ public class SuchfilterTest {
   }
   
   /*
-   * tests searching for keyword in rezepte.html first we search for h2 with text Kuerbissuppe then we check if text for rezepte
-   * contains the sequence "Geeignet fuer"
+   * tests sucht nach keyword in rezepte.html. zuerst suchen wir nach h2 mit text kuerbissuppe dann prüfen wir rezepte die Sequenz "Geeignet für" enthält.
    */
   @Test
   public void testSearchRezepte() {
     String keytext;
     
-    // we search for keyword "Kuerbissuppe"
+    // wir suchen nach Stichwort "Kuerbissuppe"
     suchfilter.setKeyword("Kuerbissuppe");
     suchfilter.search();
     ArrayList<Searchresult> results = suchfilter.getSearcher().getSearchResults();
     keytext = results.get(0).getKeyElements().get(0).text();
     assertEquals("Kuerbissuppe", keytext);
     
-    // empty search results for next test
+    // leere Suchergebnisse für den nächsten Test
     suchfilter.getSearcher().emptySearchResults();
     
-    // we search for keyword "Geeignet fuer"
+    // wir suchen nach Stichwort "Geeignet für"
     suchfilter.setKeyword("Geeignet fuer");
     assertEquals("Geeignet fuer", suchfilter.getSearcher().getKeyword());
     suchfilter.search();
@@ -62,12 +61,12 @@ public class SuchfilterTest {
     keytext = results.get(0).getKeyElements().get(0).text();
     assertTrue(keytext.contains("Geeignet fuer"));
     
-    // empty search results for next test
+    // leere Suchergebnisse für den nächsten Test
     suchfilter.getSearcher().emptySearchResults();
   }
   
   /*
-   * we search for the first sequence of "Gibt es", this returns the first h2-tag, which we asserrt has the right text
+   * wir suchen nach der ersten Sequenz von "Gibt es", das gibt den ersten h2-tag zurück, den wir assert haben den richtigen Text
    */
   @Test
   public void testSearchFaq() {
@@ -78,13 +77,13 @@ public class SuchfilterTest {
     keytext = results.get(0).getKeyElements().get(0).text();
     assertEquals("Gibt es Labortests zur Diagnose der Histaminunvertraeglichkeit?", keytext);
     
-    // empty search results for next test
+    // leere Suchergebnisse für den nächsten Test
     suchfilter.getSearcher().emptySearchResults();
   }
   
   /*
-   * we search for h3 tag which contains text "Lebensmittelliste to assert that it is found we count the tags found because also
-   * parent elements are chosen the count is 4 TODO fix search so that tag alone is returned and not also its parent tags
+   * Wir suchen nach h3-Tags, die den Text "Lebensmittelliste" enthalten, um zu bestätigen, dass es gefunden wird. Wir zählen auch die gefundenen Tags
+    * elterliche Elemente sind ausgewählt, die Anzahl ist 4 TODO fix Suche, so dass Tag allein zurückgegeben wird und nicht auch seine Eltern-Tags
    */
   @Test
   public void testSearchLebensmittel() {
@@ -97,8 +96,8 @@ public class SuchfilterTest {
   }
   
   /*
-   * we search for the first sequence of "Suche nach Lebensmitteln", this returns the first h3-tag, which we asserrt has the right
-   * text
+   * wir suchen nach der ersten Sequenz von "Suche nach Lebensmitteln", dies liefert den ersten h3-Tag, den wir assert haben
+    * und den richten Text hat
    */
   @Test
   public void testSearchLebensmittelsuche() {
@@ -109,12 +108,12 @@ public class SuchfilterTest {
     keytext = results.get(0).getKeyElements().get(0).text();
     assertEquals("Suche nach Lebensmitteln", keytext);
     
-    // empty search results for next test
+    // leere Suchergebnisse für den nächsten Test
     suchfilter.getSearcher().emptySearchResults();
   }
   
   /*
-   * we search for tags, which have the text "�ndern". to test that also subsequences are found, we search for "ndern there are 2
+   * Wir suchen nach Tags, die den Text "aendern" haben. um zu testen, dass auch Teilfolgen gefunden werden, suchen wir nach ändern es 2 gibt
    */
   @Test
   public void testSearchMahlzeitassistent() {
@@ -125,18 +124,18 @@ public class SuchfilterTest {
     ArrayList<Searchresult> results = suchfilter.getSearcher().getSearchResults();
     keyCounter = results.get(0).getKeyElements().size();
     keytext = results.get(0).getKeyElements().get(1).text();
-    // there are 16 tags which contain sequence "ndern"
+    // es gibt 16 Tags, die die Sequenz "aendern" enthalten
     assertEquals(16, keyCounter);
-    // somehow the html cannot show "�", so we cut the first letter of "�ndern"
+    // irgendwie kann der html nicht "ae" anzeigen, also schneiden wir den ersten Buchstaben von "aedern"
     assertEquals("ndern", keytext.substring(1, keytext.length()));
     
-    // empty search results for next test
+    // leere Suchergebnisse für den nächsten Test
     suchfilter.getSearcher().emptySearchResults();
   }
   
   /*
-   * we search for h3-tag which has text "Haeufige Zugriffe" and assert that there is only one result TODO fix search engine so that
-   * it only returns one key element and not 3
+   * wir suchen nach h3-tag, der den Text "Haeufige Zugriffe" hat und behaupten, dass es nur ein result TODO gibt, um die Suchmaschine zu reparieren
+   * Es gibt nur ein Schlüsselelement und nicht 3 zurück
    */
   @Test
   public void testSearchZugriffsskala() {
@@ -147,11 +146,11 @@ public class SuchfilterTest {
     ArrayList<Searchresult> results = suchfilter.getSearcher().getSearchResults();
     keyCounter = results.get(0).getKeyElements().size();
     keytext = results.get(0).getKeyElements().get(0).text();
-    // somehow three tags contain keyword
+    // rgendwie enthalten drei Tags ein Schlüsselwort
     assertEquals(3, keyCounter);
     assertEquals("Haeufige Zugriffe", keytext);
     
-    // empty search results for next test
+    // leere Suchergebnisse für den nächsten Test
     suchfilter.getSearcher().emptySearchResults();
   }
 }

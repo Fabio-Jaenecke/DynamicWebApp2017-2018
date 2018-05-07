@@ -66,6 +66,7 @@ your browser</a> to improve your experience.</p>
 					<h3>Suche in Kategorien</h3>
 					<%@ page import="mahlzeitassistent.*" %>
 					<%@ page import="datenbank.container.*" %>
+					<%@ page import="container.*" %>
 					<% //Exception-Block 1: Auswahlparameter
 						String auswahl = null;
 						if (request.getParameter("auswahle")==null){
@@ -106,13 +107,14 @@ your browser</a> to improve your experience.</p>
 							</tr>
 						</thead>
 						<tbody>
-							<% 
-								for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
-									String karenzphase = lebensmitteleintrag.getKarenzphase();
-									String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
-									if(karenzphase.equals("gut") || karenzphase.equals("mittel") || dauerernaehrung.equals("gut") || dauerernaehrung.equals("mittel")){
-										String lebensmittelname = lebensmitteleintrag.getLname();
-									%>
+							<%//Give me a list of options to choose from - 
+							// Only KarenzPhasen or DauerErnaehrung GUT or MITTEL will be displayed as those are considered acceptable for eating.
+							for(LebensmittelDaten lebensmitteleintrag : auftrag.getDaten()){
+								String karenzphase = lebensmitteleintrag.getKarenzphase();
+								String dauerernaehrung = lebensmitteleintrag.getDauerernaehrung();
+								if(karenzphase.equals(KarenzPhasen.GUT.toString()) || karenzphase.equals(KarenzPhasen.MITTEL.toString()) || dauerernaehrung==DauerErnaehrung.GUT.toString() || dauerernaehrung.equals(DauerErnaehrung.MITTEL.toString())){
+									String lebensmittelname = lebensmitteleintrag.getLname();
+							%>
 								<tr>
 									<td>
 										<input type='submit' name="auswahle" value="<%out.println(lebensmittelname);%>" style='width:100%; background: transparent; border: none !important;'>
@@ -140,7 +142,7 @@ your browser</a> to improve your experience.</p>
 					%>
 					<p></p>
 				</form>
-				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 28em;">
+				<form method="get" action="${pageContext.request.contextPath}/mahlzeitassistent/" style="position: fixed; top: 32em;">
 					<input type='submit' class="link" name="Bestaetigen" value="Bestätigen">
 				</form>
 			</section>

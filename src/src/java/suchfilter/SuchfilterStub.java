@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import org.jsoup.nodes.Document;
 
 /*
- * for running unit tests, we create a suchfilter stub
- * which gets html-files from local file-system and not from browser
- * otherwise this class has the same behaviour as the normal class Suchfilter.java
+ * Für laufende Unit-Tests erstellen wir einen Filter-Stub
+   das HTML-Dateien vom lokalen Dateisystem  bekommt und nicht vom Browser
+  * ansonsten hat diese Klasse das gleiche Verhalten wie die normale Klasse Suchfilter.java
  */
 public class SuchfilterStub {
   
@@ -16,7 +16,7 @@ public class SuchfilterStub {
   private final SearchEngine searchEngine;
   
   /*
-   * converts all sites in html-folder to xml-files and adds them to xmlSites initializes new search engine with keyword
+   * konvertiert alle Seiten im HTML-Ordner in xml-Dateien und fügt sie zu xmlSites hinzu initialisiert die neue Suchmaschine mit Schlüsselwort
    */
   public SuchfilterStub(String keyWord) {
     xmlSites = initializeXmlSites();
@@ -24,14 +24,14 @@ public class SuchfilterStub {
   }
   
   /*
-   * searches if headings, paragraphes, list items or buttons contain the key word
+   * Sucht, ob Überschriften, Paragraphen, Listenelemente oder Schaltflächen das Schlüsselwort enthalten
    */
   public void search() {
     searchEngine.sucheNachText(xmlSites);
   }
   
   /*
-   * create html files to be converted to xml
+   * erstellt HTML-Dateien, die in XML konvertiert werden sollen
    */
   public ArrayList<Document> initializeXmlSites() {
     XmlConverter converter = new XmlConverter();
@@ -48,14 +48,14 @@ public class SuchfilterStub {
   }
   
   /*
-   * returns searchEngine
+   * gibt searchEngine zurück
    */
   public SearchEngine getSearcher() {
     return searchEngine;
   }
   
   /*
-   * set new keyword for testing purposes
+   * Setzt ein neues Keyword für Testzwecke
    */
   public void setKeyword(String keyword) {
     this.searchEngine.setKeyword(keyword);

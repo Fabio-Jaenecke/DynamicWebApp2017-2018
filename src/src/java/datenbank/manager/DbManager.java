@@ -4,7 +4,7 @@ import datenbank.creation.DbCreation;
 import datenbank.insertion.DbInsertion;
 
 /**
- * sets up tables for database and inserts them with date
+ * erstellt Tabellen für die Datenbank und fügt sie mit Datum ein
  * 
  * @author Raphael
  *
@@ -15,7 +15,7 @@ public class DbManager {
   DbInsertion insertion = new DbInsertion();
   
   /**
-   * for the moment, dbManager only sets up and inserts to tables so we only need an empty constructor
+   *  Momentan erstellt dbManager nur Tabellen und fügt sie in Tabellen ein, sodass wir nur einen leeren Konstruktor benötigen.
    */
   public DbManager() {
     

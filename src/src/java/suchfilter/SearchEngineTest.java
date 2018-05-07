@@ -9,8 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 /*
- * tests if tags can be found in converted html file. for testing all criterias
- * a mock-up html is being tested. 
+ * testet, ob Tags in konvertierter HTML-Datei gefunden werden können. Für alle Kriterien wird
+ * Ein Mock-Up-HTML getestet.
  */
 public class SearchEngineTest {
   

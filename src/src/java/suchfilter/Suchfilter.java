@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.jsoup.nodes.Document;
 
 /**
- * converts html sites to xml, searches for keyword and saves search results in variable searcher
+ * wandelt HTML-Seiten in XML um, sucht nach Schlüsselwörtern und speichert Suchergebnisse im Variablensuchprogramm
  */
 public class Suchfilter {
   
@@ -13,7 +13,7 @@ public class Suchfilter {
   private final SearchEngine searchEngine;
   
   /*
-   * converts all sites in html-folder to xml-files and adds them to xmlSites initializes new search engine with keyword
+   * konvertiert alle Seiten im HTML-Ordner in xml-Dateien und fügt sie zu xmlSites hinzu initialisiert die neue Suchmaschine mit Schlüsselwort
    */
   public Suchfilter(String keyWord) {
     xmlSites = initializeXmlSites();
@@ -21,14 +21,14 @@ public class Suchfilter {
   }
   
   /*
-   * searches if headings, paragraphes, list items or buttons contain the key word
+   * Sucht, ob Überschriften, Paragraphen, Listenelemente oder Schaltflächen das Schlüsselwort enthalten
    */
   public void search() {
     searchEngine.sucheNachText(xmlSites);
   }
   
   /*
-   * download html-files for convertion to xml files
+   * Download HTML-Dateien für die Konvertierung in XML-Dateien
    */
   public ArrayList<Document> initializeXmlSites() {
     XmlConverter converter = new XmlConverter();
@@ -45,14 +45,14 @@ public class Suchfilter {
   }
   
   /*
-   * returns searchEngine
+   * gibt searchEngine zurück
    */
   public SearchEngine getSearcher() {
     return searchEngine;
   }
   
   /*
-   * set new keyword for testing purposes
+   * Setzen Sie ein neues Keyword für Testzwecke
    */
   public void setKeyword(String keyword) {
     this.searchEngine.setKeyword(keyword);

@@ -12,12 +12,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import datenbank.container.LebensmittelDaten;
-import datenbank.container.Lebensmittelkategorie;
-import datenbank.container.Naehrstoff;
-import datenbank.container.Zugriffsskala;
 
 /*
- * Class for testing if the tables are filled with content
+ * Klasse fürs testen falls die Tabellen mit Inhalt gefüllt sind.
  */
 
 public class DbQueryTest {
@@ -31,8 +28,7 @@ public class DbQueryTest {
   }
   
   /*
-   * test getting entry for table lebensmitteldaten. then we check if values for columns are correct TODO fix db connection error
-   * (also for other tests)
+   * Test für den Einstieg in die Tabelle Lebensmitteldaten. dann überprüfen wir, ob die Werte für die Spalten korrekt sind.
    */
   @Test
   public void testTableLebensmittledaten() {
@@ -52,15 +48,14 @@ public class DbQueryTest {
   }
   
   /*
-   * test getting entry for table lebensmitteldaten. then we check if values for columns are correct TODO put results sets in try
-   * statement (if there is enough time)
+   * tested Einstieg für TabelleLebensmitteldaten. dann prüfen wir, ob die Werte für die Spalten korrekt sind.
    */
   @Test
   public void testTableZugriffsskala() throws SQLException {
     String sql = "select * from zugriffsskala where zindex = 100";
     try (ResultSet res = dbQuery.getResult(sql)) {
       assertNotNull(res);
-      Zugriffsskala zugriff = new Zugriffsskala(res);
+      LebensmittelDaten zugriff = new LebensmittelDaten(res);
       assertNotNull(zugriff);
       assertEquals(100, zugriff.getZindex());
       assertEquals(11, zugriff.getPlatzierung());
@@ -71,14 +66,14 @@ public class DbQueryTest {
   }
   
   /*
-   * test getting entry for table lebensmitteldaten. then we check if values for columns are correct
+   * testet eintraege für Tabelle Lebensmitteldaten. dann prüfen wir, ob die Werte für die Spalten korrekt sind
    */
   @Test
   public void testTablelebensmittelkategorie() {
     String sql = "select * from lebensmittelkategorie where kindex = 1000";
     try (ResultSet res = dbQuery.getResult(sql)) {
       assertNotNull(res);
-      Lebensmittelkategorie kategorie = new Lebensmittelkategorie(res);
+      LebensmittelDaten kategorie = new LebensmittelDaten(res);
       assertNotNull(kategorie);
       assertEquals(1000, kategorie.getKindex());
       assertEquals("Fleisch", kategorie.getKname());
@@ -87,17 +82,21 @@ public class DbQueryTest {
     }
   }
   
-  // Testing if table naehrstoff is not empty
+  
+  /**
+   *  Testet ob Narhstoffe nicht leer aber dafür korrekt sind.
+   */
   @Test
   public void testTableNaehrstoff() {
     String sql = "select * from naehrstoff where nname like 'Proteine'";
     try (ResultSet res = dbQuery.getResult(sql)) {
       assertNotNull(res);
-      Naehrstoff naehrstoff = new Naehrstoff(res);
+      LebensmittelDaten naehrstoff = new LebensmittelDaten(res);
       assertNotNull(naehrstoff);
-      assertEquals("Proteine", naehrstoff.getNname());
+      assertEquals("Proteine", naehrstoff.getnName());
     } catch (SQLException e) {
       LOGGER.log(Level.SEVERE, "resultSet could not be determined", e);
     }
   }
+  
 }
